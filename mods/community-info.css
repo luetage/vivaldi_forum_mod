@@ -1,0 +1,10 @@
+/* Hides the community info box --
+containing password reset notice, welcome message,
+link to team blog -- on categories page */
+
+section.community-info-box {
+	visibility: hidden;
+	height: 0px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}

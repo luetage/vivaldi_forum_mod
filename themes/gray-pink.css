@@ -1,0 +1,152 @@
+/*** Theme Gray-Pink ***/
+
+body {
+	background-color: #f8f8f8 !important;
+    color: #333;
+}
+.menuwrapper {
+	background-color: #121212 !important;
+}
+
+
+/* Header */
+
+.vivaldinav ul a.active {
+	color: #fd3563;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>li>a:hover, navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.active>a, .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+    color: #fd3563 !important;
+}
+.navbar-default .navbar-nav>.active>a {
+	background-color: transparent !important;
+}
+#header-menu, #advanced-search .panel-body.search-options {
+	background-color: #f8f8f8;
+}
+.unread-count::after {
+	background-color: #fd3563;
+}
+
+
+/* Content */
+
+.categories>p, .category>p, .subcategory>p {
+	color: #777 !important;
+}
+.categories>li:hover, .category>ul>li:hover {
+	background-color: rgba(200,200,200,0.2) !important;
+}
+blockquote, .votes a, .input-group-addon {
+	background-color: #e8e8e8 !important;
+}
+hr {
+	border-top-color: #d5d5d5 !important;
+}
+.category>ul>li.selected .avatar .select .fa-check {
+	color: #00caa7 !important;
+    border-color: #00caa7 !important;
+}
+.topic [component="post/replies"] {
+	border-left: 5px solid #d0d0d0;
+}
+
+
+/* Buttons */
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+	background-color: #00977d;
+	border-color: #00977d;
+}
+.fab.btn-morph.plus {
+	background-color: #00caa7 !important;
+}
+.btn-default.hidden-xs {
+	background-color: #e8e8e8;
+	font-weight: bold;
+}
+.btn-group.account-fab .fab {
+	background-color: #fd3563;
+}
+.taskbar .navbar-nav li.taskbar-composer a, .taskbar .navbar-nav li.taskbar-composer a:hover {
+	background-color: #fd3563 !important;
+}
+/* logged out menu */
+a.btn-register, a.btn-login {
+	border: none;
+}
+a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus {
+	background-color: transparent !important;
+}
+
+
+/* Focus */
+
+.form-control:focus {
+	border-color: #00f1c7 !important;
+}
+:focus {
+    outline-color: #00caa7 !important;
+}
+
+
+/* Alerts */
+
+.alert-window .alert.alert-warning {
+	border-left-color: #fd3563 !important;
+	color: #fd3563;
+}
+.alert-window .alert.alert-success {
+	border-left-color: #00caa7 !important;
+	color: #00caa7
+}
+
+
+/* Voting indicators */
+
+.upvoted i.fa.fa-chevron-up {
+	color: #00caa7 !important;
+}
+.downvoted i.fa.fa-chevron-down {
+	color: #fd3563 !important;
+}
+
+
+/* Pagination */
+
+li.page.active a, li.page.active a:hover {
+    background-color: #fd3563;
+    border-color: #fd3563;
+}
+
+
+/* Forum mod highlight */
+
+#optionsLink:hover i {
+	color: #fd3563;
+}
+
+
+/* Profile */
+
+.account .cover .indicator, .account .cover .save {
+	background-color: #00caa7;
+}
+.account .cover .indicator:hover, .account .cover .save:hover {
+	background-color: #00977d;
+}
+
+
+/* Logo */
+
+.header .forum-logo {
+    display: block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 150px !important;
+    padding-left: 150px;
+    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-pink.png') no-repeat;
+}
+#vivaldifooter #vivaldi-icon path:nth-of-type(1) {
+	fill: #fd3563;
+}

@@ -1,0 +1,5 @@
+/* Hides the unread count in navigation */
+
+.fa-inbox.unread-count::after {
+	display: none !important;
+}

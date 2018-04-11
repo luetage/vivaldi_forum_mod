@@ -1,0 +1,8 @@
+/* Square avatars everywhere! */
+
+.avatar.pull-left .user-icon, avatar.pull-left img, .user-img,  .user-icon.user-img, .topic .posts .icon .user-icon, .topic .posts .icon img, .dropdown-toggle img, .message-header img, .message-header .user-icon, .users-container .user-icon, .users-container img, .avatar.avatar-rounded, .categories > li .content .icon, .category > ul > li .content .icon, .account .cover .avatar-wrapper {
+    border-radius: 5px !important;
+}
+.icon.pull-left i.fa.fa-circle, .cover i.fa.fa-circle {
+	display: none;
+}

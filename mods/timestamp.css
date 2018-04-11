@@ -1,0 +1,19 @@
+/* Adds a timestamp to the bottom of edited posts */
+
+[component='topic'] [component='post'] meta[itemprop='localdateModified'] {
+	display: block;
+    position: absolute;
+    bottom: 0;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    opacity: 0.66;
+    font-size: 12px;
+}
+[component='topic'] [component='post'] meta[itemprop='localdateModified']::before {
+    display: inline-block;
+    width: 15ch;
+    content: "Last Modified:";
+}
+[component='topic'] [component='post'] meta[itemprop='localdateModified']::after {
+    display: inline-block;
+    content: attr(content);
+}

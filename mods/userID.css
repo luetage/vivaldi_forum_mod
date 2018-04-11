@@ -1,0 +1,20 @@
+/* Displays user IDs on profiles and posts */
+
+/* forum */
+.clearfix.post-header small.pull-left strong a:hover::after {
+	content: "  [UID:"attr(data-uid)"]";
+}
+
+/* profiles */
+.account .cover .avatar-wrapper::after {
+	content: "UID:"attr(data-uid);	
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+	transition: opacity 0.6s ease-out;	
+}
+.account .cover .avatar-wrapper:hover::after {
+	opacity: 1;
+}

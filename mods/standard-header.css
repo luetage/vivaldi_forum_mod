@@ -1,0 +1,5 @@
+/* Vivaldi's new header */
+
+.account .cover, .groups.details [component="groups/cover"] {
+	margin-top: 70px;
+}
