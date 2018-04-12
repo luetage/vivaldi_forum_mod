@@ -6,6 +6,7 @@
 	"version": "1.51",
 	"author": "luetage",
 	"description": "Modular extension. Themes, fixes and modifications.",
+	"homepage_url": "https://luetage.github.io",
 	"icons": {
 		"48": "icons/icon48.png",
     	"128": "icons/icon128.png"
@@ -45,12 +46,12 @@
     	"mods/signature-mod.css",
     	"mods/square-avatars.css"
     ],
-    "content_scripts": [ 
+    "content_scripts": [
     {
     	"matches": [ "https://forum.vivaldi.net/*" ],
     	"exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
     	"js": [ "theme.js" ],
-    	"run_at": "document_start" 
+    	"run_at": "document_start"
     },
     {
     	"matches": [ "https://forum.vivaldi.net/*" ],
@@ -58,10 +59,10 @@
     	"js": [ "default.js", "mods.js" ],
     	"css": [ "default.css" ],
     	"run_at": "document_end"
-    } 
+    }
     ],
 	"background": {
 		"scripts": [ "background.js" ]
 	}
-    
+
 }
