@@ -1,4 +1,6 @@
-# vivaldi_forum_mod
+# Vivaldi Forum mod
+![vfm](/icons/icon48.png)
+
 Dedicated to improving your experience browsing the Vivaldi Forum.
 
 [Available on chrome webstore](https://chrome.google.com/webstore/detail/vivaldi-forum-mod/hipnollokpifchndpfhnlfjbdnkhiigg?hl=en-US) | [Support site on Vivaldi Forum](https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod)
