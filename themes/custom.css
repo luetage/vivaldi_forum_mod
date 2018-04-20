@@ -554,14 +554,16 @@ button.main.green, button.main.red {
 .persona-usercard .usercard-name, .persona-usercard .usercard-username, .persona-usercard .usercard-body {
 	color: #fbfbfb;
 }
-.persona-usercard a {
+.persona-usercard a, .persona-usercard a:active, .persona-usercard a:hover, .persona-usercard a:visited {
 	color: #fbfbfb !important;
+	text-decoration: none !important;
 }
 .fab.btn-morph.plus>span>span, .btn-morph {
 	background-color: #fbfbfb;
 }
 .persona-usercard .status {
-	display: none;
+	opacity: unset !important;
+	-webkit-text-stroke: 2px #fbfbfb;
 }
 
 
