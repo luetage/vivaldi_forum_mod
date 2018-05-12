@@ -232,11 +232,11 @@ blockquote, .topic [component="post/replies"] {
 	background-color: var(--colorBgHiC);
 	color: inherit;
 }
-a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/will not do"] .tag, a[href="/tags/done"] .tag, a[href="/tags/in progress"] .tag {
+a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/will not do"] .tag, a[href="/tags/done"] .tag, a[href="/tags/in progress"] .tag, a[href="/tags/未解決"] .tag, a[href="/tags/解決済み"] .tag, a[href="/tags/対応未定要望"] .tag, a[href="/tags/対応済み要望"] .tag, a[href="/tags/記載者要確認"] .tag, a[href="/tags/対応予定要望"] .tag, a[href="/tags/対応対象外要望"] .tag {
 	background-color: var(--colorLiR) !important;
 	color: var(--colorBg) !important;
 }
-.tag-item[data-tag="duplicate"], .tag-item[data-tag="pipeline"], .tag-item[data-tag="will not do"], .tag-item[data-tag="done"], .tag-item[data-tag="in progress"]  {
+.tag-item[data-tag="duplicate"], .tag-item[data-tag="pipeline"], .tag-item[data-tag="will not do"], .tag-item[data-tag="done"], .tag-item[data-tag="in progress"], .tag-item[data-tag="未解決"], .tag-item[data-tag="解決済み"], .tag-item[data-tag="対応未定要望"], .tag-item[data-tag="対応済み要望"], .tag-item[data-tag="記載者要確認"], .tag-item[data-tag="対応予定要望"], .tag-item[data-tag="対応対象外要望"]  {
 	background-color: var(--colorFg2) !important;
 	color: var(--colorBg) !important;
 }
