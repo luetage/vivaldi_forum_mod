@@ -27,72 +27,72 @@ function(mods) {
 	var square = mods.square;
 
 	if (headerScroll == 1) {
-		var MheaderScroll = document.createElement("script");
+		var MheaderScroll = document.createElement('script');
 		if (compact == 1) {
-			MheaderScroll.src = chrome.extension.getURL("mods/header_scroll_compact.js");
+			MheaderScroll.src = chrome.extension.getURL('mods/header_scroll_compact.js');
 		}
 		else {
-			MheaderScroll.src = chrome.extension.getURL("mods/header_scroll.js");
+			MheaderScroll.src = chrome.extension.getURL('mods/header_scroll.js');
 		}
-		document.getElementsByTagName("body")[0].appendChild(MheaderScroll);
+		document.getElementsByTagName('body')[0].appendChild(MheaderScroll);
 	}
 	if (notificationIcons == 1) {
-		var MnotificationIcons = document.createElement("link");
-		MnotificationIcons.href = chrome.extension.getURL("mods/notification-icons.css");
-		MnotificationIcons.type = "text/css";
-		MnotificationIcons.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(MnotificationIcons);
+		var MnotificationIcons = document.createElement('link');
+		MnotificationIcons.href = chrome.extension.getURL('mods/notification-icons.css');
+		MnotificationIcons.type = 'text/css';
+		MnotificationIcons.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(MnotificationIcons);
 	}
 	if (communityInfo == 1) {
-		var McommunityInfo = document.createElement("link");
-		McommunityInfo.href = chrome.extension.getURL("mods/community-info.css");
-		McommunityInfo.type = "text/css";
-		McommunityInfo.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(McommunityInfo);
+		var McommunityInfo = document.createElement('link');
+		McommunityInfo.href = chrome.extension.getURL('mods/community-info.css');
+		McommunityInfo.type = 'text/css';
+		McommunityInfo.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(McommunityInfo);
 	}
 	if (tooltips == 1) {
-		var Mtooltips = document.createElement("link");
-		Mtooltips.href = chrome.extension.getURL("mods/tooltips.css");
-		Mtooltips.type = "text/css";
-		Mtooltips.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Mtooltips);
+		var Mtooltips = document.createElement('link');
+		Mtooltips.href = chrome.extension.getURL('mods/tooltips.css');
+		Mtooltips.type = 'text/css';
+		Mtooltips.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Mtooltips);
 	}
 	if (unread == 1) {
-		var Munread = document.createElement("link");
-		Munread.href = chrome.extension.getURL("mods/unread.css");
-		Munread.type = "text/css";
-		Munread.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Munread);
+		var Munread = document.createElement('link');
+		Munread.href = chrome.extension.getURL('mods/unread.css');
+		Munread.type = 'text/css';
+		Munread.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Munread);
 	}
 	if (timestamp == 1) {
-		var Mtimestamp = document.createElement("link");
-		Mtimestamp.href = chrome.extension.getURL("mods/timestamp.css");
-		Mtimestamp.type = "text/css";
-		Mtimestamp.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Mtimestamp);
+		var Mtimestamp = document.createElement('link');
+		Mtimestamp.href = chrome.extension.getURL('mods/timestamp.css');
+		Mtimestamp.type = 'text/css';
+		Mtimestamp.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Mtimestamp);
 	}
 	if (userID == 1) {
-		var MuserID = document.createElement("link");
-		MuserID.href = chrome.extension.getURL("mods/userID.css");
-		MuserID.type = "text/css";
-		MuserID.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(MuserID);
+		var MuserID = document.createElement('link');
+		MuserID.href = chrome.extension.getURL('mods/userID.css');
+		MuserID.type = 'text/css';
+		MuserID.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(MuserID);
 	}
 	if (signatureMod == 1) {
-		var MsignatureMod = document.createElement("link");
-		MsignatureMod.href = chrome.extension.getURL("mods/signature-mod.css");
-		MsignatureMod.type = "text/css";
-		MsignatureMod.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(MsignatureMod);
+		var MsignatureMod = document.createElement('link');
+		MsignatureMod.href = chrome.extension.getURL('mods/signature-mod.css');
+		MsignatureMod.type = 'text/css';
+		MsignatureMod.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(MsignatureMod);
 	}
 	if (square == 1) {
-		var Msquare = document.createElement("link");
-		Msquare.href = chrome.extension.getURL("mods/square-avatars.css");
-		Msquare.type = "text/css";
-		Msquare.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Msquare);
+		var Msquare = document.createElement('link');
+		Msquare.href = chrome.extension.getURL('mods/square-avatars.css');
+		Msquare.type = 'text/css';
+		Msquare.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Msquare);
 	}
-	
+
 	add_copy_code();
 	discord();
 	if (bookmarks == 1) { _bookmarks() }
@@ -121,9 +121,9 @@ function _bookmarks() {
 	var li = document.createElement('li');
 	var link = document.createElement('a');
 	link.classList.add('navigation-link');
-	link.href = "/user/" + username() + "/bookmarks";
-	link.setAttribute("title", "");
-	link.setAttribute("data-original-title", "Bookmarks");
+	link.href = '/user/' + username() + '/bookmarks';
+	link.setAttribute('title', '');
+	link.setAttribute('data-original-title', 'Bookmarks');
 	link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">Bookmarks</span>';
 	nav.insertBefore(li, nav.childNodes[15]);
 	li.appendChild(link);
@@ -133,11 +133,11 @@ function _bookmarks() {
 /* Signature mod */
 
 function _smod() {
-	var signature = document.querySelector(".post-signature");
+	var signature = document.querySelector('.post-signature');
 	if (signature != null) {
 		var signatures = document.getElementsByClassName('post-signature');
-		var siblings = document.querySelectorAll(".post-signature + .pull-right .post-tools");
-		var prevent = document.querySelectorAll(".post-signature + .pull-right .post-tools a:nth-of-type(1)");
+		var siblings = document.querySelectorAll('.post-signature + .pull-right .post-tools');
+		var prevent = document.querySelectorAll('.post-signature + .pull-right .post-tools a:nth-of-type(1)');
 		for (var i=0; i < signatures.length; i++) {
 			if (prevent[i].classList.contains('sig') === false) {
     			var button = document.createElement('a');
@@ -146,11 +146,11 @@ function _smod() {
 				siblings[i].insertBefore(button, siblings[i].firstChild);
 			}
 		}
-		var showsig = document.getElementsByClassName("sig");
+		var showsig = document.getElementsByClassName('sig');
 		for (i=0; i < showsig.length; i++) {
   			showsig[i].addEventListener('click', function(i) {
-				signatures[i].style = "display: block";
-				showsig[i].style = "text-decoration: none; cursor: default";
+				signatures[i].style = 'display: block';
+				showsig[i].style = 'text-decoration: none; cursor: default';
   			}.bind(this, i));
 		}
 	}
@@ -176,7 +176,7 @@ function tolocalISO(date) {
 };
 
 function _lastedit() {
-	var topic = document.querySelector(".topic");
+	var topic = document.querySelector('.topic');
 	if (topic != null) {
 		var metas = document.getElementsByTagName('meta');
 		for (var i=0; i < metas.length; i++) {

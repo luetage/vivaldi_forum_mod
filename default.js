@@ -6,12 +6,12 @@ function username() {
 }
 
 function bookmarked() {
-	var favourites = document.querySelector(".btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(12) a");
+	var favourites = document.querySelector('.btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(12) a');
 	if (favourites !== null) {
 		var favcheck = favourites.innerHTML;
-		if (favcheck === "favourites") {
-			favourites.innerHTML = "Bookmarked";
-			favourites.href = "/user/" + username() + "/bookmarks";
+		if (favcheck === 'favourites') {
+			favourites.innerHTML = 'Bookmarked';
+			favourites.href = '/user/' + username() + '/bookmarks';
 		}
 	}
 };
@@ -20,21 +20,21 @@ function bookmarked() {
 /* Links to options and hidden edit page  */
 
 document.getElementById('logged-in-menu').addEventListener('click', function() {
-	if (document.getElementById('optionsLink') === null) {	
-		var dropdown = document.querySelector("#user-control-list.dropdown-menu");
-		var editC = document.querySelector("#user-control-list.dropdown-menu .user-edit-profile span");
+	if (document.getElementById('optionsLink') === null) {
+		var dropdown = document.querySelector('#user-control-list.dropdown-menu');
+		var editC = document.querySelector('#user-control-list.dropdown-menu .user-edit-profile span');
 		editC.innerHTML = ' Edit community';
 		var options = document.createElement('li');
-		options.id = "optionsLink";
-		options.style = "cursor: pointer";
+		options.id = 'optionsLink';
+		options.style = 'cursor: pointer';
 		options.innerHTML = '<a><i class="fa fa-fw fa-cog"></i><span> Forum mod</span></a>';
 		dropdown.insertBefore(options, dropdown.childNodes[18]);
 		var li = document.createElement('li');
 		var editF = document.createElement('a');
-		editF.href = "/user/" + username() + "/edit"; 
+		editF.href = '/user/' + username() + '/edit';
 		editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span> Edit forum</span>';
 		dropdown.insertBefore(li, dropdown.childNodes[17]);
-		li.appendChild(editF);		
+		li.appendChild(editF);
     }
    document.getElementById('optionsLink').addEventListener('click', function() {
     	chrome.runtime.sendMessage('options pls');
@@ -45,15 +45,15 @@ document.getElementById('logged-in-menu').addEventListener('click', function() {
 /* Copy all code button */
 
 function make_copy_button(){
-    const new_button = document.createElement("button");
-    new_button.textContent = "copy_code";
-    new_button.className = "copy-all-code-button";
-    new_button.addEventListener("click", copy_all);
+    const new_button = document.createElement('button');
+    new_button.textContent = 'copy_code';
+    new_button.className = 'copy-all-code-button';
+    new_button.addEventListener('click', copy_all);
     return new_button;
 };
 
 function copy_all(event){
-    const code_node = event.currentTarget.parentElement.querySelector("code");
+    const code_node = event.currentTarget.parentElement.querySelector('code');
     const window_selection = window.getSelection();
     const code_range = document.createRange();
     code_range.selectNodeContents(code_node);
@@ -64,9 +64,9 @@ function copy_all(event){
 
 function add_copy_code() {
 	setTimeout(function() {
-		const topic = document.querySelector(".topic");
+		const topic = document.querySelector('.topic');
 		if (topic != null) {
-    		const codeblocks = document.querySelectorAll("pre.markdown-highlight");
+    		const codeblocks = document.querySelectorAll('pre.markdown-highlight');
     		codeblocks.forEach(codeblock => {
     			if (codeblock.classList.contains('copy') === false && codeblock.parentNode.tagName !== 'BLOCKQUOTE' && codeblock.firstChild.classList.contains('hljs') === true)  {
     				codeblock.classList.add('copy');
@@ -81,7 +81,7 @@ function add_copy_code() {
 /* Footer links to unofficial discord and store */
 
 function discord() {
-	var footerlinks = document.querySelector(".footerlinks");
+	var footerlinks = document.querySelector('.footerlinks');
 	var addlinks = document.createElement('span');
 	addlinks.innerHTML = ' | <a href="https://store.vivaldi.com/" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Chat</a>';
 	footerlinks.appendChild(addlinks);

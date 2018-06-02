@@ -71,58 +71,58 @@ function(theme) {
 	var colorLi2Hi = theme.colorLi2Hi;
 	var colorBtnHi = theme.colorBtnHi;
 	var colorBtnFg = theme.colorBtnFg;
-	
+
 	//header
 	if (compact == 1) {
-		var Tcompact = document.createElement("link");
-		Tcompact.href = chrome.extension.getURL("mods/compact-header.css");
-		Tcompact.type = "text/css";
-		Tcompact.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tcompact);
+		var Tcompact = document.createElement('link');
+		Tcompact.href = chrome.extension.getURL('mods/compact-header.css');
+		Tcompact.type = 'text/css';
+		Tcompact.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tcompact);
 	}
 	else {
-		var Tstandard = document.createElement("link");
-		Tstandard.href = chrome.extension.getURL("mods/standard-header.css");
-		Tstandard.type = "text/css";
-		Tstandard.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tstandard);
+		var Tstandard = document.createElement('link');
+		Tstandard.href = chrome.extension.getURL('mods/standard-header.css');
+		Tstandard.type = 'text/css';
+		Tstandard.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tstandard);
 	}
-	
+
 	//themes
 	if (darkGrey == 1) {
-		var TdarkGrey = document.createElement("link");
-		TdarkGrey.href = chrome.extension.getURL("themes/dark-grey.css");
-		TdarkGrey.type = "text/css";
-		TdarkGrey.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(TdarkGrey);
+		var TdarkGrey = document.createElement('link');
+		TdarkGrey.href = chrome.extension.getURL('themes/dark-grey.css');
+		TdarkGrey.type = 'text/css';
+		TdarkGrey.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(TdarkGrey);
 	}
 	else if (lightGrey == 1) {
-		var TlightGrey = document.createElement("link");
-		TlightGrey.href = chrome.extension.getURL("themes/light-grey.css");
-		TlightGrey.type = "text/css";
-		TlightGrey.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(TlightGrey);
+		var TlightGrey = document.createElement('link');
+		TlightGrey.href = chrome.extension.getURL('themes/light-grey.css');
+		TlightGrey.type = 'text/css';
+		TlightGrey.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(TlightGrey);
 	}
 	else if (grayPink == 1) {
-		var TgrayPink = document.createElement("link");
-		TgrayPink.href = chrome.extension.getURL("themes/gray-pink.css");
-		TgrayPink.type = "text/css";
-		TgrayPink.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(TgrayPink);
+		var TgrayPink = document.createElement('link');
+		TgrayPink.href = chrome.extension.getURL('themes/gray-pink.css');
+		TgrayPink.type = 'text/css';
+		TgrayPink.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(TgrayPink);
 	}
 	else if (mod == 1) {
-		var Tmod = document.createElement("link");
-		Tmod.href = chrome.extension.getURL("themes/mod.css");
-		Tmod.type = "text/css";
-		Tmod.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tmod);
+		var Tmod = document.createElement('link');
+		Tmod.href = chrome.extension.getURL('themes/mod.css');
+		Tmod.type = 'text/css';
+		Tmod.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tmod);
 	}
 	else if (sprucey == 1) {
-		var Tsprucey = document.createElement("link");
-		Tsprucey.href = chrome.extension.getURL("themes/sprucey-bonus-dark.css");
-		Tsprucey.type = "text/css";
-		Tsprucey.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tsprucey);
+		var Tsprucey = document.createElement('link');
+		Tsprucey.href = chrome.extension.getURL('themes/sprucey-bonus-dark.css');
+		Tsprucey.type = 'text/css';
+		Tsprucey.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tsprucey);
 	}
 	else if (custom == 1) {
 		setTimeout(function wait() {
@@ -157,26 +157,26 @@ function(theme) {
 			}
 		}, 300);
 		if (logoWhite == 1) {
-			var TlogoWhite = document.createElement("link");
-			TlogoWhite.href = chrome.extension.getURL("themes/logo-white.css");
-			TlogoWhite.type = "text/css";
-			TlogoWhite.rel = "stylesheet";
-			document.getElementsByTagName("head")[0].appendChild(TlogoWhite);
+			var TlogoWhite = document.createElement('link');
+			TlogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
+			TlogoWhite.type = 'text/css';
+			TlogoWhite.rel = 'stylesheet';
+			document.getElementsByTagName('head')[0].appendChild(TlogoWhite);
 		}
-		var Tcustom = document.createElement("link");
-		Tcustom.href = chrome.extension.getURL("themes/custom.css");
-		Tcustom.type = "text/css";
-		Tcustom.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tcustom);
+		var Tcustom = document.createElement('link');
+		Tcustom.href = chrome.extension.getURL('themes/custom.css');
+		Tcustom.type = 'text/css';
+		Tcustom.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tcustom);
 	}
 	else {
-		var Tstandard = document.createElement("link");
-		Tstandard.href = chrome.extension.getURL("themes/standard.css");
-		Tstandard.type = "text/css";
-		Tstandard.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(Tstandard);
+		var Tstandard = document.createElement('link');
+		Tstandard.href = chrome.extension.getURL('themes/standard.css');
+		Tstandard.type = 'text/css';
+		Tstandard.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(Tstandard);
 	}
-	
+
 	// User CSS
 	if (csscheck == 1) {
 		chrome.storage.local.get({'userCSS': ''}, function(local) {
