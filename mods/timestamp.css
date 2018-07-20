@@ -1,7 +1,7 @@
 /* Adds a timestamp to the bottom of edited posts */
 
 [component='topic'] [component='post'] meta[itemprop='localdateModified'] {
-	display: block;
+    display: block;
     position: absolute;
     bottom: 0;
     font-family: Menlo, Consolas, Monaco, monospace;

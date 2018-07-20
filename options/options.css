@@ -1,222 +1,222 @@
 body {
-	background-color: #f8f8f8;
-	color: #00247d;
-	font-size: 14px;
-	cursor: default;
+    background-color: #f8f8f8;
+    color: #00247d;
+    font-size: 14px;
+    cursor: default;
 }
 
 
 /* Height */
 
 #select, #info, #credits, #changelog, #edit, #input, .adjust {
-	height: 270px;
+    height: 270px;
 }
 
 
 /* Content */
 
 .split {
-	line-height: 1.4;
-	width: 425px;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: -15px;
-	border-bottom: 1px solid #ddd;
+    line-height: 1.4;
+    width: 425px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -15px;
+    border-bottom: 1px solid #ddd;
 }
 .heading {
-	margin-top: 15px;
-	margin-bottom: 6px;
-	color: #ce1126;
-	font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #ce1126;
+    font-weight: 500;
 }
 .line {
-	color: #ddd;
+    color: #ddd;
 }
 #select input {
-	margin-top: -2px;
+    margin-top: -2px;
 }
 .left {
-	width: 180px;
-	padding-left: 25px;
-	float: left;
+    width: 180px;
+    padding-left: 25px;
+    float: left;
 }
 .right {
-	width: 200px;
-	padding-right: 20px;
-	float: right;
+    width: 200px;
+    padding-right: 20px;
+    float: right;
 }
 #info, #credits, #changelog, #edit, #input {
-	width: 425px;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: -15px;
-	border-bottom: 1px solid #ddd;
+    width: 425px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -15px;
+    border-bottom: 1px solid #ddd;
 }
 #credits a {
-	color: #00247d;
+    color: #00247d;
 }
 .adjust {
-	width: 380px;
-	padding-left: 25px;
-	padding-right: 20px;
-	float: left;	
+    width: 380px;
+    padding-left: 25px;
+    padding-right: 20px;
+    float: left;	
 }
 .scroll {
-	overflow-y: scroll;	
+    overflow-y: scroll;	
 }
 p {
-	line-height: 1.3;
-	margin-top: 6px;
-	margin-bottom: 6px;
+    line-height: 1.3;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 p:first-of-type {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 p:last-of-type {
-	margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 
 /* Edit custom theme */
 
 #edit input {
-	margin-top: 5px;
-	cursor: pointer;
+    margin-top: 5px;
+    cursor: pointer;
 }
 input[type="color" i] {
-	height: 20px;
-	width: 26px;
+    height: 20px;
+    width: 26px;
 }
 
 
 /* User CSS */
 
 #userCSS {
-	height: 233px;
-	width: 375px;
-	line-height: 1.2;
-	border-color: #eaeaea;
-	border-bottom: none;
-	resize: none;
-	padding: 5px 5px;
-	font-size: 12px;
-	background-color: #eaeaea;
-	color: #5e5e5e;
-	font-family: Menlo, Consolas, Monaco, monospace;
+    height: 233px;
+    width: 375px;
+    line-height: 1.2;
+    border-color: #eaeaea;
+    border-bottom: none;
+    resize: none;
+    padding: 5px 5px;
+    font-size: 12px;
+    background-color: #eaeaea;
+    color: #5e5e5e;
+    font-family: Menlo, Consolas, Monaco, monospace;
 }
 #userCSS::-webkit-input-placeholder {
-	color: #8e8e8e;
+    color: #8e8e8e;
 }
 
 
 /* Toggle logic */
 
 #info, #credits, #changelog, #back, #backup-button, #edit, #input {
-	display: none;
+    display: none;
 }
 #select, #save {
-	display: block;
+    display: block;
 }
 
 
 /* Buttons */
 
 #save, #back {
-	width: 375px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #save-button, #back-button, #reset-button {
-	width: 56px;
-	margin-top: 8px;
-	margin-right: 0px;
-	text-align: center;
-	padding: 1px 5px 2px 5px;
+    width: 56px;
+    margin-top: 8px;
+    margin-right: 0px;
+    text-align: center;
+    padding: 1px 5px 2px 5px;
 }
 #backup-button {
-	width: 76px;
-	margin-top: 8px;
-	margin-left: 6px;
-	padding: 1px 5px 2px 5px;
+    width: 76px;
+    margin-top: 8px;
+    margin-left: 6px;
+    padding: 1px 5px 2px 5px;
 }
 #reset-button {
-	float: right;
+    float: right;
 }
 button#save-button, button#back-button, button#backup-button, button#reset-button, button#edit-activate, button#edit-import, button#edit-export {
-	cursor: pointer;
-	color: #00247d;
-	border-radius: 2px;
-	border-color: #00247d;
-	background-image: none;
-	background-color: #fff;
-	font-size: 14px;
+    cursor: pointer;
+    color: #00247d;
+    border-radius: 2px;
+    border-color: #00247d;
+    background-image: none;
+    background-color: #fff;
+    font-size: 14px;
 }
 button#edit-button, button#css-button {
-	cursor: pointer;
-	font-size: 14px;
-	color: #00247d;
-	border: none;
-	background-image: none;
-	background-color: #f8f8f8;
-	min-height: 1em;
-	min-width: 1em;
-	padding: 0px;
-	box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #00247d;
+    border: none;
+    background-image: none;
+    background-color: #f8f8f8;
+    min-height: 1em;
+    min-width: 1em;
+    padding: 0px;
+    box-shadow: none;
 }
 button#edit-button:hover, button#css-button:hover {
-	color: #ce1126;
+    color: #ce1126;
 }
 button#save-button:active, button#back-button:active, button#backup-button:active, button#reset-button:active, button.edit-btn:active {
-	transform: scale(0.92);
+    transform: scale(0.92);
 }
 span#status {
-	display: inline-block;
-	width: 255px;
-	text-align: center;
-	color: #ce1126;
+    display: inline-block;
+    width: 255px;
+    text-align: center;
+    color: #ce1126;
 }
 .edit-btn, #edit-status {
-	margin-left: 70px;	
+    margin-left: 70px;	
 }
 .edit-btn {
-	margin-bottom: 6px;
-	margin-right: 0px;
-	width: 76px;
+    margin-bottom: 6px;
+    margin-right: 0px;
+    width: 76px;
 }
 .edit-btn:first-of-type {
-	margin-top: 138px;
+    margin-top: 138px;
 }
 .edit-btn:last-of-type {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 #edit-status {
-	color: #ce1126;
+    color: #ce1126;
 }
 
 
 /* Footer */
 
 #footer {
-	width: 425px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	margin-top: 15px;
+    width: 425px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15px;
 }
 #footer a, #footer button {
-	color: #00247d;
-	text-decoration: none;
+    color: #00247d;
+    text-decoration: none;
 }
 #footer a:hover, #footer button:hover {
-	color: #ce1126;
+    color: #ce1126;
 }
 #footer button {
-	border: none;
-	background-image: none;
-	background-color: transparent;
-	padding: 0px;
-	cursor: pointer;
-	font-size: 14px;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    padding: 0px;
+    cursor: pointer;
+    font-size: 14px;
 }
 #footer :-webkit-any(button,input[type="button"]) {
     min-height: 0em;

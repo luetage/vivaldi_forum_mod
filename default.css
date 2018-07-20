@@ -2,78 +2,78 @@
 
 /* Profile alignment fix */
 .account .cover .avatar-wrapper {
-	margin-left: -68px !important;
+    margin-left: -68px !important;
 }
 
 /* Font icons */
 .taskbar-composer .fa-plus:before {
-	content: "\f065" !important;
+    content: "\f065" !important;
 }
 .taskbar-composer.active .fa-plus:before {
-	content: "\f066" !important;
+    content: "\f066" !important;
 }
 i.fa-ellipsis-v:before {
-	content: "\2630";
+    content: "\2630";
 }
 .fa-angle-down:before {
-	content: "\f0d7" !important;
+    content: "\f0d7" !important;
 }
 .fa-angle-up:before {
-	content: "\f0d8" !important;
+    content: "\f0d8" !important;
 }
 #optionsLink .fa-cog:before {
- 	content: "\f192";
+     content: "\f192";
 }
 
 /* Bigger input for expanded chats */
 textarea.form-control.chat-input.mousetrap, .expanded-chat button.btn.btn-primary {
-	height: 112px;
+    height: 112px;
 }
 .expanded-chat .controlsToggle {
-	margin-left: 7px;
+    margin-left: 7px;
 }
 
 /* Community-info margin fix */
 section.community-info-box {
-	margin-top: 10px !important;
+    margin-top: 10px !important;
 }
 
 /* Auto-hide header transition */
 #header-menu {
-	transition: top 0.857s;
+    transition: top 0.857s;
 }
 
 /* Remove underline from first post tags */
 .tags.pull-left a {
-	text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 /* Advanced search panel cursor */
 #advanced-search .panel-default>.panel-heading:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 /* Square preview images in forum overview */
 img.img-responsive.img-markdown {
-	border-radius: 0% !important;
+    border-radius: 0% !important;
 }
 
 /* Threaded replies cleanup */
 a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies-last.hidden-xs {
-	display: none;
+    display: none;
 }
 
 /* Reduces the number of font sizes used in posts */
 .topic .threaded-replies, small.pull-left, span.timeago {
-	font-size: 12px !important;
+    font-size: 12px !important;
 }
 .topic [component="post/parent"] {
-	font-size: 10px !important;
+    font-size: 10px !important;
 }
 
 /* Correct cursor over vote count span (clickable) */
 .pull-right .votes span {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 /* Flickering fix */
@@ -93,40 +93,40 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 
 /* Blockquote search fontsize/margin fix */
 .search blockquote {
-	font-size: 100%;
-	margin: 8px 0;
-	padding: 0 10px;
+    font-size: 100%;
+    margin: 8px 0;
+    padding: 0 10px;
 }
 
 /* Line breaks for code in topics (no horizontal scroll) */
 .topic .posts .content pre code {
-	white-space: pre-wrap !important;
+    white-space: pre-wrap !important;
 }
 
 /* Code vertical scrollbar from markdown to hljs */
 .markdown-highlight {
-	max-height: unset !important;
+    max-height: unset !important;
 }
 .markdown-highlight .hljs {
-	max-height: 350px;
+    max-height: 350px;
 }
 
 /* Feature request box spacing */
 .feature-request-box {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 /* Button spacing (modal/search/composer/main/toolbar) */
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
-	margin-left: 4px !important;
+    margin-left: 4px !important;
 }
 button[type^="submit"].btn-primary, .btn-default#save-preferences {
-	margin-right: 4px;
+    margin-right: 4px;
 }
 
 /* Disabled user-select for logged-in menu (prevents accidental highlighting of dropdown text when dropdown isn't expanded) */
 #logged-in-menu.nav.navbar-nav.navbar-right {
-	user-select: none;
+    user-select: none;
 }
 
 /* Copy all code button */
@@ -144,6 +144,6 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     opacity: 1;
 }
 .copy-all-code-button:hover {
-	opacity: 1;
+    opacity: 1;
     color: #ffc66d;
 }

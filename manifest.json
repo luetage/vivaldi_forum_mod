@@ -1,69 +1,69 @@
 {
 
-	"manifest_version": 2,
-	"name": "Vivaldi Forum mod",
-	"short_name": "VF mod",
-	"version": "1.52",
-	"author": "luetage",
-	"description": "Modular extension. Themes, fixes and modifications.",
-	"homepage_url": "https://github.com/luetage/vivaldi_forum_mod",
-	"icons": {
-		"48": "icons/icon48.png",
-    	"128": "icons/icon128.png"
+    "manifest_version": 2,
+    "name": "Vivaldi Forum mod",
+    "short_name": "VF mod",
+    "version": "1.52",
+    "author": "luetage",
+    "description": "Modular extension. Themes, fixes and modifications.",
+    "homepage_url": "https://github.com/luetage/vivaldi_forum_mod",
+    "icons": {
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
     "permissions": [
-    	"storage",
-    	"downloads"
+        "storage",
+        "downloads"
     ],
-	"options_ui": {
-    	"page": "options/options.html",
-    	"chrome_style": true,
-		"open_in_tab": false
-	},
+    "options_ui": {
+        "page": "options/options.html",
+        "chrome_style": true,
+        "open_in_tab": false
+    },
     "web_accessible_resources": [
-    	"themes/standard.css",
-    	"themes/dark-grey.css",
-    	"themes/light-grey.css",
-    	"themes/gray-pink.css",
-    	"themes/mod.css",
-    	"themes/sprucey-bonus-dark.css",
-    	"themes/custom.css",
-    	"themes/logo-white.css",
-    	"themes/img/logo-mod.png",
-    	"themes/img/logo-pink.png",
-    	"themes/img/logo-white.png",
-    	"themes/img/planks.png",
-    	"mods/header_scroll.js",
-    	"mods/header_scroll_compact.js",
-    	"mods/compact-header.css",
-    	"mods/standard-header.css",
-    	"mods/community-info.css",
-    	"mods/notification-icons.css",
-    	"mods/timestamp.css",
-    	"mods/tooltips.css",
-    	"mods/unread.css",
-    	"mods/userID.css",
-    	"mods/signature-mod.css",
-    	"mods/square-avatars.css"
+        "themes/standard.css",
+        "themes/dark-grey.css",
+        "themes/light-grey.css",
+        "themes/gray-pink.css",
+        "themes/mod.css",
+        "themes/sprucey-bonus-dark.css",
+        "themes/custom.css",
+        "themes/logo-white.css",
+        "themes/img/logo-mod.png",
+        "themes/img/logo-pink.png",
+        "themes/img/logo-white.png",
+        "themes/img/planks.png",
+        "mods/header_scroll.js",
+        "mods/header_scroll_compact.js",
+        "mods/compact-header.css",
+        "mods/standard-header.css",
+        "mods/community-info.css",
+        "mods/notification-icons.css",
+        "mods/timestamp.css",
+        "mods/tooltips.css",
+        "mods/unread.css",
+        "mods/userID.css",
+        "mods/signature-mod.css",
+        "mods/square-avatars.css"
     ],
     "content_scripts": [
     {
-    	"matches": [ "https://forum.vivaldi.net/*" ],
-    	"exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
-    	"js": [ "theme.js" ],
-    	"run_at": "document_start"
+        "matches": [ "https://forum.vivaldi.net/*" ],
+        "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
+        "js": [ "theme.js" ],
+        "run_at": "document_start"
     },
     {
-    	"matches": [ "https://forum.vivaldi.net/*" ],
-    	"exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
-    	"js": [ "default.js", "mods.js" ],
-    	"css": [ "default.css" ],
-    	"run_at": "document_end"
+        "matches": [ "https://forum.vivaldi.net/*" ],
+        "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
+        "js": [ "default.js", "mods.js" ],
+        "css": [ "default.css" ],
+        "run_at": "document_end"
     }
     ],
-	"background": {
-		"scripts": [ "background.js" ],
-		"persistent": false
-	}
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false
+    }
 
 }

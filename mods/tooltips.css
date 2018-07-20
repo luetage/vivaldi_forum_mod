@@ -1,5 +1,5 @@
 /* Hides various tooltips in navigation */
 
 .menuwrapper .tooltip, #header-menu .tooltip, .account .cover .avatar-wrapper .tooltip {
-	display: none !important;
+    display: none !important;
 }
