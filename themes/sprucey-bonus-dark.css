@@ -48,11 +48,6 @@ blockquote {
     background-color: #f2f2f2 !important;
     border-color: #eee;
 }
-small.label.group-label.inline-block {
-    margin-right: 6px;
-    margin-left: 6px;
-    background: #a54c52 !important;
-}
 .topic .posts .status:before {
     display: none !important;
 }
