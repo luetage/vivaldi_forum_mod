@@ -111,11 +111,6 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
     max-height: 350px;
 }
 
-/* Feature request box spacing */
-.feature-request-box {
-    margin-bottom: 30px;
-}
-
 /* Button spacing (modal/search/composer/main/toolbar) */
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
     margin-left: 4px !important;
@@ -134,16 +129,17 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     position: absolute;
     right: 24px;
     opacity: 0;
-    background-color: rgba(35, 35, 35, 0.66);
-    padding: 6px;
+    background-color: rgba(125, 125, 125, 0.66);
+    padding: 4px;
     border: none;
+    border-radius: 2px;
     outline: none;
-    color: #6d9cbe;
+    color: #fff;
 }
 .markdown-highlight .hljs:hover + .copy-all-code-button {
     opacity: 1;
 }
 .copy-all-code-button:hover {
     opacity: 1;
-    color: #ffc66d;
+    color: #f4ff9d;
 }

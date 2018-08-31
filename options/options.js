@@ -12,7 +12,6 @@ var userCSSS = document.getElementById('userCSS');
 var headerScrollS = document.getElementById('headerScroll');
 var bookmarksS = document.getElementById('bookmarks');
 var notificationIconsS = document.getElementById('notificationIcons');
-var communityInfoS = document.getElementById('communityInfo');
 var tooltipsS = document.getElementById('tooltips');
 var unreadS = document.getElementById('unread');
 var timestampS = document.getElementById('timestamp');
@@ -78,11 +77,6 @@ function save_options(){
     } else {
         notificationIconsS.value = 0;
     }
-    if (communityInfoS.checked == true) {
-        communityInfoS.value = 1;
-    } else {
-        communityInfoS.value = 0;
-    }
     if (tooltipsS.checked == true) {
         tooltipsS.value = 1;
     } else {
@@ -118,7 +112,7 @@ function save_options(){
     } else {
         squareS.value = 0;
     }
-    
+
     var standard = standardS.value;
     var darkGrey = darkGreyS.value;
     var lightGrey = lightGreyS.value;
@@ -131,7 +125,6 @@ function save_options(){
     var headerScroll = headerScrollS.value;
     var bookmarks = bookmarksS.value;
     var notificationIcons = notificationIconsS.value;
-    var communityInfo = communityInfoS.value;
     var tooltips = tooltipsS.value;
     var unread = unreadS.value;
     var timestamp = timestampS.value;
@@ -139,7 +132,7 @@ function save_options(){
     var userID = userIDS.value;
     var signatureMod = signatureModS.value;
     var square = squareS.value;
-    
+
     chrome.storage.sync.set({
         'standard': standard,
         'darkGrey': darkGrey,
@@ -152,7 +145,6 @@ function save_options(){
         'headerScroll': headerScroll,
         'bookmarks': bookmarks,
         'notificationIcons': notificationIcons,
-        'communityInfo': communityInfo,
         'tooltips': tooltips,
         'unread': unread,
         'timestamp': timestamp,
@@ -196,7 +188,6 @@ function restore_options(){
         'headerScroll': '',
         'bookmarks': '',
         'notificationIcons': '',
-        'communityInfo': '',
         'tooltips': '',
         'unread': '',
         'timestamp': '',
@@ -261,12 +252,6 @@ function restore_options(){
             notificationIconsS.checked = true;
         } else {
             notificationIconsS.checked = false;
-        }
-        communityInfoS.value = restore.communityInfo;
-        if (communityInfoS.value == 1) {
-            communityInfoS.checked = true;
-        } else {
-            communityInfoS.checked = false;
         }
         tooltipsS.value = restore.tooltips;
         if (tooltipsS.value == 1) {

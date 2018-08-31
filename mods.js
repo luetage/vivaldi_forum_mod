@@ -5,7 +5,6 @@ chrome.storage.sync.get({
     'compact': '',
     'bookmarks': '',
     'notificationIcons': '',
-    'communityInfo': '',
     'tooltips': '',
     'unread': '',
     'timestamp': '',
@@ -18,7 +17,6 @@ function(mods) {
     var bookmarks = mods.bookmarks;
     var compact = mods.compact;
     var notificationIcons = mods.notificationIcons;
-    var communityInfo = mods.communityInfo;
     var tooltips = mods.tooltips;
     var unread = mods.unread;
     var timestamp = mods.timestamp;
@@ -42,13 +40,6 @@ function(mods) {
         MnotificationIcons.type = 'text/css';
         MnotificationIcons.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(MnotificationIcons);
-    }
-    if (communityInfo == 1) {
-        var McommunityInfo = document.createElement('link');
-        McommunityInfo.href = chrome.extension.getURL('mods/community-info.css');
-        McommunityInfo.type = 'text/css';
-        McommunityInfo.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(McommunityInfo);
     }
     if (tooltips == 1) {
         var Mtooltips = document.createElement('link');
