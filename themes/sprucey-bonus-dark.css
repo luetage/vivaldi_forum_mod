@@ -9,7 +9,7 @@ body {
     color: #ddd !important;
 }
 body {
-    background-color: unset;
+    background-color: unset !important;
 }
 .body {
     background: #4d585f !important;

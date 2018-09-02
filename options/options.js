@@ -3,7 +3,6 @@
 var standardS = document.getElementById('standard');
 var darkGreyS = document.getElementById('darkGrey');
 var lightGreyS = document.getElementById('lightGrey');
-var grayPinkS = document.getElementById('grayPink');
 var modS = document.getElementById('mod');
 var spruceyS = document.getElementById('sprucey');
 var customS = document.getElementById('custom');
@@ -36,11 +35,6 @@ function save_options(){
         lightGreyS.value = 1;
     } else {
         lightGreyS.value = 0;
-    }
-    if (grayPinkS.checked == true) {
-        grayPinkS.value = 1;
-    } else {
-        grayPinkS.value = 0;
     }
     if (modS.checked == true) {
         modS.value = 1;
@@ -116,7 +110,6 @@ function save_options(){
     var standard = standardS.value;
     var darkGrey = darkGreyS.value;
     var lightGrey = lightGreyS.value;
-    var grayPink = grayPinkS.value;
     var mod = modS.value;
     var sprucey = spruceyS.value;
     var custom = customS.value;
@@ -137,7 +130,6 @@ function save_options(){
         'standard': standard,
         'darkGrey': darkGrey,
         'lightGrey': lightGrey,
-        'grayPink': grayPink,
         'mod': mod,
         'sprucey': sprucey,
         'custom': custom,
@@ -180,7 +172,6 @@ function restore_options(){
         'standard': '1',
         'darkGrey': '',
         'lightGrey': '',
-        'grayPink': '',
         'mod': '',
         'sprucey': '',
         'custom': '',
@@ -211,10 +202,6 @@ function restore_options(){
         lightGreyS.value = restore.lightGrey;
         if (lightGreyS.value == 1) {
             lightGreyS.checked = true;
-        }
-        grayPinkS.value = restore.grayPink;
-        if (grayPinkS.value == 1) {
-            grayPinkS.checked = true;
         }
         modS.value = restore.mod;
         if (modS.value == 1) {

@@ -10,7 +10,7 @@ body {
 }
 
 body {
-	background-color: unset;
+	background-color: unset !important;
 }
 
 .body {

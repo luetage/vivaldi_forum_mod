@@ -4,7 +4,6 @@ chrome.storage.sync.get({
     'standard': '',
     'darkGrey': '',
     'lightGrey': '',
-    'grayPink': '',
     'mod': '',
     'sprucey': '',
     'custom': '',
@@ -40,7 +39,6 @@ function(theme) {
     var standard = theme.standard;
     var darkGrey = theme.darkGrey;
     var lightGrey = theme.lightGrey;
-    var grayPink = theme.grayPink;
     var mod = theme.mod;
     var sprucey = theme.sprucey;
     var custom = theme.custom;
@@ -102,13 +100,6 @@ function(theme) {
         TlightGrey.type = 'text/css';
         TlightGrey.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(TlightGrey);
-    }
-    else if (grayPink == 1) {
-        var TgrayPink = document.createElement('link');
-        TgrayPink.href = chrome.extension.getURL('themes/gray-pink.css');
-        TgrayPink.type = 'text/css';
-        TgrayPink.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(TgrayPink);
     }
     else if (mod == 1) {
         var Tmod = document.createElement('link');

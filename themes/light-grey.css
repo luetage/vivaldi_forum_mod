@@ -9,7 +9,7 @@ body {
 }
 
 body {
-	background-color: unset;
+	background-color: unset !important;
 }
 
 .body {
@@ -440,7 +440,7 @@ i.fa.fa-pencil-square.pointer.edit-icon,
 }
 
 .copy-all-code-button {
-    right: 34px;    
+    right: 34px;
 }
 
 

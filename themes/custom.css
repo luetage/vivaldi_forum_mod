@@ -1,7 +1,7 @@
 /** Custom Theme **/
 
 body {
-    background-color: var(--colorBg);
+    background-color: var(--colorBg) !important;
     color: var(--colorFg);
 }
 

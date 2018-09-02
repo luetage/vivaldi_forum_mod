@@ -4,7 +4,7 @@
 /** Basics **/
 
 body {
-    background-color: unset;
+    background-color: unset !important;
 }
 /* set background image of theme, the main panel part handles background with narrow screen widths */
 body, main#panel.slideout-panel {
@@ -32,7 +32,7 @@ body, main#panel.slideout-panel {
 
 
 /** Header **/
- 
+
 /* navbar */
 .navbar-default {
      background-color: #bfc8d5 !important;
@@ -120,7 +120,7 @@ li.active::before {
 }
 /* post divider */
 hr {
-    border-color: #cacaca;	
+    border-color: #cacaca;
 }
 .topic .post-signature {
     border-top-color: #acacac;
@@ -304,7 +304,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     opacity: 1;
 }
 .alert-window .alert.alert-warning, .alert-window .alert.alert-danger {
-    border-left-color: #d01126 !important; 
+    border-left-color: #d01126 !important;
 }
 .alert-window .alert.alert-success {
     border-left-color: #00caa7 !important;
