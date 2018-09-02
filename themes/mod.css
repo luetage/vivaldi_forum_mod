@@ -111,6 +111,9 @@ small.pull-right a, .topic .bookmarked {
 .notifications-list li.unread {
     background-color: rgba(254,254,254,0.8) !important;
 }
+.table-striped>tbody>tr:nth-of-type(even):hover {
+    background-color: transparent;
+}
 /* top "/" */
 li.active::before {
     color: #777 !important;
