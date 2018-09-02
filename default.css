@@ -114,7 +114,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 /* Copy all code button */
 .copy-all-code-button {
     position: absolute;
-    right: 24px;
+    right: 25px;
     opacity: 0;
     background-color: rgba(125, 125, 125, 0.66);
     padding: 4px;

@@ -1,33 +1,52 @@
-/*** DarkGrey ***/
+/* Colour variables
+  ============================*/
+
+ :root {
+    --main-background: #141414;
+    --second-background: #1e1e1e;
+    --third-background: #282828;
+    --fourth-background: #323232;
+    --main-font-color: #999;
+    --second-font-color: #808080;
+    --third-font-color: #607680;
+    --fourth-font-color: #607680;
+    --highlight-color: #bc302f;
+    --second-highlight-color: #607680;
+    --button-background: #23bcb1;
+    --button-background-hover: #8a9ea8;
+    --second-button-background: #167ac6;
+    --second-button-background-hover: #44a4ea;
+    --link-color: #00acee;
+    --link-color-hover: #00acee;
+}
+
 
 html,
 body {
     background-size: 10px 10px !important;
-    background-color: #141414;
+    background-color: var(--main-background);
     background-image: linear-gradient(45deg, rgba(10, 10, 10, .5) 25%, transparent 25%, transparent 50%, rgba(10, 10, 10, .5) 50%, rgba(10, 10, 10, .5) 75%, transparent 75%, transparent) !important;
     min-height: 100% !important;
     color: #ddd !important;
 }
 
-body {
-	background-color: unset !important;
-}
-
 .body {
-    background: #141414 !important;
+    background: var(--main-background) !important;
     overflow-x: hidden;
 }
 
 
-/* Top navigation bar + menus */
+
+/* Top navigation bar + menus
+  ============================*/
 
 nav.navbar.navbar-default.navbar-fixed-top.header,
 .navbar-default {
-    background-color: #141414 !important;
+    background-color: var(--main-background) !important;
 }
 
 div.menuwrapper {
-    background-color: #1e1e1e !important;
+    background-color: var(--second-background) !important;
 }
 
 .menuwrapper {
@@ -37,12 +56,12 @@ div.menuwrapper {
 }
 
 .vivaldinav ul a.active {
-    color: #bc302f !important;
+    color: var(--highlight-color) !important;
 }
 
 .navbar-default .navbar-nav>.active>a {
     background-color: transparent !important;
-    border-bottom: 2px solid #bc302f !important;
+    border-bottom: 2px solid var(--highlight-color) !important;
     color: #e1e0e0 !important;
 }
 
@@ -58,15 +77,15 @@ li a span,
 a.mark-all-read,
 .dropdown-menu>li>a,
 a.mark-all-read:hover {
-    color: #999;
+    color: var(--main-font-color);
 }
 
 ul.nav.navbar-nav.navbar-left li a:hover,
 ul.dropdown-menu li a:hover,
 button.btn.btn-link:hover,
 ul.nav.navbar-nav li a:hover {
-    background: #323232;
-    color: #999;
+    background: var(--fourth-background);
+    color: var(--main-font-color);
 }
 
 ul.nav.navbar-nav.navbar-left li a,
@@ -77,15 +96,15 @@ li a span {
 input.form-control,
 select.form-control,
 div.modal-header.ui-draggable-handle {
-    background-color: #141414 !important;
-    color: #999;
+    background-color: var(--main-background) !important;
+    color: var(--main-font-color);
     border: none;
 }
 
 a.dropdown-toggle img,
 img.user-img,
 div.user-icon.user-img {
-    border-color: #1e1e1e !important;
+    border-color: var(--second-background) !important;
 }
 
 ul.dropdown-menu,
@@ -112,24 +131,36 @@ navbar-default .navbar-nav>.open>a:focus,
 
 ul.dropdown-menu.dropdown-menu-right a,
 ul.dropdown-menu.dropdown-menu-right a:hover {
-    color: #999 !important;
+    color: var(--main-font-color) !important;
 }
 
 #user-control-list i.fa.fa-fw.fa-user,
 i.fa.fa-fw.fa-cogs,
+i.fa.fa-fw.fa-cog,
 i.fa.fa-fw.fa-sign-out,
 i.fa.fa-trash-o,
 i.fa.fa-pencil,
 i.fa.fa-heart-o,
 i.fa.fa-fw.fa-gear,
+i.fa.fa-fw.fa-user-circle,
 div.modal-header.ui-draggable-handle h4 {
     color: #e1e0e0;
+}
+
+.unread-count:after {
+    left: 25px;
+    top: 8px;
+    font-size: 11px;
+    text-align: left;
+    border: none;
+    color: #c91106;
+    background: transparent;
 }
 
 .chats-list {
     border-top: 0;
     max-width: 560px !important;
-    color: #999 !important;
+    color: var(--main-font-color) !important;
 }
 
 .dropdown-menu {
@@ -142,9 +173,9 @@ span.chat-timestamp.timeago {
 }
 
 textarea.form-control {
-    background-color: #282828;
+    background-color: var(--third-background);
     border: none;
-    color: #999;
+    color: var(--main-font-color);
 }
 
 .form-control,
@@ -164,7 +195,7 @@ li.chat-message.clear {
 h2.title a,
 a.search-result-text h4,
 span.pull-right.post-preview-footer a {
-    color: #23bcb1;
+    color: var(--button-background);
     font-weight: 500;
 }
 
@@ -183,7 +214,7 @@ span.category-children a small {
 }
 
 span.category-children a small:hover {
-    color: #23bcb1 !important;
+    color: var(--button-background) !important;
 }
 
 span.category-children a small {
@@ -191,13 +222,13 @@ span.category-children a small {
 }
 
 div.description {
-    color: #999 !important;
+    color: var(--main-font-color) !important;
 }
 
 span.input-group-addon {
-    background-color: #282828;
-    color: #999;
-    border-color: #282828;
+    background-color: var(--third-background);
+    color: var(--main-font-color);
+    border-color: var(--third-background);
 }
 
 .categories>li .content .icon,
@@ -207,19 +238,19 @@ span.input-group-addon {
 
 .topic .posts>li a {
     text-decoration: none;
-    color: #23bcb1;
+    color: var(--button-background);
 }
 
 .topic [component="post/replies"] {
-	margin-top: 28px;
+    margin-top: 28px;
 }
 
 div.shadow-box1, div.shadow-box2 {
-	background-color: #141414;
+    background-color: var(--main-background);
 }
 
 h1.community-join {
-	color: #ddd !important;
+    color: #ddd !important;
 }
 
 
@@ -231,10 +262,10 @@ h1.community-join {
 }
 
 #content {
-    background: #1e1e1e !important;
+    background: var(--second-background) !important;
     padding: 25px !important;
     border-radius: 4px !important;
-    border: 15px solid #1e1e1e;
+    border: 15px solid var(--second-background);
     -webkit-box-shadow: 0px 0px 43px -6px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 0px 43px -6px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 43px -6px rgba(0, 0, 0, 0.5);
@@ -247,7 +278,7 @@ h1.community-join {
 
 .categories>li:last-of-type,
 .category>ul>li:last-of-type {
-    border-bottom: 1px solid #1e1e1e;
+    border-bottom: 1px solid var(--second-background);
 }
 
 .panel-default,
@@ -258,28 +289,28 @@ hr {
 #advanced-search .panel-body.search-options,
 div.panel-body.search-options.collapse.in,
 div.panel-heading,
-div.alert.alert-info,
+.alert-window .alert.alert-warning, .alert-window .alert.alert-danger, .alert-window .alert.alert-success, .alert-window .alert.alert-info,
 .well {
-    background-color: #1e1e1e !important;
+    background-color: var(--second-background) !important;
+    color: var(--main-font-color);
     border: none !important;
 }
 
 div.bootstrap-tagsinput,
 div.panel-body {
-    background-color: #141414;
+    background-color: var(--main-background);
     border: none !important;
 }
 
 a.btn.btn-xs.btn-default.hidden-xs,
 span.tag {
-    background-color: #323232 !important;
-    border-color: #323232 !important;
+    background-color: var(--fourth-background) !important;
+    border-color: var(--fourth-background) !important;
     border-radius: 1px;
-    color: #23bcb1;
 }
 
 li[component="post"] {
-    background: #141414;
+    background: var(--main-background);
     position: relative !important;
     padding: 10px 10px !important;
     margin-bottom: 10px !important;
@@ -287,7 +318,7 @@ li[component="post"] {
 }
 
 blockquote {
-    background: #1e1e1e;
+    background: var(--second-background);
     border-color: #000;
 }
 
@@ -296,19 +327,20 @@ code {
 }
 
 div.post-signature {
-    border-color: #323232 !important;
+    border-color: var(--fourth-background) !important;
 }
 
 div.modal-header,
 div.modal-body,
 div.modal-footer {
-    background-color: #1e1e1e;
+    background-color: var(--second-background);
+    border: none;
 }
 
 .composer,
 .composer .title-container .title {
-    background-color: #1e1e1e;
-    color: #999;
+    background-color: var(--second-background);
+    color: var(--main-font-color);
 }
 
 textarea.write,
@@ -318,24 +350,30 @@ div.preview.well {
 }
 
 ul.formatting-group li:hover {
-    background-color: #23bcb1 !important;
+    background-color: var(--button-background) !important;
     border-radius: 2px;
 }
 
 
-/* Buttons */
+
+/* Buttons
+  ============================*/
 
 a.btn.btn-primary {
-    background: #167ac6;
+    background: var(--second-button-background);
     border-radius: 4px;
-    border: none;
+    border: none !important;
+}
+
+a.btn.btn-primary:hover, a.btn.btn-primary:focus {
+    background: var(--second-button-background-hover) !important;
 }
 
 button.btn.btn-primary,
 .topic .posts .content .toggle {
-    background: #23bcb1;
+    background: var(--button-background);
     border-radius: 4px;
-    border: none;
+    border: none !important;
 }
 
 button.btn.btn-primary:hover {
@@ -343,16 +381,16 @@ button.btn.btn-primary:hover {
 }
 
 a.btn.btn-default {
-    background: #323232;
+    background: var(--fourth-background);
     border-radius: 4px;
-    border: none;
-    border-right: 1px solid #1e1e1e;
+    border: none !important;
+    border-right: 1px solid var(--second-background);
     color: #fff;
     font-weight: 200;
 }
 
-a.btn.btn-default:hover {
-    background: #464646;
+a.btn.btn-default:hover, a.btn.btn-default:focus {
+    background: #464646 !important;
 }
 
 .btn-group .btn+.btn,
@@ -363,13 +401,13 @@ a.btn.btn-default:hover {
 }
 
 button.btn.btn-info.dropdown-toggle {
-    background: #323232;
+    background: var(--fourth-background);
     border-radius: 0 4px 4px 0;
     border: none;
 }
 
 button.btn.btn-default {
-    background: #323232;
+    background: var(--fourth-background);
     border-radius: 4px;
     border: none;
     color: #fff;
@@ -377,22 +415,23 @@ button.btn.btn-default {
 }
 
 button.btn.btn-info.dropdown-toggle:hover,
-button.btn.btn-default:hover {
+button.btn.btn-default:hover, .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
     background: #464646;
+    color: #ddd;
 }
 
 li.previous.pull-left a {
     background-color: #111;
     border-radius: 4px 0 0 4px !important;
-    border: 1px solid #282828;
-    color: #999;
+    border: 1px solid var(--third-background);
+    color: var(--main-font-color);
 }
 
 li.next.pull-right a {
     background-color: #111;
     border-radius: 0 4px 4px 0 !important;
-    border: 1px solid #282828;
-    color: #999;
+    border: 1px solid var(--third-background);
+    color: var(--main-font-color);
 }
 
 li.previous.pull-left.disabled,
@@ -404,25 +443,25 @@ a.btn.btn-primary:hover,
 li.next.pull-right a:hover,
 li.previous.pull-left a:hover,
 li.page a:hover {
-    background: #23bcb1;
-    color: #1e1e1e;
+    background: var(--button-background);
+    color: var(--second-background);
 }
 
 li.page.active a,
 li.page.active a:hover {
-    background-color: #23bcb1;
-    border: 1px solid #282828;
+    background-color: var(--button-background);
+    border: 1px solid var(--third-background);
 }
 
 li.page a {
-    color: #999;
+    color: var(--main-font-color);
     background-color: #111;
-    border: 1px solid #282828;
+    border: 1px solid var(--third-background);
 }
 
 li.page a:hover {
-    background-color: #23bcb1;
-    border: 1px solid #282828;
+    background-color: var(--button-background);
+    border: 1px solid var(--third-background);
 }
 
 .close {
@@ -432,27 +471,42 @@ li.page a:hover {
 }
 
 small.pull-right a {
-    color: #23bcb1 !important;
+    color: var(--button-background) !important;
 }
 
 i.fa.fa-pencil-square.pointer.edit-icon,
 .breadcrumb .fa {
-    color: #999;
+    color: var(--main-font-color);
 }
 
 .breadcrumb .fa:hover {
     color: #ff8000;
 }
 
-.copy-all-code-button {
-    right: 34px;
+a.btn-register,
+a.btn-login {
+    background: transparent;
+    border: none;
+    height: 50px;
+    margin-top: 0;
+    padding-top: 10px !important;
+
+}
+
+a.btn-register:hover, a.btn-register:focus,
+a.btn-login:hover, a.btn-login:focus {
+    background: var(--fourth-background) !important;
+    border: none !important;
+    color: #fff !important;
+
 }
 
 
-/* Vote indicator */
+/* Vote indicator
+  ============================*/
 
 .votes a {
-    background-color: #323232;
+    background-color: var(--fourth-background);
 }
 
 .upvoted i.fa.fa-chevron-up,
@@ -469,13 +523,6 @@ i.fa.fa-pencil-square.pointer.edit-icon,
 }
 
 
-/* Change i menu to hamburger menu*/
-
-.fa-ellipsis-v::before {
-    content: "\f0c9";
-}
-
-
 /* Message composer + profile button */
 
 .taskbar .navbar-nav li.taskbar-composer a,
@@ -483,7 +530,7 @@ i.fa.fa-pencil-square.pointer.edit-icon,
 .taskbar .navbar-nav li.taskbar-composer a:focus,
 .taskbar .navbar-nav li.taskbar-composer a:hover,
 button.fab.dropdown-toggle {
-    background: #323232;
+    background: var(--fourth-background);
     opacity: .95;
 }
 
@@ -492,14 +539,27 @@ button.fab.dropdown-toggle {
 }
 
 
-/* Composer tooltip */
+/* Logo */
+
+.header .forum-logo {
+    display: block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 150px !important;
+    padding-left: 150px;
+    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+}
+
+
+/* Composer tooltip
+  ============================*/
 
 .taskbar-composer::after {
     position: absolute;
     text-align: center;
     top: -4ex;
     left: 0;
-    background: #1e1e1e;
+    background: var(--second-background);
     border-radius: 2px;
     color: #eee;
     font-weight: 200;
@@ -520,43 +580,52 @@ button.fab.dropdown-toggle {
 }
 
 
-/* Hiding superfluous elements */
+/** Additions and fixes (messed with by luetage) **/
 
-div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se,
-li[component="post"]>hr,
-.post-bar>hr,
-h1.categories-title,
-p.hidden-xs,
-hr.hidden-xs,
-div.alert.alert-warning,
-.fade-out {
-    display: none;
+.posts-list .posts-list-item .topic-title, a {
+    color: var(--link-color);
 }
-
-
-/* Logged out menu */
-
-a.btn-register, a.btn-login {
-	border: none;
-	color: #666 !important;
+.posts-list .posts-list-item .topic-title:hover, a:hover {
+    color: var(--link-color-hover);
 }
-
-a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus {
-	background-color: #323232 !important;
+.header .notification-list li.unread, .slideout-menu .notification-list li.unread {
+    background-color: var(--main-background);
 }
-
-
-/* Forum logo */
-
-.header .forum-logo {
-    display: block;
-    box-sizing: border-box;
-    height: 30px;
-    width: 150px !important;
-    padding-left: 150px;
-    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+.header .notification-list li .mark-read:hover, .slideout-menu .notification-list li .mark-read:hover {
+    color: #777;
 }
-
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: var(--fourth-background)
+}
+.status.offline {
+    color: var(--main-font-color);
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: var(--third-background);
+}
+.table-striped>tbody>tr:nth-of-type(odd):hover {
+    background-color: var(--third-background);
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top-color: var(--third-background);
+}
+.table-hover>tbody>tr:hover {
+    background-color: var(--main-background);
+}
+li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before {
+    color: var(--main-font-color) !important;
+}
+pre {
+    color: var(--main-font-color);
+    background-color: var(--fourth-background);
+    border-color: var(--fourth-background);
+}
+.account .profile .profile-meta strong {
+    color: #ddd;
+}
+.copy-all-code-button {
+    right: 35px;
+}
 
 /*
 
