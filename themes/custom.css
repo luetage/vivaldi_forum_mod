@@ -20,7 +20,7 @@ body {
 .header #user_dropdown img, .account .cover .avatar-wrapper {
     border-color: var(--colorBgHi);
 }
-.unread-count::after {
+.unread-count::after, .taskbar .navbar-nav li.taskbar-chat.new:after {
     background-color: var(--colorHi);
     color: var(--colorHiFg);
     border-color: var(--colorHi);
