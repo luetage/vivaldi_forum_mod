@@ -111,6 +111,11 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     user-select: none;
 }
 
+/* Only resize textarea vertically in Forum Edit*/
+#inputAboutMe, #inputSignature {
+    resize: vertical;
+}
+
 /* Copy all code button */
 .copy-all-code-button {
     position: absolute;

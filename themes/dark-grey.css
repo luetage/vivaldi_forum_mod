@@ -1,3 +1,5 @@
+/** Theme Dark-Grey **/
+
 /* Colour variables
   ============================*/
 
@@ -487,18 +489,11 @@ a.btn-register,
 a.btn-login {
     background: transparent;
     border: none;
-    height: 50px;
-    margin-top: 0;
-    padding-top: 10px !important;
-
 }
 
 a.btn-register:hover, a.btn-register:focus,
 a.btn-login:hover, a.btn-login:focus {
     background: var(--fourth-background) !important;
-    border: none !important;
-    color: #fff !important;
-
 }
 
 
@@ -539,18 +534,6 @@ button.fab.dropdown-toggle {
 }
 
 
-/* Logo */
-
-.header .forum-logo {
-    display: block;
-    box-sizing: border-box;
-    height: 30px;
-    width: 150px !important;
-    padding-left: 150px;
-    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
-}
-
-
 /* Composer tooltip
   ============================*/
 
@@ -580,6 +563,18 @@ button.fab.dropdown-toggle {
 }
 
 
+/* Logo */
+
+.header .forum-logo {
+    display: block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 150px !important;
+    padding-left: 150px;
+    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+}
+
+
 /** Additions and fixes (messed with by luetage) **/
 
 .posts-list .posts-list-item .topic-title, a {
@@ -595,7 +590,7 @@ button.fab.dropdown-toggle {
     color: #777;
 }
 .nav>li>a:focus, .nav>li>a:hover {
-    background-color: var(--fourth-background)
+    background-color: var(--fourth-background);
 }
 .status.offline {
     color: var(--main-font-color);

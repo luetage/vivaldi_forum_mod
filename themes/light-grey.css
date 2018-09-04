@@ -8,10 +8,6 @@ body {
     color: #454545 !important;
 }
 
-body {
-	background-color: unset !important;
-}
-
 .body {
     background: #f0f0f0 !important;
     overflow-x: hidden;
@@ -119,13 +115,25 @@ ul.dropdown-menu.dropdown-menu-right a:hover {
 
 #user-control-list i.fa.fa-fw.fa-user,
 i.fa.fa-fw.fa-cogs,
+i.fa.fa-fw.fa-cog,
 i.fa.fa-fw.fa-sign-out,
 i.fa.fa-trash-o,
 i.fa.fa-pencil,
 i.fa.fa-heart-o,
 i.fa.fa-fw.fa-gear,
+i.fa.fa-fw.fa-user-circle,
 div.modal-header.ui-draggable-handle h4 {
     color: #e1e0e0;
+}
+
+.unread-count:after {
+    left: 25px;
+    top: 8px;
+    font-size: 11px;
+    text-align: left;
+    border: none;
+    color: #c91106;
+    background: transparent;
 }
 
 .chats-list {
@@ -146,6 +154,7 @@ span.chat-timestamp.timeago {
 textarea.form-control {
     background: #eee;
     border: none;
+    color: #999;
 }
 
 .form-control,
@@ -231,7 +240,7 @@ span.input-group-addon {
 
 #content {
     background: #fafafa !important;
-    padding: 25px !important;
+    padding: 15px !important;
     border-radius: 4px !important;
     border: 0px solid #fafafa;
     -webkit-box-shadow: 0px 0px 43px -6px rgba(0, 0, 0, 0.1);
@@ -255,8 +264,10 @@ hr {
 #advanced-search .panel-body.search-options,
 div.panel-body.search-options.collapse.in,
 div.panel-heading,
-div.alert.alert-info {
+.alert-window .alert.alert-warning, .alert-window .alert.alert-danger, .alert-window .alert.alert-success, .alert-window .alert.alert-info,
+.well {
     background-color: #f0f0f0 !important;
+    color: #999;
     border: none !important;
 }
 
@@ -281,8 +292,7 @@ li[component="post"] {
     border-radius: 4px !important;
 }
 
-blockquote,
-code {
+blockquote {
     background-color: #fff;
 }
 
@@ -294,6 +304,7 @@ div.modal-header,
 div.modal-body,
 div.modal-footer {
     background-color: #fafafa;
+    border: none;
 }
 
 .composer,
@@ -369,8 +380,9 @@ button.btn.btn-default {
 }
 
 button.btn.btn-info.dropdown-toggle:hover,
-button.btn.btn-default:hover {
-    background: #808080;
+button.btn.btn-default:hover, button.btn.btn-default:focus {
+    background-color: #808080;
+    color: #fff;
 }
 
 li.previous.pull-left a {
@@ -439,10 +451,17 @@ i.fa.fa-pencil-square.pointer.edit-icon,
     color: #ff8000;
 }
 
-.copy-all-code-button {
-    right: 34px;
+a.btn-register,
+a.btn-login {
+    background: transparent;
+    border: none;
 }
 
+a.btn-register:hover, a.btn-register:focus,
+a.btn-login:hover, a.btn-login:focus {
+    background: #323232 !important;
+
+}
 
 /* Vote indicator */
 
@@ -462,13 +481,6 @@ span.votes a,
 
 .downvoted {
     background-color: #fd3563 !important;
-}
-
-
-/* Change i menu to hamburger menu*/
-
-.fa-ellipsis-v::before {
-    content: "\f0c9";
 }
 
 
@@ -516,31 +528,7 @@ button.fab.dropdown-toggle {
 }
 
 
-/* Hiding superfluous elements */
-
-div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se,
-li[component="post"]>hr,
-.post-bar>hr,
-h1.categories-title,
-p.hidden-xs,
-hr.hidden-xs,
-div.alert.alert-warning,
-.fade-out {
-    display: none;
-}
-
-/* Logged out menu */
-
-a.btn-register, a.btn-login {
-	border: none;
-	color: #666 !important;
-}
-
-a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus {
-	background-color: #323232 !important;
-}
-
-/* Forum logo */
+/* Logo */
 
 .header .forum-logo {
     display: block;
@@ -549,4 +537,46 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     width: 150px !important;
     padding-left: 150px;
     background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+}
+
+
+/** Additions and fixes (messed with by luetage) **/
+
+.posts-list .posts-list-item .topic-title, a {
+    color: #00acee;
+}
+.posts-list .posts-list-item .topic-title:hover, a:hover {
+    color: #00acee;
+}
+.header .notification-list li.unread, .slideout-menu .notification-list li.unread {
+    background-color: #141414;
+}
+.header .notification-list li .mark-read:hover, .slideout-menu .notification-list li .mark-read:hover {
+    color: #777;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: #f0f0f0;
+}
+.status.offline {
+    color: #999;
+}
+.table-striped>tbody>tr:nth-of-type(odd):hover {
+    background-color: #f9f9f9;
+}
+.table-striped>tbody>tr:nth-of-type(even):hover {
+    background-color: #f0f0f0;
+}
+li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before {
+    color: #999 !important;
+}
+pre {
+    color: #999;
+    background-color: #b6b6b6;;
+    border-color: #b6b6b6;;
+}
+.account .profile .profile-meta strong {
+    color: #999;
+}
+.copy-all-code-button {
+    right: 35px;
 }
