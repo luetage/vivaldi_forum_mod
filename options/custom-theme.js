@@ -1,4 +1,4 @@
-/* Activate theme */			
+/* Activate theme */
 
 function activate_theme(){
     var colorBg = document.getElementById('colorBg').value;
@@ -164,7 +164,7 @@ function activate_theme(){
 
 
 /* Restore theme */
-        
+
 function restore_theme(){
     var colorBgR = document.getElementById('colorBg');
     var colorFgR = document.getElementById('colorFg');
@@ -173,7 +173,7 @@ function restore_theme(){
     var colorDropR = document.getElementById('colorDrop');
     var colorLiR = document.getElementById('colorLi');
     var colorLi2R = document.getElementById('colorLi2');
-    
+
     chrome.storage.sync.get({
         'colorBg': '#fdf6e3',
         'colorFg': '#586e75',
@@ -182,7 +182,7 @@ function restore_theme(){
         'colorDrop': '#eee8d5',
         'colorLi': '#b58900',
         'colorLi2': '#2aa198'
-      },
+    },
     function(restore){
         colorBgR.value = restore.colorBg;
         colorFgR.value = restore.colorFg;
@@ -206,7 +206,7 @@ function export_theme() {
         'colorDrop': '#eee8d5',
         'colorLi': '#b58900',
         'colorLi2': '#2aa198'
-      },
+    },
     function(items){
         var result = JSON.stringify(items);
         var url = 'data:application/json;base64,' + btoa(result);
@@ -241,8 +241,8 @@ function _imp() {
     });
     document.getElementById('import').value = '';
 };
-        
-        
+
+
 document.addEventListener('DOMContentLoaded', restore_theme);
 document.getElementById('edit-activate').addEventListener('click', activate_theme);
 document.getElementById('edit-export').addEventListener('click', export_theme);
