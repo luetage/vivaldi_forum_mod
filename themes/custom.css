@@ -196,6 +196,10 @@ small.pull-right a {
 .text-warning {
     color: var(--colorHi);
 }
+.text-muted {
+    color: var(--colorFg2);
+    opacity: 0.66;
+}
 
 
 /* Various backgrounds */
