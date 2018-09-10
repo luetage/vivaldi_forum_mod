@@ -6,7 +6,7 @@
 .notifications-list li p {
     margin-left: 50px;
 }
-li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before {
+.notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before, .notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before, .notification-list li[data-nid^="follow"]::before, .notifications-list li[data-nid^="follow"]::before, .notification-list li[data-nid^="move"]::before, .notifications-list li[data-nid^="move"]::before, .notification-list li[data-nid^="chat"]::before, .notifications-list li[data-nid^="chat"]::before, .notification-list li[data-nid^="tid"]::before, .notifications-list li[data-nid^="tid"]::before {
     float: left;
     width: 20px;
     padding-top: 2px;
@@ -15,22 +15,22 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
     font-size: 14px;
     color: #777;
 }
-li[data-nid^="new_post"]::before {
+.notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before {
     content: "\f044";
 }
-li[data-nid^="upvote"]::before {
+.notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before {
     content: "\f164";
 }
-li[data-nid^="follow"]::before {
+.notification-list li[data-nid^="follow"]::before, .notifications-list li[data-nid^="follow"]::before {
     content: "\f06e";
 }
-li[data-nid^="move"]::before {
+.notification-list li[data-nid^="move"]::before, .notifications-list li[data-nid^="move"]::before {
     content: "\f0b2";
 }
-li[data-nid^="chat"]::before {
+.notification-list li[data-nid^="chat"]::before, .notifications-list li[data-nid^="chat"]::before {
     content: "\f0e5";
 }
 /* mentioned (no specific data-nid yet it seems) */
-li[data-nid^="tid"]::before {
+.notification-list li[data-nid^="tid"]::before, .notifications-list li[data-nid^="tid"]::before {
     content: "\f27a";
 }

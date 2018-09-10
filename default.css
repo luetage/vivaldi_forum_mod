@@ -111,10 +111,17 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     user-select: none;
 }
 
-/* Only resize textarea vertically in Forum Edit*/
-#inputAboutMe, #inputSignature {
+/* Min-height for resizeable text input */
+.account textarea.form-control, #chat-message-input, .expanded-chat .chat-input {
     resize: vertical;
+    min-height: 42px;
 }
+
+/* Slideout menu hover fix */
+.slideout-menu a:hover, .slideout-menu a:focus {
+    color: #fff;
+}
+
 
 /* Copy all code button */
 .copy-all-code-button {
