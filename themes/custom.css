@@ -11,7 +11,7 @@ body {
 #header-menu {
     background-color: var(--colorBg);
 }
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .btn-link, .navbar-default .-link:focus, .navbar-default .btn-link:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .btn-link, .navbar-default .btn-link:focus, .navbar-default .btn-link:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
     color: var(--colorFg);
 }
 .vivaldinav ul a.active, .vivaldinav ul a.active:focus {
