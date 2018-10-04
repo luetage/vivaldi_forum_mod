@@ -7,7 +7,7 @@ function username() {
 
 function bookmarked() {
     var favourites = document.querySelector('.btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(12) a');
-    if (favourites !== null) {
+    if (favourites) {
         var favcheck = favourites.innerHTML;
         if (favcheck === 'favourites') {
             favourites.innerHTML = 'Bookmarked';
