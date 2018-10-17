@@ -18,6 +18,7 @@ var compactS = document.getElementById('compact');
 var userIDS = document.getElementById('userID');
 var signatureModS = document.getElementById('signatureMod');
 var squareS = document.getElementById('square');
+var emotePickerS = document.getElementById('emotePicker');
 
 function save_options(){
 
@@ -106,6 +107,11 @@ function save_options(){
     } else {
         squareS.value = 0;
     }
+    if (emotePickerS.checked == true) {
+        emotePickerS.value = 1;
+    } else {
+        emotePickerS.value = 0;
+    }
 
     var standard = standardS.value;
     var darkGrey = darkGreyS.value;
@@ -125,6 +131,7 @@ function save_options(){
     var userID = userIDS.value;
     var signatureMod = signatureModS.value;
     var square = squareS.value;
+    var emotePicker = emotePickerS.value;
 
     chrome.storage.sync.set({
         'standard': standard,
@@ -143,7 +150,8 @@ function save_options(){
         'compact': compact,
         'userID': userID,
         'signatureMod': signatureMod,
-        'square': square
+        'square': square,
+        'emotePicker': emotePicker
       },
       function(){
           chrome.storage.local.set({'userCSS': userCSS});
@@ -185,7 +193,8 @@ function restore_options(){
         'compact': '',
         'userID': '',
         'signatureMod': '',
-        'square': ''
+        'square': '',
+        'emotePicker': ''
       },
     function(restore){
         chrome.storage.local.get({'userCSS': ''}, function(local) {
@@ -281,6 +290,12 @@ function restore_options(){
             squareS.checked = true;
         } else {
             squareS.checked = false;
+        }
+        emotePickerS.value = restore.emotePicker;
+        if (emotePickerS.value == 1) {
+            emotePickerS.checked = true;
+        } else {
+            emotePickerS.checked = false;
         }
     });
 };

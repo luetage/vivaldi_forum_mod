@@ -10,7 +10,8 @@ chrome.storage.sync.get({
     'timestamp': '',
     'userID': '',
     'signatureMod' : '',
-    'square': ''
+    'square': '',
+    'emotePicker': ''
 },
 function(mods) {
     var headerScroll = mods.headerScroll;
@@ -23,6 +24,7 @@ function(mods) {
     var userID = mods.userID;
     var signatureMod = mods.signatureMod;
     var square = mods.square;
+    var emotePicker = mods.emotePicker;
 
     if (headerScroll == 1) {
         var MheaderScroll = document.createElement('script');
@@ -82,6 +84,11 @@ function(mods) {
         Msquare.type = 'text/css';
         Msquare.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(Msquare);
+    }
+    if (emotePicker == 1) {
+        var emoteScript = document.createElement('script');
+        emoteScript.src = chrome.extension.getURL('mods/emote-picker.js');
+        document.getElementsByTagName('body')[0].appendChild(emoteScript);
     }
 
     add_copy_code();
