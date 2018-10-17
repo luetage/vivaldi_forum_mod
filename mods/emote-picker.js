@@ -112,12 +112,10 @@ function createEmotePicker(){
     const box = document.createElement("div");
     box.style.position = "fixed";
     box.style.zIndex = "9999999999";
-    box.style.top = event.clientY + 10 + "px";
-    box.style.left = "5px";
+    box.style.top = event.clientY + 20 + "px";
+    box.style.left = "10px";
     box.style.width = "250px";
     box.style.padding = "5px";
-    box.style.background = theme.border;
-    box.style.overflow = "scroll";
     box.id = "emote-picker";
     box.style.gridTemplateColumns = "20fr 20fr 20fr 20fr 20fr";
     box.style.gridRowGap = "5px";
