@@ -75,6 +75,9 @@ function getTheme(){
  */
 function emotePicked(event){
     const textarea = document.querySelector(".composer .write");
+    if(!textarea){
+        hideEmotePicker();
+    }
     const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
@@ -210,6 +213,11 @@ function pageMutated(mutationList){
                 addEmotePickerButton();
             }
         });
+        mutation.removedNodes.forEach(element => {
+            if(element.classList.contains("composer")){
+                hideEmotePicker();
+            }
+        })
     });
 }
 
