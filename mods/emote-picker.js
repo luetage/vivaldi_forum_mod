@@ -181,7 +181,7 @@ function toggleEmotePicker(event){
  * Creates and adds the emote picker button to the message composer's formatting strip
  */
 function addEmotePickerButton(){
-    const alreadyAdded = document.querySelector("emote-picker-button");
+    const alreadyAdded = document.querySelector("#emote-picker-button");
     if(alreadyAdded){
         return;
     }
@@ -190,7 +190,7 @@ function addEmotePickerButton(){
     const bold = composerFormatters.querySelector("li:nth-of-type(1)");
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
-    emotePickerButton.setAttribute("data-format", "myoperamotes");
+    emotePickerButton.setAttribute("data-format", "emotePicker");
     emotePickerButton.title = "Open Emote Picker";
     emotePickerButton.innerHTML = `<span style="color:${theme.foreground}">:)</span>`;
     emotePickerButton.addEventListener("click", toggleEmotePicker);
