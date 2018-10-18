@@ -89,6 +89,11 @@ function(mods) {
         var emoteScript = document.createElement('script');
         emoteScript.src = chrome.extension.getURL('mods/emote-picker.js');
         document.getElementsByTagName('body')[0].appendChild(emoteScript);
+        var emoteStyle = document.createElement('link');
+        emoteStyle.href = chrome.extension.getURL('mods/emote-picker.css');
+        emoteStyle.type = 'text/css';
+        emoteStyle.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(emoteStyle);
     }
 
     add_copy_code();

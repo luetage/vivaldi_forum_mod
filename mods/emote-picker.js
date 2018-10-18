@@ -56,6 +56,7 @@ const EMOTES = {
     zzz:"1539685301665-zzz.gif"
 };
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
+let DRAG_START_POS = {x:0, y:0};
 
 /**
  * Get the style info dynamically so you don't need to add separate entries in each theme
@@ -63,9 +64,13 @@ const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/
  */
 function getTheme(){
     return {
-        border: window.getComputedStyle(document.querySelector(".preview.well")).backgroundColor,
-        background: window.getComputedStyle(document.querySelector("textarea")).backgroundColor,
-        foreground: window.getComputedStyle(document.querySelector(".fa.fa-bold")).color
+        pickerBorder: window.getComputedStyle(document.querySelector(".preview.well")).backgroundColor,
+        pickerBg: window.getComputedStyle(document.querySelector("textarea")).backgroundColor,
+        formatFg: window.getComputedStyle(document.querySelector(".fa.fa-bold")).color,
+        controlFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).color,
+        controlBg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).backgroundColor,
+        accentFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-submit")).color,
+        accentBg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-submit")).backgroundColor
     };
 }
 
@@ -85,6 +90,9 @@ function emotePicked(event){
     textarea.value = replacement;
     textarea.focus();
     hideEmotePicker();
+    const forceUpdate = document.createEvent("Events");
+    forceUpdate.initEvent("input", true, true);
+    textarea.dispatchEvent(forceUpdate);
 }
 
 /**
@@ -99,9 +107,34 @@ function makeEmoteButton(emoteName, emoteUrl){
     emoteButton.title = emoteName;
     emoteButton.src = STATIC_URL + emoteUrl;
     emoteButton.addEventListener("click", emotePicked);
-    emoteButton.style.cursor = "pointer";
-    emoteButton.style.placeSelf = "center";
     return emoteButton;
+}
+
+/**
+ * User started to drag the picker
+ * @param {DragEvent} e dragstart
+ */
+function pickerDragStart(e){
+    const pickerControl = document.querySelector("#emote-picker-control-bar");
+    if(pickerControl){
+        const box = pickerControl.getBoundingClientRect();
+        DRAG_START_POS = {
+            x: e.clientX - box.left,
+            y: e.clientY - box.top
+        };
+    }
+}
+
+/**
+ * Move the emote picker to a new position as specified by user dragging it
+ * @param {DragEvent} e dragend
+ */
+function pickerDrag(e){
+    const picker = document.querySelector("#emote-picker");
+    if(picker){
+        picker.style.top = (e.clientY - DRAG_START_POS.y - 10) + "px";
+        picker.style.left = (e.clientX - DRAG_START_POS.x - 10) + "px";
+    }
 }
 
 /**
@@ -110,17 +143,31 @@ function makeEmoteButton(emoteName, emoteUrl){
 function createEmotePicker(){
     const theme = getTheme();
     const box = document.createElement("div");
-    box.style.position = "fixed";
-    box.style.zIndex = "9999999999";
     box.style.top = event.clientY + 20 + "px";
-    box.style.left = "10px";
-    box.style.width = "250px";
-    box.style.padding = "5px";
     box.id = "emote-picker";
-    box.style.gridTemplateColumns = "20fr 20fr 20fr 20fr 20fr";
-    box.style.gridRowGap = "5px";
-    box.style.background = theme.background;
-    box.style.border = "5px solid "+theme.border;
+    box.style.background = theme.pickerBg;
+    box.style.borderColor = theme.pickerBorder;
+
+    const controlBar = document.createElement("div");
+    controlBar.id = "emote-picker-control-bar";
+    controlBar.innerText = "Emote Picker";
+    controlBar.title = "Click and Drag to move"
+    controlBar.draggable = true;
+    controlBar.style.background = theme.controlBg;
+    controlBar.style.color = theme.controlFg;
+    controlBar.addEventListener("dragstart", pickerDragStart);
+    controlBar.addEventListener("dragend", pickerDrag);
+    box.appendChild(controlBar);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.id = "emote-picker-close";
+    closeBtn.innerText = "x";
+    closeBtn.title = "Close Emote Picker"
+    closeBtn.style.background = theme.accentBg;
+    closeBtn.style.color = theme.accentFg;
+    closeBtn.addEventListener("click", hideEmotePicker);
+    box.appendChild(closeBtn);
+
     for (const emoteName in EMOTES) {
         const emoteUrl = EMOTES[emoteName];
         box.appendChild(makeEmoteButton(emoteName, emoteUrl));
@@ -193,7 +240,7 @@ function addEmotePickerButton(){
     emotePickerButton.setAttribute("tabindex", "-1");
     emotePickerButton.setAttribute("data-format", "emotePicker");
     emotePickerButton.title = "Open Emote Picker";
-    emotePickerButton.innerHTML = `<span style="color:${theme.foreground}">:)</span>`;
+    emotePickerButton.innerHTML = `<span style="color:${theme.formatFg}">:)</span>`;
     emotePickerButton.addEventListener("click", toggleEmotePicker);
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.insertBefore(emotePickerButton, bold);
