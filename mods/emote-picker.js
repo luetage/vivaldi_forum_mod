@@ -82,6 +82,7 @@ function emotePicked(event){
     const textarea = document.querySelector(".composer .write");
     if(!textarea){
         hideEmotePicker();
+        return;
     }
     const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
     const start = textarea.selectionStart;
@@ -90,8 +91,11 @@ function emotePicked(event){
     textarea.value = replacement;
     textarea.focus();
     hideEmotePicker();
-    const forceUpdate = document.createEvent("Events");
-    forceUpdate.initEvent("input", true, true);
+    const forceUpdate = new InputEvent('input', {
+        bubbles: true,
+        cancelable: true,
+        data: ''
+    });
     textarea.dispatchEvent(forceUpdate);
 }
 
