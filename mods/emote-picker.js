@@ -66,7 +66,6 @@ function getTheme(){
     return {
         pickerBorder: window.getComputedStyle(document.querySelector(".preview.well")).backgroundColor,
         pickerBg: window.getComputedStyle(document.querySelector("textarea")).backgroundColor,
-        formatFg: window.getComputedStyle(document.querySelector(".fa.fa-bold")).color,
         controlFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).color,
         controlBg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).backgroundColor,
         accentFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-submit")).color,
@@ -237,14 +236,13 @@ function addEmotePickerButton(){
     if(alreadyAdded){
         return;
     }
-    const theme = getTheme();
     const composerFormatters = document.querySelector(".composer .formatting-group");
     const bold = composerFormatters.querySelector("li:nth-of-type(1)");
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
     emotePickerButton.setAttribute("data-format", "emotePicker");
     emotePickerButton.title = "Open Emote Picker";
-    emotePickerButton.innerHTML = `<span style="color:${theme.formatFg}">:)</span>`;
+    emotePickerButton.innerHTML = `<i class="fa fa-smile-o"></i>`;
     emotePickerButton.addEventListener("click", toggleEmotePicker);
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.insertBefore(emotePickerButton, bold);

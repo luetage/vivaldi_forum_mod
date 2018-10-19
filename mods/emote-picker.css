@@ -33,3 +33,9 @@
     cursor: pointer;
     place-self: center;
 }
+
+#emote-picker-button i {
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+}
