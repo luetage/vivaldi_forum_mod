@@ -96,10 +96,10 @@ function emotePicked(event){
     textarea.value = replacement;
     textarea.focus();
     hideEmotePicker();
-    const forceUpdate = new InputEvent('input', {
+    const forceUpdate = new InputEvent("input", {
         bubbles: true,
         cancelable: true,
-        data: ''
+        data: ""
     });
     textarea.dispatchEvent(forceUpdate);
 }
@@ -224,7 +224,7 @@ function toggleEmotePicker(event){
     const picker = document.querySelector("#emote-picker");
     if(picker){
         if(picker.style.display === "grid"){
-            hideEmotePicker()
+            hideEmotePicker();
         } else {
             showEmotePicker(event.clientY);
         }
@@ -248,7 +248,7 @@ function addEmotePickerButton(){
     emotePickerButton.setAttribute("tabindex", "-1");
     emotePickerButton.setAttribute("data-format", "emotePicker");
     emotePickerButton.title = STRINGS.open;
-    emotePickerButton.innerHTML = `<i class="fa fa-smile-o"></i>`;
+    emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
     emotePickerButton.addEventListener("click", toggleEmotePicker);
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.insertBefore(emotePickerButton, bold);
@@ -270,7 +270,7 @@ function pageMutated(mutationList){
             if(element.classList.contains("composer")){
                 hideEmotePicker();
             }
-        })
+        });
     });
 }
 
