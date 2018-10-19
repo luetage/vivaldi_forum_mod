@@ -57,6 +57,12 @@ const EMOTES = {
 };
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
 let DRAG_START_POS = {x:0, y:0};
+const STRINGS = {
+    title: "Emote Picker",
+    drag: "Click and Drag to move",
+    open: "Open Emote Picker",
+    close: "Close Emote Picker"
+};
 
 /**
  * Get the style info dynamically so you don't need to add separate entries in each theme
@@ -153,8 +159,8 @@ function createEmotePicker(){
 
     const controlBar = document.createElement("div");
     controlBar.id = "emote-picker-control-bar";
-    controlBar.innerText = "Emote Picker";
-    controlBar.title = "Click and Drag to move"
+    controlBar.innerText = STRINGS.title;
+    controlBar.title = STRINGS.drag;
     controlBar.draggable = true;
     controlBar.style.background = theme.controlBg;
     controlBar.style.color = theme.controlFg;
@@ -165,7 +171,7 @@ function createEmotePicker(){
     const closeBtn = document.createElement("button");
     closeBtn.id = "emote-picker-close";
     closeBtn.innerText = "x";
-    closeBtn.title = "Close Emote Picker"
+    closeBtn.title = STRINGS.close;
     closeBtn.style.background = theme.accentBg;
     closeBtn.style.color = theme.accentFg;
     closeBtn.addEventListener("click", hideEmotePicker);
@@ -192,7 +198,7 @@ function showEmotePicker(yPos){
     }
     const button = document.querySelector("#emote-picker-button");
     if(button){
-        button.title = "Close Emote Picker";
+        button.title = STRINGS.close;
     }
 }
 
@@ -206,7 +212,7 @@ function hideEmotePicker(){
     }
     const button = document.querySelector("#emote-picker-button");
     if(button){
-        button.title = "Open Emote Picker";
+        button.title = STRINGS.open;
     }
 }
 
@@ -241,7 +247,7 @@ function addEmotePickerButton(){
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
     emotePickerButton.setAttribute("data-format", "emotePicker");
-    emotePickerButton.title = "Open Emote Picker";
+    emotePickerButton.title = STRINGS.open;
     emotePickerButton.innerHTML = `<i class="fa fa-smile-o"></i>`;
     emotePickerButton.addEventListener("click", toggleEmotePicker);
     emotePickerButton.id = "emote-picker-button";
