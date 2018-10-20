@@ -170,7 +170,7 @@ function createEmotePicker(){
 
     const closeBtn = document.createElement("button");
     closeBtn.id = "emote-picker-close";
-    closeBtn.innerText = "x";
+    closeBtn.innerHTML = `<i class="fa fa-times"></i>`;
     closeBtn.title = STRINGS.close;
     closeBtn.style.background = theme.accentBg;
     closeBtn.style.color = theme.accentFg;

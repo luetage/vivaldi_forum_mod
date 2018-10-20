@@ -25,10 +25,6 @@
     border-radius:0px 4px 4px 0px;
 }
 
-#emote-picker-close:hover {
-    font-weight: bold;
-}
-
 #emote-picker img {
     cursor: pointer;
     place-self: center;
