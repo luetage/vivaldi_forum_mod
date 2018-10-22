@@ -1,5 +1,6 @@
 "use strict";
 
+/* ==========Globals=============*/
 const EMOTES = {
     alien:"1539692482285-alien.gif",
     angel:"1539692493644-angel.gif",
@@ -58,11 +59,176 @@ const EMOTES = {
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
 let DRAG_START_POS = {x:0, y:0};
 const STRINGS = {
-    title: "Emote Picker",
+    emoteTitle: "Emote Picker",
+    emoteOpen: "Open Emote Picker",
+    close: "Close",
+    closeButton: "x",
+    toolbarChooseTitle: "Custom Toolbar",
+    saveToolbar: "Save custom toolbar",
+    saveButton: "save",
     drag: "Click and Drag to move",
-    open: "Open Emote Picker",
-    close: "Close Emote Picker"
+    h1: "Header 1",
+    hr: "Horizontal Rule",
+    qb: "Quote Block",
+    ic: "Inline Code",
+    cb: "Code Block",
+    it: "Insert table",
+    spoiler: "Insert spoiler block",
+    ol: "Numbered List"
 };
+const FORMATTERS = [
+    [STRINGS.h1, "header", "# ", ""],
+    [STRINGS.hr, "window-minimize", "", `
+***
+`],
+    [STRINGS.qb, "quote-right", "> ", ""],
+    [STRINGS.ic, "code", "`", "`"],
+    [STRINGS.cb, "file-code-o", "```\n", "\n```"],
+    [STRINGS.it, "th-large", `a | a
+---|---
+x | x
+y | y
+`, ""],
+    [STRINGS.spoiler, "shield", `> Spoiler
+>> `, ""],
+    [STRINGS.ol, "list-ol", "1. ", ""]
+];
+let FORMATTING_BAR_CUSTOM_ORDER = {
+    bold: 2,
+    italic: 1,
+    list: 3,
+    strikethrough: 4,
+    link: 5,
+    "picture-o": 6,
+    zen: 7,
+    picture: 8,
+    emotePicker: 9,
+    header: -1,
+    "window-minimize": -1,
+    "quote-right": -1,
+    code: -1,
+    "file-code-o": -1,
+    "th-large": -1,
+    "list-ol": -1,
+    "shield": 1
+};
+
+/* ==========UpdateComposer============*/
+
+/**
+ * Do a format which has an open and closing tag on the selected area
+ * @param openTag the Format tag at the start of selection
+ * @param endTag the Format tag at the end of selection
+ */
+function doFormat(openTag, endTag){
+    const textarea = document.querySelector("textarea");
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    let replacement = textarea.value.substring(0, start) + openTag + textarea.value.substring(start, end) + endTag + textarea.value.substring(end);
+    textarea.value = replacement;
+    forceUpdatePreview(start + openTag.length);
+}
+
+/**
+ * Force update of preview box
+ * @param {int} finalPos where the text caret should be placed
+ */
+function forceUpdatePreview(finalPos){
+    const textarea = document.querySelector(".composer .write");
+    if(!textarea){
+        return;
+    }
+    const forceUpdate = new InputEvent("input", {
+        bubbles: true,
+        cancelable: true,
+        data: ""
+    });
+    textarea.dispatchEvent(forceUpdate);
+    textarea.setSelectionRange(finalPos, finalPos);
+    textarea.focus();
+}
+
+/* ============Modals============= */
+
+/**
+ * User started to drag a modal
+ * @param {DragEvent} e dragstart
+ */
+function modalDragStart(e){
+    const box = e.target.getBoundingClientRect();
+    DRAG_START_POS = {
+        x: e.clientX - box.left,
+        y: e.clientY - box.top
+    };
+}
+
+/**
+ * Move a modal to a new position as specified by user dragging it
+ * @param {DragEvent} e dragend
+ */
+function modalDrag(e){
+    const modal = e.target.parentElement;
+    if(modal){
+        modal.style.top = (e.clientY - DRAG_START_POS.y - 10) + "px";
+        modal.style.left = (e.clientX - DRAG_START_POS.x - 10) + "px";
+    }
+}
+
+/**
+ * Show a modal. Use the mouse position to align it with the button
+ *   in case the user resizes the message composer
+ * @param {MouseEvent} pos where the mouse was when you want to show the modal
+ * @param {string} modalId of the modal to show, starting with "#"
+ */
+function showModal(pos, modalId){
+    const modal = document.querySelector(modalId);
+    if(modal){
+        modal.style.display = "grid";
+        modal.style.top = pos.clientY + 10 + "px";
+        modal.style.left = pos.clientX + 10 + "px";
+    }
+}
+
+/**
+ * Hide the modal
+ * @param {string} identifier string of the modal id, with "#"
+ * @param {MouseEvent} identifier MouseEvent of close button click
+ */
+function hideModal(identifier){
+    const modal = identifier.target ? identifier.target.parentElement : document.querySelector(modalId);
+    if(modal){
+        modal.style.display = "none";
+    }
+}
+
+/**
+ * The user pressed a button that toggles a modal, so show or hide as needed
+ * @remark Becuse it takes an additional argument this is not a listener method
+ * @param {MouseEvent} event click event
+ * @param {string} modalId for the modal window starting with "#"
+ */
+function toggleModal(event, modalId){
+    const modal = document.querySelector(modalId);
+    if(modal){
+        if(modal.style.display === "grid"){
+            hideModal(modalId);
+        } else {
+            showModal(event, modalId);
+        }
+    } else {
+        switch (modalId) {
+        case "#emote-picker":
+            createEmotePicker();
+            break;
+        case "#toolbar-custom":
+            createToolbarCustom();
+            break;
+        default:
+            throw "Unknown modal ID "+modalId;
+        }
+        showModal(event, modalId);
+    }
+}
 
 /**
  * Get the style info dynamically so you don't need to add separate entries in each theme
@@ -80,28 +246,58 @@ function getTheme(){
 }
 
 /**
+ * Creates a modal box that floats on the page
+ * @param {string} id of the modal, no preceding "#"
+ * @param {string} titleText to show on the modal
+ * @param {string} closeText to show in the close button
+ * @param {string} closeTitle to show on hover of close button
+ */
+function makeModalBox(id, titleText, closeText, closeTitle){
+    const theme = getTheme();
+    const box = document.createElement("div");
+    box.id = id;
+    box.className = "vivaldi-mod-modal-box";
+    box.style.background = theme.pickerBg;
+    box.style.borderColor = theme.pickerBorder;
+
+    const controlBar = document.createElement("div");
+    controlBar.className = "vivaldi-mod-modal-box-control-bar";
+    controlBar.innerText = titleText;
+    controlBar.title = STRINGS.drag;
+    controlBar.draggable = true;
+    controlBar.style.background = theme.controlBg;
+    controlBar.style.color = theme.controlFg;
+    controlBar.addEventListener("dragstart", modalDragStart);
+    controlBar.addEventListener("dragend", modalDrag);
+    box.appendChild(controlBar);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "vivaldi-mod-modal-box-close";
+    closeBtn.innerText = closeText;
+    closeBtn.title = closeTitle;
+    closeBtn.style.background = theme.accentBg;
+    closeBtn.style.color = theme.accentFg;
+    closeBtn.addEventListener("click", hideModal);
+    box.appendChild(closeBtn);
+
+    return box;
+}
+
+/* ==========Emote============= */
+
+/**
  * User clicked on an emote
  * @param {MouseEvent} event mouse click
  */
 function emotePicked(event){
     const textarea = document.querySelector(".composer .write");
     if(!textarea){
-        hideEmotePicker();
+        hideModal("#emote-picker");
         return;
     }
     const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const replacement = textarea.value.substring(0, start) + newtext + textarea.value.substring(end);
-    textarea.value = replacement;
-    textarea.focus();
-    hideEmotePicker();
-    const forceUpdate = new InputEvent("input", {
-        bubbles: true,
-        cancelable: true,
-        data: ""
-    });
-    textarea.dispatchEvent(forceUpdate);
+    doFormat(newtext, "");
+    hideModal("#emote-picker");
 }
 
 /**
@@ -120,63 +316,10 @@ function makeEmoteButton(emoteName, emoteUrl){
 }
 
 /**
- * User started to drag the picker
- * @param {DragEvent} e dragstart
- */
-function pickerDragStart(e){
-    const pickerControl = document.querySelector("#emote-picker-control-bar");
-    if(pickerControl){
-        const box = pickerControl.getBoundingClientRect();
-        DRAG_START_POS = {
-            x: e.clientX - box.left,
-            y: e.clientY - box.top
-        };
-    }
-}
-
-/**
- * Move the emote picker to a new position as specified by user dragging it
- * @param {DragEvent} e dragend
- */
-function pickerDrag(e){
-    const picker = document.querySelector("#emote-picker");
-    if(picker){
-        picker.style.top = (e.clientY - DRAG_START_POS.y - 10) + "px";
-        picker.style.left = (e.clientX - DRAG_START_POS.x - 10) + "px";
-    }
-}
-
-/**
  * Creates the emote picker and appends it to the body
  */
 function createEmotePicker(){
-    const theme = getTheme();
-    const box = document.createElement("div");
-    box.style.top = event.clientY + 20 + "px";
-    box.id = "emote-picker";
-    box.style.background = theme.pickerBg;
-    box.style.borderColor = theme.pickerBorder;
-
-    const controlBar = document.createElement("div");
-    controlBar.id = "emote-picker-control-bar";
-    controlBar.innerText = STRINGS.title;
-    controlBar.title = STRINGS.drag;
-    controlBar.draggable = true;
-    controlBar.style.background = theme.controlBg;
-    controlBar.style.color = theme.controlFg;
-    controlBar.addEventListener("dragstart", pickerDragStart);
-    controlBar.addEventListener("dragend", pickerDrag);
-    box.appendChild(controlBar);
-
-    const closeBtn = document.createElement("button");
-    closeBtn.id = "emote-picker-close";
-    closeBtn.innerText = "x";
-    closeBtn.title = STRINGS.close;
-    closeBtn.style.background = theme.accentBg;
-    closeBtn.style.color = theme.accentFg;
-    closeBtn.addEventListener("click", hideEmotePicker);
-    box.appendChild(closeBtn);
-
+    const box = makeModalBox("emote-picker", STRINGS.emoteTitle, STRINGS.closeButton, STRINGS.close);
     for (const emoteName in EMOTES) {
         const emoteUrl = EMOTES[emoteName];
         box.appendChild(makeEmoteButton(emoteName, emoteUrl));
@@ -185,75 +328,122 @@ function createEmotePicker(){
 }
 
 /**
- * Show the emote picker. Use the mouse position to align it with the button
- *   in case the user resizes the message composer
- * @param {int} yPos of the mouse click
- */
-function showEmotePicker(yPos){
-    const picker = document.querySelector("#emote-picker");
-    if(picker){
-        picker.style.display = "grid";
-        picker.style.top = yPos + 10 + "px";
-        picker.style.left = "5px";
-    }
-    const button = document.querySelector("#emote-picker-button");
-    if(button){
-        button.title = STRINGS.close;
-    }
-}
-
-/**
- * Hide the emote picker
- */
-function hideEmotePicker(){
-    const picker = document.querySelector("#emote-picker");
-    if(picker){
-        picker.style.display = "none";
-    }
-    const button = document.querySelector("#emote-picker-button");
-    if(button){
-        button.title = STRINGS.open;
-    }
-}
-
-/**
- * The user pressed the emote picker button, so show or hide as needed
- * @param {MouseEvent} event click event
- */
-function toggleEmotePicker(event){
-    const picker = document.querySelector("#emote-picker");
-    if(picker){
-        if(picker.style.display === "grid"){
-            hideEmotePicker();
-        } else {
-            showEmotePicker(event.clientY);
-        }
-    } else {
-        createEmotePicker();
-        showEmotePicker();
-    }
-}
-
-/**
  * Creates and adds the emote picker button to the message composer's formatting strip
  */
 function addEmotePickerButton(){
-    const alreadyAdded = document.querySelector("#emote-picker-button");
+    const composerFormatters = document.querySelector(".composer .formatting-group");
+    const emotePickerButton = document.createElement("li");
+    emotePickerButton.setAttribute("tabindex", "-1");
+    emotePickerButton.setAttribute("data-format", "emotePicker");
+    emotePickerButton.title = STRINGS.emoteOpen;
+    emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
+    emotePickerButton.addEventListener("click", event => {toggleModal(event, "#emote-picker");});
+    emotePickerButton.id = "emote-picker-button";
+    composerFormatters.appendChild(emotePickerButton);
+}
+
+/* ========Formatting======= */
+
+/**
+ * Create a new formatting button
+ * @param {string} buttonTitle
+ * @param {string} buttonDisplayClass (for font-awesome)
+ * @param {string} openTag that appears before selection
+ * @param {string} endTag that appears after selection
+ * @returns {DOM} list item
+ */
+function createSpecialFormattingbutton(buttonTitle, buttonDisplayClass, openTag, endTag){
+    const li = document.createElement("li");
+    li.innerHTML = `<i class='fa fa-${buttonDisplayClass}'></i>`;
+    li.addEventListener("click", () => {doFormat(openTag, endTag);});
+    li.title = buttonTitle;
+    li.setAttribute("tabindex", "-1");
+    li.setAttribute("data-format", buttonDisplayClass);
+    li.id = "additional-format-"+buttonDisplayClass;
+    return li;
+}
+
+/**
+ * Add the special formatting buttons to the composer
+ */
+function addSpecialFormattingButtons(){
+    const alreadyAdded = document.querySelector("#additional-format-"+"header");
     if(alreadyAdded){
         return;
     }
     const composerFormatters = document.querySelector(".composer .formatting-group");
-    const bold = composerFormatters.querySelector("li:nth-of-type(1)");
-    const emotePickerButton = document.createElement("li");
-    emotePickerButton.setAttribute("tabindex", "-1");
-    emotePickerButton.setAttribute("data-format", "emotePicker");
-    emotePickerButton.title = STRINGS.open;
-    emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
-    emotePickerButton.addEventListener("click", toggleEmotePicker);
-    emotePickerButton.id = "emote-picker-button";
-    composerFormatters.insertBefore(emotePickerButton, bold);
+    const endOfBar = composerFormatters.querySelector("form");
+    FORMATTERS.forEach(button => {
+        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2], button[3]);
+        composerFormatters.insertBefore(madeButton, endOfBar);
+    });
+    composerFormatters.addEventListener("dblclick", e => {toggleModal(e, "#toolbar-custom");});
 }
 
+/* ===========ToolbarSettings===========*/
+/**
+ * Show the setting page that lets user enable/disable/reorder buttons
+ */
+function createToolbarCustom(){
+    const box = makeModalBox("toolbar-custom", STRINGS.toolbarChooseTitle, STRINGS.saveButton, STRINGS.saveToolbar);
+    const close = box.querySelector(".vivaldi-mod-modal-box-close");
+    close.addEventListener("click", saveCustomToolbar);
+    const setting = document.createElement("input");
+    box.appendChild(setting);
+    document.body.appendChild(box);
+}
+
+/**
+ * Save the custom toolbar settings
+ */
+function saveCustomToolbar(){
+    return;// LEAVE UNTIL INPUTS IMPLEMENTED
+    const settingsBox = document.querySelector("#toolbar-custom");
+    if(!settingsBox){
+        return;
+    }
+    chrome.storage.sync.set({
+        bold: settingsBox.querySelector("input[name='bold']").value,
+        italic: settingsBox.querySelector("input[name='italic']").value,
+        list: settingsBox.querySelector("input[name='list']").value,
+        strikethrough: settingsBox.querySelector("input[name='strikethrough']").value,
+        link: settingsBox.querySelector("input[name='link']").value,
+        "picture-o": settingsBox.querySelector("input[name='picture-o']").value,
+        zen: settingsBox.querySelector("input[name='zen']").value,
+        picture: settingsBox.querySelector("input[name='picture']").value,
+        emotePicker: settingsBox.querySelector("input[name='emotePicker']").value,
+        header: settingsBox.querySelector("input[name='header']").value,
+        "window-minimize": settingsBox.querySelector("input[name='window-minimize']").value,
+        "quote-right": settingsBox.querySelector("input[name='quote-right']").value,
+        code: settingsBox.querySelector("input[name='code']").value,
+        "file-code-o": settingsBox.querySelector("input[name='file-code-o']").value,
+        "th-large": settingsBox.querySelector("input[name='th-large']").value,
+        "list-ol": settingsBox.querySelector("input[name='list-ol']").value,
+        "shield": settingsBox.querySelector("input[name='shield']").value
+    });
+    reorderToolbarButtons();
+}
+
+/**
+ * Re-order the toolbar buttons according to user settings
+ */
+function reorderToolbarButtons(){
+    const composerFormatters = document.querySelector(".composer .formatting-group");
+    composerFormatters.style.display = "inline-flex";
+    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+            const buttonOrder = FORMATTING_BAR_CUSTOM_ORDER[key];
+            const button = composerFormatters.querySelector(`li[data-format='${key}'`);
+            if(buttonOrder > -1){
+                button.style.order = buttonOrder;
+            } else {
+                button.style.display = "none";
+            }
+        }
+    }
+}
+
+/* =============Init=============*/
 /**
  * Something changed on the page.
  * If it was the composer being added, add the emote picker button.
@@ -264,11 +454,13 @@ function pageMutated(mutationList){
         mutation.addedNodes.forEach(element => {
             if(element.classList.contains("composer")){
                 addEmotePickerButton();
+                addSpecialFormattingButtons();
+                reorderToolbarButtons();
             }
         });
         mutation.removedNodes.forEach(element => {
             if(element.classList.contains("composer")){
-                hideEmotePicker();
+                hideModal("#emote-picker");
             }
         });
     });
@@ -277,5 +469,13 @@ function pageMutated(mutationList){
 /**
  * Init the mod
  */
-const composerObserver = new MutationObserver(pageMutated);
-composerObserver.observe(document.body, {childList: true});
+chrome.storage.sync.get({
+    emotePicker: "",
+    formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER
+}, settings => {
+    if(settings.emotePicker==="1"){
+        const composerObserver = new MutationObserver(pageMutated);
+        composerObserver.observe(document.body, {childList: true});
+        FORMATTING_BAR_CUSTOM_ORDER = settings.formattingToolbar;
+    }
+});

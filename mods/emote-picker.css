@@ -1,4 +1,4 @@
-#emote-picker {
+.vivaldi-mod-modal-box {
     position: fixed;
     z-index: 9999999999;
     width: 250px;
@@ -11,7 +11,7 @@
     box-shadow: black 1px 1px 1px 1px;
 }
 
-#emote-picker-control-bar {
+.vivaldi-mod-modal-box-control-bar {
     grid-column: 1 / 5;
     color: white;
     place-self: stretch;
@@ -20,12 +20,12 @@
     text-align: center;
 }
 
-#emote-picker-close {
+.vivaldi-mod-modal-box-close {
     border: none;
     border-radius:0px 4px 4px 0px;
 }
 
-#emote-picker-close:hover {
+.vivaldi-mod-modal-box-close:hover {
     font-weight: bold;
 }
 
