@@ -58,51 +58,37 @@ const EMOTES = {
 };
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
 let DRAG_START_POS = {x:0, y:0};
-const STRINGS = {
-    emoteTitle: "Emote Picker",
-    emoteOpen: "Open Emote Picker",
-    close: "Close",
-    closeButton: "x",
-    toolbarChooseTitle: "Custom Toolbar",
-    saveToolbar: "Save custom toolbar",
-    saveButton: "save",
-    drag: "Click and Drag to move",
-    h1: "Header 1",
-    hr: "Horizontal Rule",
-    qb: "Quote Block",
-    ic: "Inline Code",
-    cb: "Code Block",
-    it: "Insert table",
-    spoiler: "Insert spoiler block",
-    ol: "Numbered List"
+/* Apparently JSON doesn't allow hyphens in keys */
+const getString = (key) => {
+    return chrome.i18n.getMessage(key.replace(/-/g, "_"));
 };
 const FORMATTERS = [
-    [STRINGS.h1, "header", "# ", ""],
-    [STRINGS.hr, "window-minimize", "", `
+    ["header", "# ", ""],
+    ["window-minimize", "", `
 ***
 `],
-    [STRINGS.qb, "quote-right", "> ", ""],
-    [STRINGS.ic, "code", "`", "`"],
-    [STRINGS.cb, "file-code-o", "```\n", "\n```"],
-    [STRINGS.it, "th-large", `a | a
+    ["quote-right", "> ", ""],
+    ["code", "`", "`"],
+    ["file-code-o", "```\n", "\n```"],
+    ["th-large", `a | a
 ---|---
 x | x
 y | y
 `, ""],
-    [STRINGS.spoiler, "shield", `> Spoiler
+    ["shield", `> Spoiler
 >> `, ""],
-    [STRINGS.ol, "list-ol", "1. ", ""]
+    ["list-ol", "1. ", ""]
 ];
 let FORMATTING_BAR_CUSTOM_ORDER = {
-    bold: 2,
-    italic: 1,
+    bold: 1,
+    italic: 2,
     list: 3,
     strikethrough: 4,
     link: 5,
     "picture-o": 6,
     zen: 7,
     picture: 8,
-    emotePicker: 9,
+    "smile-o": 9,
     header: -1,
     "window-minimize": -1,
     "quote-right": -1,
@@ -116,17 +102,17 @@ let FORMATTING_BAR_CUSTOM_ORDER = {
 /* ==========UpdateComposer============*/
 
 /**
- * Do a format which has an open and closing tag on the selected area
- * @param openTag the Format tag at the start of selection
- * @param endTag the Format tag at the end of selection
+ * Add a before and after string to the selected part of the text area
+ * @param beforeSelection the string to put at the start of selection
+ * @param afterSelection the string to put at the end of selection
  */
-function doFormat(openTag, endTag){
+function writeToTextarea(beforeSelection, afterSelection){
     const textarea = document.querySelector("textarea");
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
-    let replacement = textarea.value.substring(0, start) + openTag + textarea.value.substring(start, end) + endTag + textarea.value.substring(end);
+    let replacement = textarea.value.substring(0, start) + beforeSelection + textarea.value.substring(start, end) + afterSelection + textarea.value.substring(end);
     textarea.value = replacement;
-    forceUpdatePreview(start + openTag.length);
+    forceUpdatePreview(start + beforeSelection.length);
 }
 
 /**
@@ -195,7 +181,7 @@ function showModal(pos, modalId){
  * @param {MouseEvent} identifier MouseEvent of close button click
  */
 function hideModal(identifier){
-    const modal = identifier.target ? identifier.target.parentElement : document.querySelector(modalId);
+    const modal = identifier.target ? identifier.target.parentElement : document.querySelector(identifier);
     if(modal){
         modal.style.display = "none";
     }
@@ -221,7 +207,7 @@ function toggleModal(event, modalId){
             createEmotePicker();
             break;
         case "#toolbar-custom":
-            createToolbarCustom();
+            createToolbarCustomModal();
             break;
         default:
             throw "Unknown modal ID "+modalId;
@@ -263,7 +249,7 @@ function makeModalBox(id, titleText, closeText, closeTitle){
     const controlBar = document.createElement("div");
     controlBar.className = "vivaldi-mod-modal-box-control-bar";
     controlBar.innerText = titleText;
-    controlBar.title = STRINGS.drag;
+    controlBar.title = getString("dragText");
     controlBar.draggable = true;
     controlBar.style.background = theme.controlBg;
     controlBar.style.color = theme.controlFg;
@@ -296,7 +282,7 @@ function emotePicked(event){
         return;
     }
     const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
-    doFormat(newtext, "");
+    writeToTextarea(newtext, "");
     hideModal("#emote-picker");
 }
 
@@ -319,10 +305,12 @@ function makeEmoteButton(emoteName, emoteUrl){
  * Creates the emote picker and appends it to the body
  */
 function createEmotePicker(){
-    const box = makeModalBox("emote-picker", STRINGS.emoteTitle, STRINGS.closeButton, STRINGS.close);
+    const box = makeModalBox("emote-picker", getString("smile-o"), getString("closeText"), getString("closeButton"));
     for (const emoteName in EMOTES) {
-        const emoteUrl = EMOTES[emoteName];
-        box.appendChild(makeEmoteButton(emoteName, emoteUrl));
+        if (EMOTES.hasOwnProperty(emoteName)) {
+            const emoteUrl = EMOTES[emoteName];
+            box.appendChild(makeEmoteButton(emoteName, emoteUrl));
+        }
     }
     document.body.appendChild(box);
 }
@@ -334,8 +322,8 @@ function addEmotePickerButton(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
-    emotePickerButton.setAttribute("data-format", "emotePicker");
-    emotePickerButton.title = STRINGS.emoteOpen;
+    emotePickerButton.setAttribute("data-format", "smile-o");
+    emotePickerButton.title = getString("smile-o");
     emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
     emotePickerButton.addEventListener("click", event => {toggleModal(event, "#emote-picker");});
     emotePickerButton.id = "emote-picker-button";
@@ -352,11 +340,11 @@ function addEmotePickerButton(){
  * @param {string} endTag that appears after selection
  * @returns {DOM} list item
  */
-function createSpecialFormattingbutton(buttonTitle, buttonDisplayClass, openTag, endTag){
+function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag){
     const li = document.createElement("li");
     li.innerHTML = `<i class='fa fa-${buttonDisplayClass}'></i>`;
-    li.addEventListener("click", () => {doFormat(openTag, endTag);});
-    li.title = buttonTitle;
+    li.addEventListener("click", () => {writeToTextarea(openTag, endTag);});
+    li.title = getString(buttonDisplayClass);
     li.setAttribute("tabindex", "-1");
     li.setAttribute("data-format", buttonDisplayClass);
     li.id = "additional-format-"+buttonDisplayClass;
@@ -367,14 +355,10 @@ function createSpecialFormattingbutton(buttonTitle, buttonDisplayClass, openTag,
  * Add the special formatting buttons to the composer
  */
 function addSpecialFormattingButtons(){
-    const alreadyAdded = document.querySelector("#additional-format-"+"header");
-    if(alreadyAdded){
-        return;
-    }
     const composerFormatters = document.querySelector(".composer .formatting-group");
     const endOfBar = composerFormatters.querySelector("form");
     FORMATTERS.forEach(button => {
-        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2], button[3]);
+        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2]);
         composerFormatters.insertBefore(madeButton, endOfBar);
     });
     composerFormatters.addEventListener("dblclick", e => {toggleModal(e, "#toolbar-custom");});
@@ -384,25 +368,111 @@ function addSpecialFormattingButtons(){
 /**
  * Show the setting page that lets user enable/disable/reorder buttons
  */
-function createToolbarCustom(){
-    const box = makeModalBox("toolbar-custom", STRINGS.toolbarChooseTitle, STRINGS.saveButton, STRINGS.saveToolbar);
+function createToolbarCustomModal(){
+    const box = makeModalBox("toolbar-custom", getString("customToolbarTitle"), getString("saveButton"), getString("saveText"));
     const close = box.querySelector(".vivaldi-mod-modal-box-close");
     close.addEventListener("click", saveCustomToolbar);
-    const setting = document.createElement("input");
-    box.appendChild(setting);
+    const msg = document.createElement("div");
+    msg.innerText = getString("customToolbarDesc");
+    msg.className = "descriptor";
+    box.appendChild(msg);
+    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+            const order = FORMATTING_BAR_CUSTOM_ORDER[key];
+            const input = document.createElement("input");
+            input.value = order;
+            input.min = -1;
+            input.type = "number";
+            input.name = key;
+            /*input.addEventListener("input", insertionSortInputValues);
+            input.addEventListener("input", styleDisabled);*/
+
+            /* just do away with the inputs altogether */
+
+            const label = document.createElement("label");
+            label.innerText = getString(key);
+            label.appendChild(input);
+
+            const inc = document.createElement("button");
+            inc.innerText = "<";
+            inc.className = "inc";
+            inc.addEventListener("click", (e) => {
+                let val = e.target.previousSibling.value;
+                val++;
+                e.target.previousSibling.value = val;
+                updateCustomOrder();
+                reorderToolbarButtons();
+                styleDisabled();
+            });
+            label.appendChild(inc);
+
+            const dec = document.createElement("button");
+            dec.innerText = ">";
+            inc.className = "dec";
+            dec.addEventListener("click", (e) => {
+                let val = e.target.previousSibling.previousSibling.value;
+                val--;
+                if(val<-1){
+                    val=-1;
+                }
+                e.target.previousSibling.value = val;
+                updateCustomOrder();
+                reorderToolbarButtons();
+                styleDisabled();
+            });
+            label.appendChild(dec);
+
+            box.appendChild(label);
+        }
+    }
     document.body.appendChild(box);
+    insertionSortInputValues();
+    styleDisabled();
 }
 
 /**
- * Save the custom toolbar settings
+ * Insertion sort the inputs by value
  */
-function saveCustomToolbar(){
-    return;// LEAVE UNTIL INPUTS IMPLEMENTED
+function insertionSortInputValues(){
+    const A = document.querySelector("#toolbar-custom");
+    if(!A){
+        return;
+    }
+    const minimum = 3;
+    let i = minimum;
+    while(i < A.children.length){
+        let j = i;
+        while(j > minimum && (Number(A.children[j-1].children[0].value) > Number(A.children[j].children[0].value))){
+            A.insertBefore(A.children[j], A.children[j-1]);
+            j--;
+        }
+        i++;
+    }
+}
+
+/**
+ * Style all of the inputs. If -1, make it look disabled.
+ */
+function styleDisabled(){
+    const inputs = document.querySelectorAll("#toolbar-custom input");
+    inputs.forEach(x => {
+        if(x.value==="-1"){
+            x.parentElement.style.textDecoration = "line-through";
+        } else {
+            x.parentElement.style.textDecoration = "none";
+        }
+    });
+}
+
+/**
+ * Look at the current settings and update the order, without saving
+ */
+function updateCustomOrder(){
     const settingsBox = document.querySelector("#toolbar-custom");
     if(!settingsBox){
         return;
     }
-    chrome.storage.sync.set({
+    FORMATTING_BAR_CUSTOM_ORDER = {
         bold: settingsBox.querySelector("input[name='bold']").value,
         italic: settingsBox.querySelector("input[name='italic']").value,
         list: settingsBox.querySelector("input[name='list']").value,
@@ -411,7 +481,7 @@ function saveCustomToolbar(){
         "picture-o": settingsBox.querySelector("input[name='picture-o']").value,
         zen: settingsBox.querySelector("input[name='zen']").value,
         picture: settingsBox.querySelector("input[name='picture']").value,
-        emotePicker: settingsBox.querySelector("input[name='emotePicker']").value,
+        "smile-o": settingsBox.querySelector("input[name='smile-o']").value,
         header: settingsBox.querySelector("input[name='header']").value,
         "window-minimize": settingsBox.querySelector("input[name='window-minimize']").value,
         "quote-right": settingsBox.querySelector("input[name='quote-right']").value,
@@ -420,7 +490,15 @@ function saveCustomToolbar(){
         "th-large": settingsBox.querySelector("input[name='th-large']").value,
         "list-ol": settingsBox.querySelector("input[name='list-ol']").value,
         "shield": settingsBox.querySelector("input[name='shield']").value
-    });
+    };
+}
+
+/**
+ * Save the custom toolbar settings
+ */
+function saveCustomToolbar(){
+    updateCustomOrder();
+    chrome.storage.sync.set({formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER});
     reorderToolbarButtons();
 }
 
@@ -436,6 +514,7 @@ function reorderToolbarButtons(){
             const button = composerFormatters.querySelector(`li[data-format='${key}'`);
             if(buttonOrder > -1){
                 button.style.order = buttonOrder;
+                button.style.display = "inline-block";
             } else {
                 button.style.display = "none";
             }

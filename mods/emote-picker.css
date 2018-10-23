@@ -9,6 +9,8 @@
     border-style: solid;
     border-radius: 4px;
     box-shadow: black 1px 1px 1px 1px;
+    overflow: scroll;
+    max-height: 400px;
 }
 
 .vivaldi-mod-modal-box-control-bar {
@@ -38,4 +40,35 @@
     font-size: 18px;
     position: relative;
     top: 1px;
+}
+
+#toolbar-custom label,
+#toolbar-custom .descriptor {
+    grid-column: 1 / 6;
+    font-weight: normal;
+}
+
+#toolbar-custom label {
+    display: flex;
+}
+
+#toolbar-custom label button {
+    text-decoration: none !important;
+    float: right;
+}
+
+#toolbar-custom .inc {
+    order: 2;
+}
+
+#toolbar-custom .dec {
+    order: 1;
+}
+
+#toolbar-custom input {
+   display: none;
+}
+
+#toolbar-custom label:nth-child(even) {
+    background: rgba(128, 128, 128, 0.25);
 }
