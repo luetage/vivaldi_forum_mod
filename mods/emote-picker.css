@@ -27,10 +27,6 @@
     border-radius:0px 4px 4px 0px;
 }
 
-.vivaldi-mod-modal-box-close:hover {
-    font-weight: bold;
-}
-
 #emote-picker img {
     cursor: pointer;
     place-self: center;

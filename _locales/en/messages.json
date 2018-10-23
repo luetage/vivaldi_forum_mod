@@ -72,7 +72,7 @@
         "description": "Appears when hovering a close button"
     },
     "closeButton": {
-        "message": "x",
+        "message": "<i class='fa fa-times'></i>",
         "description": "Content of close button"
     },
     "customToolbarTitle": {
