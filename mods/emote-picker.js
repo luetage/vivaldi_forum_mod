@@ -58,10 +58,13 @@ const EMOTES = {
 };
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
 let DRAG_START_POS = {x:0, y:0};
-/* Apparently JSON doesn't allow hyphens in keys */
-const getString = (key) => {
+/**
+ * Apparently JSON doesn't allow hyphens in keys
+ * Offer a wrapper function
+ */
+function getString(key){
     return chrome.i18n.getMessage(key.replace(/-/g, "_"));
-};
+}
 const FORMATTERS = [
     ["header", "# ", ""],
     ["window-minimize", "", `
@@ -259,7 +262,7 @@ function makeModalBox(id, titleText, closeText, closeTitle){
 
     const closeBtn = document.createElement("button");
     closeBtn.className = "vivaldi-mod-modal-box-close";
-    closeBtn.innerText = closeText;
+    closeBtn.innerHTML = closeText;
     closeBtn.title = closeTitle;
     closeBtn.style.background = theme.accentBg;
     closeBtn.style.color = theme.accentFg;
@@ -364,7 +367,72 @@ function addSpecialFormattingButtons(){
     composerFormatters.addEventListener("dblclick", e => {toggleModal(e, "#toolbar-custom");});
 }
 
-/* ===========ToolbarSettings===========*/
+/* ===========DraggableToolbar===========*/
+
+/**
+ * ✔ function exists already
+ * ♦ Implement function
+ * ▶ do not implemented function
+ *
+ * ✔ 1initialiseOnComposerOpen
+ *      // get STORED values for button orders
+ *      ✔ createAdditionalFormattingButtons
+ *      // get REFERENCES to each button (existing and newly created)
+ *      ♦ makeModalWithHiddenButtons
+ *          ✔ makeModal
+ *          ♦ getAllHiddenItems
+ *          // append hidden items to modal
+ *          ♦ onItemDropped
+ *              // for all list items with order greater than what was dropped
+ *                  // subtract 1
+ *              // set current order of dropped item to -1
+ *              // save to STORED
+ *              // update chrome storage
+ *              ▶ setOrderAndHideAccordingToRemembered
+ *      ♦ makeModalWithHiddenButtonsOpener
+ *          // create element
+ *          ♦ onClick
+ *              ✔ showHiddenItemsModal
+ *          // append somewhere on toolbar
+ *      ♦ setOrderAndHideAccordingToRemembered
+ *          // makeToolbarFlex
+ *          // for each REFERENCES
+ *          // if STORED[reference] == -1
+ *              // append as child of modal
+ *          // else
+ *               // set List Item Order as STORED[reference]
+ *      // for each REFERENCES
+ *          ♦ makeListItemsDraggable
+ *              // set draggable = true
+ *              ♦ onItemDragStart
+ *                  ✔ showModalWithExtraButtons
+ *              ♦ onItemDragEnd
+ *                  ✔ hideModalWithHiddenButtons
+ *                  ♦ hideDropMarker
+ *                      ▶ createOrGetDropListMarker
+ *                      // if exists set display hidden
+ *      ♦ makeFormattingButtonsDroppableOnTo
+ *          ♦ onItemDraggedOver
+ *              // if currently hidden do nothing - let modal drop handler deal wiht it
+ *              ♦ displayDropMarkerNextToListItem
+ *                  ♦ createOrGetDropListMarker
+ *                      // if exists, return
+ *                      // return makeElement
+ *                  ♦ showMarkerAtPosition
+ *                      // set Display Visible
+ *                      // set Position Top
+ *                      // set Position Left
+ *          ♦ OnItemDroppedOnTo
+ *              // if currently hidden do nothing - let modal drop handler deal wiht it
+ *              // new order for item that was dropped = get order of this item + 1
+ *              ♦ saveNewListItemOrder
+ *                  // update order for dropped item (not this)
+ *                  // updated values in STORED
+ *                  // update values in chrome storage
+ *                  ▶ setOrderAndHideAccordingToRemembered
+ */
+
+
 /**
  * Show the setting page that lets user enable/disable/reorder buttons
  */
