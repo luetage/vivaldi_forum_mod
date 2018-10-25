@@ -71,28 +71,12 @@
         "message": "Close",
         "description": "Appears when hovering a close button"
     },
-    "closeButton": {
-        "message": "<i class='fa fa-times'></i>",
-        "description": "Content of close button"
-    },
     "customToolbarTitle": {
         "message": "Edit Custom Toolbar",
         "description": "Title of custom toolbar editor"
     },
-    "saveText": {
-        "message": "Save Changes",
-        "description": "Title of button to save changes"
-    },
-    "saveButton": {
-        "message": "Save",
-        "description": "Button text of save button"
-    },
     "dragText": {
         "message": "Click and Drag to move",
         "description": "Hover text when on a draggable area"
-    },
-    "customToolbarDesc": {
-        "message": "Set an item to -1 to disable, otherwise number the items as you would like to see them left to right",
-        "description": "Describe how to change the custom formatter toolbar settings"
     }
 }

@@ -65,6 +65,8 @@ let DRAG_START_POS = {x:0, y:0};
 function getString(key){
     return chrome.i18n.getMessage(key.replace(/-/g, "_"));
 }
+/* Definitions for new formatters
+* [keystring (as per fa-icons), start tag, end tag] */
 const FORMATTERS = [
     ["header", "# ", ""],
     ["window-minimize", "", `
@@ -82,6 +84,7 @@ y | y
 >> `, ""],
     ["list-ol", "1. ", ""]
 ];
+/** Keep track of order of icon */
 let FORMATTING_BAR_CUSTOM_ORDER = {
     bold: 1,
     italic: 2,
@@ -99,8 +102,44 @@ let FORMATTING_BAR_CUSTOM_ORDER = {
     "file-code-o": -1,
     "th-large": -1,
     "list-ol": -1,
-    "shield": 1
+    "shield": -1
 };
+/** Keep references to the buttons
+ * never delete and re-create, always move */
+let FORMATTING_BUTTONS = {
+    bold: undefined,
+    italic: undefined,
+    list: undefined,
+    strikethrough: undefined,
+    link: undefined,
+    "picture-o": undefined,
+    zen: undefined,
+    picture: undefined,
+    "smile-o": undefined,
+    header: undefined,
+    "window-minimize": undefined,
+    "quote-right": undefined,
+    code: undefined,
+    "file-code-o": undefined,
+    "th-large": undefined,
+    "list-ol": undefined,
+    "shield": undefined
+};
+const EMOTE_MODAL = "emote-picker";
+const TOOLBAR_MODAL = "toolbar-custom";
+/* use a nonce to prevent accidental dnd of text */
+const NONCE = get_random();
+
+/**
+ * Generate random number
+ * @param {int} length in bytes
+ * @returns {string} random numbers
+ */
+function get_random(length=4){
+    const buf = new Uint32Array(length);
+    window.crypto.getRandomValues(buf);
+    return buf.join("");
+}
 
 /* ==========UpdateComposer============*/
 
@@ -167,10 +206,10 @@ function modalDrag(e){
  * Show a modal. Use the mouse position to align it with the button
  *   in case the user resizes the message composer
  * @param {MouseEvent} pos where the mouse was when you want to show the modal
- * @param {string} modalId of the modal to show, starting with "#"
+ * @param {string} modalId of the modal to show
  */
 function showModal(pos, modalId){
-    const modal = document.querySelector(modalId);
+    const modal = document.getElementById(modalId);
     if(modal){
         modal.style.display = "grid";
         modal.style.top = pos.clientY + 10 + "px";
@@ -180,11 +219,11 @@ function showModal(pos, modalId){
 
 /**
  * Hide the modal
- * @param {string} identifier string of the modal id, with "#"
+ * @param {string} identifier string of the modal id
  * @param {MouseEvent} identifier MouseEvent of close button click
  */
 function hideModal(identifier){
-    const modal = identifier.target ? identifier.target.parentElement : document.querySelector(identifier);
+    const modal = identifier.target ? identifier.target.parentElement : document.getElementById(identifier);
     if(modal){
         modal.style.display = "none";
     }
@@ -194,7 +233,7 @@ function hideModal(identifier){
  * The user pressed a button that toggles a modal, so show or hide as needed
  * @remark Becuse it takes an additional argument this is not a listener method
  * @param {MouseEvent} event click event
- * @param {string} modalId for the modal window starting with "#"
+ * @param {string} modalId for the modal window
  */
 function toggleModal(event, modalId){
     const modal = document.querySelector(modalId);
@@ -206,10 +245,10 @@ function toggleModal(event, modalId){
         }
     } else {
         switch (modalId) {
-        case "#emote-picker":
+        case EMOTE_MODAL:
             createEmotePicker();
             break;
-        case "#toolbar-custom":
+        case TOOLBAR_MODAL:
             createToolbarCustomModal();
             break;
         default:
@@ -236,12 +275,10 @@ function getTheme(){
 
 /**
  * Creates a modal box that floats on the page
- * @param {string} id of the modal, no preceding "#"
+ * @param {string} id of the modal
  * @param {string} titleText to show on the modal
- * @param {string} closeText to show in the close button
- * @param {string} closeTitle to show on hover of close button
  */
-function makeModalBox(id, titleText, closeText, closeTitle){
+function makeModalBox(id, titleText){
     const theme = getTheme();
     const box = document.createElement("div");
     box.id = id;
@@ -262,14 +299,35 @@ function makeModalBox(id, titleText, closeText, closeTitle){
 
     const closeBtn = document.createElement("button");
     closeBtn.className = "vivaldi-mod-modal-box-close";
-    closeBtn.innerHTML = closeText;
-    closeBtn.title = closeTitle;
+    closeBtn.innerHTML = "<i class='fa fa-times'></i>";
+    closeBtn.title = getString("closeText");
     closeBtn.style.background = theme.accentBg;
     closeBtn.style.color = theme.accentFg;
     closeBtn.addEventListener("click", hideModal);
     box.appendChild(closeBtn);
 
     return box;
+}
+
+/**
+ * Remove a modal from the DOM
+ * @param {string} id of modal
+ */
+function destroyModal(id){
+    const modal = document.getElementById(id);
+    if(modal){
+        modal.parentElement.removeChild(modal);
+    }
+}
+
+/**
+ * Is the modal currently visible
+ * @param {string} id of modal
+ * @returns {boolean} if it is visible
+ */
+function modalIsVisible(id){
+    const modal = document.getElementById(id);
+    return modal && modal.style.display==="grid";
 }
 
 /* ==========Emote============= */
@@ -281,12 +339,23 @@ function makeModalBox(id, titleText, closeText, closeTitle){
 function emotePicked(event){
     const textarea = document.querySelector(".composer .write");
     if(!textarea){
-        hideModal("#emote-picker");
+        hideModal(EMOTE_MODAL);
         return;
     }
     const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
     writeToTextarea(newtext, "");
-    hideModal("#emote-picker");
+    hideModal(EMOTE_MODAL);
+}
+
+/**
+ * Started to drag an emote, allow for dropping in text box
+ * @param {DragEvent} dragEvent
+ */
+function emoteDragStart(dragEvent){
+    const newtext = `![${event.target.alt}](${event.target.src} "${event.target.alt}") `;
+    dragEvent.dataTransfer.setData("text", newtext);
+    dragEvent.dataTransfer.dropEffect = "copy";
+    dragEvent.dataTransfer.effectAllowed = "copy";
 }
 
 /**
@@ -301,6 +370,7 @@ function makeEmoteButton(emoteName, emoteUrl){
     emoteButton.title = emoteName;
     emoteButton.src = STATIC_URL + emoteUrl;
     emoteButton.addEventListener("click", emotePicked);
+    emoteButton.addEventListener("dragstart", emoteDragStart);
     return emoteButton;
 }
 
@@ -308,7 +378,7 @@ function makeEmoteButton(emoteName, emoteUrl){
  * Creates the emote picker and appends it to the body
  */
 function createEmotePicker(){
-    const box = makeModalBox("emote-picker", getString("smile-o"), getString("closeText"), getString("closeButton"));
+    const box = makeModalBox(EMOTE_MODAL, getString("smile-o"));
     for (const emoteName in EMOTES) {
         if (EMOTES.hasOwnProperty(emoteName)) {
             const emoteUrl = EMOTES[emoteName];
@@ -328,7 +398,7 @@ function addEmotePickerButton(){
     emotePickerButton.setAttribute("data-format", "smile-o");
     emotePickerButton.title = getString("smile-o");
     emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
-    emotePickerButton.addEventListener("click", event => {toggleModal(event, "#emote-picker");});
+    emotePickerButton.addEventListener("click", event => {toggleModal(event, EMOTE_MODAL);});
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.appendChild(emotePickerButton);
 }
@@ -364,250 +434,363 @@ function addSpecialFormattingButtons(){
         const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2]);
         composerFormatters.insertBefore(madeButton, endOfBar);
     });
-    composerFormatters.addEventListener("dblclick", e => {toggleModal(e, "#toolbar-custom");});
 }
 
 /* ===========DraggableToolbar===========*/
 
 /**
- * ✔ function exists already
- * ♦ Implement function
- * ▶ do not implemented function
- *
- * ✔ 1initialiseOnComposerOpen
- *      // get STORED values for button orders
- *      ✔ createAdditionalFormattingButtons
- *      // get REFERENCES to each button (existing and newly created)
- *      ♦ makeModalWithHiddenButtons
- *          ✔ makeModal
- *          ♦ getAllHiddenItems
- *          // append hidden items to modal
- *          ♦ onItemDropped
- *              // for all list items with order greater than what was dropped
- *                  // subtract 1
- *              // set current order of dropped item to -1
- *              // save to STORED
- *              // update chrome storage
- *              ▶ setOrderAndHideAccordingToRemembered
- *      ♦ makeModalWithHiddenButtonsOpener
- *          // create element
- *          ♦ onClick
- *              ✔ showHiddenItemsModal
- *          // append somewhere on toolbar
- *      ♦ setOrderAndHideAccordingToRemembered
- *          // makeToolbarFlex
- *          // for each REFERENCES
- *          // if STORED[reference] == -1
- *              // append as child of modal
- *          // else
- *               // set List Item Order as STORED[reference]
- *      // for each REFERENCES
- *          ♦ makeListItemsDraggable
- *              // set draggable = true
- *              ♦ onItemDragStart
- *                  ✔ showModalWithExtraButtons
- *              ♦ onItemDragEnd
- *                  ✔ hideModalWithHiddenButtons
- *                  ♦ hideDropMarker
- *                      ▶ createOrGetDropListMarker
- *                      // if exists set display hidden
- *      ♦ makeFormattingButtonsDroppableOnTo
- *          ♦ onItemDraggedOver
- *              // if currently hidden do nothing - let modal drop handler deal wiht it
- *              ♦ displayDropMarkerNextToListItem
- *                  ♦ createOrGetDropListMarker
- *                      // if exists, return
- *                      // return makeElement
- *                  ♦ showMarkerAtPosition
- *                      // set Display Visible
- *                      // set Position Top
- *                      // set Position Left
- *          ♦ OnItemDroppedOnTo
- *              // if currently hidden do nothing - let modal drop handler deal wiht it
- *              // new order for item that was dropped = get order of this item + 1
- *              ♦ saveNewListItemOrder
- *                  // update order for dropped item (not this)
- *                  // updated values in STORED
- *                  // update values in chrome storage
- *                  ▶ setOrderAndHideAccordingToRemembered
+ * Generate references to the individual formatting buttons
+ * for later use in the draggableToolbar functions
  */
-
-
-/**
- * Show the setting page that lets user enable/disable/reorder buttons
- */
-function createToolbarCustomModal(){
-    const box = makeModalBox("toolbar-custom", getString("customToolbarTitle"), getString("saveButton"), getString("saveText"));
-    const close = box.querySelector(".vivaldi-mod-modal-box-close");
-    close.addEventListener("click", saveCustomToolbar);
-    const msg = document.createElement("div");
-    msg.innerText = getString("customToolbarDesc");
-    msg.className = "descriptor";
-    box.appendChild(msg);
-    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
-        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
-            const order = FORMATTING_BAR_CUSTOM_ORDER[key];
-            const input = document.createElement("input");
-            input.value = order;
-            input.min = -1;
-            input.type = "number";
-            input.name = key;
-            /*input.addEventListener("input", insertionSortInputValues);
-            input.addEventListener("input", styleDisabled);*/
-
-            /* just do away with the inputs altogether */
-
-            const label = document.createElement("label");
-            label.innerText = getString(key);
-            label.appendChild(input);
-
-            const inc = document.createElement("button");
-            inc.innerText = "<";
-            inc.className = "inc";
-            inc.addEventListener("click", (e) => {
-                let val = e.target.previousSibling.value;
-                val++;
-                e.target.previousSibling.value = val;
-                updateCustomOrder();
-                reorderToolbarButtons();
-                styleDisabled();
-            });
-            label.appendChild(inc);
-
-            const dec = document.createElement("button");
-            dec.innerText = ">";
-            inc.className = "dec";
-            dec.addEventListener("click", (e) => {
-                let val = e.target.previousSibling.previousSibling.value;
-                val--;
-                if(val<-1){
-                    val=-1;
-                }
-                e.target.previousSibling.value = val;
-                updateCustomOrder();
-                reorderToolbarButtons();
-                styleDisabled();
-            });
-            label.appendChild(dec);
-
-            box.appendChild(label);
-        }
-    }
-    document.body.appendChild(box);
-    insertionSortInputValues();
-    styleDisabled();
-}
-
-/**
- * Insertion sort the inputs by value
- */
-function insertionSortInputValues(){
-    const A = document.querySelector("#toolbar-custom");
-    if(!A){
-        return;
-    }
-    const minimum = 3;
-    let i = minimum;
-    while(i < A.children.length){
-        let j = i;
-        while(j > minimum && (Number(A.children[j-1].children[0].value) > Number(A.children[j].children[0].value))){
-            A.insertBefore(A.children[j], A.children[j-1]);
-            j--;
-        }
-        i++;
-    }
-}
-
-/**
- * Style all of the inputs. If -1, make it look disabled.
- */
-function styleDisabled(){
-    const inputs = document.querySelectorAll("#toolbar-custom input");
-    inputs.forEach(x => {
-        if(x.value==="-1"){
-            x.parentElement.style.textDecoration = "line-through";
-        } else {
-            x.parentElement.style.textDecoration = "none";
-        }
-    });
-}
-
-/**
- * Look at the current settings and update the order, without saving
- */
-function updateCustomOrder(){
-    const settingsBox = document.querySelector("#toolbar-custom");
-    if(!settingsBox){
-        return;
-    }
-    FORMATTING_BAR_CUSTOM_ORDER = {
-        bold: settingsBox.querySelector("input[name='bold']").value,
-        italic: settingsBox.querySelector("input[name='italic']").value,
-        list: settingsBox.querySelector("input[name='list']").value,
-        strikethrough: settingsBox.querySelector("input[name='strikethrough']").value,
-        link: settingsBox.querySelector("input[name='link']").value,
-        "picture-o": settingsBox.querySelector("input[name='picture-o']").value,
-        zen: settingsBox.querySelector("input[name='zen']").value,
-        picture: settingsBox.querySelector("input[name='picture']").value,
-        "smile-o": settingsBox.querySelector("input[name='smile-o']").value,
-        header: settingsBox.querySelector("input[name='header']").value,
-        "window-minimize": settingsBox.querySelector("input[name='window-minimize']").value,
-        "quote-right": settingsBox.querySelector("input[name='quote-right']").value,
-        code: settingsBox.querySelector("input[name='code']").value,
-        "file-code-o": settingsBox.querySelector("input[name='file-code-o']").value,
-        "th-large": settingsBox.querySelector("input[name='th-large']").value,
-        "list-ol": settingsBox.querySelector("input[name='list-ol']").value,
-        "shield": settingsBox.querySelector("input[name='shield']").value
+function getReferencesToButtons(){
+    FORMATTING_BUTTONS = {
+        bold: document.querySelector(".composer .formatting-group li[data-format='bold']"),
+        italic: document.querySelector(".composer .formatting-group li[data-format='italic']"),
+        list: document.querySelector(".composer .formatting-group li[data-format='list']"),
+        strikethrough: document.querySelector(".composer .formatting-group li[data-format='strikethrough']"),
+        link: document.querySelector(".composer .formatting-group li[data-format='link']"),
+        "picture-o": document.querySelector(".composer .formatting-group li[data-format='picture-o']"),
+        zen: document.querySelector(".composer .formatting-group li[data-format='zen']"),
+        picture: document.querySelector(".composer .formatting-group li[data-format='picture']"),
+        "smile-o": document.querySelector(".composer .formatting-group li[data-format='smile-o']"),
+        header: document.querySelector(".composer .formatting-group li[data-format='header']"),
+        "window-minimize": document.querySelector(".composer .formatting-group li[data-format='window-minimize']"),
+        "quote-right": document.querySelector(".composer .formatting-group li[data-format='quote-right']"),
+        code: document.querySelector(".composer .formatting-group li[data-format='code']"),
+        "file-code-o": document.querySelector(".composer .formatting-group li[data-format='file-code-o']"),
+        "th-large": document.querySelector(".composer .formatting-group li[data-format='th-large']"),
+        "list-ol": document.querySelector(".composer .formatting-group li[data-format='list-ol']"),
+        "shield": document.querySelector(".composer .formatting-group li[data-format='shield']")
     };
 }
 
 /**
- * Save the custom toolbar settings
+ * Set the transfer data for the dragging
+ * @param {DragEvent} dragEvent
  */
-function saveCustomToolbar(){
-    updateCustomOrder();
-    chrome.storage.sync.set({formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER});
-    reorderToolbarButtons();
+function makeDataTransfer(dragEvent){
+    dragEvent.dataTransfer.setData("text", JSON.stringify({
+        order: Number(dragEvent.target.style.order),
+        key: dragEvent.target.getAttribute("data-format"),
+        nonce: NONCE
+    }));
 }
 
 /**
- * Re-order the toolbar buttons according to user settings
+ * Attempt to read the transfer data according to expected format
+ * If it fails for any reason, throw an error
+ * @param {DropEvent} dropEvent
+ * @returns {object} transfer data with order, key
+ * @throws {string} Badly Formatted transfer data error
  */
-function reorderToolbarButtons(){
+function getDataTranfer(dropEvent){
+    try {
+        const data = JSON.parse(dropEvent.dataTransfer.getData("text"));
+        if(!data.order || !data.key || data.nonce !== NONCE){
+            throw "Badly formatted drop";
+        }
+        return data;
+    } catch(e) {
+        throw "Badly formatted drop";
+    }
+}
+
+/**
+ * Don't do anything, but this is necessary in order to allow
+ *    things to be dropped onto the modal
+ * @param {DragEvent} dragEvent
+ */
+function buttonDraggedOverModal(dragEvent){
+    dragEvent.preventDefault();
+}
+
+/**
+ * Something was dropped onto the modal
+ * If it was another button, begin the process of moving it
+ * @param {DropEvent} dropEvent
+ */
+function buttonDroppedOnToModal(dropEvent){
+    let data;
+    try {
+        data = getDataTranfer(dropEvent);
+    } catch (e) {
+        hideDropMarker();
+        return;
+    }
+    const orderOfDropped = Number(data.order);
+    const keyOfDropped = data.key;
+    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+            const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
+            if(order > orderOfDropped){
+                setButtonOrder(key, order - 1);
+            }
+        }
+    }
+    setButtonOrder(keyOfDropped, -1);
+    saveToolbarOrder();
+    setOrderAndHideAccordingToRemembered();
+    dropEvent.preventDefault();
+}
+
+/**
+ * Create and add to page the modal for holding hidden toolbar items
+ * Allow dropping to this modal
+ * List items should always be a child of the <ul> within this
+ */
+function createToolbarCustomModal(){
+    const box = makeModalBox(TOOLBAR_MODAL, getString("customToolbarTitle"));
+    box.addEventListener("drop", buttonDroppedOnToModal);
+    box.addEventListener("dragover", buttonDraggedOverModal);
+    const list = document.createElement("ul");
+    box.appendChild(list);
+    document.body.appendChild(box);
+}
+
+/**
+ * Save the current global order variable to storage
+ */
+function saveToolbarOrder(){
+    chrome.storage.sync.set({formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER});
+}
+
+/**
+ * Go through each of the formatting buttons
+ * If it has an order > 0, set it accordingly
+ * If the order is -1, move it to the hidden items modal
+ */
+function setOrderAndHideAccordingToRemembered(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
     composerFormatters.style.display = "inline-flex";
     for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
         if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
-            const buttonOrder = FORMATTING_BAR_CUSTOM_ORDER[key];
-            const button = composerFormatters.querySelector(`li[data-format='${key}'`);
-            if(buttonOrder > -1){
-                button.style.order = buttonOrder;
-                button.style.display = "inline-block";
+            const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
+            FORMATTING_BUTTONS[key].style.order = order;
+            if(order === -1){
+                document.querySelector(`#${TOOLBAR_MODAL} ul`).appendChild(FORMATTING_BUTTONS[key]);
             } else {
-                button.style.display = "none";
+                composerFormatters.appendChild(FORMATTING_BUTTONS[key]);
             }
         }
     }
 }
 
+/**
+ * Make a button, and add it to DOM, that will show the hidden items modal
+ */
+function makeModalWithHiddenButtonsOpener(){
+    const button = document.createElement("div");
+    button.className = "hiddenButtons";
+    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-eye-slash'></i></div>";
+    button.title = getString("customToolbarTitle");
+    button.addEventListener("click", event => {
+        showModal(event, TOOLBAR_MODAL);
+    });
+    document.querySelector(".composer .composer-container").appendChild(button);
+}
+
+/**
+ * Get the dropping marker if it exists
+ * If it doesn't, make it and add it to DOM
+ * @returns {DOMElement} div.dropmarker
+ */
+function createOrGetDropListMarker(){
+    const marker = document.querySelector(".dropmarker");
+    if(marker){
+        return marker;
+    }
+    const newMarker = document.createElement("div");
+    newMarker.className = "dropmarker";
+    document.body.append(newMarker);
+    return newMarker;
+}
+
+/**
+ * Shows the .dropmarker
+ * Note: If it was never created, this will fail
+ */
+function showDropMarker(){
+    const marker = createOrGetDropListMarker();
+    marker.classList.remove("hidden");
+}
+
+/**
+ * Hides the .dropmarker
+ * Note: If it was never created, this will fail
+ */
+function hideDropMarker(){
+    const marker = createOrGetDropListMarker();
+    marker.classList.add("hidden");
+}
+
+/**
+ * Move the drop marker to specified client co-ordinates
+ * Note: If it was never created, this will create it and succeed
+ */
+function moveDropMarker(x, y){
+    const marker = createOrGetDropListMarker();
+    marker.style.top = Math.floor(y) + "px";
+    marker.style.left = Math.floor(x) + "px";
+}
+
+/**
+ * The user started to drag a formatting button
+ * @param {DragEvent} dragEvent
+ */
+function formatButtonDragStart(dragEvent){
+    makeDataTransfer(dragEvent);
+    dragEvent.dataTransfer.dropEffect = "move";
+    dragEvent.dataTransfer.effectAllowed = "move";
+    if(!modalIsVisible(TOOLBAR_MODAL)){
+        showModal(dragEvent, TOOLBAR_MODAL);
+    }
+    moveDropMarker(-100,-100);
+    showDropMarker();
+}
+
+/**
+ * A formatting button has stopped being dragged
+ * @param {DragEvent} dragEvent
+ */
+function formatButtonDragEnd(dragEvent){
+    hideModal(TOOLBAR_MODAL);
+    hideDropMarker();
+}
+
+/**
+ * Go through each of the formatting buttons and make it draggable
+ * Add the dragstart and dragend listeners
+ */
+function makeFormatButtonsDraggable(){
+    for (const key in FORMATTING_BUTTONS) {
+        if (FORMATTING_BUTTONS.hasOwnProperty(key)) {
+            const button = FORMATTING_BUTTONS[key];
+            button.draggable = true;
+            button.addEventListener("dragstart", formatButtonDragStart);
+            button.addEventListener("dragend", formatButtonDragEnd);
+        }
+    }
+}
+
+/**
+ * Something was dragged over this button
+ * @param {DragEvent} dragEvent
+ */
+function buttonDraggedOver(dragEvent){
+    let target = dragEvent.target;
+    if(target.tagName.toUpperCase()==="I"){
+        target = target.parentElement;
+    }
+    const box = target.getClientRects()[0];
+    moveDropMarker(box.x + box.width, box.y);
+    dragEvent.preventDefault();
+}
+
+/**
+ * Update the order of a button
+ * Update the global and the DOM element but not storage yet
+ * @param {string} key of button
+ * @param {number} newOrder
+ */
+function setButtonOrder(key, newOrder){
+    FORMATTING_BAR_CUSTOM_ORDER[key] = newOrder;
+    FORMATTING_BUTTONS[key].style.order = newOrder;
+}
+
+/**
+ * Something was dropped on a button
+ * If it was another button, begin the process of moving it
+ * @param {DropEvent} dropEvent
+ */
+function buttonDroppedOn(dropEvent){
+    let data;
+    try {
+        data = getDataTranfer(dropEvent);
+    } catch (e) {
+        hideDropMarker();
+        return;
+    }
+    let target = dropEvent.target;
+    if(target.tagName.toUpperCase()==="I"){
+        target = target.parentElement;
+    }
+    const targetOrder = Number(target.style.order);
+    if(targetOrder === -1){
+        return; // let modal handle this
+    }
+    const newOrder = targetOrder + 1;
+    if(data.order===-1){
+        for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+            if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+                const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
+                if(order >= newOrder){
+                    setButtonOrder(key, order + 1);
+                }
+            }
+        }
+    } else {
+        for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+            if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+                const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
+                if(order >= newOrder && order < data.order){
+                    setButtonOrder(key, order + 1);
+                }
+            }
+        }
+    }
+    setButtonOrder(data.key, newOrder);
+    saveToolbarOrder();
+    setOrderAndHideAccordingToRemembered();
+    dropEvent.preventDefault();
+}
+
+/**
+ * Go through all of the button references and for each one
+ * Set up dragover and drop listeners to allow dropping of
+ *    other buttons on to them
+ */
+function makeFormattingButtonsDroppableOnTo(){
+    for (const key in FORMATTING_BUTTONS) {
+        if (FORMATTING_BUTTONS.hasOwnProperty(key)) {
+            const button = FORMATTING_BUTTONS[key];
+            button.addEventListener("dragover", buttonDraggedOver);
+            button.addEventListener("drop", buttonDroppedOn);
+        }
+    }
+}
+
 /* =============Init=============*/
+
+/**
+ * Initialise the advanced formatting bar mod
+ */
+function initialiseOnComposerOpen(){
+    addEmotePickerButton();
+    addSpecialFormattingButtons();
+    getReferencesToButtons();
+    createToolbarCustomModal();
+    makeModalWithHiddenButtonsOpener();
+    setOrderAndHideAccordingToRemembered();
+    makeFormatButtonsDraggable();
+    makeFormattingButtonsDroppableOnTo();
+}
 /**
  * Something changed on the page.
  * If it was the composer being added, add the emote picker button.
+ * If it was removed, kill the modals
  * @param {MutationRecord[]} mutationList
  */
 function pageMutated(mutationList){
     mutationList.forEach(mutation => {
         mutation.addedNodes.forEach(element => {
             if(element.classList.contains("composer")){
-                addEmotePickerButton();
-                addSpecialFormattingButtons();
-                reorderToolbarButtons();
+                initialiseOnComposerOpen();
             }
         });
         mutation.removedNodes.forEach(element => {
             if(element.classList.contains("composer")){
-                hideModal("#emote-picker");
+                hideModal(EMOTE_MODAL);
+                destroyModal(TOOLBAR_MODAL);
             }
         });
     });
