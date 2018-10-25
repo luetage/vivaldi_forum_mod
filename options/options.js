@@ -18,7 +18,7 @@ var compactS = document.getElementById('compact');
 var userIDS = document.getElementById('userID');
 var signatureModS = document.getElementById('signatureMod');
 var squareS = document.getElementById('square');
-var emotePickerS = document.getElementById('emotePicker');
+var advancedFormattingS = document.getElementById('advancedFormatting');
 
 function save_options(){
 
@@ -107,10 +107,10 @@ function save_options(){
     } else {
         squareS.value = 0;
     }
-    if (emotePickerS.checked == true) {
-        emotePickerS.value = 1;
+    if (advancedFormattingS.checked == true) {
+        advancedFormattingS.value = 1;
     } else {
-        emotePickerS.value = 0;
+        advancedFormattingS.value = 0;
     }
 
     var standard = standardS.value;
@@ -131,7 +131,7 @@ function save_options(){
     var userID = userIDS.value;
     var signatureMod = signatureModS.value;
     var square = squareS.value;
-    var emotePicker = emotePickerS.value;
+    var advancedFormatting = advancedFormattingS.value;
 
     chrome.storage.sync.set({
         'standard': standard,
@@ -151,7 +151,7 @@ function save_options(){
         'userID': userID,
         'signatureMod': signatureMod,
         'square': square,
-        'emotePicker': emotePicker
+        'advancedFormatting': advancedFormatting
       },
       function(){
           chrome.storage.local.set({'userCSS': userCSS});
@@ -194,7 +194,7 @@ function restore_options(){
         'userID': '',
         'signatureMod': '',
         'square': '',
-        'emotePicker': ''
+        'advancedFormatting': ''
       },
     function(restore){
         chrome.storage.local.get({'userCSS': ''}, function(local) {
@@ -291,11 +291,11 @@ function restore_options(){
         } else {
             squareS.checked = false;
         }
-        emotePickerS.value = restore.emotePicker;
-        if (emotePickerS.value == 1) {
-            emotePickerS.checked = true;
+        advancedFormattingS.value = restore.advancedFormatting;
+        if (advancedFormattingS.value == 1) {
+            advancedFormattingS.checked = true;
         } else {
-            emotePickerS.checked = false;
+            advancedFormattingS.checked = false;
         }
     });
 };
@@ -427,6 +427,11 @@ function show_changelog() {
     select.style.display = "none";
 };
 
+function updateLocalisations(){
+    document.querySelectorAll(".advancedFormatting").forEach(span => {span.innerText = chrome.i18n.getMessage("advancedFormatting");});
+    document.querySelector(".advancedFormattingDesc").innerText = chrome.i18n.getMessage("advancedFormattingDesc");
+}
+
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save-button').addEventListener('click', save_options);
 document.getElementById('back-button').addEventListener('click', get_back);
@@ -437,3 +442,4 @@ document.getElementById('css-button').addEventListener('click', show_css);
 document.getElementById('info-btn').addEventListener('click', show_info);
 document.getElementById('credits-btn').addEventListener('click', show_credits);
 document.getElementById('changelog-btn').addEventListener('click', show_changelog);
+updateLocalisations();

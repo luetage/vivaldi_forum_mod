@@ -78,5 +78,13 @@
     "dragText": {
         "message": "Click and Drag to move",
         "description": "Hover text when on a draggable area"
+    },
+    "advancedFormatting": {
+        "message": "Advanced Formatting",
+        "description": "Title of the advanced formatting mod as shown in options"
+    },
+    "advancedFormattingDesc": {
+        "message": "Adds an emote picker, extra formatting buttons & allows you to drag to re-order the formatting toolbar when editing your forum posts.",
+        "description": "Description of the advanced formatting mod as shown in options"
     }
 }

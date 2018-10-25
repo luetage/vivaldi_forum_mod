@@ -87,7 +87,7 @@ function(mods) {
     }
     if (emotePicker == 1) {
         var emoteStyle = document.createElement('link');
-        emoteStyle.href = chrome.extension.getURL('mods/emote-picker.css');
+        emoteStyle.href = chrome.extension.getURL('mods/advanced-formatting.css');
         emoteStyle.type = 'text/css';
         emoteStyle.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(emoteStyle);
