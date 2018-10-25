@@ -223,9 +223,16 @@ function showModal(pos, modalId){
  * @param {MouseEvent} identifier MouseEvent of close button click
  */
 function hideModal(identifier){
-    const modal = identifier.target ? identifier.target.parentElement : document.getElementById(identifier);
-    if(modal){
-        modal.style.display = "none";
+    let target = identifier.target;
+    if(!target){
+        target = document.getElementById(identifier);
+    } else if(target.tagName.toUpperCase()==="I"){
+        target = target.parentElement.parentElement;
+    } else if(target.tagName.toUpperCase()==="BUTTON"){
+        target = target.parentElement;
+    }
+    if(target){
+        target.style.display = "none";
     }
 }
 
@@ -236,9 +243,9 @@ function hideModal(identifier){
  * @param {string} modalId for the modal window
  */
 function toggleModal(event, modalId){
-    const modal = document.querySelector(modalId);
+    const modal = document.getElementById(modalId);
     if(modal){
-        if(modal.style.display === "grid"){
+        if(modalIsVisible(modalId)){
             hideModal(modalId);
         } else {
             showModal(event, modalId);
@@ -584,7 +591,7 @@ function makeModalWithHiddenButtonsOpener(){
     button.innerHTML = "<div class='trigger text-center'><i class='fa fa-eye-slash'></i></div>";
     button.title = getString("customToolbarTitle");
     button.addEventListener("click", event => {
-        showModal(event, TOOLBAR_MODAL);
+        toggleModal(event, TOOLBAR_MODAL);
     });
     document.querySelector(".composer .composer-container").appendChild(button);
 }
