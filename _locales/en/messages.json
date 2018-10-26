@@ -86,5 +86,9 @@
     "advancedFormattingDesc": {
         "message": "Adds an emote picker, extra formatting buttons & allows you to drag to re-order the formatting toolbar when editing your forum posts.",
         "description": "Description of the advanced formatting mod as shown in options"
+    },
+    "reset": {
+        "message": "Reset",
+        "description": "Text to show on a button that performs some sort of reset operation"
     }
 }

@@ -665,3 +665,39 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
   .hljs-link {
     text-decoration: underline;
   }
+
+/* advanced formatting mod */
+.vivaldi-mod-modal-box {
+    background: #3d474c !important;
+    border-color: #2e3539 !important;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: #3d474c !important;
+    color: white !important;
+}
+.vivaldi-mod-modal-box-close {
+    background: #b05158 !important;
+}
+.vivaldi-mod-modal-box-close i {
+    color: white !important;
+}
+.dropmarker, .dropmarker:after {
+    background: #24948c !important;
+}
+.dropmarker:before {
+    border-color: #24948c !important;
+}
+.composer .hiddenButtons .trigger {
+    background: #333333 !important;
+    border-color: #333333 !important;
+}
+.composer .hiddenButtons .trigger i {
+    color: white !important;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: #b05158 !important;
+        border-radius: 0px !important;
+        border: 1px solid white !important;
+    }
+}

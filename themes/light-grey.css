@@ -580,3 +580,38 @@ pre {
 .copy-all-code-button {
     right: 35px;
 }
+
+/* advanced formatting mod */
+.vivaldi-mod-modal-box {
+    background: #f0f0f0 !important;
+    border-color: #e0e0e0 !important;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: #e0e0e0 !important;
+    color: black !important;
+}
+.vivaldi-mod-modal-box-close {
+    background: #00caa7 !important;
+}
+.vivaldi-mod-modal-box-close i {
+    color: white !important;
+}
+.dropmarker, .dropmarker:after {
+    background: black !important;
+}
+.dropmarker:before {
+    border-color: black !important;
+}
+.composer .hiddenButtons .trigger {
+    background: #333 !important;
+    border-color: #333 !important;
+}
+.composer .hiddenButtons .trigger i {
+    color: white !important;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: #23bcb1 !important;
+        border-radius: 3px !important;
+    }
+}

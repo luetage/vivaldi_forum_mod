@@ -627,3 +627,37 @@ button.main.green, button.main.red {
 .upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
     color: #fbfbfb;
 }
+
+/* advanced formatting mod */
+.vivaldi-mod-modal-box {
+    background: var(--colorBg) !important;
+    border-color: var(--colorDropHi) !important;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: var(--colorDropHi) !important;
+    color: var(--colorFg) !important;
+}
+.vivaldi-mod-modal-box-close {
+    background: var(--colorBtn) !important;
+}
+.vivaldi-mod-modal-box-close i {
+    color: var(--colorHiFg) !important;
+}
+.dropmarker, .dropmarker:after {
+    background: var(--colorLi2) !important;
+}
+.dropmarker:before {
+    border-color: var(--colorLi2) !important;
+}
+.composer .hiddenButtons .trigger {
+    background: var(--colorHi) !important;
+    border-color: var(--colorHi) !important;
+}
+.composer .hiddenButtons .trigger i {
+    color: var(--colorHiFg) !important;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: var(--colorBtnHi) !important;
+    }
+}

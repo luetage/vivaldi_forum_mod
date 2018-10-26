@@ -405,3 +405,41 @@ div.shadow-box1, div.shadow-box2 {
 #vivaldifooter #vivaldi-icon path:nth-of-type(1) {
     fill: #00107C;
 }
+
+/* advanced formatting mod */
+.vivaldi-mod-modal-box {
+    background: #f5ffff !important;
+    border-color: #e0e0e0 !important;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: #e0e0e0 !important;
+    color: black !important;
+}
+.vivaldi-mod-modal-box-close {
+    background: #8c8c8c !important;
+}
+.vivaldi-mod-modal-box-close i {
+    color: white !important;
+}
+.dropmarker, .dropmarker:after {
+    background: #00247D !important;
+}
+.dropmarker:before {
+    border-color: #00247D !important;
+}
+.composer .hiddenButtons .trigger {
+    background: #00247D !important;
+    border-color: #00247D !important;
+}
+.composer .hiddenButtons .trigger i {
+    color: #f58591 !important;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: #8c8c8c !important;
+        border-radius: 0px !important;
+    }
+    .composer .hiddenButtons .trigger i {
+        color: white !important;
+    }
+}
