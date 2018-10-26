@@ -266,40 +266,20 @@ function toggleModal(event, modalId){
 }
 
 /**
- * Get the style info dynamically so you don't need to add separate entries in each theme
- * @returns Dictionary of theme vars
- */
-function getTheme(){
-    return {
-        pickerBorder: window.getComputedStyle(document.querySelector(".preview.well")).backgroundColor,
-        pickerBg: window.getComputedStyle(document.querySelector("textarea")).backgroundColor,
-        controlFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).color,
-        controlBg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-discard")).backgroundColor,
-        accentFg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-submit")).color,
-        accentBg: window.getComputedStyle(document.querySelector(".formatting-bar .composer-submit")).backgroundColor
-    };
-}
-
-/**
  * Creates a modal box that floats on the page
  * @param {string} id of the modal
  * @param {string} titleText to show on the modal
  */
 function makeModalBox(id, titleText){
-    const theme = getTheme();
     const box = document.createElement("div");
     box.id = id;
     box.className = "vivaldi-mod-modal-box";
-    box.style.background = theme.pickerBg;
-    box.style.borderColor = theme.pickerBorder;
 
     const controlBar = document.createElement("div");
     controlBar.className = "vivaldi-mod-modal-box-control-bar";
     controlBar.innerText = titleText;
     controlBar.title = getString("dragText");
     controlBar.draggable = true;
-    controlBar.style.background = theme.controlBg;
-    controlBar.style.color = theme.controlFg;
     controlBar.addEventListener("dragstart", modalDragStart);
     controlBar.addEventListener("dragend", modalDrag);
     box.appendChild(controlBar);
@@ -308,8 +288,6 @@ function makeModalBox(id, titleText){
     closeBtn.className = "vivaldi-mod-modal-box-close";
     closeBtn.innerHTML = "<i class='fa fa-times'></i>";
     closeBtn.title = getString("closeText");
-    closeBtn.style.background = theme.accentBg;
-    closeBtn.style.color = theme.accentFg;
     closeBtn.addEventListener("click", hideModal);
     box.appendChild(closeBtn);
 

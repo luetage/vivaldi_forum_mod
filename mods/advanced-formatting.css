@@ -10,8 +10,6 @@
     border-style: solid;
     border-radius: 4px;
     box-shadow: black 1px 1px 1px 1px;
-    overflow: scroll;
-    max-height: 400px;
 }
 
 .vivaldi-mod-modal-box-control-bar {
@@ -48,7 +46,6 @@
     position: fixed;
     z-index: 9999999999;
     pointer-events: none;
-    background: black;
 }
 
 .dropmarker:before {
@@ -57,7 +54,7 @@
     height: 8px;
     display: block;
     position: absolute;
-    border: 3px solid black;
+    border-style: solid;
     border-width: 0px 3px 3px 0px;
     left: -2.5px;
     top: -13px;
@@ -72,9 +69,9 @@
     transform: rotate(-45deg);;
     left: -1px;
     top: -17px;
-    background: black;
 }
 
+/* Style the "open hidden items modal" button */
 .composer .hiddenButtons {
     position: absolute;
     width: 100%;
@@ -84,7 +81,6 @@
     cursor: pointer;
 }
 
-/* Style the "open hidden items modal" button */
 .composer .hiddenButtons .trigger {
     position: relative;
     display: block;
@@ -93,8 +89,8 @@
     top: -20px;
     margin: 0 auto;
     margin-left: 20px;
-    background: #333;
-    border: 1px solid #333;
+    border-width: 1px;
+    border-style: solid;
     border-radius: 50%;
     line-height: 26px;
 }
@@ -102,12 +98,21 @@
 @media (max-width: 991px){
     .composer .hiddenButtons {
         position: fixed;
-        width: 100%;
-        top: 26px;
-        left: 27px;
+        width: 20px;
+        top: 4px;
+        left: 20px;
         height: 20px;
-        cursor: pointer;
         z-index: 9999;
+    }
+
+    .composer .hiddenButtons .trigger {
+        border: none;
+        border-radius: 0%;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        line-height: 18px;
     }
 }
 
@@ -115,6 +120,48 @@
     display: none !important;
 }
 
+
+/* style hidden items modal */
+
+#toolbar-custom ul {
+    grid-column: 1 / 6;
+    place-self: stretch;
+    display: grid;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+    grid-row-gap: 5px;
+    list-style: none;
+}
+
+/* theme colours */
+.vivaldi-mod-modal-box {
+    background: white;
+    border-color: #f5f5f5;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: white;
+    color: black;
+}
+.vivaldi-mod-modal-box-close {
+    background: #00caa7;
+}
+.vivaldi-mod-modal-box-close i {
+    color: white;
+}
+.dropmarker, .dropmarker:after {
+    background: black;
+}
+.dropmarker:before {
+    border-color: black;
+}
+.composer .hiddenButtons .trigger {
+    background: #333;
+    border-color: #333;
+}
 .composer .hiddenButtons .trigger i {
     color: white;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: #23bcb1;
+    }
 }
