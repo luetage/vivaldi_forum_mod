@@ -566,7 +566,7 @@ function setOrderAndHideAccordingToRemembered(){
 function makeModalWithHiddenButtonsOpener(){
     const button = document.createElement("div");
     button.className = "hiddenButtons";
-    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-eye-slash'></i></div>";
+    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-eye'></i></div>";
     button.title = getString("customToolbarTitle");
     button.addEventListener("click", event => {
         toggleModal(event, TOOLBAR_MODAL);
