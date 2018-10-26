@@ -11,7 +11,7 @@ chrome.storage.sync.get({
     'userID': '',
     'signatureMod' : '',
     'square': '',
-    'emotePicker': ''
+    'advancedFormatting': ''
 },
 function(mods) {
     var headerScroll = mods.headerScroll;
@@ -24,7 +24,7 @@ function(mods) {
     var userID = mods.userID;
     var signatureMod = mods.signatureMod;
     var square = mods.square;
-    var emotePicker = mods.emotePicker;
+    var advancedFormatting = mods.advancedFormatting;
 
     if (headerScroll == 1) {
         var MheaderScroll = document.createElement('script');
@@ -85,12 +85,12 @@ function(mods) {
         Msquare.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(Msquare);
     }
-    if (emotePicker == 1) {
-        var emoteStyle = document.createElement('link');
-        emoteStyle.href = chrome.extension.getURL('mods/advanced-formatting.css');
-        emoteStyle.type = 'text/css';
-        emoteStyle.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(emoteStyle);
+    if (advancedFormatting == 1) {
+        var advancedFormattingStyle = document.createElement('link');
+        advancedFormattingStyle.href = chrome.extension.getURL('mods/advanced-formatting.css');
+        advancedFormattingStyle.type = 'text/css';
+        advancedFormattingStyle.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(advancedFormattingStyle);
     }
 
     add_copy_code();
