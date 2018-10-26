@@ -1,0 +1,120 @@
+/* Style modal boxes */
+.vivaldi-mod-modal-box {
+    position: fixed;
+    z-index: 9999999999;
+    width: 250px;
+    padding: 5px;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+    grid-row-gap: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 4px;
+    box-shadow: black 1px 1px 1px 1px;
+    overflow: scroll;
+    max-height: 400px;
+}
+
+.vivaldi-mod-modal-box-control-bar {
+    grid-column: 1 / 5;
+    color: white;
+    place-self: stretch;
+    cursor: move;
+    border-radius: 4px 0px 0px 4px;
+    text-align: center;
+}
+
+.vivaldi-mod-modal-box-close {
+    border: none;
+    border-radius:0px 4px 4px 0px;
+}
+
+/* Style emote picker */
+#emote-picker img {
+    cursor: pointer;
+    place-self: center;
+}
+
+#emote-picker-button i {
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+}
+
+/* Style dropzone indicator */
+.dropmarker {
+    display: block;
+    width: 5px;
+    height: 35px;
+    position: fixed;
+    z-index: 9999999999;
+    pointer-events: none;
+    background: black;
+}
+
+.dropmarker:before {
+    content:'';
+    width: 8px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    border: 3px solid black;
+    border-width: 0px 3px 3px 0px;
+    left: -2.5px;
+    top: -13px;
+}
+
+.dropmarker:after {
+    content:  '';
+    width: 2px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);;
+    left: -1px;
+    top: -17px;
+    background: black;
+}
+
+.composer .hiddenButtons {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 70px;
+    height: 0;
+    cursor: pointer;
+}
+
+/* Style the "open hidden items modal" button */
+.composer .hiddenButtons .trigger {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    top: -20px;
+    margin: 0 auto;
+    margin-left: 20px;
+    background: #333;
+    border: 1px solid #333;
+    border-radius: 50%;
+    line-height: 26px;
+}
+
+@media (max-width: 991px){
+    .composer .hiddenButtons {
+        position: fixed;
+        width: 100%;
+        top: 26px;
+        left: 27px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+}
+
+.zen-mode .composer .hiddenButtons {
+    display: none !important;
+}
+
+.composer .hiddenButtons .trigger i {
+    color: white;
+}
