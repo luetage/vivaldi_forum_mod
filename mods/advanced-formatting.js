@@ -84,6 +84,26 @@ y | y
 >> `, ""],
     ["list-ol", "1. ", ""]
 ];
+/* default values - don't change these */
+const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
+    bold: 1,
+    italic: 2,
+    list: 3,
+    strikethrough: 4,
+    link: 5,
+    "picture-o": 6,
+    zen: 7,
+    picture: 8,
+    "smile-o": 9,
+    header: -1,
+    "window-minimize": -1,
+    "quote-right": -1,
+    code: -1,
+    "file-code-o": -1,
+    "th-large": -1,
+    "list-ol": -1,
+    "shield": -1
+};
 /** Keep track of order of icon */
 let FORMATTING_BAR_CUSTOM_ORDER = {
     bold: 1,
@@ -471,7 +491,7 @@ function makeDataTransfer(dragEvent){
 function getDataTranfer(dropEvent){
     try {
         const data = JSON.parse(dropEvent.dataTransfer.getData("text"));
-        if(!data.order || !data.key || data.nonce !== NONCE){
+        if(isNaN(data.order) || !data.key || data.nonce !== NONCE){
             throw "Badly formatted drop";
         }
         return data;
@@ -519,6 +539,20 @@ function buttonDroppedOnToModal(dropEvent){
 }
 
 /**
+ * Reset the formatting bar to default
+ */
+function resetFormattingBarToDefault(){
+    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+            FORMATTING_BAR_CUSTOM_ORDER[key] = DEFAULT_FORMATTING_BAR_CUSTOM_ORDER[key];
+        }
+    }
+    saveToolbarOrder();
+    setOrderAndHideAccordingToRemembered();
+    hideModal(TOOLBAR_MODAL);
+}
+
+/**
  * Create and add to page the modal for holding hidden toolbar items
  * Allow dropping to this modal
  * List items should always be a child of the <ul> within this
@@ -529,6 +563,11 @@ function createToolbarCustomModal(){
     box.addEventListener("dragover", buttonDraggedOverModal);
     const list = document.createElement("ul");
     box.appendChild(list);
+    const reset = document.createElement("button");
+    reset.className = "btn-danger";
+    reset.addEventListener("click", resetFormattingBarToDefault);
+    reset.innerText = getString("reset");
+    box.appendChild(reset);
     document.body.appendChild(box);
 }
 
@@ -566,7 +605,7 @@ function setOrderAndHideAccordingToRemembered(){
 function makeModalWithHiddenButtonsOpener(){
     const button = document.createElement("div");
     button.className = "hiddenButtons";
-    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-eye'></i></div>";
+    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-wrench'></i></div>";
     button.title = getString("customToolbarTitle");
     button.addEventListener("click", event => {
         toggleModal(event, TOOLBAR_MODAL);
