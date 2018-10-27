@@ -529,11 +529,11 @@ function buttonDroppedOnToModal(dropEvent){
         if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
             const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
             if(order > orderOfDropped){
-                setButtonOrder(key, order - 1);
+                FORMATTING_BAR_CUSTOM_ORDER[key] = order - 1;
             }
         }
     }
-    setButtonOrder(keyOfDropped, -1);
+    FORMATTING_BAR_CUSTOM_ORDER[keyOfDropped] = -1;
     saveToolbarOrder();
     setOrderAndHideAccordingToRemembered();
     dropEvent.preventDefault();
@@ -730,17 +730,6 @@ function buttonDraggedOverAnother(dragEvent){
 }
 
 /**
- * Update the order of a button
- * Update the global and the DOM element but not storage yet
- * @param {string} key of button
- * @param {number} newOrder
- */
-function setButtonOrder(key, newOrder){
-    FORMATTING_BAR_CUSTOM_ORDER[key] = newOrder;
-    FORMATTING_BUTTONS[key].style.order = newOrder;
-}
-
-/**
  * Something was dropped on a button
  * If it was another button, begin the process of moving it
  * @param {DropEvent} dropEvent
@@ -758,30 +747,40 @@ function buttonDroppedOn(dropEvent){
         target = target.parentElement;
     }
     const targetOrder = Number(target.style.order);
-    if(targetOrder === -1){
-        return; // let modal handle this
+    if(targetOrder === -1){ // dragged from toolbar to modal
+        return;
     }
-    const newOrder = targetOrder + 1;
-    if(data.order===-1){
+    if(data.order===-1){ // dragged from modal to toolbar
         for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
             if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
                 const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
-                if(order >= newOrder){
-                    setButtonOrder(key, order + 1);
+                if(order > targetOrder){
+                    FORMATTING_BAR_CUSTOM_ORDER[key] = order + 1;
                 }
             }
         }
-    } else {
+        FORMATTING_BAR_CUSTOM_ORDER[data.key] = targetOrder + 1;
+    } else if(targetOrder > data.order) { // moved to the right
         for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
             if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
                 const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
-                if(order >= newOrder && order < data.order){
-                    setButtonOrder(key, order + 1);
+                if(order > data.order && order <= targetOrder){
+                    FORMATTING_BAR_CUSTOM_ORDER[key] = order - 1;
                 }
             }
         }
-    }
-    setButtonOrder(data.key, newOrder);
+        FORMATTING_BAR_CUSTOM_ORDER[data.key] = targetOrder;
+    } else if (targetOrder < data.order) { // moved to the left
+        for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
+            if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
+                const order = Number(FORMATTING_BAR_CUSTOM_ORDER[key]);
+                if(order > targetOrder && order <= data.order){
+                    FORMATTING_BAR_CUSTOM_ORDER[key] = order + 1;
+                }
+            }
+        }
+        FORMATTING_BAR_CUSTOM_ORDER[data.key] = targetOrder + 1;
+    } // else dropped on to self, so dont do anything
     saveToolbarOrder();
     setOrderAndHideAccordingToRemembered();
     dropEvent.preventDefault();
