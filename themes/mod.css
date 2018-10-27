@@ -406,40 +406,35 @@ div.shadow-box1, div.shadow-box2 {
     fill: #00107C;
 }
 
-/* advanced formatting mod */
+/* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: #f5ffff !important;
-    border-color: #e0e0e0 !important;
+    background: #f5ffff;
+    border-color: #e0e0e0;
+    color: #00247d;
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: #e0e0e0 !important;
-    color: black !important;
-}
-.vivaldi-mod-modal-box-close {
-    background: #8c8c8c !important;
-}
-.vivaldi-mod-modal-box-close i {
-    color: white !important;
+    background: #e0e0e0;
+    color: #2a363b;
 }
 .dropmarker, .dropmarker:after {
-    background: #00247D !important;
+    background: #00247D;
 }
 .dropmarker:before {
-    border-color: #00247D !important;
+    border-color: #00247D;
 }
 .composer .hiddenButtons .trigger {
-    background: #00247D !important;
-    border-color: #00247D !important;
+    background: #00247D;
+    border-color: #00247D;
 }
 .composer .hiddenButtons .trigger i {
-    color: #f58591 !important;
+    color: #f58591;
 }
 @media (max-width: 991px){
     .composer .hiddenButtons .trigger {
-        background: #8c8c8c !important;
-        border-radius: 0px !important;
+        background: #8c8c8c;
+        border-radius: 0px;
     }
     .composer .hiddenButtons .trigger i {
-        color: white !important;
+        color: white;
     }
 }

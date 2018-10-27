@@ -9,12 +9,11 @@
     border-width: 5px;
     border-style: solid;
     border-radius: 4px;
-    box-shadow: black 1px 1px 1px 1px;
+    box-shadow: rgba(0,0,0,0.5) 1px 1px 1px 1px;
 }
 
 .vivaldi-mod-modal-box-control-bar {
     grid-column: 1 / 5;
-    color: white;
     place-self: stretch;
     cursor: move;
     border-radius: 4px 0px 0px 4px;
@@ -130,38 +129,4 @@
     grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
     grid-row-gap: 5px;
     list-style: none;
-}
-
-/* theme colours */
-.vivaldi-mod-modal-box {
-    background: white;
-    border-color: #f5f5f5;
-}
-.vivaldi-mod-modal-box-control-bar {
-    background: white;
-    color: black;
-}
-.vivaldi-mod-modal-box-close {
-    background: #00caa7;
-}
-.vivaldi-mod-modal-box-close i {
-    color: white;
-}
-.dropmarker, .dropmarker:after {
-    background: black;
-}
-.dropmarker:before {
-    border-color: black;
-}
-.composer .hiddenButtons .trigger {
-    background: #333;
-    border-color: #333;
-}
-.composer .hiddenButtons .trigger i {
-    color: white;
-}
-@media (max-width: 991px){
-    .composer .hiddenButtons .trigger {
-        background: #23bcb1;
-    }
 }

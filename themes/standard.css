@@ -12,3 +12,31 @@
 .upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
     color: #fefefe;
 }
+
+/* Advanced formatting mod */
+.vivaldi-mod-modal-box {
+    background: white;
+    border-color: #f1f1f1;
+}
+.vivaldi-mod-modal-box-control-bar {
+    background: #f1f1f1;
+    color: black;
+}
+.dropmarker, .dropmarker:after {
+    background: black;
+}
+.dropmarker:before {
+    border-color: black;
+}
+.composer .hiddenButtons .trigger {
+    background: #333;
+    border-color: #333;
+}
+.composer .hiddenButtons .trigger i {
+    color: white;
+}
+@media (max-width: 991px){
+    .composer .hiddenButtons .trigger {
+        background: #23bcb1;
+    }
+}

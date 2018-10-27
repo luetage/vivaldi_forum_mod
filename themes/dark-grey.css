@@ -351,8 +351,12 @@ div.preview.well {
     border: none !important;
 }
 
-ul.formatting-group li:hover {
-    background-color: var(--button-background) !important;
+.composer .formatting-bar .formatting-group li {
+    color: var(--link-color);
+}
+
+.composer .formatting-bar .formatting-group li:focus, .composer .formatting-bar .formatting-group li:hover {
+    background-color: var(--fourth-background) !important;
     border-radius: 2px;
 }
 
@@ -731,35 +735,30 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 
 /* advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: #1e1e1e !important;
-    border-color: #0a0a0a !important;
+    background: var(--second-background);
+    border-color: var(--main-background);
+    color: var(--link-color);
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: #1e1e1e !important;
-    color: white !important;
-}
-.vivaldi-mod-modal-box-close {
-    background: #00caa7 !important;
-}
-.vivaldi-mod-modal-box-close i {
-    color: white !important;
+    background: var(--main-background);
+    color: var(--main-font-color);
 }
 .dropmarker, .dropmarker:after {
-    background: var(--button-background) !important;
+    background: var(--button-background);
 }
 .dropmarker:before {
-    border-color: var(--button-background) !important;
+    border-color: var(--button-background);
 }
 .composer .hiddenButtons .trigger {
-    background: #333 !important;
-    border-color: #333 !important;
+    background: #333;
+    border-color: #333;
 }
 .composer .hiddenButtons .trigger i {
-    color: white !important;
+    color: white;
 }
 @media (max-width: 991px){
     .composer .hiddenButtons .trigger {
-        background: #23bcb1 !important;
-        border-radius: 3px !important;
+        background: #23bcb1;
+        border-radius: 3px;
     }
 }

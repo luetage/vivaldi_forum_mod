@@ -666,38 +666,33 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
     text-decoration: underline;
   }
 
-/* advanced formatting mod */
+/* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: #3d474c !important;
-    border-color: #2e3539 !important;
+    background: #2e3539;
+    border-color: #3d474c;
+    color: #24948c;
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: #3d474c !important;
-    color: white !important;
-}
-.vivaldi-mod-modal-box-close {
-    background: #b05158 !important;
-}
-.vivaldi-mod-modal-box-close i {
-    color: white !important;
+    background: #3d474c;
+    color: #ddd;
 }
 .dropmarker, .dropmarker:after {
-    background: #24948c !important;
+    background: #24948c;
 }
 .dropmarker:before {
-    border-color: #24948c !important;
+    border-color: #24948c;
 }
 .composer .hiddenButtons .trigger {
-    background: #333333 !important;
-    border-color: #333333 !important;
+    background: #333333;
+    border-color: #333333;
 }
 .composer .hiddenButtons .trigger i {
-    color: white !important;
+    color: white;
 }
 @media (max-width: 991px){
     .composer .hiddenButtons .trigger {
-        background: #b05158 !important;
-        border-radius: 0px !important;
-        border: 1px solid white !important;
+        background: #b05158;
+        border-radius: 0px;
+        border: 1px solid white;
     }
 }

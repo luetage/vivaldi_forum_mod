@@ -581,37 +581,32 @@ pre {
     right: 35px;
 }
 
-/* advanced formatting mod */
+/* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: #f0f0f0 !important;
-    border-color: #e0e0e0 !important;
+    background: #f0f0f0;
+    border-color: #e0e0e0;
+    color: #333;
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: #e0e0e0 !important;
-    color: black !important;
-}
-.vivaldi-mod-modal-box-close {
-    background: #00caa7 !important;
-}
-.vivaldi-mod-modal-box-close i {
-    color: white !important;
+    background: #e0e0e0;
+    color: #999;
 }
 .dropmarker, .dropmarker:after {
-    background: black !important;
+    background: black;
 }
 .dropmarker:before {
-    border-color: black !important;
+    border-color: black;
 }
 .composer .hiddenButtons .trigger {
-    background: #333 !important;
-    border-color: #333 !important;
+    background: #333;
+    border-color: #333;
 }
 .composer .hiddenButtons .trigger i {
-    color: white !important;
+    color: white;
 }
 @media (max-width: 991px){
     .composer .hiddenButtons .trigger {
-        background: #23bcb1 !important;
-        border-radius: 3px !important;
+        background: #23bcb1;
+        border-radius: 3px;
     }
 }

@@ -306,6 +306,7 @@ function makeModalBox(id, titleText){
 
     const closeBtn = document.createElement("button");
     closeBtn.className = "vivaldi-mod-modal-box-close";
+    closeBtn.classList.add("btn-primary");
     closeBtn.innerHTML = "<i class='fa fa-times'></i>";
     closeBtn.title = getString("closeText");
     closeBtn.addEventListener("click", hideModal);
@@ -564,7 +565,7 @@ function createToolbarCustomModal(){
     const list = document.createElement("ul");
     box.appendChild(list);
     const reset = document.createElement("button");
-    reset.className = "btn-danger";
+    reset.className = "btn-primary";
     reset.addEventListener("click", resetFormattingBarToDefault);
     reset.innerText = getString("reset");
     box.appendChild(reset);

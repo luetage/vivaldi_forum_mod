@@ -628,36 +628,31 @@ button.main.green, button.main.red {
     color: #fbfbfb;
 }
 
-/* advanced formatting mod */
+/* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: var(--colorBg) !important;
-    border-color: var(--colorDropHi) !important;
+    background: var(--colorBg);
+    border-color: var(--colorBgHiG);
+    color: var(--colorLi2);
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: var(--colorDropHi) !important;
-    color: var(--colorFg) !important;
-}
-.vivaldi-mod-modal-box-close {
-    background: var(--colorBtn) !important;
-}
-.vivaldi-mod-modal-box-close i {
-    color: var(--colorHiFg) !important;
+    background: var(--colorBgHiG);
+    color: var(--colorFg);
 }
 .dropmarker, .dropmarker:after {
-    background: var(--colorLi2) !important;
+    background: var(--colorLi2);
 }
 .dropmarker:before {
-    border-color: var(--colorLi2) !important;
+    border-color: var(--colorLi2);
 }
 .composer .hiddenButtons .trigger {
-    background: var(--colorHi) !important;
-    border-color: var(--colorHi) !important;
+    background: var(--colorHi);
+    border-color: var(--colorHi);
 }
 .composer .hiddenButtons .trigger i {
-    color: var(--colorHiFg) !important;
+    color: var(--colorHiFg);
 }
 @media (max-width: 991px){
     .composer .hiddenButtons .trigger {
-        background: var(--colorBtnHi) !important;
+        background: var(--colorBtnHi);
     }
 }
