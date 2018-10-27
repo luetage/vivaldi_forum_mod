@@ -503,10 +503,10 @@ function getDataTranfer(dropEvent){
 
 /**
  * Don't do anything, but this is necessary in order to allow
- *    things to be dropped onto the modal
+ * things to be dropped onto the target that listens to this event
  * @param {DragEvent} dragEvent
  */
-function buttonDraggedOverModal(dragEvent){
+function makeValidDropTarget(dragEvent){
     dragEvent.preventDefault();
 }
 
@@ -561,7 +561,7 @@ function resetFormattingBarToDefault(){
 function createToolbarCustomModal(){
     const box = makeModalBox(TOOLBAR_MODAL, getString("customToolbarTitle"));
     box.addEventListener("drop", buttonDroppedOnToModal);
-    box.addEventListener("dragover", buttonDraggedOverModal);
+    box.addEventListener("dragover", makeValidDropTarget);
     const list = document.createElement("ul");
     box.appendChild(list);
     const reset = document.createElement("button");
@@ -666,7 +666,9 @@ function formatButtonDragStart(dragEvent){
     makeDataTransfer(dragEvent);
     dragEvent.dataTransfer.dropEffect = "move";
     dragEvent.dataTransfer.effectAllowed = "move";
-    if(!modalIsVisible(TOOLBAR_MODAL)){
+    if(modalIsVisible(TOOLBAR_MODAL)){
+        setTimeout(() => {hideModal(TOOLBAR_MODAL);}, 10);
+    } else {
         showModal(dragEvent, TOOLBAR_MODAL);
     }
     moveDropMarker(-100,-100);
@@ -693,22 +695,38 @@ function makeFormatButtonsDraggable(){
             button.draggable = true;
             button.addEventListener("dragstart", formatButtonDragStart);
             button.addEventListener("dragend", formatButtonDragEnd);
+            button.addEventListener("drag", buttonDraggedOverAnother);
         }
     }
 }
 
 /**
- * Something was dragged over this button
+ * The button was dragged over another button
  * @param {DragEvent} dragEvent
  */
-function buttonDraggedOver(dragEvent){
-    let target = dragEvent.target;
-    if(target.tagName.toUpperCase()==="I"){
-        target = target.parentElement;
+function buttonDraggedOverAnother(dragEvent){
+    const x = dragEvent.clientX;
+    const y = dragEvent.clientY;
+    for (const key in FORMATTING_BUTTONS) {
+        if (FORMATTING_BUTTONS.hasOwnProperty(key)) {
+            const element = FORMATTING_BUTTONS[key];
+            const box = element.getClientRects()[0];
+            const left = box.x;
+            const right = box.x+box.width;
+            const top = box.y;
+            const bottom = box.y+box.height;
+            if(left <= x && x <= right && top <= y && y <= bottom){
+                if(Number(FORMATTING_BAR_CUSTOM_ORDER[key])===-1){
+                    hideDropMarker();
+                } else {
+                    moveDropMarker(right, top);
+                    showDropMarker();
+                }
+                return;
+            }
+        }
     }
-    const box = target.getClientRects()[0];
-    moveDropMarker(box.x + box.width, box.y);
-    dragEvent.preventDefault();
+    hideDropMarker();
 }
 
 /**
@@ -778,7 +796,7 @@ function makeFormattingButtonsDroppableOnTo(){
     for (const key in FORMATTING_BUTTONS) {
         if (FORMATTING_BUTTONS.hasOwnProperty(key)) {
             const button = FORMATTING_BUTTONS[key];
-            button.addEventListener("dragover", buttonDraggedOver);
+            button.addEventListener("dragover", makeValidDropTarget);
             button.addEventListener("drop", buttonDroppedOn);
         }
     }
