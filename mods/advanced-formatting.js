@@ -225,6 +225,8 @@ function modalDrag(e){
 /**
  * Show a modal. Use the mouse position to align it with the button
  *   in case the user resizes the message composer
+ * If modal will clip off-screen positively (to right or below),
+ *   move it back on-screen automatically
  * @param {MouseEvent} pos where the mouse was when you want to show the modal
  * @param {string} modalId of the modal to show
  */
@@ -232,9 +234,20 @@ function showModal(pos, modalId){
     const modal = document.getElementById(modalId);
     if(modal){
         modal.style.display = "grid";
-        modal.style.top = pos.clientY + 10 + "px";
-        modal.style.left = pos.clientX + 10 + "px";
+    } else {
+        return;
     }
+    const modalBounds = modal.getClientRects()[0];
+    let x = pos.clientX + 10;
+    let y = pos.clientY + 10;
+    if((x + modalBounds.width) > window.innerWidth){
+        x -= (modalBounds.width - (window.innerWidth - x));
+    }
+    if((y + modalBounds.height) > window.innerHeight){
+        y -= (modalBounds.height - (window.innerHeight - y));
+    }
+    modal.style.top = y + "px";
+    modal.style.left = x + "px";
 }
 
 /**
