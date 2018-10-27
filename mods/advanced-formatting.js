@@ -294,6 +294,7 @@ function makeModalBox(id, titleText){
     const box = document.createElement("div");
     box.id = id;
     box.className = "vivaldi-mod-modal-box";
+    box.style.display = "none";
 
     const controlBar = document.createElement("div");
     controlBar.className = "vivaldi-mod-modal-box-control-bar";
