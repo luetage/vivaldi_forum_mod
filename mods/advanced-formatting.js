@@ -554,20 +554,6 @@ function buttonDroppedOnToModal(dropEvent){
 }
 
 /**
- * Reset the formatting bar to default
- */
-function resetFormattingBarToDefault(){
-    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
-        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
-            FORMATTING_BAR_CUSTOM_ORDER[key] = DEFAULT_FORMATTING_BAR_CUSTOM_ORDER[key];
-        }
-    }
-    saveToolbarOrder();
-    setOrderAndHideAccordingToRemembered();
-    hideModal(TOOLBAR_MODAL);
-}
-
-/**
  * Create and add to page the modal for holding hidden toolbar items
  * Allow dropping to this modal
  * List items should always be a child of the <ul> within this
@@ -578,11 +564,6 @@ function createToolbarCustomModal(){
     box.addEventListener("dragover", makeValidDropTarget);
     const list = document.createElement("ul");
     box.appendChild(list);
-    const reset = document.createElement("button");
-    reset.className = "btn-primary";
-    reset.addEventListener("click", resetFormattingBarToDefault);
-    reset.innerText = getString("reset");
-    box.appendChild(reset);
     document.body.appendChild(box);
 }
 
