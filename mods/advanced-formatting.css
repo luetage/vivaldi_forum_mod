@@ -79,4 +79,17 @@
     grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
     grid-row-gap: 5px;
     list-style: none;
+    padding-left: 20px;
+}
+
+#toolbar-custom ul li {
+    place-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#toolbar-custom ul li:hover {
+    background-color: rgba(128,128,128,0.25);
 }
