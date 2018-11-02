@@ -70,56 +70,6 @@
     top: -17px;
 }
 
-/* Style the "open hidden items modal" button */
-.composer .hiddenButtons {
-    position: absolute;
-    width: 100%;
-    top: 10px;
-    left: 70px;
-    height: 0;
-    cursor: pointer;
-}
-
-.composer .hiddenButtons .trigger {
-    position: relative;
-    display: block;
-    width: 32px;
-    height: 32px;
-    top: -20px;
-    margin: 0 auto;
-    margin-left: 20px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50%;
-    line-height: 26px;
-}
-
-@media (max-width: 991px){
-    .composer .hiddenButtons {
-        position: fixed;
-        width: 20px;
-        top: 4px;
-        left: 20px;
-        height: 20px;
-        z-index: 9999;
-    }
-
-    .composer .hiddenButtons .trigger {
-        border: none;
-        border-radius: 0%;
-        height: 100%;
-        width: 100%;
-        top: 0px;
-        left: 0px;
-        line-height: 18px;
-    }
-}
-
-.zen-mode .composer .hiddenButtons {
-    display: none !important;
-}
-
-
 /* style hidden items modal */
 
 #toolbar-custom ul {

@@ -682,17 +682,3 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .dropmarker:before {
     border-color: #24948c;
 }
-.composer .hiddenButtons .trigger {
-    background: #333333;
-    border-color: #333333;
-}
-.composer .hiddenButtons .trigger i {
-    color: white;
-}
-@media (max-width: 991px){
-    .composer .hiddenButtons .trigger {
-        background: #b05158;
-        border-radius: 0px;
-        border: 1px solid white;
-    }
-}

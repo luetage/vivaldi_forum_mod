@@ -28,15 +28,3 @@
 .dropmarker:before {
     border-color: black;
 }
-.composer .hiddenButtons .trigger {
-    background: #333;
-    border-color: #333;
-}
-.composer .hiddenButtons .trigger i {
-    color: white;
-}
-@media (max-width: 991px){
-    .composer .hiddenButtons .trigger {
-        background: #23bcb1;
-    }
-}
