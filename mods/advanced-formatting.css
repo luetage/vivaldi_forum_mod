@@ -79,7 +79,7 @@
     grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
     grid-row-gap: 5px;
     list-style: none;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 #toolbar-custom ul li {
@@ -88,6 +88,7 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
+    cursor: pointer;
 }
 
 #toolbar-custom ul li:hover {
