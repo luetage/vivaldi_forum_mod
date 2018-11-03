@@ -28,3 +28,7 @@
 .dropmarker:before {
     border-color: black;
 }
+#toolbar-custom ul li:hover {
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
