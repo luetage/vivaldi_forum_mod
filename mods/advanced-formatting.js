@@ -554,20 +554,6 @@ function buttonDroppedOnToModal(dropEvent){
 }
 
 /**
- * Reset the formatting bar to default
- */
-function resetFormattingBarToDefault(){
-    for (const key in FORMATTING_BAR_CUSTOM_ORDER) {
-        if (FORMATTING_BAR_CUSTOM_ORDER.hasOwnProperty(key)) {
-            FORMATTING_BAR_CUSTOM_ORDER[key] = DEFAULT_FORMATTING_BAR_CUSTOM_ORDER[key];
-        }
-    }
-    saveToolbarOrder();
-    setOrderAndHideAccordingToRemembered();
-    hideModal(TOOLBAR_MODAL);
-}
-
-/**
  * Create and add to page the modal for holding hidden toolbar items
  * Allow dropping to this modal
  * List items should always be a child of the <ul> within this
@@ -578,11 +564,6 @@ function createToolbarCustomModal(){
     box.addEventListener("dragover", makeValidDropTarget);
     const list = document.createElement("ul");
     box.appendChild(list);
-    const reset = document.createElement("button");
-    reset.className = "btn-primary";
-    reset.addEventListener("click", resetFormattingBarToDefault);
-    reset.innerText = getString("reset");
-    box.appendChild(reset);
     document.body.appendChild(box);
 }
 
@@ -618,14 +599,17 @@ function setOrderAndHideAccordingToRemembered(){
  * Make a button, and add it to DOM, that will show the hidden items modal
  */
 function makeModalWithHiddenButtonsOpener(){
-    const button = document.createElement("div");
+    const button = document.createElement("li");
+    button.style.order = 0;
     button.className = "hiddenButtons";
-    button.innerHTML = "<div class='trigger text-center'><i class='fa fa-wrench'></i></div>";
+    button.innerHTML = "<i class='fa fa-wrench'></i>";
     button.title = getString("customToolbarTitle");
     button.addEventListener("click", event => {
         toggleModal(event, TOOLBAR_MODAL);
     });
-    document.querySelector(".composer .composer-container").appendChild(button);
+    button.addEventListener("dragover", makeValidDropTarget);
+    button.addEventListener("drop", buttonDroppedOn);
+    document.querySelector("ul.formatting-group").appendChild(button);
 }
 
 /**
@@ -721,10 +705,14 @@ function makeFormatButtonsDraggable(){
 function buttonDraggedOverAnother(dragEvent){
     const x = dragEvent.clientX;
     const y = dragEvent.clientY;
+    /* Dragged over another button */
     for (const key in FORMATTING_BUTTONS) {
         if (FORMATTING_BUTTONS.hasOwnProperty(key)) {
             const element = FORMATTING_BUTTONS[key];
             const box = element.getClientRects()[0];
+            if(!box){
+                continue;
+            }
             const left = box.x;
             const right = box.x+box.width;
             const top = box.y;
@@ -740,6 +728,21 @@ function buttonDraggedOverAnother(dragEvent){
             }
         }
     }
+    /* Dragged over leftmost button */
+    const leftElement = document.querySelector("li.hiddenButtons");
+    const leftBox = leftElement.getClientRects()[0];
+    if(leftBox){
+        const leftLeft = leftBox.x;
+        const leftRight = leftBox.x+leftBox.width;
+        const leftTop = leftBox.y;
+        const leftBottom = leftBox.y+leftBox.height;
+        if(leftLeft <= x && x <= leftRight && leftTop <= y && y <= leftBottom){
+            moveDropMarker(leftRight, leftTop);
+            showDropMarker();
+            return;
+        }
+    }
+    /* Not dragged over anything important */
     hideDropMarker();
 }
 

@@ -422,19 +422,3 @@ div.shadow-box1, div.shadow-box2 {
 .dropmarker:before {
     border-color: #00247D;
 }
-.composer .hiddenButtons .trigger {
-    background: #00247D;
-    border-color: #00247D;
-}
-.composer .hiddenButtons .trigger i {
-    color: #f58591;
-}
-@media (max-width: 991px){
-    .composer .hiddenButtons .trigger {
-        background: #8c8c8c;
-        border-radius: 0px;
-    }
-    .composer .hiddenButtons .trigger i {
-        color: white;
-    }
-}
