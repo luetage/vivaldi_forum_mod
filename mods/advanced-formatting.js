@@ -664,7 +664,7 @@ function formatButtonDragStart(dragEvent){
     makeDataTransfer(dragEvent);
     dragEvent.dataTransfer.dropEffect = "move";
     dragEvent.dataTransfer.effectAllowed = "move";
-    if(modalIsVisible(TOOLBAR_MODAL)){
+    if(modalIsVisible(TOOLBAR_MODAL) && getDataTranfer(dragEvent).order===-1){
         setTimeout(() => {hideModal(TOOLBAR_MODAL);}, 10);
     } else {
         showModal(dragEvent, TOOLBAR_MODAL);
