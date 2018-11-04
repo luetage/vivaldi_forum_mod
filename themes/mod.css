@@ -423,6 +423,5 @@ div.shadow-box1, div.shadow-box2 {
     border-color: #00247D;
 }
 #toolbar-custom ul li:hover {
-    cursor: pointer;
     background-color: #e6e6e6;
 }

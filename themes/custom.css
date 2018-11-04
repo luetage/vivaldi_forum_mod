@@ -645,6 +645,5 @@ button.main.green, button.main.red {
     border-color: var(--colorLi2);
 }
 #toolbar-custom ul li:hover {
-    cursor: pointer;
     background-color: var(--colorBgHiC);
 }

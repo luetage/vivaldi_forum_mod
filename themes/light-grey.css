@@ -598,7 +598,6 @@ pre {
     border-color: black;
 }
 #toolbar-custom ul li:hover {
-    cursor: pointer;
     background-color: #b6b6b6;
     color: #fff;
 }

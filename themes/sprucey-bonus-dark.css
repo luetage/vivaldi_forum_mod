@@ -683,6 +683,5 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
     border-color: #24948c;
 }
 #toolbar-custom ul li:hover {
-    cursor: pointer;
     background-color: #43494d;
 }
