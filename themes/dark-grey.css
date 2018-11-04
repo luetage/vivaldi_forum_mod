@@ -749,3 +749,7 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .dropmarker:before {
     border-color: var(--button-background);
 }
+#toolbar-custom ul li:hover {
+    cursor: pointer;
+    background-color: var(--fourth-background);
+}

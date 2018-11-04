@@ -4,6 +4,9 @@
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
 }
+.account {
+    margin-top: 200px !important;
+}
 
 /* Font icons */
 .taskbar-composer .fa-plus:before {

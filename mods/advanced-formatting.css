@@ -90,7 +90,3 @@
     padding: 5px;
     cursor: pointer;
 }
-
-#toolbar-custom ul li:hover {
-    background-color: rgba(128,128,128,0.25);
-}
