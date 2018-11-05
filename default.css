@@ -4,7 +4,7 @@
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
 }
-.account {
+.account, .groups.details {
     margin-top: 200px !important;
 }
 
