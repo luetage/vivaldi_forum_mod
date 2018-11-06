@@ -125,6 +125,12 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     color: #fff;
 }
 
+/* disable line breaks for composer title */
+.composer .title-container .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 /* Copy all code button */
 .copy-all-code-button {
