@@ -24,9 +24,6 @@ i.fa-ellipsis-v:before {
 .fa-angle-up:before {
     content: "\f0d8" !important;
 }
-#optionsLink .fa-cog:before {
-     content: "\f192";
-}
 
 /* Expanded chat controls margin fix */
 .expanded-chat .controlsToggle {

@@ -27,7 +27,7 @@ document.getElementById('logged-in-menu').addEventListener('click', function() {
         var options = document.createElement('li');
         options.id = 'optionsLink';
         options.style = 'cursor: pointer';
-        options.innerHTML = '<a><i class="fa fa-fw fa-cog"></i><span> Forum mod</span></a>';
+        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span> Forum mod</span></a>';
         dropdown.insertBefore(options, dropdown.childNodes[18]);
         var li = document.createElement('li');
         var editF = document.createElement('a');
