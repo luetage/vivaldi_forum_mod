@@ -399,6 +399,15 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .alert-window .alert.alert-info {
     border-left-color: var(--colorFg) !important;
 }
+.alert-window .alert.alert-warning::before, .alert-window .alert.alert-danger::before {
+    background-color: #ef3939;
+}
+.alert-window .alert.alert-success::before {
+    background-color: #4caf50;
+}
+.alert-window .alert.alert-info::before {
+    background-color: var(--colorFg);
+}
 /* page alerts */
 .alert.alert-warning, .alert.alert-success, .alert.alert-info, .alert.alert-danger {
     background-color: var(--colorBgHiC);
