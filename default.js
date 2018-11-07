@@ -86,17 +86,3 @@ function discord() {
     addlinks.innerHTML = ' | <a href="https://store.vivaldi.com/" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
     footerlinks.appendChild(addlinks);
 };
-
-
-/* Settings margin top fix */
-
-function settings() {
-    setTimeout(function() {
-        var settings = document.getElementsByTagName('h4');
-        for(var i=0; i<settings.length; i++) {
-            if (settings[i].innerHTML == 'Select a Homepage') {
-                document.querySelector('.account').style = 'margin-top: 300px !important';
-            }
-        }
-    },700);
-};

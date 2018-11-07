@@ -3,10 +3,7 @@
 /* Profile alignment fix */
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
-}
-.account, .groups.details {
-    margin-top: 200px !important;
-}
+}y
 
 /* Font icons */
 .taskbar-composer .fa-plus:before {

@@ -95,7 +95,6 @@ function(mods) {
 
     add_copy_code();
     discord();
-    settings();
     if (bookmarks == 1) { _bookmarks() }
     if (signatureMod == 1) { _smod() }
     if (timestamp == 1) { _lastedit() }
@@ -103,7 +102,6 @@ function(mods) {
     document.addEventListener('click', function() {
         add_copy_code();
         bookmarked();
-        settings();
         if (signatureMod == 1) { w_smod() }
         if (timestamp == 1) { w_lastedit() }
     });
