@@ -255,7 +255,7 @@ a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/wil
     background-color: var(--colorBgHi) !important;
 }
 .notifications-list li.unread:nth-child(odd), .notifications-list li.unread:nth-child(even) {
-    border-left: 5px solid var(--colorLi);
+    border-left: 5px solid var(--colorLi) !important;
 }
 #content li[data-nid^="new_post"]::before, #content li[data-nid^="upvote"]::before, #content li[data-nid^="follow"]::before, #content li[data-nid^="move"]::before, #content li[data-nid^="chat"]::before, #content li[data-nid^="tid"]::before {
     color: unset !important;
@@ -390,8 +390,11 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     color: var(--colorFg);
     opacity: 0.85;
 }
-.alert-window .alert.alert-warning, .alert-window .alert.alert-danger {
+.alert-window .alert.alert-danger {
     border-left-color: #ef3939 !important;
+}
+.alert-window .alert.alert-warning, {
+    border-left-color: #ff7518 !important;
 }
 .alert-window .alert.alert-success {
     border-left-color: #4caf50 !important;
@@ -399,14 +402,17 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .alert-window .alert.alert-info {
     border-left-color: var(--colorFg) !important;
 }
-.alert-window .alert.alert-warning::before, .alert-window .alert.alert-danger::before {
-    background-color: #ef3939;
+.alert-window .alert.alert-danger::before {
+    background-color: #ef3939 !important;
+}
+.alert-window .alert.alert-warning::before {
+    background-color: #ff7518 !important;
 }
 .alert-window .alert.alert-success::before {
-    background-color: #4caf50;
+    background-color: #4caf50 !important;
 }
 .alert-window .alert.alert-info::before {
-    background-color: var(--colorFg);
+    background-color: var(--colorFg) !important;
 }
 /* page alerts */
 .alert.alert-warning, .alert.alert-success, .alert.alert-info, .alert.alert-danger {
@@ -414,8 +420,11 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     border-color: var(--colorBgHiC);
     color: var(--colorFg);
 }
-.alert.alert-warning, .alert.alert-danger {
+.alert.alert-danger {
     border-left: 5px solid #ef3939;
+}
+.alert.alert-warning {
+    border-left: 5px solid #ff7518;
 }
 .alert.alert-success {
     border-left: 5px solid #4caf50;
