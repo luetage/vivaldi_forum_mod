@@ -322,7 +322,6 @@ function makeModalBox(id, titleText){
     closeBtn.className = "vivaldi-mod-modal-box-close";
     closeBtn.classList.add("btn-primary");
     closeBtn.innerHTML = "<i class='fa fa-times'></i>";
-    closeBtn.title = getString("closeText");
     closeBtn.addEventListener("click", hideModal);
     box.appendChild(closeBtn);
 

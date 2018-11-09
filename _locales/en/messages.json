@@ -67,10 +67,6 @@
         "message": "Spoiler",
         "description": "Title of formatting item spoiler"
     },
-    "closeText": {
-        "message": "Close",
-        "description": "Appears when hovering a close button"
-    },
     "customToolbarTitle": {
         "message": "Edit Custom Toolbar",
         "description": "Title of custom toolbar editor"
@@ -90,5 +86,37 @@
     "reset": {
         "message": "Reset",
         "description": "Text to show on a button that performs some sort of reset operation"
+    },
+    "bookmarks": {
+        "message": "Bookmarks",
+        "description": "Link to bookmarks page from navigation bar"
+    },
+    "bookmarked": {
+        "message": "Bookmarked",
+        "description": "Link to bookmarks page from user profile menu"
+    },
+    "signature": {
+        "message": "Signature",
+        "description": "Signature toggle for forum posts"
+    },
+    "copyCode": {
+        "message": "copy_code",
+        "description": "Copy all code button for code markdown"
+    },
+    "lastModified": {
+        "message": "Last Modified",
+        "description": "Text before local date for timestamp mod in forum posts"
+    },
+    "optionsLink": {
+        "message": "Forum mod",
+        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+    },
+    "editCommunity": {
+        "message": "Edit community",
+        "description": "Link to community settings in user dropdown menu"
+    },
+    "editForum": {
+        "message": "Edit forum",
+        "description": "Link to forum settings in user dropdown menu"
     }
 }

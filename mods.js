@@ -117,6 +117,7 @@ function(mods) {
 /* Bookmarks in navigation */
 
 function _bookmarks() {
+    var trans = chrome.i18n.getMessage('bookmarks');
     var nav = document.getElementById('main-nav');
     var li = document.createElement('li');
     var link = document.createElement('a');
@@ -124,7 +125,7 @@ function _bookmarks() {
     link.href = '/user/' + username() + '/bookmarks';
     link.setAttribute('title', '');
     link.setAttribute('data-original-title', 'Bookmarks');
-    link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">Bookmarks</span>';
+    link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">' + trans + '</span>';
     nav.insertBefore(li, nav.childNodes[15]);
     li.appendChild(link);
 };
@@ -135,13 +136,14 @@ function _bookmarks() {
 function _smod() {
     var signature = document.querySelector('.post-signature');
     if (signature != null) {
+        var trans = chrome.i18n.getMessage('signature');
         var signatures = document.getElementsByClassName('post-signature');
         var siblings = document.querySelectorAll('.post-signature + .pull-right .post-tools');
         var prevent = document.querySelectorAll('.post-signature + .pull-right .post-tools a:nth-of-type(1)');
         for (var i=0; i < signatures.length; i++) {
             if (prevent[i].classList.contains('sig') === false) {
                 var button = document.createElement('a');
-                button.innerHTML = 'Signature';
+                button.innerHTML = trans;
                 button.classList.add('no-select', 'sig');
                 siblings[i].insertBefore(button, siblings[i].firstChild);
             }
@@ -179,11 +181,13 @@ function _lastedit() {
     var topic = document.querySelector('.topic');
     if (topic != null) {
         var metas = document.getElementsByTagName('meta');
+        var trans = chrome.i18n.getMessage('lastModified');
         for (var i=0; i < metas.length; i++) {
             if (metas[i].getAttribute('itemprop') && metas[i].getAttribute('itemprop') === 'dateModified' && metas[i].getAttribute('content') !== '') {
                 var utcDate = metas[i].getAttribute('content');
                 var localDate = new Date(utcDate);
                 metas[i].setAttribute('content', tolocalISO(localDate));
+                metas[i].setAttribute('data-trans', trans)
                 metas[i].setAttribute('itemprop', 'localdateModified');
             }
         }

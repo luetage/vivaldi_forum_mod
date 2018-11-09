@@ -10,7 +10,7 @@ function bookmarked() {
     if (favourites) {
         var favcheck = favourites.innerHTML;
         if (favcheck === 'favourites') {
-            favourites.innerHTML = 'Bookmarked';
+            favourites.innerHTML = chrome.i18n.getMessage('bookmarked');
             favourites.href = '/user/' + username() + '/bookmarks';
         }
     }
@@ -21,18 +21,20 @@ function bookmarked() {
 
 document.getElementById('logged-in-menu').addEventListener('click', function() {
     if (document.getElementById('optionsLink') === null) {
+        var transOpt = chrome.i18n.getMessage('optionsLink');
+        var transForum = chrome.i18n.getMessage('editForum');
         var dropdown = document.querySelector('#user-control-list.dropdown-menu');
         var editC = document.querySelector('#user-control-list.dropdown-menu .user-edit-profile span');
-        editC.innerHTML = ' Edit community';
+        editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
         var options = document.createElement('li');
         options.id = 'optionsLink';
         options.style = 'cursor: pointer';
-        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span> Forum mod</span></a>';
+        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + transOpt + '</span></a>';
         dropdown.insertBefore(options, dropdown.childNodes[18]);
         var li = document.createElement('li');
         var editF = document.createElement('a');
         editF.href = '/user/' + username() + '/edit';
-        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span> Edit forum</span>';
+        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + transForum + '</span>';
         dropdown.insertBefore(li, dropdown.childNodes[17]);
         li.appendChild(editF);
     }
@@ -46,7 +48,7 @@ document.getElementById('logged-in-menu').addEventListener('click', function() {
 
 function make_copy_button(){
     const new_button = document.createElement('button');
-    new_button.textContent = 'copy_code';
+    new_button.textContent = chrome.i18n.getMessage('copyCode');
     new_button.className = 'copy-all-code-button';
     new_button.addEventListener('click', copy_all);
     return new_button;

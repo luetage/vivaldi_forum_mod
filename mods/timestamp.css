@@ -11,7 +11,7 @@
 [component='topic'] [component='post'] meta[itemprop='localdateModified']::before {
     display: inline-block;
     width: 15ch;
-    content: "Last Modified:";
+    content: attr(data-trans);
 }
 [component='topic'] [component='post'] meta[itemprop='localdateModified']::after {
     display: inline-block;
