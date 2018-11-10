@@ -19,7 +19,7 @@ function bookmarked() {
 
 /* Links to options and hidden edit page  */
 
-document.getElementById('logged-in-menu').addEventListener('click', function() {
+function userMenu() {
     if (document.getElementById('optionsLink') === null) {
         var transOpt = chrome.i18n.getMessage('optionsLink');
         var transForum = chrome.i18n.getMessage('editForum');
@@ -41,7 +41,7 @@ document.getElementById('logged-in-menu').addEventListener('click', function() {
    document.getElementById('optionsLink').addEventListener('click', function() {
         chrome.runtime.sendMessage('options pls');
     });
-});
+};
 
 
 /* Copy all code button */
@@ -87,4 +87,55 @@ function discord() {
     var addlinks = document.createElement('span');
     addlinks.innerHTML = ' | <a href="https://store.vivaldi.com/" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
     footerlinks.appendChild(addlinks);
+};
+
+
+/* Dismiss notification */
+
+function dismiss() {
+    chrome.storage.sync.set({
+        'notifOld': notifNew,
+        'notifState': 'off'
+    }, function() {
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.footer-notification {display: none !important}';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    });
+};
+
+function createDis() {
+    const trans = chrome.i18n.getMessage('dismiss');
+    const content = document.querySelector('.footer-notification .notification');
+    const dis = document.createElement('a');
+    dis.style.cursor = 'pointer';
+    dis.innerHTML = ' - ' + trans;
+    content.appendChild(dis);
+    dis.addEventListener('click', dismiss);
+};
+
+function notification() {
+    const notif = document.querySelector('.footer-notification');
+    notifNew = document.querySelector('.footer-notification .notification').textContent;
+    if (notif) {
+        chrome.storage.sync.get({
+            'notifState': 'on',
+            'notifOld': ''
+        }, function(check) {
+            const notifState = check.notifState;
+            const notifOld = check.notifOld;
+            if (notifState === 'on') {
+                createDis();
+            }
+            else {
+                if (notifOld === notifNew) {
+                    dismiss();
+                }
+                else {
+                    chrome.storage.sync.set({'notifState': 'on'});
+                    createDis();
+                }
+            }
+        });
+    }
 };

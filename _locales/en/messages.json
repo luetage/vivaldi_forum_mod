@@ -118,5 +118,9 @@
     "editForum": {
         "message": "Edit forum",
         "description": "Link to forum settings in user dropdown menu"
+    },
+    "dismiss": {
+        "message": "Dismiss notification",
+        "description": "Text to dismiss notifications on top"
     }
 }

@@ -111,6 +111,9 @@ function(mods) {
         if (signatureMod == 1) { w_smod() }
         if (timestamp == 1) { w_lastedit() }
     });
+
+    document.getElementById('logged-in-menu').addEventListener('click', userMenu());
+    notification();
 });
 
 
