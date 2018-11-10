@@ -145,6 +145,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     opacity: 1;
     color: #f4ff9d;
 }
+
 /*
 Option to dismiss notification
 The notification is shown by default.js, if not dismissed previously.
