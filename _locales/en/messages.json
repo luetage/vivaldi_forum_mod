@@ -120,7 +120,7 @@
         "description": "Link to forum settings in user dropdown menu"
     },
     "dismiss": {
-        "message": "Dismiss notification",
-        "description": "Text to dismiss notifications on top"
+        "message": "Dismiss",
+        "description": "Dismisses community notifications"
     }
 }

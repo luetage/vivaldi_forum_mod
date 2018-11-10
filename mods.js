@@ -113,7 +113,9 @@ function(mods) {
     });
 
     document.getElementById('logged-in-menu').addEventListener('click', userMenu());
-    notification();
+    setTimeout(function() {
+        dismissNotification();
+    }, 700);
 });
 
 

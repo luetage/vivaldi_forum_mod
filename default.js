@@ -97,25 +97,23 @@ function dismiss() {
         'notifOld': notifNew,
         'notifState': 'off'
     }, function() {
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = '.footer-notification {display: none !important}';
-    document.getElementsByTagName('head')[0].appendChild(style);
+        notif.style = 'display: none !important';
     });
 };
 
 function createDis() {
+    notif.style = 'display: block !important';
     const trans = chrome.i18n.getMessage('dismiss');
     const content = document.querySelector('.footer-notification .notification');
     const dis = document.createElement('a');
     dis.style.cursor = 'pointer';
-    dis.innerHTML = ' - ' + trans;
+    dis.innerHTML = ' ' + trans;
     content.appendChild(dis);
     dis.addEventListener('click', dismiss);
 };
 
-function notification() {
-    const notif = document.querySelector('.footer-notification');
+function dismissNotification() {
+    notif = document.querySelector('.footer-notification');
     notifNew = document.querySelector('.footer-notification .notification').textContent;
     if (notif) {
         chrome.storage.sync.get({
