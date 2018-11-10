@@ -114,7 +114,7 @@ function(mods) {
 
     document.getElementById('logged-in-menu').addEventListener('click', userMenu());
     setTimeout(function() {
-        dismissNotification();
+        notificationCheck();
     }, 700);
 });
 

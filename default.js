@@ -101,7 +101,7 @@ function dismiss() {
     });
 };
 
-function createDis() {
+function showNotification() {
     notif.style = 'display: block !important';
     const trans = chrome.i18n.getMessage('dismiss');
     const content = document.querySelector('.footer-notification .notification');
@@ -112,10 +112,10 @@ function createDis() {
     dis.addEventListener('click', dismiss);
 };
 
-function dismissNotification() {
+function notificationCheck() {
     notif = document.querySelector('.footer-notification');
-    notifNew = document.querySelector('.footer-notification .notification').textContent;
     if (notif) {
+        notifNew = document.querySelector('.footer-notification .notification').textContent;
         chrome.storage.sync.get({
             'notifState': 'on',
             'notifOld': ''
@@ -123,16 +123,11 @@ function dismissNotification() {
             const notifState = check.notifState;
             const notifOld = check.notifOld;
             if (notifState === 'on') {
-                createDis();
+                showNotification();
             }
-            else {
-                if (notifOld === notifNew) {
-                    dismiss();
-                }
-                else {
-                    chrome.storage.sync.set({'notifState': 'on'});
-                    createDis();
-                }
+            if (notifState === 'off' && notifOld !== notifNew) {
+                chrome.storage.sync.set({'notifState': 'on'});
+                showNotification();
             }
         });
     }
