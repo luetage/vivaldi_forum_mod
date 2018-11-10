@@ -90,7 +90,7 @@ function discord() {
 };
 
 
-/* Dismiss notification */
+/* Option to dismiss notification */
 
 function dismiss() {
     chrome.storage.sync.set({

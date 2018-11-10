@@ -145,8 +145,10 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     opacity: 1;
     color: #f4ff9d;
 }
-/* Dismiss notification
-set to hide by default, show function if not dismissed */
+/*
+Option to dismiss notification
+The notification is shown by default.js, if not dismissed previously.
+*/
 .footer-notification {
     display: none !important;
 }
