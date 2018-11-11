@@ -88,7 +88,7 @@ function discord() {
 };
 
 
-/* Option to dismiss notification */
+/* Option to dismiss community notifications */
 
 function dismiss() {
     chrome.storage.sync.set({
@@ -122,9 +122,12 @@ function notificationCheck() {
             if (notifState === 'on') {
                 showNotification();
             }
-            if (notifState === 'off' && notifOld !== notifNew) {
+            else if (notifState === 'off' && notifOld !== notifNew) {
                 chrome.storage.sync.set({'notifState': 'on'});
                 showNotification();
+            }
+            else {
+                console.log('Community Notification: ' + notifNew);
             }
         });
     }
