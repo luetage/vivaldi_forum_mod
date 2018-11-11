@@ -122,7 +122,6 @@ function(mods) {
 /* Bookmarks in navigation */
 
 function _bookmarks() {
-    var trans = chrome.i18n.getMessage('bookmarks');
     var nav = document.getElementById('main-nav');
     var li = document.createElement('li');
     var link = document.createElement('a');
@@ -130,7 +129,7 @@ function _bookmarks() {
     link.href = '/user/' + username() + '/bookmarks';
     link.setAttribute('title', '');
     link.setAttribute('data-original-title', 'Bookmarks');
-    link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">' + trans + '</span>';
+    link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">' + chrome.i18n.getMessage('bookmarks') + '</span>';
     nav.insertBefore(li, nav.childNodes[15]);
     li.appendChild(link);
 };

@@ -21,20 +21,18 @@ function bookmarked() {
 
 function userMenu() {
     if (document.getElementById('optionsLink') === null) {
-        var transOpt = chrome.i18n.getMessage('optionsLink');
-        var transForum = chrome.i18n.getMessage('editForum');
         var dropdown = document.querySelector('#user-control-list.dropdown-menu');
         var editC = document.querySelector('#user-control-list.dropdown-menu .user-edit-profile span');
         editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
         var options = document.createElement('li');
         options.id = 'optionsLink';
         options.style = 'cursor: pointer';
-        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + transOpt + '</span></a>';
+        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
         dropdown.insertBefore(options, dropdown.childNodes[18]);
         var li = document.createElement('li');
         var editF = document.createElement('a');
         editF.href = '/user/' + username() + '/edit';
-        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + transForum + '</span>';
+        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
         dropdown.insertBefore(li, dropdown.childNodes[17]);
         li.appendChild(editF);
     }
@@ -103,11 +101,10 @@ function dismiss() {
 
 function showNotification() {
     notif.style = 'display: block !important';
-    const trans = chrome.i18n.getMessage('dismiss');
     const content = document.querySelector('.footer-notification .notification');
     const dis = document.createElement('a');
     dis.style.cursor = 'pointer';
-    dis.innerHTML = ' ' + trans;
+    dis.innerHTML = ' ' + chrome.i18n.getMessage('dismiss');
     content.appendChild(dis);
     dis.addEventListener('click', dismiss);
 };
