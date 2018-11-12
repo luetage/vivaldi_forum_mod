@@ -17,7 +17,7 @@ function bookmarked() {
 };
 
 
-/* Links to options and hidden edit page  */
+/* Links to options and hidden edit page */
 
 function userMenu() {
     if (document.getElementById('optionsLink') === null) {

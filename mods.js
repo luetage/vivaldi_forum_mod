@@ -185,13 +185,11 @@ function _lastedit() {
     var topic = document.querySelector('.topic');
     if (topic != null) {
         var metas = document.getElementsByTagName('meta');
-        var trans = chrome.i18n.getMessage('lastModified');
         for (var i=0; i < metas.length; i++) {
             if (metas[i].getAttribute('itemprop') && metas[i].getAttribute('itemprop') === 'dateModified' && metas[i].getAttribute('content') !== '') {
                 var utcDate = metas[i].getAttribute('content');
                 var localDate = new Date(utcDate);
                 metas[i].setAttribute('content', tolocalISO(localDate));
-                metas[i].setAttribute('data-trans', trans)
                 metas[i].setAttribute('itemprop', 'localdateModified');
             }
         }

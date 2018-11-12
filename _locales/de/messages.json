@@ -1,22 +1,22 @@
 {
     "bookmarks": {
-        "message": "Bookmarks",
+        "message": "Lesezeichen",
         "description": "Link to bookmarks page from navigation bar"
     },
     "bookmarked": {
-        "message": "Bookmarked",
+        "message": "Lesezeichen",
         "description": "Link to bookmarks page from user profile menu"
     },
     "signature": {
-        "message": "Signature",
+        "message": "Signatur",
         "description": "Signature toggle for forum posts"
     },
     "copyCode": {
-        "message": "copy_code",
+        "message": "Code_kopieren",
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
-        "message": "Last Modified",
+        "message": "Zuletzt geändert",
         "description": "Text before local date for timestamp mod in forum posts"
     },
     "optionsLink": {
@@ -24,35 +24,35 @@
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
     "editCommunity": {
-        "message": "Community profile",
+        "message": "Community Profil",
         "description": "Link to community settings in user dropdown menu"
     },
     "editForum": {
-        "message": "Forum profile",
+        "message": "Forum Profil",
         "description": "Link to forum settings in user dropdown menu"
     },
     "dismiss": {
-        "message": "Dismiss",
+        "message": "Ausblenden",
         "description": "Dismisses community notifications"
     },
     "smile_o": {
-        "message": "Emote Picker",
+        "message": "Emojis",
         "description": "Title of formatting item for emote picker"
     },
     "header": {
-        "message": "Header",
+        "message": "Überschrift",
         "description": "Title of formatting item header 1"
     },
     "window_minimize": {
-        "message": "Horizontal Rule",
+        "message": "Horizontale Linie",
         "description": "Title of formatting item horizontal rule"
     },
     "quote_right": {
-        "message": "Quote",
+        "message": "Zitat",
         "description": "Title of formatting item quote"
     },
     "code": {
-        "message": "Inline Code",
+        "message": "Inline-Code",
         "description": "Title of formatting item inline code"
     },
     "file_code_o": {
@@ -60,11 +60,11 @@
         "description": "Title of formatting item code block"
     },
     "th_large": {
-        "message": "Table",
+        "message": "Tabelle",
         "description": "Title of formatting item table"
     },
     "list_ol": {
-        "message": "Numbered List",
+        "message": "Numerierte Liste",
         "description": "Title of formatting item numbered list"
     },
     "shield": {
@@ -72,23 +72,23 @@
         "description": "Title of formatting item spoiler"
     },
     "customToolbarTitle": {
-        "message": "Edit Custom Toolbar",
+        "message": "Werkzeugleiste ändern",
         "description": "Title of custom toolbar editor"
     },
     "dragText": {
-        "message": "Click and Drag to move",
+        "message": "Klicken und ziehen um zu verschieben",
         "description": "Hover text when on a draggable area"
     },
     "advancedFormatting": {
-        "message": "Advanced Formatting",
+        "message": "Erweitertes Formatieren",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Adds an emote picker, extra formatting buttons & allows you to drag to re-order the formatting toolbar when editing your forum posts.",
+        "message": "Fügt Emojis und weitere Werkzeuge für die Bearbeitung von Beiträgen hinzu. Ermöglicht es Werkzeuge nach Belieben zu entfernen/hinzuzufügen und zu sortieren.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "reset": {
-        "message": "Reset",
+        "message": "Zurücksetzen",
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     }
 }
