@@ -1,0 +1,166 @@
+{
+    "bookmarks": {
+        "message": "Segnalibri",
+        "description": "Link to bookmarks page from navigation bar"
+    },
+    "bookmarked": {
+        "message": "Segnalibri",
+        "description": "Link to bookmarks page from user profile menu. Past form in IT sound strange here."
+    },
+    "signature": {
+        "message": "Firma",
+        "description": "Signature toggle for forum posts"
+    },
+    "copyCode": {
+        "message": "copia_codice",
+        "description": "Copy all code button for code markdown"
+    },
+    "lastModified": {
+        "message": "Ultima modifica",
+        "description": "Text before last edit timestamp in forum posts"
+    },
+    "optionsLink": {
+        "message": "Forum mod",
+        "description": "Link to options page in user dropdown menu. Untranslated for now"
+    },
+    "editCommunity": {
+        "message": "Profilo comunità",
+        "description": "Link to community settings in user dropdown menu."
+    },
+    "editForum": {
+        "message": "Profilo forum",
+        "description": "Link to forum settings in user dropdown menu"
+    },
+    "dismiss": {
+        "message": "Nascondi",
+        "description": "Dismisses community notifications"
+    },
+    "smile_o": {
+        "message": "Selettore Emoji",
+        "description": "Title of formatting item for emote picker. Emote is not very common as word in IT, but may use it in future"
+    },
+    "header": {
+        "message": "Titolo",
+        "description": "Title of formatting item header 1"
+    },
+    "window_minimize": {
+        "message": "Riga orizzontale",
+        "description": "Title of formatting item horizontal rule"
+    },
+    "quote_right": {
+        "message": "Citazione",
+        "description": "Title of formatting item quote"
+    },
+    "code": {
+        "message": "Riga di codice",
+        "description": "Title of formatting item inline code"
+    },
+    "file_code_o": {
+        "message": "Codice",
+        "description": "Title of formatting item code block."
+    },
+    "th_large": {
+        "message": "Tabella",
+        "description": "Title of formatting item table"
+    },
+    "list_ol": {
+        "message": "Elenco numerato",
+        "description": "Title of formatting item numbered list"
+    },
+    "shield": {
+        "message": "Spoiler",
+        "description": "Title of formatting item spoiler. No need translation. It's a common word even in IT"
+    },
+    "customToolbarTitle": {
+        "message": "Barra personalizzata",
+        "description": "Title of custom toolbar editor. A too long title may go in two rows (which is bad). The edit icon imply modify. May change."
+    },
+    "dragText": {
+        "message": "Clicca e trascina per spostare",
+        "description": "Hover text when on a draggable area"
+    },
+    "advancedFormatting": {
+        "message": "Formattazione avanzata",
+        "description": "Options: Title of advanced formatting mod"
+    },
+    "advancedFormattingDesc": {
+        "message": "Aggiunge un selettore emoji, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare la barra di formattazione durante la modifica dei post sul forum.",
+        "description": "Options: Description of the advanced formatting mod"
+    },
+    "hideHeader": {
+        "message": "Nascondi l'header di Vivaldi su scorrimento",
+        "description": "Options: Title of auto-hide header on scroll mod. NOTE: Header may be translated in future"
+    },
+    "hideHeaderDesc": {
+        "message": "Nasconde l'header quando scorri in basso, lo mostra nuovamente quando scorri in alto.",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "compactHeader": {
+        "message": "Header compatto",
+        "description": "Options: Title of compact header mod"
+    },
+    "compactHeaderDesc": {
+        "message": "Porta l'header alle sua altezza originale e nascondi i link ridondanti",
+        "description": "Options: Description of compact header mod."
+    },
+    "customNotification": {
+        "message": "Icone notifiche personalizzate",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Mostra ulteriori icone per i font nel menu delle notifiche per distinguerle meglio.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "hideTooltips": {
+        "message": "Nascondi tooltip",
+        "description": "Options: Title of hide tooltips mod. I think are called tooltip even here."
+    },
+    "hideTooltipsDesc": {
+        "message": "Nascondi i tooltip dall'header e dalla barra di navigazione.",
+        "description": "Options: Description of hide tooltips mod"
+    },
+    "timestamp": {
+        "message": "Orario ultima modifica",
+        "description": "Options: Title of last edit timestamp mod"
+    },
+    "timestampDesc": {
+        "message": "Mostra l'orario (ora locale) dell'ultima modifica in fondo ai post.",
+        "description": "Options: Description of last edit timestamp mod"
+    },
+    "showUID": {
+        "message": "Mostra ID degli utenti",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Mostra ID degli utenti passando col mouse sul nome utente in cima a un post o su un avatar nel loro profilo.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "signatureMod": {
+        "message": "Mod firma",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Nasconde tutte le firme e le sostituisce con un pulsante che, quando cliccato, mostra la firma del post interessato",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Avatar quadrati",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Avatar quadrati ovunque!",
+        "description": "Options: Description of square avatars mod"
+    },
+    "save": {
+        "message": "Salva",
+        "description": "Options: Text to show on a button that performs some sort of save operation"
+    },
+    "backup": {
+        "message": "Backup",
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
+    },
+    "reset": {
+        "message": "Reset",
+        "description": "Options: Text to show on a button that performs some sort of reset operation."
+    }
+}
