@@ -16,7 +16,7 @@
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
-        "message": "Last Modified",
+        "message": "Last modified",
         "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
@@ -140,7 +140,7 @@
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Hides all signatures and replaces each with a button. When clicked the signature of individual posts can be shown.",
+        "message": "Hides all signatures and replaces each with a button. When clicked, the signature of individual posts will be displayed.",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
@@ -153,14 +153,14 @@
     },
     "save": {
         "message": "Save",
-        "description": "Text to show on a button that performs some sort of save operation"
+        "description": "Options: Text to show on a button that performs some sort of save operation"
     },
     "backup": {
         "message": "Backup",
-        "description": "Text to show on a button that performs some sort of backup operation"
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
     "reset": {
         "message": "Reset",
-        "description": "Text to show on a button that performs some sort of reset operation"
+        "description": "Options: Text to show on a button that performs some sort of reset operation"
     }
 }

@@ -153,11 +153,11 @@
     },
     "save": {
         "message": "Speichern",
-        "description": "Text to show on a button that performs some sort of save operation"
+        "description": "Options: Text to show on a button that performs some sort of save operation"
     },
     "backup": {
         "message": "Backup",
-        "description": "Text to show on a button that performs some sort of backup operation"
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
     "reset": {
         "message": "Zurücksetzen",
