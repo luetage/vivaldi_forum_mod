@@ -95,6 +95,14 @@
         "message": "Nach unten scrollen verbirgt den Header, nach oben scrollen zeigt ihn wieder an.",
         "description": "Options: Description of auto-hide header on scroll mod"
     },
+    "navbookmarks": {
+        "message": "Bookmarks in navigation",
+        "description": "Options: Title of bookmarks in navigation mod"
+    },
+    "navbookmarksDesc": {
+        "message": "Displays a link to the bookmarks page in the main navigation, for easy access.",
+        "description": "Options: Description of bookmarks in navigation mod"
+    },
     "compactHeader": {
         "message": "Kompakter Header",
         "description": "Options: Title of compact header mod"
@@ -118,6 +126,14 @@
     "hideTooltipsDesc": {
         "message": "Deaktiviert Tooltips im Header und in der Navigationsleiste.",
         "description": "Options: Description of hide tooltips mod"
+    },
+    "hideUnread": {
+        "message": "Hide unread count",
+        "description": "Options: Title of hide unread count mod"
+    },
+    "hideUnreadDesc": {
+        "message": "Hides the unread count icon in the navigation bar.",
+        "description": "Options: Description of unread count mod"
     },
     "timestamp": {
         "message": "Zeitstempel der letzten Bearbeitung",
