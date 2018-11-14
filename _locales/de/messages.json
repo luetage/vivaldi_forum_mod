@@ -132,7 +132,7 @@
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
-        "message": "Zeigt UIDs an, wenn man mit dem Mauszeiger über dem Nutzernamen eines Beitrags, oder Über dem Nutzerbild auf einem Profil, schwebt.",
+        "message": "Zeigt UIDs an, wenn man mit dem Mauszeiger über dem Nutzernamen eines Beitrags, oder über dem Nutzerbild auf einem Profil, schwebt.",
         "description": "Options: Description of show user IDs mod"
     },
     "signatureMod": {
