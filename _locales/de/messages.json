@@ -17,7 +17,7 @@
     },
     "lastModified": {
         "message": "Zuletzt geändert",
-        "description": "Text before local date for timestamp mod in forum posts"
+        "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
         "message": "Forum mod",
@@ -84,8 +84,80 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Fügt Emojis und weitere Werkzeuge für die Bearbeitung von Beiträgen hinzu. Ermöglicht es Werkzeuge nach Belieben zu entfernen/hinzuzufügen und zu sortieren.",
-        "description": "Options: Description of the advanced formatting mod"
+        "message": "Fügt Emojis und weitere Werkzeuge für die Bearbeitung von Beiträgen hinzu. Ermöglicht es Werkzeuge zu entfernen/hinzuzufügen und zu sortieren.",
+        "description": "Options: Description of advanced formatting mod"
+    },
+    "hideHeader": {
+        "message": "Ausblenden des Headers beim Scrollen",
+        "description": "Options: Title of auto-hide header on scroll mod"
+    },
+    "hideHeaderDesc": {
+        "message": "Nach unten scrollen verbirgt den Header, nach oben scrollen zeigt ihn wieder an.",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "compactHeader": {
+        "message": "Kompakter Header",
+        "description": "Options: Title of compact header mod"
+    },
+    "compactHeaderDesc": {
+        "message": "Setzt den Header auf die ursprüngliche Höhe und entfernt überflüssige Links.",
+        "description": "Options: Description of compact header mod"
+    },
+    "customNotification": {
+        "message": "Symbole für Benachrichtigungen",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Zeigt zusätzliche Symbole in der Dropdown-Liste des Headers an, um Benachrichtigungen besser voneinander zu unterscheiden.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "hideTooltips": {
+        "message": "Tooltips deaktivieren",
+        "description": "Options: Title of hide tooltips mod"
+    },
+    "hideTooltipsDesc": {
+        "message": "Deaktiviert Tooltips im Header und in der Navigationsleiste.",
+        "description": "Options: Description of hide tooltips mod"
+    },
+    "timestamp": {
+        "message": "Zeitstempel der letzten Bearbeitung",
+        "description": "Options: Title of last edit timestamp mod"
+    },
+    "timestampDesc": {
+        "message": "Zeigt den Zeitpunkt der letzten Bearbeitung am Ende eines Beitrags in Ortszeit an.",
+        "description": "Options: Description of last edit timestamp mod"
+    },
+    "showUID": {
+        "message": "User ID anzeigen",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Zeigt UIDs an, wenn man mit dem Mauszeiger über dem Nutzernamen eines Beitrags, oder Über dem Nutzerbild auf einem Profil, schwebt.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "signatureMod": {
+        "message": "Signatur Mod",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Verbirgt alle Signaturen und zeigt anstelle jeder einen Schalter an. Das Betätigen des Schalters (Signatur) zeigt die individuelle Signatur wieder an.",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Quadratische Nutzerbilder",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Quadratische anstatt runde Nutzerbilder.",
+        "description": "Options: Description of square avatars mod"
+    },
+    "save": {
+        "message": "Speichern",
+        "description": "Text to show on a button that performs some sort of save operation"
+    },
+    "backup": {
+        "message": "Backup",
+        "description": "Text to show on a button that performs some sort of backup operation"
     },
     "reset": {
         "message": "Zurücksetzen",

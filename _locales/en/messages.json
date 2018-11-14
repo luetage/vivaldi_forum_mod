@@ -17,7 +17,7 @@
     },
     "lastModified": {
         "message": "Last Modified",
-        "description": "Text before local date for timestamp mod in forum posts"
+        "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
         "message": "Forum mod",
@@ -87,8 +87,80 @@
         "message": "Adds an emote picker, extra formatting buttons & allows you to drag to re-order the formatting toolbar when editing your forum posts.",
         "description": "Options: Description of the advanced formatting mod"
     },
+    "hideHeader": {
+        "message": "Auto-hide header on scroll",
+        "description": "Options: Title of auto-hide header on scroll mod"
+    },
+    "hideHeaderDesc": {
+        "message": "Hides the header when you scroll down, shows it when you scroll up.",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "compactHeader": {
+        "message": "Compact header",
+        "description": "Options: Title of compact header mod"
+    },
+    "compactHeaderDesc": {
+        "message": "Sets the header to its original height and removes redundant links.",
+        "description": "Options: Description of compact header mod"
+    },
+    "customNotification": {
+        "message": "Custom notification icons",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Displays additional font icons in the header's notification dropdown, to quickly distinguish one type of notification from another.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "hideTooltips": {
+        "message": "Hide tooltips",
+        "description": "Options: Title of hide tooltips mod"
+    },
+    "hideTooltipsDesc": {
+        "message": "Hides header and navigation bar tooltips.",
+        "description": "Options: Description of hide tooltips mod"
+    },
+    "timestamp": {
+        "message": "Last edit timestamp",
+        "description": "Options: Title of last edit timestamp mod"
+    },
+    "timestampDesc": {
+        "message": "Displays the time of last edit in local time on bottom of edited posts.",
+        "description": "Options: Description of last edit timestamp mod"
+    },
+    "showUID": {
+        "message": "Show User IDs",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Shows UIDs when hovering the username at top of a post and when hovering a user's avatar on their profile.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "signatureMod": {
+        "message": "Signature mod",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Hides all signatures and replaces each with a button. When clicked the signature of individual posts can be shown.",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Square avatars",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Square avatars everywhere!",
+        "description": "Options: Description of square avatars mod"
+    },
+    "save": {
+        "message": "Save",
+        "description": "Text to show on a button that performs some sort of save operation"
+    },
+    "backup": {
+        "message": "Backup",
+        "description": "Text to show on a button that performs some sort of backup operation"
+    },
     "reset": {
         "message": "Reset",
-        "description": "Options: Text to show on a button that performs some sort of reset operation"
+        "description": "Text to show on a button that performs some sort of reset operation"
     }
 }
