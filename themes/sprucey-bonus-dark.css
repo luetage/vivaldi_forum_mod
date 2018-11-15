@@ -620,14 +620,10 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .hljs-addition {
     background-color: #144212;
     color: #e6e1dc;
-    display: inline-block;
-    width: 100%;
 }
 .hljs-deletion {
     background-color: #600;
     color: #e6e1dc;
-    display: inline-block;
-    width: 100%;
 }
 .hljs-selector-class {
     color: #9b703f;

@@ -14,37 +14,37 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 */
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #121212 !important;
-  color: #e6e1dc;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #121212;
+    color: #e6e1dc;
 }
 .hljs-comment,
 .hljs-quote {
-  color: #bc9458;
-  font-style: italic;
+    color: #bc9458;
+    font-style: italic;
 }
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #c26230;
+    color: #c26230;
 }
 .hljs-string,
 .hljs-number,
 .hljs-regexp,
 .hljs-variable,
 .hljs-template-variable {
-  color: #a5c261;
+    color: #a5c261;
 }
 .hljs-subst {
-  color: #519f50;
+    color: #519f50;
 }
 .hljs-tag,
 .hljs-name {
-  color: #e8bf6a;
+    color: #e8bf6a;
 }
 .hljs-type {
-  color: #da4939;
+    color: #da4939;
 }
 .hljs-symbol,
 .hljs-bullet,
@@ -52,48 +52,44 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .hljs-builtin-name,
 .hljs-attr,
 .hljs-link {
-  color: #6d9cbe;
+    color: #6d9cbe;
 }
 .hljs-params {
-  color: #d0d0ff;
+    color: #d0d0ff;
 }
 .hljs-attribute {
-  color: #cda869;
+    color: #cda869;
 }
 .hljs-meta {
-  color: #9b859d;
+    color: #9b859d;
 }
 .hljs-title,
 .hljs-section {
-  color: #ffc66d;
+    color: #ffc66d;
 }
 .hljs-addition {
-  background-color: #144212;
-  color: #e6e1dc;
-  display: inline-block;
-  width: 100%;
+    background-color: #144212;
+    color: #e6e1dc;
 }
 .hljs-deletion {
-  background-color: #600;
-  color: #e6e1dc;
-  display: inline-block;
-  width: 100%;
+    background-color: #600;
+    color: #e6e1dc;
 }
 .hljs-selector-class {
-  color: #9b703f;
+    color: #9b703f;
 }
 .hljs-selector-id {
-  color: #8b98ab;
+    color: #8b98ab;
 }
 .hljs-emphasis {
-  font-style: italic;
+    font-style: italic;
 }
 .hljs-strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 .hljs-link {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .hljs-literal, .hljs-selector-pseudo {
-  color: #e6e1dc;
+    color: #e6e1dc;
 }
