@@ -144,9 +144,9 @@ function(theme) {
                 document.body.style.setProperty('--colorBtnFg', colorBtnFg);
             }
             else {
-                setTimeout(wait, 300);
+                setTimeout(wait, 100);
             }
-        }, 300);
+        }, 100);
         if (logoWhite == 1) {
             var TlogoWhite = document.createElement('link');
             TlogoWhite.href = chrome.extension.getURL('themes/logo-white.css');

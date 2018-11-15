@@ -96,11 +96,11 @@
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Bookmarks in navigation",
+        "message": "Lesezeichen in Navigation",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
-        "message": "Displays a link to the bookmarks page in the main navigation, for easy access.",
+        "message": "Zeigt einen Link zu den Lesezeichen in der Navigationsleiste an.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "compactHeader": {
@@ -128,11 +128,11 @@
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
-        "message": "Hide unread count",
+        "message": "Anzeige ungelesener Beiträge deaktivieren",
         "description": "Options: Title of hide unread count mod"
     },
     "hideUnreadDesc": {
-        "message": "Hides the unread count icon in the navigation bar.",
+        "message": "Verbirgt die Anzahl ungelesener Beiträge in der Navigationsleiste.",
         "description": "Options: Description of unread count mod"
     },
     "timestamp": {

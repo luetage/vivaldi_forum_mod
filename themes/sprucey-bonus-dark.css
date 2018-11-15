@@ -644,7 +644,7 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .hljs-link {
     text-decoration: underline;
 }
-.hljs-literal {
+.hljs-literal, .hljs-selector-pseudo {
     color: #e6e1dc;
 }
 
