@@ -160,6 +160,10 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 Option to dismiss community notifications
 The notification is being shown by default.js, if not dismissed previously.
 */
-.footer-notification {
+.shadow-box3 {
     display: none !important;
+}
+section.footer-notification {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }

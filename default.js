@@ -103,7 +103,7 @@ function dismiss() {
 
 function showNotification() {
     notif.style = 'display: block !important';
-    const content = document.querySelector('.footer-notification .notification');
+    const content = document.querySelector('.shadow-box3 .notification');
     const dis = document.createElement('a');
     dis.style.cursor = 'pointer';
     dis.innerHTML = ' ' + chrome.i18n.getMessage('dismiss');
@@ -112,9 +112,9 @@ function showNotification() {
 };
 
 function notificationCheck() {
-    notif = document.querySelector('.footer-notification');
+    notif = document.querySelector('.shadow-box3');
     if (notif) {
-        notifNew = document.querySelector('.footer-notification .notification').textContent;
+        notifNew = document.querySelector('.shadow-box3 .notification').textContent;
         chrome.storage.sync.get({
             'notifState': 'on',
             'notifOld': ''
