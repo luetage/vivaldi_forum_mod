@@ -5,7 +5,7 @@
     },
     "bookmarked": {
         "message": "Segnalibri",
-        "description": "Link to bookmarks page from user profile menu. Past form in IT sound strange here."
+        "description": "Link to bookmarks page from user profile menu."
     },
     "signature": {
         "message": "Firma",
@@ -37,7 +37,7 @@
     },
     "smile_o": {
         "message": "Selettore Emoji",
-        "description": "Title of formatting item for emote picker. Emote is not very common as word in IT, but may use it in future"
+        "description": "Title of formatting item for emote picker."
     },
     "header": {
         "message": "Titolo",
@@ -69,11 +69,11 @@
     },
     "shield": {
         "message": "Spoiler",
-        "description": "Title of formatting item spoiler. No need translation. It's a common word even in IT"
+        "description": "Title of formatting item spoiler."
     },
     "customToolbarTitle": {
         "message": "Barra personalizzata",
-        "description": "Title of custom toolbar editor. A too long title may go in two rows (which is bad). The edit icon imply modify. May change."
+        "description": "Title of custom toolbar editor."
     },
     "dragText": {
         "message": "Clicca e trascina per spostare",
@@ -84,23 +84,23 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Aggiunge un selettore emoji, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare la barra di formattazione durante la modifica dei post sul forum.",
+        "message": "Aggiunge un selettore emoji, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare gli elementi della barra durante la modifica dei post sul forum.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Nascondi l'header di Vivaldi su scorrimento",
-        "description": "Options: Title of auto-hide header on scroll mod. NOTE: Header may be translated in future"
+        "message": "Nascondi l'header di Vivaldi durante lo scorrimento",
+        "description": "Options: Title of auto-hide header on scroll mod."
     },
     "hideHeaderDesc": {
         "message": "Nasconde l'header quando scorri in basso, lo mostra nuovamente quando scorri in alto.",
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Bookmarks in navigation",
+        "message": "Segnalibri nella barra di navigazione",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
-        "message": "Displays a link to the bookmarks page in the main navigation, for easy access.",
+        "message": "Mostra un link alla pagina dei segnalibri nella barra di navigazione principale per un rapido accesso.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "compactHeader": {
@@ -116,23 +116,23 @@
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Mostra ulteriori icone per i font nel menu delle notifiche per distinguerle meglio.",
+        "message": "Mostra ulteriori icone nel menu delle notifiche per distinguerle meglio.",
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
         "message": "Nascondi tooltip",
-        "description": "Options: Title of hide tooltips mod. I think are called tooltip even here."
+        "description": "Options: Title of hide tooltips mod."
     },
     "hideTooltipsDesc": {
         "message": "Nascondi i tooltip dall'header e dalla barra di navigazione.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
-        "message": "Hide unread count",
+        "message": "Nascondi indicatore notifiche non lette",
         "description": "Options: Title of hide unread count mod"
     },
     "hideUnreadDesc": {
-        "message": "Hides the unread count icon in the navigation bar.",
+        "message": "Nasconde l'indicatore delle notifiche non lette nella barra di navigazione.",
         "description": "Options: Description of unread count mod"
     },
     "timestamp": {
@@ -156,7 +156,7 @@
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Nasconde tutte le firme e le sostituisce con un pulsante che, quando cliccato, mostra la firma del post interessato",
+        "message": "Nasconde tutte le firme e le sostituisce con un pulsante che, quando cliccato, mostra la firma del post interessato.",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
