@@ -27,11 +27,6 @@ i.fa-ellipsis-v::before {
     margin-left: 7px;
 }
 
-/* Auto-hide header transition */
-#header-menu {
-    transition: top 0.857s;
-}
-
 /* Remove underline from first post tags */
 .tags.pull-left a {
     text-decoration: none !important;
@@ -114,16 +109,31 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     min-height: 42px;
 }
 
-/* Slideout menu hover fix */
-.slideout-menu a:hover, .slideout-menu a:focus {
-    color: #fff;
-}
-
 /* Disable line breaks for composer title */
 .composer .title-container .title {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+/* mobile view fixes */
+.slideout-menu a:hover, .slideout-menu a:focus {
+    color: #fff;
+}
+.slideout-menu .status.offline {
+    color: #fff;
+    opacity: 0.66;
+}
+.topic .pagination-block {
+    background-color: #1d1f20 !important;
+}
+.topic .pagination-block .progress-bar {
+    background-color: #101010 !important;
+}
+
+/* Auto-hide header transition */
+#header-menu {
+    transition: top 0.857s;
 }
 
 /* Copy all code button */
@@ -147,8 +157,8 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 }
 
 /*
-Option to dismiss notification
-The notification is shown by default.js, if not dismissed previously.
+Option to dismiss community notifications
+The notification is being shown by default.js, if not dismissed previously.
 */
 .footer-notification {
     display: none !important;
