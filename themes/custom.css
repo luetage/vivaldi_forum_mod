@@ -620,6 +620,17 @@ button.main.green, button.main.red {
 }
 
 
+/* Mobile */
+
+.navbar-default {
+    border-color: var(--colorFg2);
+}
+@media (max-width: 767px) {
+    .categories>li, .category>ul>li {border-top-color: var(--colorBgHi);}
+    .categories>li:last-child, .category>ul>li:last-child {border-bottom-color: var(--colorBgHi);}
+}
+
+
 /* Edit Forum */
 
 .list-group-item {

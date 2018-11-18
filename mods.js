@@ -93,6 +93,7 @@ function(mods) {
         document.getElementsByTagName('head')[0].appendChild(advancedFormattingStyle);
     }
 
+    userMenu();
     add_copy_code();
     discord();
     if (bookmarks == 1) { _bookmarks() }
@@ -112,7 +113,6 @@ function(mods) {
         if (timestamp == 1) { w_lastedit() }
     });
 
-    document.getElementById('logged-in-menu').addEventListener('click', userMenu());
     setTimeout(function() {
         notificationCheck();
     }, 700);
@@ -139,7 +139,7 @@ function _bookmarks() {
 
 function _smod() {
     var signature = document.querySelector('.post-signature');
-    if (signature != null) {
+    if (signature) {
         var trans = chrome.i18n.getMessage('signature');
         var signatures = document.getElementsByClassName('post-signature');
         var siblings = document.querySelectorAll('.post-signature + .pull-right .post-tools');

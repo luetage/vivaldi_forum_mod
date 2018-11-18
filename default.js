@@ -21,26 +21,41 @@ function bookmarked() {
 
 /* Links to options and hidden edit page */
 
-function userMenu() {
-    if (document.getElementById('optionsLink') === null) {
-        var dropdown = document.querySelector('#user-control-list.dropdown-menu');
-        var editC = document.querySelector('#user-control-list.dropdown-menu .user-edit-profile span');
-        editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
-        var options = document.createElement('li');
-        options.id = 'optionsLink';
-        options.style = 'cursor: pointer';
-        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
-        dropdown.insertBefore(options, dropdown.childNodes[18]);
-        var li = document.createElement('li');
-        var editF = document.createElement('a');
-        editF.href = '/user/' + username() + '/edit';
-        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
-        dropdown.insertBefore(li, dropdown.childNodes[17]);
-        li.appendChild(editF);
+function _options() {
+    const addLink = document.querySelectorAll('.optionsLink');
+    for (var i=0; i < addLink.length; i++) {
+        addLink[i].addEventListener('click', function() {
+            chrome.runtime.sendMessage('options pls');
+        });
     }
-   document.getElementById('optionsLink').addEventListener('click', function() {
-        chrome.runtime.sendMessage('options pls');
-    });
+};
+
+function userMenu() {
+    var dropdown = document.querySelector('#user-control-list.dropdown-menu');
+
+    // community profile
+    var editC = document.querySelector
+    ('#user-control-list.dropdown-menu .user-edit-profile span');
+    editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
+
+    // forum profile
+    var li = document.createElement('li');
+    var editF = document.createElement('a');
+    editF.href = '/user/' + username() + '/edit';
+    editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
+    dropdown.insertBefore(li, dropdown.childNodes[17]);
+    li.appendChild(editF);
+
+    // forum mod
+    var options = document.createElement('li');
+    options.classList.add('optionsLink');
+    options.style = 'cursor: pointer';
+    options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
+    dropdown.insertBefore(options, dropdown.childNodes[18]);
+
+    setTimeout(function() {
+        _options();
+    }, 700);
 };
 
 
