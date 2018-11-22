@@ -80,11 +80,11 @@
         "description": "Hover text when on a draggable area"
     },
     "themes": {
-        "message": "Themes",
+        "message": "Temi",
         "description": "Options: Title of themes section"
     },
     "modifications": {
-        "message": "Modifications",
+        "message": "Mod",
         "description": "Options: Title of modifications section"
     },
     "info": {
@@ -96,31 +96,31 @@
         "description": "Options: Feedback link in navigation"
     },
     "communityThemes": {
-        "message": "Community Themes",
+        "message": "Temi comunità",
         "description": "Options: Community themes headline"
     },
     "themeMachine": {
-        "message": "Theme Machine",
+        "message": "Macchina dei temi",
         "description": "Options: Theme machine headline"
     },
     "background": {
-        "message": "Background",
+        "message": "Sfondo",
         "description": "Options: Theme machine edit background"
     },
     "foreground": {
-        "message": "Foreground",
+        "message": "Primo piano",
         "description": "Options: Theme machine edit foreground"
     },
     "highlight": {
-        "message": "Highlight",
+        "message": "Evidenziato",
         "description": "Options: Theme machine edit highlight"
     },
     "button": {
-        "message": "Button",
+        "message": "Pulsanti",
         "description": "Options: Theme machine edit button"
     },
     "dropdown": {
-        "message": "Dropdown",
+        "message": "Menù a discesa",
         "description": "Options: Theme machine edit dropdown"
     },
     "link": {
@@ -132,7 +132,7 @@
         "description": "Options: Theme machine edit link2"
     },
     "selectModifications": {
-        "message": "Select Modifications",
+        "message": "Selezione mod",
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
@@ -144,7 +144,7 @@
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Nascondi l'header di Vivaldi durante lo scorrimento",
+        "message": "Nascondi l'header di Vivaldi su scorrimento",
         "description": "Options: Title of auto-hide header on scroll mod."
     },
     "hideHeaderDesc": {
@@ -224,19 +224,19 @@
         "description": "Options: Description of square avatars mod"
     },
     "userCSS": {
-        "message": "User CSS",
+        "message": "CSS utente",
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Input CSS code only! Click SAVE to activate. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
+        "message": "Inserire solo codice CSS! Clicca SALVA per attivare. BACKUP per memorizzare. Seleziona STANDARD nei TEMI se vuoi usare un tema personale.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
-        "message": "Changelog",
+        "message": "Storico versioni",
         "description": "Options: Changelog headline"
     },
     "credits": {
-        "message": "Credits",
+        "message": "Crediti",
         "description": "Options: Credits headline"
     },
     "save": {
@@ -244,7 +244,7 @@
         "description": "Options: Text to show on a button that performs some sort of save operation"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Modifica",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
     "backup": {
@@ -252,11 +252,11 @@
         "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
     "import": {
-        "message": "Import",
+        "message": "Importa",
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "export": {
-        "message": "Export",
+        "message": "Esporta",
         "description": "Options: Text to show on a button that performs some sort of export operation"
     },
     "reset": {
@@ -264,35 +264,35 @@
         "description": "Options: Text to show on a button that performs some sort of reset operation."
     },
     "confirmReset": {
-        "message": "Reset the extension? Click again to confirm.",
+        "message": "Resettare l'estensione? Clicca nuovamente per confermare.",
         "description": "Options: Status message to confirm reset"
     },
     "optionsReset": {
-        "message": "Options reset, storage cleared.",
+        "message": "Opzioni resettate, archiviazione ripulita.",
         "description": "Options: Status message after reset"
     },
     "saveUserCSS": {
-        "message": "User CSS has been saved.",
+        "message": "Il CSS utente è stato salvato.",
         "description": "Options: Status message for User CSS activation"
     },
     "saveTheme": {
-        "message": "Theme saved and activated!",
+        "message": "Tema salvato e attivato!",
         "description": "Options: Status message for theme activation"
     },
     "importTheme": {
-        "message": "Theme imported! Click SAVE to save the theme.",
+        "message": "Tema importato! Clicca SALVA per memorizzare il tema.",
         "description": "Options: Status message for theme import"
     },
     "statusThemes": {
-        "message": "Select a theme, or create your own.",
+        "message": "Seleziona un tema o creane uno tuo.",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Hover a modification to read its description.",
+        "message": "Passa col mouse su una mod per leggerne la descrizione.",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
-        "message": "A big thank you to all users and contributors!",
+        "message": "Un grande ringraziamento a tutti gli utenti e ai collaboratori!",
         "description": "Options: Status message info"
     }
 }
