@@ -88,7 +88,7 @@ function _saveUserCSS() {
             if (status.innerText === chrome.i18n.getMessage('saveUserCSS')) {
                 status.innerText = '';
             }
-        }, 5000);
+        }, 8000);
     });
 };
 
@@ -100,7 +100,8 @@ function _backupUserCSS() {
     const url = 'data:text/css;base64,' + btoa(userCSS);
     chrome.downloads.download({
         url: url,
-        saveAs: true
+        saveAs: true,
+        filename: 'backup.css'
     });
 };
 
@@ -116,7 +117,7 @@ function _resetOptions() {
                 status.innerText = '';
             }
             resetBtn.removeAttribute('class');
-        }, 5000);
+        }, 8000);
     }
     else {
         resetBtn.removeAttribute('class');
@@ -140,7 +141,7 @@ function _resetOptions() {
                     if (status.innerText === chrome.i18n.getMessage('optionsReset')) {
                         status.innerText = '';
                     }
-                }, 7500);
+                }, 8000);
             });
         });
     }

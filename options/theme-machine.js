@@ -487,7 +487,7 @@ function _saveTheme() {
         if (status.innerText === chrome.i18n.getMessage('saveTheme')) {
             status.innerText = '';
         }
-    }, 5000);
+    }, 8000);
 };
 
 
@@ -518,9 +518,26 @@ function _exportTheme() {
         function(items){
             var result = JSON.stringify(items);
             var url = 'data:application/json;base64,' + btoa(result);
+            const getName = items.themeName;
+            if (getName !== '' && tryAgain === false) {
+                var nameIt = getName + '.json';
+            }
+            else {
+                var nameIt = 'theme.json';
+            }
             chrome.downloads.download({
                 url: url,
-                saveAs: true
+                saveAs: true,
+                filename: nameIt
+            },
+            function() {
+                if (chrome.runtime.lastError.message === 'Invalid filename') {
+                    tryAgain = true;
+                    _exportTheme();
+                }
+                else {
+                    tryAgain = false;
+                }
             });
         });
     });
@@ -584,6 +601,7 @@ const _colorDrop = document.getElementById('colorDrop');
 const _colorLi = document.getElementById('colorLi');
 const _colorLi2 = document.getElementById('colorLi2');
 const status = document.getElementById('status');
+var tryAgain = false;
 
 document.querySelectorAll('button.themebox').forEach(function(theme) {
     theme.addEventListener('click', _selectTheme);
