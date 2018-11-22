@@ -10,8 +10,6 @@ function bookmarked() {
     if (favourites) {
         var favcheck = favourites.innerHTML;
         if (favcheck === 'favourites') {
-            var edit = document.querySelector('.btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(3) a');
-            edit.innerHTML = chrome.i18n.getMessage('editCommunity');
             favourites.innerHTML = chrome.i18n.getMessage('bookmarked');
             favourites.href = '/user/' + username() + '/bookmarks';
         }

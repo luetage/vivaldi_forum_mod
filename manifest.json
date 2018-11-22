@@ -17,8 +17,7 @@
     ],
     "options_ui": {
         "page": "options/options.html",
-        "chrome_style": true,
-        "open_in_tab": false
+        "open_in_tab": true
     },
     "web_accessible_resources": [
         "themes/standard.css",

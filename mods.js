@@ -27,70 +27,70 @@ function(mods) {
     var advancedFormatting = mods.advancedFormatting;
 
     if (headerScroll == 1) {
-        var MheaderScroll = document.createElement('script');
+        var modHeaderScroll = document.createElement('script');
         if (compact == 1) {
-            MheaderScroll.src = chrome.extension.getURL('mods/header_scroll_compact.js');
+            modHeaderScroll.src = chrome.extension.getURL('mods/header_scroll_compact.js');
         }
         else {
-            MheaderScroll.src = chrome.extension.getURL('mods/header_scroll.js');
+            modHeaderScroll.src = chrome.extension.getURL('mods/header_scroll.js');
         }
-        document.getElementsByTagName('body')[0].appendChild(MheaderScroll);
+        document.getElementsByTagName('body')[0].appendChild(modHeaderScroll);
     }
     if (notificationIcons == 1) {
-        var MnotificationIcons = document.createElement('link');
-        MnotificationIcons.href = chrome.extension.getURL('mods/notification-icons.css');
-        MnotificationIcons.type = 'text/css';
-        MnotificationIcons.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(MnotificationIcons);
+        var modNotificationIcons = document.createElement('link');
+        modNotificationIcons.href = chrome.extension.getURL('mods/notification-icons.css');
+        modNotificationIcons.type = 'text/css';
+        modNotificationIcons.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modNotificationIcons);
     }
     if (tooltips == 1) {
-        var Mtooltips = document.createElement('link');
-        Mtooltips.href = chrome.extension.getURL('mods/tooltips.css');
-        Mtooltips.type = 'text/css';
-        Mtooltips.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(Mtooltips);
+        var modTooltips = document.createElement('link');
+        modTooltips.href = chrome.extension.getURL('mods/tooltips.css');
+        modTooltips.type = 'text/css';
+        modTooltips.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modTooltips);
     }
     if (unread == 1) {
-        var Munread = document.createElement('link');
-        Munread.href = chrome.extension.getURL('mods/unread.css');
-        Munread.type = 'text/css';
-        Munread.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(Munread);
+        var modUnread = document.createElement('link');
+        modUnread.href = chrome.extension.getURL('mods/unread.css');
+        modUnread.type = 'text/css';
+        modUnread.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modUnread);
     }
     if (timestamp == 1) {
-        var Mtimestamp = document.createElement('link');
-        Mtimestamp.href = chrome.extension.getURL('mods/timestamp.css');
-        Mtimestamp.type = 'text/css';
-        Mtimestamp.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(Mtimestamp);
+        var modTimestamp = document.createElement('link');
+        modTimestamp.href = chrome.extension.getURL('mods/timestamp.css');
+        modTimestamp.type = 'text/css';
+        modTimestamp.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modTimestamp);
     }
     if (userID == 1) {
-        var MuserID = document.createElement('link');
-        MuserID.href = chrome.extension.getURL('mods/userID.css');
-        MuserID.type = 'text/css';
-        MuserID.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(MuserID);
+        var modUserID = document.createElement('link');
+        modUserID.href = chrome.extension.getURL('mods/userID.css');
+        modUserID.type = 'text/css';
+        modUserID.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modUserID);
     }
     if (signatureMod == 1) {
-        var MsignatureMod = document.createElement('link');
-        MsignatureMod.href = chrome.extension.getURL('mods/signature-mod.css');
-        MsignatureMod.type = 'text/css';
-        MsignatureMod.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(MsignatureMod);
+        var modSignature = document.createElement('link');
+        modSignature.href = chrome.extension.getURL('mods/signature-mod.css');
+        modSignature.type = 'text/css';
+        modSignature.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modSignature);
     }
     if (square == 1) {
-        var Msquare = document.createElement('link');
-        Msquare.href = chrome.extension.getURL('mods/square-avatars.css');
-        Msquare.type = 'text/css';
-        Msquare.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(Msquare);
+        var modSquare = document.createElement('link');
+        modSquare.href = chrome.extension.getURL('mods/square-avatars.css');
+        modSquare.type = 'text/css';
+        modSquare.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modSquare);
     }
     if (advancedFormatting == 1) {
-        var advancedFormattingStyle = document.createElement('link');
-        advancedFormattingStyle.href = chrome.extension.getURL('mods/advanced-formatting.css');
-        advancedFormattingStyle.type = 'text/css';
-        advancedFormattingStyle.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(advancedFormattingStyle);
+        var modAdvancedFormatting = document.createElement('link');
+        modAdvancedFormatting.href = chrome.extension.getURL('mods/advanced-formatting.css');
+        modAdvancedFormatting.type = 'text/css';
+        modAdvancedFormatting.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(modAdvancedFormatting);
     }
 
     userMenu();

@@ -79,12 +79,68 @@
         "message": "Click and Drag to move",
         "description": "Hover text when on a draggable area"
     },
+    "themes": {
+        "message": "Themes",
+        "description": "Options: Title of themes section"
+    },
+    "modifications": {
+        "message": "Modifications",
+        "description": "Options: Title of modifications section"
+    },
+    "info": {
+        "message": "Info",
+        "description": "Options: Title of info section"
+    },
+    "feedback": {
+        "message": "Feedback",
+        "description": "Options: Feedback link in navigation"
+    },
+    "communityThemes": {
+        "message": "Community Themes",
+        "description": "Options: Community themes headline"
+    },
+    "themeMachine": {
+        "message": "Theme Machine",
+        "description": "Options: Theme machine headline"
+    },
+    "background": {
+        "message": "Background",
+        "description": "Options: Theme machine edit background"
+    },
+    "foreground": {
+        "message": "Foreground",
+        "description": "Options: Theme machine edit foreground"
+    },
+    "highlight": {
+        "message": "Highlight",
+        "description": "Options: Theme machine edit highlight"
+    },
+    "button": {
+        "message": "Button",
+        "description": "Options: Theme machine edit button"
+    },
+    "dropdown": {
+        "message": "Dropdown",
+        "description": "Options: Theme machine edit dropdown"
+    },
+    "link": {
+        "message": "Link",
+        "description": "Options: Theme machine edit link"
+    },
+    "link2": {
+        "message": "Link 2",
+        "description": "Options: Theme machine edit link2"
+    },
+    "selectModifications": {
+        "message": "Select Modifications",
+        "description": "Options: Modifications headline"
+    },
     "advancedFormatting": {
         "message": "Advanced Formatting",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Adds an emote picker, extra formatting buttons & allows you to drag to re-order the formatting toolbar when editing your forum posts.",
+        "message": "Adds an emote picker and extra formatting buttons. Allows you to drag to reorder, remove from and add to the formatting toolbar, when editing your forum posts.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
@@ -116,7 +172,7 @@
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Displays additional font icons in the header's notification dropdown, to quickly distinguish one type of notification from another.",
+        "message": "Displays font icons in the header's notification dropdown, to quickly distinguish one type of notification from another.",
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
@@ -156,7 +212,7 @@
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Hides all signatures and replaces each with a button. When clicked, the signature of individual posts will be displayed.",
+        "message": "Hides all signatures and replaces each with a button. When clicked, the signatures of individual posts will be displayed.",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
@@ -167,16 +223,76 @@
         "message": "Square avatars everywhere!",
         "description": "Options: Description of square avatars mod"
     },
+    "userCSS": {
+        "message": "User CSS",
+        "description": "Options: User CSS headline"
+    },
+    "userCSSDesc": {
+        "message": "Input CSS code only! Click SAVE to activate. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
+        "description": "Options: User CSS placeholder/description"
+    },
+    "changelog": {
+        "message": "Changelog",
+        "description": "Options: Changelog headline"
+    },
+    "credits": {
+        "message": "Credits",
+        "description": "Options: Credits headline"
+    },
     "save": {
         "message": "Save",
         "description": "Options: Text to show on a button that performs some sort of save operation"
+    },
+    "edit": {
+        "message": "Edit",
+        "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
     "backup": {
         "message": "Backup",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
+    "import": {
+        "message": "Import",
+        "description": "Options: Text to show on a button that performs some sort of import operation"
+    },
+    "export": {
+        "message": "Export",
+        "description": "Options: Text to show on a button that performs some sort of export operation"
+    },
     "reset": {
         "message": "Reset",
         "description": "Options: Text to show on a button that performs some sort of reset operation"
+    },
+    "confirmReset": {
+        "message": "Reset the extension? Click again to confirm.",
+        "description": "Options: Status message to confirm reset"
+    },
+    "optionsReset": {
+        "message": "Options reset, storage cleared.",
+        "description": "Options: Status message after reset"
+    },
+    "saveUserCSS": {
+        "message": "User CSS has been saved.",
+        "description": "Options: Status message for User CSS activation"
+    },
+    "saveTheme": {
+        "message": "Theme saved and activated!",
+        "description": "Options: Status message for theme activation"
+    },
+    "importTheme": {
+        "message": "Theme imported! Click SAVE to save the theme.",
+        "description": "Options: Status message for theme import"
+    },
+    "statusThemes": {
+        "message": "Select a theme, or create your own.",
+        "description": "Options: Status message themes"
+    },
+    "statusModifications": {
+        "message": "Hover a modification to read its description.",
+        "description": "Options: Status message modifications"
+    },
+    "statusInfo": {
+        "message": "A big thank you to all users and contributors!",
+        "description": "Options: Status message info"
     }
 }
