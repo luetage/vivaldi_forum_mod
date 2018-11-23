@@ -136,7 +136,7 @@
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
-        "message": "Advanced Formatting",
+        "message": "Advanced formatting",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
@@ -284,7 +284,7 @@
         "description": "Options: Status message for theme import"
     },
     "statusThemes": {
-        "message": "Select a theme, or create your own.",
+        "message": "Choose a theme, or create your own.",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
