@@ -530,8 +530,9 @@ function _exportTheme() {
                 saveAs: true,
                 filename: nameIt
             },
-            function() {
-                if (chrome.runtime.lastError.message === 'Invalid filename') {
+            function(download) {
+                if (download === undefined && tryAgain === false) {
+                    console.log('VFM error: ' + chrome.runtime.lastError.message);
                     tryAgain = true;
                     _exportTheme();
                 }
