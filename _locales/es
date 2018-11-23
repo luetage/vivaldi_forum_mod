@@ -1,0 +1,298 @@
+{
+    "bookmarks": {
+        "message": "Marcadores",
+        "description": "Link to bookmarks page from navigation bar"
+    },
+    "bookmarked": {
+        "message": "Marcados",
+        "description": "Link to bookmarks page from user profile menu"
+    },
+    "signature": {
+        "message": "Firma",
+        "description": "Signature toggle for forum posts"
+    },
+    "copyCode": {
+        "message": "copiar_código",
+        "description": "Copy all code button for code markdown"
+    },
+    "lastModified": {
+        "message": "Modificados últimamente",
+        "description": "Text before last edit timestamp in forum posts"
+    },
+    "optionsLink": {
+        "message": "Modo del foro",
+        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+    },
+    "editCommunity": {
+        "message": "Perfil de la comunidad",
+        "description": "Link to community settings in user dropdown menu"
+    },
+    "editForum": {
+        "message": "Perfil del foro",
+        "description": "Link to forum settings in user dropdown menu"
+    },
+    "dismiss": {
+        "message": "Ocultar",
+        "description": "Dismisses community notifications"
+    },
+    "smile_o": {
+        "message": "Seleccionador de emoticones",
+        "description": "Title of formatting item for emote picker"
+    },
+    "header": {
+        "message": "Título",
+        "description": "Title of formatting item header 1"
+    },
+    "window_minimize": {
+        "message": "Linea horizontal",
+        "description": "Title of formatting item horizontal rule"
+    },
+    "quote_right": {
+        "message": "Cita",
+        "description": "Title of formatting item quote"
+    },
+    "code": {
+        "message": "Línea de código",
+        "description": "Title of formatting item inline code"
+    },
+    "file_code_o": {
+        "message": "Bloque de código",
+        "description": "Title of formatting item code block"
+    },
+    "th_large": {
+        "message": "Tabla",
+        "description": "Title of formatting item table"
+    },
+    "list_ol": {
+        "message": "Lista enumerada",
+        "description": "Title of formatting item numbered list"
+    },
+    "shield": {
+        "message": "Spoiler",
+        "description": "Title of formatting item spoiler"
+    },
+    "customToolbarTitle": {
+        "message": "Modificar barra de herramientas",
+        "description": "Title of custom toolbar editor"
+    },
+    "dragText": {
+        "message": "Pinchar y arrastrar para reorganizar",
+        "description": "Hover text when on a draggable area"
+    },
+    "themes": {
+        "message": "Temas",
+        "description": "Options: Title of themes section"
+    },
+    "modifications": {
+        "message": "Modificaciones",
+        "description": "Options: Title of modifications section"
+    },
+    "info": {
+        "message": "Información",
+        "description": "Options: Title of info section"
+    },
+    "feedback": {
+        "message": "Compartir opinión",
+        "description": "Options: Feedback link in navigation"
+    },
+    "communityThemes": {
+        "message": "Temas de la cominidad",
+        "description": "Options: Community themes headline"
+    },
+    "themeMachine": {
+        "message": "Máquina de temas",
+        "description": "Options: Theme machine headline"
+    },
+    "background": {
+        "message": "Fondo",
+        "description": "Options: Theme machine edit background"
+    },
+    "foreground": {
+        "message": "Primer plano",
+        "description": "Options: Theme machine edit foreground"
+    },
+    "highlight": {
+        "message": "Resaltos",
+        "description": "Options: Theme machine edit highlight"
+    },
+    "button": {
+        "message": "Botón",
+        "description": "Options: Theme machine edit button"
+    },
+    "dropdown": {
+        "message": "Opciones desplegables",
+        "description": "Options: Theme machine edit dropdown"
+    },
+    "link": {
+        "message": "Enlace",
+        "description": "Options: Theme machine edit link"
+    },
+    "link2": {
+        "message": "Enlace 2",
+        "description": "Options: Theme machine edit link2"
+    },
+    "selectModifications": {
+        "message": "Selecciona modificaciones",
+        "description": "Options: Modifications headline"
+    },
+    "advancedFormatting": {
+        "message": "Formateo avanzado",
+        "description": "Options: Title of advanced formatting mod"
+    },
+    "advancedFormattingDesc": {
+        "message": "Añade seleccionador de emoticones y otros botones de formateo a la barra de herramientas para la editación de comentarios en el foro.",
+        "description": "Options: Description of advanced formatting mod"
+    },
+    "hideHeader": {
+        "message": "Ocultar automáticamente el encabezamiento cuando se desplaza la página",
+        "description": "Options: Title of auto-hide header on scroll mod"
+    },
+    "hideHeaderDesc": {
+        "message": "Desplazamiento hacia abajo oculta y hacia arriba vuelve a mostrar el encabezamiento.",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "navbookmarks": {
+        "message": "Marcadores en la navegación",
+        "description": "Options: Title of bookmarks in navigation mod"
+    },
+    "navbookmarksDesc": {
+        "message": "Muestra el enlace hacia la página de marcadores en la barra de navegación para un acceso fácil.",
+        "description": "Options: Description of bookmarks in navigation mod"
+    },
+    "compactHeader": {
+        "message": "Encabezamiento compactado",
+        "description": "Options: Title of compact header mod"
+    },
+    "compactHeaderDesc": {
+        "message": "Pone el encabezamiento al nivel original y suprime enlaces redundantes.",
+        "description": "Options: Description of compact header mod"
+    },
+    "customNotification": {
+        "message": "Símbolos de notificaciones",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Muestra símbolos en el menú desplegable, para  distinguir un tipo de notificación del otro fácilmente.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "hideTooltips": {
+        "message": "Ocultar ayuda emergente",
+        "description": "Options: Title of hide tooltips mod"
+    },
+    "hideTooltipsDesc": {
+        "message": "Ocultar la ayuda emergente en el encabezamiento y en la barra de navegación.",
+        "description": "Options: Description of hide tooltips mod"
+    },
+    "hideUnread": {
+        "message": "Oculta el monto de comentarios no leídos en la barra de navegación",
+        "description": "Options: Title of hide unread count mod"
+    },
+    "hideUnreadDesc": {
+        "message": "Oculta el número de comentarios no leídos en la barra de navegación.",
+        "description": "Options: Description of unread count mod"
+    },
+    "timestamp": {
+        "message": "Hora de la última editación",
+        "description": "Options: Title of last edit timestamp mod"
+    },
+    "timestampDesc": {
+        "message": "Muestra la hora local de la última editación al final del comentario.",
+        "description": "Options: Description of last edit timestamp mod"
+    },
+    "showUID": {
+        "message": "Mostrar la ID del usuario",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Muestra los UIDs, cuando el ratón se halla sobre el nombre del usuario de un comentario o sobre su imagen en el perfil.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "signatureMod": {
+        "message": "Modo de firma",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Oculta todas las firmas y en vez de ellas muestra un botón. Cuando se pincha, la firma vuelve a aparecer.",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Imágenes cuadrados de usuarios",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Imágenes de usuarios cuadrados en todos lados.",
+        "description": "Options: Description of square avatars mod"
+    },
+    "userCSS": {
+        "message": "CSS del usuario",
+        "description": "Options: User CSS headline"
+    },
+    "userCSSDesc": {
+        "message": "Ingresa sólo el código CSS! Pincha en GUARDAR, para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS, para usar tu propio tema.",
+        "description": "Options: User CSS placeholder/description"
+    },
+    "changelog": {
+        "message": "Lista de cambios",
+        "description": "Options: Changelog headline"
+    },
+    "credits": {
+        "message": "Contribuidores",
+        "description": "Options: Credits headline"
+    },
+    "save": {
+        "message": "Guardar",
+        "description": "Options: Text to show on a button that performs some sort of save operation"
+    },
+    "edit": {
+        "message": "Editar",
+        "description": "Options: Text to show on a button that performs some sort of edit operation"
+    },
+    "backup": {
+        "message": "Copia de seguridad",
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
+    },
+    "import": {
+        "message": "Importar",
+        "description": "Options: Text to show on a button that performs some sort of import operation"
+    },
+    "export": {
+        "message": "Exportar",
+        "description": "Options: Text to show on a button that performs some sort of export operation"
+    },
+    "reset": {
+        "message": "Resetear",
+        "description": "Options: Text to show on a button that performs some sort of reset operation"
+    },
+    "confirmReset": {
+        "message": "¿Resetear la extensión? Vuelve a pinchar para confirmar.",
+        "description": "Options: Status message to confirm reset"
+    },
+    "optionsReset": {
+        "message": "Opciones reseteadas, almacenamiento limpiado.",
+        "description": "Options: Status message after reset"
+    },
+    "saveUserCSS": {
+        "message": "CSS del usuario guardado.",
+        "description": "Options: Status message for User CSS activation"
+    },
+    "saveTheme": {
+        "message": "¡Tema guardado y activado!",
+        "description": "Options: Status message for theme activation"
+    },
+    "importTheme": {
+        "message": "¡Tema importado! Pincha GUARDAR, para guardar el tema.",
+        "description": "Options: Status message for theme import"
+    },
+    "statusThemes": {
+        "message": "Selecciona un tema o diseña tu propio.",
+        "description": "Options: Status message themes"
+    },
+    "statusModifications": {
+        "message": "Pon el puntero del ratón sobre una modificación, para ver la descripción.",
+        "description": "Options: Status message modifications"
+    },
+    "statusInfo": {
+        "message": "¡Muchísimas gracias a todos los usuarios y contribuidores!",
+        "description": "Options: Status message info"
+    }
+}
