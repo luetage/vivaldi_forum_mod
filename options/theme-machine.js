@@ -223,6 +223,7 @@ function _restoreThemes() {
         //setup
         toggleEdit.style.display = 'none';
         toggleEdit.style.opacity = 1;
+        editBtn.disabled = true;
         saveBtn.disabled = true;
         importBtn.disabled = true;
         exportBtn.disabled = true;
@@ -265,19 +266,15 @@ function _restoreThemes() {
         //selected theme
         if (restore.darkGrey === '1') {
             document.getElementById('darkGrey').classList.add('active');
-            editBtn.disabled = true;
         }
         else if (restore.lightGrey === '1') {
             document.getElementById('lightGrey').classList.add('active');
-            editBtn.disabled = true;
         }
         else if (restore.mod === '1') {
             document.getElementById('mod').classList.add('active');
-            editBtn.disabled = true;
         }
         else if (restore.sprucey === '1') {
             document.getElementById('sprucey').classList.add('active');
-            editBtn.disabled = true;
         }
         else if (restore.custom1 === '1') {
             document.getElementById('custom1').classList.add('active');
