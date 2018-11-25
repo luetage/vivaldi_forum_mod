@@ -200,8 +200,11 @@ strong, a {
     overflow: hidden;
     font-size: 0;
 }
-.themebox:hover,
 .themebox.active {
+    border: 2px solid hsl(353, 85%, 44%) !important;
+}
+.themebox.active:hover {
+    background-color: hsl(0, 0%, 98%);
     border: 2px solid hsl(353, 85%, 44%) !important;
 }
 .themebox .themebox-title {
@@ -251,15 +254,12 @@ button {
     border-radius: 2px;
     cursor: pointer;
 }
-
 button:hover {
-    background-color: hsl(0, 0%, 80%)
+    background-color: hsl(0, 0%, 82%)
 }
-
 button:focus {
     outline: none;
 }
-
 body, button:disabled {
     cursor: default;
 }
