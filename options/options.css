@@ -1,3 +1,261 @@
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: url('fonts/Raleway-Medium.ttf') format('truetype');
+}
+  @font-face {
+    font-family: 'Raleway-SemiBold';
+    src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
+}
+
+
+body {
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .5px;
+    background-color: hsl(0, 0%, 100%);
+    cursor: default;
+    margin: 0;
+}
+
+
+/* Header */
+
+#header {
+    background-color: hsl(0, 0%, 18%);
+    color: hsl(0, 0%, 37%);
+    position: fixed;
+    height: 40px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+#vivaldilogo {
+    position: fixed;
+    top: 4px;
+    left: 10px; 
+}
+#navigation {
+    margin-left: 180px;
+}
+#link, #themes-btn, #modifications-btn, #info-btn {
+    background: none;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    height: 40px;
+    color: hsl(0, 0%, 37%);
+    padding: 8px;
+    cursor: pointer;
+    text-transform: lowercase;
+}
+#link:hover, #themes-btn:hover, #modifications-btn:hover, #info-btn:hover, .view {
+    color: hsl(353, 85%, 44%) !important;
+}
+#link:after {
+    content: '';
+    display: block;
+    position: initial;
+    margin: auto;
+    margin-top: 3px;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width 1s ease, background-color 1s ease !important
+}
+#link:hover:after {
+    width: 100%;
+    background: hsl(0, 0%, 56%);
+}
+form {
+    display: inline;
+}
+#reset-btn {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    background-color: hsl(353, 85%, 44%);
+    border: none !important;
+    color: hsl(0, 0%, 98%);
+}
+#reset-btn:hover {
+    background-color: hsl(353, 65%, 54%) !important;
+    color: hsl(0, 0%, 99%) !important;
+}
+#status {
+    color: hsl(0, 0%, 37%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50px;
+    font-size: .9rem;
+    text-align: center;
+    padding: 5px 0;
+}
+
+
+/* Content */
+
+#content {
+    position: absolute;
+    width: 1080px;
+    line-height: 1.2;
+    color: hsl(0, 0%, 37%);
+    top: 13vh;
+    left: 0;
+    right: 0;
+    padding-bottom: 55px;
+    margin: auto;
+    text-align: left;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* Create columns */
+
+.column-left {
+    float: left;
+    width: 50%;
+    padding: 0 20px;
+}
+.column-right {
+    float: left;
+    width: 50%;
+    padding: 0 20px;
+}
+.scroll-column {
+    width: 100%;
+    max-height: 49vh;
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scroll-column:hover {
+    width: 100%;
+    overflow-y: overlay;
+}
+
+/* Clears floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Stacks columns on top of each other for smaller displays */
+
+@media screen and (max-width: 1000px) {
+    .column-right, .right {
+        width: 100%;
+    }
+}
+.float {
+    white-space: nowrap;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+    left: -100px
+}
+
+h2 {
+    margin-top: 0;
+    text-align: left;
+    font-size: 1.3rem;
+    color: hsl(223, 100%, 25%);
+}
+strong, a {
+    color: hsl(353, 85%, 44%);
+}
+#modifications, #info {
+    display: none;
+}
+
+/* Themes page */
+
+.themebox {
+    width: 150px;
+    border: 2px solid transparent !important;
+    margin: 0 12px 12px 0;
+    padding: 15px 5px 5px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    background-color: hsl(0, 0%, 98%);
+
+}
+.themebox .themebox-image {
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+}
+.themebox:hover,
+.themebox.active {
+    border: 2px solid hsl(353, 85%, 44%) !important;
+}
+.themebox .themebox-title {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: .9em;
+    letter-spacing: .5px;
+    color: hsl(0, 0%, 37%);
+}
+input[type="text" i] {
+    font-family: "Raleway-Semibold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 13px;
+    width: 100%
+}
+.toggleEdit {
+    opacity: 0;
+    margin-top: 5px;
+    line-height: 2.2;
+}
+
+/* Modifications page */
+
+.selected {
+    color: hsl(353, 85%, 44%);
+}
+#userCSS {
+    font-family: Menlo, Consolas, Monaco, monospace;
+    background-color: hsl(0, 0%, 99%);
+    width: 100%;
+    height: 49vh;
+}
+
+
+/* Buttons */
+
+button {
+    background: hsl(0, 0%, 90%);
+    border:  1px solid hsl(0, 0%, 85%);
+    font-family: "Raleway-Semibold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
 body, button:disabled {
     cursor: default;
 }
@@ -7,44 +265,17 @@ button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
 button:focus {
     outline: none;
 }
-.selected {
-    color: red;
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {width: 10px}
+
+::-webkit-scrollbar-track {
+    background: hsl(0,0%,90%);
+    border-radius: 1px
 }
-#modifications, #info {
-    display: none;
-}
-.toggleEdit {
-    opacity: 0;
-}
-.view {
-    background-color: yellow;
-}
-#userCSS {
-    font-family: Menlo, Consolas, Monaco, monospace;
-}
-.themebox {
-    width: 100px;
-    padding: 0;
-    border: 0;
-    margin: 0 12px 12px 0;
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    background-color: transparent;
-}
-.themebox .themebox-image {
-    position: relative;
-    overflow: hidden;
-    font-size: 0;
-    border: 3px solid darkgrey;
-}
-.themebox.active .themebox-image {
-    border-color: red;
-}
-.themebox .themebox-title {
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
-    margin-top: 5px;
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 37%);
+    border-radius: 1px;
 }
