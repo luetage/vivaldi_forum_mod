@@ -252,6 +252,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: hsl(0, 0%, 80%)
+}
+
 button:focus {
     outline: none;
 }
