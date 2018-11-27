@@ -174,9 +174,6 @@ function _showInfo() {
     navInfo.style.display = 'block';
     status.innerText = chrome.i18n.getMessage('statusInfo');
 };
-function _feedback() {
-    window.open('https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod', '_blank');
-}
 
 
 const navThemes = document.getElementById('themes');
@@ -192,7 +189,6 @@ var changeMessage = false;
 btnThemes.addEventListener('click', _showThemes);
 btnModifications.addEventListener('click', _showModifications);
 btnInfo.addEventListener('click', _showInfo);
-document.getElementById('feedback-btn').addEventListener('click', _feedback);
 selectMods.forEach(function(mod) {
     mod.addEventListener('click', _selectMods);
 });

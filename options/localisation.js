@@ -4,7 +4,6 @@ function localisation() {
     document.getElementById('themes-btn').innerText = chrome.i18n.getMessage('themes');
     document.getElementById('modifications-btn').innerText = chrome.i18n.getMessage('modifications');
     document.getElementById('info-btn').innerText = chrome.i18n.getMessage('info');
-    document.getElementById('feedback-btn').innerText = chrome.i18n.getMessage('feedback');
     document.getElementById('reset-btn').innerText = chrome.i18n.getMessage('reset');
 
     //themes
