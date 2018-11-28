@@ -480,11 +480,6 @@ function _saveTheme() {
     _restoreThemes();
     _activateTheme();
     status.innerText = chrome.i18n.getMessage('saveTheme');
-    setTimeout(function() {
-        if (status.innerText === chrome.i18n.getMessage('saveTheme')) {
-            status.innerText = '';
-        }
-    }, 8000);
 };
 
 
@@ -574,11 +569,6 @@ function _imp() {
             _colorLi.value = set.colorLi;
             _colorLi2.value = set.colorLi2;
             status.innerText = chrome.i18n.getMessage('importTheme');
-            setTimeout(function() {
-                if (status.innerText === chrome.i18n.getMessage('importTheme')) {
-                    status.innerText = '';
-                }
-            }, 8000);
         });
     });
     document.getElementById('importHidden').value = '';

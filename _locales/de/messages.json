@@ -267,6 +267,10 @@
         "message": "Erweiterung zurücksetzen? Klicke erneut um zu bestätigen.",
         "description": "Options: Status message to confirm reset"
     },
+    "cancelReset": {
+        "message": "Vorgang abgebrochen.",
+        "description": "Options: Status message when reset is cancelled"
+    },
     "optionsReset": {
         "message": "Einstellungen zurückgesetzt, Speicher bereinigt.",
         "description": "Options: Status message after reset"

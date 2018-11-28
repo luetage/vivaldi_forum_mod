@@ -1,19 +1,9 @@
-@font-face {
-    font-family: 'Raleway-Medium';
-    src: url('fonts/Raleway-Medium.ttf') format('truetype');
-}
-  @font-face {
-    font-family: 'Raleway-SemiBold';
-    src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
-}
-
-
 body {
-    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: .5px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 93%);
     cursor: default;
     margin: 0;
 }
@@ -21,79 +11,52 @@ body {
 
 /* Header */
 
-#header {
-    background-color: hsl(0, 0%, 18%);
+header {
+    white-space: nowrap;
     color: hsl(0, 0%, 37%);
+    background-color: hsl(0, 0%, 93%);
+    cursor: default;
     position: fixed;
-    height: 40px;
     top: 0;
     right: 0;
     left: 0;
     z-index: 10;
 }
-#vivaldilogo {
+#logo {
     position: fixed;
-    top: 4px;
-    left: 10px; 
+    top: 8px;
+    left: 40px;
 }
-#navigation {
-    margin-left: 180px;
+#themes-btn {
+    margin-left: 70px;
 }
-#link, #themes-btn, #modifications-btn, #info-btn {
+#themes-btn, #modifications-btn, #info-btn, #feedback-btn, #reset-btn {
+    color: hsl(0, 0%, 37%);
+    cursor: default;
     background: none;
     background-image: none !important;
     border: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
-    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    height: 40px;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     font-size: 14px;
-    height: 40px;
-    color: hsl(0, 0%, 37%);
-    padding: 8px;
+    padding: 0 8px;
     cursor: pointer;
-    text-transform: lowercase;
 }
-#link:hover, #themes-btn:hover, #modifications-btn:hover, #info-btn:hover, .view {
+#themes-btn:hover, #modifications-btn:hover, #info-btn:hover, #feedback-btn:hover, #reset-btn:hover, .view {
     color: hsl(353, 85%, 44%) !important;
-}
-#link:after {
-    content: '';
-    display: block;
-    position: initial;
-    margin: auto;
-    margin-top: 3px;
-    height: 1px;
-    width: 0;
-    background: transparent;
-    transition: width 1s ease, background-color 1s ease !important
-}
-#link:hover:after {
-    width: 100%;
-    background: hsl(0, 0%, 56%);
 }
 form {
     display: inline;
 }
-#reset-btn {
-    position: absolute;
-    right: 10px;
-    top: 7px;
-    background-color: hsl(353, 85%, 44%);
-    border: none !important;
-    color: hsl(0, 0%, 98%);
-}
-#reset-btn:hover {
-    background-color: hsl(353, 65%, 54%) !important;
-    color: hsl(0, 0%, 99%) !important;
-}
 #status {
-    color: hsl(0, 0%, 37%);
+    color: hsl(0, 0%, 93%);
+    background: hsl(0, 0%, 18%);
     position: fixed;
     left: 0;
     right: 0;
-    top: 50px;
-    font-size: .9rem;
     text-align: center;
     padding: 5px 0;
 }
@@ -103,7 +66,7 @@ form {
 
 #content {
     position: absolute;
-    width: 1080px;
+    width: 100%;
     line-height: 1.2;
     color: hsl(0, 0%, 37%);
     top: 13vh;
@@ -122,12 +85,13 @@ form {
 .column-left {
     float: left;
     width: 50%;
-    padding: 0 20px;
+    padding: 0 20px 0 40px;
+    margin-bottom: 30px;
 }
 .column-right {
-    float: left;
+    float: right;
     width: 50%;
-    padding: 0 20px;
+    padding: 0 20px 0 40px;
 }
 .scroll-column {
     width: 100%;
@@ -140,6 +104,10 @@ form {
     width: 100%;
     overflow-y: overlay;
 }
+.scroll-column p:first-of-type {
+    margin-top: 0px;
+}
+
 
 /* Clears floats after the columns */
 
@@ -149,10 +117,11 @@ form {
     clear: both;
 }
 
+
 /* Stacks columns on top of each other for smaller displays */
 
 @media screen and (max-width: 1000px) {
-    .column-right, .right {
+    .column-right, .right, .column-left, .left {
         width: 100%;
     }
 }
@@ -182,47 +151,52 @@ strong, a {
     display: none;
 }
 
+
 /* Themes page */
 
 .themebox {
-    width: 150px;
-    border: 2px solid transparent !important;
-    margin: 0 12px 12px 0;
-    padding: 15px 5px 5px;
+    width: 113px;
+    padding: 0;
+    border: 0;
+    margin: 0 14px 14px 0;
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    background-color: hsl(0, 0%, 98%);
-
+    background-color: transparent;
+}
+.themebox:hover{
+    background: transparent !important;
 }
 .themebox .themebox-image {
     position: relative;
     overflow: hidden;
+    border: 2px solid hsl(0, 0%, 70%);
     font-size: 0;
-}
-.themebox.active {
-    border: 2px solid hsl(353, 85%, 44%) !important;
-}
-.themebox.active:hover {
-    background-color: hsl(0, 0%, 98%);
-    border: 2px solid hsl(353, 85%, 44%) !important;
 }
 .themebox .themebox-title {
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 12px;
-    margin-top: 10px;
-    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 13px;
+    margin-top: 7px;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: .9em;
     letter-spacing: .5px;
     color: hsl(0, 0%, 37%);
 }
+.themebox:hover .themebox-title, .themebox.active .themebox-title {
+    color: hsl(353, 85%, 44%);
+}
 input[type="text" i] {
-    font-family: "Raleway-Semibold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
     font-size: 13px;
-    width: 100%
+    color: hsl(0, 0%, 37%);
+    width: 230px;
+    padding-left: 5px;
+}
+input[type="color" i] {
+    width: 38px;
 }
 .toggleEdit {
     opacity: 0;
@@ -230,56 +204,52 @@ input[type="text" i] {
     line-height: 2.2;
 }
 
+
 /* Modifications page */
 
 .selected {
     color: hsl(353, 85%, 44%);
 }
+#editCSS button {
+    margin-bottom: 4px;
+}
 #userCSS {
     font-family: Menlo, Consolas, Monaco, monospace;
-    background-color: hsl(0, 0%, 99%);
+    font-size: 12px;
+    color: hsl(0, 0%, 18%);
+    background-color: hsl(0, 0%, 98%);
+    padding: 5px;
+    border: 2px solid hsl(0, 0%, 70%);
     width: 100%;
     height: 49vh;
+    resize: vertical;
+    min-height: 100px;
 }
 
 
 /* Buttons */
 
 button {
-    background: hsl(0, 0%, 90%);
-    border:  1px solid hsl(0, 0%, 85%);
-    font-family: "Raleway-Semibold", "Helvetica Neue", "Helvetica", sans-serif;
+    background: hsl(0, 0%, 37%);
+    color: hsl(0, 0%, 93%);
+    border:  1px solid hsl(0, 0%, 37%);
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
     font-size: 13px;
     padding: 5px 12px;
-    border-radius: 2px;
+    border-radius: 3px;
     cursor: pointer;
 }
-button:hover {
-    background-color: hsl(0, 0%, 82%)
+button:hover:not(:disabled) {
+    background-color: hsl(0, 0%, 18%)
 }
-button:focus {
-    outline: none;
-}
-body, button:disabled {
+button:disabled {
     cursor: default;
+    color: hsl(0, 0%, 70%);
 }
 button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
     cursor: pointer;
 }
 button:focus {
     outline: none;
-}
-
-
-/* Scrollbar */
-
-::-webkit-scrollbar {width: 10px}
-
-::-webkit-scrollbar-track {
-    background: hsl(0,0%,90%);
-    border-radius: 1px
-}
-::-webkit-scrollbar-thumb {
-    background: hsl(0, 0%, 37%);
-    border-radius: 1px;
 }

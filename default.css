@@ -1,10 +1,5 @@
 /** Default fixes, improvements and modifications for all themes **/
 
-/* Profile alignment fix */
-.account .cover .avatar-wrapper {
-    margin-left: -68px !important;
-}
-
 /* Font icons */
 .taskbar-composer .fa-plus::before {
     content: "\f065" !important;

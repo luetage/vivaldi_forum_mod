@@ -267,6 +267,10 @@
         "message": "¿Resetear la extensión? Vuelve a pinchar, para confirmar.",
         "description": "Options: Status message to confirm reset"
     },
+    "cancelReset": {
+        "message": "Reset cancelled.",
+        "description": "Options: Status message when reset is cancelled"
+    },
     "optionsReset": {
         "message": "Opciones reseteadas, almacenamiento limpiado.",
         "description": "Options: Status message after reset"

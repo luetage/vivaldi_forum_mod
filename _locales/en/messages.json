@@ -267,6 +267,10 @@
         "message": "Reset the extension? Click again to confirm.",
         "description": "Options: Status message to confirm reset"
     },
+    "cancelReset": {
+        "message": "Reset cancelled.",
+        "description": "Options: Status message when reset is cancelled"
+    },
     "optionsReset": {
         "message": "Options reset, storage cleared.",
         "description": "Options: Status message after reset"

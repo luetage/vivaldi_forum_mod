@@ -84,11 +84,6 @@ function _saveUserCSS() {
     },
     function() {
         status.innerText = chrome.i18n.getMessage('saveUserCSS');
-        setTimeout(function() {
-            if (status.innerText === chrome.i18n.getMessage('saveUserCSS')) {
-                status.innerText = '';
-            }
-        }, 8000);
     });
 };
 
@@ -114,7 +109,7 @@ function _resetOptions() {
         status.innerText = chrome.i18n.getMessage('confirmReset');
         setTimeout(function() {
             if (status.innerText === chrome.i18n.getMessage('confirmReset')) {
-                status.innerText = '';
+                status.innerText = chrome.i18n.getMessage('cancelReset');
             }
             resetBtn.removeAttribute('class');
         }, 8000);
@@ -137,11 +132,6 @@ function _resetOptions() {
                 _showThemes();
                 changeMessage = true;
                 status.innerText = chrome.i18n.getMessage('optionsReset');
-                setTimeout(function() {
-                    if (status.innerText === chrome.i18n.getMessage('optionsReset')) {
-                        status.innerText = '';
-                    }
-                }, 8000);
             });
         });
     }
