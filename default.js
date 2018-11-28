@@ -1,20 +1,9 @@
-/* Bookmarks fix */
+/* Get the username `*/
 
 function username() {
     var user = document.querySelector('#user-control-list [component="header/username"]').innerHTML.toLowerCase().replace(/\./g, '-');
     return user;
 }
-
-function bookmarked() {
-    var favourites = document.querySelector('.btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(12) a');
-    if (favourites) {
-        var favcheck = favourites.innerHTML;
-        if (favcheck === 'favourites') {
-            favourites.innerHTML = chrome.i18n.getMessage('bookmarked');
-            favourites.href = '/user/' + username() + '/bookmarks';
-        }
-    }
-};
 
 
 /* Links to options and hidden edit page */
