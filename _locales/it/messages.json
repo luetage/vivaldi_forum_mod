@@ -51,13 +51,9 @@
         "message": "Citazione",
         "description": "Title of formatting item quote"
     },
-    "code": {
-        "message": "Riga di codice",
-        "description": "Title of formatting item inline code"
-    },
     "file_code_o": {
-        "message": "Codice",
-        "description": "Title of formatting item code block."
+        "message": " ",
+        "description": "Title of formatting item fixed width font"
     },
     "th_large": {
         "message": "Tabella",

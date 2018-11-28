@@ -51,13 +51,9 @@
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
-    "code": {
-        "message": "Inline Code",
-        "description": "Title of formatting item inline code"
-    },
     "file_code_o": {
-        "message": "Code Block",
-        "description": "Title of formatting item code block"
+        "message": "Fixed Width Text",
+        "description": "Title of formatting item fixed width font"
     },
     "th_large": {
         "message": "Table",

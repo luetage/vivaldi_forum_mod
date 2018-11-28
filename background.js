@@ -39,6 +39,7 @@ function normaliseFormattingToolbarOrders(){
             "zen",
             "picture",
             "smile-o",
+            "emoji-add-emoji",
             "header",
             "window-minimize",
             "quote-right",

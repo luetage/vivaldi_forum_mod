@@ -51,13 +51,9 @@
         "message": "Cita",
         "description": "Title of formatting item quote"
     },
-    "code": {
-        "message": "Línea de código",
-        "description": "Title of formatting item inline code"
-    },
     "file_code_o": {
-        "message": "Bloque de código",
-        "description": "Title of formatting item code block"
+        "message": " ",
+        "description": "Title of formatting item fixed width font"
     },
     "th_large": {
         "message": "Tabla",
