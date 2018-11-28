@@ -132,7 +132,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 }
 
 /* Auto-hide header transition */
-#header-menu {
+#header-menu, #submenu {
     transition: top 0.857s;
 }
 
