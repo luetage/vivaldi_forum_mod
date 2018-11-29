@@ -354,10 +354,10 @@ pre code {
     border-color: var(--colorHi);
 }
 .btn-link {
-    color: var(--colorLi);
+    color: var(--colorLi2);
 }
 .btn-link:focus, .btn-link:hover {
-    color: var(--colorLiHi);
+    color: var(--colorLi2Hi);
 }
 .label-info {
     background-color: var(--colorBtn);
