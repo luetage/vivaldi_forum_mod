@@ -65,6 +65,10 @@ let DRAG_START_POS = {x:0, y:0};
 function getString(key){
     return chrome.i18n.getMessage(key.replace(/-/g, "_"));
 }
+/**
+ * Keep a reference to the list button used to simulte clicks on hidden elements
+*/
+let SIMULATED_FORMAT_BUTTON;
 /* Definitions for new formatters
 * [keystring (as per fa-icons), start tag, end tag] */
 const FORMATTERS = [
@@ -446,15 +450,31 @@ function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag){
 }
 
 /**
+ * A special formatting button is required to support clicking hidden
+ *   default buttons as their listener is normally registered as a
+ *   jquery click simulator, which requires a toolbar button
+ */
+function createJQueryClickSimulatorButton(){
+    const button = document.createElement("li");
+    button.style.position = "fixed";
+    button.style.left = "-9999px";
+    button.style.top = "-9999px";
+    button.style.order = "-99999";
+    return button;
+}
+
+/**
  * Add the special formatting buttons to the composer
  */
 function addSpecialFormattingButtons(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
-    const endOfBar = composerFormatters.querySelector("form");
     FORMATTERS.forEach(button => {
         const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2]);
-        composerFormatters.insertBefore(madeButton, endOfBar);
+        composerFormatters.appendChild(madeButton);
     });
+    SIMULATED_FORMAT_BUTTON = createJQueryClickSimulatorButton();
+    const formatterForm = composerFormatters.querySelector("form");
+    composerFormatters.insertBefore(SIMULATED_FORMAT_BUTTON, formatterForm);
 }
 
 /* ===========DraggableToolbar===========*/
@@ -556,6 +576,26 @@ function buttonDroppedOnToModal(dropEvent){
 }
 
 /**
+ * Add a listener that listens for default button clicks
+ *   as these need to be manually simulated for the forum to work properly
+ *   as the listener was applied using a jquery selector not a native listener
+ * @param {DOMElement} modal only ever pass it an instance of a TOOLBAR_MODAL
+ */
+function addJqueryClickSimulator(modal){
+    modal.classList.add("formatting-bar");
+    modal.addEventListener("click", event => {
+        let target = event.target;
+        if(target.tagName.toUpperCase()==="I"){
+            target = target.parentElement;
+        }
+        if(target.tagName.toUpperCase()==="LI" && target.getAttribute("data-format")){
+            SIMULATED_FORMAT_BUTTON.setAttribute("data-format", target.getAttribute("data-format"));
+            SIMULATED_FORMAT_BUTTON.click();
+        }
+    });
+}
+
+/**
  * Create and add to page the modal for holding hidden toolbar items
  * Allow dropping to this modal
  * List items should always be a child of the <ul> within this
@@ -566,6 +606,7 @@ function createToolbarCustomModal(){
     box.addEventListener("dragover", makeValidDropTarget);
     const list = document.createElement("ul");
     box.appendChild(list);
+    addJqueryClickSimulator(box)
     document.body.appendChild(box);
 }
 
