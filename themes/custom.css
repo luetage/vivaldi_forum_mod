@@ -17,6 +17,30 @@ body {
 #vivaldimenu a.current, #vivaldimenu a:hover {
     color: var(--colorHi);
 }
+#vivaldimenu a .sub-arrow {
+    background: none;
+    position: relative;
+}
+#vivaldimenu a .sub-arrow::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    left: 16px;
+    position: absolute;
+    top: -11px;
+    opacity: 0.66;
+    font-size: 13px;
+    color: var(--colorFg) !important;
+}
+#vivaldimenu ul {
+    background-color: var(--colorBg);
+    border: 1px solid var(--colorBgHi);
+}
+#vivaldimenu ul li {
+    border-top: 1px solid var(--colorBgHi);
+}
+#vivaldimenu ul a:hover {
+    background-color: var(--colorBgHiC);
+}
 .header #user_dropdown img, .account .cover .avatar-wrapper {
     border-color: var(--colorBgHi);
 }
