@@ -685,3 +685,20 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 #toolbar-custom ul li:hover {
     background-color: #43494d;
 }
+
+/* Quick workaround for new forum */
+#vivaldilogo img {filter: invert(.8);}
+#vivaldiheader {background: #333;}
+#submenu {background-color: #333;}
+#submenu li>a:hover {
+    color: white;
+    background-color: #555;
+}
+.emoji-tabs {background-color: #555;}
+.emoji-dialog .top-bar {background: #555;}
+.composer .formatting-bar .formatting-group li {color: white;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: white;
+    background-color: #333;
+}
+#vivaldifooter a {color: white;}
