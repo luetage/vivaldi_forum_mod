@@ -77,14 +77,6 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
     white-space: pre-wrap !important;
 }
 
-/* Code vertical scrollbar from markdown to hljs */
-.markdown-highlight {
-    max-height: unset !important;
-}
-.markdown-highlight .hljs {
-    max-height: 350px;
-}
-
 /* Button spacing (modal/search/composer/main/toolbar) */
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
     margin-left: 4px !important;

@@ -10,7 +10,7 @@ function autoScroll() {
         subMenu.style = 'top: 50px !important';
     }
     else if (window.scrollY > 65) {
-        vivaldiHeader.style.top = ' 50px';
+        vivaldiHeader.style.top = '-50px';
         subMenu.style = 'top: 0px !important';
     }
     scp = window.scrollY;
