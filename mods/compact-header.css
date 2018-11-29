@@ -32,8 +32,14 @@
 .navbar-header {
     padding-top: 0;
 }
+.account .cover {
+    top: 100px !important;
+}
 .account .initialised {
-    margin-top: 50px !important;
+    margin-top: unset !important;
+}
+.groups.details [component="groups/cover"] {
+    top: 100px !important;
 }
 .page-user-chats #content.container {
     padding-top: 10px !important;

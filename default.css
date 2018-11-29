@@ -1,8 +1,17 @@
 /** Default fixes, improvements and modifications for all themes **/
 
-/* Profile alignment fix */
+/* Account and groups cover adjustments */
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
+}
+.account .cover {
+    top: 120px !important;
+}
+.account .initialised {
+    margin-top: unset !important;
+}
+.groups.details [component="groups/cover"] {
+    top: 120px !important;
 }
 
 /* Font icons */
@@ -134,9 +143,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     padding: 0.5em !important;
 }
 
-.account .initialised {
-    margin-top: 70px !important;
-}
+/* full chat content container padding fix */
 .page-user-chats #content.container {
     padding-top: 30px !important;
 }

@@ -1,4 +1,4 @@
-/* Getpk the username */
+/* Get the username */
 
 function username() {
     var user = document.querySelector('#user-control-list [component="header/username"]').innerHTML.toLowerCase().replace(/\./g, '-');
