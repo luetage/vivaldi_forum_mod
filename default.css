@@ -126,6 +126,17 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     padding: 0.5em !important;
 }
 
+/* chats content padding fix */
+.page-user-chats #content.container {
+    padding-top: 30px !important;
+}
+
+/* account content margin fix */
+.account .initialised {
+    margin-top: 70px !important;
+}
+
+
 /* Auto-hide header transition */
 #header-menu, #submenu {
     transition: top 0.857s;
