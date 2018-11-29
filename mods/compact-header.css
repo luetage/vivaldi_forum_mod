@@ -1,15 +1,39 @@
 /* Compact header */
 
-.header .forum-logo {
-    margin-top: 10px !important;
+#vivaldiheader>.row {
+    padding: 13px 20px;
 }
-.menuwrapper {
+#submenu li, #submenu ul {
+    height: 50px;
+    line-height: 50px;
+}
+#submenu {
     top: 50px !important;
+    height: 50px;
 }
-#vivaldi-navigation {
-    padding-top: 0px !important;
-    height: 50px !important;
+#vivaldiheader {
+    padding-top: 0px;
+    height: 50px;
 }
+#vivaldilogin {
+    top: -8px;
+}
+.account .initialised {
+    margin-top: 50px;
+}
+@media (min-width: 768px) {
+    #content {
+         margin-top: 30px;
+    }
+}
+.navbar {
+    margin-bottom: 0px;
+}
+#vivaldimenu > li:nth-child(1), #vivaldimenu > li:nth-child(2) {
+    display: none;
+}
+/*
+
 #user_label.dropdown.open {
     height: 49px;
 }
@@ -25,11 +49,5 @@
 #logged-out-menu {
     margin-top: 3px;
 }
-.account .cover, .groups.details [component="groups/cover"] {
-    margin-top: 50px;
-}
-@media (min-width: 768px) {
-    #content {
-         margin-top: 30px;
-    }
-}
+
+} */

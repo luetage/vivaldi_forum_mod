@@ -1,5 +1,5 @@
 /* Vivaldi's new header */
 
-.account .cover, .groups.details [component="groups/cover"] {
+.account .initialised {
     margin-top: 70px;
 }
