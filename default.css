@@ -15,12 +15,6 @@
 }
 
 /* Font icons */
-.taskbar-composer .fa-plus::before {
-    content: "\f065" !important;
-}
-.taskbar-composer.active .fa-plus::before {
-    content: "\f066" !important;
-}
 i.fa-ellipsis-v::before {
     content: "\2630";
 }
