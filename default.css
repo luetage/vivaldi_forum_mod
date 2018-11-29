@@ -148,6 +148,10 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     padding-top: 30px !important;
 }
 
+/* remove top border from chats list to fix avatar offset */
+.chats-list>li {
+    border-top: none !important;
+}
 /* Auto-hide header transition */
 #header-menu, #submenu {
     transition: top 0.857s;
