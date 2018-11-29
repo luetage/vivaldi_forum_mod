@@ -386,7 +386,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     color: #ddd;
 }
 .composer .formatting-bar .formatting-group li {
-    color: #24948c;
+    color: #fff;
 }
 .composer .formatting-bar .formatting-group li:focus, .composer .formatting-bar .formatting-group li:hover {
     background-color: #43494d;
@@ -688,13 +688,11 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 
 /* Quick workaround for new forum */
 /** Hadden Workarounds **/
-#vivaldilogo img {
-    display: block;
-    box-sizing: border-box;
-    height: 26px !important;
-    width: 144px !important;
-    padding-left: 150px;
+#vivaldilogo {
     background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+}
+#vivaldilogo img {
+    display: none !important;
 }
 #vivaldiheader {background :#2e3539;}
 #submenu {background-color: #2e3539;}
@@ -711,8 +709,6 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
     color: #fff;
     background-color: #555;
 }
-.composer .formatting-bar .formatting-group li {color: white;}
-.dropdown-menu li {background-color: #2e3539;}
 .chats-full [component="chat/nav-wrapper"] .chat-search input {
     border: white 1px solid; 
     background-color: #2e3539 !important;}
@@ -720,4 +716,16 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
     color: #fff;
     background-color: #4d585f;
     border-color: #fff;  
+}
+.chats-full [component="chat/header"] {
+    background-color: #4d585f;
+}
+.chats-list > li.bg-info {background-color: #4d585f;}
+.chat-modal .chat-content li.chat-message .chat-user a,
+.expanded-chat .chat-content li.chat-message .chat-user a {color: #999;}
+
+.alert-info {
+    color: #fff;
+    background-color: #4d585f;
+    border: none;
 }
