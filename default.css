@@ -77,6 +77,14 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
     white-space: pre-wrap !important;
 }
 
+/* Code vertical scrollbar from markdown to hljs */
+.topic .posts .content pre {
+    max-height: unset !important;
+}
+.markdown-highlight .hljs {
+    max-height: 350px;
+}
+
 /* Button spacing (modal/search/composer/main/toolbar) */
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
     margin-left: 4px !important;
@@ -126,16 +134,12 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     padding: 0.5em !important;
 }
 
-/* chats content padding fix */
-.page-user-chats #content.container {
-    padding-top: 30px !important;
-}
-
-/* account content margin fix */
 .account .initialised {
     margin-top: 70px !important;
 }
-
+.page-user-chats #content.container {
+    padding-top: 30px !important;
+}
 
 /* Auto-hide header transition */
 #header-menu, #submenu {

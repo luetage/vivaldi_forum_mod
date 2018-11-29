@@ -82,13 +82,13 @@ function add_copy_code() {
 };
 
 
-/* Footer links to unofficial discord and store */
+/* Unofficial discord link in community header dropdown */
 
 function discord() {
-    var footerlinks = document.querySelector('.footerlinks');
-    var addlinks = document.createElement('span');
-    addlinks.innerHTML = ' | <a href="https://store.vivaldi.com/" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
-    footerlinks.appendChild(addlinks);
+    const vivMenu = document.querySelector('#vivaldimenu > li:nth-child(5) ul');
+    const addLink = document.createElement('li');
+    addLink.innerHTML = '<a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
+    vivMenu.appendChild(addLink);
 };
 
 
