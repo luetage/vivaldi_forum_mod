@@ -35,7 +35,7 @@
         "message": "Dismiss",
         "description": "Dismisses community notifications"
     },
-    "smile_o": {
+    "emoticons": {
         "message": "Emote Picker",
         "description": "Title of formatting item for emote picker"
     },
@@ -43,27 +43,27 @@
         "message": "Header",
         "description": "Title of formatting item header 1"
     },
-    "window_minimize": {
+    "horizontal_line": {
         "message": "Horizontal Rule",
         "description": "Title of formatting item horizontal rule"
     },
-    "quote_right": {
+    "block_quote": {
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
-    "file_code_o": {
+    "monospace": {
         "message": "Fixed Width Text",
         "description": "Title of formatting item fixed width font"
     },
-    "th_large": {
+    "table": {
         "message": "Table",
         "description": "Title of formatting item table"
     },
-    "list_ol": {
+    "number_list": {
         "message": "Numbered List",
         "description": "Title of formatting item numbered list"
     },
-    "shield": {
+    "spoiler": {
         "message": "Spoiler",
         "description": "Title of formatting item spoiler"
     },

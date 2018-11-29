@@ -68,17 +68,17 @@ const FORMATTERS = [
     ["header", "# ", "", chrome.i18n.getMessage("header")],
     ["window-minimize", "", `
 ***
-`, chrome.i18n.getMessage("window_minimize")],
-    ["quote-right", "> ", "", chrome.i18n.getMessage("quote_right")],
-    ["file-code-o", "`", "`", chrome.i18n.getMessage("file_code_o")],
+`, chrome.i18n.getMessage("horizontal_line")],
+    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote")],
+    ["file-code-o", "`", "`", chrome.i18n.getMessage("monospace")],
     ["th-large", `a | a
 ---|---
 x | x
 y | y
-`, "", chrome.i18n.getMessage("th_large")],
+`, "", chrome.i18n.getMessage("table")],
     ["shield", `> Spoiler
->> `, "", chrome.i18n.getMessage("shield")],
-    ["list-ol", "1. ", "", chrome.i18n.getMessage("list_ol")]
+>> `, "", chrome.i18n.getMessage("spoiler")],
+    ["list-ol", "1. ", "", chrome.i18n.getMessage("number_list")]
 ];
 /* default values - don't change these */
 const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
@@ -91,7 +91,7 @@ const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
     "picture-o": 7,
     zen: 8,
     picture: 9,
-    "smile-o": 10,
+    "heart-o": 10,
     "emoji-add-emoji": 11,
     header: -1,
     "window-minimize": -1,
@@ -112,7 +112,7 @@ let FORMATTING_BAR_CUSTOM_ORDER = {
     "picture-o": 7,
     zen: 8,
     picture: 9,
-    "smile-o": 10,
+    "heart-o": 10,
     "emoji-add-emoji": 11,
     header: -1,
     "window-minimize": -1,
@@ -134,7 +134,7 @@ let FORMATTING_BUTTONS = {
     "picture-o": undefined,
     zen: undefined,
     picture: undefined,
-    "smile-o": undefined,
+    "heart-o": undefined,
     "emoji-add-emoji": undefined,
     header: undefined,
     "window-minimize": undefined,
@@ -396,7 +396,7 @@ function makeEmoteButton(emoteName, emoteUrl){
  * Creates the emote picker and appends it to the body
  */
 function createEmotePicker(){
-    const box = makeModalBox(EMOTE_MODAL, chrome.i18n.getMessage("smile_o"));
+    const box = makeModalBox(EMOTE_MODAL, chrome.i18n.getMessage("emoticons"));
     for (const emoteName in EMOTES) {
         if (EMOTES.hasOwnProperty(emoteName)) {
             const emoteUrl = EMOTES[emoteName];
@@ -413,9 +413,9 @@ function addEmotePickerButton(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
-    emotePickerButton.setAttribute("data-format", "smile-o");
-    emotePickerButton.title = chrome.i18n.getMessage("smile_o");
-    emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
+    emotePickerButton.setAttribute("data-format", "heart-o");
+    emotePickerButton.title = chrome.i18n.getMessage("emoticons");
+    emotePickerButton.innerHTML = "<i class='fa fa-heart-o'></i>";
     emotePickerButton.addEventListener("click", event => {toggleModal(event, EMOTE_MODAL);});
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.appendChild(emotePickerButton);
@@ -487,7 +487,7 @@ function getReferencesToButtons(){
         "picture-o": document.querySelector(".composer .formatting-group li[data-format='picture-o']"),
         zen: document.querySelector(".composer .formatting-group li[data-format='zen']"),
         picture: document.querySelector(".composer .formatting-group li[data-format='picture']"),
-        "smile-o": document.querySelector(".composer .formatting-group li[data-format='smile-o']"),
+        "heart-o": document.querySelector(".composer .formatting-group li[data-format='heart-o']"),
         "emoji-add-emoji": document.querySelector(".composer .formatting-group li[data-format='emoji-add-emoji']"),
         header: document.querySelector(".composer .formatting-group li[data-format='header']"),
         "window-minimize": document.querySelector(".composer .formatting-group li[data-format='window-minimize']"),

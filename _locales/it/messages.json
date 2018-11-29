@@ -35,7 +35,7 @@
         "message": "Nascondi",
         "description": "Dismisses community notifications"
     },
-    "smile_o": {
+    "emoticons": {
         "message": "Selettore Emoji",
         "description": "Title of formatting item for emote picker."
     },
@@ -43,27 +43,27 @@
         "message": "Titolo",
         "description": "Title of formatting item header 1"
     },
-    "window_minimize": {
+    "horizontal_line": {
         "message": "Riga orizzontale",
         "description": "Title of formatting item horizontal rule"
     },
-    "quote_right": {
+    "block_quote": {
         "message": "Citazione",
         "description": "Title of formatting item quote"
     },
-    "file_code_o": {
+    "monospace": {
         "message": "NEEDS TRANSLATED",
         "description": "Title of formatting item fixed width font"
     },
-    "th_large": {
+    "table": {
         "message": "Tabella",
         "description": "Title of formatting item table"
     },
-    "list_ol": {
+    "number_list": {
         "message": "Elenco numerato",
         "description": "Title of formatting item numbered list"
     },
-    "shield": {
+    "spoiler": {
         "message": "Spoiler",
         "description": "Title of formatting item spoiler."
     },

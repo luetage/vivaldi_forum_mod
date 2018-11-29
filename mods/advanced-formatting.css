@@ -31,11 +31,6 @@
     place-self: center;
 }
 
-#emote-picker-button i {
-    font-size: 18px;
-    position: relative;
-    top: 1px;
-}
 #emote-picker-button:focus:not(:hover) {
     background: transparent;
 }
