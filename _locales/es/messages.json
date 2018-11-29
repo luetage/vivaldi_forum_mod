@@ -35,7 +35,7 @@
         "message": "Ocultar",
         "description": "Dismisses community notifications"
     },
-    "smile_o": {
+    "emoticons": {
         "message": "Seleccionador de emoticones",
         "description": "Title of formatting item for emote picker"
     },
@@ -43,31 +43,27 @@
         "message": "Título",
         "description": "Title of formatting item header 1"
     },
-    "window_minimize": {
+    "horizontal_line": {
         "message": "Linea horizontal",
         "description": "Title of formatting item horizontal rule"
     },
-    "quote_right": {
+    "block_quote": {
         "message": "Cita",
         "description": "Title of formatting item quote"
     },
-    "code": {
-        "message": "Línea de código",
-        "description": "Title of formatting item inline code"
+    "monospace": {
+        "message": "NEEDS TRANSLATED",
+        "description": "Title of formatting item fixed width font"
     },
-    "file_code_o": {
-        "message": "Bloque de código",
-        "description": "Title of formatting item code block"
-    },
-    "th_large": {
+    "table": {
         "message": "Tabla",
         "description": "Title of formatting item table"
     },
-    "list_ol": {
+    "number_list": {
         "message": "Lista enumerada",
         "description": "Title of formatting item numbered list"
     },
-    "shield": {
+    "spoiler": {
         "message": "Spoiler",
         "description": "Title of formatting item spoiler"
     },

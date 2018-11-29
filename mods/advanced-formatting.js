@@ -59,30 +59,26 @@ const EMOTES = {
 const STATIC_URL = "https://lonm.vivaldi.net/wp-content/uploads/sites/1533/2018/10/";
 let DRAG_START_POS = {x:0, y:0};
 /**
- * Apparently JSON doesn't allow hyphens in keys
- * Offer a wrapper function
- */
-function getString(key){
-    return chrome.i18n.getMessage(key.replace(/-/g, "_"));
-}
+ * Keep a reference to the list button used to simulte clicks on hidden elements
+*/
+let SIMULATED_FORMAT_BUTTON;
 /* Definitions for new formatters
 * [keystring (as per fa-icons), start tag, end tag] */
 const FORMATTERS = [
-    ["header", "# ", ""],
+    ["header", "# ", "", chrome.i18n.getMessage("header")],
     ["window-minimize", "", `
 ***
-`],
-    ["quote-right", "> ", ""],
-    ["code", "`", "`"],
-    ["file-code-o", "```\n", "\n```"],
+`, chrome.i18n.getMessage("horizontal_line")],
+    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote")],
+    ["file-code-o", "`", "`", chrome.i18n.getMessage("monospace")],
     ["th-large", `a | a
 ---|---
 x | x
 y | y
-`, ""],
+`, "", chrome.i18n.getMessage("table")],
     ["shield", `> Spoiler
->> `, ""],
-    ["list-ol", "1. ", ""]
+>> `, "", chrome.i18n.getMessage("spoiler")],
+    ["list-ol", "1. ", "", chrome.i18n.getMessage("number_list")]
 ];
 /* default values - don't change these */
 const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
@@ -90,15 +86,16 @@ const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
     italic: 2,
     list: 3,
     strikethrough: 4,
-    link: 5,
-    "picture-o": 6,
-    zen: 7,
-    picture: 8,
-    "smile-o": 9,
+    code: 5,
+    link: 6,
+    "picture-o": 7,
+    zen: 8,
+    picture: 9,
+    "heart-o": 10,
+    "emoji-add-emoji": 11,
     header: -1,
     "window-minimize": -1,
     "quote-right": -1,
-    code: -1,
     "file-code-o": -1,
     "th-large": -1,
     "list-ol": -1,
@@ -110,15 +107,16 @@ let FORMATTING_BAR_CUSTOM_ORDER = {
     italic: 2,
     list: 3,
     strikethrough: 4,
-    link: 5,
-    "picture-o": 6,
-    zen: 7,
-    picture: 8,
-    "smile-o": 9,
+    code: 5,
+    link: 6,
+    "picture-o": 7,
+    zen: 8,
+    picture: 9,
+    "heart-o": 10,
+    "emoji-add-emoji": 11,
     header: -1,
     "window-minimize": -1,
     "quote-right": -1,
-    code: -1,
     "file-code-o": -1,
     "th-large": -1,
     "list-ol": -1,
@@ -131,15 +129,16 @@ let FORMATTING_BUTTONS = {
     italic: undefined,
     list: undefined,
     strikethrough: undefined,
+    code: undefined,
     link: undefined,
     "picture-o": undefined,
     zen: undefined,
     picture: undefined,
-    "smile-o": undefined,
+    "heart-o": undefined,
+    "emoji-add-emoji": undefined,
     header: undefined,
     "window-minimize": undefined,
     "quote-right": undefined,
-    code: undefined,
     "file-code-o": undefined,
     "th-large": undefined,
     "list-ol": undefined,
@@ -312,7 +311,7 @@ function makeModalBox(id, titleText){
     const controlBar = document.createElement("div");
     controlBar.className = "vivaldi-mod-modal-box-control-bar";
     controlBar.innerText = titleText;
-    controlBar.title = getString("dragText");
+    controlBar.title = chrome.i18n.getMessage("dragText");
     controlBar.draggable = true;
     controlBar.addEventListener("dragstart", modalDragStart);
     controlBar.addEventListener("dragend", modalDrag);
@@ -397,7 +396,7 @@ function makeEmoteButton(emoteName, emoteUrl){
  * Creates the emote picker and appends it to the body
  */
 function createEmotePicker(){
-    const box = makeModalBox(EMOTE_MODAL, getString("smile-o"));
+    const box = makeModalBox(EMOTE_MODAL, chrome.i18n.getMessage("emoticons"));
     for (const emoteName in EMOTES) {
         if (EMOTES.hasOwnProperty(emoteName)) {
             const emoteUrl = EMOTES[emoteName];
@@ -414,9 +413,9 @@ function addEmotePickerButton(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
     const emotePickerButton = document.createElement("li");
     emotePickerButton.setAttribute("tabindex", "-1");
-    emotePickerButton.setAttribute("data-format", "smile-o");
-    emotePickerButton.title = getString("smile-o");
-    emotePickerButton.innerHTML = "<i class='fa fa-smile-o'></i>";
+    emotePickerButton.setAttribute("data-format", "heart-o");
+    emotePickerButton.title = chrome.i18n.getMessage("emoticons");
+    emotePickerButton.innerHTML = "<i class='fa fa-heart-o'></i>";
     emotePickerButton.addEventListener("click", event => {toggleModal(event, EMOTE_MODAL);});
     emotePickerButton.id = "emote-picker-button";
     composerFormatters.appendChild(emotePickerButton);
@@ -430,13 +429,14 @@ function addEmotePickerButton(){
  * @param {string} buttonDisplayClass (for font-awesome)
  * @param {string} openTag that appears before selection
  * @param {string} endTag that appears after selection
+ * @param {string} title for button tooltip
  * @returns {DOM} list item
  */
-function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag){
+function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title){
     const li = document.createElement("li");
     li.innerHTML = `<i class='fa fa-${buttonDisplayClass}'></i>`;
     li.addEventListener("click", () => {writeToTextarea(openTag, endTag);});
-    li.title = getString(buttonDisplayClass);
+    li.title = title;
     li.setAttribute("tabindex", "-1");
     li.setAttribute("data-format", buttonDisplayClass);
     li.id = "additional-format-"+buttonDisplayClass;
@@ -444,15 +444,31 @@ function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag){
 }
 
 /**
+ * A special formatting button is required to support clicking hidden
+ *   default buttons as their listener is normally registered as a
+ *   jquery click simulator, which requires a toolbar button
+ */
+function createJQueryClickSimulatorButton(){
+    const button = document.createElement("li");
+    button.style.position = "fixed";
+    button.style.left = "-9999px";
+    button.style.top = "-9999px";
+    button.style.order = "-99999";
+    return button;
+}
+
+/**
  * Add the special formatting buttons to the composer
  */
 function addSpecialFormattingButtons(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
-    const endOfBar = composerFormatters.querySelector("form");
     FORMATTERS.forEach(button => {
-        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2]);
-        composerFormatters.insertBefore(madeButton, endOfBar);
+        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2], button[3]);
+        composerFormatters.appendChild(madeButton);
     });
+    SIMULATED_FORMAT_BUTTON = createJQueryClickSimulatorButton();
+    const formatterForm = composerFormatters.querySelector("form");
+    composerFormatters.insertBefore(SIMULATED_FORMAT_BUTTON, formatterForm);
 }
 
 /* ===========DraggableToolbar===========*/
@@ -471,7 +487,8 @@ function getReferencesToButtons(){
         "picture-o": document.querySelector(".composer .formatting-group li[data-format='picture-o']"),
         zen: document.querySelector(".composer .formatting-group li[data-format='zen']"),
         picture: document.querySelector(".composer .formatting-group li[data-format='picture']"),
-        "smile-o": document.querySelector(".composer .formatting-group li[data-format='smile-o']"),
+        "heart-o": document.querySelector(".composer .formatting-group li[data-format='heart-o']"),
+        "emoji-add-emoji": document.querySelector(".composer .formatting-group li[data-format='emoji-add-emoji']"),
         header: document.querySelector(".composer .formatting-group li[data-format='header']"),
         "window-minimize": document.querySelector(".composer .formatting-group li[data-format='window-minimize']"),
         "quote-right": document.querySelector(".composer .formatting-group li[data-format='quote-right']"),
@@ -553,16 +570,37 @@ function buttonDroppedOnToModal(dropEvent){
 }
 
 /**
+ * Add a listener that listens for default button clicks
+ *   as these need to be manually simulated for the forum to work properly
+ *   as the listener was applied using a jquery selector not a native listener
+ * @param {DOMElement} modal only ever pass it an instance of a TOOLBAR_MODAL
+ */
+function addJqueryClickSimulator(modal){
+    modal.classList.add("formatting-bar");
+    modal.addEventListener("click", event => {
+        let target = event.target;
+        if(target.tagName.toUpperCase()==="I"){
+            target = target.parentElement;
+        }
+        if(target.tagName.toUpperCase()==="LI" && target.getAttribute("data-format")){
+            SIMULATED_FORMAT_BUTTON.setAttribute("data-format", target.getAttribute("data-format"));
+            SIMULATED_FORMAT_BUTTON.click();
+        }
+    });
+}
+
+/**
  * Create and add to page the modal for holding hidden toolbar items
  * Allow dropping to this modal
  * List items should always be a child of the <ul> within this
  */
 function createToolbarCustomModal(){
-    const box = makeModalBox(TOOLBAR_MODAL, getString("customToolbarTitle"));
+    const box = makeModalBox(TOOLBAR_MODAL, chrome.i18n.getMessage("customToolbarTitle"));
     box.addEventListener("drop", buttonDroppedOnToModal);
     box.addEventListener("dragover", makeValidDropTarget);
     const list = document.createElement("ul");
     box.appendChild(list);
+    addJqueryClickSimulator(box)
     document.body.appendChild(box);
 }
 
@@ -602,7 +640,7 @@ function makeModalWithHiddenButtonsOpener(){
     button.style.order = 0;
     button.className = "hiddenButtons";
     button.innerHTML = "<i class='fa fa-wrench'></i>";
-    button.title = getString("customToolbarTitle");
+    button.title = chrome.i18n.getMessage("customToolbarTitle");
     button.addEventListener("click", event => {
         toggleModal(event, TOOLBAR_MODAL);
     });
