@@ -690,7 +690,7 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 #vivaldilogo img {filter: invert(.8);}
 #vivaldiheader {background: #333;}
 #submenu {background-color: #333;}
-#submenu li>a:hover {
+#submenu li>a:hover, #submenu li>a:focus {
     color: white;
     background-color: #555;
 }
