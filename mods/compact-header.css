@@ -1,35 +1,46 @@
 /* Compact header */
 
-.header .forum-logo {
-    margin-top: 10px !important;
+#vivaldiheader>.row {
+    padding: 13px 20px;
 }
-.menuwrapper {
+#submenu li, #submenu ul {
+    height: 50px;
+    line-height: 50px;
+}
+#submenu {
     top: 50px !important;
-}
-#vivaldi-navigation {
-    padding-top: 0px !important;
-    height: 50px !important;
-}
-#user_label.dropdown.open {
-    height: 49px;
-}
-.nav.navbar-nav.navbar-left li:nth-child(1), .nav.navbar-nav.navbar-left li:nth-child(2) {
-    display: none;
-}
-.nav.navbar-nav.navbar-left li, .nav.navbar-nav.navbar-left li a {
     height: 50px;
 }
-.vivaldinav ul a {
-    padding-top: 15px;
+#vivaldiheader {
+    padding-top: 0px;
+    height: 50px;
 }
-#logged-out-menu {
-    margin-top: 3px;
-}
-.account .cover, .groups.details [component="groups/cover"] {
-    margin-top: 50px;
+#vivaldilogin {
+    top: -8px;
 }
 @media (min-width: 768px) {
     #content {
-         margin-top: 30px;
+         padding-top: 20px !important;
     }
+}
+.navbar {
+    margin-bottom: 0px;
+}
+#vivaldimenu > li:nth-child(1), #vivaldimenu > li:nth-child(2) {
+    display: none;
+}
+.navbar-header {
+    padding-top: 0;
+}
+.account .cover {
+    top: 100px !important;
+}
+.account .initialised {
+    margin-top: unset !important;
+}
+.groups.details [component="groups/cover"] {
+    top: 100px !important;
+}
+.page-user-chats #content.container {
+    padding-top: 10px !important;
 }

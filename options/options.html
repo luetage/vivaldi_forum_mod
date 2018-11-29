@@ -2,290 +2,229 @@
 <html>
 <head>
     <title>Vivaldi Forum mod</title>
-    <link rel="shortcut icon" type="image/png" href="/icons/icon16.png">
+    <link rel="icon" type="image/png" href="/icons/icon16.png">
     <link rel="stylesheet" href="options.css" />
 </head>
 
 <body>
 
-    <header>
-        <h1>Vivaldi Forum mod</h1>
-        <div id="navigation">
-            <span>
-                <button id="themes-btn" class="view"></button>
-                <button id="modifications-btn"></button>
-                <button id="info-btn"></button>
-                <button id="feedback-btn"></button>
-                <button id="reset-btn"></button>
-                <input type="file" id="importHidden" accept=".json" style="display:none"/>
+    <div id="select" class="split">
+
+        <div class="left">
+            <h3 class="heading">Choose Theme</h3>
+            <input type="radio" name="theme" id="standard"/>
+            <span> Standard</span><br>
+
+            <input type="radio" name="theme" id="darkGrey"/>
+            <span> DarkGrey</span><br>
+
+            <input type="radio" name="theme" id="lightGrey"/>
+            <span> LightGrey</span><br>
+
+            <input type="radio" name="theme" id="mod"/>
+            <span> Mod</span><br>
+
+            <input type="radio" name="theme" id="sprucey"/>
+            <span> Sprucey Bonus Dark</span><br>
+
+            <input type="radio" name="theme" id="custom"/>
+            <span> Custom
+            <button id="edit-button"> &#x2198;edit</button>
+            </span><br>
+            <span class="line">_____</span><br>
+            <input type="checkbox" id="csscheck">
+            <span> User CSS
+            <button id="css-button"> &#x2198;edit</button>
             </span>
         </div>
-    </header>
 
-    <div id="themes">
+        <div class="right">
+            <h3 class="heading">Select Modifications</h3>
+            <input type="checkbox" id="advancedFormatting">
+            <span> <span class="advancedFormatting"></span></span><br>
 
-        <div id="communityThemes">
-            <h2 class="communityThemes"></h2>
-            <button id="standard" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="#fff" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="#333" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="#ef3938" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="#00caa7" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="#fff" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="#006bda" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="#23bcb1" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div class="themebox-title">Standard</div>
-            </button>
-            <button id="darkGrey" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="#141414" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="#999" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="#bc302f" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="#23bcb1" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="#232323" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="#006bda" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="#23bcb1" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div class="themebox-title">DarkGrey</div>
-            </button>
-            <button id="lightGrey" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="#f0f0f0" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="#333" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="#bc302f" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="#23bcb1" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="#232323" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="#23bcb1" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="#00acee" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div class="themebox-title">LightGrey</div>
-            </button>
-            <button id="mod" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="#bfc8d5" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="#2a363b" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="#00247d" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="#f58591" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="#bfc8d5" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="#005ec1" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="#00977d" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div class="themebox-title">Mod</div>
-            </button>
-            <button id="sprucey" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="#3d474c" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="#ddd" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="#337ab7" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="#b86269" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="#373f44" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="#f1f1f1" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="#24948c" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div class="themebox-title">Sprucey Bonus Dark</div>
-            </button>
+            <input type="checkbox" id="headerScroll">
+            <span> Auto-hide header on scroll</span><br>
+
+            <input type="checkbox" id="bookmarks">
+            <span> Bookmarks in navigation</span><br>
+
+            <input type="checkbox" id="compact">
+            <span> Compact header</span><br>
+
+            <input type="checkbox" id="notificationIcons">
+            <span> Custom notification icons</span><br>
+
+            <input type="checkbox" id="tooltips">
+            <span> Hide tooltips</span><br>
+
+            <input type="checkbox" id="unread">
+            <span> Hide unread count</span><br>
+
+            <input type="checkbox" id="timestamp">
+            <span> Last edit timestamp</span><br>
+
+            <input type="checkbox" id="userID">
+            <span> Show User IDs</span><br>
+
+            <input type="checkbox" id="signatureMod">
+            <span> Signature mod</span><br>
+
+            <input type="checkbox" id="square">
+            <span> Square avatars</span>
         </div>
 
-        <div id="themeMachine">
-            <h2 class="themeMachine"></h2>
-            <button id="custom1" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="var(--c1Bg)" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="var(--c1Fg)" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="var(--c1Hi)" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="var(--c1Btn)" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="var(--c1Drop)" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="var(--c1Li)" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="var(--c1Li2)" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div id="c1Name" class="themebox-title"></div>
-            </button>
-            <button id="custom2" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="var(--c2Bg)" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="var(--c2Fg)" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="var(--c2Hi)" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="var(--c2Btn)" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="var(--c2Drop)" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="var(--c2Li)" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="var(--c2Li2)" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div id="c2Name" class="themebox-title"></div>
-            </button>
-            <button id="custom3" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="var(--c3Bg)" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="var(--c3Fg)" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="var(--c3Hi)" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="var(--c3Btn)" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="var(--c3Drop)" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="var(--c3Li)" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="var(--c3Li2)" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div id="c3Name" class="themebox-title"></div>
-            </button>
-            </button>
-            <button id="custom4" class="themebox">
-                <div class="themebox-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="76" viewBox="0 0 96 76">
-                        <rect fill="var(--c4Bg)" x="0" y="0" width="96" height="76"></rect>
-                        <rect fill="var(--c4Fg)" x="0" y="15" width="96" height="7"></rect>
-                        <rect fill="var(--c4Hi)" x="0" y="22" width="96" height="8"></rect>
-                        <rect fill="var(--c4Btn)" x="0" y="29" width="96" height="8"></rect>
-                        <rect fill="var(--c4Drop)" x="0" y="36" width="96" height="8"></rect>
-                        <rect fill="var(--c4Li)" x="0" y="43" width="96" height="8"></rect>
-                        <rect fill="var(--c4Li2)" x="0" y="50" width="96" height="8"></rect>
-                    </svg>
-                </div>
-                <div id="c4Name" class="themebox-title"></div>
-            </button>
-            <div class="editTheme">
-                <span>
-                <button class="theme-edit"></button>
-                <button class="theme-save"></button>
-                <button class="theme-import"></button>
-                <button class="theme-export"></button>
-                </span>
-                <div class="toggleEdit">
-                    <input type="text" maxlength="20" spellcheck="false" id='themeName'><br>
-                    <input type="color" id="colorBg">
-                    <span class="background"></span><br>
-                    <input type="color" id="colorFg">
-                    <span class="foreground"></span><br>
-                    <input type="color" id="colorHi">
-                    <span class="highlight"></span><br>
-                    <input type="color" id="colorBtn">
-                    <span class="button"></span><br>
-                    <input type="color" id="colorDrop">
-                    <span class="dropdown"></span><br>
-                    <input type="color" id="colorLi">
-                    <span class="link"></span><br>
-                    <input type="color" id="colorLi2">
-                    <span class="link2"></span>
-                </div>
-            </div>
+    </div> <!-- end of select div -->
+
+    <div id="edit" class="split">
+
+        <div class="left">
+            <h3 class="heading">Edit custom theme</h3>
+            <input type="color" id="colorBg">
+            <span>: Background</span><br>
+            <input type="color" id="colorFg">
+            <span>: Foreground</span><br>
+            <input type="color" id="colorHi">
+            <span>: Highlight</span><br>
+            <input type="color" id="colorBtn">
+            <span>: Button</span><br>
+            <input type="color" id="colorDrop">
+            <span>: Dropdown</span><br>
+            <input type="color" id="colorLi">
+            <span>: Link</span><br>
+            <input type="color" id="colorLi2">
+            <span>: Link Post</span>
         </div>
 
-    </div>
-
-    <div id="modifications">
-
-        <div id="selectMods">
-            <h2 class="selectModifications"></h2>
-            <p><span id="advancedFormatting"></span></p>
-            <p><span id="headerScroll"></span></p>
-            <p><span id="bookmarks"></span></p>
-            <p><span id="compact"></span></p>
-            <p><span id="notificationIcons"></span></p>
-            <p><span id="tooltips"></span></p>
-            <p><span id="unread"></span></p>
-            <p><span id="timestamp"></span></p>
-            <p><span id="userID"></span></p>
-            <p><span id="signatureMod"></span></p>
-            <p><span id="square"></span></p>
+        <div class="right">
+            <input type="file" id="import" accept=".json" style="display:none"/>
+            <button id="edit-import" class="edit-btn">Import</button><br>
+            <button id="edit-export" class="edit-btn">Export</button><br>
+            <button id="edit-activate" class="edit-btn">Activate</button><br>
+            <span id="edit-status"></span>
         </div>
 
-        <div id="editCSS">
-            <h2 class="userCSS"></h2>
-            <span>
-                <button id="css-save"></button>
-                <button id="css-backup"></button>
-            </span><br>
-            <textarea id="userCSS" spellcheck="false"></textarea>
+    </div> <!-- end of edit div -->
+
+    <div id="input">
+
+        <div class="adjust">
+        <h3 class="heading">User CSS</h3>
+        <textarea id="userCSS" spellcheck="false" placeholder="Input CSS code only! Click BACK and SAVE to save to storage. Check USER CSS and click SAVE to activate, or uncheck and SAVE to deactivate. If you want to run your own theme, choose STANDARD theme in options. BACKUP to file."></textarea>
         </div>
 
-    </div>
+    </div> <!-- end of input div -->
 
     <div id="info">
 
-        <div id="changelog">
-            <h2 class="changelog"></h2>
-            <p><strong>1.64</strong> Mobile view fixes.</p>
-            <p><strong>1.62</strong> Option to dismiss community notifications</p>
-            <p><strong>1.61</strong> Custom theme improvements, bug fixes.</p>
-            <p><strong>1.60</strong> Advanced formatting improvements + account margin fix.</p>
-            <p><strong>1.59</strong> Advanced formatting instead of emote picker.</p>
-            <p><strong>1.58</strong> Improve emote picker usability</p>
-            <p><strong>1.57</strong> Add emote picker mod by LonM</p>
-            <p><strong>1.56</strong> Mobile menu fix, custom theme impprovements.</p>
-            <p><strong>1.55</strong> Update to Theme Light-Grey, Theme Gray-Pink removed.</p>
-            <p><strong>1.53</strong> Dark and light code markdown display, community info mod removed (Vivaldi removed the info), custom theme fixes.</p>
-            <p><strong>1.54</strong> Update to Dark-Grey, general theme fixes.</p>
-            <p><strong>1.52</strong> Extension runs in the background now, which should save resources. More consisten tags for custom themes (japanese/english).</p>
-            <p><strong>1.50-1.51</strong> Some small fixes here and there.</p>
-            <p><strong>1.49</strong> Content adjustment for compact header mod, better visibility for special feature request tags in custom themes.</p>
-            <p><strong>1.48</strong> Fixes an error related to automated colors in custom themes.</p>
-            <p><strong>1.47</strong> Additional exceptions for copy all code button (blockquote, non formatted).</p>
-            <p><strong>1.46</strong> Link to the unofficial Vivaldi Discord chat and the official Vivaldi store added to footer. Copy all code button is  consistent on all themes now. Fix for vertical code scrolling (removed space and up/down movement of the hljs part).</p>
-            <p><strong>1.45</strong> New default mod Copy all code button. Adds a button to each code block, which copies all code within the block. Written by LonM.</p>
-            <p><strong>1.44</strong> Silent update -- background fixes.</p>
-            <p><strong>1.43</strong> Last edit timestamp update, it displays local time instead of UTC now. History forward/backward fix for window.onload functions.</p>
-            <p><strong>1.42</strong> window.onload consolidation, latest version didn't work in certain conditions.</p>
-            <p><strong>1.41</strong> New mod Bookmarks in navigation (see Info), code improvements and cleanup.</p>
-            <p><strong>1.40</strong> Backup functionality for User CSS, options page design cleanup.</p>
-            <p><strong>1.39</strong> User CSS storage is local now (5MB instead of 8KB), Reset button to clear storage and options.</p>
-            <p><strong>1.38</strong> Disabled spellcheck and added limit breach warning and error message for User CSS.</p>
-            <p><strong>1.37</strong> New User CSS input and storage. Improvements to avatar dropdown menu. Status offline/invisible changes for the custom theme.</p>
-            <p><strong>1.35-1.36</strong> New Forum Profile link in avatar dropdown menu. Fixing an issue where all dropdown text is selected on opening a dropdown. Default custom theme changed to Solarized Light.</p>
-            <p><strong>1.34</strong> Feature request box and default button spacing, redesign of default buttons and backgrounds for the custom theme.</p>
-            <p><strong>1.33</strong> A fix for custom notification icon alignment, changed new tag styling for the custom theme.</p>
-            <p><strong>1.32</strong> Fixing a bug for the bookmarking feature, additional font icons for nested quotes, table coloring for custom themes, general code improvements.</p>
-            <p><strong>1.31</strong> Reintroduction of tooltips mod.</p>
-            <p><strong>1.29-1.30</strong> Further custom theme updates.</p>
-            <p><strong>1.28</strong> Blockquote fix for search, automatic line breaks for code and emoji license view =)</p>
-            <p><strong>1.25-1.27</strong> Major bugfixes and styling for Sprucey Bonus Dark.</p>
-            <p><strong>1.1 - 1.24</strong> Improvements and bugfixes for the custom theme option.</p>
-            <p><strong>1.0</strong> Custom Theme option/interface and Compact Header mod</p>
-            <p><strong>0.66</strong> Reduced number of font sizes used in posts, simpler threaded replies header.</p>
-            <p><strong>0.64</strong> Some site-wide inconsistencies fixed, improvements to GrayPink and Mod themes.</p>
-            <p><strong>0.62</strong> Improvements to GrayPink. Missing "mentioned" notification icon added.</p>
-            <p><strong>0.60</strong> Theme Mod + bugfixes.</p>
-            <p><strong>0.54</strong> Silent update. Improvements and fixes for all themes.</p>
-            <p><strong>0.52</strong> New logo animation and new theme (DarkGrey by sjudenim). Updates for LightGrey and Sprucey, fixed scroll bug.</p>
-            <p><strong>0.44</strong> Feedback link added.</p>
-            <p><strong>0.42</strong> Release on Chrome web store.</p>
-            <p><strong>0.34</strong> Improved options page. Changelog, Credits and Info.</p>
-            <p><strong>0.27</strong> Theme Sprucey Bonus Dark, Square avatars.</p>
-            <p><strong>0.24</strong> Theme LightGrey. More space for expanded chat input.</p>
+        <div class="adjust scroll">
+        <h3 class="heading">Info</h3>
+        <p><strong>Standard:</strong> Default Vivaldi theme.</p>
+        <p><strong>Custom:</strong> Create your own custom theme. Click edit and start picking colors. Press Activate to save to storage and load. You can import and export themes.</p>
+        <p><strong>User CSS:</strong> Click edit to input your own custom css code.</p>
+        <p><strong><span class="advancedFormatting"></span>:</strong> <span class="advancedFormattingDesc"></span></p>
+        <p><strong>Auto-hide header on scroll:</strong> Hides the header when you scroll down, shows it when you scroll up.</p>
+        <p><strong>Bookmarks in navigation:</strong> Displays a link to the bookmarks page in the main navigation, for easy access.</p>
+        <p><strong>Compact header:</strong> Sets the header to its original height and removes redundant links.</p>
+        <p><strong>Custom notification icons:</strong> Displays additional font icons in the header's notification dropdown, to quickly distinguish one type of notification from another.</p>
+        <p><strong>Hide tooltips:</strong> Hides header and navigation bar tooltips.</p>
+        <p><strong>Hide unread count:</strong> Hides the unread count icon in the navigation bar.</p>
+        <p><strong>Last edit timestamp:</strong> Displays the time of last edit on bottom of edited posts. Doesn't work well with infinite scroll! Please enable pagination of topics and posts on the Vivaldi Forum settings page.</p>
+        <p><strong>Show User IDs:</strong> Shows UIDs when hovering the username at top of a post, and when hovering a user's avatar on their profile. </p>
+        <p><strong>Signature mod:</strong> Hides all signatures and replaces each with a button. When clicked the signature of individual posts can be shown. Doesn't work well with infinite scroll! Please enable pagination of topics and posts on the Vivaldi Forum settings page.</p>
+        <p><strong>Square avatars:</strong> Square avatars everywhere!</p>
+        <p><strong>Default modifications:</strong> Including, but not limited to: Bookmarking fix, Voting indicators, Copy all code button, more space for expanded chat input and improved font icons. Additionally links to the options page and the hidden forum profile edit page are available from the avatar dropdown menu and links to the unofficial Discord chat and the store are placed in the footer.</p>
         </div>
 
-        <div id="credits">
-            <h2 class="credits"></h2>
-            <p><strong><a href="https://forum.vivaldi.net/user/greenenemy" target="_blank" rel="noreferrer noopener">greenenemy</a></strong> Voting indicators</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/hadden89" target="_blank" rel="noreferrer noopener">Hadden89</a></strong> Italian translation</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/isildur" target="_blank" rel="noreferrer noopener">Isildur</a></strong> Font icons &#183; Square avatars &#183; Last edit timestamp</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/lonm" target="_blank" rel="noreferrer noopener">LonM</a></strong> Copy all code button &#183; Advanced formatting</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/pafflick" target="_blank" rel="noreferrer noopener">pafflick</a></strong> Custom notification icons</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/sjudenim" target="_blank" rel="noreferrer noopener">sjudenim</a></strong> Theme LightGrey &#183; Theme DarkGrey</p>
-            <p><strong><a href="https://forum.vivaldi.net/user/wiiija" target="_blank" rel="noreferrer noopener">wiiija</a></strong> Theme Sprucey Bonus Dark</p>
+    </div> <!-- end of info div -->
+
+    <div id="credits">
+
+        <div class="adjust">
+        <h3 class="heading">Credits</h3>
+        <p><strong><a href="https://forum.vivaldi.net/user/greenenemy">greenenemy:</a></strong> Voting indicators</p>
+        <p><strong><a href="https://forum.vivaldi.net/user/isildur">Isildur:</a></strong> Font icons &#183; Square avatars &#183; Last edit timestamp</p>
+        <p><strong><a href="https://forum.vivaldi.net/user/lonm">LonM:</a></strong> Copy all code button &#183; Advanced formatting</p>
+        <p><strong><a href="https://forum.vivaldi.net/user/pafflick">pafflick:</a></strong> Custom notification icons</p>
+        <p><strong><a href="https://forum.vivaldi.net/user/sjudenim">sjudenim:</a></strong> Theme LightGrey &#183; Theme DarkGrey</p>
+        <p><strong><a href="https://forum.vivaldi.net/user/wiiija">wiiija:</a></strong> Theme Sprucey Bonus Dark</p>
         </div>
 
+    </div> <!-- end of credits div -->
+
+    <div id="changelog">
+
+        <div class="adjust scroll">
+        <h3 class="heading">Changelog</h3>
+
+        <p><strong>1.64:</strong> Mobile view fixes.</p>
+        <p><strong>1.62:</strong> Option to dismiss community notifications</p>
+        <p><strong>1.61:</strong> Custom theme improvements, bug fixes.</p>
+        <p><strong>1.60:</strong> Advanced formatting improvements + account margin fix.</p>
+        <p><strong>1.59:</strong> Advanced formatting instead of emote picker.</p>
+        <p><strong>1.58:</strong> Improve emote picker usability</p>
+        <p><strong>1.57:</strong> Add emote picker mod by LonM</p>
+        <p><strong>1.56:</strong> Mobile menu fix, custom theme impprovements.</p>
+        <p><strong>1.55:</strong> Update to Theme Light-Grey, Theme Gray-Pink removed.</p>
+        <p><strong>1.53:</strong> Dark and light code markdown display, community info mod removed (Vivaldi removed the info), custom theme fixes.</p>
+        <p><strong>1.54:</strong> Update to Dark-Grey, general theme fixes.</p>
+        <p><strong>1.52:</strong> Extension runs in the background now, which should save resources. More consisten tags for custom themes (japanese/english).</p>
+        <p><strong>1.50-1.51:</strong> Some small fixes here and there.</p>
+        <p><strong>1.49:</strong> Content adjustment for compact header mod, better visibility for special feature request tags in custom themes.</p>
+        <p><strong>1.48:</strong> Fixes an error related to automated colors in custom themes.</p>
+        <p><strong>1.47:</strong> Additional exceptions for copy all code button (blockquote, non formatted).</p>
+        <p><strong>1.46:</strong> Link to the unofficial Vivaldi Discord chat and the official Vivaldi store added to footer. Copy all code button is  consistent on all themes now. Fix for vertical code scrolling (removed space and up/down movement of the hljs part).</p>
+        <p><strong>1.45:</strong> New default mod: Copy all code button. Adds a button to each code block, which copies all code within the block. Written by LonM.</p>
+        <p><strong>1.44:</strong> Silent update -- background fixes.</p>
+        <p><strong>1.43:</strong> Last edit timestamp update, it displays local time instead of UTC now. History forward/backward fix for window.onload functions.</p>
+        <p><strong>1.42:</strong> window.onload consolidation, latest version didn't work in certain conditions.</p>
+        <p><strong>1.41:</strong> New mod: Bookmarks in navigation (see Info), code improvements and cleanup.</p>
+        <p><strong>1.40:</strong> Backup functionality for User CSS, options page design cleanup.</p>
+        <p><strong>1.39:</strong> User CSS storage is local now (5MB instead of 8KB), Reset button to clear storage and options.</p>
+        <p><strong>1.38:</strong> Disabled spellcheck and added limit breach warning and error message for User CSS.</p>
+        <p><strong>1.37:</strong> New: User CSS input and storage. Improvements to avatar dropdown menu. Status offline/invisible changes for the custom theme.</p>
+        <p><strong>1.35-1.36:</strong> New Forum Profile link in avatar dropdown menu. Fixing an issue where all dropdown text is selected on opening a dropdown. Default custom theme changed to Solarized Light.</p>
+        <p><strong>1.34:</strong> Feature request box and default button spacing, redesign of default buttons and backgrounds for the custom theme.</p>
+        <p><strong>1.33:</strong> A fix for custom notification icon alignment, changed new tag styling for the custom theme.</p>
+        <p><strong>1.32:</strong> Fixing a bug for the bookmarking feature, additional font icons for nested quotes, table coloring for custom themes, general code improvements.</p>
+        <p><strong>1.31:</strong> Reintroduction of tooltips mod.</p>
+        <p><strong>1.29-1.30:</strong> Further custom theme updates.</p>
+        <p><strong>1.28:</strong> Blockquote fix for search, automatic line breaks for code and emoji license view =)</p>
+        <p><strong>1.25-1.27:</strong> Major bugfixes and styling for Sprucey Bonus Dark.</p>
+        <p><strong>1.1 - 1.24:</strong> Improvements and bugfixes for the custom theme option.</p>
+        <p><strong>1.0:</strong> Custom Theme option/interface and Compact Header mod</p>
+        <p><strong>0.66:</strong> Reduced number of font sizes used in posts, simpler threaded replies header.</p>
+        <p><strong>0.64:</strong> Some site-wide inconsistencies fixed, improvements to GrayPink and Mod themes.</p>
+        <p><strong>0.62:</strong> Improvements to GrayPink. Missing "mentioned" notification icon added.</p>
+        <p><strong>0.60:</strong> Theme Mod + bugfixes.</p>
+        <p><strong>0.54:</strong> Silent update. Improvements and fixes for all themes.</p>
+        <p><strong>0.52:</strong> New logo animation and new theme (DarkGrey by sjudenim). Updates for LightGrey and Sprucey, fixed scroll bug.</p>
+        <p><strong>0.44:</strong> Feedback link added.</p>
+        <p><strong>0.42:</strong> Release on Chrome web store.</p>
+        <p><strong>0.34:</strong> Improved options page. Changelog, Credits and Info.</p>
+        <p><strong>0.27:</strong> Theme Sprucey Bonus Dark, Square avatars.</p>
+        <p><strong>0.24:</strong> Theme LightGrey. More space for expanded chat input.</p>
+        </div>
+
+    </div> <!-- end of changelog div -->
+
+    <div id="save">
+            <button id="save-button">Save</button>
+            <span id="status"></span>
+            <button id="reset-button">Reset</button>
+    </div>
+    <div id="back">
+            <button id="back-button">Back</button>
+            <button id="backup-button">Backup</button>
     </div>
 
-    <footer>
-        <span id="status"></span>
+    <footer id="footer">
+        <span>
+            <button id="info-btn">Info</button> &#183; <button id="credits-btn">Credits</button> &#183; <button id="changelog-btn">Changelog</button> &#183; <a href="https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod">Feedback</a>
+        </span>
     </footer>
 
-    <script src="theme-machine.js"></script>
     <script src="options.js"></script>
-    <script src="localisation.js"></script>
+    <script src="custom-theme.js"></script>
 </body>
 </html>

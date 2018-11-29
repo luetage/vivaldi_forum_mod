@@ -1,20 +1,9 @@
-/* Bookmarks fix */
+/* Get the username */
 
 function username() {
     var user = document.querySelector('#user-control-list [component="header/username"]').innerHTML.toLowerCase().replace(/\./g, '-');
     return user;
 }
-
-function bookmarked() {
-    var favourites = document.querySelector('.btn-group.account-fab .dropdown-menu.dropdown-menu-right li:nth-of-type(12) a');
-    if (favourites) {
-        var favcheck = favourites.innerHTML;
-        if (favcheck === 'favourites') {
-            favourites.innerHTML = chrome.i18n.getMessage('bookmarked');
-            favourites.href = '/user/' + username() + '/bookmarks';
-        }
-    }
-};
 
 
 /* Links to options and hidden edit page */
@@ -93,13 +82,13 @@ function add_copy_code() {
 };
 
 
-/* Footer links to unofficial discord and store */
+/* Unofficial discord link in community header dropdown */
 
 function discord() {
-    var footerlinks = document.querySelector('.footerlinks');
-    var addlinks = document.createElement('span');
-    addlinks.innerHTML = ' | <a href="https://store.vivaldi.com/" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
-    footerlinks.appendChild(addlinks);
+    const vivMenu = document.querySelector('#vivaldimenu > li:nth-child(5) ul');
+    const addLink = document.createElement('li');
+    addLink.innerHTML = '<a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
+    vivMenu.appendChild(addLink);
 };
 
 

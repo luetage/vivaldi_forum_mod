@@ -72,7 +72,7 @@
         "description": "Title of custom toolbar editor"
     },
     "dragText": {
-        "message": "Pinchar y arrastrar para reorganizar",
+        "message": "Pinchar y arrastrar, para reorganizar",
         "description": "Hover text when on a draggable area"
     },
     "themes": {
@@ -172,11 +172,11 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
-        "message": "Ocultar ayuda emergente",
+        "message": "Ocultar descripción emergente",
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Ocultar la ayuda emergente en el encabezamiento y en la barra de navegación.",
+        "message": "Ocultar la descripción emergente en el encabezamiento y en la barra de navegación.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
@@ -224,7 +224,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Ingresa sólo el código CSS! Pincha en GUARDAR, para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS, para usar tu propio tema.",
+        "message": "¡Ingresa sólo el código CSS! Pincha en GUARDAR, para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS, para usar tu propio tema.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -260,7 +260,7 @@
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
     "confirmReset": {
-        "message": "¿Resetear la extensión? Vuelve a pinchar para confirmar.",
+        "message": "¿Resetear la extensión? Vuelve a pinchar, para confirmar.",
         "description": "Options: Status message to confirm reset"
     },
     "optionsReset": {

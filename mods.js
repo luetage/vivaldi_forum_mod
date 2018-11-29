@@ -102,7 +102,6 @@ function(mods) {
 
     document.addEventListener('click', function() {
         add_copy_code();
-        bookmarked();
         if (signatureMod == 1) { w_smod() }
         if (timestamp == 1) { w_lastedit() }
     });
@@ -122,7 +121,7 @@ function(mods) {
 /* Bookmarks in navigation */
 
 function _bookmarks() {
-    var nav = document.getElementById('main-nav');
+    var nav = document.querySelector('#submenu ul');
     var li = document.createElement('li');
     var link = document.createElement('a');
     link.classList.add('navigation-link');

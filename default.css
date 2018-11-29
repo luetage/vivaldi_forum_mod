@@ -1,8 +1,17 @@
 /** Default fixes, improvements and modifications for all themes **/
 
-/* Profile alignment fix */
+/* Account and groups cover adjustments */
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
+}
+.account .cover {
+    top: 120px !important;
+}
+.account .initialised {
+    margin-top: unset !important;
+}
+.groups.details [component="groups/cover"] {
+    top: 120px !important;
 }
 
 /* Font icons */
@@ -20,11 +29,6 @@ i.fa-ellipsis-v::before {
 }
 .fa-angle-up::before {
     content: "\f0d8" !important;
-}
-
-/* Expanded chat controls margin fix */
-.expanded-chat .controlsToggle {
-    margin-left: 7px;
 }
 
 /* Remove underline from first post tags */
@@ -83,7 +87,7 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 }
 
 /* Code vertical scrollbar from markdown to hljs */
-.markdown-highlight {
+.topic .posts .content pre {
     max-height: unset !important;
 }
 .markdown-highlight .hljs {
@@ -104,7 +108,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 }
 
 /* Min-height for resizeable text input */
-.account textarea.form-control, #chat-message-input, .expanded-chat .chat-input {
+.account textarea.form-control {
     resize: vertical;
     min-height: 42px;
 }
@@ -131,8 +135,21 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     background-color: #101010 !important;
 }
 
+/* dropdown padding fix */
+.dropdown-menu {
+    padding: 5px 0 !important;
+}
+.header .chat-list li, .slideout-menu .chat-list li, .header .notification-list li, .slideout-menu .notification-list li {
+    padding: 0.5em !important;
+}
+
+/* full chat content container padding fix */
+.page-user-chats #content.container {
+    padding-top: 30px !important;
+}
+
 /* Auto-hide header transition */
-#header-menu {
+#header-menu, #submenu {
     transition: top 0.857s;
 }
 
