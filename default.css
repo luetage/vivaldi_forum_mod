@@ -30,6 +30,19 @@ i.fa-ellipsis-v::before {
 .fa-angle-up::before {
     content: "\f0d8" !important;
 }
+#vivaldimenu a .sub-arrow {
+    background: none;
+    position: relative !important;
+}
+#vivaldimenu a .sub-arrow::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    left: 16px;
+    position: absolute;
+    top: -11px;
+    opacity: 0.66;
+    font-size: 13px;
+}
 
 /* Remove underline from first post tags */
 .tags.pull-left a {
