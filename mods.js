@@ -102,7 +102,6 @@ function(mods) {
 
     document.addEventListener('click', function() {
         add_copy_code();
-        bookmarked();
         if (signatureMod == 1) { w_smod() }
         if (timestamp == 1) { w_lastedit() }
     });
@@ -122,13 +121,13 @@ function(mods) {
 /* Bookmarks in navigation */
 
 function _bookmarks() {
-    var nav = document.getElementById('main-nav');
+    var nav = document.querySelector('#submenu ul');
     var li = document.createElement('li');
     var link = document.createElement('a');
     link.classList.add('navigation-link');
     link.href = '/user/' + username() + '/bookmarks';
     link.setAttribute('title', '');
-    link.setAttribute('data-original-title', 'Bookmarks');
+    link.setAttribute('title', 'Bookmarks');
     link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">' + chrome.i18n.getMessage('bookmarks') + '</span>';
     nav.insertBefore(li, nav.childNodes[15]);
     li.appendChild(link);

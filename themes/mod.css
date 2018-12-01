@@ -14,13 +14,8 @@ body, main#panel.slideout-panel {
 /* transparency setting for the content + adjusted spacing */
 #content {
      background-color: rgba(245,255,255,0.85);
-     padding-top: 20px !important;
      padding-right: 25px !important;
      padding-left: 25px !important;
-}
-/* fix the spacing on profiles affected by code above */
-.account {
-     margin-top: 280px;
 }
 /* focus */
 :focus {
@@ -34,21 +29,20 @@ body, main#panel.slideout-panel {
 /** Header **/
 
 /* navbar */
-.navbar-default {
-     background-color: #bfc8d5 !important;
+#vivaldiheader {
+     background-color: #bfc8d5;
 }
-/* text/icons */
-.navbar-default .navbar-nav>li>a, .navbar-default .btn-link, .navbar-default .btn-link:focus, .navbar-default .btn-link:hover {
-    color: #2a363b;
-}
-.vivaldinav ul a.active {
+#vivaldiheader a, #vivaldiheader a:active, #vivaldiheader a:focus, #vivaldiheader a:visited {
     color: #00247d;
 }
-ul.nav.navbar-nav.navbar-left>li>a:hover {
+#vivaldimenu a.current, #vivaldimenu a:hover {
     color: #d01126;
 }
-#logged-in-menu.nav.navbar-nav.navbar-right {
-    font-size: 15px;
+#vivaldimenu a .sub-arrow::after {
+    color: #00247d !important;
+}
+#vivaldimenu ul {
+    background-color: #fefefe;
 }
 /* active background right */
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
@@ -60,22 +54,21 @@ ul.nav.navbar-nav.navbar-left>li>a:hover {
 }
 /* unread-count icon color */
 .unread-count::after {
-    background-color: #d01126;
-    border-color: #2a363b;
+    background-color: #fefefe;
+    border-color: #00247d;
+    color: #00247d;
 }
 /* menuwrapper */
-.menuwrapper {
-    background-color: #2a363b;
+#submenu {
+    background-color: #00247d;
+    border-bottom: 1px solid #fefefe;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
-    background-color: #0a0d0e !important;
-    color: #d01126 !important;
+#submenu li>a {
+    color: #fefefe;
 }
-#main-nav li>a {
-    color: #fff;
-}
-#main-nav li>a:hover {
-    color: #f58591;
+#submenu a:focus, #submenu a:hover, #submenu li.active>a {
+    color: #d01126;
+    background-color: #fefefe;
 }
 /* hide menu text / show it on mobile version */
 span.visible-xs-inline.showmenutext:not(.slideout-menu) {
@@ -203,10 +196,10 @@ li.page a {
     background-color: #fefefe !important;
 }
 /* forum mod highlight */
-#optionsLink:hover i {
+.optionsLink:hover i {
     color: #d01126;
 }
-#optionsLink:hover span {
+.optionsLink:hover span {
     color: #00247d;
 }
 /* dropdown text color */
@@ -327,14 +320,20 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .expanded-chat .chat-content li.chat-message, .chat-modal .chat-content li.chat-message {
     font-weight: 400 !important;
 }
-.chats-list>li.bg-primary {
+.bg-info {
     background-color: #00247d;
+    color: #fefefe;
+}
+.chats-full .chats-list>li.unread {
+    background-color: unset;
+    color: #d01126;
 }
 .expanded-chat .chat-content li.chat-message[data-break=true] {
     border-color: #cacaca;
 }
-.row.chats-page .chats-list {
-    background-color: #fff;
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
+    background-color: #fefefe;
+    color: #00247d;
 }
 /* change close buttons globally */
 .close {
@@ -394,16 +393,14 @@ div.shadow-box1, div.shadow-box2 {
 
 /** Logo **/
 
-.header .forum-logo {
-    display: block;
-    box-sizing: border-box;
-    height: 30px;
-    width: 150px !important;
-    padding-left: 150px;
+#vivaldilogo {
     background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mod.png') no-repeat;
 }
+#vivaldilogo img {
+    display: none !important;
+}
 #vivaldifooter #vivaldi-icon path:nth-of-type(1) {
-    fill: #00107C;
+    fill: #00247d;
 }
 
 /* Advanced formatting mod */

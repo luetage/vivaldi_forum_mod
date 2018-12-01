@@ -8,14 +8,27 @@ body {
 
 /* Header */
 
-#header-menu {
+#vivaldiheader {
     background-color: var(--colorBg);
 }
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .btn-link, .navbar-default .btn-link:focus, .navbar-default .btn-link:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+#vivaldiheader a, #vivaldiheader a:active, #vivaldiheader a:focus, #vivaldiheader a:visited {
     color: var(--colorFg);
 }
-.vivaldinav ul a.active, .vivaldinav ul a.active:focus {
+#vivaldimenu a.current, #vivaldimenu a:hover {
     color: var(--colorHi);
+}
+#vivaldimenu a .sub-arrow::after {
+    color: var(--colorFg) !important;
+}
+#vivaldimenu ul {
+    background-color: var(--colorBg);
+    border: 1px solid var(--colorBgHi);
+}
+#vivaldimenu ul li {
+    border-top: 1px solid var(--colorBgHi);
+}
+#vivaldimenu ul a:hover {
+    background-color: var(--colorBgHiC);
 }
 .header #user_dropdown img, .account .cover .avatar-wrapper {
     border-color: var(--colorBgHi);
@@ -43,15 +56,16 @@ button#mobile-menu.navbar-toggle:hover, button#mobile-menu.navbar-toggle:focus {
     border-left-color: var(--colorHi);
 }
 /* menuwrapper */
-.menuwrapper {
+#submenu {
     background-color: #121212;
+    border-bottom: 1px solid #414141;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #fbfbfb !important;
-    background-color: #414141;
-}
-#main-nav li>a {
+#submenu li>a {
     color: #dddddd;
+}
+#submenu a:focus, #submenu a:hover, #submenu li.active>a {
+    color: #fbfbfb;
+    background-color: #414141;
 }
 
 
@@ -60,13 +74,10 @@ button#mobile-menu.navbar-toggle:hover, button#mobile-menu.navbar-toggle:focus {
 .dropdown-menu {
     background-color: var(--colorDrop);
 }
-.chats-list, .chats-list>li {
-    border-color: transparent;
-}
-#menu .chat-list, .header .chat-list {
+.header .chat-list {
     color: var(--colorDropFg);
 }
-#menu .chat-list>li:hover, .header .chat-list>li:hover {
+.header .chat-list>li:hover {
     background-color: var(--colorDropHi);
 }
 .notification-list li.unread, .notifications-list li.unread, .chat-list.chats-list li.unread {
@@ -78,7 +89,7 @@ li .notif-dropdown-link a:hover {
 .header .notif-dropdown-link {
     border-top-color: var(--colorDropHi3);
 }
-#menu .chat-list>li:not(:last-child), .header .chat-list>li:not(:last-child) {
+.header .chat-list>li:not(:last-child) {
     border-bottom: 1px solid var(--colorDropHi2);
 }
 .dropdown-menu .divider {
@@ -199,6 +210,9 @@ small.pull-right a {
 .text-muted {
     color: var(--colorFg2);
     opacity: 0.66;
+}
+#vivaldifooter a {
+    color: var(--colorFg);
 }
 
 
@@ -353,10 +367,10 @@ pre code {
     border-color: var(--colorHi);
 }
 .btn-link {
-    color: var(--colorLi);
+    color: var(--colorLi2);
 }
 .btn-link:focus, .btn-link:hover {
-    color: var(--colorLiHi);
+    color: var(--colorLi2Hi);
 }
 .label-info {
     background-color: var(--colorBtn);
@@ -457,20 +471,55 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message[data-break=true], .expanded-chat .chat-content li.chat-message[data-break=true] {
      border-top-color: var(--colorBgHi);
 }
-.chats-page .chats-list>li.unread {
+.chats-full .chats-list>li.unread {
     background-color: unset;
-    color: var(--colorLi);
+    color: var(--colorLi2);
 }
-.chats-list>li.bg-primary, .chats-list>li.bg-primary.unread {
+.bg-info {
     background-color: var(--colorBgHiG);
-    color: var(--colorFg);
 }
-.row.chats-page .chats-list>li {
-    border-bottom: 1px solid var(--colorBgHi) !important;
+.chats-list {
+    border-top: 1px solid transparent;
+}
+.chats-list>li {
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.chats-list>li, .chats-list>li.unread {
+    border-bottom: 1px solid var(--colorBgHiG);
 }
 .chat-modal .chat-content li.chat-message .chat-timestamp, .expanded-chat .chat-content li.chat-message .chat-timestamp {
     color: var(--colorFg2);
     opacity: 0.8;
+}
+.chat-modal .chat-content li.chat-message .chat-user a, .expanded-chat .chat-content li.chat-message .chat-user a {
+    color: var(--colorFg);
+}
+.chat-modal [component="chat/header"], .chats-full [component="chat/header"], .chat-modal [component="chat/nav-wrapper"] .chat-search input, .chats-full [component="chat/nav-wrapper"] .chat-search input {
+    background-color: #414141;
+    color: #fbfbfb;
+}
+.chat-modal [component="chat/header"] .members a, .chats-full [component="chat/header"] .members a, .chat-modal [component="chat/header"] .close, .chats-full [component="chat/header"] .close {
+    color: #fbfbfb;
+}
+.chat-search .form-control::-webkit-input-placeholder {
+    color: #fbfbfb;
+    opacity: 0.66;
+}
+.chat-modal [component="chat/composer"] [component="chat/input"], .chats-full [component="chat/composer"] [component="chat/input"] {
+    border-color: var(--colorBgHiG2);
+}
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"], .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] {
+    border-top: 1px solid var(--colorBgHiC) !important;
+}
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
+    background-color: var(--colorBgHiC);
+    color: var(--colorFg2);
+    border: 1px solid var(--colorBgHiC) !important;
+    border-bottom: 1px solid var(--colorBgHiG) !important;
+}
+ul[component="chat/search/list"].dropdown-menu {
+    background-color: var(--colorBgHiC);
 }
 
 
@@ -656,6 +705,7 @@ button.main.green, button.main.red {
 .upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
     color: #fbfbfb;
 }
+
 
 /* Advanced formatting mod */
 .vivaldi-mod-modal-box {

@@ -75,13 +75,6 @@ function(theme) {
         compactHeader.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(compactHeader);
     }
-    else {
-        var standardHeader = document.createElement('link');
-        standardHeader.href = chrome.extension.getURL('mods/standard-header.css');
-        standardHeader.type = 'text/css';
-        standardHeader.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(standardHeader);
-    }
 
     //themes
     if (darkGrey == 1) {
@@ -150,6 +143,13 @@ function(theme) {
             getLogoWhite.type = 'text/css';
             getLogoWhite.rel = 'stylesheet';
             document.getElementsByTagName('head')[0].appendChild(getLogoWhite);
+        }
+        else {
+            var getLogoBlack = document.createElement('link');
+            getLogoBlack.href = chrome.extension.getURL('themes/logo-black.css');
+            getLogoBlack.type = 'text/css';
+            getLogoBlack.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(getLogoBlack);
         }
         var themeCustom = document.createElement('link');
         themeCustom.href = chrome.extension.getURL('themes/custom.css');

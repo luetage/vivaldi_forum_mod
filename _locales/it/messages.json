@@ -3,10 +3,6 @@
         "message": "Segnalibri",
         "description": "Link to bookmarks page from navigation bar"
     },
-    "bookmarked": {
-        "message": "Segnalibri",
-        "description": "Link to bookmarks page from user profile menu."
-    },
     "signature": {
         "message": "Firma",
         "description": "Signature toggle for forum posts"
@@ -35,7 +31,7 @@
         "message": "Nascondi",
         "description": "Dismisses community notifications"
     },
-    "smile_o": {
+    "emoticons": {
         "message": "Selettore Emoji",
         "description": "Title of formatting item for emote picker."
     },
@@ -43,11 +39,11 @@
         "message": "Titolo",
         "description": "Title of formatting item header 1"
     },
-    "window_minimize": {
+    "horizontal_line": {
         "message": "Riga orizzontale",
         "description": "Title of formatting item horizontal rule"
     },
-    "quote_right": {
+    "block_quote": {
         "message": "Citazione",
         "description": "Title of formatting item quote"
     },
@@ -55,19 +51,15 @@
         "message": "Riga di codice",
         "description": "Title of formatting item inline code"
     },
-    "file_code_o": {
-        "message": "Codice",
-        "description": "Title of formatting item code block."
-    },
-    "th_large": {
+    "table": {
         "message": "Tabella",
         "description": "Title of formatting item table"
     },
-    "list_ol": {
+    "number_list": {
         "message": "Elenco numerato",
         "description": "Title of formatting item numbered list"
     },
-    "shield": {
+    "spoiler": {
         "message": "Spoiler",
         "description": "Title of formatting item spoiler."
     },

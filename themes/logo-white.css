@@ -1,12 +1,10 @@
 /* Logo and code markup for dark themes */
 
-.header .forum-logo {
-    display: block;
-    box-sizing: border-box;
-    height: 30px;
-    width: 150px !important;
-    padding-left: 150px;
+#vivaldilogo {
     background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
+}
+#vivaldilogo img {
+    display: none !important;
 }
 
 /*

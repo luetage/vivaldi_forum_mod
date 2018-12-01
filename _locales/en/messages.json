@@ -3,10 +3,6 @@
         "message": "Bookmarks",
         "description": "Link to bookmarks page from navigation bar"
     },
-    "bookmarked": {
-        "message": "Bookmarked",
-        "description": "Link to bookmarks page from user profile menu"
-    },
     "signature": {
         "message": "Signature",
         "description": "Signature toggle for forum posts"
@@ -35,7 +31,7 @@
         "message": "Dismiss",
         "description": "Dismisses community notifications"
     },
-    "smile_o": {
+    "emoticons": {
         "message": "Emote Picker",
         "description": "Title of formatting item for emote picker"
     },
@@ -43,31 +39,27 @@
         "message": "Header",
         "description": "Title of formatting item header 1"
     },
-    "window_minimize": {
+    "horizontal_line": {
         "message": "Horizontal Rule",
         "description": "Title of formatting item horizontal rule"
     },
-    "quote_right": {
+    "block_quote": {
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
     "code": {
         "message": "Inline Code",
-        "description": "Title of formatting item inline code"
+        "description": "Title of formatting item fixed width font"
     },
-    "file_code_o": {
-        "message": "Code Block",
-        "description": "Title of formatting item code block"
-    },
-    "th_large": {
+    "table": {
         "message": "Table",
         "description": "Title of formatting item table"
     },
-    "list_ol": {
+    "number_list": {
         "message": "Numbered List",
         "description": "Title of formatting item numbered list"
     },
-    "shield": {
+    "spoiler": {
         "message": "Spoiler",
         "description": "Title of formatting item spoiler"
     },
@@ -180,7 +172,7 @@
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Hides header and navigation bar tooltips.",
+        "message": "Hides login menu tooltips.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {

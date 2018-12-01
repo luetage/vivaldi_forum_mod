@@ -17,19 +17,7 @@ function normaliseFormattingToolbarOrders(){
         if(settings.formattingToolbar===""){
             return;
         }
-        let outOfOrder = Object.entries(settings.formattingToolbar);
-        outOfOrder.sort((a,b) => Number(a[1]) - Number(b[1]));
-        let orderCounter = 1;
-        for (let index = 0; index < outOfOrder.length; index++) {
-            const key = outOfOrder[index][0];
-            const order = outOfOrder[index][1];
-            if(order === -1){
-                continue;
-            }
-            settings.formattingToolbar[key] = orderCounter++;
-        }
-        const existingButtons = Object.keys(settings.formattingToolbar);
-        const newButtons = [
+        const possibleButtons = [
             "bold",
             "italic",
             "list",
@@ -38,7 +26,8 @@ function normaliseFormattingToolbarOrders(){
             "picture-o",
             "zen",
             "picture",
-            "smile-o",
+            "heart-o",
+            "emoji-add-emoji",
             "header",
             "window-minimize",
             "quote-right",
@@ -47,11 +36,29 @@ function normaliseFormattingToolbarOrders(){
             "th-large",
             "list-ol",
             "shield"
-        ].filter(x => existingButtons.indexOf(x)===-1);
-        for (let index = 0; index < newButtons.length; index++) {
-            settings.formattingToolbar[newButtons[index]] = -1;
+        ];
+        const normalisedOrder = {};
+        let outOfOrder = Object.entries(settings.formattingToolbar);
+        outOfOrder.sort((a,b) => Number(a[1]) - Number(b[1]));
+        let orderCounter = 1;
+        for (let index = 0; index < outOfOrder.length; index++) {
+            const key = outOfOrder[index][0];
+            const order = outOfOrder[index][1];
+            if(possibleButtons.indexOf(key)===-1){
+                continue;
+            }
+            if(order === -1){
+                normalisedOrder[key] = -1;
+            } else {
+                normalisedOrder[key] = orderCounter++;
+            }
         }
-        chrome.storage.sync.set({formattingToolbar: settings.formattingToolbar});
+        const existingButtons = Object.keys(settings.formattingToolbar);
+        const newButtons = possibleButtons.filter(x => existingButtons.indexOf(x)===-1);
+        for (let index = 0; index < newButtons.length; index++) {
+            normalisedOrder[newButtons[index]] = orderCounter++;
+        }
+        chrome.storage.sync.set({formattingToolbar: normalisedOrder});
     });
 }
 
