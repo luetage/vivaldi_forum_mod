@@ -66,11 +66,7 @@ body, main#panel.slideout-panel {
 #submenu li>a {
     color: #fefefe;
 }
-#submenu a:focus, #submenu a:hover {
-    color: #f58591;
-    background-color: #fefefe;
-}
-#submenu li.active>a {
+#submenu a:focus, #submenu a:hover, #submenu li.active>a {
     color: #d01126;
     background-color: #fefefe;
 }
@@ -404,7 +400,7 @@ div.shadow-box1, div.shadow-box2 {
     display: none !important;
 }
 #vivaldifooter #vivaldi-icon path:nth-of-type(1) {
-    fill: #00107C;
+    fill: #00247d;
 }
 
 /* Advanced formatting mod */
