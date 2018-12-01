@@ -91,7 +91,7 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
         transform: scale3d(1, 1, 1);
     }
 }
-.header .forum-logo {
+#vivaldilogo {
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-name: fixthemes;
