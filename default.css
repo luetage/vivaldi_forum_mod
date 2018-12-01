@@ -15,9 +15,6 @@
 }
 
 /* Font icons */
-i.fa-ellipsis-v::before {
-    content: "\2630";
-}
 .fa-angle-down::before {
     content: "\f0d7" !important;
 }
@@ -25,17 +22,16 @@ i.fa-ellipsis-v::before {
     content: "\f0d8" !important;
 }
 #vivaldimenu a .sub-arrow {
-    background: none;
     position: relative !important;
 }
 #vivaldimenu a .sub-arrow::after {
-    content: "\f107";
-    font-family: FontAwesome;
-    left: 16px;
     position: absolute;
     top: -11px;
-    opacity: 0.66;
+    left: 16px;
+    content: "\f107";
+    font-family: FontAwesome;
     font-size: 13px;
+    opacity: 0.66;
 }
 
 /* Remove underline from first post tags */

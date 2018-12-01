@@ -30,7 +30,7 @@ function userMenu() {
     var editF = document.createElement('a');
     editF.href = '/user/' + username() + '/edit';
     editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
-    dropdown.insertBefore(li, dropdown.childNodes[17]);
+    dropdown.insertBefore(li, dropdown.childNodes[19]);
     li.appendChild(editF);
 
     // forum mod
@@ -38,7 +38,7 @@ function userMenu() {
     options.classList.add('optionsLink');
     options.style = 'cursor: pointer';
     options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
-    dropdown.insertBefore(options, dropdown.childNodes[18]);
+    dropdown.insertBefore(options, dropdown.childNodes[21]);
 
     setTimeout(function() {
         _options();

@@ -14,13 +14,8 @@ body, main#panel.slideout-panel {
 /* transparency setting for the content + adjusted spacing */
 #content {
      background-color: rgba(245,255,255,0.85);
-     padding-top: 20px !important;
      padding-right: 25px !important;
      padding-left: 25px !important;
-}
-/* fix the spacing on profiles affected by code above */
-.account {
-     margin-top: 280px;
 }
 /* focus */
 :focus {
@@ -34,21 +29,20 @@ body, main#panel.slideout-panel {
 /** Header **/
 
 /* navbar */
-.navbar-default {
-     background-color: #bfc8d5 !important;
+#vivaldiheader {
+     background-color: #bfc8d5;
 }
-/* text/icons */
-.navbar-default .navbar-nav>li>a, .navbar-default .btn-link, .navbar-default .btn-link:focus, .navbar-default .btn-link:hover {
-    color: #2a363b;
-}
-.vivaldinav ul a.active {
+#vivaldiheader a, #vivaldiheader a:active, #vivaldiheader a:focus, #vivaldiheader a:visited {
     color: #00247d;
 }
-ul.nav.navbar-nav.navbar-left>li>a:hover {
+#vivaldimenu a.current, #vivaldimenu a:hover {
     color: #d01126;
 }
-#logged-in-menu.nav.navbar-nav.navbar-right {
-    font-size: 15px;
+#vivaldimenu a .sub-arrow::after {
+    color: #00247d !important;
+}
+#vivaldimenu ul {
+    background-color: #fefefe;
 }
 /* active background right */
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
@@ -64,18 +58,20 @@ ul.nav.navbar-nav.navbar-left>li>a:hover {
     border-color: #2a363b;
 }
 /* menuwrapper */
-.menuwrapper {
-    background-color: #2a363b;
+#submenu {
+    background-color: #00247d;
+    border-bottom: 1px solid #fefefe;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
-    background-color: #0a0d0e !important;
-    color: #d01126 !important;
+#submenu li>a {
+    color: #fefefe;
 }
-#main-nav li>a {
-    color: #fff;
-}
-#main-nav li>a:hover {
+#submenu a:focus, #submenu a:hover {
     color: #f58591;
+    background-color: #fefefe;
+}
+#submenu li.active>a {
+    color: #d01126;
+    background-color: #fefefe;
 }
 /* hide menu text / show it on mobile version */
 span.visible-xs-inline.showmenutext:not(.slideout-menu) {

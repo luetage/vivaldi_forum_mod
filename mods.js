@@ -127,7 +127,7 @@ function _bookmarks() {
     link.classList.add('navigation-link');
     link.href = '/user/' + username() + '/bookmarks';
     link.setAttribute('title', '');
-    link.setAttribute('data-original-title', 'Bookmarks');
+    link.setAttribute('title', 'Bookmarks');
     link.innerHTML = '<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px">' + chrome.i18n.getMessage('bookmarks') + '</span>';
     nav.insertBefore(li, nav.childNodes[15]);
     li.appendChild(link);

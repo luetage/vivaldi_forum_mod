@@ -1,4 +1,4 @@
-/* Hides various tooltips in navigation */
+/* Hides tooltips from the login menu */
 
 #header-menu .tooltip {
     display: none !important;
