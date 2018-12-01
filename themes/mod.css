@@ -54,8 +54,9 @@ body, main#panel.slideout-panel {
 }
 /* unread-count icon color */
 .unread-count::after {
-    background-color: #d01126;
-    border-color: #2a363b;
+    background-color: #fefefe;
+    border-color: #00247d;
+    color: #00247d;
 }
 /* menuwrapper */
 #submenu {
@@ -199,10 +200,10 @@ li.page a {
     background-color: #fefefe !important;
 }
 /* forum mod highlight */
-#optionsLink:hover i {
+.optionsLink:hover i {
     color: #d01126;
 }
-#optionsLink:hover span {
+.optionsLink:hover span {
     color: #00247d;
 }
 /* dropdown text color */
@@ -323,14 +324,20 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .expanded-chat .chat-content li.chat-message, .chat-modal .chat-content li.chat-message {
     font-weight: 400 !important;
 }
-.chats-list>li.bg-primary {
+.bg-info {
     background-color: #00247d;
+    color: #fefefe;
+}
+.chats-full .chats-list>li.unread {
+    background-color: unset;
+    color: #d01126;
 }
 .expanded-chat .chat-content li.chat-message[data-break=true] {
     border-color: #cacaca;
 }
-.row.chats-page .chats-list {
-    background-color: #fff;
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
+    background-color: #fefefe;
+    color: #00247d;
 }
 /* change close buttons globally */
 .close {
@@ -390,13 +397,11 @@ div.shadow-box1, div.shadow-box2 {
 
 /** Logo **/
 
-.header .forum-logo {
-    display: block;
-    box-sizing: border-box;
-    height: 30px;
-    width: 150px !important;
-    padding-left: 150px;
+#vivaldilogo {
     background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mod.png') no-repeat;
+}
+#vivaldilogo img {
+    display: none !important;
 }
 #vivaldifooter #vivaldi-icon path:nth-of-type(1) {
     fill: #00107C;

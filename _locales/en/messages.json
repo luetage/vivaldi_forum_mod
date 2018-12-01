@@ -3,10 +3,6 @@
         "message": "Bookmarks",
         "description": "Link to bookmarks page from navigation bar"
     },
-    "bookmarked": {
-        "message": "Bookmarked",
-        "description": "Link to bookmarks page from user profile menu"
-    },
     "signature": {
         "message": "Signature",
         "description": "Signature toggle for forum posts"
@@ -51,8 +47,8 @@
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
-    "monospace": {
-        "message": "Fixed Width Text",
+    "inline_code": {
+        "message": "inline code",
         "description": "Title of formatting item fixed width font"
     },
     "table": {

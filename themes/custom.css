@@ -471,8 +471,9 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message[data-break=true], .expanded-chat .chat-content li.chat-message[data-break=true] {
      border-top-color: var(--colorBgHi);
 }
-.chats-list>li.unread {
+.chats-full .chats-list>li.unread {
     background-color: unset;
+    color: var(--colorLi2);
 }
 .bg-info {
     background-color: var(--colorBgHiG);
