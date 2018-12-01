@@ -70,7 +70,7 @@ const FORMATTERS = [
 ***
 `, chrome.i18n.getMessage("horizontal_line")],
     ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote")],
-    ["file-code-o", "`", "`", chrome.i18n.getMessage("monospace")],
+    ["file-code-o", "`", "`", chrome.i18n.getMessage("code")],
     ["th-large", `a | a
 ---|---
 x | x

@@ -47,8 +47,8 @@
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
-    "inline_code": {
-        "message": "inline code",
+    "code": {
+        "message": "Inline Code",
         "description": "Title of formatting item fixed width font"
     },
     "table": {

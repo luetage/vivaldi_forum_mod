@@ -51,9 +51,9 @@
         "message": "Zitat",
         "description": "Title of formatting item quote"
     },
-    "monospace": {
-        "message": "NEEDS TRANSLATED",
-        "description": "Title of formatting item fixed width font"
+    "code": {
+        "message": "Inline-Code",
+        "description": "Title of formatting item inline code"
     },
     "table": {
         "message": "Tabelle",
