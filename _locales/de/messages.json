@@ -172,7 +172,7 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
-        "message": "Tooltips deaktivieren",
+        "message": "Tooltips für Login Menü deaktivieren",
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {

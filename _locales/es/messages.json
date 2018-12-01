@@ -172,7 +172,7 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
-        "message": "Ocultar descripción emergente",
+        "message": "Hides login menu tooltips.",
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {

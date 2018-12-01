@@ -172,7 +172,7 @@
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Hides header and navigation bar tooltips.",
+        "message": "Hides login menu tooltips.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
