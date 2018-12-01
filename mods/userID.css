@@ -12,7 +12,7 @@
     opacity: 0;
     width: 100%;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 7px;
     transition: opacity 0.6s ease-out;
 }
 .account .cover .avatar-wrapper:hover::after {
