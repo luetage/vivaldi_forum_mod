@@ -37,6 +37,23 @@ blockquote {
     background-color: #2e3539;
     border-left: 5px solid #d0d0d0;
 }
+blockquote pre { 
+    color: #fff;
+    background-color: #2e3539;
+    border: none;
+}
+code {
+	color: lime;
+	background-color: black;
+}
+	
+.content pre {
+	color: lime;
+	background-color: black;
+	border: none;
+}
+.markdown-highlight {background-color: inherit !important;}
+.topic .posts .content .toggle {background: #2e3539;}
 #content {
     background: #2e3539 !important;
     padding-top: 5px !important;
