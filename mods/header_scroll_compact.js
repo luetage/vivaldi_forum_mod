@@ -5,11 +5,11 @@ function autoScroll() {
         vivaldiHeader.style.top = '0px';
         subMenu.style = 'top: 50px !important';
     }
-    else if (window.scrollY <= 65) {
+    else if (window.scrollY <= 51) {
         vivaldiHeader.style.top = '0px';
         subMenu.style = 'top: 50px !important';
     }
-    else if (window.scrollY > 65) {
+    else if (window.scrollY > 51) {
         vivaldiHeader.style.top = '-50px';
         subMenu.style = 'top: 0px !important';
     }
