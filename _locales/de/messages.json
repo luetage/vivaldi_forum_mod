@@ -280,7 +280,7 @@
         "description": "Options: Status message for theme import"
     },
     "statusThemes": {
-        "message": "Wähle ein Thema aus, oder gestallte ein Eigenes.",
+        "message": "Wähle ein Thema aus, oder gestalte ein Eigenes.",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
