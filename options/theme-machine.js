@@ -510,7 +510,7 @@ function _exportTheme() {
         function(items){
             var result = JSON.stringify(items);
             var url = 'data:application/json;base64,' + btoa(result);
-            const getName = items.themeName;
+            const getName = items.themeName.replace(/\s+/g, '-').toLowerCase();
             if (getName !== '' && tryAgain === false) {
                 var nameIt = getName + '.json';
             }

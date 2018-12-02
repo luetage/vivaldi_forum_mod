@@ -75,6 +75,17 @@ function _selectMods(event) {
 };
 
 
+/* Use tab in textarea (tab to 4 spaces) */
+
+function tabSpaces(key) {
+    if (key.keyCode === 9 || key.which === 9) {
+        key.preventDefault();
+        var select = this.selectionStart;
+        this.value = this.value.substring(0,this.selectionStart) + "    " + this.value.substring(this.selectionEnd);
+        this.selectionEnd = select+4;
+    }
+};
+
 /* Save User CSS */
 
 function _saveUserCSS() {
@@ -173,6 +184,7 @@ const btnThemes = document.getElementById('themes-btn');
 const btnModifications = document.getElementById('modifications-btn');
 const btnInfo = document.getElementById('info-btn');
 const selectMods = document.querySelectorAll('#selectMods > p > span');
+const textarea = document.querySelector('textarea');
 const resetBtn = document.getElementById('reset-btn');
 var changeMessage = false;
 
@@ -182,6 +194,7 @@ btnInfo.addEventListener('click', _showInfo);
 selectMods.forEach(function(mod) {
     mod.addEventListener('click', _selectMods);
 });
+textarea.addEventListener('keydown', tabSpaces);
 document.getElementById('css-save').addEventListener('click', _saveUserCSS);
 document.getElementById('css-backup').addEventListener('click', _backupUserCSS);
 resetBtn.addEventListener('click', _resetOptions);
