@@ -463,7 +463,7 @@ small.pull-right a
   color: #949494;
 }
 
-.btn
+.btn:not(.hidden-xs)
 {
   padding: 5px 8px;
 }
