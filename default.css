@@ -169,7 +169,7 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 }
 /* Auto-hide header transition */
 #header-menu, #submenu {
-    transition: top 0.857s;
+    transition: top 0.857s !important;
 }
 
 /* Copy all code button */
@@ -202,4 +202,11 @@ The notification is being shown by default.js, if not dismissed previously.
 section.footer-notification {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+}
+
+/* transparent logo for very small media widths */
+@media (max-width: 420px) {
+    #vivaldiheader #vivaldilogo {
+        background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mobile.png') center no-repeat !important;
+    }
 }

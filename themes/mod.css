@@ -170,17 +170,16 @@ li.page a {
 .votes a {
     background-color: #fefefe;
 }
-.votes a i {
+.topic .votes [component="post/upvote"], .topic .votes [component="post/downvote"] {
     color: #00247d;
 }
-.upvoted {
+.topic .votes [component="post/upvote"].upvoted {
     background-color: #00caa7 !important;
+    color: #fefefe !important;
 }
-.downvoted {
+.topic .votes [component="post/downvote"].downvoted {
     background-color: #d01126 !important;
-}
-.upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
-    color: #fefefe;
+    color: #fefefe !important;
 }
 
 

@@ -887,14 +887,13 @@ a:hover {
 .votes a {
     background-color: #2e3539;
 }
-.upvoted {
+.topic .votes [component="post/upvote"].upvoted {
     background-color: #43bd79 !important;
+    color: #fefefe !important;
 }
-.downvoted {
+.topic .votes [component="post/downvote"].downvoted{
     background-color: #bd4e43 !important;
-}
-.upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
-    color: #fefefe;
+    color: #fefefe !important;
 }
 
 
