@@ -476,7 +476,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     color: var(--colorLi2);
 }
 .bg-info {
-    background-color: var(--colorBgHiG);
+    background-color: var(--colorBgHi);
 }
 .chats-list {
     border-top: 1px solid transparent;
@@ -486,7 +486,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     border-left: 1px solid transparent;
 }
 .chats-list>li, .chats-list>li.unread {
-    border-bottom: 1px solid var(--colorBgHiG);
+    border-bottom: 1px solid var(--colorBgHi);
 }
 .chat-modal .chat-content li.chat-message .chat-timestamp, .expanded-chat .chat-content li.chat-message .chat-timestamp {
     color: var(--colorFg2);
@@ -706,7 +706,38 @@ button.main.green, button.main.red {
 }
 
 
+/* Emoji Picker */
+
+.emoji-dialog {
+    border: 1px solid var(--colorBgHiG);
+}
+.emoji-dialog .top-bar {
+    background-color: var(--colorBgHiG);
+}
+.emoji-tabs .emoji-dialog-search-container button.close {
+    background-color: var(--colorBtn);
+    color: var(--colorBtnFg);
+    border: 1px solid var(--colorBtnHi);
+    text-shadow: none;
+}
+.emoji-tabs .emoji-dialog-search-container button.close:hover {
+    background-color: var(--colorBtnHi);
+}
+.emoji-tabs .nav-tabs, .emoji-tabs .tab-content {
+    background-color: var(--colorBg);
+}
+.nav-tabs>li>a:hover {
+    border: 1px solid var(--colorBgHiC);
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: var(--colorBgHi);
+    color: var(--colorLi);
+    border-color: var(--colorBgHi);
+}
+
+
 /* Advanced formatting mod */
+
 .vivaldi-mod-modal-box {
     background: var(--colorBg);
     border-color: var(--colorBgHiG);
