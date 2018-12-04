@@ -220,7 +220,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Inserire solo codice CSS! Clicca SALVA per attivare. BACKUP per memorizzare. Seleziona STANDARD nei TEMI se vuoi usare un tema personale.",
+        "message": "Input CSS code only! Click TOGGLE to activate/deactivate, SAVE to save to storage. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -238,6 +238,10 @@
     "edit": {
         "message": "Modifica",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
+    },
+    "toggle": {
+        "message": "Toggle",
+        "description": "Options: Switch on or off"
     },
     "backup": {
         "message": "Backup",
@@ -267,9 +271,17 @@
         "message": "Opzioni resettate, archiviazione ripulita.",
         "description": "Options: Status message after reset"
     },
-    "saveUserCSS": {
-        "message": "Il CSS utente è stato salvato.",
+    "activateUserCSS": {
+        "message": "User CSS activated.",
         "description": "Options: Status message for User CSS activation"
+    },
+    "deactivateUserCSS": {
+        "message": "User CSS deactivated.",
+        "description": "Options: Status message for User CSS deactivation"
+    },
+    "saveUserCSS": {
+        "message": "User CSS saved to storage.",
+        "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
         "message": "Tema salvato e attivato!",

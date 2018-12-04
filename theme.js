@@ -6,7 +6,7 @@ chrome.storage.sync.get({
     'mod': '',
     'sprucey': '',
     'custom': '',
-    'csscheck': '',
+    'cssToggle': '',
     'compact': '',
     'logoWhite': '',
     'colorBg': '#fdf6e3',
@@ -35,40 +35,8 @@ chrome.storage.sync.get({
     'colorBtnFg': '#fbfbfb'
 },
 function(theme) {
-    var darkGrey = theme.darkGrey;
-    var lightGrey = theme.lightGrey;
-    var mod = theme.mod;
-    var sprucey = theme.sprucey;
-    var custom = theme.custom;
-    var compact = theme.compact;
-    var logoWhite = theme.logoWhite;
-    var colorBg = theme.colorBg;
-    var colorFg = theme.colorFg;
-    var colorHi = theme.colorHi;
-    var colorBtn = theme.colorBtn;
-    var colorDrop = theme.colorDrop;
-    var colorLi = theme.colorLi;
-    var colorLi2 = theme.colorLi2;
-    var colorDropFg = theme.colorDropFg;
-    var colorDropHi = theme.colorDropHi;
-    var colorDropHi2 = theme.colorDropHi2;
-    var colorDropHi3 = theme.colorDropHi3;
-    var colorDropHiG = theme.colorDropHiG;
-    var colorBgHi = theme.colorBgHi;
-    var colorBgHiC = theme.colorBgHiC;
-    var colorBgHiCG = theme.colorBgHiCG;
-    var colorBgHiG = theme.colorBgHiG;
-    var colorBgHiG2 = theme.colorBgHiG2;
-    var colorFg2 = theme.colorFg2;
-    var colorHiFg = theme.colorHiFg;
-    var colorLiHi = theme.colorLiHi;
-    var colorLiR = theme.colorLiR;
-    var colorLi2Hi = theme.colorLi2Hi;
-    var colorBtnHi = theme.colorBtnHi;
-    var colorBtnFg = theme.colorBtnFg;
-
     //header
-    if (compact == 1) {
+    if (theme.compact === '1') {
         var compactHeader = document.createElement('link');
         compactHeader.href = chrome.extension.getURL('mods/compact-header.css');
         compactHeader.type = 'text/css';
@@ -77,67 +45,67 @@ function(theme) {
     }
 
     //themes
-    if (darkGrey == 1) {
+    if (theme.darkGrey === '1') {
         var themeDarkGrey = document.createElement('link');
         themeDarkGrey.href = chrome.extension.getURL('themes/dark-grey.css');
         themeDarkGrey.type = 'text/css';
         themeDarkGrey.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeDarkGrey);
     }
-    else if (lightGrey == 1) {
+    else if (theme.lightGrey === '1') {
         var themeLightGrey = document.createElement('link');
         themeLightGrey.href = chrome.extension.getURL('themes/light-grey.css');
         themeLightGrey.type = 'text/css';
         themeLightGrey.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeLightGrey);
     }
-    else if (mod == 1) {
+    else if (theme.mod === '1') {
         var themeMod = document.createElement('link');
         themeMod.href = chrome.extension.getURL('themes/mod.css');
         themeMod.type = 'text/css';
         themeMod.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeMod);
     }
-    else if (sprucey == 1) {
+    else if (theme.sprucey === '1') {
         var themeSprucey = document.createElement('link');
         themeSprucey.href = chrome.extension.getURL('themes/sprucey-bonus-dark.css');
         themeSprucey.type = 'text/css';
         themeSprucey.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeSprucey);
     }
-    else if (custom == 1) {
+    else if (theme.custom === '1') {
         setTimeout(function wait() {
             if (document.body != null) {
-                document.body.style.setProperty('--colorBg', colorBg);
-                document.body.style.setProperty('--colorFg', colorFg);
-                document.body.style.setProperty('--colorHi', colorHi);
-                document.body.style.setProperty('--colorBtn', colorBtn);
-                document.body.style.setProperty('--colorDrop', colorDrop);
-                document.body.style.setProperty('--colorLi', colorLi);
-                document.body.style.setProperty('--colorLi2', colorLi2);
-                document.body.style.setProperty('--colorDropFg', colorDropFg);
-                document.body.style.setProperty('--colorDropHi', colorDropHi);
-                document.body.style.setProperty('--colorDropHi2', colorDropHi2);
-                document.body.style.setProperty('--colorDropHi3', colorDropHi3);
-                document.body.style.setProperty('--colorDropHiG', colorDropHiG);
-                document.body.style.setProperty('--colorBgHi', colorBgHi);
-                document.body.style.setProperty('--colorBgHiC', colorBgHiC);
-                document.body.style.setProperty('--colorBgHiCG', colorBgHiCG);
-                document.body.style.setProperty('--colorBgHiG', colorBgHiG);
-                document.body.style.setProperty('--colorBgHiG2', colorBgHiG2);
-                document.body.style.setProperty('--colorFg2', colorFg2);
-                document.body.style.setProperty('--colorHiFg', colorHiFg);
-                document.body.style.setProperty('--colorLiHi', colorLiHi);
-                document.body.style.setProperty('--colorLiR', colorLiR);
-                document.body.style.setProperty('--colorLi2Hi', colorLi2Hi);
-                document.body.style.setProperty('--colorBtnHi', colorBtnHi);
-                document.body.style.setProperty('--colorBtnFg', colorBtnFg);
+                document.body.style.setProperty('--colorBg', theme.colorBg);
+                document.body.style.setProperty('--colorFg', theme.colorFg);
+                document.body.style.setProperty('--colorHi', theme.colorHi);
+                document.body.style.setProperty('--colorBtn', theme.colorBtn);
+                document.body.style.setProperty('--colorDrop', theme.colorDrop);
+                document.body.style.setProperty('--colorLi', theme.colorLi);
+                document.body.style.setProperty('--colorLi2', theme.colorLi2);
+                document.body.style.setProperty('--colorDropFg', theme. colorDropFg);
+                document.body.style.setProperty('--colorDropHi', theme. colorDropHi);
+                document.body.style.setProperty('--colorDropHi2', theme. colorDropHi2);
+                document.body.style.setProperty('--colorDropHi3', theme. colorDropHi3);
+                document.body.style.setProperty('--colorDropHiG', theme. colorDropHiG);
+                document.body.style.setProperty('--colorBgHi', theme.colorBgHi);
+                document.body.style.setProperty('--colorBgHiC', theme.colorBgHiC);
+                document.body.style.setProperty('--colorBgHiCG', theme. colorBgHiCG);
+                document.body.style.setProperty('--colorBgHiG', theme.colorBgHiG);
+                document.body.style.setProperty('--colorBgHiG2', theme. colorBgHiG2);
+                document.body.style.setProperty('--colorFg2', theme.colorFg2);
+                document.body.style.setProperty('--colorHiFg', theme.colorHiFg);
+                document.body.style.setProperty('--colorLiHi', theme.colorLiHi);
+                document.body.style.setProperty('--colorLiR', theme.colorLiR);
+                document.body.style.setProperty('--colorLi2Hi', theme.colorLi2Hi);
+                document.body.style.setProperty('--colorBtnHi', theme.colorBtnHi);
+                document.body.style.setProperty('--colorBtnFg', theme.colorBtnFg);
             }
             else {
                 setTimeout(wait, 100);
             }
         }, 100);
-        if (logoWhite == 1) {
+        if (theme.logoWhite === '1') {
             var getLogoWhite = document.createElement('link');
             getLogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
             getLogoWhite.type = 'text/css';
@@ -165,14 +133,15 @@ function(theme) {
         document.getElementsByTagName('head')[0].appendChild(themeStandard);
     }
 
-    // User CSS
-    chrome.storage.local.get({'userCSS': ''}, function(local) {
-        var userCSS = local.userCSS;
-        if (userCSS !== '') {
-            var activateUserCSS = document.createElement('style');
-            activateUserCSS.type = 'text/css';
-            activateUserCSS.innerHTML = userCSS;
-            document.getElementsByTagName('head')[0].appendChild(activateUserCSS);
-        }
-    });
+    // user css
+    if (theme.cssToggle === '1') {
+        chrome.storage.local.get({'userCSS': ''}, function(local) {
+            if (local.userCSS !== '') {
+                var activateUserCSS = document.createElement('style');
+                activateUserCSS.type = 'text/css';
+                activateUserCSS.innerHTML = userCSS;
+                document.getElementsByTagName('head')[0].appendChild(activateUserCSS);
+            }
+        });
+    }
 });

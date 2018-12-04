@@ -13,7 +13,8 @@ function _restore() {
         'compact': '',
         'userID': '',
         'signatureMod': '',
-        'square': ''
+        'square': '',
+        'cssToggle': '0'
     },
     function(restore){
         chrome.storage.local.get({'userCSS': ''}, function(local) {
@@ -52,6 +53,12 @@ function _restore() {
         if (restore.square === '1') {
             document.getElementById('square').classList.add('selected');
         }
+        if (restore.cssToggle === '0') {
+            toggleBtn.classList.add('deactivated');
+            textarea.disabled = true;
+            save2Btn.disabled = true;
+            backupBtn.disabled = true;
+        }
         if (changeMessage === false) {
             status.innerText = chrome.i18n.getMessage('statusThemes');
         }
@@ -77,7 +84,7 @@ function _selectMods(event) {
 
 /* Use tab in textarea (tab to 4 spaces) */
 
-function tabSpaces(key) {
+function _tabSpaces(key) {
     if (key.keyCode === 9 || key.which === 9) {
         key.preventDefault();
         var select = this.selectionStart;
@@ -85,6 +92,31 @@ function tabSpaces(key) {
         this.selectionEnd = select+4;
     }
 };
+
+
+/* Toggle User CSS */
+
+function _toggleUserCSS() {
+    if (toggleBtn.classList.contains('deactivated')) {
+        chrome.storage.sync.set({'cssToggle': '1'}, function() {
+            toggleBtn.classList.remove('deactivated');
+            save2Btn.disabled = false;
+            backupBtn.disabled = false;
+            textarea.disabled = false;
+            status.innerText = chrome.i18n.getMessage('activateUserCSS')
+        });
+    }
+    else {
+        chrome.storage.sync.set({'cssToggle': '0'}, function() {
+            toggleBtn.classList.add('deactivated');
+            save2Btn.disabled = true;
+            backupBtn.disabled = true;
+            textarea.disabled = true;
+            status.innerText = chrome.i18n.getMessage('deactivateUserCSS')
+        });
+    }
+};
+
 
 /* Save User CSS */
 
@@ -185,6 +217,9 @@ const btnModifications = document.getElementById('modifications-btn');
 const btnInfo = document.getElementById('info-btn');
 const selectMods = document.querySelectorAll('#selectMods > p > span');
 const textarea = document.querySelector('textarea');
+const toggleBtn = document.getElementById('css-toggle');
+const save2Btn = document.getElementById('css-save');
+const backupBtn = document.getElementById('css-backup');
 const resetBtn = document.getElementById('reset-btn');
 var changeMessage = false;
 
@@ -194,9 +229,10 @@ btnInfo.addEventListener('click', _showInfo);
 selectMods.forEach(function(mod) {
     mod.addEventListener('click', _selectMods);
 });
-textarea.addEventListener('keydown', tabSpaces);
-document.getElementById('css-save').addEventListener('click', _saveUserCSS);
-document.getElementById('css-backup').addEventListener('click', _backupUserCSS);
+textarea.addEventListener('keydown', _tabSpaces);
+toggleBtn.addEventListener('click', _toggleUserCSS);
+save2Btn.addEventListener('click', _saveUserCSS);
+backupBtn.addEventListener('click', _backupUserCSS);
 resetBtn.addEventListener('click', _resetOptions);
 
 _restore();

@@ -232,16 +232,17 @@ input[type="color" i] {
 button {
     background: hsl(0, 0%, 37%);
     color: hsl(0, 0%, 99%);
-    border:  1px solid hsl(0, 0%, 37%);
+    border:  2px solid hsl(0, 0%, 37%);
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     font-size: 13px;
-    padding: 5px 12px;
+    padding: 4px 11px;
     border-radius: 3px;
     cursor: pointer;
 }
 button:hover:not(:disabled) {
-    background-color: hsl(0, 0%, 18%)
+    background: hsl(0, 0%, 18%);
+    border-color: hsl(0, 0%, 18%);
 }
 button:disabled {
     cursor: default;
@@ -252,4 +253,14 @@ button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
 }
 button:focus {
     outline: none;
+}
+button.deactivated {
+    background: hsl(0, 0%, 99%);
+    color: hsl(0, 0%, 37%);
+    border-color: hsl(0, 0%, 70%);
+}
+button.deactivated:hover {
+    background: hsl(0, 0%, 37%);
+    color: hsl(0, 0%, 99%);
+    border-color: hsl(0, 0%, 37%);
 }

@@ -48,6 +48,7 @@ function localisation() {
     document.getElementById('square').innerText = chrome.i18n.getMessage('squareAvatars');
     document.getElementById('square').title = chrome.i18n.getMessage('squareAvatarsDesc');
     document.querySelector('.userCSS').innerText = chrome.i18n.getMessage('userCSS');
+    document.getElementById('css-toggle').innerText = chrome.i18n.getMessage('toggle');
     document.getElementById('css-save').innerText = chrome.i18n.getMessage('save');
     document.getElementById('css-backup').innerText = chrome.i18n.getMessage('backup');
     document.getElementById('userCSS').placeholder = chrome.i18n.getMessage('userCSSDesc');

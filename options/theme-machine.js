@@ -55,7 +55,7 @@ function _activateTheme(){
         var colorBgHi = shade(colorBg, 0.2);
         var colorBgHiC = shade(colorBg, 0.1);
         var colorBgHiCG = shade(bg2, 0.1);
-        var logoWhite = 1;
+        var logoWhite = '1';
     }
     else {
         var colorBgHiG = shade(bg2, -0.1);
@@ -63,7 +63,7 @@ function _activateTheme(){
         var colorBgHi = shade(colorBg, -0.1);
         var colorBgHiC = shade(colorBg, -0.05);
         var colorBgHiCG = shade(bg2, -0.05);
-        var logoWhite = 0;
+        var logoWhite = '0';
     }
     // foreground
     var fg = lum(colorFg);
@@ -183,7 +183,7 @@ function _restoreThemes() {
         'c4Fg': '#d4efff',
         'c4Hi': '#ffffff',
         'c4Btn': '#68a2f2',
-        'c4Drop': '#e6fff1',
+        'c4Drop': '#d4efff',
         'c4Li': '#96ffe0',
         'c4Li2': '#d5d0fc',
     },
