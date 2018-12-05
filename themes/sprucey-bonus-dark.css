@@ -163,10 +163,7 @@ hr {
 .vivaldinav ul a.active {
     color: #ef3938 !important;
 }
-.header .forum-logo {
-    border-radius: 5px !important;
-}
-.header #user_dropdown img {
+#vivaldiheader #user_dropdown img {
     width: 30px;
     height: 30px;
     border: 2px solid #E1E1E1;
@@ -524,7 +521,7 @@ span.timeago, a.permalink, a.permalink:active, a.permalink:focus {
 }
 .categories>li .content .icon,
 .category>ul>li .content .icon,
-.header .forum-logo {
+#vivaldilogo {
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-name: rubberBand;

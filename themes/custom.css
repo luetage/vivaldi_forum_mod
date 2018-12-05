@@ -524,7 +524,7 @@ ul[component="chat/search/list"].dropdown-menu {
 .taskbar .navbar-nav li.taskbar-chat a, .taskbar .navbar-nav li.taskbar-chat a:active, .taskbar .navbar-nav li.taskbar-chat a:focus, .taskbar .navbar-nav li.taskbar-chat a:hover {
     background-color: var(--colorHi);
     color: var(--colorHiFg);
-    /*border-color: var(--colorHi);*/
+    border-color: var(--colorHi);
 }
 
 
