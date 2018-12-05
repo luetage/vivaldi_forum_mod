@@ -70,7 +70,7 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 }
 
 /* Reduces the number of font sizes used in posts */
-.topic .threaded-replies, small.pull-left, span.timeago {
+.topic .threaded-replies, small.pull-left, .topic span.timeago {
     font-size: 12px !important;
 }
 .topic [component="post/parent"] {
