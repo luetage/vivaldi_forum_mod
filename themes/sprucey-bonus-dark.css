@@ -26,20 +26,12 @@ h1.community-join {
     background: #4d585f !important;
     box-shadow: 0 7px 32px 0 rgba(0, 0, 0, 0.09) !important;
 }
-.menuwrapper {
-    background: #2e3539;
-    top: 50px;
-    left: 0;
-    right: 0;
-    height: 50px;
-}
 blockquote {
     background-color: #2e3539;
     border-left: 5px solid #d0d0d0;
 }
 #content {
     background: #2e3539 !important;
-    padding-top: 5px !important;
     border-radius: 10px !important;
     border: 5px solid #4d585f!important;
     box-shadow: 0px 0px 43px -6px rgba(0, 0, 0, 0.75);
@@ -53,7 +45,7 @@ blockquote {
 }
 .categories>li .content h2,
 .category>ul>li .content h2 {
-    font-size: 10pt;
+    font-size: 10pt !important;
 }
 .stats {
     font-size: 16px !important;
@@ -88,11 +80,6 @@ small.pull-right a {
     color: #A8A8A8 !important;
     text-transform: capitalize;
     font-size: 12px;
-}
-.menuwrapper {
-    -webkit-box-shadow: 0px 10px 14px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 10px 14px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 10px 14px -11px rgba(0, 0, 0, 0.75);
 }
 hr {
     border-top: 1px solid #4d585f !important;
@@ -176,11 +163,6 @@ hr {
 .vivaldinav ul a.active {
     color: #ef3938 !important;
 }
-.navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover {
-    color: #ef3938 !important;
-    background-color: transparent;
-}
 .header .forum-logo {
     border-radius: 5px !important;
 }
@@ -188,11 +170,6 @@ hr {
     width: 30px;
     height: 30px;
     border: 2px solid #E1E1E1;
-}
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover {
-    background-color: #282e31;
 }
 
 
@@ -463,9 +440,6 @@ div.preview.well a:hover, div.preview.well a:focus {
 
 .posts-list .posts-list-item .topic-title, a {
     color: #f1f1f1;
-}
-.posts-list .posts-list-item .topic-title:hover, a:hover, a:focus {
-    color: #b05158;
 }
 ul.nav.nav-pills a:hover, ul.nav.nav-pills a:focus {
     color: #ccc !important;
