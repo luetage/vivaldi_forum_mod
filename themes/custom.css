@@ -521,6 +521,11 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 ul[component="chat/search/list"].dropdown-menu {
     background-color: var(--colorBgHiC);
 }
+.taskbar .navbar-nav li.taskbar-chat a, .taskbar .navbar-nav li.taskbar-chat a:active, .taskbar .navbar-nav li.taskbar-chat a:focus, .taskbar .navbar-nav li.taskbar-chat a:hover {
+    background-color: var(--colorHi);
+    color: var(--colorHiFg);
+    /*border-color: var(--colorHi);*/
+}
 
 
 /* Composer */
