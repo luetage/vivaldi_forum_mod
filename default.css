@@ -200,6 +200,7 @@ section.footer-notification {
 /* transparent logo for very small media widths */
 @media (max-width: 420px) {
     #vivaldiheader #vivaldilogo {
-        background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mobile.png') center no-repeat !important;
+        background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mobile.svg') !important;
+        background-size: contain;
     }
 }

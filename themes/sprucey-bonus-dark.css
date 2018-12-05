@@ -168,6 +168,54 @@ hr {
     height: 30px;
     border: 2px solid #E1E1E1;
 }
+#submenu
+{
+  background-color: #2e3539;
+  border-bottom: 1px solid #545b6b;
+  box-shadow: 4px 10px 5px -8px rgba(0, 0, 0, 0.5);
+}
+
+#vivaldiheader
+{
+  background: #3f494e;
+  border-bottom: 1px solid #545b6b !important;
+}
+
+#submenu a:focus,
+#submenu a:hover,
+#submenu li.active>a
+{
+  color: #ddd;
+  background-color: #242a2d;
+}
+
+#vivaldiheader a,
+#vivaldiheader a:active,
+#vivaldiheader a:focus,
+#vivaldiheader a:visited
+{
+  color: #aaa !important;
+}
+
+#vivaldimenu ul a:hover
+{
+  background: #2e3539;
+}
+
+#vivaldimenu ul
+{
+  background: #3f494e;
+  border: 1px solid #545b6b;
+}
+
+#vivaldimenu ul li
+{
+  border-top: 1px solid #545b6b;
+}
+.category-children a small:hover
+{
+  color: #fff;
+}
 
 
 /*------- Messed with by luetage -------*/
@@ -221,16 +269,6 @@ a.btn-register, a.btn-login {
 a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus {
     background-color: #3e494d !important;
     border: none;
-}
-
-
-/* Logo */
-
-#vivaldilogo {
-  background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
-}
-#vivaldilogo img {
-  display: none !important;
 }
 
 
@@ -438,6 +476,9 @@ div.preview.well a:hover, div.preview.well a:focus {
 .posts-list .posts-list-item .topic-title, a {
     color: #f1f1f1;
 }
+.posts-list .posts-list-item .topic-title:hover {
+    color: #ddd;
+}
 ul.nav.nav-pills a:hover, ul.nav.nav-pills a:focus {
     color: #ccc !important;
 }
@@ -578,140 +619,7 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
 a:hover {
   color: #ddd;
 }
-#submenu
-{
-  background-color: #2e3539;
-  border-bottom: 1px solid #545b6b;
-  box-shadow: 4px 10px 5px -8px rgba(0, 0, 0, 0.5);
-}
 
-#vivaldiheader
-{
-  background: #3f494e;
-  border-bottom: 1px solid #545b6b !important;
-}
-
-#submenu a:focus,
-#submenu a:hover,
-#submenu li.active>a
-{
-  color: #ddd;
-  background-color: #242a2d;
-}
-
-#vivaldiheader a,
-#vivaldiheader a:active,
-#vivaldiheader a:focus,
-#vivaldiheader a:visited
-{
-  color: #aaa !important;
-}
-
-#vivaldimenu ul a:hover
-{
-  background: #2e3539;
-}
-
-#vivaldimenu ul
-{
-  background: #3f494e;
-  border: 1px solid #545b6b;
-}
-
-#vivaldimenu ul li
-{
-  border-top: 1px solid #545b6b;
-}
-.category-children a small:hover
-{
-  color: #fff;
-}
-
-
-/*
-Railscasts-like style (c) Visoft, Inc. (Damien White)
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #121212 !important;
-  color: #e6e1dc;
-}
-.hljs-comment,
-.hljs-quote {
-  color: #bc9458;
-  font-style: italic;
-}
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #c26230;
-}
-.hljs-string,
-.hljs-number,
-.hljs-regexp,
-.hljs-variable,
-.hljs-template-variable {
-  color: #a5c261;
-}
-.hljs-subst {
-  color: #519f50;
-}
-.hljs-tag,
-.hljs-name {
-  color: #e8bf6a;
-}
-.hljs-type {
-  color: #da4939;
-}
-.hljs-symbol,
-.hljs-bullet,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-attr,
-.hljs-link {
-  color: #6d9cbe;
-}
-.hljs-params {
-  color: #d0d0ff;
-}
-.hljs-attribute {
-  color: #cda869;
-}
-.hljs-meta {
-  color: #9b859d;
-}
-.hljs-title,
-.hljs-section {
-  color: #ffc66d;
-}
-.hljs-addition {
-  background-color: #144212;
-  color: #e6e1dc;
-}
-.hljs-deletion {
-  background-color: #600;
-  color: #e6e1dc;
-}
-.hljs-selector-class {
-  color: #9b703f;
-}
-.hljs-selector-id {
-  color: #8b98ab;
-}
-.hljs-emphasis {
-  font-style: italic;
-}
-.hljs-strong {
-  font-weight: bold;
-}
-.hljs-link {
-  text-decoration: underline;
-}
-.hljs-literal, .hljs-selector-pseudo {
-  color: #e6e1dc;
-}
 
 /* Advanced formatting mod */
 

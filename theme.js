@@ -1,5 +1,20 @@
 /* Theme */
 
+function _logoWhite() {
+    var getLogoWhite = document.createElement('link');
+    getLogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
+    getLogoWhite.type = 'text/css';
+    getLogoWhite.rel = 'stylesheet';
+    document.getElementsByTagName('head')[0].appendChild(getLogoWhite);
+};
+function _logoBlack() {
+    var getLogoBlack = document.createElement('link');
+    getLogoBlack.href = chrome.extension.getURL('themes/logo-black.css');
+    getLogoBlack.type = 'text/css';
+    getLogoBlack.rel = 'stylesheet';
+    document.getElementsByTagName('head')[0].appendChild(getLogoBlack);
+};
+
 chrome.storage.sync.get({
     'darkGrey': '',
     'lightGrey': '',
@@ -43,7 +58,21 @@ function(theme) {
         compactHeader.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(compactHeader);
     }
-
+    //logo
+    if (theme.sprucey === '1' || theme.lightGrey === '1' || theme.darkGrey === '1') {
+        _logoWhite();
+    }
+    if (theme.mod === '1') {
+        _logoBlack();
+    }
+   if (theme.custom === '1' ) {
+        if (theme.logoWhite === '1') {
+            _logoWhite();
+        }
+        else {
+            _logoBlack();
+        }
+    }
     //themes
     if (theme.darkGrey === '1') {
         var themeDarkGrey = document.createElement('link');
@@ -105,20 +134,6 @@ function(theme) {
                 setTimeout(wait, 100);
             }
         }, 100);
-        if (theme.logoWhite === '1') {
-            var getLogoWhite = document.createElement('link');
-            getLogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
-            getLogoWhite.type = 'text/css';
-            getLogoWhite.rel = 'stylesheet';
-            document.getElementsByTagName('head')[0].appendChild(getLogoWhite);
-        }
-        else {
-            var getLogoBlack = document.createElement('link');
-            getLogoBlack.href = chrome.extension.getURL('themes/logo-black.css');
-            getLogoBlack.type = 'text/css';
-            getLogoBlack.rel = 'stylesheet';
-            document.getElementsByTagName('head')[0].appendChild(getLogoBlack);
-        }
         var themeCustom = document.createElement('link');
         themeCustom.href = chrome.extension.getURL('themes/custom.css');
         themeCustom.type = 'text/css';
