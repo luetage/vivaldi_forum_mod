@@ -161,11 +161,6 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     border-top: none !important;
 }
 
-/* Remove padding from items in header to fix overshooting and submenu issues */
-#vivaldimenu .hov {
-    padding-bottom: 0px !important;
-}
-
 /* Auto-hide header transition */
 #header-menu, #submenu {
     transition: top 0.857s !important;

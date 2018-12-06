@@ -27,6 +27,9 @@
 .navbar-header {
     padding-top: 0;
 }
+#vivaldimenu .hov {
+    padding-bottom: 8px;
+}
 
 /* margin adjustements */
 .page-user-chats #content.container {
