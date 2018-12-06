@@ -216,6 +216,11 @@ hr {
 {
   color: #fff;
 }
+.fa-ellipsis-v:before {
+    font-size: 150% !important;
+    vertical-align: -2px !important;
+    content: "\f013" !important;
+}
 
 
 /*------- Messed with by luetage -------*/
