@@ -1,3 +1,5 @@
+/** Theme Light-Grey **/
+
 /* Colour variables */
 
 :root {
@@ -512,7 +514,8 @@ pre code {
 }
 
 code {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    background: transparent
 }
 
 div.content pre code {
@@ -571,6 +574,10 @@ button.fab.dropdown-toggle {
 
 .taskbar .navbar-nav li a {
     padding: 5px 15px;
+}
+
+.composer .formatting-bar .formatting-group li {
+    color: var(--second-fg)
 }
 
 .composer .preview, .composer .write,
