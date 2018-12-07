@@ -192,22 +192,21 @@ strong, a {
     background-color: transparent;
     border: 20px solid transparent;
 }
-.active .themebox-image .selectbox-checkmark {
+.active .themebox-image .themebox-checkmark {
     opacity: 1;
     transform: none;
 }
-.themebox-image .selectbox-checkmark {
+.themebox-image .themebox-checkmark {
     transform: scale(1.5) translateX(2px) translateY(2px);
     opacity: 0;
     transition: 0.4s;
     position: absolute;
     height: 16px;
     width: 16px;
-    bottom: 5px;
-    right: 5px;
+    bottom: 3px;
+    right: 3px;
+    stroke-width: 2px;
 }
-
-
 
 /* themebox border colors */
 #custom1.active .themebox-image {
@@ -217,8 +216,9 @@ strong, a {
     border-bottom-color: var(--c1Hi);
     border-right-color: var(--c1Hi);
 }
-#custom1 .themebox-image .selectbox-checkmark {
-    fill: var(--c1Bg);
+#custom1 .themebox-image .themebox-checkmark {
+    fill: var(--c1Hi);
+    stroke: var(--c1Bg);
 }
 #custom2.active .themebox-image {
     border-color: var(--c2Hi);
@@ -227,8 +227,9 @@ strong, a {
     border-bottom-color: var(--c2Hi);
     border-right-color: var(--c2Hi);
 }
-#custom2 .themebox-image .selectbox-checkmark {
-    fill: var(--c2Bg);
+#custom2 .themebox-image .themebox-checkmark {
+    fill: var(--c2Hi);
+    stroke: var(--c2Bg);
 }
 #custom3.active .themebox-image {
     border-color: var(--c3Hi);
@@ -237,8 +238,9 @@ strong, a {
     border-bottom-color: var(--c3Hi);
     border-right-color: var(--c3Hi);
 }
-#custom3 .themebox-image .selectbox-checkmark {
-    fill: var(--c3Bg);
+#custom3 .themebox-image .themebox-checkmark {
+    fill: var(--c3Hi);
+    stroke: var(--c3Bg);
 }
 #custom4.active .themebox-image {
     border-color: var(--c4Hi);
@@ -247,8 +249,9 @@ strong, a {
     border-bottom-color: var(--c4Hi);
     border-right-color: var(--c4Hi);
 }
-#custom4 .themebox-image .selectbox-checkmark {
-    fill: var(--c4Bg);
+#custom4 .themebox-image .themebox-checkmark {
+    fill: var(--c4Hi);
+    stroke: var(--c4Bg);
 }
 #standard.active .themebox-image {
     border-color: #ef3939;
@@ -257,8 +260,9 @@ strong, a {
     border-bottom-color: #ef3939;
     border-right-color: #ef3939;
 }
-#standard .themebox-image .selectbox-checkmark {
-    fill: #fff;
+#standard .themebox-image .themebox-checkmark {
+    fill: #ef3939;
+    stroke: #fff;
 }
 #darkGrey.active .themebox-image {
     border-color: #ec2224;
@@ -267,8 +271,9 @@ strong, a {
     border-bottom-color: #ec2224;
     border-right-color: #ec2224;
 }
-#darkGrey .themebox-image .selectbox-checkmark {
-    fill: #1e1e1e;
+#darkGrey .themebox-image .themebox-checkmark {
+    fill: #ec2224;
+    stroke: #fff;
 }
 #lightGrey.active .themebox-image {
     border-color: #ec2224;
@@ -277,8 +282,9 @@ strong, a {
     border-bottom-color: #ec2224;
     border-right-color: #ec2224;
 }
-#lightGrey .themebox-image .selectbox-checkmark {
-    fill: #fff;
+#lightGrey .themebox-image .themebox-checkmark {
+    fill: #ec2224;
+    stroke: #fff;
 }
 #mod.active .themebox-image {
     border-color: #d01126;
@@ -287,8 +293,9 @@ strong, a {
     border-bottom-color: #d01126;
     border-right-color: #d01126;
 }
-#mod .themebox-image .selectbox-checkmark {
-    fill: #ebf5f7;
+#mod .themebox-image .themebox-checkmark {
+    fill: #d01126;
+    stroke: #ebf5f7;
 }
 #sprucey.active .themebox-image {
     border-color: #337ab7;
@@ -297,13 +304,10 @@ strong, a {
     border-bottom-color: #337ab7;
     border-right-color: #337ab7;
 }
-#sprucey .themebox-image .selectbox-checkmark {
-    fill: #f1f1f1;
+#sprucey .themebox-image .themebox-checkmark {
+    fill: #337ab7;
+    stroke: #f1f1f1;
 }
-
-
-
-
 
 .themebox .themebox-title {
     white-space: normal;
@@ -336,8 +340,17 @@ input[type="color" i] {
 
 /* Modifications page */
 
+#selectMods span::before {
+    content: "\25ef";
+    padding-right: 8px;
+    opacity: 0;
+}
 .selected {
     color: hsl(353, 85%, 44%);
+}
+#selectMods span.selected::before {
+    opacity: 1;
+    color: hsl(0, 0%, 37%);
 }
 #editCSS button {
     margin-bottom: 4px;
