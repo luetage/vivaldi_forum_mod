@@ -524,7 +524,8 @@ pre code {
 }
 
 code {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    background: transparent
 }
 
 div.content pre code {
@@ -585,6 +586,10 @@ button.fab.dropdown-toggle {
     padding: 5px 15px;
 }
 
+.composer .formatting-bar .formatting-group li {
+    color: var(--second-fg)
+}
+
 .composer .preview, .composer .write,
 div.preview.well {
     background-color: var(--main-bg);
@@ -594,6 +599,7 @@ div.preview.well {
 textarea.write, div.preview.well {
     color: var(--main-fg)
 }
+
 
 /* Composer tooltip */
 
