@@ -14,7 +14,7 @@
     --second-fg: hsl(207,5%,42%);
     --third-fg: hsl(176, 69%, 40%);
     --accent-color: hsl(359, 84%, 53%);
-    --button-bg: hsl(206, 50%, 43%);
+    --button-bg: hsl(206, 80%, 43%);
     --button-hover: hsl(212, 88%, 69%);
     --button-fg: hsl(0, 0%, 100%);
     --second-button-bg: hsl(176, 69%, 40%);
@@ -520,6 +520,7 @@ div.content p code {
     background-color: transparent
 }
 
+.panel-default>.panel-heading,
 div.panel-body {
     background: var(--second-bg)
 }
@@ -798,6 +799,14 @@ li.chat-message.clear {
 .notifications-list li.unread {
     background: var(--main-bg);
 }
+
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li,
+.chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"], .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"],
+.chat-modal [component="chat/nav-wrapper"] .chat-search input, .chats-full [component="chat/nav-wrapper"] .chat-search input{
+    background: var(--menu-bg);
+    border: 0;
+}
+
 
 
 /*** Buttons ***/
