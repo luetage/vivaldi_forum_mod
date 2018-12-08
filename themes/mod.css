@@ -392,6 +392,12 @@ div.shadow-box1, div.shadow-box2 {
 
 /** Logo **/
 
+#vivaldilogo {
+    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mod.png') no-repeat;
+}
+#vivaldilogo img {
+    display: none !important;
+}
 #vivaldifooter #vivaldi-icon path:nth-of-type(1) {
     fill: #00247d;
 }

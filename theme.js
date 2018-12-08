@@ -62,10 +62,7 @@ function(theme) {
     if (theme.sprucey === '1' || theme.lightGrey === '1' || theme.darkGrey === '1') {
         _logoWhite();
     }
-    if (theme.mod === '1') {
-        _logoBlack();
-    }
-   if (theme.custom === '1' ) {
+    if (theme.custom === '1' ) {
         if (theme.logoWhite === '1') {
             _logoWhite();
         }
@@ -147,7 +144,6 @@ function(theme) {
         themeStandard.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeStandard);
     }
-
     // user css
     if (theme.cssToggle === '1') {
         chrome.storage.local.get({'userCSS': ''}, function(local) {
