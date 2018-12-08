@@ -502,7 +502,7 @@ span.chat-timestamp.timeago {
 .form-control:focus,
 input.form-control, select.form-control,
 .search .post-search-item .bootstrap-tagsinput {
-    background-color: var(--nav-bg);
+    background-color: var(--main-bg);
     color: var(--nav-fg);
     border: none;
     border-radius: 2px;
@@ -512,7 +512,7 @@ input.form-control, select.form-control,
 #advanced-search .panel-body.search-options,
 div.panel-body.search-options.collapse.in,
 div.panel-heading {
-    background-color: var(--main-bg);
+    background-color: var(--second-bg);
     border: none;
 }
 
