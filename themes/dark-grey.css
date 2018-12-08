@@ -1,5 +1,3 @@
-/** Theme Dark-Grey **/
-
 /* Colour variables */
 
 :root {
@@ -9,14 +7,14 @@
     --header-fg: hsl(228,3%,66%);
     --nav-bg: hsl(210, 2%, 12%);
     --nav-fg: hsl(207,5%,42%);
-    --menu-bg: hsl(210, 2%, 10%);
-    --menu-highlight: hsl(210, 3%, 15%);
-    --menu-fg: hsl(207,5%,42%);
+    --menu-bg: hsl(210, 2%, 8%);
+    --menu-highlight: hsl(210, 3%, 10%);
+    --menu-fg: hsl(207,5%,52%);
     --second-bg: hsl(210, 2%, 13%);
     --second-fg: hsl(207,5%,42%);
     --third-fg: hsl(176, 69%, 40%);
     --accent-color: hsl(359, 84%, 53%);
-    --button-bg: hsl(206, 80%, 43%);
+    --button-bg: hsl(206, 50%, 43%);
     --button-hover: hsl(212, 88%, 69%);
     --button-fg: hsl(0, 0%, 100%);
     --second-button-bg: hsl(176, 69%, 40%);
@@ -63,17 +61,19 @@ body {
 
 #vivaldiheader {
     background-color: var(--header-bg) !important;
-    z-index: 999999
-}
-
-#vivaldimenu a.has-submenu {
-    margin-top: -8px;
-    padding-top: 13px;
+    margin-top: 0;
     height: 50px;
 }
 
+#vivaldiheader>.row {
+    padding: 13px 15px;
+}
+
 #vivaldimenu a.has-submenu:hover {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    margin-top: -8px;
+    padding-top: 13px;
+    height: 50px;
 }
 
 #vivaldiheader a,
@@ -85,23 +85,6 @@ body {
 
 #vivaldimenu a.current, #vivaldiheader a.current:hover {
     color: var(--accent-color);
-}
-
-#vivaldimenu .hov {
-    padding-bottom: 10px;
-}
-
-#vivaldimenu .hov:hover:after {
-    border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) var(--menu-bg) hsla(0, 0%, 0%, 0);
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    bottom: 1px;
-    content: '';
-    height: 0;
-    left: 14px;
-    position: absolute;
-    width: 0;
-    z-index: 999999;
 }
 
 a.dropdown-toggle:focus,
@@ -166,11 +149,29 @@ a.dropdown-toggle:active,
 
 /* Header dropdown menus */
 
+#vivaldimenu .hov {
+    padding-bottom: 0;
+    height: 30px;
+}
+
+#vivaldimenu .hov:hover:after {
+    border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) var(--menu-bg) hsla(0, 0%, 0%, 0);
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    bottom: -12px;
+    content: '';
+    height: 0;
+    left: 14px;
+    position: absolute;
+    width: 0;
+}
+
 #vivaldimenu ul {
     background-color: var(--menu-bg) !important;
     border: 2px solid var(--menu-bg);
     border-radius: 0;
-    margin-top: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+    margin-top: 2px;
 }
 
 #vivaldimenu ul li {
@@ -185,7 +186,7 @@ a.dropdown-toggle:active,
 
 #vivaldimenu ul a:hover {
     background: var(--menu-highlight);
-    color: var(--second-fg);
+    color: var(--menu-fg);
     border-radius: 0 !important;
 }
 
@@ -199,13 +200,12 @@ a.dropdown-toggle:active,
     right: 14px;
     position: absolute;
     width: 0;
-    z-index: 999999;
 }
 
 .dropdown-menu, #logged-in-menu .dropdown-menu {
     background-color: var(--menu-bg);
     border: 2px solid var(--menu-bg);
-    margin-top: 8px;
+    margin-top: -1px;
     min-width: 180px;
     padding: 5px 0 0 !important;
 }
@@ -300,6 +300,13 @@ li.divider {
     background-color: var(--nav-bg) !important;
     border: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    top: 50px !important;
+    height: 50px;
+}
+
+#submenu li, #submenu ul {
+    height: 50px;
+    line-height: 50px;
 }
 
 #submenu a {
@@ -337,6 +344,12 @@ li.divider {
     border-radius: 0;
     border: 10px solid var(--second-bg);
     padding: 25px 50px 0 !important;
+}
+
+.well {
+    background: var(--second-bg);
+    border: 0;
+    box-shadow: none
 }
 
 .categories>li .content .icon,
@@ -974,66 +987,16 @@ span.votes a:hover, .upvoted i.fa.fa-chevron-up:hover, .downvoted i.fa.fa-chevro
 }
 
 
-/***** Mods *****/
-
-
-/* Hides various tooltips in navigation */
+/*** Hiding stuff ***/
 
 .menuwrapper .tooltip, #header-menu .tooltip, .account .cover .avatar-wrapper .tooltip {
     display: none !important;
 }
 
-/* Compact header */
-
-#vivaldiheader>.row {
-    padding: 13px 20px;
-}
-
-#submenu li, #submenu ul {
-    height: 50px;
-    line-height: 50px;
-}
-
-#submenu {
-    top: 50px !important;
-    height: 50px;
-}
-
-#vivaldiheader {
-    padding-top: 0px;
-    height: 50px;
-}
-
-#vivaldilogin {
-    top: -8px;
-}
-
-@media (min-width: 768px) {
-    #content {
-         padding-top: 20px !important;
-    }
-}
-
-.navbar {
-    margin-bottom: 0px;
-}
 
 #vivaldimenu > li:nth-child(1), #vivaldimenu > li:nth-child(2) {
     display: none;
 }
-
-.navbar-header {
-    padding-top: 0;
-}
-
-.account .initialised {
-    margin-top: 50px !important;
-}
-
-.page-user-chats #content.container {
-    padding-top: 10px !important;
-}
-
 
 
 /****** This code still needs to be addressed ********/
