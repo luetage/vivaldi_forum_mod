@@ -1,37 +1,8 @@
 /** Default fixes, improvements and modifications for all themes **/
 
-/* Account + groups cover and content adjustments */
 /* centers profile avatars (avatar width with 4px borders at 136px) */
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
-}
-/* ensures there is no difference between your personal (initialised) and other user's profiles */
-.account .initialised {
-    margin-top: unset !important;
-}
-/* shows the whole cover for profiles and groups (currently still adjusted for 100px header instead of 120px (64+56) */
-@media (min-width: 992px) {
-    .account .cover, .groups.details [component="groups/cover"] {
-        top: 120px !important;
-    }
-}
-@media (max-width: 991px) {
-    .account .cover, .groups.details [component="groups/cover"]  {
-        top: 120px !important;
-    }
-    /* brings account content up, needed because account covers are only 200px instead of 300px high at this screen size */
-    .account {
-        margin-top: 200px !important;
-    }
-}
-@media (max-width: 767px) {
-    .account .cover, .groups.details [component="groups/cover"] {
-        top: 64px !important;
-    }
-    /* adjusts for missing submenu */
-    #content.container {
-        margin-top: -56px;
-    }
 }
 
 /* Font icons */
@@ -149,11 +120,6 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 }
 .topic .pagination-block .progress-bar {
     background-color: #101010 !important;
-}
-
-/* full chat content container padding fix */
-.page-user-chats #content.container {
-    padding-top: 30px !important;
 }
 
 /* remove top border from chats list to fix avatar offset */

@@ -51,12 +51,37 @@ chrome.storage.sync.get({
 },
 function(theme) {
     //header
-    if (theme.compact === '1') {
-        var compactHeader = document.createElement('link');
-        compactHeader.href = chrome.extension.getURL('mods/compact-header.css');
-        compactHeader.type = 'text/css';
-        compactHeader.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(compactHeader);
+    if (theme.darkGrey === '1' || theme.lightGrey === '1' || theme.mod === '1' || theme.sprucey === '1') {
+        if (theme.compact === '1') {
+            var compactHeaderAlt = document.createElement('link');
+            compactHeaderAlt.href = chrome.extension.getURL('mods/compact-header-alt.css');
+            compactHeaderAlt.type = 'text/css';
+            compactHeaderAlt.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(compactHeaderAlt);
+        }
+        else {
+            var standardHeaderAlt = document.createElement('link');
+            standardHeaderAlt.href = chrome.extension.getURL('mods/standard-header-alt.css');
+            standardHeaderAlt.type = 'text/css';
+            standardHeaderAlt.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(standardHeaderAlt);
+        }
+    }
+    else {
+        if (theme.compact === '1') {
+            var compactHeader = document.createElement('link');
+            compactHeader.href = chrome.extension.getURL('mods/compact-header.css');
+            compactHeader.type = 'text/css';
+            compactHeader.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(compactHeader);
+        }
+        else {
+            var standardHeader = document.createElement('link');
+            standardHeader.href = chrome.extension.getURL('mods/standard-header.css');
+            standardHeader.type = 'text/css';
+            standardHeader.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(standardHeader);
+        }
     }
     //logo
     if (theme.sprucey === '1' || theme.lightGrey === '1' || theme.darkGrey === '1') {

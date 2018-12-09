@@ -647,7 +647,7 @@ a:hover {
   background-color: #43494d;
 }
 
-/** Emoji box colorization **/ 
+/** Emoji box colorization **/
 /* Emoji box fix */
 .emoji-dialog .top-bar,
 .emoji-tabs {background-color: #4d585f;}
@@ -661,4 +661,3 @@ img.not-responsive.emoji.emoji-emoji-one.emoji--speaking_head,
 img.not-responsive.emoji.emoji-emoji-one.emoji--bust_in_silhouette,
 img.not-responsive.emoji.emoji-emoji-one.emoji--busts_in_silhouette,
 img.not-responsive.emoji.emoji-emoji-one.emoji--heavy_check_mark {filter: invert(1);}
-
