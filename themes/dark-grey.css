@@ -545,17 +545,14 @@ pre {
     border-radius: 2px;
 }
 
-pre code {
+pre code, div.content pre code  {
     background-color: var(--header-bg) !important;
+    color: var(--second-fg)
 }
 
 code {
     color: var(--accent-color);
     background: transparent
-}
-
-div.content pre code {
-    color: var(--second-fg)
 }
 
 
