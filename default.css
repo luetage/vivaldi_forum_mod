@@ -53,21 +53,6 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
     cursor: pointer;
 }
 
-/* Flickering fix */
-@keyframes fixthemes {
-    from {
-        transform: scale3d(1, 1, 1);
-    }
-    to {
-        transform: scale3d(1, 1, 1);
-    }
-}
-#vivaldilogo {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: fixthemes;
-}
-
 /* Blockquote search fontsize/margin fix */
 .search blockquote {
     font-size: 100%;
@@ -92,8 +77,8 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
     margin-left: 4px !important;
 }
-button[type^="submit"].btn-primary, .btn-default#save-preferences {
-    margin-right: 4px;
+button[type^="submit"].btn-primary, .btn-default#save-preferences, .composer .title-container .category-list-container [component=category-selector] {
+    margin-right: 4px !important;
 }
 
 /* Disabled user-select for logged-in menu (prevents accidental highlighting of dropdown text when dropdown isn't expanded) */
