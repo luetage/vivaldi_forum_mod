@@ -53,7 +53,7 @@ body {
 }
 
 #vivaldilogo {
-    background: url('https://raw.githubusercontent.com/sjudenim/Vivaldi-Forum-Mod/master/themes/img/logo-white.png') no-repeat;
+	background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
     height: 30px !important;
     width: 150px !important;
 }
@@ -315,13 +315,9 @@ li.divider {
     color: var(--nav-fg) !important;
 }
 
-#submenu li.active>a {
-    color: var(--accent-color);
-    background-color: var(--nav-bg);
-}
-
-#submenu a:focus, #submenu a:hover, #submenu li.active>a:hover {
-    background-color: var(--menu-highlight);
+#submenu a:focus, #submenu a:hover,
+#submenu li.active>a:hover, #submenu li.active>a {
+    background-color: var(--header-bg);
     color: var(--accent-color) !important;
 }
 
@@ -340,7 +336,6 @@ li.divider {
 /*** Content ***/
 
 #content {
-    margin-top: .5%;
     background: var(--second-bg) !important;
     box-shadow: 0 2px 30px 0 rgba(0, 0, 0, .2) !important;
     border-radius: 0;
@@ -525,6 +520,21 @@ div.content p code {
 .panel-default>.panel-heading,
 div.panel-body {
     background: var(--second-bg)
+}
+
+
+/* Community page */
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 10px;
+    border-top: 1px solid var(--second-bg);
+    background: var(--main-bg);
+}
+
+.input-group-addon {
+    padding: 14px;
+    background: var(--main-bg) !important;
+    border: 0
 }
 
 
@@ -973,6 +983,10 @@ ul.dropdown-menu.dropdown-menu-right a:hover {
     color: var(--second-fg) !important;
 }
 
+.copy-all-code-button {
+    right: 35px;
+}
+
 
 /* Vote indicator */
 
@@ -995,6 +1009,35 @@ span.votes a:hover, .upvoted i.fa.fa-chevron-up:hover, .downvoted i.fa.fa-chevro
 
 .topic .votes [component="post/downvote"].downvoted {
     background-color: hsl(346, 98%, 60%) !important;
+}
+
+
+/* Advanced formatting emoji mod */
+.vivaldi-mod-modal-box {
+    background: var(--second-bg);
+    color: var(--main-fg);
+    border: 0;
+    padding: 0 0 8px 0;
+}
+
+.vivaldi-mod-modal-box-control-bar {
+    background: var(--header-bg);
+    color: var(--second-fg);
+    padding: 5px;
+    border-radius: 4px 0 0 0; 
+}
+
+.vivaldi-mod-modal-box-close {
+    background: var(--header-bg);
+    color: var(--second-fg) !important;
+    border-left: 1px solid var(--second-bg);
+    border-radius: 0 4px 0 0
+}
+
+.vivaldi-mod-modal-box-close:hover {
+    background: hsl(346, 98%, 60%);
+    color: var(--button-fg) !important;
+    border-left: 1px solid var(--second-bg);
 }
 
 
@@ -1062,17 +1105,6 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
     color: var(--second-fg) !important;
 }
 
-.vivaldi-mod-modal-box {
-    background: var(--main-bg);
-    border-color: hsl(0, 0%, 88%);
-    color: hsl(0, 0%, 20%);
-}
-
-.vivaldi-mod-modal-box-control-bar {
-    background: hsl(0, 0%, 88%);
-    color: var(--second-fg);
-}
-
 .dropmarker, .dropmarker:after {
     background: var(--main-fg);
 }
@@ -1088,8 +1120,4 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
 
 .account .profile .profile-meta strong {
     color: var(--second-fg);
-}
-
-.copy-all-code-button {
-    right: 35px;
 }
