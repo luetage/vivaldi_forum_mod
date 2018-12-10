@@ -524,17 +524,14 @@ pre {
     border-radius: 2px;
 }
 
-pre code {
+pre code, div.content pre code  {
     background-color: var(--header-bg) !important;
+    color: var(--second-fg)
 }
 
 code {
     color: var(--accent-color);
     background: transparent
-}
-
-div.content pre code {
-    color: var(--second-fg)
 }
 
 
@@ -1082,8 +1079,6 @@ ul.formatting-group li:hover {
 li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before {
     color: var(--second-fg) !important;
 }
-
-
 
 .dropmarker, .dropmarker:after {
     background: var(--main-fg);
