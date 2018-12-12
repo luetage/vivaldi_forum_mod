@@ -325,6 +325,9 @@ pre {
 pre code {
     color: var(--colorFg2);
 }
+.hljs {
+    background-color: #121212;
+}
 
 
 /* Buttons */
