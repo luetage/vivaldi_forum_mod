@@ -17,6 +17,8 @@ function(mods) {
     var headerScroll = mods.headerScroll;
     var bookmarks = mods.bookmarks;
     var compact = mods.compact;
+    var darkGrey = mods.darkGrey;
+    var lightGrey = mods.lightGrey;
     var notificationIcons = mods.notificationIcons;
     var tooltips = mods.tooltips;
     var unread = mods.unread;
@@ -28,7 +30,7 @@ function(mods) {
 
     if (headerScroll === '1') {
         var modHeaderScroll = document.createElement('script');
-        if (compact === '1') {
+        if (compact === '1' || darkGrey === '1' || lightGrey === '1') {
             modHeaderScroll.src = chrome.extension.getURL('mods/header_scroll_compact.js');
         }
         else {
