@@ -52,7 +52,7 @@ chrome.storage.sync.get({
 function(theme) {
     //header
     if (theme.darkGrey === '1' || theme.lightGrey === '1' || theme.mod === '1' || theme.sprucey === '1') {
-        if (theme.compact === '1') {
+        if (theme.compact === '1' || theme.darkGrey === '1' || theme.lightGrey === '1') {
             var compactHeaderAlt = document.createElement('link');
             compactHeaderAlt.href = chrome.extension.getURL('mods/compact-header-alt.css');
             compactHeaderAlt.type = 'text/css';
