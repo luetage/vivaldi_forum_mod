@@ -168,7 +168,7 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
-        "message": "Hides login menu tooltips.",
+        "message": "Nascondi tooltip",
         "description": "Options: Title of hide tooltips mod."
     },
     "hideTooltipsDesc": {

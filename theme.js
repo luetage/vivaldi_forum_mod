@@ -21,7 +21,7 @@ chrome.storage.sync.get({
     'mod': '',
     'sprucey': '',
     'custom': '',
-    'cssToggle': '',
+    'csscheck': '',
     'compact': '',
     'logoWhite': '',
     'colorBg': '#fdf6e3',
@@ -170,12 +170,12 @@ function(theme) {
         document.getElementsByTagName('head')[0].appendChild(themeStandard);
     }
     // user css
-    if (theme.cssToggle === '1') {
+    if (theme.csscheck === '1') {
         chrome.storage.local.get({'userCSS': ''}, function(local) {
             if (local.userCSS !== '') {
                 var activateUserCSS = document.createElement('style');
                 activateUserCSS.type = 'text/css';
-                activateUserCSS.innerHTML = userCSS;
+                activateUserCSS.innerHTML = local.userCSS;
                 document.getElementsByTagName('head')[0].appendChild(activateUserCSS);
             }
         });

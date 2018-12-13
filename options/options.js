@@ -194,8 +194,8 @@ function restore_options(){
         'userID': '',
         'signatureMod': '',
         'square': '',
-        'cssToggle': '0'
-    },
+        'advancedFormatting': ''
+      },
     function(restore){
         chrome.storage.local.get({'userCSS': ''}, function(local) {
             userCSSS.value = local.userCSS;
@@ -249,14 +249,53 @@ function restore_options(){
         } else {
             notificationIconsS.checked = false;
         }
-        if (restore.cssToggle === '0') {
-            toggleBtn.classList.add('deactivated');
-            textarea.disabled = true;
-            save2Btn.disabled = true;
-            backupBtn.disabled = true;
+        tooltipsS.value = restore.tooltips;
+        if (tooltipsS.value == 1) {
+            tooltipsS.checked = true;
+        } else {
+            tooltipsS.checked = false;
         }
-        if (changeMessage === false) {
-            status.innerText = chrome.i18n.getMessage('statusThemes');
+        unreadS.value = restore.unread;
+        if (unreadS.value == 1) {
+            unreadS.checked = true;
+        } else {
+            unreadS.checked = false;
+        }
+        timestampS.value = restore.timestamp;
+        if (timestampS.value == 1) {
+            timestampS.checked = true;
+        } else {
+            timestampS.checked = false;
+        }
+        compactS.value = restore.compact;
+        if (compactS.value == 1) {
+            compactS.checked = true;
+        } else {
+            compactS.checked = false;
+        }
+        userIDS.value = restore.userID;
+        if (userIDS.value == 1) {
+            userIDS.checked = true;
+        } else {
+            userIDS.checked = false;
+        }
+        signatureModS.value = restore.signatureMod;
+        if (signatureModS.value == 1) {
+            signatureModS.checked = true;
+        } else {
+            signatureModS.checked = false;
+        }
+        squareS.value = restore.square;
+        if (squareS.value == 1) {
+            squareS.checked = true;
+        } else {
+            squareS.checked = false;
+        }
+        advancedFormattingS.value = restore.advancedFormatting;
+        if (advancedFormattingS.value == 1) {
+            advancedFormattingS.checked = true;
+        } else {
+            advancedFormattingS.checked = false;
         }
     });
 };
@@ -264,111 +303,33 @@ function restore_options(){
 
 /* Reset options */
 
-function _selectMods(event) {
-    const mod = event.currentTarget;
-    const name = mod.getAttribute('id');
-    if (mod.classList.contains('selected')) {
-        mod.removeAttribute('class');
-        chrome.storage.sync.set({[name]: '0'});
-    }
-    else {
-        mod.classList.add('selected');
-        chrome.storage.sync.set({[name]: '1'});
-    }
-};
-
-
-/* Use tab in textarea (tab to 4 spaces) */
-
-function _tabSpaces(key) {
-    if (key.keyCode === 9 || key.which === 9) {
-        key.preventDefault();
-        var select = this.selectionStart;
-        this.value = this.value.substring(0,this.selectionStart) + "    " + this.value.substring(this.selectionEnd);
-        this.selectionEnd = select+4;
-    }
-};
-
-
-/* Toggle User CSS */
-
-function _toggleUserCSS() {
-    if (toggleBtn.classList.contains('deactivated')) {
-        chrome.storage.sync.set({'cssToggle': '1'}, function() {
-            toggleBtn.classList.remove('deactivated');
-            save2Btn.disabled = false;
-            backupBtn.disabled = false;
-            textarea.disabled = false;
-            status.innerText = chrome.i18n.getMessage('activateUserCSS')
-        });
-    }
-    else {
-        chrome.storage.sync.set({'cssToggle': '0'}, function() {
-            toggleBtn.classList.add('deactivated');
-            save2Btn.disabled = true;
-            backupBtn.disabled = true;
-            textarea.disabled = true;
-            status.innerText = chrome.i18n.getMessage('deactivateUserCSS')
-        });
-    }
-};
-
-
-/* Save User CSS */
-
-function _saveUserCSS() {
-    var userCSS = document.getElementById('userCSS').value;
-    chrome.storage.local.set({
-        'userCSS': userCSS
-    },
-    function() {
-        status.innerText = chrome.i18n.getMessage('saveUserCSS');
-    });
-};
-
-
-/* Backup User CSS */
-
-function _backupUserCSS() {
-    var userCSS = document.getElementById('userCSS').value;
-    const url = 'data:text/css;base64,' + btoa(userCSS);
-    chrome.downloads.download({
-        url: url,
-        saveAs: true,
-        filename: 'backup.css'
-    });
-};
-
-
-/* Reset Extension */
-
-function _resetOptions() {
-    if (!resetBtn.classList.contains('confirm')) {
-        resetBtn.classList.add('confirm');
-        status.innerText = chrome.i18n.getMessage('confirmReset');
+function reset_options() {
+    var reset = document.getElementById('reset-button');
+    var status = document.getElementById('status');
+    if (reset.innerHTML === 'Reset') {
+        reset.innerHTML = 'Sure'
+        status.innerHTML = 'Are you sure?'
         setTimeout(function() {
-            if (status.innerText === chrome.i18n.getMessage('confirmReset')) {
-                status.innerText = chrome.i18n.getMessage('cancelReset');
+            if (status.innerHTML === 'Are you sure?') {
+                status.innerHTML = '';
+            }
+            if (reset.innerHTML === 'Sure') {
+                reset.innerHTML = 'Reset';
             }
           }, 5000);
     }
     else {
         chrome.storage.sync.clear(function() {
             chrome.storage.local.clear(function() {
-                selectMods.forEach(function(mod) {
-                    if (mod.classList.contains('selected')) {
-                        mod.removeAttribute('class');
+                restore_options();
+                restore_theme();
+                reset.innerHTML = 'Reset';
+                status.innerHTML = 'Options reset, storage cleared!';
+                setTimeout(function() {
+                    if (status.innerHTML === 'Options reset, storage cleared!') {
+                        status.innerHTML = '';
                     }
-                });
-                document.querySelectorAll('button.themebox').forEach(function(theme) {
-                    if (theme.classList.contains('active')) {
-                        theme.classList.remove('active');
-                    }
-                });
-                _restore();
-                _showThemes();
-                changeMessage = true;
-                status.innerText = chrome.i18n.getMessage('optionsReset');
+                  }, 7500);
             });
         });
     }
@@ -471,30 +432,14 @@ function updateLocalisations(){
     document.querySelector(".advancedFormattingDesc").innerText = chrome.i18n.getMessage("advancedFormattingDesc");
 }
 
-const navThemes = document.getElementById('themes');
-const navModifications = document.getElementById('modifications');
-const navInfo = document.getElementById('info');
-const btnThemes = document.getElementById('themes-btn');
-const btnModifications = document.getElementById('modifications-btn');
-const btnInfo = document.getElementById('info-btn');
-const selectMods = document.querySelectorAll('#selectMods > p > span');
-const textarea = document.querySelector('textarea');
-const toggleBtn = document.getElementById('css-toggle');
-const save2Btn = document.getElementById('css-save');
-const backupBtn = document.getElementById('css-backup');
-const resetBtn = document.getElementById('reset-btn');
-var changeMessage = false;
-
-btnThemes.addEventListener('click', _showThemes);
-btnModifications.addEventListener('click', _showModifications);
-btnInfo.addEventListener('click', _showInfo);
-selectMods.forEach(function(mod) {
-    mod.addEventListener('click', _selectMods);
-});
-textarea.addEventListener('keydown', _tabSpaces);
-toggleBtn.addEventListener('click', _toggleUserCSS);
-save2Btn.addEventListener('click', _saveUserCSS);
-backupBtn.addEventListener('click', _backupUserCSS);
-resetBtn.addEventListener('click', _resetOptions);
-
-_restore();
+document.addEventListener('DOMContentLoaded', restore_options);
+document.getElementById('save-button').addEventListener('click', save_options);
+document.getElementById('back-button').addEventListener('click', get_back);
+document.getElementById('backup-button').addEventListener('click', back_it_up);
+document.getElementById('reset-button').addEventListener('click', reset_options);
+document.getElementById('edit-button').addEventListener('click', show_edit);
+document.getElementById('css-button').addEventListener('click', show_css);
+document.getElementById('info-btn').addEventListener('click', show_info);
+document.getElementById('credits-btn').addEventListener('click', show_credits);
+document.getElementById('changelog-btn').addEventListener('click', show_changelog);
+updateLocalisations();
