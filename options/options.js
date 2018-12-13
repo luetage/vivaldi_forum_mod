@@ -23,94 +23,94 @@ var advancedFormattingS = document.getElementById('advancedFormatting');
 function save_options(){
 
     if (standardS.checked == true) {
-        standardS.value = 1;
+        standardS.value = '1';
     } else {
-        standardS.value = 0;
+        standardS.value = '0';
     }
     if (darkGreyS.checked == true) {
-        darkGreyS.value = 1;
+        darkGreyS.value = '1';
     } else {
-        darkGreyS.value = 0;
+        darkGreyS.value = '0';
     }
     if (lightGreyS.checked == true) {
-        lightGreyS.value = 1;
+        lightGreyS.value = '1';
     } else {
-        lightGreyS.value = 0;
+        lightGreyS.value = '0';
     }
     if (modS.checked == true) {
-        modS.value = 1;
+        modS.value = '1';
     } else {
-        modS.value = 0;
+        modS.value = '0';
     }
     if (spruceyS.checked == true) {
-        spruceyS.value = 1;
+        spruceyS.value = '1';
     } else {
-        spruceyS.value = 0;
+        spruceyS.value = '0';
     }
     if (customS.checked == true) {
-        customS.value = 1;
+        customS.value = '1';
     } else {
-        customS.value = 0;
+        customS.value = '0';
     }
     if (csscheckS.checked == true) {
-        csscheckS.value = 1;
+        csscheckS.value = '1';
     } else {
-        csscheckS.value = 0;
+        csscheckS.value = '0';
     }
     if (headerScrollS.checked == true) {
-        headerScrollS.value = 1;
+        headerScrollS.value = '1';
     } else {
-        headerScrollS.value = 0;
+        headerScrollS.value = '0';
     }
     if (bookmarksS.checked == true) {
-        bookmarksS.value = 1;
+        bookmarksS.value = '1';
     } else {
-        bookmarksS.value = 0;
+        bookmarksS.value = '0';
     }
     if (notificationIconsS.checked == true) {
-        notificationIconsS.value = 1;
+        notificationIconsS.value = '1';
     } else {
-        notificationIconsS.value = 0;
+        notificationIconsS.value = '0';
     }
     if (tooltipsS.checked == true) {
-        tooltipsS.value = 1;
+        tooltipsS.value = '1';
     } else {
-        tooltipsS.value = 0;
+        tooltipsS.value = '0';
     }
     if (unreadS.checked == true) {
-        unreadS.value = 1;
+        unreadS.value = '1';
     } else {
-        unreadS.value = 0;
+        unreadS.value = '0';
     }
     if (timestampS.checked == true) {
-        timestampS.value = 1;
+        timestampS.value = '1';
     } else {
-        timestampS.value = 0;
+        timestampS.value = '0';
     }
     if (compactS.checked == true) {
-        compactS.value = 1;
+        compactS.value = '1';
     } else {
-        compactS.value = 0;
+        compactS.value = '0';
     }
     if (userIDS.checked == true) {
-        userIDS.value = 1;
+        userIDS.value = '1';
     } else {
-        userIDS.value = 0;
+        userIDS.value = '0';
     }
     if (signatureModS.checked == true) {
-        signatureModS.value = 1;
+        signatureModS.value = '1';
     } else {
-        signatureModS.value = 0;
+        signatureModS.value = '0';
     }
     if (squareS.checked == true) {
-        squareS.value = 1;
+        squareS.value = '1';
     } else {
-        squareS.value = 0;
+        squareS.value = '0';
     }
     if (advancedFormattingS.checked == true) {
-        advancedFormattingS.value = 1;
+        advancedFormattingS.value = '1';
     } else {
-        advancedFormattingS.value = 0;
+        advancedFormattingS.value = '0';
     }
 
     var standard = standardS.value;
@@ -201,98 +201,98 @@ function restore_options(){
             userCSSS.value = local.userCSS;
         });
         standardS.value = restore.standard;
-        if (standardS.value == 1) {
+        if (standardS.value == '1') {
             standardS.checked = true;
         }
         darkGreyS.value = restore.darkGrey;
-        if (darkGreyS.value == 1) {
+        if (darkGreyS.value == '1') {
             darkGreyS.checked = true;
         }
         lightGreyS.value = restore.lightGrey;
-        if (lightGreyS.value == 1) {
+        if (lightGreyS.value == '1') {
             lightGreyS.checked = true;
         }
         modS.value = restore.mod;
-        if (modS.value == 1) {
+        if (modS.value == '1') {
             modS.checked = true;
         }
         spruceyS.value = restore.sprucey;
-        if (spruceyS.value == 1) {
+        if (spruceyS.value == '1') {
             spruceyS.checked = true;
         }
         customS.value = restore.custom;
-        if (customS.value == 1) {
+        if (customS.value == '1') {
             customS.checked = true;
         }
         csscheckS.value = restore.csscheck;
-        if (csscheckS.value == 1) {
+        if (csscheckS.value == '1') {
             csscheckS.checked = true;
         }
         else {
             csscheckS.checked = false;
         }
         headerScrollS.value = restore.headerScroll;
-        if (headerScrollS.value == 1) {
+        if (headerScrollS.value == '1') {
             headerScrollS.checked = true;
         } else {
             headerScrollS.checked = false;
         }
         bookmarksS.value = restore.bookmarks;
-        if (bookmarksS.value == 1) {
+        if (bookmarksS.value == '1') {
             bookmarksS.checked = true;
         } else {
             bookmarksS.checked = false;
         }
         notificationIconsS.value = restore.notificationIcons;
-        if (notificationIconsS.value == 1) {
+        if (notificationIconsS.value == '1') {
             notificationIconsS.checked = true;
         } else {
             notificationIconsS.checked = false;
         }
         tooltipsS.value = restore.tooltips;
-        if (tooltipsS.value == 1) {
+        if (tooltipsS.value == '1') {
             tooltipsS.checked = true;
         } else {
             tooltipsS.checked = false;
         }
         unreadS.value = restore.unread;
-        if (unreadS.value == 1) {
+        if (unreadS.value == '1') {
             unreadS.checked = true;
         } else {
             unreadS.checked = false;
         }
         timestampS.value = restore.timestamp;
-        if (timestampS.value == 1) {
+        if (timestampS.value == '1') {
             timestampS.checked = true;
         } else {
             timestampS.checked = false;
         }
         compactS.value = restore.compact;
-        if (compactS.value == 1) {
+        if (compactS.value == '1') {
             compactS.checked = true;
         } else {
             compactS.checked = false;
         }
         userIDS.value = restore.userID;
-        if (userIDS.value == 1) {
+        if (userIDS.value == '1') {
             userIDS.checked = true;
         } else {
             userIDS.checked = false;
         }
         signatureModS.value = restore.signatureMod;
-        if (signatureModS.value == 1) {
+        if (signatureModS.value == '1') {
             signatureModS.checked = true;
         } else {
             signatureModS.checked = false;
         }
         squareS.value = restore.square;
-        if (squareS.value == 1) {
+        if (squareS.value == '1') {
             squareS.checked = true;
         } else {
             squareS.checked = false;
         }
         advancedFormattingS.value = restore.advancedFormatting;
-        if (advancedFormattingS.value == 1) {
+        if (advancedFormattingS.value == '1') {
             advancedFormattingS.checked = true;
         } else {
             advancedFormattingS.checked = false;

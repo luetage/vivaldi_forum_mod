@@ -55,7 +55,7 @@ function activate_theme(){
         var colorBgHi = shade(colorBg, 0.2);
         var colorBgHiC = shade(colorBg, 0.1);
         var colorBgHiCG = shade(bg2, 0.1);
-        var logoWhite = 1;
+        var logoWhite = '1';
     }
     else {
         var colorBgHiG = shade(bg2, -0.1);
@@ -63,7 +63,7 @@ function activate_theme(){
         var colorBgHi = shade(colorBg, -0.1);
         var colorBgHiC = shade(colorBg, -0.05);
         var colorBgHiCG = shade(bg2, -0.05);
-        var logoWhite = 0;
+        var logoWhite = '0';
     }
     // foreground
     var fg = lum(colorFg);
@@ -114,13 +114,13 @@ function activate_theme(){
     // theme to custom
     document.getElementById('custom').checked = true;
     chrome.storage.sync.set({
-        'standard': 0,
-        'darkGrey': 0,
-        'lightGrey': 0,
-        'grayPink': 0,
-        'mod': 0,
-        'sprucey': 0,
-        'custom': 1,
+        'standard': '0',
+        'darkGrey': '0',
+        'lightGrey': '0',
+        'grayPink': '0',
+        'mod': '0',
+        'sprucey': '0',
+        'custom': '1',
         'logoWhite': logoWhite,
         'colorBg': colorBg,
         'colorFg': colorFg,
