@@ -44,35 +44,14 @@ body {
 }
 
 
-/* Logo */
-
-#vivaldilogo img {
-    display: none !important;
-}
-
-#vivaldilogo {
-    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
-    height: 30px !important;
-    width: 150px !important;
-}
-
-
 /*** Header ***/
 
 #vivaldiheader {
     background-color: var(--header-bg) !important;
-    margin-top: 0;
-    height: 50px;
-}
-
-#vivaldiheader>.row {
-    padding: 13px 15px;
 }
 
 #vivaldimenu a.has-submenu:hover {
     color: var(--accent-color);
-    margin-top: -8px;
-    padding-top: 13px;
     height: 50px;
 }
 
@@ -101,9 +80,6 @@ navbar-default .navbar-nav>.open>a:focus,
 a.btn-register, a.btn-login {
     background: transparent;
     border: none;
-    margin-top: -5px;
-    padding-top: 10px !important;
-    height: 50px;
 }
 
 a.btn-register:hover, a.btn-register:focus,
@@ -145,7 +121,6 @@ a.dropdown-toggle:active,
     background: transparent;
     padding: 1px 2px;
 }
-
 
 /* Header dropdown menus */
 
@@ -300,13 +275,6 @@ li.divider {
     background-color: var(--nav-bg) !important;
     border: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
-    top: 50px !important;
-    height: 50px;
-}
-
-#submenu li, #submenu ul {
-    height: 50px;
-    line-height: 50px;
 }
 
 #submenu a {
@@ -630,6 +598,11 @@ textarea.write, div.preview.well {
 }
 
 /* Emoji picker */
+
+.emoji-dialog {
+	border: 0;
+	box-shadow: 0 6px 12px rgba(0,0,0,.5);
+}
 
 .emoji-dialog .top-bar {
     height: 0
@@ -991,44 +964,32 @@ span.votes a:hover, .upvoted i.fa.fa-chevron-up:hover, .downvoted i.fa.fa-chevro
 .vivaldi-mod-modal-box {
     background: var(--second-bg);
     color: var(--main-fg);
-    border: 0;
-    padding: 0 0 8px 0;
+    border: 0 !important;
+    padding: 0 0 8px 0 !important;
 }
 
 .vivaldi-mod-modal-box-control-bar {
     background: var(--nav-bg);
     color: var(--second-fg);
-    padding: 5px;
-    border-radius: 4px 0 0 0; 
+    padding: 5px !important;
+    border-radius: 4px 0 0 0 !important; 
 }
 
 .vivaldi-mod-modal-box-close {
     background: var(--nav-bg);
     color: var(--second-fg) !important;
-    border-left: 1px solid var(--second-fg);
-    border-radius: 0 4px 0 0
+    border-left: 1px solid var(--second-fg) !important;
+    border-radius: 0 4px 0 0 !important;
 }
 
 .vivaldi-mod-modal-box-close:hover {
     background: hsl(346, 98%, 60%);
     color: var(--button-fg) !important;
-    border-left: 1px solid var(--second-bg);
+    border-left: 1px solid var(--second-bg) !important;
 }
 
 
-
-/* Hiding stuff  */
-
-.menuwrapper .tooltip, #header-menu .tooltip, .account .cover .avatar-wrapper .tooltip {
-    display: none !important;
-}
-
-#vivaldimenu > li:nth-child(1), #vivaldimenu > li:nth-child(2) {
-    display: none;
-}
-
-
-/****** This code still needs to be addressed ********/
+/****** unverified code ********/
 
 .category>ul>li:not(.unread) h2 a,
 .panel-title {
