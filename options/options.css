@@ -1,5 +1,5 @@
 body {
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: .5px;
@@ -41,7 +41,7 @@ header {
     box-shadow: none !important;
     text-shadow: none !important;
     height: 40px;
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 14px;
     padding: 0 8px;
@@ -267,25 +267,25 @@ strong, a {
     stroke: #fff;
 }
 #darkGrey.active .themebox-image {
-    border-color: #ec2224;
+    border-color: #ec2226;
 }
 #darkGrey.active .themebox-image::before {
-    border-bottom-color: #ec2224;
-    border-right-color: #ec2224;
+    border-bottom-color: #ec2226;
+    border-right-color: #ec2226;
 }
 #darkGrey .themebox-image .themebox-o_mark {
-    fill: #ec2224;
+    fill: #ec2226;
     stroke: #fff;
 }
 #lightGrey.active .themebox-image {
-    border-color: #ec2224;
+    border-color: #ec2226;
 }
 #lightGrey.active .themebox-image::before {
-    border-bottom-color: #ec2224;
-    border-right-color: #ec2224;
+    border-bottom-color: #ec2226;
+    border-right-color: #ec2226;
 }
 #lightGrey .themebox-image .themebox-o_mark {
-    fill: #ec2224;
+    fill: #ec2226;
     stroke: #fff;
 }
 #mod.active .themebox-image {
@@ -317,13 +317,13 @@ strong, a {
     text-overflow: ellipsis;
     font-size: 13px;
     margin-top: 7px;
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     letter-spacing: .5px;
     color: hsl(0, 0%, 37%);
 }
 input[type="text" i] {
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 13px;
     color: hsl(0, 0%, 37%);
@@ -387,7 +387,7 @@ button {
     background: hsl(0, 0%, 37%);
     color: hsl(0, 0%, 99%);
     border:  2px solid hsl(0, 0%, 37%);
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 13px;
     padding: 4px 11px;
