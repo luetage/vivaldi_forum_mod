@@ -1,37 +1,8 @@
 /** Default fixes, improvements and modifications for all themes **/
 
-/* Account + groups cover and content adjustments */
 /* centers profile avatars (avatar width with 4px borders at 136px) */
 .account .cover .avatar-wrapper {
     margin-left: -68px !important;
-}
-/* ensures there is no difference between your personal (initialised) and other user's profiles */
-.account .initialised {
-    margin-top: unset !important;
-}
-/* shows the whole cover for profiles and groups (currently still adjusted for 100px header instead of 120px (64+56) */
-@media (min-width: 992px) {
-    .account .cover, .groups.details [component="groups/cover"] {
-        top: 120px !important;
-    }
-}
-@media (max-width: 991px) {
-    .account .cover, .groups.details [component="groups/cover"]  {
-        top: 120px !important;
-    }
-    /* brings account content up, needed because account covers are only 200px instead of 300px high at this screen size */
-    .account {
-        margin-top: 200px !important;
-    }
-}
-@media (max-width: 767px) {
-    .account .cover, .groups.details [component="groups/cover"] {
-        top: 64px !important;
-    }
-    /* adjusts for missing submenu */
-    #content.container {
-        margin-top: -56px;
-    }
 }
 
 /* Font icons */
@@ -70,7 +41,7 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 }
 
 /* Reduces the number of font sizes used in posts */
-.topic .threaded-replies, small.pull-left, span.timeago {
+.topic .threaded-replies, small.pull-left, .topic span.timeago {
     font-size: 12px !important;
 }
 .topic [component="post/parent"] {
@@ -80,21 +51,6 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 /* Correct cursor over vote count span (clickable) */
 .pull-right .votes span {
     cursor: pointer;
-}
-
-/* Flickering fix */
-@keyframes fixthemes {
-    from {
-        transform: scale3d(1, 1, 1);
-    }
-    to {
-        transform: scale3d(1, 1, 1);
-    }
-}
-#vivaldilogo {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: fixthemes;
 }
 
 /* Blockquote search fontsize/margin fix */
@@ -121,8 +77,8 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 .btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
     margin-left: 4px !important;
 }
-button[type^="submit"].btn-primary, .btn-default#save-preferences {
-    margin-right: 4px;
+button[type^="submit"].btn-primary, .btn-default#save-preferences, .composer .title-container .category-list-container [component=category-selector] {
+    margin-right: 4px !important;
 }
 
 /* Disabled user-select for logged-in menu (prevents accidental highlighting of dropdown text when dropdown isn't expanded) */
@@ -134,13 +90,6 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
 .account textarea.form-control {
     resize: vertical;
     min-height: 42px;
-}
-
-/* Disable line breaks for composer title */
-.composer .title-container .title {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 /* mobile view fixes */
@@ -158,18 +107,14 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences {
     background-color: #101010 !important;
 }
 
-/* full chat content container padding fix */
-.page-user-chats #content.container {
-    padding-top: 30px !important;
-}
-
 /* remove top border from chats list to fix avatar offset */
 .chats-list>li {
     border-top: none !important;
 }
+
 /* Auto-hide header transition */
 #header-menu, #submenu {
-    transition: top 0.857s;
+    transition: top 0.857s !important;
 }
 
 /* Copy all code button */
@@ -202,4 +147,12 @@ The notification is being shown by default.js, if not dismissed previously.
 section.footer-notification {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+}
+
+/* transparent logo for very small media widths */
+@media (max-width: 420px) {
+    #vivaldiheader #vivaldilogo {
+        background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mobile.svg') !important;
+        background-size: contain;
+    }
 }

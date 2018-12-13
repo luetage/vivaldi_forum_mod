@@ -1,18 +1,6 @@
 /** Theme Standard **/
 
 
-/* Voting indicators */
-
-.upvoted {
-    background-color: #4caf50 !important;
-}
-.downvoted {
-    background-color: #ef3939 !important;
-}
-.upvoted i.fa.fa-chevron-up, .downvoted i.fa.fa-chevron-down {
-    color: #fefefe;
-}
-
 /* Advanced formatting mod */
 .vivaldi-mod-modal-box {
     background: white;

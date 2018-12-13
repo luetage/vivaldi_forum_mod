@@ -1,4 +1,4 @@
-/* Compact Header */
+/* Compact Header Alt */
 
 #vivaldiheader>.row {
     padding: 13px 20px;
@@ -33,21 +33,31 @@
 
 /* Account + groups cover and content adjustments */
 
-.page-user-chats #content.container {
-    padding-top: 10px !important;
+/* ensures there is no difference between your personal (initialised) and other user's profiles */
+.account .initialised {
+    margin-top: unset !important;
 }
 #content {
     padding-top: 20px !important;
 }
-/* ensures there is no difference between your personal (initialised) and other user's profiles */
-.account .initialised {
-    margin-top: unset !important;
+main#panel {
+    padding-top: 50px !important;
+}
+.page-user-chats {
+    padding-top: 60px;
+}
+.page-user-chats #content.container {
+    padding-top: 0px !important;
 }
 /* shows the whole cover for profiles and groups (currently still adjusted for 100px header instead of 120px (64+56) */
 @media (min-width: 992px) {
     .account .cover, .groups.details [component="groups/cover"] {
         top: 100px !important;
     }
+    .account {
+        margin-top: 280px !important;
+    }
+
 }
 @media (max-width: 991px) {
     .account .cover, .groups.details [component="groups/cover"]  {
@@ -55,14 +65,14 @@
     }
     /* brings account content up, needed because account covers are only 200px instead of 300px high at this screen size */
     .account {
-        margin-top: 200px !important;
+        margin-top: 180px !important;
     }
 }
 @media (max-width: 767px) {
     .account .cover, .groups.details [component="groups/cover"] {
         top: 50px !important;
     }
-    #content.container {
-        margin-top: -50px;
+    main#panel {
+        padding-top: 0px !important;
     }
 }

@@ -3,10 +3,6 @@
         "message": "Marcadores",
         "description": "Link to bookmarks page from navigation bar"
     },
-    "bookmarked": {
-        "message": "Marcados",
-        "description": "Link to bookmarks page from user profile menu"
-    },
     "signature": {
         "message": "Firma",
         "description": "Signature toggle for forum posts"
@@ -224,7 +220,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "¡Ingresa sólo el código CSS! Pincha en GUARDAR, para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS, para usar tu propio tema.",
+        "message": "Input CSS code only! Click TOGGLE to activate/deactivate, SAVE to save to storage. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -242,6 +238,10 @@
     "edit": {
         "message": "Editar",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
+    },
+    "toggle": {
+        "message": "Toggle",
+        "description": "Options: Switch on or off"
     },
     "backup": {
         "message": "Copia de seguridad",
@@ -263,13 +263,25 @@
         "message": "¿Resetear la extensión? Vuelve a pinchar, para confirmar.",
         "description": "Options: Status message to confirm reset"
     },
+    "cancelReset": {
+        "message": "Reset cancelled.",
+        "description": "Options: Status message when reset is cancelled"
+    },
     "optionsReset": {
         "message": "Opciones reseteadas, almacenamiento limpiado.",
         "description": "Options: Status message after reset"
     },
-    "saveUserCSS": {
-        "message": "CSS del usuario guardado.",
+    "activateUserCSS": {
+        "message": "User CSS activated.",
         "description": "Options: Status message for User CSS activation"
+    },
+    "deactivateUserCSS": {
+        "message": "User CSS deactivated.",
+        "description": "Options: Status message for User CSS deactivation"
+    },
+    "saveUserCSS": {
+        "message": "User CSS saved to storage.",
+        "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
         "message": "¡Tema guardado y activado!",
