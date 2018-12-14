@@ -5,12 +5,12 @@ function autoScroll() {
         vivaldiHeader.style.top = '0px';
         subMenu.style = 'top: 50px !important';
     }
-    else if (window.scrollY <= 51) {
+    else if (window.scrollY <= 50) {
         vivaldiHeader.style.top = '0px';
         subMenu.style = 'top: 50px !important';
     }
-    else if (window.scrollY > 51) {
-        vivaldiHeader.style.top = '-50px';
+    else if (window.scrollY > 50) {
+        vivaldiHeader.style = 'top: -50px !important';
         subMenu.style = 'top: 0px !important';
     }
     scp = window.scrollY;
