@@ -28,7 +28,7 @@ You can also create a standalone community theme:
 
 * Download or clone the repository.
 * On Vivaldi's extensions page enable developer mode, click **Load unpacked** and select the Vivaldi Forum mod directory.
-* Select **Standard** theme in options, open `standard.css` (located in `vivaldi_forum_mod/themes`) in your favorite text editor and start designing your new theme.
+* Select **Standard** theme in options, open `standard.css` (located in `vivaldi_forum_mod/themes`) in a text editor and start designing your new theme.
 * Submit the code for review. Contact through Vivaldi Forum directly, either through the feedback topic, or by sending a [message](https://forum.vivaldi.net/user/luetage).
 
 ### Translations
@@ -46,8 +46,8 @@ You can help out by improving these translations, or by introducing a new transl
 * On Vivaldi's extensions page enable developer mode, click **Load unpacked** and select the Vivaldi Forum mod directory.
 * In Vivaldi browser settings, go to **Startup** and select your desired target language. Restart the browser.
 * In Vivaldi Forum settings pick your target language, hit **Save** and reload the tab.
-* Create a new directory in `vivaldi_forum_mod/_locales` and rename it (name = local code).
-* Make a copy of the English translation file (`vivaldi_forum_mod/_locales/en/messages.json`) and paste it into your newly created language directory.
-* Open the `messages.json` file in your favorite text editor and start translating.
+* Create a new directory in `vivaldi_forum_mod/_locales` and rename it (locale code).
+* Make a copy of the English translation file (`vivaldi_forum_mod/_locales/en/messages.json`) and paste it into your newly created translation directory.
+* Open the `messages.json` file in a text editor and start translating.
 
 Each entry in the file has a **message** and a **description** part. Only translate the message to your target language, leave everything else untouched. Descriptions which start with the word **Options** are translations for Vivaldi Forum mod's options page, anything else appears on Vivaldi Forum directly. Make sure to check out existing translations on Vivaldi Forum and to enable the different modifications to see your translations in action. If you should have any question about this procedure, or if you need help of any kind, please write a post in the feedback topic or send a [message](https://forum.vivaldi.net/user/luetage). Each translation should at least be checked by one other contributor to assure its accuracy. Finished translations will be released as soon as you submit them. Either make a pull request on Github directly, or submit the `messages.json` file by pasting its contents online (eg [pastebin](https://pastebin.com/)) and sharing the link.
