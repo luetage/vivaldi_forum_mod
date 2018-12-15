@@ -156,7 +156,7 @@
         "description": "Options: Title of compact header mod"
     },
     "compactHeaderDesc": {
-        "message": "Porta l'header alle sua altezza originale e nascondi i link ridondanti.",
+        "message": "Porta l'header alla sua altezza originale e nascondi i link ridondanti.",
         "description": "Options: Description of compact header mod."
     },
     "customNotification": {
