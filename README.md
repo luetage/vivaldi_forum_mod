@@ -22,7 +22,7 @@ Vivaldi Forum mod is a community project driven by the ideas and needs of its us
 
 ### Themes
 
-Did you create a beautiful theme with help of the Theme Machine? Great! Please share it by using the 'Export' button on the options page, uploading the file (for example to Dropbox) and posting the link in the feedback topic on Vivaldi Forum. Did you introduce additional changes with User CSS? Just copy the code and paste it alongside your theme.
+Did you create a beautiful theme with help of the Theme Machine? Great! Please share it by using the **Export** button on the options page, uploading the file (for example to Dropbox) and posting the link in the feedback topic on Vivaldi Forum. Did you introduce additional changes with User CSS? Just copy the code and paste it alongside your theme.
 
 You can also create a standalone community theme:
 
