@@ -168,11 +168,11 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
-        "message": "Tooltips für Login Menü deaktivieren",
+        "message": "Tooltips deaktivieren",
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Deaktiviert Tooltips im Header und in der Navigationsleiste.",
+        "message": "Deaktiviert Tooltips im Header",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
@@ -220,7 +220,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Nur CSS Code eingeben! Klicke auf SCHALTEN um zu aktivieren/deaktivieren, SPEICHERN um zu speichern. BACKUP auf Datei. Wähle STANDARD in THEMEN um ein eigenes Thema zu laden.",
+        "message": "Nur CSS Code eingeben! Klicke auf SCHALTEN um zu aktivieren/deaktivieren, SPEICHERN um zu speichern. BACKUP auf Datei. Wähle STANDARD in THEMEN um ein selbstständiges Thema zu laden.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -292,11 +292,11 @@
         "description": "Options: Status message for theme import"
     },
     "statusThemes": {
-        "message": "Wähle ein Thema aus, oder gestalte ein Eigenes.",
+        "message": "Wähle ein Thema aus, oder gestalte ein Neues.",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Positioniere den Mauszeiger über einer Modifikation für dessen Beschreibung.",
+        "message": "Positioniere den Mauszeiger über einer Modifikation für eine Beschreibung.",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
