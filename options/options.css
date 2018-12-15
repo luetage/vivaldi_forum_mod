@@ -73,7 +73,6 @@ form {
     width: 100%;
     color: hsl(0, 0%, 37%);
     top: calc(67px + 8vh);
-    top: -moz-calc(67px + 8vh);
     left: 0;
     right: 0;
     padding-bottom: 55px;
