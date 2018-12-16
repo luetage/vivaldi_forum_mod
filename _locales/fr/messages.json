@@ -1,0 +1,306 @@
+{
+    "bookmarks": {
+        "message": "Marque-pages",
+        "description": "Link to bookmarks page from navigation bar"
+    },
+    "signature": {
+        "message": "Signature",
+        "description": "Signature toggle for forum posts"
+    },
+    "copyCode": {
+        "message": "copier_code",
+        "description": "Copy all code button for code markdown"
+    },
+    "lastModified": {
+        "message": "Dernière modification",
+        "description": "Text before last edit timestamp in forum posts"
+    },
+    "optionsLink": {
+        "message": "Forum mod",
+        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+    },
+    "editCommunity": {
+        "message": "Profil Communauté",
+        "description": "Link to community settings in user dropdown menu"
+    },
+    "editForum": {
+        "message": "Profil Forum",
+        "description": "Link to forum settings in user dropdown menu"
+    },
+    "dismiss": {
+        "message": "Supprimer",
+        "description": "Dismisses community notifications"
+    },
+    "emoticons": {
+        "message": "Emoticônes",
+        "description": "Title of formatting item for emote picker"
+    },
+    "header": {
+        "message": "Titre",
+        "description": "Title of formatting item header 1"
+    },
+    "horizontal_line": {
+        "message": "Ligne Horizontale",
+        "description": "Title of formatting item horizontal rule"
+    },
+    "block_quote": {
+        "message": "Citation",
+        "description": "Title of formatting item quote"
+    },
+    "code": {
+        "message": "Code dans le texte",
+        "description": "Title of formatting item fixed width font"
+    },
+    "table": {
+        "message": "Tableau",
+        "description": "Title of formatting item table"
+    },
+    "number_list": {
+        "message": "Liste Numérotée",
+        "description": "Title of formatting item numbered list"
+    },
+    "spoiler": {
+        "message": "Spoiler",
+        "description": "Title of formatting item spoiler"
+    },
+    "customToolbarTitle": {
+        "message": "Personnaliser la barre d'outils",
+        "description": "Title of custom toolbar editor"
+    },
+    "dragText": {
+        "message": "Déplacer par glissé/déposé",
+        "description": "Hover text when on a draggable area"
+    },
+    "themes": {
+        "message": "Thèmes",
+        "description": "Options: Title of themes section"
+    },
+    "modifications": {
+        "message": "Modifications",
+        "description": "Options: Title of modifications section"
+    },
+    "info": {
+        "message": "Info",
+        "description": "Options: Title of info section"
+    },
+    "feedback": {
+        "message": "Feedback",
+        "description": "Options: Feedback link in navigation"
+    },
+    "communityThemes": {
+        "message": "Thèmes de la Communauté",
+        "description": "Options: Community themes headline"
+    },
+    "themeMachine": {
+        "message": "Theme Machine",
+        "description": "Options: Theme machine headline"
+    },
+    "background": {
+        "message": "Arrière-plan",
+        "description": "Options: Theme machine edit background"
+    },
+    "foreground": {
+        "message": "Texte",
+        "description": "Options: Theme machine edit foreground"
+    },
+    "highlight": {
+        "message": "Elément activé",
+        "description": "Options: Theme machine edit highlight"
+    },
+    "button": {
+        "message": "Bouton",
+        "description": "Options: Theme machine edit button"
+    },
+    "dropdown": {
+        "message": "Menus déroulants",
+        "description": "Options: Theme machine edit dropdown"
+    },
+    "link": {
+        "message": "Lien",
+        "description": "Options: Theme machine edit link"
+    },
+    "link2": {
+        "message": "Lien 2",
+        "description": "Options: Theme machine edit link2"
+    },
+    "selectModifications": {
+        "message": "Choisir les Modifications",
+        "description": "Options: Modifications headline"
+    },
+    "advancedFormatting": {
+        "message": "Formatage avancé",
+        "description": "Options: Title of advanced formatting mod"
+    },
+    "advancedFormattingDesc": {
+        "message": "Ajoute des émoticônes et des boutons de formatage en plus. Permet par glissé/déposé de réordonner, de retirer et d'ajouter des boutons à la barre de formatage lors de l'édition/composition des messages sur le forum.",
+        "description": "Options: Description of the advanced formatting mod"
+    },
+    "hideHeader": {
+        "message": "Masquer l'en-tête lors du défilement.",
+        "description": "Options: Title of auto-hide header on scroll mod"
+    },
+    "hideHeaderDesc": {
+        "message": "Masque l'en-tête en défilant vers le bas, l'affiche en défilant vers le haut",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "navbookmarks": {
+        "message": "Marque-pages dans la barre de navigation",
+        "description": "Options: Title of bookmarks in navigation mod"
+    },
+    "navbookmarksDesc": {
+        "message": "Affiche un lien vers les marque-pages dans la barre de navigation.",
+        "description": "Options: Description of bookmarks in navigation mod"
+    },
+    "compactHeader": {
+        "message": "En-tête compact",
+        "description": "Options: Title of compact header mod"
+    },
+    "compactHeaderDesc": {
+        "message": "Remet l'en-tête à sa hauteur d'origine et retire les liens inutiles.",
+        "description": "Options: Description of compact header mod"
+    },
+    "customNotification": {
+        "message": "Icônes de notifications",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Affiche les icônes dans l'en-tête du menu déroulant des notifications, pour distinguer facilement les différents types de notifications.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "hideTooltips": {
+        "message": "Masquer les infobulles",
+        "description": "Options: Title of hide tooltips mod"
+    },
+    "hideTooltipsDesc": {
+        "message": "Masque les infobulles du menu de connexion.",
+        "description": "Options: Description of hide tooltips mod"
+    },
+    "hideUnread": {
+        "message": "Masquer le compteur Non lus",
+        "description": "Options: Title of hide unread count mod"
+    },
+    "hideUnreadDesc": {
+        "message": "Masque l'icône du compteur Non lus dans la barre de navigation.",
+        "description": "Options: Description of unread count mod"
+    },
+    "timestamp": {
+        "message": "Dernière édition",
+        "description": "Options: Title of last edit timestamp mod"
+    },
+    "timestampDesc": {
+        "message": "Affiche l'heure locale de la dernière édition au bas du message édité.",
+        "description": "Options: Description of last edit timestamp mod"
+    },
+    "showUID": {
+        "message": "Afficher l'ID de l'utilisateur",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Affiche l'ID au survol du nom de l'utilisateur dans l'en-tête d'un message et au survol de l'avatar dans le profil.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "signatureMod": {
+        "message": "Mod Signature",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Masque toutes les signatures et les remplace par un bouton. La signature de chaque message est affichée en cliquant le bouton",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Avatars carrés",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Uniquement des avatars carrés!",
+        "description": "Options: Description of square avatars mod"
+    },
+    "userCSS": {
+        "message": "CSS personnalisés",
+        "description": "Options: User CSS headline"
+    },
+    "userCSSDesc": {
+        "message": "Code CSS uniquement! Cliquer ACTIVER/DESACTIVER pour activer/désactiver, ENREGISTRER pour enregistrer. SAUVEGARDER dans un fichier. Choisisez STANDARD dans les THEMES, si vous voulez utiliser votre propre thème.",
+        "description": "Options: User CSS placeholder/description"
+    },
+    "changelog": {
+        "message": "Changelog",
+        "description": "Options: Changelog headline"
+    },
+    "credits": {
+        "message": "Credits",
+        "description": "Options: Credits headline"
+    },
+    "save": {
+        "message": "Enregistrer",
+        "description": "Options: Text to show on a button that performs some sort of save operation"
+    },
+    "edit": {
+        "message": "Modifier",
+        "description": "Options: Text to show on a button that performs some sort of edit operation"
+    },
+    "toggle": {
+        "message": "Activer/Désactiver",
+        "description": "Options: Switch on or off"
+    },
+    "backup": {
+        "message": "Sauvegarder",
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
+    },
+    "import": {
+        "message": "Importer",
+        "description": "Options: Text to show on a button that performs some sort of import operation"
+    },
+    "export": {
+        "message": "Exporter",
+        "description": "Options: Text to show on a button that performs some sort of export operation"
+    },
+    "reset": {
+        "message": "Réinitialiser",
+        "description": "Options: Text to show on a button that performs some sort of reset operation"
+    },
+    "confirmReset": {
+        "message": "Réinitialiser l'extension? Cliquer de nouveau pour confirmer.",
+        "description": "Options: Status message to confirm reset"
+    },
+    "cancelReset": {
+        "message": "Réinitialisation annulée.",
+        "description": "Options: Status message when reset is cancelled"
+    },
+    "optionsReset": {
+        "message": "Options réinitialisées, stockage supprimé.",
+        "description": "Options: Status message after reset"
+    },
+    "activateUserCSS": {
+        "message": "CSS personnalisés activé.",
+        "description": "Options: Status message for User CSS activation"
+    },
+    "deactivateUserCSS": {
+        "message": "CSS personnalisés désactivés.",
+        "description": "Options: Status message for User CSS deactivation"
+    },
+    "saveUserCSS": {
+        "message": "CSS personnalisés enregistrés.",
+        "description": "Options: Status message for saving User CSS to storage"
+    },
+    "saveTheme": {
+        "message": "Thème enregistré et activé.",
+        "description": "Options: Status message for theme activation"
+    },
+    "importTheme": {
+        "message": "Thème importé. Cliquer ENREGISTRER pour enregistrer le thème.",
+        "description": "Options: Status message for theme import"
+    },
+    "statusThemes": {
+        "message": "Choisisez un thème, ou créez le vôtre.",
+        "description": "Options: Status message themes"
+    },
+    "statusModifications": {
+        "message": "Description d'une modification au survol.",
+        "description": "Options: Status message modifications"
+    },
+    "statusInfo": {
+        "message": "Un grand MERCI à tous les utilisateurs et contributeurs!",
+        "description": "Options: Status message info"
+    }
+}
