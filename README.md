@@ -35,6 +35,7 @@ You can also create a standalone community theme:
 
 Vivaldi Forum mod 2.0 will introduce translations. The translations are active on the [testing branch](https://github.com/luetage/vivaldi_forum_mod/tree/testing) and following languages are currently being worked on:
 
+* French
 * German
 * Italian
 * Spanish
