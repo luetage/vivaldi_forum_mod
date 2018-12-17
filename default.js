@@ -42,7 +42,7 @@ function userMenu() {
 
     setTimeout(function() {
         _options();
-    }, 700);
+    }, 2000);
 };
 
 
