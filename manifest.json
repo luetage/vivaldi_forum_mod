@@ -46,7 +46,8 @@
         "mods/userID.css",
         "mods/signature-mod.css",
         "mods/square-avatars.css",
-        "mods/advanced-formatting.css"
+        "mods/advanced-formatting.css",
+        "icons/icon16.png"
     ],
     "content_scripts": [
     {
