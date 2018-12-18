@@ -1,6 +1,6 @@
 body {
     font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: .5px;
     background-color: hsl(0, 0%, 99%);
@@ -42,7 +42,6 @@ header {
     box-shadow: none !important;
     text-shadow: none !important;
     height: 40px;
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 14px;
     padding: 0 8px;
@@ -321,17 +320,14 @@ strong, a {
     text-overflow: ellipsis;
     font-size: 13px;
     margin-top: 7px;
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
-    font-weight: 600;
     letter-spacing: .5px;
     color: hsl(0, 0%, 37%);
 }
 input[type="text" i] {
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 13px;
     color: hsl(0, 0%, 37%);
-    width: 230px;
+    width: 166px;
     padding-left: 5px;
 }
 input[type="color" i] {
@@ -347,6 +343,7 @@ input[type="color" i] {
 /* Modifications page */
 
 #selectMods span {
+    font-weight: 600;
     padding: 2px 0;
 }
 #selectMods span::before {
