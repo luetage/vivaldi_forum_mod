@@ -68,7 +68,7 @@
         "description": "Title of custom toolbar editor"
     },
     "dragText": {
-        "message": "Pinchar y arrastrar, para reorganizar",
+        "message": "Pinchar y arrastrar para reorganizar",
         "description": "Hover text when on a draggable area"
     },
     "themes": {
@@ -104,7 +104,7 @@
         "description": "Options: Theme machine edit foreground"
     },
     "highlight": {
-        "message": "Resaltos",
+        "message": "Resalto",
         "description": "Options: Theme machine edit highlight"
     },
     "button": {
@@ -132,11 +132,11 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Añade seleccionador de emoticones y otros botones de formateo a la barra de herramientas para la editación de comentarios en el foro.",
-        "description": "Options: Description of advanced formatting mod"
+        "message": "Añade seleccionador de emoticones y otros botones de formateo a la barra de herramientas para la editación de mensajes en el foro.",
+        "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Ocultar automáticamente el encabezamiento cuando se desplaza la página",
+        "message": "Ocultar el encabezamiento mientras se desplaza la página",
         "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
@@ -164,7 +164,7 @@
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Muestra símbolos en el menú desplegable, para  distinguir un tipo de notificación del otro fácilmente.",
+        "message": "Muestra símbolos en el menú desplegable para  distinguir un tipo de notificación del otro fácilmente.",
         "description": "Options: Description of custom notification icons mod"
     },
     "hideTooltips": {
@@ -176,11 +176,11 @@
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
-        "message": "Oculta el monto de comentarios no leídos en la barra de navegación",
+        "message": "Ocultar no leídos",
         "description": "Options: Title of hide unread count mod"
     },
     "hideUnreadDesc": {
-        "message": "Oculta el número de comentarios no leídos en la barra de navegación.",
+        "message": "Oculta el número de mensajes no leídos en la barra de navegación.",
         "description": "Options: Description of unread count mod"
     },
     "timestamp": {
@@ -196,7 +196,7 @@
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
-        "message": "Muestra los UIDs, cuando el ratón se halla sobre el nombre del usuario de un comentario o sobre su imagen en el perfil.",
+        "message": "Muestra las UIDs, cuando el ratón se halla sobre el nombre del usuario de un comentario o sobre su imagen en el perfil.",
         "description": "Options: Description of show user IDs mod"
     },
     "signatureMod": {
@@ -208,7 +208,7 @@
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Imágenes cuadrados de usuarios",
+        "message": "Imágenes de usuarios cuadrados",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {
@@ -220,7 +220,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Input CSS code only! Click TOGGLE to activate/deactivate, SAVE to save to storage. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
+        "message": "¡Ingresa sólo el código CSS! Pincha en GUARDAR para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS para usar tu propio tema.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -239,8 +239,8 @@
         "message": "Editar",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-    "toggle": {
-        "message": "Toggle",
+	"toggle": {
+        "message": "Alternar",
         "description": "Options: Switch on or off"
     },
     "backup": {
@@ -259,28 +259,28 @@
         "message": "Resetear",
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
-    "confirmReset": {
-        "message": "¿Resetear la extensión? Vuelve a pinchar, para confirmar.",
+	 "confirmReset": {
+        "message": "¿Resetear la extensión? Vuelve a pinchar para confirmar.",
         "description": "Options: Status message to confirm reset"
     },
-    "cancelReset": {
-        "message": "Reset cancelled.",
+	"cancelReset": {
+        "message": "Reseteo cancelado.",
         "description": "Options: Status message when reset is cancelled"
     },
-    "optionsReset": {
+	"optionsReset": {
         "message": "Opciones reseteadas, almacenamiento limpiado.",
         "description": "Options: Status message after reset"
     },
-    "activateUserCSS": {
-        "message": "User CSS activated.",
+	"activateUserCSS": {
+        "message": "CSS del usuario activado.",
         "description": "Options: Status message for User CSS activation"
     },
-    "deactivateUserCSS": {
-        "message": "User CSS deactivated.",
+	"deactivateUserCSS": {
+        "message": "CSS del usuario desactivado.",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "User CSS saved to storage.",
+        "message": "CSS del usuario guardado.",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
@@ -288,7 +288,7 @@
         "description": "Options: Status message for theme activation"
     },
     "importTheme": {
-        "message": "¡Tema importado! Pincha GUARDAR, para guardar el tema.",
+        "message": "¡Tema importado! Pincha GUARDAR para guardar el tema.",
         "description": "Options: Status message for theme import"
     },
     "statusThemes": {
@@ -296,7 +296,7 @@
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Pon el puntero del ratón sobre una modificación, para ver la descripción.",
+        "message": "Pon el puntero del ratón sobre una modificación para ver la descripción.",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
