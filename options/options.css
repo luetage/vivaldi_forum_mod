@@ -1,8 +1,7 @@
 body {
     font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    letter-spacing: .5px;
     background-color: hsl(0, 0%, 99%);
     cursor: default;
     margin: 0;
@@ -14,6 +13,7 @@ body {
 /* Header */
 
 header {
+    height: 67px;
     white-space: nowrap;
     color: hsl(0, 0%, 37%);
     background-color: hsl(0, 0%, 99%);
@@ -41,20 +41,21 @@ header {
     box-shadow: none !important;
     text-shadow: none !important;
     height: 40px;
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 14px;
     padding: 0 8px;
     cursor: pointer;
 }
 #themes-btn:hover, #modifications-btn:hover, #info-btn:hover, #feedback-btn:hover, #reset-btn:hover, .view {
-    color: hsl(353, 85%, 44%) !important;
+    color: #d01126 !important;
 }
 form {
     display: inline;
 }
 #status {
+    height: 27px;
     color: hsl(0, 0%, 99%);
+    font-weight: 600;
     background: hsl(0, 0%, 18%);
     position: fixed;
     left: 0;
@@ -69,9 +70,8 @@ form {
 #content {
     position: absolute;
     width: 100%;
-    line-height: 1.2;
     color: hsl(0, 0%, 37%);
-    top: 13vh;
+    top: calc(67px + 8vh);
     left: 0;
     right: 0;
     padding-bottom: 55px;
@@ -126,6 +126,9 @@ form {
     .column-right, .right, .column-left, .left {
         width: 100%;
     }
+    #content {
+        top: 97px;
+    }
 }
 .float {
     white-space: nowrap;
@@ -144,10 +147,10 @@ h2 {
     margin-top: 0;
     text-align: left;
     font-size: 1.3rem;
-    color: hsl(223, 100%, 25%);
+    color: #00247d;
 }
 strong, a {
-    color: hsl(353, 85%, 44%);
+    color: #d01126;
 }
 #modifications, #info {
     display: none;
@@ -317,17 +320,14 @@ strong, a {
     text-overflow: ellipsis;
     font-size: 13px;
     margin-top: 7px;
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
-    font-weight: 600;
     letter-spacing: .5px;
     color: hsl(0, 0%, 37%);
 }
 input[type="text" i] {
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 13px;
     color: hsl(0, 0%, 37%);
-    width: 230px;
+    width: 166px;
     padding-left: 5px;
 }
 input[type="color" i] {
@@ -343,6 +343,8 @@ input[type="color" i] {
 /* Modifications page */
 
 #selectMods span {
+    font-weight: 600;
+    letter-spacing: 0.5px;
     padding: 2px 0;
 }
 #selectMods span::before {
@@ -356,7 +358,7 @@ input[type="color" i] {
     opacity: 0;
 }
 .selected {
-    color: hsl(353, 85%, 44%);
+    color: #d01126;
 }
 #selectMods span.selected::before {
     opacity: 1;
@@ -390,6 +392,7 @@ button {
     font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 13px;
+    letter-spacing: 0.5px;
     padding: 4px 11px;
     border-radius: 3px;
     cursor: pointer;

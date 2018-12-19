@@ -16,8 +16,8 @@
         "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
-        "message": "Forum mod",
-        "description": "Link to options page in user dropdown menu. Untranslated for now"
+        "message": "Opzioni mod",
+        "description": "Link to options page in user dropdown menu."
     },
     "editCommunity": {
         "message": "Profilo comunità",
@@ -32,7 +32,7 @@
         "description": "Dismisses community notifications"
     },
     "emoticons": {
-        "message": "Selettore Emoji",
+        "message": "Emote",
         "description": "Title of formatting item for emote picker."
     },
     "header": {
@@ -124,7 +124,7 @@
         "description": "Options: Theme machine edit link2"
     },
     "selectModifications": {
-        "message": "Selezione mod",
+        "message": "Seleziona mod",
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
@@ -132,7 +132,7 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Aggiunge un selettore emoji, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare gli elementi della barra durante la modifica dei post sul forum.",
+        "message": "Aggiunge un selettore emote, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare gli elementi della barra durante la modifica dei post sul forum.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
@@ -156,7 +156,7 @@
         "description": "Options: Title of compact header mod"
     },
     "compactHeaderDesc": {
-        "message": "Porta l'header alle sua altezza originale e nascondi i link ridondanti",
+        "message": "Porta l'header alla sua altezza originale e nascondi i link ridondanti.",
         "description": "Options: Description of compact header mod."
     },
     "customNotification": {
@@ -220,7 +220,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Input CSS code only! Click TOGGLE to activate/deactivate, SAVE to save to storage. BACKUP to file. Select STANDARD in THEMES, if you want to run your own theme.",
+        "message": "Inserire solo codice CSS! Premi AZIONA per attivare o disattivare, SALVA per meorizzare in archiviazione. BACKUP per salvare come file. Seleziona STANDARD nei TEMI se vuoi usare un tuo tema.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -228,7 +228,7 @@
         "description": "Options: Changelog headline"
     },
     "credits": {
-        "message": "Crediti",
+        "message": "Ringraziamenti",
         "description": "Options: Credits headline"
     },
     "save": {
@@ -240,7 +240,7 @@
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
     "toggle": {
-        "message": "Toggle",
+        "message": "Aziona",
         "description": "Options: Switch on or off"
     },
     "backup": {
@@ -264,7 +264,7 @@
         "description": "Options: Status message to confirm reset"
     },
     "cancelReset": {
-        "message": "Reset cancelled.",
+        "message": "Reset annullato.",
         "description": "Options: Status message when reset is cancelled"
     },
     "optionsReset": {
@@ -272,15 +272,15 @@
         "description": "Options: Status message after reset"
     },
     "activateUserCSS": {
-        "message": "User CSS activated.",
+        "message": "CSS utente attivato.",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
-        "message": "User CSS deactivated.",
+        "message": "CSS utente disattivato.",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "User CSS saved to storage.",
+        "message": "CSS utente salvato in archiviazione.",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {

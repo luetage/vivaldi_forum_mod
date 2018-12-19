@@ -598,6 +598,6 @@ editBtn.addEventListener('click', _editTheme);
 saveBtn.addEventListener('click', _saveTheme);
 exportBtn.addEventListener('click', _exportTheme);
 importBtn.onclick = function() {
-    document.getElementById('importHidden').click()
+    document.getElementById('importHidden').click();
 };
 document.getElementById('importHidden').addEventListener("change", _importTheme, false);

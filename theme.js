@@ -175,7 +175,7 @@ function(theme) {
             if (local.userCSS !== '') {
                 var activateUserCSS = document.createElement('style');
                 activateUserCSS.type = 'text/css';
-                activateUserCSS.innerHTML = userCSS;
+                activateUserCSS.innerHTML = local.userCSS;
                 document.getElementsByTagName('head')[0].appendChild(activateUserCSS);
             }
         });
