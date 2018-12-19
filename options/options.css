@@ -1,11 +1,10 @@
 body {
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+    font-family:  "Segoe UI","Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;
     font-size: 14px;
     background-color: hsl(0, 0%, 99%);
     cursor: default;
     margin: 0;
-    -moz-user-select: none;
     user-select: none;
 }
 
@@ -148,6 +147,7 @@ h2 {
     text-align: left;
     font-size: 1.3rem;
     color: #00247d;
+    font-weight: 500;
 }
 strong, a {
     color: #d01126;
@@ -347,13 +347,12 @@ input[type="color" i] {
     letter-spacing: 0.5px;
     padding: 2px 0;
 }
+
 #selectMods span::before {
     content: "\2b55";
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
     filter: grayscale(100%);
     float: left;
-    margin-top: 1px;
+    margin-top: 0;
     padding-right: 8px;
     opacity: 0;
 }
@@ -389,7 +388,7 @@ button {
     background: hsl(0, 0%, 37%);
     color: hsl(0, 0%, 99%);
     border:  2px solid hsl(0, 0%, 37%);
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+    font-family: "Segoe UI","Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
