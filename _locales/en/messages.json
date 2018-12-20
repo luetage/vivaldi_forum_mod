@@ -68,7 +68,7 @@
         "description": "Title of custom toolbar editor"
     },
     "dragText": {
-        "message": "Click and Drag to move",
+        "message": "Click and drag to move",
         "description": "Hover text when on a draggable area"
     },
     "themes": {
@@ -251,9 +251,13 @@
         "message": "Import",
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
+    "cancel": {
+        "message": "Cancel",
+        "description": "Options: Text to show on a button that performs some sort of cancel operation"
+    },
     "export": {
-        "message": "Export",
-        "description": "Options: Text to show on a button that performs some sort of export operation"
+        "message": "Share",
+        "description": "Options: Text to show on a button that performs some sort of export operation. In English the word Share can be used for sharing/exporting themes – the equivalent of Export in other languages is a correct translation. Decide depending on language."
     },
     "reset": {
         "message": "Reset",
@@ -265,7 +269,11 @@
     },
     "cancelReset": {
         "message": "Reset cancelled.",
-        "description": "Options: Status message when reset is cancelled"
+        "description": "Options: Status message after cancelled reset"
+    },
+    "cancelImport": {
+        "message": "Import cancelled.",
+        "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
         "message": "Options reset, storage cleared.",
@@ -287,9 +295,17 @@
         "message": "Theme saved and activated.",
         "description": "Options: Status message for theme activation"
     },
+    "exportTheme": {
+        "message": "Theme code copied to clipboard.",
+        "description": "Options: Status message for exporting theme"
+    },
+    "importThemeDesc": {
+        "message": "Paste or drag and drop theme code into import field.",
+        "description": "Options: Status message describing theme import"
+    },
     "importTheme": {
         "message": "Theme imported. Click SAVE to save the theme.",
-        "description": "Options: Status message for theme import"
+        "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
         "message": "Choose a theme, or create your own.",

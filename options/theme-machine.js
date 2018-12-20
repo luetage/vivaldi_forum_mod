@@ -279,6 +279,8 @@ function _restoreThemes() {
         else if (restore.custom1 === '1') {
             document.getElementById('custom1').classList.add('active');
             editBtn.disabled = false;
+            exportBtn.disabled = false;
+            importBtn.disabled = false;
             _themeName.value = c1Name;
             _colorBg.value = c1Bg;
             _colorFg.value = c1Fg;
@@ -291,6 +293,8 @@ function _restoreThemes() {
         else if (restore.custom2 === '1') {
             document.getElementById('custom2').classList.add('active');
             editBtn.disabled = false;
+            exportBtn.disabled = false;
+            importBtn.disabled = false;
             _themeName.value = c2Name;
             _colorBg.value = c2Bg;
             _colorFg.value = c2Fg;
@@ -303,6 +307,8 @@ function _restoreThemes() {
         else if (restore.custom3 === '1') {
             document.getElementById('custom3').classList.add('active');
             editBtn.disabled = false;
+            exportBtn.disabled = false;
+            importBtn.disabled = false;
             _themeName.value = c3Name;
             _colorBg.value = c3Bg;
             _colorFg.value = c3Fg;
@@ -315,6 +321,8 @@ function _restoreThemes() {
         else if (restore.custom4 === '1') {
             document.getElementById('custom4').classList.add('active');
             editBtn.disabled = false;
+            exportBtn.disabled = false;
+            importBtn.disabled = false;
             _themeName.value = c4Name;
             _colorBg.value = c4Bg;
             _colorFg.value = c4Fg;
@@ -360,6 +368,8 @@ function _selectTheme(event) {
                 'custom': '1'
             });
             editBtn.disabled = false;
+            exportBtn.disabled = false;
+            importBtn.disabled = false;
             if (name === 'custom1') {
                 _themeName.value = c1Name;
                 _colorBg.value = c1Bg;
@@ -412,14 +422,10 @@ function _editTheme() {
     if (toggleEdit.style.display === 'none') {
         toggleEdit.style.display = 'block';
         saveBtn.disabled = false;
-        importBtn.disabled = false;
-        exportBtn.disabled = false;
     }
     else {
         toggleEdit.style.display = 'none';
         saveBtn.disabled = true;
-        importBtn.disabled = true;
-        exportBtn.disabled = true;
     }
 };
 
@@ -486,92 +492,83 @@ function _saveTheme() {
 /* Export Theme */
 
 function _exportTheme() {
-    chrome.storage.local.set({
-        'themeName': _themeName.value,
-        'colorBg': _colorBg.value,
-        'colorFg': _colorFg.value,
-        'colorHi': _colorHi.value,
-        'colorBtn': _colorBtn.value,
-        'colorDrop': _colorDrop.value,
-        'colorLi': _colorLi.value,
-        'colorLi2': _colorLi2.value
-    },
-    function() {
-        chrome.storage.local.get({
-            'themeName': '',
-            'colorBg': '',
-            'colorFg': '',
-            'colorHi': '',
-            'colorBtn': '',
-            'colorDrop': '',
-            'colorLi': '',
-            'colorLi2': ''
-        },
-        function(items){
-            var result = JSON.stringify(items);
-            var url = 'data:application/json;base64,' + btoa(result);
-            const getName = items.themeName.replace(/\s+/g, '-').toLowerCase();
-            if (getName !== '' && tryAgain === false) {
-                var nameIt = getName + '.json';
-            }
-            else {
-                var nameIt = 'theme.json';
-            }
-            chrome.downloads.download({
-                url: url,
-                saveAs: true,
-                filename: nameIt
-            },
-            function(download) {
-                if (download === undefined && tryAgain === false) {
-                    console.log('VFM error: ' + chrome.runtime.lastError.message);
-                    tryAgain = true;
-                    _exportTheme();
-                }
-                else {
-                    tryAgain = false;
-                }
-            });
-        });
-    });
+    const share = {'themeName': _themeName.value, 'colorBg': _colorBg.value, 'colorFg': _colorFg.value, 'colorHi': _colorHi.value, 'colorBtn': _colorBtn.value, 'colorDrop': _colorDrop.value, 'colorLi': _colorLi.value, 'colorLi2': colorLi2.value};
+    const themeCode = JSON.stringify(share);
+    navigator.clipboard.writeText(themeCode);
+    status.innerText = chrome.i18n.getMessage('exportTheme');
 };
 
 
 /* Import theme */
 
-function _importTheme(e) {
-    var files = e.target.files, reader = new FileReader();
-    reader.onload = _imp;
-    reader.readAsText(files[0]);
+function _cancelImport(){
+    if (importBtn.classList.contains('cancel')) {
+        importBtn.classList.remove('cancel');
+        importBtn.innerText = chrome.i18n.getMessage('import');
+        _themeName.classList.remove('import');
+        _themeName.value = _safeValue;
+        _themeName.placeholder = '';
+        _themeName.setAttribute('maxlength','30');
+        if (toggleEdit.style.display === 'block') {
+            toggleEdit.style.display = 'none';
+        }
+        editBtn.disabled = false;
+        saveBtn.disabled = true;
+        exportBtn.disabled = false;
+        if (status.innerText === chrome.i18n.getMessage('importThemeDesc')) {
+            status.innerText = chrome.i18n.getMessage('cancelImport');
+        }
+    }
 };
-function _imp() {
-    var colors = JSON.parse(this.result);
-    chrome.storage.local.set(
-        colors,
-    function() {
-        chrome.storage.local.get({
-            'themeName': '',
-            'colorBg': '',
-            'colorFg': '',
-            'colorHi': '',
-            'colorBtn': '',
-            'colorDrop': '',
-            'colorLi': '',
-            'colorLi2': ''
-        },
-        function(set) {
-            _themeName.value = set.themeName;
-            _colorBg.value = set.colorBg;
-            _colorFg.value = set.colorFg;
-            _colorHi.value = set.colorHi;
-            _colorBtn.value = set.colorBtn;
-            _colorDrop.value = set.colorDrop;
-            _colorLi.value = set.colorLi;
-            _colorLi2.value = set.colorLi2;
-            status.innerText = chrome.i18n.getMessage('importTheme');
-        });
-    });
-    document.getElementById('importHidden').value = '';
+
+function _imp(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    var clipboardData = event.clipboardData || window.clipboardData;
+    var themeCode = clipboardData.getData('Text');
+    var shared = JSON.parse(themeCode);
+    _themeName.value = shared.themeName;
+    _colorBg.value = shared.colorBg;
+    _colorFg.value = shared.colorFg;
+    _colorHi.value = shared.colorHi;
+    _colorBtn.value = shared.colorBtn;
+    _colorDrop.value = shared.colorDrop;
+    _colorLi.value = shared.colorLi;
+    _colorLi2.value = shared.colorLi2;
+    importBtn.classList.remove('cancel');
+    importBtn.innerText = chrome.i18n.getMessage('import');
+    _themeName.classList.remove('import');
+    _themeName.placeholder = '';
+    _themeName.setAttribute('maxlength','30');
+    editBtn.disabled = false;
+    saveBtn.disabled = false;
+    exportBtn.disabled = false;
+    status.innerText = chrome.i18n.getMessage('importTheme');
+};
+
+function _importTheme() {
+    if (!importBtn.classList.contains('cancel')) {
+        importBtn.classList.add('cancel');
+        importBtn.innerText = chrome.i18n.getMessage('cancel');
+        _themeName.classList.add('import');
+        _safeValue = _themeName.value;
+        _themeName.value = [];
+        _themeName.placeholder = chrome.i18n.getMessage('import');
+        _themeName.setAttribute('maxlength','350');
+        status.innerText = chrome.i18n.getMessage('importThemeDesc');
+        if (toggleEdit.style.display === 'none') {
+            toggleEdit.style.display = 'block';
+        }
+        editBtn.disabled = true;
+        saveBtn.disabled = true;
+        exportBtn.disabled = true;
+        _themeName.focus();
+        _themeName.addEventListener('paste', _imp);
+        _themeName.addEventListener('drop', _imp);
+    }
+    else {
+        _cancelImport();
+    }
 };
 
 
@@ -589,7 +586,6 @@ const _colorDrop = document.getElementById('colorDrop');
 const _colorLi = document.getElementById('colorLi');
 const _colorLi2 = document.getElementById('colorLi2');
 const status = document.getElementById('status');
-var tryAgain = false;
 
 document.querySelectorAll('button.themebox').forEach(function(theme) {
     theme.addEventListener('click', _selectTheme);
@@ -597,7 +593,4 @@ document.querySelectorAll('button.themebox').forEach(function(theme) {
 editBtn.addEventListener('click', _editTheme);
 saveBtn.addEventListener('click', _saveTheme);
 exportBtn.addEventListener('click', _exportTheme);
-importBtn.onclick = function() {
-    document.getElementById('importHidden').click();
-};
-document.getElementById('importHidden').addEventListener("change", _importTheme, false);
+importBtn.addEventListener('click', _importTheme);

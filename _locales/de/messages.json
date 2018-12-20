@@ -251,9 +251,13 @@
         "message": "Importieren",
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
+    "cancel": {
+        "message": "Cancel",
+        "description": "Options: Text to show on a button that performs some sort of cancel operation"
+    },
     "export": {
         "message": "Exportieren",
-        "description": "Options: Text to show on a button that performs some sort of export operation"
+        "description": "Options: Text to show on a button that performs some sort of export operation. In English the word Share can be used for sharing/exporting themes – the equivalent of Export in other languages is correct as translation. Decide depending on language."
     },
     "reset": {
         "message": "Zurücksetzen",
@@ -266,6 +270,10 @@
     "cancelReset": {
         "message": "Vorgang abgebrochen.",
         "description": "Options: Status message when reset is cancelled"
+    },
+    "cancelImport": {
+        "message": "Import cancelled.",
+        "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
         "message": "Einstellungen zurückgesetzt, Speicher bereinigt.",
@@ -287,9 +295,17 @@
         "message": "Thema gespeichert und aktiviert.",
         "description": "Options: Status message for theme activation"
     },
+    "exportTheme": {
+        "message": "Thema in die Zwischenablage kopiert.",
+        "description": "Options: Status message for theme sharing"
+    },
     "importTheme": {
         "message": "Thema importiert. Klicke SPEICHERN um das Thema zu speichern.",
         "description": "Options: Status message for theme import"
+    },
+    "importThemeDesc": {
+        "message": "Paste or drag and drop theme code into import field.",
+        "description": "Options: Status message describing theme import"
     },
     "statusThemes": {
         "message": "Wähle ein Thema aus, oder gestalte ein Neues.",
