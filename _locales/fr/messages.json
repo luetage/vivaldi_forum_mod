@@ -172,7 +172,7 @@
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Masque les infobulles du menu de connexion.",
+        "message": "Masque les infobulles du menu de connection.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
@@ -252,7 +252,7 @@
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "cancel": {
-        "message": "Cancel",
+        "message": "Annuler",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "export": {
@@ -272,7 +272,7 @@
         "description": "Options: Status message when reset is cancelled"
     },
     "cancelImport": {
-        "message": "Import cancelled.",
+        "message": "Importation annulée.",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
@@ -296,11 +296,11 @@
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Theme code copied to clipboard.",
+        "message": "Code du thème copié dans le presse-papiers .",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Paste or drag and drop theme code into import field.",
+        "message": "Collez ou glissez/déposez le code du thème à importer dans le champs.",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {

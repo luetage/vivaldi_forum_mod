@@ -345,11 +345,15 @@ function _selectTheme(event) {
     const theme = event.currentTarget;
     const name = theme.getAttribute('id');
     if (!theme.classList.contains('active')) {
+        if (status.innerText === chrome.i18n.getMessage('importTheme')) {
+            status.innerText = chrome.i18n.getMessage('cancelImport');
+        }
         const current = document.querySelector('.active')
         const currentName = current.getAttribute('id');
         current.classList.remove('active');
         theme.classList.add('active');
         if (name !== 'custom1' && name !== 'custom2' && name !== 'custom3' && name !== 'custom4') {
+            _cancelImport();
             chrome.storage.sync.set({
                 [currentName]: '0',
                 [name]: '1',
@@ -362,6 +366,7 @@ function _selectTheme(event) {
             exportBtn.disabled = true;
         }
         else {
+            _cancelImport();
             chrome.storage.sync.set({
                 [currentName]: '0',
                 [name]: '1',
@@ -524,8 +529,13 @@ function _cancelImport(){
 function _imp(event) {
     event.stopPropagation();
     event.preventDefault();
-    var clipboardData = event.clipboardData || window.clipboardData;
-    var themeCode = clipboardData.getData('Text');
+    if (eventType === 'paste') {
+        var clipboardData = event.clipboardData || window.clipboardData;
+        var themeCode = clipboardData.getData('Text');
+    }
+    else {
+        var themeCode = event.dataTransfer.getData('text');
+    }
     var shared = JSON.parse(themeCode);
     _themeName.value = shared.themeName;
     _colorBg.value = shared.colorBg;
@@ -563,8 +573,14 @@ function _importTheme() {
         saveBtn.disabled = true;
         exportBtn.disabled = true;
         _themeName.focus();
-        _themeName.addEventListener('paste', _imp);
-        _themeName.addEventListener('drop', _imp);
+        _themeName.addEventListener('paste', function() {
+            eventType = 'paste';
+            _imp(event);
+        });
+        _themeName.addEventListener('drop', function() {
+            eventType = 'drop';
+            _imp(event);
+        });
     }
     else {
         _cancelImport();
