@@ -520,9 +520,7 @@ function _cancelImport(){
         editBtn.disabled = false;
         saveBtn.disabled = true;
         exportBtn.disabled = false;
-        if (status.innerText === chrome.i18n.getMessage('importThemeDesc')) {
-            status.innerText = chrome.i18n.getMessage('cancelImport');
-        }
+        status.innerText = chrome.i18n.getMessage('cancelImport');
     }
 };
 
