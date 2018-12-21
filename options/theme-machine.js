@@ -514,8 +514,15 @@ function _cancelImport(){
         importBtn.innerText = chrome.i18n.getMessage('import');
         _themeName.classList.remove('import');
         if (_safeValueSwitch === 1) {
-            _themeName.value = _safeValue;
             _safeValueSwitch = 0;
+            _themeName.value = _safeName;
+            _colorBg.value = _safeBg;
+            _colorFg.value = _safeFg;
+            _colorHi.value = _safeHi;
+            _colorBtn.value = _safeBtn;
+            _colorDrop.value = _safeDrop;
+            _colorLi.value = _safeLi;
+            _colorLi2.value = _safeLi2;
         }
         _themeName.placeholder = '';
         _themeName.setAttribute('maxlength','30');
@@ -563,8 +570,15 @@ function _importTheme() {
         importBtn.classList.add('cancel');
         importBtn.innerText = chrome.i18n.getMessage('cancel');
         _themeName.classList.add('import');
-        _safeValue = _themeName.value;
         _safeValueSwitch = 1;
+        _safeName = _themeName.value;
+        _safeBg = _colorBg.value;
+        _safeFg = _colorFg.value;
+        _safeHi = _colorHi.value;
+        _safeBtn = _colorBtn.value;
+        _safeDrop = _colorDrop.value;
+        _safeLi = _colorLi.value;
+        _safeLi2 = _colorLi2.value;
         _themeName.value = '';
         _themeName.placeholder = chrome.i18n.getMessage('import');
         _themeName.setAttribute('maxlength','350');

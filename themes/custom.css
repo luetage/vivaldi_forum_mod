@@ -362,7 +362,7 @@ pre code {
 .btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-composer a, .taskbar .navbar-nav li.taskbar-composer a:hover, .taskbar .navbar-nav li.taskbar-composer a:focus {
     background-color: var(--colorHi);
 }
-.btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-composer a i, .composer .resizer .trigger i {
+.btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-composer a i, .composer .resizer .trigger i, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-chat a:active i, .taskbar .navbar-nav li.taskbar-chat a:focus i, .taskbar .navbar-nav li.taskbar-chat a:hover i {
     color: var(--colorHiFg);
 }
 .composer .resizer .trigger {
