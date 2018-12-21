@@ -172,7 +172,7 @@
         "description": "Options: Title of hide tooltips mod"
     },
     "hideTooltipsDesc": {
-        "message": "Deaktiviert Tooltips im Header",
+        "message": "Deaktiviert Tooltips im Header.",
         "description": "Options: Description of hide tooltips mod"
     },
     "hideUnread": {
@@ -252,7 +252,7 @@
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "cancel": {
-        "message": "Cancel",
+        "message": "Abbrechen",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "export": {
@@ -272,7 +272,7 @@
         "description": "Options: Status message when reset is cancelled"
     },
     "cancelImport": {
-        "message": "Import cancelled.",
+        "message": "Vorgang abgebrochen.",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
@@ -304,7 +304,7 @@
         "description": "Options: Status message for theme import"
     },
     "importThemeDesc": {
-        "message": "Paste or drag and drop theme code into import field.",
+        "message": "Themencode einfügen oder per Drag&Drop in das Importfeld ziehen.",
         "description": "Options: Status message describing theme import"
     },
     "statusThemes": {

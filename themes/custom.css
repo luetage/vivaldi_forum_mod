@@ -704,13 +704,9 @@ button.main.green, button.main.red {
 
 /* Voting indicators */
 
-.topic .votes [component="post/upvote"].upvoted {
-    background-color: #4caf50 !important;
-    color: #fbfbfb !important;
-}
-.topic .votes [component="post/downvote"].downvoted {
-    background-color: #ef3939 !important;
-    color: #fbfbfb !important;
+.topic .votes [component="post/upvote"].upvoted, .topic .votes [component="post/downvote"].downvoted {
+    background-color: var(--colorHi) !important;
+    color: var(--colorHiFg) !important;
 }
 
 
