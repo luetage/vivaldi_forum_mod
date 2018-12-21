@@ -252,11 +252,11 @@
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "cancel": {
-        "message": "Cancel",
+        "message": "Annulla",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "cancelImport": {
-        "message": "Import cancelled.",
+        "message": "Importazione annullata.",
         "description": "Options: Status message after cancelled import"
     },
     "export": {
@@ -296,11 +296,11 @@
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Theme code copied to clipboard.",
+        "message": "Codice tema copiato negli appunti.",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Paste or drag and drop theme code into import field.",
+        "message": "Incolla o trascina il codice tema nel campo importa.",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {
