@@ -543,14 +543,13 @@ function _imp(event) {
     _colorDrop.value = shared.colorDrop;
     _colorLi.value = shared.colorLi;
     _colorLi2.value = shared.colorLi2;
-    importBtn.classList.remove('cancel');
-    importBtn.innerText = chrome.i18n.getMessage('import');
     _themeName.classList.remove('import');
     _themeName.placeholder = '';
     _themeName.setAttribute('maxlength','30');
-    editBtn.disabled = false;
+    editBtn.disabled = true;
     saveBtn.disabled = false;
-    exportBtn.disabled = false;
+    exportBtn.disabled = true;
+    importBtn.disabled = false;
     status.innerText = chrome.i18n.getMessage('importTheme');
 };
 
