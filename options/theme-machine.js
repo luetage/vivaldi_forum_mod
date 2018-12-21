@@ -442,6 +442,9 @@ function _saveTheme() {
     _cancelImport();
     const active = document.querySelector('.active');
     const newTheme = active.getAttribute('id');
+    if (_themeName.value === '') {
+        _themeName.value = _tolocalISO();
+    }
     if (newTheme === 'custom1') {
         chrome.storage.sync.set({
             'c1Name': _themeName.value,
@@ -548,6 +551,9 @@ function _imp() {
     }
     var shared = JSON.parse(themeCode);
     _themeName.value = shared.themeName;
+    if (_themeName.value === 'undefined') {
+        _themeName.value = _tolocalISO();
+    }
     _colorBg.value = shared.colorBg;
     _colorFg.value = shared.colorFg;
     _colorHi.value = shared.colorHi;
@@ -602,6 +608,18 @@ function _importTheme() {
     else {
         _cancelImport();
     }
+};
+
+
+/* Date */
+
+function _tolocalISO() {
+    var date = new Date();
+    function pad(n) { return n < 10 ? '0' + n : n }
+    var localISO = date.getFullYear() + '-'
+        + pad(date.getMonth() + 1) + '-'
+        + pad(date.getDate())
+    return localISO;
 };
 
 
