@@ -438,6 +438,8 @@ function _editTheme() {
 /* Save Theme */
 
 function _saveTheme() {
+    _safeValueSwitch = 0;
+    _cancelImport();
     const active = document.querySelector('.active');
     const newTheme = active.getAttribute('id');
     if (newTheme === 'custom1') {
@@ -511,7 +513,10 @@ function _cancelImport(){
         importBtn.classList.remove('cancel');
         importBtn.innerText = chrome.i18n.getMessage('import');
         _themeName.classList.remove('import');
-        _themeName.value = _safeValue;
+        if (_safeValueSwitch === 1) {
+            _themeName.value = _safeValue;
+            _safeValueSwitch = 0;
+        }
         _themeName.placeholder = '';
         _themeName.setAttribute('maxlength','30');
         if (toggleEdit.style.display === 'block') {
@@ -524,7 +529,7 @@ function _cancelImport(){
     }
 };
 
-function _imp(event) {
+function _imp() {
     event.stopPropagation();
     event.preventDefault();
     if (eventType === 'paste') {
@@ -559,7 +564,8 @@ function _importTheme() {
         importBtn.innerText = chrome.i18n.getMessage('cancel');
         _themeName.classList.add('import');
         _safeValue = _themeName.value;
-        _themeName.value = [];
+        _safeValueSwitch = 1;
+        _themeName.value = '';
         _themeName.placeholder = chrome.i18n.getMessage('import');
         _themeName.setAttribute('maxlength','350');
         status.innerText = chrome.i18n.getMessage('importThemeDesc');
