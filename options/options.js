@@ -60,7 +60,9 @@ function _restore() {
             backupBtn.disabled = true;
         }
         if (changeMessage === false) {
+            status.style.opacity = '0';
             status.innerText = chrome.i18n.getMessage('statusThemes');
+            _fade();
         }
     });
 };
@@ -103,7 +105,9 @@ function _toggleUserCSS() {
             save2Btn.disabled = false;
             backupBtn.disabled = false;
             textarea.disabled = false;
-            status.innerText = chrome.i18n.getMessage('activateUserCSS')
+            status.style.opacity = '0';
+            status.innerText = chrome.i18n.getMessage('activateUserCSS');
+            _fade();
         });
     }
     else {
@@ -112,7 +116,9 @@ function _toggleUserCSS() {
             save2Btn.disabled = true;
             backupBtn.disabled = true;
             textarea.disabled = true;
+            status.style.opacity = '0';
             status.innerText = chrome.i18n.getMessage('deactivateUserCSS')
+            _fade();
         });
     }
 };
@@ -126,7 +132,9 @@ function _saveUserCSS() {
         'userCSS': userCSS
     },
     function() {
+        status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('saveUserCSS');
+        _fade();
     });
 };
 
@@ -149,10 +157,14 @@ function _backupUserCSS() {
 function _resetOptions() {
     if (!resetBtn.classList.contains('confirm')) {
         resetBtn.classList.add('confirm');
+        status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('confirmReset');
+        _fade();
         setTimeout(function() {
             if (status.innerText === chrome.i18n.getMessage('confirmReset')) {
+                status.style.opacity = '0';
                 status.innerText = chrome.i18n.getMessage('cancelReset');
+                _fade();
             }
             resetBtn.removeAttribute('class');
         }, 8000);
@@ -174,7 +186,9 @@ function _resetOptions() {
                 _restore();
                 _showThemes();
                 changeMessage = true;
+                status.style.opacity = '0';
                 status.innerText = chrome.i18n.getMessage('optionsReset');
+                _fade();
             });
         });
     }
@@ -189,7 +203,9 @@ function _showThemes() {
     navThemes.style.display = 'block';
     navModifications.style.display = 'none';
     navInfo.style.display = 'none';
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('statusThemes');
+    _fade();
 };
 function _showModifications() {
     document.querySelector('.view').removeAttribute('class');
@@ -197,7 +213,9 @@ function _showModifications() {
     navThemes.style.display = 'none';
     navModifications.style.display = 'block';
     navInfo.style.display = 'none';
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('statusModifications');
+    _fade();
 };
 function _showInfo() {
     document.querySelector('.view').removeAttribute('class');
@@ -205,7 +223,9 @@ function _showInfo() {
     navThemes.style.display = 'none';
     navModifications.style.display = 'none';
     navInfo.style.display = 'block';
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('statusInfo');
+    _fade();
 };
 
 

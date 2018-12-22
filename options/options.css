@@ -52,7 +52,7 @@ header {
 form {
     display: inline;
 }
-#status {
+header div {
     height: 27px;
     color: hsl(0, 0%, 99%);
     font-weight: 600;
@@ -225,7 +225,7 @@ input[type="text" i] {
     font-weight: 600;
     font-size: 13px;
     color: hsl(0, 0%, 37%);
-    width: 190px;
+    width: 166px;
     padding-left: 5px;
 }
 input[type="color" i] {

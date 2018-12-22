@@ -346,7 +346,9 @@ function _selectTheme(event) {
     const name = theme.getAttribute('id');
     if (!theme.classList.contains('active')) {
         if (status.innerText === chrome.i18n.getMessage('importTheme')) {
+            status.style.opacity = '0';
             status.innerText = chrome.i18n.getMessage('cancelImport');
+            _fade();
         }
         const current = document.querySelector('.active')
         const currentName = current.getAttribute('id');
@@ -495,7 +497,9 @@ function _saveTheme() {
     }
     _restoreThemes();
     _activateTheme();
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('saveTheme');
+    _fade();
 };
 
 
@@ -505,7 +509,9 @@ function _exportTheme() {
     const share = {'themeName': _themeName.value, 'colorBg': _colorBg.value, 'colorFg': _colorFg.value, 'colorHi': _colorHi.value, 'colorBtn': _colorBtn.value, 'colorDrop': _colorDrop.value, 'colorLi': _colorLi.value, 'colorLi2': colorLi2.value};
     const themeCode = JSON.stringify(share);
     navigator.clipboard.writeText(themeCode);
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('exportTheme');
+    _fade();
 };
 
 
@@ -535,7 +541,9 @@ function _cancelImport(){
         editBtn.disabled = false;
         saveBtn.disabled = true;
         exportBtn.disabled = false;
+        status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('cancelImport');
+        _fade();
     }
 };
 
@@ -568,7 +576,9 @@ function _imp() {
     saveBtn.disabled = false;
     exportBtn.disabled = true;
     importBtn.disabled = false;
+    status.style.opacity = '0';
     status.innerText = chrome.i18n.getMessage('importTheme');
+    _fade();
 };
 
 function _importTheme() {
@@ -588,7 +598,9 @@ function _importTheme() {
         _themeName.value = '';
         _themeName.placeholder = chrome.i18n.getMessage('import');
         _themeName.setAttribute('maxlength','350');
+        status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('importThemeDesc');
+        _fade();
         if (toggleEdit.style.display === 'none') {
             toggleEdit.style.display = 'block';
         }
@@ -621,6 +633,21 @@ function _tolocalISO() {
         + pad(date.getDate())
     return localISO;
 };
+
+
+/* Animate Status */
+
+function _fade() {
+    var op = 0.1;
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        status.style.opacity = op;
+        status.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 20);
+}
 
 
 const editBtn = document.querySelector('.theme-edit');
