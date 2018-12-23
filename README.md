@@ -10,6 +10,7 @@ Open source extension. Dedicated to improving your experience browsing Vivaldi F
 
 * Theme machine
 * Community themes
+* User CSS
 * Modifications
 * Fixes
 * Enhanced functionality
