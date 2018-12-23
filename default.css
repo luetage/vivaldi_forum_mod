@@ -116,9 +116,6 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences, .composer .ti
 #header-menu, #submenu {
     transition: top 0.857s !important;
 }
-#submenu {
-    z-index: 98;
-}
 
 /* Copy all code button */
 .copy-all-code-button {
