@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "name": "Vivaldi Forum mod",
     "short_name": "VF mod",
-    "version": "1.84",
+    "version": "1.85",
     "author": "luetage",
     "description": "Modular extension. Themes, fixes and modifications.",
     "homepage_url": "https://github.com/luetage/vivaldi_forum_mod",
@@ -17,7 +17,8 @@
     ],
     "options_ui": {
         "page": "options/options.html",
-        "open_in_tab": true
+        "open_in_tab": false,
+        "chrome_style": true
     },
     "web_accessible_resources": [
         "themes/standard.css",
