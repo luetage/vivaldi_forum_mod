@@ -43,7 +43,7 @@ Vivaldi Forum mod 2.0 introduces translations. Following languages are currently
 You can help out by improving these translations, or by introducing a new translation. Here's a quick **how to**:
 
 * Please make sure the language you want to translate to is [supported](https://developer.chrome.com/webstore/i18n?csw=1#localeTable).
-* Download or clone the [testing branch](https://github.com/luetage/vivaldi_forum_mod/tree/testing).
+* Clone or download the [testing branch](https://github.com/luetage/vivaldi_forum_mod/tree/testing).
 * On Vivaldi's extensions page enable developer mode, click **Load unpacked** and select the Vivaldi Forum mod directory.
 * In Vivaldi browser settings, go to **Startup** and select your desired target language. Restart the browser.
 * In Vivaldi Forum settings pick your target language, hit **Save** and reload the tab.
