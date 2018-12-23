@@ -345,17 +345,12 @@ function _selectTheme(event) {
     const theme = event.currentTarget;
     const name = theme.getAttribute('id');
     if (!theme.classList.contains('active')) {
-        if (status.innerText === chrome.i18n.getMessage('importTheme')) {
-            status.style.opacity = '0';
-            status.innerText = chrome.i18n.getMessage('cancelImport');
-            _fade();
-        }
+        _cancelImport();
         const current = document.querySelector('.active')
         const currentName = current.getAttribute('id');
         current.classList.remove('active');
         theme.classList.add('active');
         if (name !== 'custom1' && name !== 'custom2' && name !== 'custom3' && name !== 'custom4') {
-            _cancelImport();
             chrome.storage.sync.set({
                 [currentName]: '0',
                 [name]: '1',
@@ -368,7 +363,6 @@ function _selectTheme(event) {
             exportBtn.disabled = true;
         }
         else {
-            _cancelImport();
             chrome.storage.sync.set({
                 [currentName]: '0',
                 [name]: '1',
@@ -552,7 +546,7 @@ function _imp() {
     event.preventDefault();
     if (eventType === 'paste') {
         var clipboardData = event.clipboardData || window.clipboardData;
-        var themeCode = clipboardData.getData('Text');
+        var themeCode = clipboardData.getData('text');
     }
     else {
         var themeCode = event.dataTransfer.getData('text');
