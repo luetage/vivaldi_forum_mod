@@ -682,6 +682,10 @@ button.main.green, button.main.red {
 .navbar-default {
     border-color: var(--colorFg2);
 }
+.composer .mobile-navbar {
+    background-color: var(--colorBtn);
+    color: var(--colorBtnFg);
+}
 @media (max-width: 767px) {
     .categories>li, .category>ul>li {border-top-color: var(--colorBgHi);}
     .categories>li:last-child, .category>ul>li:last-child {border-bottom-color: var(--colorBgHi);}
