@@ -1,189 +1,9 @@
-/* Save options */
+/* Restore Options */
 
-var standardS = document.getElementById('standard');
-var darkGreyS = document.getElementById('darkGrey');
-var lightGreyS = document.getElementById('lightGrey');
-var modS = document.getElementById('mod');
-var spruceyS = document.getElementById('sprucey');
-var customS = document.getElementById('custom');
-var csscheckS = document.getElementById('csscheck');
-var userCSSS = document.getElementById('userCSS');
-var headerScrollS = document.getElementById('headerScroll');
-var bookmarksS = document.getElementById('bookmarks');
-var notificationIconsS = document.getElementById('notificationIcons');
-var tooltipsS = document.getElementById('tooltips');
-var unreadS = document.getElementById('unread');
-var timestampS = document.getElementById('timestamp');
-var compactS = document.getElementById('compact');
-var userIDS = document.getElementById('userID');
-var signatureModS = document.getElementById('signatureMod');
-var squareS = document.getElementById('square');
-var advancedFormattingS = document.getElementById('advancedFormatting');
-
-function save_options(){
-
-    if (standardS.checked == true) {
-        standardS.value = '1';
-    } else {
-        standardS.value = '0';
-    }
-    if (darkGreyS.checked == true) {
-        darkGreyS.value = '1';
-    } else {
-        darkGreyS.value = '0';
-    }
-    if (lightGreyS.checked == true) {
-        lightGreyS.value = '1';
-    } else {
-        lightGreyS.value = '0';
-    }
-    if (modS.checked == true) {
-        modS.value = '1';
-    } else {
-        modS.value = '0';
-    }
-    if (spruceyS.checked == true) {
-        spruceyS.value = '1';
-    } else {
-        spruceyS.value = '0';
-    }
-    if (customS.checked == true) {
-        customS.value = '1';
-    } else {
-        customS.value = '0';
-    }
-    if (csscheckS.checked == true) {
-        csscheckS.value = '1';
-    } else {
-        csscheckS.value = '0';
-    }
-    if (headerScrollS.checked == true) {
-        headerScrollS.value = '1';
-    } else {
-        headerScrollS.value = '0';
-    }
-    if (bookmarksS.checked == true) {
-        bookmarksS.value = '1';
-    } else {
-        bookmarksS.value = '0';
-    }
-    if (notificationIconsS.checked == true) {
-        notificationIconsS.value = '1';
-    } else {
-        notificationIconsS.value = '0';
-    }
-    if (tooltipsS.checked == true) {
-        tooltipsS.value = '1';
-    } else {
-        tooltipsS.value = '0';
-    }
-    if (unreadS.checked == true) {
-        unreadS.value = '1';
-    } else {
-        unreadS.value = '0';
-    }
-    if (timestampS.checked == true) {
-        timestampS.value = '1';
-    } else {
-        timestampS.value = '0';
-    }
-    if (compactS.checked == true) {
-        compactS.value = '1';
-    } else {
-        compactS.value = '0';
-    }
-    if (userIDS.checked == true) {
-        userIDS.value = '1';
-    } else {
-        userIDS.value = '0';
-    }
-    if (signatureModS.checked == true) {
-        signatureModS.value = '1';
-    } else {
-        signatureModS.value = '0';
-    }
-    if (squareS.checked == true) {
-        squareS.value = '1';
-    } else {
-        squareS.value = '0';
-    }
-    if (advancedFormattingS.checked == true) {
-        advancedFormattingS.value = '1';
-    } else {
-        advancedFormattingS.value = '0';
-    }
-
-    var standard = standardS.value;
-    var darkGrey = darkGreyS.value;
-    var lightGrey = lightGreyS.value;
-    var mod = modS.value;
-    var sprucey = spruceyS.value;
-    var custom = customS.value;
-    var csscheck = csscheckS.value;
-    var userCSS = userCSSS.value;
-    var headerScroll = headerScrollS.value;
-    var bookmarks = bookmarksS.value;
-    var notificationIcons = notificationIconsS.value;
-    var tooltips = tooltipsS.value;
-    var unread = unreadS.value;
-    var timestamp = timestampS.value;
-    var compact = compactS.value;
-    var userID = userIDS.value;
-    var signatureMod = signatureModS.value;
-    var square = squareS.value;
-    var advancedFormatting = advancedFormattingS.value;
-
-    chrome.storage.sync.set({
-        'standard': standard,
-        'darkGrey': darkGrey,
-        'lightGrey': lightGrey,
-        'mod': mod,
-        'sprucey': sprucey,
-        'custom': custom,
-        'csscheck': csscheck,
-        'headerScroll': headerScroll,
-        'bookmarks': bookmarks,
-        'notificationIcons': notificationIcons,
-        'tooltips': tooltips,
-        'unread': unread,
-        'timestamp': timestamp,
-        'compact': compact,
-        'userID': userID,
-        'signatureMod': signatureMod,
-        'square': square,
-        'advancedFormatting': advancedFormatting
-      },
-      function(){
-          chrome.storage.local.set({'userCSS': userCSS});
-        var status = document.getElementById('status');
-        var reset = document.getElementById('reset-button');
-         status.innerHTML = 'Options saved!';
-         reset.innerHTML = 'Reset';
-           setTimeout(function() {
-               if (status.innerHTML === 'Options saved!') {
-                  status.innerHTML = 'Reload Vivaldi Forum tab/s.';
-              }
-              setTimeout(function() {
-                  if (status.innerHTML === 'Reload Vivaldi Forum tab/s.') {
-                    status.innerHTML = '';
-                }
-              }, 5000);
-        }, 2500);
-    });
-};
-
-
-/* Restore options */
-
-function restore_options(){
+function _restore() {
+    _restoreThemes();
     chrome.storage.sync.get({
-        'standard': '1',
-        'darkGrey': '',
-        'lightGrey': '',
-        'mod': '',
-        'sprucey': '',
-        'custom': '',
-        'csscheck': '',
+        'advancedFormatting': '',
         'headerScroll': '',
         'bookmarks': '',
         'notificationIcons': '',
@@ -194,78 +14,50 @@ function restore_options(){
         'userID': '',
         'signatureMod': '',
         'square': '',
-        'advancedFormatting': ''
-      },
+        'cssToggle': '0'
+    },
     function(restore){
         chrome.storage.local.get({'userCSS': ''}, function(local) {
-            userCSSS.value = local.userCSS;
+            document.getElementById('userCSS').value = local.userCSS;
         });
-        standardS.value = restore.standard;
-        if (standardS.value == '1') {
-            standardS.checked = true;
+        if (restore.advancedFormatting === '1') {
+            document.getElementById('advancedFormatting').classList.add('selected');
         }
-        darkGreyS.value = restore.darkGrey;
-        if (darkGreyS.value == '1') {
-            darkGreyS.checked = true;
+        if (restore.headerScroll === '1') {
+            document.getElementById('headerScroll').classList.add('selected');
         }
-        lightGreyS.value = restore.lightGrey;
-        if (lightGreyS.value == '1') {
-            lightGreyS.checked = true;
+        if (restore.bookmarks === '1') {
+            document.getElementById('bookmarks').classList.add('selected');
         }
-        modS.value = restore.mod;
-        if (modS.value == '1') {
-            modS.checked = true;
+        if (restore.notificationIcons === '1') {
+            document.getElementById('notificationIcons').classList.add('selected');
         }
-        spruceyS.value = restore.sprucey;
-        if (spruceyS.value == '1') {
-            spruceyS.checked = true;
+        if (restore.tooltips === '1') {
+            document.getElementById('tooltips').classList.add('selected');
         }
-        customS.value = restore.custom;
-        if (customS.value == '1') {
-            customS.checked = true;
+        if (restore.unread === '1') {
+            document.getElementById('unread').classList.add('selected');
         }
-        csscheckS.value = restore.csscheck;
-        if (csscheckS.value == '1') {
-            csscheckS.checked = true;
+        if (restore.timestamp === '1') {
+            document.getElementById('timestamp').classList.add('selected');
         }
-        else {
-            csscheckS.checked = false;
+        if (restore.compact === '1') {
+            document.getElementById('compact').classList.add('selected');
         }
-        headerScrollS.value = restore.headerScroll;
-        if (headerScrollS.value == '1') {
-            headerScrollS.checked = true;
-        } else {
-            headerScrollS.checked = false;
+        if (restore.userID === '1') {
+            document.getElementById('userID').classList.add('selected');
         }
-        bookmarksS.value = restore.bookmarks;
-        if (bookmarksS.value == '1') {
-            bookmarksS.checked = true;
-        } else {
-            bookmarksS.checked = false;
+        if (restore.signatureMod === '1') {
+            document.getElementById('signatureMod').classList.add('selected');
         }
-        notificationIconsS.value = restore.notificationIcons;
-        if (notificationIconsS.value == '1') {
-            notificationIconsS.checked = true;
-        } else {
-            notificationIconsS.checked = false;
+        if (restore.square === '1') {
+            document.getElementById('square').classList.add('selected');
         }
-        tooltipsS.value = restore.tooltips;
-        if (tooltipsS.value == '1') {
-            tooltipsS.checked = true;
-        } else {
-            tooltipsS.checked = false;
-        }
-        unreadS.value = restore.unread;
-        if (unreadS.value == '1') {
-            unreadS.checked = true;
-        } else {
-            unreadS.checked = false;
-        }
-        timestampS.value = restore.timestamp;
-        if (timestampS.value == '1') {
-            timestampS.checked = true;
-        } else {
-            timestampS.checked = false;
+        if (restore.cssToggle === '0') {
+            toggleBtn.classList.add('deactivated');
+            textarea.disabled = true;
+            save2Btn.disabled = true;
+            backupBtn.disabled = true;
         }
         if (changeMessage === false) {
             status.style.opacity = '0';
@@ -276,7 +68,20 @@ function restore_options(){
 };
 
 
-/* Reset options */
+/* Save Modifications */
+
+function _selectMods(event) {
+    const mod = event.currentTarget;
+    const name = mod.getAttribute('id');
+    if (mod.classList.contains('selected')) {
+        mod.removeAttribute('class');
+        chrome.storage.sync.set({[name]: '0'});
+    }
+    else {
+        mod.classList.add('selected');
+        chrome.storage.sync.set({[name]: '1'});
+    }
+};
 
 
 /* Use tab in textarea (tab to 4 spaces) */
@@ -336,12 +141,13 @@ function _saveUserCSS() {
 
 /* Backup User CSS */
 
-function back_it_up() {
-    var userCSS = userCSSS.value;
-    var url = 'data:text/css;base64,' + btoa(userCSS);
+function _backupUserCSS() {
+    var userCSS = document.getElementById('userCSS').value;
+    const url = 'data:text/css;base64,' + btoa(userCSS);
     chrome.downloads.download({
         url: url,
-        saveAs: true
+        saveAs: true,
+        filename: 'backup.css'
     });
 };
 
@@ -389,15 +195,7 @@ function _resetOptions() {
 };
 
 
-var back = document.getElementById('back');
-var backup = document.getElementById('backup-button');
-var save = document.getElementById('save');
-var edit = document.getElementById('edit');
-var input = document.getElementById('input');
-var info = document.getElementById('info');
-var credits = document.getElementById('credits');
-var changelog = document.getElementById('changelog');
-var select = document.getElementById('select');
+/* Navigation */
 
 function _showThemes() {
     document.querySelector('.view').removeAttribute('class');
@@ -430,19 +228,31 @@ function _showInfo() {
     _fade();
 };
 
-function updateLocalisations(){
-    document.querySelectorAll(".advancedFormatting").forEach(span => {span.innerText = chrome.i18n.getMessage("advancedFormatting");});
-    document.querySelector(".advancedFormattingDesc").innerText = chrome.i18n.getMessage("advancedFormattingDesc");
-}
 
-document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save-button').addEventListener('click', save_options);
-document.getElementById('back-button').addEventListener('click', get_back);
-document.getElementById('backup-button').addEventListener('click', back_it_up);
-document.getElementById('reset-button').addEventListener('click', reset_options);
-document.getElementById('edit-button').addEventListener('click', show_edit);
-document.getElementById('css-button').addEventListener('click', show_css);
-document.getElementById('info-btn').addEventListener('click', show_info);
-document.getElementById('credits-btn').addEventListener('click', show_credits);
-document.getElementById('changelog-btn').addEventListener('click', show_changelog);
-updateLocalisations();
+const navThemes = document.getElementById('themes');
+const navModifications = document.getElementById('modifications');
+const navInfo = document.getElementById('info');
+const btnThemes = document.getElementById('themes-btn');
+const btnModifications = document.getElementById('modifications-btn');
+const btnInfo = document.getElementById('info-btn');
+const selectMods = document.querySelectorAll('#selectMods > p > span');
+const textarea = document.querySelector('textarea');
+const toggleBtn = document.getElementById('css-toggle');
+const save2Btn = document.getElementById('css-save');
+const backupBtn = document.getElementById('css-backup');
+const resetBtn = document.getElementById('reset-btn');
+var changeMessage = false;
+
+btnThemes.addEventListener('click', _showThemes);
+btnModifications.addEventListener('click', _showModifications);
+btnInfo.addEventListener('click', _showInfo);
+selectMods.forEach(function(mod) {
+    mod.addEventListener('click', _selectMods);
+});
+textarea.addEventListener('keydown', _tabSpaces);
+toggleBtn.addEventListener('click', _toggleUserCSS);
+save2Btn.addEventListener('click', _saveUserCSS);
+backupBtn.addEventListener('click', _backupUserCSS);
+resetBtn.addEventListener('click', _resetOptions);
+
+_restore();
