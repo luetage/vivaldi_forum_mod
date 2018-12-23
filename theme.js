@@ -21,7 +21,7 @@ chrome.storage.sync.get({
     'mod': '',
     'sprucey': '',
     'custom': '',
-    'csscheck': '',
+    'cssToggle': '',
     'compact': '',
     'logoWhite': '',
     'colorBg': '#fdf6e3',
@@ -170,7 +170,7 @@ function(theme) {
         document.getElementsByTagName('head')[0].appendChild(themeStandard);
     }
     // user css
-    if (theme.csscheck === '1') {
+    if (theme.cssToggle === '1') {
         chrome.storage.local.get({'userCSS': ''}, function(local) {
             if (local.userCSS !== '') {
                 var activateUserCSS = document.createElement('style');
