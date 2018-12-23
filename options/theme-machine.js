@@ -641,7 +641,7 @@ function _fade() {
         status.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
     }, 20);
-}
+};
 
 
 const editBtn = document.querySelector('.theme-edit');
