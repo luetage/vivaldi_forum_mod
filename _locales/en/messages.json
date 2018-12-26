@@ -256,8 +256,8 @@
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "export": {
-        "message": "Share",
-        "description": "Options: Text to show on a button that performs some sort of export operation. In English the word Share can be used for sharing/exporting themes – the equivalent of Export in other languages is a correct translation. Decide depending on language."
+        "message": "Export",
+        "description": "Options: Text to show on a button that performs some sort of export operation."
     },
     "reset": {
         "message": "Reset",
