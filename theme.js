@@ -6,7 +6,7 @@ function _async() {
     });
 };
 
-async function wait() {
+async function _wait() {
     while (!document.body) {
         await _async()
     }
