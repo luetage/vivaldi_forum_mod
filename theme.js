@@ -1,5 +1,16 @@
 /* Theme */
 
+function _async() {
+    return new Promise(resolve => {
+        requestAnimationFrame(resolve);
+    });
+};
+async function wait() {
+    while (!document.body) {
+        await _async()
+    }
+    return true;
+};
 function _logoWhite() {
     var getLogoWhite = document.createElement('link');
     getLogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
@@ -125,37 +136,32 @@ function(theme) {
         document.getElementsByTagName('head')[0].appendChild(themeSprucey);
     }
     else if (theme.custom === '1') {
-        setTimeout(function wait() {
-            if (document.body != null) {
-                document.body.style.setProperty('--colorBg', theme.colorBg);
-                document.body.style.setProperty('--colorFg', theme.colorFg);
-                document.body.style.setProperty('--colorHi', theme.colorHi);
-                document.body.style.setProperty('--colorBtn', theme.colorBtn);
-                document.body.style.setProperty('--colorDrop', theme.colorDrop);
-                document.body.style.setProperty('--colorLi', theme.colorLi);
-                document.body.style.setProperty('--colorLi2', theme.colorLi2);
-                document.body.style.setProperty('--colorDropFg', theme. colorDropFg);
-                document.body.style.setProperty('--colorDropHi', theme. colorDropHi);
-                document.body.style.setProperty('--colorDropHi2', theme. colorDropHi2);
-                document.body.style.setProperty('--colorDropHi3', theme. colorDropHi3);
-                document.body.style.setProperty('--colorDropHiG', theme. colorDropHiG);
-                document.body.style.setProperty('--colorBgHi', theme.colorBgHi);
-                document.body.style.setProperty('--colorBgHiC', theme.colorBgHiC);
-                document.body.style.setProperty('--colorBgHiCG', theme. colorBgHiCG);
-                document.body.style.setProperty('--colorBgHiG', theme.colorBgHiG);
-                document.body.style.setProperty('--colorBgHiG2', theme. colorBgHiG2);
-                document.body.style.setProperty('--colorFg2', theme.colorFg2);
-                document.body.style.setProperty('--colorHiFg', theme.colorHiFg);
-                document.body.style.setProperty('--colorLiHi', theme.colorLiHi);
-                document.body.style.setProperty('--colorLiR', theme.colorLiR);
-                document.body.style.setProperty('--colorLi2Hi', theme.colorLi2Hi);
-                document.body.style.setProperty('--colorBtnHi', theme.colorBtnHi);
-                document.body.style.setProperty('--colorBtnFg', theme.colorBtnFg);
-            }
-            else {
-                setTimeout(wait, 100);
-            }
-        }, 100);
+        wait().then(() => {
+            document.body.style.setProperty('--colorBg', theme.colorBg);
+            document.body.style.setProperty('--colorFg', theme.colorFg);
+            document.body.style.setProperty('--colorHi', theme.colorHi);
+            document.body.style.setProperty('--colorBtn', theme.colorBtn);
+            document.body.style.setProperty('--colorDrop', theme.colorDrop);
+            document.body.style.setProperty('--colorLi', theme.colorLi);
+            document.body.style.setProperty('--colorLi2', theme.colorLi2);
+            document.body.style.setProperty('--colorDropFg', theme. colorDropFg);
+            document.body.style.setProperty('--colorDropHi', theme. colorDropHi);
+            document.body.style.setProperty('--colorDropHi2', theme. colorDropHi2);
+            document.body.style.setProperty('--colorDropHi3', theme. colorDropHi3);
+            document.body.style.setProperty('--colorDropHiG', theme. colorDropHiG);
+            document.body.style.setProperty('--colorBgHi', theme.colorBgHi);
+            document.body.style.setProperty('--colorBgHiC', theme.colorBgHiC);
+            document.body.style.setProperty('--colorBgHiCG', theme. colorBgHiCG);
+            document.body.style.setProperty('--colorBgHiG', theme.colorBgHiG);
+            document.body.style.setProperty('--colorBgHiG2', theme. colorBgHiG2);
+            document.body.style.setProperty('--colorFg2', theme.colorFg2);
+            document.body.style.setProperty('--colorHiFg', theme.colorHiFg);
+            document.body.style.setProperty('--colorLiHi', theme.colorLiHi);
+            document.body.style.setProperty('--colorLiR', theme.colorLiR);
+            document.body.style.setProperty('--colorLi2Hi', theme.colorLi2Hi);
+            document.body.style.setProperty('--colorBtnHi', theme.colorBtnHi);
+            document.body.style.setProperty('--colorBtnFg', theme.colorBtnFg);
+        });
         var themeCustom = document.createElement('link');
         themeCustom.href = chrome.extension.getURL('themes/custom.css');
         themeCustom.type = 'text/css';
