@@ -107,35 +107,7 @@ function(theme) {
         }
     }
     //themes
-    if (theme.darkGrey === '1') {
-        var themeDarkGrey = document.createElement('link');
-        themeDarkGrey.href = chrome.extension.getURL('themes/dark-grey.css');
-        themeDarkGrey.type = 'text/css';
-        themeDarkGrey.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(themeDarkGrey);
-    }
-    else if (theme.lightGrey === '1') {
-        var themeLightGrey = document.createElement('link');
-        themeLightGrey.href = chrome.extension.getURL('themes/light-grey.css');
-        themeLightGrey.type = 'text/css';
-        themeLightGrey.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(themeLightGrey);
-    }
-    else if (theme.mod === '1') {
-        var themeMod = document.createElement('link');
-        themeMod.href = chrome.extension.getURL('themes/mod.css');
-        themeMod.type = 'text/css';
-        themeMod.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(themeMod);
-    }
-    else if (theme.sprucey === '1') {
-        var themeSprucey = document.createElement('link');
-        themeSprucey.href = chrome.extension.getURL('themes/sprucey-bonus-dark.css');
-        themeSprucey.type = 'text/css';
-        themeSprucey.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(themeSprucey);
-    }
-    else if (theme.custom === '1') {
+    if (theme.custom === '1') {
         wait().then(() => {
             document.body.style.setProperty('--colorBg', theme.colorBg);
             document.body.style.setProperty('--colorFg', theme.colorFg);
@@ -168,6 +140,35 @@ function(theme) {
         themeCustom.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeCustom);
     }
+    else if (theme.darkGrey === '1') {
+        var themeDarkGrey = document.createElement('link');
+        themeDarkGrey.href = chrome.extension.getURL('themes/dark-grey.css');
+        themeDarkGrey.type = 'text/css';
+        themeDarkGrey.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(themeDarkGrey);
+    }
+    else if (theme.lightGrey === '1') {
+        var themeLightGrey = document.createElement('link');
+        themeLightGrey.href = chrome.extension.getURL('themes/light-grey.css');
+        themeLightGrey.type = 'text/css';
+        themeLightGrey.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(themeLightGrey);
+    }
+    else if (theme.mod === '1') {
+        var themeMod = document.createElement('link');
+        themeMod.href = chrome.extension.getURL('themes/mod.css');
+        themeMod.type = 'text/css';
+        themeMod.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(themeMod);
+    }
+    else if (theme.sprucey === '1') {
+        var themeSprucey = document.createElement('link');
+        themeSprucey.href = chrome.extension.getURL('themes/sprucey-bonus-dark.css');
+        themeSprucey.type = 'text/css';
+        themeSprucey.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(themeSprucey);
+    }
+
     else {
         var themeStandard = document.createElement('link');
         themeStandard.href = chrome.extension.getURL('themes/standard.css');
