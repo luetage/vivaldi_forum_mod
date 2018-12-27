@@ -5,12 +5,14 @@ function _async() {
         requestAnimationFrame(resolve);
     });
 };
+
 async function wait() {
     while (!document.body) {
         await _async()
     }
     return true;
 };
+
 function _logoWhite() {
     var getLogoWhite = document.createElement('link');
     getLogoWhite.href = chrome.extension.getURL('themes/logo-white.css');
@@ -18,6 +20,7 @@ function _logoWhite() {
     getLogoWhite.rel = 'stylesheet';
     document.getElementsByTagName('head')[0].appendChild(getLogoWhite);
 };
+
 function _logoBlack() {
     var getLogoBlack = document.createElement('link');
     getLogoBlack.href = chrome.extension.getURL('themes/logo-black.css');
@@ -25,6 +28,7 @@ function _logoBlack() {
     getLogoBlack.rel = 'stylesheet';
     document.getElementsByTagName('head')[0].appendChild(getLogoBlack);
 };
+
 
 chrome.storage.sync.get({
     'darkGrey': '',
@@ -108,7 +112,7 @@ function(theme) {
     }
     //themes
     if (theme.custom === '1') {
-        wait().then(() => {
+        _wait().then(() => {
             document.body.style.setProperty('--colorBg', theme.colorBg);
             document.body.style.setProperty('--colorFg', theme.colorFg);
             document.body.style.setProperty('--colorHi', theme.colorHi);
@@ -168,7 +172,6 @@ function(theme) {
         themeSprucey.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(themeSprucey);
     }
-
     else {
         var themeStandard = document.createElement('link');
         themeStandard.href = chrome.extension.getURL('themes/standard.css');
