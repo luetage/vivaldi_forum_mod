@@ -117,6 +117,11 @@ button[type^="submit"].btn-primary, .btn-default#save-preferences, .composer .ti
     transition: top 0.857s !important;
 }
 
+/* Position status circles in user menu */
+a[component="header/profilelink"] i, .user-status i {
+    vertical-align: unset !important;
+}
+
 /* Copy all code button */
 .copy-all-code-button {
     position: absolute;
