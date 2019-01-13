@@ -390,7 +390,7 @@ input[type="color"]::-webkit-color-swatch {
     -moz-filter: grayscale(100%);
     filter: grayscale(100%);
     float: left;
-    margin-top: 1px;
+    margin-top: -2px;
     padding-right: 8px;
     opacity: 0;
 }
