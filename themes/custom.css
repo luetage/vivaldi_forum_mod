@@ -118,7 +118,7 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
 .pagination>li>a, .pagination>li>span {
     background-color: transparent;
     border-color: var(--colorBgHiG2) !important;
-    color: var(--colorFg);
+    color: var(--colorFg) !important;
 }
 .pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
     background-color: var(--colorBgHi);
@@ -129,8 +129,8 @@ li[data-nid^="new_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="
     color: var(--colorBgHiG2) !important;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    background-color: var(--colorHi);
-    color: var(--colorHiFg);
+    background-color: var(--colorHi) !important;
+    color: var(--colorHiFg) !important;
 }
 
 
@@ -410,7 +410,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .alert-window .alert.alert-danger {
     border-left-color: #ef3939 !important;
 }
-.alert-window .alert.alert-warning, {
+.alert-window .alert.alert-warning {
     border-left-color: #ff7518 !important;
 }
 .alert-window .alert.alert-success {
