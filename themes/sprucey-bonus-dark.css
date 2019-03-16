@@ -319,11 +319,15 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .pagination>li>a, .pagination>li>span {
     background-color: transparent;
     border-color: #4d585f !important;
-    color: #eee;
+    color: #eee !important;
 }
 .pagination>li>a:hover, .pagination>li>span:hover {
     background-color: #585d61;
     color: #eee;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #337ab7 !important;
+
 }
 .pagination>.disabled>a, .pagination>.disabled>span {
     background-color: #2e3539;

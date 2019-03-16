@@ -60,8 +60,8 @@ body {
 }
 
 #vivaldiheader a,
-#vivaldiheader a:active, 
-#vivaldiheader a:focus, 
+#vivaldiheader a:active,
+#vivaldiheader a:focus,
 #vivaldiheader a:visited {
     color: var(--header-fg);
 }
@@ -697,7 +697,7 @@ textarea.write, div.preview.well {
 .chat-modal [component="chat/composer"] [component="chat/input"], .chats-full [component="chat/composer"] [component="chat/input"] {
     border: 1px solid var(--header-bg);
     background: var(--header-bg);
-    padding: 8px; 
+    padding: 8px;
 }
 
 .chat-modal [component="chat/composer"], .chats-full [component="chat/composer"] {
@@ -915,19 +915,23 @@ li.page.active a, li.page.active a:hover {
 }
 
 li.page a {
-    color: var(--second-fg);
+    color: var(--second-fg) !important;
     background-color: var(--main-bg);
     border: 1px solid var(--second-bg);
 }
 
 li.page a:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: var(--button-bg);
     border: 1px solid var(--second-bg);
 }
 
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    color: #fff !important;
+}
+
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
-    border-color: var(--second-bg)
+    border-color: var(--second-bg);
 }
 
 small.pull-right a {
@@ -1000,7 +1004,7 @@ span.votes a:hover, .upvoted i.fa.fa-chevron-up:hover, .downvoted i.fa.fa-chevro
     background: var(--header-bg);
     color: var(--second-fg);
     padding: 5px !important;
-    border-radius: 4px 0 0 0 !important; 
+    border-radius: 4px 0 0 0 !important;
 }
 
 .vivaldi-mod-modal-box-close {
