@@ -1,0 +1,19 @@
+.theme-preview .themebox {
+    display: inline-block;
+    margin: 15px 15px 5px 0;
+    vertical-align: top;
+    width: 110px
+}
+
+.theme-preview .themebox .themebox-image svg {
+    width: 100%;
+    height: auto;
+}
+
+.theme-preview .themebox .themebox-title {
+    text-align: center;
+    font-weight: 700;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
