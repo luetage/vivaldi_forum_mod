@@ -65,7 +65,7 @@
     },
     {
         "matches": [ "https://forum.vivaldi.net/topic/*" ],
-        "js": ["mods/theme-preview.js"],
+        "js": [ "mods/theme-preview.js" ],
         "run_at": "document_end"
     }
     ],
