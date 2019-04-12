@@ -55,6 +55,12 @@ button#mobile-menu.navbar-toggle:hover, button#mobile-menu.navbar-toggle:focus {
     border-top-color: var(--colorHi);
     border-left-color: var(--colorHi);
 }
+#nprogress .bar {
+    background: var(--colorHi);
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px var(--colorHi), 0 0 5px var(--colorHi);
+}
 /* menuwrapper */
 #submenu {
     background-color: #121212;
