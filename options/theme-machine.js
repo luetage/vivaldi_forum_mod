@@ -381,7 +381,7 @@ function _saveTheme() {
         }
         if (nameCheck === true && name.length > 0 && dupe === false) {
             var trueName = 'vfm_' + name;
-            var displayName = name;
+            var displayName = name.replace(/_/g,' ');
         }
         else {
             var epoch = Date.now();
