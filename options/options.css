@@ -5,7 +5,6 @@ body {
     background-color: hsl(0, 0%, 99%);
     cursor: default;
     margin: 0;
-    -moz-user-select: none;
     user-select: none;
 }
 
@@ -253,11 +252,6 @@ input[type="text" i] {
     opacity: 1;
     color: #00247d;
  }
- .import::-moz-placeholder {
-    text-align: center;
-    opacity: 1;
-    color: #00247d;
- }
  .import:focus {
      outline-color: #d01126;
  }
@@ -276,102 +270,69 @@ input[type="color"]::-webkit-color-swatch {
     border: 1px solid hsl(0, 0%, 70%);
 }
 /* themebox border colors */
-#custom1.active .themebox-image {
-    border-color: var(--c1Hi);
+.active .themebox-image {
+    border-color: var(--colorHi);
 }
-#custom1.active .themebox-image::before {
-    border-bottom-color: var(--c1Hi);
-    border-right-color: var(--c1Hi);
+.active .themebox-image::before {
+    border-bottom-color: var(--colorHi);
+    border-right-color: var(--colorHi);
 }
-#custom1 .themebox-image .themebox-o_mark {
-    fill: var(--c1Hi);
-    stroke: var(--c1Bg);
+.themebox-image .themebox-o_mark {
+    fill: var(--colorHi);
+    stroke: var(--colorBg);
 }
-#custom2.active .themebox-image {
-    border-color: var(--c2Hi);
-}
-#custom2.active .themebox-image::before {
-    border-bottom-color: var(--c2Hi);
-    border-right-color: var(--c2Hi);
-}
-#custom2 .themebox-image .themebox-o_mark {
-    fill: var(--c2Hi);
-    stroke: var(--c2Bg);
-}
-#custom3.active .themebox-image {
-    border-color: var(--c3Hi);
-}
-#custom3.active .themebox-image::before {
-    border-bottom-color: var(--c3Hi);
-    border-right-color: var(--c3Hi);
-}
-#custom3 .themebox-image .themebox-o_mark {
-    fill: var(--c3Hi);
-    stroke: var(--c3Bg);
-}
-#custom4.active .themebox-image {
-    border-color: var(--c4Hi);
-}
-#custom4.active .themebox-image::before {
-    border-bottom-color: var(--c4Hi);
-    border-right-color: var(--c4Hi);
-}
-#custom4 .themebox-image .themebox-o_mark {
-    fill: var(--c4Hi);
-    stroke: var(--c4Bg);
-}
-#standard.active .themebox-image {
+#vfm-standard.active .themebox-image {
     border-color: #ef3939;
 }
-#standard.active .themebox-image::before {
+#vfm-standard.active .themebox-image::before {
     border-bottom-color: #ef3939;
     border-right-color: #ef3939;
 }
-#standard .themebox-image .themebox-o_mark {
+#vfm-standard .themebox-image .themebox-o_mark {
     fill: #ef3939;
     stroke: #fff;
 }
-#darkGrey.active .themebox-image {
+#vfm-darkGrey.active .themebox-image {
     border-color: #ec2226;
 }
-#darkGrey.active .themebox-image::before {
+#vfm-darkGrey.active .themebox-image::before {
     border-bottom-color: #ec2226;
     border-right-color: #ec2226;
 }
-#darkGrey .themebox-image .themebox-o_mark {
+#vfm-darkGrey .themebox-image .themebox-o_mark {
     fill: #ec2226;
     stroke: #fff;
 }
-#lightGrey.active .themebox-image {
+#vfm-lightGrey.active .themebox-image {
     border-color: #ec2226;
 }
-#lightGrey.active .themebox-image::before {
+#vfm-lightGrey.active .themebox-image::before {
     border-bottom-color: #ec2226;
     border-right-color: #ec2226;
 }
-#lightGrey .themebox-image .themebox-o_mark {
+#vfm-lightGrey .themebox-image .themebox-o_mark {
     fill: #ec2226;
     stroke: #fff;
 }
-#mod.active .themebox-image {
+#vfm-mod.active .themebox-image {
     border-color: #d01126;
 }
-#mod.active .themebox-image::before {
+#vfm-mod.active .themebox-image::before {
     border-bottom-color: #d01126;
     border-right-color: #d01126;
 }
-#mod .themebox-image .themebox-o_mark {
+#vfm-mod .themebox-image .themebox-o_mark {
     fill: #d01126;
     stroke: #ebf5f7;
 }
-#sprucey.active .themebox-image {
+#vfm-sprucey.active .themebox-image {
     border-color: #337ab7;
 }
-#sprucey.active .themebox-image::before {
+#vfm-sprucey.active .themebox-image::before {
     border-bottom-color: #337ab7;
     border-right-color: #337ab7;
 }
-#sprucey .themebox-image .themebox-o_mark {
+#vfm-sprucey .themebox-image .themebox-o_mark {
     fill: #337ab7;
     stroke: #f1f1f1;
 }

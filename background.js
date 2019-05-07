@@ -1,10 +1,31 @@
-chrome.runtime.onMessage.addListener(function(message) {
-    if ( message === 'options pls' ) {
+chrome.runtime.onMessage.addListener(function(request) {
+    if (request === 'options pls') {
         chrome.runtime.openOptionsPage();
+    }
+    if (request.theme) {
+        var code = request.theme;
+        chrome.storage.sync.get({'VFM_THEMES': ''}, function(get) {
+            var vt = get.VFM_THEMES;
+            var nameCheck = /^[a-zA-Z0-9\- ' ']*$/.test(code.themeName);
+            if (nameCheck === true) {
+                code.themeName = 'vfm_' + code.themeName.replace(/ /g,'_').trim();
+                var index = vt.findIndex(x => x.themeName === code.themeName);
+                if (index !== -1) {
+                    code.themeName = 'vfm_' + Date.now();
+                }
+            }
+            else {
+                code.themeName = 'vfm_' + Date.now();
+            }
+            vt.push(request.theme);
+            chrome.storage.sync.set({'VFM_THEMES': vt}, function() {
+                chrome.runtime.openOptionsPage();
+            });
+        });
     }
 });
 
-/**
+/*
  * In case item orders change from one instance to next
  * Put them all in order
  * And re-number any not hidden starting from 1

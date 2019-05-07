@@ -19,30 +19,31 @@ function _options() {
 
 function userMenu() {
     var dropdown = document.querySelector('#user-control-list.dropdown-menu');
+    if (dropdown) {
+        // community profile
+        var editC = document.querySelector
+        ('#user-control-list.dropdown-menu .user-edit-profile span');
+        editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
 
-    // community profile
-    var editC = document.querySelector
-    ('#user-control-list.dropdown-menu .user-edit-profile span');
-    editC.innerHTML = ' ' + chrome.i18n.getMessage('editCommunity');
+        // forum profile
+        var li = document.createElement('li');
+        var editF = document.createElement('a');
+        editF.href = '/user/' + username() + '/edit';
+        editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
+        dropdown.insertBefore(li, dropdown.childNodes[19]);
+        li.appendChild(editF);
 
-    // forum profile
-    var li = document.createElement('li');
-    var editF = document.createElement('a');
-    editF.href = '/user/' + username() + '/edit';
-    editF.innerHTML = '<i class="fa fa-fw fa-user-circle"></i><span>' + ' ' + chrome.i18n.getMessage('editForum') + '</span>';
-    dropdown.insertBefore(li, dropdown.childNodes[19]);
-    li.appendChild(editF);
+        // forum mod
+        var options = document.createElement('li');
+        options.classList.add('optionsLink');
+        options.style = 'cursor: pointer';
+        options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
+        dropdown.insertBefore(options, dropdown.childNodes[21]);
 
-    // forum mod
-    var options = document.createElement('li');
-    options.classList.add('optionsLink');
-    options.style = 'cursor: pointer';
-    options.innerHTML = '<a><i class="fa fa-fw fa-dot-circle-o"></i><span>' + ' ' + chrome.i18n.getMessage('optionsLink') + '</span></a>';
-    dropdown.insertBefore(options, dropdown.childNodes[21]);
-
-    setTimeout(function() {
-        _options();
-    }, 2000);
+        setTimeout(function() {
+            _options();
+        }, 2000);
+    }
 };
 
 
@@ -95,11 +96,13 @@ function discord() {
 /* Option to dismiss community notifications */
 
 function dismiss() {
-    chrome.storage.sync.set({
-        'notifOld': notifNew,
-        'notifState': 'off'
-    }, function() {
-        notif.style = 'display: none !important';
+    chrome.storage.sync.get({'VFM_NOTIF': ''}, function(get) {
+        var check = get.VFM_NOTIF;
+        check.notifOld = notifNew;
+        check.notifState = 'off';
+        chrome.storage.sync.set({'VFM_NOTIF': check}, function() {
+            notif.style = 'display: none !important';
+        });
     });
 };
 
@@ -118,16 +121,18 @@ function notificationCheck() {
     if (notif) {
         notifNew = document.querySelector('.shadow-box3 .notification').textContent;
         chrome.storage.sync.get({
-            'notifState': 'on',
-            'notifOld': ''
-        }, function(check) {
-            const notifState = check.notifState;
-            const notifOld = check.notifOld;
-            if (notifState === 'on') {
+            'VFM_NOTIF': {
+                'notifState': 'on',
+                'notifOld': ''
+            }
+        }, function(get) {
+            var check = get.VFM_NOTIF;
+            if (check.notifState === 'on') {
                 showNotification();
             }
-            else if (notifState === 'off' && notifOld !== notifNew) {
-                chrome.storage.sync.set({'notifState': 'on'});
+            else if (check.notifState === 'off' && check.notifOld !== notifNew) {
+                check.notifState = 'on';
+                chrome.storage.sync.set({'VFM_NOTIF': check});
                 showNotification();
             }
             else {

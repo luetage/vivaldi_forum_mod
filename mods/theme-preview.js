@@ -146,6 +146,7 @@ function createThemeBox(theme, isForum) {
     themeboxTitle.innerHTML = theme.name || theme.themeName;
     var themebox = document.createElement('div');
     themebox.className = 'themebox';
+    themebox.style.cursor = 'pointer';
     themebox.appendChild(themeboxImage);
     themebox.appendChild(themeboxTitle);
     return themebox;
@@ -179,11 +180,21 @@ function createThemeCollectionPreview(themes, code) {
     }
 }
 
+function importForumTheme(e) {
+    var target = e.target;
+    while (!target.classList.contains('theme-preview')) {
+        target = target.parentNode;
+    }
+    var code = JSON.parse(target.previousSibling.innerText.trim());
+    chrome.runtime.sendMessage({'theme': code});
+};
+
 function createThemeForumPreview(theme, code) {
     var themePreview = document.createElement('div');
     themePreview.className = 'theme-preview';
     themePreview.appendChild(createThemeBox(theme, true));
     code.parentNode.insertBefore(themePreview, code.nextSibling);
+    themePreview.firstChild.addEventListener('click', importForumTheme);
 }
 
 function themePreview(content) {

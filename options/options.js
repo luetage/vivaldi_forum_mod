@@ -3,57 +3,33 @@
 function _restore() {
     _restoreThemes();
     chrome.storage.sync.get({
-        'advancedFormatting': '',
-        'headerScroll': '',
-        'bookmarks': '',
-        'notificationIcons': '',
-        'tooltips': '',
-        'unread': '',
-        'timestamp': '',
-        'compact': '',
-        'userID': '',
-        'signatureMod': '',
-        'square': '',
-        'cssToggle': '0'
+        'VFM_MODS': {
+            'advancedFormatting': false,
+            'headerScroll': false,
+            'bookmarks': false,
+            'notificationIcons': false,
+            'tooltips': false,
+            'unread': false,
+            'timestamp': false,
+            'compact': false,
+            'userID': false,
+            'signatureMod': false,
+            'square': false
+        },
+        'VFM_USER_CSS': false,
     },
     function(restore){
+        var mods = restore.VFM_MODS;
+        chrome.storage.sync.set({'VFM_MODS': mods});
+        Object.keys(mods).forEach(function(mod) {
+            if (mods[mod] === true) {
+                document.getElementById(mod).classList.add('selected');
+            }
+        });
         chrome.storage.local.get({'userCSS': ''}, function(local) {
             document.getElementById('userCSS').value = local.userCSS;
         });
-        if (restore.advancedFormatting === '1') {
-            document.getElementById('advancedFormatting').classList.add('selected');
-        }
-        if (restore.headerScroll === '1') {
-            document.getElementById('headerScroll').classList.add('selected');
-        }
-        if (restore.bookmarks === '1') {
-            document.getElementById('bookmarks').classList.add('selected');
-        }
-        if (restore.notificationIcons === '1') {
-            document.getElementById('notificationIcons').classList.add('selected');
-        }
-        if (restore.tooltips === '1') {
-            document.getElementById('tooltips').classList.add('selected');
-        }
-        if (restore.unread === '1') {
-            document.getElementById('unread').classList.add('selected');
-        }
-        if (restore.timestamp === '1') {
-            document.getElementById('timestamp').classList.add('selected');
-        }
-        if (restore.compact === '1') {
-            document.getElementById('compact').classList.add('selected');
-        }
-        if (restore.userID === '1') {
-            document.getElementById('userID').classList.add('selected');
-        }
-        if (restore.signatureMod === '1') {
-            document.getElementById('signatureMod').classList.add('selected');
-        }
-        if (restore.square === '1') {
-            document.getElementById('square').classList.add('selected');
-        }
-        if (restore.cssToggle === '0') {
+        if (restore.VFM_USER_CSS === false) {
             toggleBtn.classList.add('deactivated');
             textarea.disabled = true;
             save2Btn.disabled = true;
@@ -71,16 +47,20 @@ function _restore() {
 /* Save Modifications */
 
 function _selectMods(event) {
-    const mod = event.currentTarget;
-    const name = mod.getAttribute('id');
-    if (mod.classList.contains('selected')) {
-        mod.removeAttribute('class');
-        chrome.storage.sync.set({[name]: '0'});
-    }
-    else {
-        mod.classList.add('selected');
-        chrome.storage.sync.set({[name]: '1'});
-    }
+    const target = event.currentTarget;
+    const toggle = target.getAttribute('id');
+    chrome.storage.sync.get({'VFM_MODS': ''}, function(select) {
+        var mods = select.VFM_MODS;
+        if (target.classList.contains('selected')) {
+            target.removeAttribute('class');
+            mods[toggle] = false;
+        }
+        else {
+            target.classList.add('selected');
+            mods[toggle] = true;
+        }
+        chrome.storage.sync.set({'VFM_MODS': mods});
+    });
 };
 
 
@@ -100,7 +80,7 @@ function _tabSpaces(key) {
 
 function _toggleUserCSS() {
     if (toggleBtn.classList.contains('deactivated')) {
-        chrome.storage.sync.set({'cssToggle': '1'}, function() {
+        chrome.storage.sync.set({'VFM_USER_CSS': true}, function() {
             toggleBtn.classList.remove('deactivated');
             save2Btn.disabled = false;
             backupBtn.disabled = false;
@@ -111,7 +91,7 @@ function _toggleUserCSS() {
         });
     }
     else {
-        chrome.storage.sync.set({'cssToggle': '0'}, function() {
+        chrome.storage.sync.set({'VFM_USER_CSS': false}, function() {
             toggleBtn.classList.add('deactivated');
             save2Btn.disabled = true;
             backupBtn.disabled = true;
@@ -178,11 +158,10 @@ function _resetOptions() {
                         mod.removeAttribute('class');
                     }
                 });
-                document.querySelectorAll('button.themebox').forEach(function(theme) {
-                    if (theme.classList.contains('active')) {
-                        theme.classList.remove('active');
-                    }
-                });
+                var i, ct = document.querySelectorAll('#themeMachine button.themebox');
+                for (i=ct.length; i--;) {
+                    ct[i].parentNode.removeChild(ct[i]);
+                }
                 _restore();
                 _showThemes();
                 changeMessage = true;

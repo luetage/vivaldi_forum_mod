@@ -1,111 +1,22 @@
 /* Modifications */
 
-chrome.storage.sync.get({
-    'headerScroll': '',
-    'compact': '',
-    'darkGrey': '',
-    'lightGrey': '',
-    'bookmarks': '',
-    'notificationIcons': '',
-    'tooltips': '',
-    'unread': '',
-    'timestamp': '',
-    'userID': '',
-    'signatureMod' : '',
-    'square': '',
-    'advancedFormatting': ''
-},
-function(mods) {
-    if (mods.headerScroll === '1') {
-        var modHeaderScroll = document.createElement('script');
-        if (mods.compact === '1' || mods.darkGrey === '1' || mods.lightGrey === '1') {
-            modHeaderScroll.src = chrome.extension.getURL('mods/header_scroll_compact.js');
-        }
-        else {
-            modHeaderScroll.src = chrome.extension.getURL('mods/header_scroll.js');
-        }
-        document.getElementsByTagName('body')[0].appendChild(modHeaderScroll);
-    }
-    if (mods.notificationIcons === '1') {
-        var modNotificationIcons = document.createElement('link');
-        modNotificationIcons.href = chrome.extension.getURL('mods/notification-icons.css');
-        modNotificationIcons.type = 'text/css';
-        modNotificationIcons.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modNotificationIcons);
-    }
-    if (mods.tooltips === '1') {
-        var modTooltips = document.createElement('link');
-        modTooltips.href = chrome.extension.getURL('mods/tooltips.css');
-        modTooltips.type = 'text/css';
-        modTooltips.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modTooltips);
-    }
-    if (mods.unread === '1') {
-        var modUnread = document.createElement('link');
-        modUnread.href = chrome.extension.getURL('mods/unread.css');
-        modUnread.type = 'text/css';
-        modUnread.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modUnread);
-    }
-    if (mods.timestamp === '1') {
-        var modTimestamp = document.createElement('link');
-        modTimestamp.href = chrome.extension.getURL('mods/timestamp.css');
-        modTimestamp.type = 'text/css';
-        modTimestamp.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modTimestamp);
-    }
-    if (mods.userID === '1') {
-        var modUserID = document.createElement('link');
-        modUserID.href = chrome.extension.getURL('mods/userID.css');
-        modUserID.type = 'text/css';
-        modUserID.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modUserID);
-    }
-    if (mods.signatureMod === '1') {
-        var modSignature = document.createElement('link');
-        modSignature.href = chrome.extension.getURL('mods/signature-mod.css');
-        modSignature.type = 'text/css';
-        modSignature.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modSignature);
-    }
-    if (mods.square === '1') {
-        var modSquare = document.createElement('link');
-        modSquare.href = chrome.extension.getURL('mods/square-avatars.css');
-        modSquare.type = 'text/css';
-        modSquare.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modSquare);
-    }
-    if (mods.advancedFormatting === '1') {
-        var modAdvancedFormatting = document.createElement('link');
-        modAdvancedFormatting.href = chrome.extension.getURL('mods/advanced-formatting.css');
-        modAdvancedFormatting.type = 'text/css';
-        modAdvancedFormatting.rel = 'stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(modAdvancedFormatting);
-    }
+/* Auto-hide header on scroll */
 
-    userMenu();
-    add_copy_code();
-    discord();
-    if (mods.bookmarks === '1') { _bookmarks() }
-    if (mods.signatureMod === '1') { _smod() }
-    if (mods.timestamp === '1') { _lastedit() }
-
-    document.addEventListener('click', function() {
-        add_copy_code();
-        if (mods.signatureMod === '1') { w_smod() }
-        if (mods.timestamp === '1') { w_lastedit() }
-    });
-
-    window.addEventListener('popstate', function() {
-        add_copy_code();
-        if (mods.signatureMod === '1') { w_smod() }
-        if (mods.timestamp === '1') { w_lastedit() }
-    });
-
-    setTimeout(function() {
-        notificationCheck();
-    }, 700);
-});
+function autoScroll() {
+    if (_scp > window.scrollY) {
+        _vivaldiHeader.style.top = '0px';
+        _subMenu.style.top = _top + 'px';
+    }
+    else if (window.scrollY <= _top) {
+        _vivaldiHeader.style.top = '0px';
+        _subMenu.style.top = _top + 'px';
+    }
+    else if (window.scrollY > _top) {
+        _vivaldiHeader.style = __top;
+        _subMenu.style = 'top: 0px !important';
+    }
+    _scp = window.scrollY;
+};
 
 
 /* Bookmarks in navigation */
@@ -190,3 +101,83 @@ function w_lastedit() {
         _lastedit();
     }, 700);
 };
+
+
+chrome.storage.sync.get({
+    'VFM_MODS': '',
+    'VFM_CURRENT_THEME': ''
+}, function(get) {
+    var mods = get.VFM_MODS;
+    if (mods.headerScroll === true) {
+        const theme = get.VFM_CURRENT_THEME.selected;
+        if (theme === 'vfm-darkgrey' || theme === 'vfm-lightgrey' || mods.compact === true) {
+            _top = 50;
+            __top = 'top: -50px !important';
+        }
+        else {
+            _top = 64;
+            __top = 'top: -64px !important';
+        }
+        _scp = 0;
+        _vivaldiHeader = document.getElementById('header-menu');
+        _subMenu = document.getElementById('submenu');
+        window.addEventListener('scroll', autoScroll);
+    }
+    if (mods.notificationIcons === true) {
+        loadFile('mods/notification-icons.css');
+    }
+    if (mods.tooltips === true) {
+        loadFile('mods/tooltips.css');
+    }
+    if (mods.unread === true) {
+        loadFile('mods/unread.css');
+    }
+    if (mods.timestamp === true) {
+        loadFile('mods/timestamp.css');
+    }
+    if (mods.userID === true) {
+        loadFile('mods/userID.css');
+    }
+    if (mods.signatureMod === true) {
+        loadFile('mods/signature-mod.css');
+    }
+    if (mods.square === true) {
+        loadFile('mods/square-avatars.css');
+    }
+    if (mods.advancedFormatting === true) {
+        loadFile('mods/advanced-formatting.css');
+    }
+    userMenu();
+    add_copy_code();
+    discord();
+    if (mods.bookmarks === true) {
+        _bookmarks();
+    }
+    if (mods.signatureMod === true) {
+        _smod();
+    }
+    if (mods.timestamp === true) {
+        _lastedit();
+    }
+    document.addEventListener('click', function() {
+        add_copy_code();
+        if (mods.signatureMod === true) {
+            w_smod();
+        }
+        if (mods.timestamp === true) {
+            w_lastedit();
+        }
+    });
+    window.addEventListener('popstate', function() {
+        add_copy_code();
+        if (mods.signatureMod === true) {
+            w_smod();
+        }
+        if (mods.timestamp === true) {
+            w_lastedit();
+        }
+    });
+    setTimeout(function() {
+        notificationCheck();
+    }, 700);
+});
