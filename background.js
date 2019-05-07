@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(function(request) {
             else {
                 code.themeName = 'vfm_' + Date.now();
             }
-            vt.push(request.theme);
+            vt.push(code);
             chrome.storage.sync.set({'VFM_THEMES': vt}, function() {
                 chrome.runtime.openOptionsPage();
             });
