@@ -371,9 +371,9 @@ function _saveTheme() {
         var dupe = false;
         const active = document.querySelector('.active');
         const update = active.getAttribute('id');
-        var nameCheck = /^[a-zA-Z0-9\- ' ']*$/.test(_themeName.value);
+        var nameCheck = /^[a-zA-Z0-9- ]*$/.test(_themeName.value);
         for (i=0; i<vt.length; i++) {
-            if (_themeName.value === vt[i].themeName.substring(4) && _themeName.value !== vct.selected.substring(4)) {
+            if (_themeName.toLowerCase() === vt[i].themeName.substring(4).toLowerCase() && _themeName.value.toLowerCase() !== vct.selected.substring(4).toLowerCase()) {
                 dupe = true;
                 break;
             }
