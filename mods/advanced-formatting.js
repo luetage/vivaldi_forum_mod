@@ -896,10 +896,10 @@ function pageMutated(mutationList){
  * Init the mod
  */
 chrome.storage.sync.get({
-    advancedFormatting: "",
+    VFM_MODS: "",
     formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER
 }, settings => {
-    if(settings.advancedFormatting==="1"){
+    if(settings.VFM_MODS.advancedFormatting===true){
         const composerObserver = new MutationObserver(pageMutated);
         composerObserver.observe(document.body, {childList: true});
         FORMATTING_BAR_CUSTOM_ORDER = settings.formattingToolbar;
