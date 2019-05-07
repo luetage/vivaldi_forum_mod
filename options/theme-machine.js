@@ -369,18 +369,19 @@ function _saveTheme() {
         var vt = get.VFM_THEMES;
         var vct = get.VFM_CURRENT_THEME;
         var dupe = false;
-        const active = document.querySelector('.active');
+        const active = document.querySelector('.active')
         const update = active.getAttribute('id');
-        var nameCheck = /^[a-zA-Z0-9- ]*$/.test(_themeName.value);
+        var nameCheck = /[a-zA-Z0-9- ]$/.test(_themeName.value);
+        var name = _themeName.value.replace(/ /g,'_').trim();
         for (i=0; i<vt.length; i++) {
-            if (_themeName.toLowerCase() === vt[i].themeName.substring(4).toLowerCase() && _themeName.value.toLowerCase() !== vct.selected.substring(4).toLowerCase()) {
+            if (name.toLowerCase() === vt[i].themeName.substring(4).toLowerCase() && name.toLowerCase() !== vct.selected.substring(4).toLowerCase()) {
                 dupe = true;
                 break;
             }
         }
-        if (nameCheck === true && _themeName.value.trim().length > 0 && dupe === false) {
-            var trueName = 'vfm_' + _themeName.value.replace(/ /g,'_').trim();
-            var displayName = _themeName.value.trim();
+        if (nameCheck === true && name.length > 0 && dupe === false) {
+            var trueName = 'vfm_' + name;
+            var displayName = name;
         }
         else {
             var epoch = Date.now();

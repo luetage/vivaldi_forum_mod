@@ -6,7 +6,7 @@ chrome.runtime.onMessage.addListener(function(request) {
         var code = request.theme;
         chrome.storage.sync.get({'VFM_THEMES': ''}, function(get) {
             var vt = get.VFM_THEMES;
-            var nameCheck = /^[a-zA-Z0-9- ]*$/.test(code.themeName);
+            var nameCheck = /[a-zA-Z0-9- ]$/.test(code.themeName);
             if (nameCheck === true) {
                 code.themeName = 'vfm_' + code.themeName.replace(/ /g,'_').trim();
                 var index = vt.findIndex(x => x.themeName.toLowerCase() === code.themeName.toLowerCase());
