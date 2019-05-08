@@ -596,3 +596,14 @@ moveRight.addEventListener('click', function() {
 saveBtn.addEventListener('click', _saveTheme);
 importBtn.addEventListener('click', _importTheme);
 exportBtn.addEventListener('click', _exportTheme);
+
+chrome.runtime.onMessage.addListener(function(request) {
+    if (request.message === 'reload options') {
+        window.location.reload(false);
+    }
+    if (request.selected) {
+        document.getElementById(request.selected).click();
+        toggleEdit.style.display = 'block';
+        _themeName.focus();
+    }
+});

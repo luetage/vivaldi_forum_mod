@@ -12,7 +12,7 @@ function _options() {
     const addLink = document.querySelectorAll('.optionsLink');
     for (var i=0; i < addLink.length; i++) {
         addLink[i].addEventListener('click', function() {
-            chrome.runtime.sendMessage('options pls');
+            chrome.runtime.sendMessage({message: "options pls"});
         });
     }
 };

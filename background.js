@@ -1,29 +1,28 @@
-chrome.runtime.onMessage.addListener(function(request) {
-    if (request === 'options pls') {
-        chrome.runtime.openOptionsPage();
-    }
-    if (request.theme) {
-        var code = request.theme;
-        chrome.storage.sync.get({'VFM_THEMES': ''}, function(get) {
-            var vt = get.VFM_THEMES;
-            var nameCheck = /[a-zA-Z0-9- ]$/.test(code.themeName);
-            if (nameCheck === true) {
-                code.themeName = 'vfm_' + code.themeName.replace(/ /g,'_').trim();
-                var index = vt.findIndex(x => x.themeName.toLowerCase() === code.themeName.toLowerCase());
-                if (index !== -1) {
-                    code.themeName = 'vfm_' + Date.now();
-                }
-            }
-            else {
+function sendTheme() {
+    var code = arguments[0].theme;
+    chrome.storage.sync.get({'VFM_THEMES': ''}, function(get) {
+        var vt = get.VFM_THEMES;
+        var nameCheck = /[a-zA-Z0-9- ]$/.test(code.themeName);
+        if (nameCheck === true) {
+            code.themeName = 'vfm_' + code.themeName.replace(/ /g,'_').trim();
+            var index = vt.findIndex(x => x.themeName.toLowerCase() === code.themeName.toLowerCase());
+            if (index !== -1) {
                 code.themeName = 'vfm_' + Date.now();
             }
-            vt.push(code);
-            chrome.storage.sync.set({'VFM_THEMES': vt}, function() {
-                chrome.runtime.openOptionsPage();
-            });
+        }
+        else {
+            code.themeName = 'vfm_' + Date.now();
+        }
+        vt.push(code);
+        chrome.storage.sync.set({'VFM_THEMES': vt}, function() {
+            chrome.runtime.openOptionsPage();
+            chrome.runtime.sendMessage({message: 'reload options'});
+            setTimeout(function() {
+                chrome.runtime.sendMessage({selected: code.themeName});
+            }, 500);
         });
-    }
-});
+    });
+};
 
 /*
  * In case item orders change from one instance to next
@@ -86,5 +85,14 @@ function normaliseFormattingToolbarOrders(){
 chrome.runtime.onInstalled.addListener(updateInfo => {
     if(updateInfo.reason==="update"){
         normaliseFormattingToolbarOrders();
+    }
+});
+
+chrome.runtime.onMessage.addListener(function(request) {
+    if (request.message === "options pls") {
+        chrome.runtime.openOptionsPage();
+    }
+    if (request.theme) {
+        sendTheme.apply(this, arguments);
     }
 });

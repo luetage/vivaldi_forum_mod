@@ -186,7 +186,7 @@ function importForumTheme(e) {
         target = target.parentNode;
     }
     var code = JSON.parse(target.previousSibling.innerText.trim());
-    chrome.runtime.sendMessage({'theme': code});
+    chrome.runtime.sendMessage({theme: code});
 };
 
 function createThemeForumPreview(theme, code) {
