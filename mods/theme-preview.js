@@ -146,7 +146,6 @@ function createThemeBox(theme, isForum) {
     themeboxTitle.innerHTML = theme.name || theme.themeName;
     var themebox = document.createElement('div');
     themebox.className = 'themebox';
-    themebox.style.cursor = 'pointer';
     themebox.appendChild(themeboxImage);
     themebox.appendChild(themeboxTitle);
     return themebox;
@@ -194,7 +193,10 @@ function createThemeForumPreview(theme, code) {
     themePreview.className = 'theme-preview';
     themePreview.appendChild(createThemeBox(theme, true));
     code.parentNode.insertBefore(themePreview, code.nextSibling);
-    themePreview.firstChild.addEventListener('click', importForumTheme);
+    themePreview.previousSibling.style.display = 'none';
+    var themebox = themePreview.firstChild;
+    themebox.style.cursor = 'pointer';
+    themebox.addEventListener('click', importForumTheme);
 }
 
 function themePreview(content) {
