@@ -1,133 +1,3 @@
-/* Activate Theme */
-
-function _activateTheme() {
-    chrome.storage.sync.get({'VFM_CURRENT_THEME': ''}, function(get) {
-        var vct = get.VFM_CURRENT_THEME;
-        var co = vct.colors;
-        var colorBg = _colorBg.value;
-        var colorFg = _colorFg.value;
-        var colorHi = _colorHi.value;
-        var colorBtn = _colorBtn.value;
-        var colorDrop = _colorDrop.value;
-        var colorLi = _colorLi.value;
-        var colorLi2 = _colorLi2.value;
-        co.colorBg = colorBg;
-        co.colorFg = colorFg;
-        co.colorHi = colorHi;
-        co.colorBtn = colorBtn;
-        co.colorDrop = colorDrop;
-        co.colorLi = colorLi;
-        co.colorLi2 = colorLi2;
-        // calculate automatic colors
-        function lum(color) {
-            var colorL = color.substring(1);
-            var rgb = parseInt(colorL, 16);
-            var r = (rgb >> 16) & 0xff;
-            var g = (rgb >>  8) & 0xff;
-            var b = (rgb >>  0) & 0xff;
-            return Math.round(0.2126*r+0.7152*g+0.0722*b);
-        };
-        function gray(color) {
-            var colorG = color.substring(1);
-            var rgb = parseInt(colorG, 16);
-            var r = (rgb >> 16) & 0xff;
-            var g = (rgb >>  8) & 0xff;
-            var b = (rgb >>  0) & 0xff;
-            var c = Math.round(0.30*r+0.59*g+0.11*b);
-            return "#"+(0x1000000+c*0x10000+c*0x100+c).toString(16).slice(1);
-        };
-        function shade(color, percent) {
-            var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
-            return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
-        };
-        // dropdown
-        var drop = lum(colorDrop);
-        if (drop < 130) {
-            co.colorDropFg = '#fbfbfb';
-            var colorDropHi = shade(colorDrop, 0.2);
-            co.colorDropHi = colorDropHi;
-            co.colorDropHi2 = shade(colorDrop, 0.3);
-            co.colorDropHi3 = shade(colorDrop, 0.5);
-        }
-        else {
-            co.colorDropFg = '#121212';
-            var colorDropHi = shade(colorDrop, -0.1);
-            co.colorDropHi = colorDropHi;
-            co.colorDropHi2 = shade(colorDrop, -0.2);
-            co.colorDropHi3 = shade(colorDrop, -0.3);
-        }
-        co.colorDropHiG = gray(colorDropHi);
-        // background
-        var bg = lum(colorBg);
-        var bg2 = gray(colorBg);
-        if (bg < 130) {
-            co.colorBgHiG = shade(bg2, 0.2);
-            co.colorBgHiG2 = shade(bg2, 0.4);
-            co.colorBgHi = shade(colorBg, 0.2);
-            co.colorBgHiC = shade(colorBg, 0.1);
-            co.colorBgHiCG = shade(bg2, 0.1);
-            vct.logoWhite = true;
-        }
-        else {
-            co.colorBgHiG = shade(bg2, -0.1);
-            co.colorBgHiG2 = shade(bg2, -0.22);
-            co.colorBgHi = shade(colorBg, -0.1);
-            co.colorBgHiC = shade(colorBg, -0.05);
-            co.colorBgHiCG = shade(bg2, -0.05);
-            vct.logoWhite = false;
-        }
-        // foreground
-        var fg = lum(colorFg);
-        var fg2 = gray(colorFg);
-        if (fg < 130) {
-            co.colorFg2 = shade(fg2, 0.25);
-        }
-        else {
-            co.colorFg2 = shade(fg2, -0.1);
-        }
-        // highlight
-        var hi = lum(colorHi);
-        if (hi < 130) {
-            co.colorHiFg = '#fbfbfb';
-        }
-        else {
-            co.colorHiFg = '#121212';
-        }
-        // link
-        var link = lum(colorLi);
-        var linkR = gray(colorLi);
-        if (link < 130) {
-            co.colorLiHi = shade(colorLi, 0.25);
-            co.colorLiR = shade(linkR, 0.25);
-        }
-        else {
-            co.colorLiHi = shade(colorLi, -0.12);
-            co.colorLiR = shade(linkR, -0.07);
-        }
-        // link2
-        var link2 = lum(colorLi2);
-        if (link2 < 130) {
-            co.colorLi2Hi = shade(colorLi2, 0.25);
-        }
-        else {
-            co.colorLi2Hi = shade(colorLi2, -0.12);
-        }
-        // button
-        var btn = lum(colorBtn);
-        if (btn < 130) {
-            co.colorBtnHi = shade(colorBtn, 0.1);
-            co.colorBtnFg = '#fbfbfb';
-        }
-        else {
-            co.colorBtnHi = shade(colorBtn, -0.07);
-            co.colorBtnFg = '#121212';
-        }
-        // store custom theme
-        chrome.storage.sync.set({'VFM_CURRENT_THEME': vct });
-    });
-};
-
-
 /* Restore Themes */
 
 function _restoreThemes() {
@@ -227,6 +97,7 @@ function _selectTheme(event) {
                 editBtn.disabled = true;
                 moveLeft.disabled = true;
                 moveRight.disabled = true;
+                sendToBackground();
             }
             else {
                 var vt = get.VFM_THEMES;
@@ -245,7 +116,7 @@ function _selectTheme(event) {
                     editBtn.disabled = false;
                     moveLeft.disabled = false;
                     moveRight.disabled = false;
-                    _activateTheme();
+                    sendToBackground();
                 });
             }
         });
@@ -371,7 +242,7 @@ function _saveTheme() {
         var dupe = false;
         const active = document.querySelector('.active')
         const update = active.getAttribute('id');
-        var nameCheck = /[a-zA-Z0-9- ]$/.test(_themeName.value);
+        var nameCheck =  /^[a-zA-Z0-9- ]*$/.test(_themeName.value);
         var name = _themeName.value.replace(/ /g,'_').trim();
         for (i=0; i<vt.length; i++) {
             if (name.toLowerCase() === vt[i].themeName.substring(4).toLowerCase() && name.toLowerCase() !== vct.selected.substring(4).toLowerCase()) {
@@ -413,7 +284,7 @@ function _saveTheme() {
             'VFM_THEMES': vt,
             'VFM_CURRENT_THEME': vct
         }, function() {
-            _activateTheme();
+            sendToBackground();
             status.style.opacity = '0';
             status.innerText = chrome.i18n.getMessage('saveTheme');
             _fade();
@@ -563,6 +434,13 @@ function _fade() {
 };
 
 
+/* Activate Theme */
+
+function sendToBackground() {
+    chrome.runtime.sendMessage({message: 'activate theme'});
+};
+
+
 const addTheme = document.getElementById('addTheme');
 const removeTheme = document.getElementById('removeTheme');
 const editBtn = document.querySelector('.theme-edit');
@@ -600,10 +478,5 @@ exportBtn.addEventListener('click', _exportTheme);
 chrome.runtime.onMessage.addListener(function(request) {
     if (request.message === 'reload options') {
         window.location.reload(false);
-    }
-    if (request.selected) {
-        document.getElementById(request.selected).click();
-        toggleEdit.style.display = 'block';
-        _themeName.focus();
     }
 });
