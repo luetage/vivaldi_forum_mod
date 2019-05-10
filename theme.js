@@ -1,6 +1,8 @@
 /* Load stylesheets */
 
-function loadFile(filename, id){
+function loadFile(filename, id) {
+    var head = document.getElementsByTagName('head')[0];
+    var check = document.getElementById('vfmUSERCSS');
     var style = document.createElement('link');
     if (id) {
         style.setAttribute('id', id);
@@ -8,7 +10,12 @@ function loadFile(filename, id){
     style.setAttribute('rel', 'stylesheet');
     style.setAttribute('type', 'text/css');
     style.setAttribute('href', chrome.extension.getURL(filename));
-    document.getElementsByTagName('head')[0].appendChild(style);
+    if (check) {
+        head.insertBefore(style, check);
+    }
+    else {
+        head.appendChild(style);
+    }
 };
 
 
