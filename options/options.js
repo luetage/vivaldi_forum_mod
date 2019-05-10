@@ -101,6 +101,7 @@ function _toggleUserCSS() {
             _fade();
         });
     }
+    chrome.runtime.sendMessage({message: 'activate usercss'});
 };
 
 
