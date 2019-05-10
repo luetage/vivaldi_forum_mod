@@ -140,8 +140,10 @@ function updateTheme() {
 
 function updateUserCSS() {
     var del = document.getElementById('vfmUSERCSS');
-    del.disabled = true;
-    del.parentNode.removeChild(del);
+    if (del) {
+        del.disabled = true;
+        del.parentNode.removeChild(del);
+    }
     loadUserCSS();
 };
 
