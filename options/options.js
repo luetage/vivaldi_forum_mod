@@ -112,6 +112,7 @@ function _saveUserCSS() {
         'userCSS': userCSS
     },
     function() {
+        chrome.runtime.sendMessage({message: 'activate usercss'});
         status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('saveUserCSS');
         _fade();

@@ -130,11 +130,11 @@ function activateTheme() {
             }
             // store custom theme
             chrome.storage.sync.set({'VFM_CURRENT_THEME': vct}, function() {
-                sendToTabs();
+                sendToTabs('update theme');
             });
         }
         else {
-            sendToTabs();
+            sendToTabs('update theme');
         }
     });
 };
@@ -236,9 +236,9 @@ function normaliseFormattingToolbarOrders(){
 
 /* Update tabs */
 
-function sendToTabs() {
+function sendToTabs(reason) {
     tabIDs.forEach(function(id) {
-        chrome.tabs.sendMessage(id, {message: 'update theme'}, function() {
+        chrome.tabs.sendMessage(id, {message: reason}, function() {
             if (chrome.runtime.lastError) {
                 var del = tabIDs.indexOf(id);
                 tabIDs.splice(del, 1);
@@ -268,6 +268,9 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
     }
     if (request.message === 'activate theme') {
         activateTheme();
+    }
+    if (request.message === 'activate usercss') {
+        sendToTabs('update usercss');
     }
     if (request.theme) {
         importFromForum.apply(this, arguments);

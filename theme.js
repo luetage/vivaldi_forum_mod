@@ -12,27 +12,27 @@ function loadFile(filename, id){
 };
 
 
-/* Theme */
+/* Wait function */
+
+function _async() {
+    return new Promise(resolve => {
+        requestAnimationFrame(resolve);
+    });
+};
+async function _wait() {
+    while (!document.body) {
+        await _async()
+    }
+    return true;
+};
+
+
+/* Load Theme */
 
 function loadTheme() {
-
-    function _async() {
-        return new Promise(resolve => {
-            requestAnimationFrame(resolve);
-        });
-    };
-    async function _wait() {
-        while (!document.body) {
-            await _async()
-        }
-        return true;
-    };
-
-
     chrome.storage.sync.get({
         'VFM_MODS': '',
         'VFM_CURRENT_THEME': '',
-        'VFM_USER_CSS': ''
     },
     function(get) {
         var theme = get.VFM_CURRENT_THEME.selected;
@@ -85,7 +85,18 @@ function loadTheme() {
         else {
             loadFile('themes/standard.css', 'vfmTheme');
         }
-        // user css
+        // introduce theme name as class in body
+        _wait().then(() => {
+            document.body.classList.add(theme);
+        });
+    });
+};
+
+
+/* Load User CSS */
+
+function loadUserCSS() {
+    chrome.storage.sync.get({'VFM_USER_CSS': ''}, function(get) {
         if (get.VFM_USER_CSS === true) {
             chrome.storage.local.get({'userCSS': ''}, function(local) {
                 if (local.userCSS !== '') {
@@ -97,31 +108,47 @@ function loadTheme() {
                 }
             });
         }
-        // introduce theme name as class in body
-        _wait().then(() => {
-            document.body.classList.add(theme);
-        });
     });
 };
 
+
+/* Update Tab */
+
+function updateTheme() {
+    var header = document.getElementById('vfmHeader');
+    var logo = document.getElementById('vfmLogo');
+    var theme = document.getElementById('vfmTheme');
+    if (header && logo && theme) {
+        header.disabled = true;
+        logo.disabled = true;
+        theme.disabled = true;
+        header.parentNode.removeChild(header);
+        logo.parentNode.removeChild(logo);
+        theme.parentNode.removeChild(theme);
+    }
+    document.body.className = document.body.className.replace(/(^|\s)vfm\S+/g,'');
+    loadTheme();
+}
+
+
+function updateUserCSS() {
+    var del = document.getElementById('vfmUSERCSS');
+    del.disabled = true;
+    del.parentNode.removeChild(del);
+    loadUserCSS();
+};
+
+
 loadTheme();
-
+loadUserCSS();
 chrome.runtime.sendMessage({message: 'whoami'});
-
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === 'update theme') {
-        var header = document.getElementById('vfmHeader');
-        var logo = document.getElementById('vfmLogo');
-        var theme = document.getElementById('vfmTheme');
-        if (header && logo && theme) {
-            header.disabled = true;
-            logo.disabled = true;
-            theme.disabled = true;
-            header.parentNode.removeChild(header);
-            logo.parentNode.removeChild(logo);
-            theme.parentNode.removeChild(theme);
-        }
-        loadTheme();
+        updateTheme();
+        sendResponse({message: 'iam'});
+    }
+    if (request.message === 'update usercss') {
+        updateUserCSS();
         sendResponse({message: 'iam'});
     }
 });
