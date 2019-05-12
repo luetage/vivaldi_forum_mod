@@ -608,7 +608,7 @@ function createToolbarCustomModal(){
  * Save the current global order variable to storage
  */
 function saveToolbarOrder(){
-    chrome.storage.sync.set({formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER});
+    chrome.storage.sync.set({VFM_FORMAT: FORMATTING_BAR_CUSTOM_ORDER});
 }
 
 /**
@@ -897,11 +897,11 @@ function pageMutated(mutationList){
  */
 chrome.storage.sync.get({
     VFM_MODS: "",
-    formattingToolbar: FORMATTING_BAR_CUSTOM_ORDER
+    VFM_FORMAT: FORMATTING_BAR_CUSTOM_ORDER
 }, settings => {
     if(settings.VFM_MODS.advancedFormatting===true){
         const composerObserver = new MutationObserver(pageMutated);
         composerObserver.observe(document.body, {childList: true});
-        FORMATTING_BAR_CUSTOM_ORDER = settings.formattingToolbar;
+        FORMATTING_BAR_CUSTOM_ORDER = settings.VFM_FORMAT;
     }
 });

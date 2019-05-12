@@ -250,7 +250,7 @@ function _saveTheme() {
                 break;
             }
         }
-        if (nameCheck === true && name.length > 0 && dupe === false) {
+        if (nameCheck === true && name.length > 0 && name.length < 26 && dupe === false) {
             var trueName = 'vfm_' + name;
             var displayName = name.replace(/_/g,' ');
         }
@@ -324,7 +324,7 @@ function _cancelImport(){
             _colorLi2.value = _safeLi2;
         }
         _themeName.placeholder = '';
-        _themeName.setAttribute('maxlength','30');
+        _themeName.setAttribute('maxlength','25');
         saveBtn.disabled = false;
         exportBtn.disabled = false;
         status.style.opacity = '0';
@@ -357,7 +357,6 @@ function _imp() {
     _colorLi2.value = shared.colorLi2;
     _themeName.classList.remove('import');
     _themeName.placeholder = '';
-    _themeName.setAttribute('maxlength','30');
     saveBtn.disabled = false;
     exportBtn.disabled = true;
     importBtn.disabled = false;
@@ -382,7 +381,6 @@ function _importTheme() {
         _safeLi2 = _colorLi2.value;
         _themeName.value = '';
         _themeName.placeholder = chrome.i18n.getMessage('import');
-        _themeName.setAttribute('maxlength','350');
         status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('importThemeDesc');
         _fade();
@@ -437,7 +435,7 @@ function _fade() {
 /* Activate Theme */
 
 function sendToBackground() {
-    chrome.runtime.sendMessage({message: 'activate theme'});
+    chrome.runtime.sendMessage({message: 'trigger theme'});
 };
 
 

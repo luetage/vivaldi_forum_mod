@@ -16,7 +16,7 @@ function _restore() {
             'signatureMod': false,
             'square': false
         },
-        'VFM_USER_CSS': false,
+        'VFM_USER_CSS': false
     },
     function(restore){
         var mods = restore.VFM_MODS;
@@ -59,7 +59,9 @@ function _selectMods(event) {
             target.classList.add('selected');
             mods[toggle] = true;
         }
-        chrome.storage.sync.set({'VFM_MODS': mods});
+        chrome.storage.sync.set({'VFM_MODS': mods}, function() {
+            chrome.runtime.sendMessage({message: 'trigger mod'});
+        });
     });
 };
 
@@ -101,7 +103,7 @@ function _toggleUserCSS() {
             _fade();
         });
     }
-    chrome.runtime.sendMessage({message: 'activate usercss'});
+    chrome.runtime.sendMessage({message: 'trigger usercss'});
 };
 
 
@@ -113,7 +115,7 @@ function _saveUserCSS() {
         'userCSS': userCSS
     },
     function() {
-        chrome.runtime.sendMessage({message: 'activate usercss'});
+        chrome.runtime.sendMessage({message: 'trigger usercss'});
         status.style.opacity = '0';
         status.innerText = chrome.i18n.getMessage('saveUserCSS');
         _fade();
