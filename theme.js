@@ -153,15 +153,11 @@ loadUserCSS();
 chrome.runtime.sendMessage({message: 'whoami'});
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === 'update theme') {
+        sendResponse({message: 'iam'});
         updateTheme();
-        sendResponse({message: 'iam'});
     }
-    if (request.message === 'update usercss') {
+    if (request.message === 'change usercss') {
+        sendResponse({message: 'iam'});
         updateUserCSS();
-        sendResponse({message: 'iam'});
-    }
-    if (request.message === 'reload forum') {
-        sendResponse({message: 'iam'});
-        window.location.reload(false);
     }
 });

@@ -59,9 +59,7 @@ function _selectMods(event) {
             target.classList.add('selected');
             mods[toggle] = true;
         }
-        chrome.storage.sync.set({'VFM_MODS': mods}, function() {
-            chrome.runtime.sendMessage({message: 'trigger mod'});
-        });
+        chrome.storage.sync.set({'VFM_MODS': mods});
     });
 };
 
