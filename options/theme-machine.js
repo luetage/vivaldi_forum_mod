@@ -154,6 +154,7 @@ function _addTheme() {
             themeBox.innerText = epoch.substring(4).replace(/_/g, ' ');
             newTheme.click();
             toggleEdit.style.display = 'block';
+            _themeName.focus();
         });
     });
 };
