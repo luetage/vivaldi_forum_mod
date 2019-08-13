@@ -137,7 +137,6 @@ function updateTheme() {
     loadTheme();
 }
 
-
 function updateUserCSS() {
     var del = document.getElementById('vfmUSERCSS');
     if (del) {
@@ -150,14 +149,20 @@ function updateUserCSS() {
 
 loadTheme();
 loadUserCSS();
-chrome.runtime.sendMessage({message: 'whoami'});
+chrome.runtime.sendMessage({message: 'whoami'}, function() {
+    if (chrome.runtime.lastError) {
+        setTimeout(function() {
+            chrome.runtime.sendMessage({message: 'whoami'});
+        }, 3000);
+    }
+});
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === 'update theme') {
-        sendResponse({message: 'iam'});
         updateTheme();
+        sendResponse({message: 'akn'});
     }
     if (request.message === 'change usercss') {
-        sendResponse({message: 'iam'});
         updateUserCSS();
+        sendResponse({message: 'akn'});
     }
 });

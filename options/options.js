@@ -3,24 +3,11 @@
 function _restore() {
     _restoreThemes();
     chrome.storage.sync.get({
-        'VFM_MODS': {
-            'advancedFormatting': false,
-            'headerScroll': false,
-            'bookmarks': false,
-            'notificationIcons': false,
-            'tooltips': false,
-            'unread': false,
-            'timestamp': false,
-            'compact': false,
-            'userID': false,
-            'signatureMod': false,
-            'square': false
-        },
-        'VFM_USER_CSS': false
+        'VFM_MODS': '',
+        'VFM_USER_CSS': ''
     },
     function(restore){
         var mods = restore.VFM_MODS;
-        chrome.storage.sync.set({'VFM_MODS': mods});
         Object.keys(mods).forEach(function(mod) {
             if (mods[mod] === true) {
                 document.getElementById(mod).classList.add('selected');
@@ -164,12 +151,14 @@ function _resetOptions() {
                 for (i=ct.length; i--;) {
                     ct[i].parentNode.removeChild(ct[i]);
                 }
-                _restore();
-                _showThemes();
-                changeMessage = true;
-                status.style.opacity = '0';
-                status.innerText = chrome.i18n.getMessage('optionsReset');
-                _fade();
+                chrome.runtime.sendMessage({message: 'reset'}, function() {
+                    _restore();
+                    _showThemes();
+                    changeMessage = true;
+                    status.style.opacity = '0';
+                    status.innerText = chrome.i18n.getMessage('optionsReset');
+                    _fade();
+                });
             });
         });
     }

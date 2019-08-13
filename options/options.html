@@ -25,21 +25,25 @@
                         <h2 class="themeMachine"></h2>
                         <div class="editTheme">
                             <span>
-                                <button id="addTheme"></button>
-                                <button id="removeTheme"></button>
+                                <div class="btn-comp">
+                                    <button id="addTheme"></button>
+                                    <button id="removeTheme"></button>
+                                </div>
                                 <button class="theme-edit"></button>
-                                <button id="moveLeft">
-                                    <svg width="18" height="18" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 448v896q0 26-19 45t-45 19-45-19l-448-448q-19-19-19-45t19-45l448-448q19-19 45-19t45 19 19 45z" fill="hsl(0, 0%, 99%)"/></svg>
-                                </button>
-                                <button id="moveRight"></button>
+                                <div class="btn-comp">
+                                    <button id="moveLeft">
+                                        <svg width="18" height="18" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 448v896q0 26-19 45t-45 19-45-19l-448-448q-19-19-19-45t19-45l448-448q19-19 45-19t45 19 19 45z" fill="hsl(0, 0%, 99%)"/></svg>
+                                    </button>
+                                    <button id="moveRight"></button>
+                                </div>
                             </span>
                             <div class="toggleEdit">
-                                <div>
+                                <span>
                                     <input type="text" maxlength="25" spellcheck="false" id='themeName'>
                                     <button class="theme-save"></button>
                                     <button class="theme-import"></button>
                                     <button class="theme-export"></button>
-                                </div>
+                                </span>
                                 <div><input type="color" id="colorBg">
                                 <span class="background"></span></div>
                                 <div><input type="color" id="colorFg">
@@ -59,92 +63,93 @@
                     </div>
                 </div>
                 <div class="column-right">
-                    <h2 class="communityThemes"></h2>
-                    <button id="vfm-standard" class="themebox">
-                        <div class="themebox-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
-                                <rect fill="#1546a3" x="0" y="14" width="110" height="12"></rect>
-                                <rect fill="#fff" x="85" y="26" width="25" height="50"></rect>
-                                <rect fill="#00caa7" x="6" y="32" width="15" height="5"></rect>
-                                <rect fill="#ef3939" x="23" y="32" width="15" height="5"></rect>
-                                <circle fill="#333" cx="40" cy="60" r="5"></circle>
-                                <circle fill="#006bda" cx="55" cy="60" r="5"></circle>
-                                <circle fill="#23bcb1" cx="70" cy="60" r="5"></circle>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                        </div>
-                        <div class="themebox-title" title=".vfm-standard">Standard</div>
-                    </button>
-                    <button id="vfm-darkGrey" class="themebox">
-                        <div class="themebox-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                <rect fill="#202122" x="0" y="0" width="110" height="76"></rect>
-                                <rect fill="#191a1a" x="0" y="0" width="110" height="14"></rect>
-                                <rect fill="#1e1f1f" x="0" y="14" width="110" height="12"></rect>
-                                <rect fill="#141415" x="85" y="26" width="25" height="50"></rect>
-                                <rect fill="#1679c5" x="6" y="32" width="15" height="5"></rect>
-                                <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
-                                <circle fill="#7e858b" cx="40" cy="60" r="5"></circle>
-                                <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
-                                <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                        </div>
-                        <div class="themebox-title" title=".vfm-darkgrey">DarkGrey</div>
-                    </button>
-                    <button id="vfm-lightGrey" class="themebox">
-                        <div class="themebox-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
-                                <rect fill="#202122" x="0" y="0" width="110" height="14"></rect>
-                                <rect fill="#28292a" x="0" y="14" width="110" height="12"></rect>
-                                <rect fill="#f4f4f6" x="85" y="26" width="25" height="50"></rect>
-                                <rect fill="#6aabf6" x="6" y="32" width="15" height="5"></rect>
-                                <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
-                                <circle fill="#333" cx="40" cy="60" r="5"></circle>
-                                <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
-                                <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                        </div>
-                        <div class="themebox-title" title=".vfm-lightgrey">LightGrey</div>
-                    </button>
-                    <button id="vfm-mod" class="themebox">
-                        <div class="themebox-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                <rect fill="#ebf5f7" x="0" y="0" width="110" height="76"></rect>
-                                <rect fill="#bfc8d5" x="0" y="0" width="110" height="14"></rect>
-                                <rect fill="#00247d" x="0" y="14" width="110" height="12"></rect>
-                                <rect fill="#bfc8d5" x="85" y="26" width="25" height="50"></rect>
-                                <rect fill="#8c8c8c" x="6" y="32" width="15" height="5"></rect>
-                                <rect fill="#d01126" x="23" y="32" width="15" height="5"></rect>
-                                <circle fill="#2a363b" cx="40" cy="60" r="5"></circle>
-                                <circle fill="#005ec1" cx="55" cy="60" r="5"></circle>
-                                <circle fill="#00977d" cx="70" cy="60" r="5"></circle>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                        </div>
-                        <div class="themebox-title" title=".vfm-mod">Mod</div>
-                    </button>
-                    <button id="vfm-sprucey" class="themebox">
-                        <div class="themebox-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                <rect fill="#2e3539" x="0" y="0" width="110" height="76"></rect>
-                                <rect fill="#3f494e" x="0" y="0" width="110" height="14"></rect>
-                                <rect fill="#2e3539" x="0" y="14" width="110" height="12"></rect>
-                                <rect fill="#373f44" x="85" y="26" width="25" height="50"></rect>
-                                <rect fill="#b05158" x="6" y="32" width="15" height="5"></rect>
-                                <rect fill="#337ab7" x="23" y="32" width="15" height="5"></rect>
-                                <circle fill="#ddd" cx="40" cy="60" r="5"></circle>
-                                <circle fill="#f1f1f1" cx="55" cy="60" r="5"></circle>
-                                <circle fill="#24948c" cx="70" cy="60" r="5"></circle>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                        </div>
-                        <div class="themebox-title" title=".vfm-sprucey">Sprucey Bonus Dark</div>
-                    </button>
-
+                    <div id="communityThemes">
+                        <h2 class="communityThemes"></h2>
+                        <button id="vfm-standard" class="themebox">
+                            <div class="themebox-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                                    <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
+                                    <rect fill="#1546a3" x="0" y="14" width="110" height="12"></rect>
+                                    <rect fill="#fff" x="85" y="26" width="25" height="50"></rect>
+                                    <rect fill="#00caa7" x="6" y="32" width="15" height="5"></rect>
+                                    <rect fill="#ef3939" x="23" y="32" width="15" height="5"></rect>
+                                    <circle fill="#333" cx="40" cy="60" r="5"></circle>
+                                    <circle fill="#006bda" cx="55" cy="60" r="5"></circle>
+                                    <circle fill="#23bcb1" cx="70" cy="60" r="5"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                            </div>
+                            <div class="themebox-title" title=".vfm-standard">Standard</div>
+                        </button>
+                        <button id="vfm-darkGrey" class="themebox">
+                            <div class="themebox-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                                    <rect fill="#202122" x="0" y="0" width="110" height="76"></rect>
+                                    <rect fill="#191a1a" x="0" y="0" width="110" height="14"></rect>
+                                    <rect fill="#1e1f1f" x="0" y="14" width="110" height="12"></rect>
+                                    <rect fill="#141415" x="85" y="26" width="25" height="50"></rect>
+                                    <rect fill="#1679c5" x="6" y="32" width="15" height="5"></rect>
+                                    <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
+                                    <circle fill="#7e858b" cx="40" cy="60" r="5"></circle>
+                                    <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
+                                    <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                            </div>
+                            <div class="themebox-title" title=".vfm-darkgrey">DarkGrey</div>
+                        </button>
+                        <button id="vfm-lightGrey" class="themebox">
+                            <div class="themebox-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                                    <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
+                                    <rect fill="#202122" x="0" y="0" width="110" height="14"></rect>
+                                    <rect fill="#28292a" x="0" y="14" width="110" height="12"></rect>
+                                    <rect fill="#f4f4f6" x="85" y="26" width="25" height="50"></rect>
+                                    <rect fill="#6aabf6" x="6" y="32" width="15" height="5"></rect>
+                                    <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
+                                    <circle fill="#333" cx="40" cy="60" r="5"></circle>
+                                    <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
+                                    <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                            </div>
+                            <div class="themebox-title" title=".vfm-lightgrey">LightGrey</div>
+                        </button>
+                        <button id="vfm-mod" class="themebox">
+                            <div class="themebox-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                                    <rect fill="#ebf5f7" x="0" y="0" width="110" height="76"></rect>
+                                    <rect fill="#bfc8d5" x="0" y="0" width="110" height="14"></rect>
+                                    <rect fill="#00247d" x="0" y="14" width="110" height="12"></rect>
+                                    <rect fill="#bfc8d5" x="85" y="26" width="25" height="50"></rect>
+                                    <rect fill="#8c8c8c" x="6" y="32" width="15" height="5"></rect>
+                                    <rect fill="#d01126" x="23" y="32" width="15" height="5"></rect>
+                                    <circle fill="#2a363b" cx="40" cy="60" r="5"></circle>
+                                    <circle fill="#005ec1" cx="55" cy="60" r="5"></circle>
+                                    <circle fill="#00977d" cx="70" cy="60" r="5"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                            </div>
+                            <div class="themebox-title" title=".vfm-mod">Mod</div>
+                        </button>
+                        <button id="vfm-sprucey" class="themebox">
+                            <div class="themebox-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                                    <rect fill="#2e3539" x="0" y="0" width="110" height="76"></rect>
+                                    <rect fill="#3f494e" x="0" y="0" width="110" height="14"></rect>
+                                    <rect fill="#2e3539" x="0" y="14" width="110" height="12"></rect>
+                                    <rect fill="#373f44" x="85" y="26" width="25" height="50"></rect>
+                                    <rect fill="#b05158" x="6" y="32" width="15" height="5"></rect>
+                                    <rect fill="#337ab7" x="23" y="32" width="15" height="5"></rect>
+                                    <circle fill="#ddd" cx="40" cy="60" r="5"></circle>
+                                    <circle fill="#f1f1f1" cx="55" cy="60" r="5"></circle>
+                                    <circle fill="#24948c" cx="70" cy="60" r="5"></circle>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                            </div>
+                            <div class="themebox-title" title=".vfm-sprucey">Sprucey Bonus Dark</div>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div id="modifications">
@@ -180,6 +185,7 @@
                 <div class="column-left">
                     <h2 class="changelog"></h2>
                     <div class="scroll-column">
+                        <p><strong>3.0</strong> Unlimited custom themes, automatic import of theme previews, seamless theme changes and scheduled theming.</p>
                         <p><strong>2.4</strong> Theme preview for Vivaldi Forum mod themes and Vivaldi Browser themes in topics. Vietnamese translation.</p>
                         <p><strong>2.3</strong> Fix for pagination coloring on all themes, small settings fixes.</p>
                         <p><strong>2.0</strong> New options page. New system for importing/exporting themes. Translations for French, German, Italian and Spanish.</p>

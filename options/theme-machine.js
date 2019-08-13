@@ -2,25 +2,12 @@
 
 function _restoreThemes() {
     chrome.storage.sync.get({
-       'VFM_CURRENT_THEME': {
-           'selected': 'vfm-standard',
-           'colors': {'colorBg': '', 'colorFg': '', 'colorHi': '', 'colorBtn': '', 'colorDrop': '', 'colorLi': '', 'colorLi2': '', 'colorDropFg': '', 'colorDropHi': '', 'colorDropHi2': '', 'colorDropHi3': '', 'colorDropHiG': '', 'colorBgHi': '', 'colorBgHiC': '', 'colorBgHiCG': '', 'colorBgHiG': '', 'colorBgHiG2': '', 'colorFg2': '', 'colorHiFg': '', 'colorLiHi': '', 'colorLiR': '', 'colorLi2Hi': '', 'colorBtnHi': '', 'colorBtnFg': ''},
-           'logoWhite': ''
-       },
-       'VFM_THEMES': [
-           {'themeName': 'vfm_Dracula', 'colorBg': '#282a36','colorFg': '#f8f8f2', 'colorHi': '#e2d774', 'colorBtn': '#6176a5', 'colorDrop': '#455182', 'colorLi': '#f279d0', 'colorLi2': '#8ce2f6'},
-           {'themeName': 'vfm_Neon', 'colorBg': '#f6f6f6', 'colorFg': '#2f3136', 'colorHi': '#fd3563', 'colorBtn': '#e3ff00', 'colorDrop': '#2f3136', 'colorLi': '#128e9d', 'colorLi2': '#0062ff'},
-           {'themeName': 'vfm_Solarized_Light', 'colorBg': '#fdf6e3', 'colorFg': '#586e75', 'colorHi': '#d33682', 'colorBtn': '#6c71c4', 'colorDrop': '#eee8d5', 'colorLi': '#b58900', 'colorLi2': '#2aa198'},
-           {'themeName': 'vfm_Blau', 'colorBg': '#23273b', 'colorFg': '#d4efff', 'colorHi': '#ffffff', 'colorBtn': '#68a2f2', 'colorDrop': '#d4efff', 'colorLi': '#96ffe0', 'colorLi2': '#d5d0fc'}
-       ]
+       'VFM_CURRENT_THEME': '',
+       'VFM_THEMES': ''
     },
     function(get) {
         var vct = get.VFM_CURRENT_THEME;
         var vt = get.VFM_THEMES;
-        chrome.storage.sync.set({
-            'VFM_CURRENT_THEME': vct,
-            'VFM_THEMES': vt
-        });
         vt.forEach(function(theme) {
             const btn = document.createElement('button');
             const name = theme.themeName;

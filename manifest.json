@@ -13,7 +13,8 @@
     },
     "permissions": [
         "storage",
-        "downloads"
+        "downloads",
+        "alarms"
     ],
     "options_ui": {
         "page": "options/options.html",
@@ -57,13 +58,8 @@
     {
         "matches": [ "https://forum.vivaldi.net/*" ],
         "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
-        "js": [ "default.js", "mods.js", "mods/advanced-formatting.js" ],
+        "js": [ "default.js", "mods.js", "mods/advanced-formatting.js", "mods/theme-preview.js" ],
         "css": [ "default.css" ],
-        "run_at": "document_end"
-    },
-    {
-        "matches": [ "https://forum.vivaldi.net/topic/*" ],
-        "js": [ "mods/theme-preview.js" ],
         "run_at": "document_end"
     }
     ],
