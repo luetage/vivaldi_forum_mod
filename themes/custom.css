@@ -238,6 +238,9 @@ blockquote, .topic [component="post/replies"] {
 .categories>li:hover, .category>ul>li:hover {
     background-color: transparent;
 }
+.category .category-item.highlight, .topic .topic-item.highlight {
+    background-color: var(--colorBgHiC);
+}
 .posts-list .posts-list-item .post-body {
     border-right-color: var(--colorLi);
 }
@@ -368,12 +371,8 @@ pre code {
 .btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-composer a, .taskbar .navbar-nav li.taskbar-composer a:hover, .taskbar .navbar-nav li.taskbar-composer a:focus {
     background-color: var(--colorHi);
 }
-.btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-composer a i, .composer .resizer .trigger i, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-chat a:active i, .taskbar .navbar-nav li.taskbar-chat a:focus i, .taskbar .navbar-nav li.taskbar-chat a:hover i {
+.btn-group.account-fab .fab, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-composer a i, .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-chat a:active i, .taskbar .navbar-nav li.taskbar-chat a:focus i, .taskbar .navbar-nav li.taskbar-chat a:hover i {
     color: var(--colorHiFg);
-}
-.composer .resizer .trigger {
-    background-color: var(--colorHi);
-    border-color: var(--colorHi);
 }
 .btn-link {
     color: var(--colorLi2);
@@ -539,11 +538,16 @@ ul[component="chat/search/list"].dropdown-menu {
 
 /* Composer */
 
+.composer .resizer .trigger i {
+    background-color: var(--colorHi);
+    border-color: var(--colorHi);
+    color: var(--colorHiFg);
+}
 .composer, .form-control {
     background-color: var(--colorBg);
     color: var(--colorFg);
 }
-.composer .formatting-bar .formatting-group li {
+.composer .formatting-bar .formatting-group li, .composer .draft-icon {
     color: var(--colorLi2);
 }
 .composer .formatting-bar .formatting-group li:focus, .composer .formatting-bar .formatting-group li:hover {
