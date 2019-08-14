@@ -41,6 +41,9 @@ a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies
 }
 
 /* Reduces the number of font sizes used in posts */
+body {
+    font-size: 14px !important;
+}
 .topic .threaded-replies, small.pull-left, .topic span.timeago {
     font-size: 12px !important;
 }

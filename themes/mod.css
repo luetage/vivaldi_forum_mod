@@ -101,6 +101,9 @@ small.pull-right a, .topic .bookmarked {
 .categories>li:hover, .category>ul>li:hover, .notifications-list li:nth-child(even), #content .nav>li:not(.active)>a:focus, #content .nav>li:not(.active)>a:hover {
     background-color: rgba(192,192,192,0.3) !important;
 }
+.category .category-item.highlight, .topic .topic-item.highlight {
+    background-color: rgba(0,36,125, 0.11);
+}
 .notifications-list li.unread {
     background-color: rgba(254,254,254,0.8) !important;
 }
@@ -260,11 +263,14 @@ div.btn-group.pull-right.open {
     background-color: #000 !important;
 }
 /* composer button */
-.taskbar .navbar-nav li.taskbar-composer a, .taskbar .navbar-nav li.taskbar-composer a:hover, .composer .resizer .trigger {
+.taskbar .navbar-nav li.taskbar-composer a, .taskbar .navbar-nav li.taskbar-composer a:hover, .composer .resizer .trigger i {
     background-color: #00247d !important;
 }
 .taskbar .navbar-nav li.taskbar-chat a i, .taskbar .navbar-nav li.taskbar-composer a i, .composer .resizer .trigger i {
     color: #f58591;
+}
+.composer .resizer .trigger i {
+    border-color: #00247d;
 }
 /* follow button */
 .fab.btn-morph.plus {
