@@ -17,7 +17,6 @@
     transition: opacity 0.6s ease-out;
     font-size: 12px;
     font-weight: 500;
-    color: var(--colorFg2);
 }
 .account .cover .avatar-wrapper:hover::after {
     opacity: 0.8;
