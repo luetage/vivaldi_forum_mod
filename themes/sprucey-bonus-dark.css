@@ -389,6 +389,9 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message[data-break=true], .expanded-chat .chat-content li.chat-message[data-break=true] {
      border-top-color: #585d61;
 }
+.chat-modal .chat-content li.chat-message .message-body-wrapper:hover .message-body, .expanded-chat .chat-content li.chat-message .message-body-wrapper:hover .message-body {
+    background: #353d42;
+}
 .chats-list>li.bg-primary {
     background-color: #171b1d;
     color: #ddd;

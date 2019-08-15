@@ -9,7 +9,7 @@ body {
 /* set background image of theme, the main panel part handles background with narrow screen widths */
 body, main#panel.slideout-panel {
     background-image: url('chrome-extension://__MSG_@@extension_id__/themes/img/planks.png') !important;
-    color: #2a363b;
+    color: #2a363b !important;
 }
 /* transparency setting for the content + adjusted spacing */
 #content {
