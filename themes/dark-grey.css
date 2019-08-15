@@ -724,6 +724,10 @@ textarea.write, div.preview.well {
     border-top: 1px solid var(--main-bg);
 }
 
+.chat-modal .chat-content li.chat-message .message-body-wrapper:hover .message-body, .expanded-chat .chat-content li.chat-message .message-body-wrapper:hover .message-body {
+    background: var(--header-bg);
+}
+
 textarea.form-control, textarea.form-control:focus {
     background: var(--second-bg);
     border: none;
