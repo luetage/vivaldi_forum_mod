@@ -1,3 +1,10 @@
+#header:hover #pagetitle {animation: slidet 12s linear .7s infinite !important;}
+
+@keyframes slidet {
+	0%, 10%, 100% {left:0; text-overflow:unset;}
+	90%, 99% {left:-100%;}
+}
+
 /** Custom Theme **/
 
 body {
@@ -540,7 +547,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 ul[component="chat/search/list"].dropdown-menu {
     background-color: var(--colorBgHiC);
 }
-.taskbar .navbar-nav li.taskbar-chat a, .taskbar .navbar-nav li.taskbar-chat a:active, .taskbar .navbar-nav li.taskbar-chat a:focus, .taskbar .navbar-nav li.taskbar-chat a:hover {
+.taskbar .navbar-nav li.taskbar-chat a:not(.user-icon), .taskbar .navbar-nav li.taskbar-chat a:active:not(.user-icon), .taskbar .navbar-nav li.taskbar-chat a:focus:not(.user-icon), .taskbar .navbar-nav li.taskbar-chat a:hover:not(.user-icon) {
     background-color: var(--colorHi);
     color: var(--colorHiFg);
     border-color: var(--colorHi);
