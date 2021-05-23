@@ -47,7 +47,7 @@
         "message": "Trích dẫn",
         "description": "Title of formatting item quote"
     },
-    "code": {
+    "inline_code": {
         "message": "Mã nội tuyến",
         "description": "Title of formatting item fixed width font"
     },

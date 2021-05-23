@@ -47,7 +47,7 @@
        "message": "Citace",
        "description": "Title of formatting item quote"
    },
-   "code": {
+   "inline-code": {
        "message": "Zdrojový kód",
        "description": "Title of formatting item fixed width font"
    },

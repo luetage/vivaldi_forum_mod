@@ -47,7 +47,7 @@
         "message": "Cita",
         "description": "Title of formatting item quote"
     },
-    "code": {
+    "inline_code": {
         "message": "Línea de código",
         "description": "Title of formatting item inline code"
     },

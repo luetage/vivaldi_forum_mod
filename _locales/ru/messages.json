@@ -47,7 +47,7 @@
         "message": "Цитата",
         "description": "Title of formatting item quote"
     },
-    "code": {
+    "inline_code": {
         "message": "Выделить код",
         "description": "Title of formatting item fixed width font"
     },

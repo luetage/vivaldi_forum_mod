@@ -39,7 +39,7 @@
         "message": "Citazione",
         "description": "Title of formatting item quote"
     },
-    "code": {
+    "inline_code": {
         "message": "Riga di codice",
         "description": "Title of formatting item fixed width font"
     },

@@ -39,7 +39,7 @@
         "message": "Quote",
         "description": "Title of formatting item quote"
     },
-    "code": {
+    "inline_code": {
         "message": "Inline Code",
         "description": "Title of formatting item fixed width font"
     },
