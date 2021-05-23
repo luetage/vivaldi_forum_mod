@@ -2,8 +2,8 @@
 
 function _restoreThemes() {
     chrome.storage.sync.get({
-       'VFM_CURRENT_THEME': '',
-       'VFM_THEMES': ''
+       'VFM_CURRENT_THEME': {selected: 'vfm-standard'},
+       'VFM_THEMES': []
     },
     function(get) {
         var vct = get.VFM_CURRENT_THEME;
@@ -488,5 +488,6 @@ chrome.runtime.onMessage.addListener(function(request) {
             ct[i].parentNode.removeChild(ct[i]);
         }
         _restoreThemes();
+        _restoreSchedule();
     }
 });
