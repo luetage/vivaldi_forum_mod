@@ -8,7 +8,7 @@
         "description": "Signature toggle for forum posts"
     },
     "copyCode": {
-        "message": "copier_code",
+        "message": "copier code",
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
@@ -18,14 +18,6 @@
     "optionsLink": {
         "message": "Forum mod",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
-    },
-    "editCommunity": {
-        "message": "Profil Communauté",
-        "description": "Link to community settings in user dropdown menu"
-    },
-    "editForum": {
-        "message": "Profil Forum",
-        "description": "Link to forum settings in user dropdown menu"
     },
     "dismiss": {
         "message": "Supprimer",
@@ -87,16 +79,16 @@
         "message": "Feedback",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Thèmes de la Communauté",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Planifier les thèmes",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Theme Machine",
         "description": "Options: Theme machine headline"
     },
     "background": {
-        "message": "Arrière-plan",
+        "message": "Fond",
         "description": "Options: Theme machine edit background"
     },
     "foreground": {
@@ -107,21 +99,21 @@
         "message": "Elément activé",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Bouton",
-        "description": "Options: Theme machine edit button"
-    },
-    "dropdown": {
-        "message": "Menus déroulants",
-        "description": "Options: Theme machine edit dropdown"
+    "accent": {
+        "message": "Accentuation",
+        "description": "Options: Theme machine edit accent"
     },
     "link": {
         "message": "Lien",
         "description": "Options: Theme machine edit link"
     },
-    "link2": {
-        "message": "Lien 2",
-        "description": "Options: Theme machine edit link2"
+    "code": {
+        "message": "Code",
+        "description": "Options: Theme machine edit code"
+    },
+    "dropdown": {
+        "message": "Menus déroulants",
+        "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
         "message": "Choisir les Modifications",
@@ -132,7 +124,7 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Ajoute des émoticônes et des boutons de formatage en plus. Permet par glissé/déposé de réordonner, de retirer et d'ajouter des boutons à la barre de formatage lors de l'édition/composition des messages sur le forum.",
+        "message": "Ajoute des émoticônes et des boutons de formatage. Permet par glissé/déposé de réordonner, de retirer et d'ajouter des boutons à la barre de formatage lors de l'édition/composition des messages sur le forum.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
@@ -140,7 +132,7 @@
         "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
-        "message": "Masque l'en-tête en défilant vers le bas, l'affiche en défilant vers le haut",
+        "message": "Masque l'en-tête en défilant vers le bas, l'affiche en défilant vers le haut.",
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
@@ -151,14 +143,6 @@
         "message": "Affiche un lien vers les marque-pages dans la barre de navigation.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
-    "compactHeader": {
-        "message": "En-tête compact",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Remet l'en-tête à sa hauteur d'origine et retire les liens inutiles.",
-        "description": "Options: Description of compact header mod"
-    },
     "customNotification": {
         "message": "Icônes de notifications",
         "description": "Options: Title of custom notification icons mod"
@@ -167,31 +151,7 @@
         "message": "Affiche les icônes dans l'en-tête du menu déroulant des notifications, pour distinguer facilement les différents types de notifications.",
         "description": "Options: Description of custom notification icons mod"
     },
-    "hideTooltips": {
-        "message": "Masquer les infobulles",
-        "description": "Options: Title of hide tooltips mod"
-    },
-    "hideTooltipsDesc": {
-        "message": "Masque les infobulles du menu de connection.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Masquer le compteur Non lus",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Masque l'icône du compteur Non lus dans la barre de navigation.",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Dernière édition",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Affiche l'heure locale de la dernière édition au bas du message édité.",
-        "description": "Options: Description of last edit timestamp mod"
-    },
-    "showUID": {
+        "showUID": {
         "message": "Afficher l'ID de l'utilisateur",
         "description": "Options: Title of show user IDs mod"
     },
@@ -204,11 +164,11 @@
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Masque toutes les signatures et les remplace par un bouton. La signature de chaque message est affichée en cliquant le bouton",
+        "message": "Masque toutes les signatures et les remplace par un bouton. La signature de chaque message est affichée en cliquant le bouton.",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Avatars carrés",
+        "message": "Avatars carréss",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {
@@ -239,10 +199,6 @@
         "message": "Modifier",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-    "toggle": {
-        "message": "Activer/Désactiver",
-        "description": "Options: Switch on or off"
-    },
     "backup": {
         "message": "Sauvegarder",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
@@ -257,7 +213,7 @@
     },
     "export": {
         "message": "Exporter",
-        "description": "Options: Text to show on a button that performs some sort of export operation"
+        "description": "Options: Text to show on a button that performs some sort of export operation."
     },
     "reset": {
         "message": "Réinitialiser",
@@ -269,7 +225,7 @@
     },
     "cancelReset": {
         "message": "Réinitialisation annulée.",
-        "description": "Options: Status message when reset is cancelled"
+        "description": "Options: Status message after cancelled reset"
     },
     "cancelImport": {
         "message": "Importation annulée.",
@@ -279,8 +235,16 @@
         "message": "Options réinitialisées, stockage supprimé.",
         "description": "Options: Status message after reset"
     },
+    "activateSchedule": {
+        "message": "Activer la planification.",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Désactiver la planification.",
+        "description": "Options: Status message for Schedule deactivation"
+    },
     "activateUserCSS": {
-        "message": "CSS personnalisés activé.",
+        "message": "CSS personnalisés activés.",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
@@ -305,14 +269,14 @@
     },
     "importTheme": {
         "message": "Thème importé. Cliquer ENREGISTRER pour enregistrer le thème.",
-        "description": "Options: Status message for theme import"
+        "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
-        "message": "Choisisez un thème, ou créez le vôtre.",
+        "message": "Choisissez, créez et planifiez les thèmes.",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Description d'une modification au survol.",
+        "message": "Activer/Désactiver les modifications et éditeur de CSS personalisés",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
