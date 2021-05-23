@@ -751,6 +751,13 @@ ul[component="chat/search/list"].dropdown-menu {
     color: var(--colorBg);
     border-color: var(--colorHi);
 }
+.chat-modal [component="chat/composer"] [component="chat/message/remaining"], .chats-full [component="chat/composer"] [component="chat/message/remaining"] {
+    color: var(--colorFg2);
+    opacity: 0.66;
+}
+.chat-modal [component="chat/composer"] [component="chat/input"], .chats-full [component="chat/composer"] [component="chat/input"] {
+    border-color: var(--colorBgH);
+  }
 
 /* Composer */
 .composer .resizer .trigger i {

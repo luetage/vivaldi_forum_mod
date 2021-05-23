@@ -74,6 +74,11 @@ a[component="header/profilelink"] i, .user-status i {
     vertical-align: unset !important;
 }
 
+/* Alert margin on Unread page */
+#new-topics-alert {
+    margin-top: 0 !important;
+}
+
 /* Copy all code button */
 .copy-all-code-button {
     position: absolute;
@@ -91,7 +96,6 @@ a[component="header/profilelink"] i, .user-status i {
 .markdown-highlight:hover .copy-all-code-button, .copy-all-code-button:hover {
     opacity: 1;
 }
-
 
 /*
 Option to dismiss community notifications
