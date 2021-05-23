@@ -168,7 +168,7 @@
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Avatars carréss",
+        "message": "Avatars carrés",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {
@@ -180,7 +180,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Code CSS uniquement! Cliquer ACTIVER/DESACTIVER pour activer/désactiver, ENREGISTRER pour enregistrer. SAUVEGARDER dans un fichier. Choisisez STANDARD dans les THEMES, si vous voulez utiliser votre propre thème.",
+        "message": "Code CSS uniquement! Cliquer ACTIVER/DESACTIVER pour activer/désactiver, ENREGISTRER pour enregistrer. SAUVEGARDER dans un fichier. Choisissez STANDARD dans les THEMES, si vous voulez utiliser votre propre thème.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
