@@ -77,14 +77,14 @@ function checkThemeForum(theme) {
         !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorFg) ||
         typeof theme.colorHi !== 'string' ||
         !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorHi) ||
-        typeof theme.colorBtn !== 'string' ||
-        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorBtn) ||
-        typeof theme.colorDrop !== 'string' ||
-        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorDrop) ||
+        typeof theme.colorAc !== 'string' ||
+        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorAc) ||
         typeof theme.colorLi !== 'string' ||
         !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorLi) ||
-        typeof theme.colorLi2 !== 'string' ||
-        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorLi2)
+        typeof theme.colorCo !== 'string' ||
+        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorCo) ||
+        typeof theme.colorDd !== 'string' ||
+        !/^#(?:[0-9a-f]{3}){1,2}$/i.test(theme.colorDd)
     ) {
         return false;
     } else {
@@ -122,14 +122,14 @@ function createThemeImage(theme) {
 }
 
 function createThemeForumImage(theme) {
-    var themeForumImage = htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="#121212" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDrop)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorBtn)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="40" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="55" cy="60" r="5"></circle><circle fill="var(--colorLi2)" cx="70" cy="60" r="5"></circle></svg>');
+    var themeForumImage = htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="var(--colorAc)" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDd)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorCo)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="47.5" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="62.5" cy="60" r="5"></circle></svg>');
     themeForumImage.style.setProperty('--colorBg', theme.colorBg);
     themeForumImage.style.setProperty('--colorFg', theme.colorFg);
     themeForumImage.style.setProperty('--colorHi', theme.colorHi);
-    themeForumImage.style.setProperty('--colorBtn', theme.colorBtn);
-    themeForumImage.style.setProperty('--colorDrop', theme.colorDrop);
+    themeForumImage.style.setProperty('--colorAc', theme.colorAc);
     themeForumImage.style.setProperty('--colorLi', theme.colorLi);
-    themeForumImage.style.setProperty('--colorLi2', theme.colorLi2);
+    themeForumImage.style.setProperty('--colorCo', theme.colorCo);
+    themeForumImage.style.setProperty('--colorDd', theme.colorDd);
     return themeForumImage;
 }
 
@@ -184,7 +184,8 @@ function importForumTheme(e) {
     while (!target.classList.contains('theme-preview')) {
         target = target.parentNode;
     }
-    var code = JSON.parse(target.previousSibling.innerText.trim());
+    console.log(target.parentNode.firstChild.innerText);
+    var code = JSON.parse(target.parentNode.firstChild.innerText.trim());
     chrome.runtime.sendMessage({theme: code});
 };
 

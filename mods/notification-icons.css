@@ -6,16 +6,18 @@
 .notifications-list li p {
     margin-left: 50px;
 }
-.notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before, .notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before, .notification-list li[data-nid^="follow"]::before, .notifications-list li[data-nid^="follow"]::before, .notification-list li[data-nid^="move"]::before, .notifications-list li[data-nid^="move"]::before, .notification-list li[data-nid^="chat"]::before, .notifications-list li[data-nid^="chat"]::before, .notification-list li[data-nid^="tid"]::before, .notifications-list li[data-nid^="tid"]::before {
+.notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before, .notification-list li[data-nid^="edit_post"]::before, .notifications-list li[data-nid^="edit_post"]::before, .notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before, .notification-list li[data-nid^="follow"]::before, .notifications-list li[data-nid^="follow"]::before, .notification-list li[data-nid^="move"]::before, .notifications-list li[data-nid^="move"]::before, .notification-list li[data-nid^="chat"]::before, .notifications-list li[data-nid^="chat"]::before, .notification-list li[data-nid^="tid"]::before, .notifications-list li[data-nid^="tid"]::before {
     float: left;
     width: 20px;
     padding-top: 2px;
     padding-left: 1px;
     font-family: "FontAwesome";
     font-size: 14px;
-    color: #777;
 }
 .notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before {
+    content: "\f040";
+}
+.notification-list li[data-nid^="edit_post"]::before, .notifications-list li[data-nid^="edit_post"]::before {
     content: "\f044";
 }
 .notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before {

@@ -1,5 +1,10 @@
-/** Theme Standard **/
+/* Theme Standard */
+/* Additional code to ensure compatibility with Forum mod features. */
 
+/* Logo */
+#vivaldilogo {
+    fill: #4c70f0;
+}
 
 /* Advanced formatting mod */
 .vivaldi-mod-modal-box {
@@ -18,4 +23,23 @@
 }
 #toolbar-custom ul li:hover {
     background-color: #e6e6e6;
+}
+
+/* Notification icons color */
+li[data-nid^="new_post"]::before, li[data-nid^="edit_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before, #menu .notification-list li .mark-read, .header .notification-list li .mark-read {
+    color: 777;
+}
+
+/* Copy all code button */
+.copy-all-code-button {
+    background-color: rgba(125, 125, 125, 0.66);
+    color: #fff;
+}
+.copy-all-code-button:hover {
+    color: #f4ff9d;
+}
+
+/* Theme preview */
+.themebox-title {
+    color: #333;
 }

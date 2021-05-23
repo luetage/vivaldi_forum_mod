@@ -1,4 +1,6 @@
-/* Disabling Signatures / function for showing the signature buttons can be found in mods.js, this is merely a fallback */
+/* Disables Signatures
+ * The function for showing the signature buttons can be found in mods.js,
+ * this is merely a fallback. */
 
 .topic .post-signature {
     display: none;

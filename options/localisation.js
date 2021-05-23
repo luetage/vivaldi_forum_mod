@@ -9,7 +9,7 @@ function localisation() {
     document.getElementById('reset-btn').innerText = chrome.i18n.getMessage('reset');
 
     //themes
-    document.querySelector('.communityThemes').innerText = chrome.i18n.getMessage('communityThemes');
+    document.querySelector('.schedule').innerText = chrome.i18n.getMessage('schedule');
     document.querySelector('.themeMachine').innerText = chrome.i18n.getMessage('themeMachine');
     document.querySelector('.theme-edit').innerText = chrome.i18n.getMessage('edit');
     document.querySelector('.theme-save').innerText = chrome.i18n.getMessage('save');
@@ -18,10 +18,10 @@ function localisation() {
     document.querySelector('.background').innerText = chrome.i18n.getMessage('background');
     document.querySelector('.foreground').innerText = chrome.i18n.getMessage('foreground');
     document.querySelector('.highlight').innerText = chrome.i18n.getMessage('highlight');
-    document.querySelector('.button').innerText = chrome.i18n.getMessage('button');
-    document.querySelector('.dropdown').innerText = chrome.i18n.getMessage('dropdown');
+    document.querySelector('.accent').innerText = chrome.i18n.getMessage('accent');
     document.querySelector('.link').innerText = chrome.i18n.getMessage('link');
-    document.querySelector('.link2').innerText = chrome.i18n.getMessage('link2');
+    document.querySelector('.code').innerText = chrome.i18n.getMessage('code');
+    document.querySelector('.dropdown').innerText = chrome.i18n.getMessage('dropdown');
 
     //modifications
     document.querySelector('.selectModifications').innerText = chrome.i18n.getMessage('selectModifications');
@@ -31,16 +31,8 @@ function localisation() {
     document.getElementById('headerScroll').title = chrome.i18n.getMessage('hideHeaderDesc');
     document.getElementById('bookmarks').innerText = chrome.i18n.getMessage('navBookmarks');
     document.getElementById('bookmarks').title = chrome.i18n.getMessage('navBookmarksDesc');
-    document.getElementById('compact').innerText = chrome.i18n.getMessage('compactHeader');
-    document.getElementById('compact').title = chrome.i18n.getMessage('compactHeaderDesc');
     document.getElementById('notificationIcons').innerText = chrome.i18n.getMessage('customNotification');
     document.getElementById('notificationIcons').title = chrome.i18n.getMessage('customNotificationDesc');
-    document.getElementById('tooltips').innerText = chrome.i18n.getMessage('hideTooltips');
-    document.getElementById('tooltips').title = chrome.i18n.getMessage('hideTooltipsDesc');
-    document.getElementById('unread').innerText = chrome.i18n.getMessage('hideUnread');
-    document.getElementById('unread').title = chrome.i18n.getMessage('hideUnreadDesc');
-    document.getElementById('timestamp').innerText = chrome.i18n.getMessage('timestamp');
-    document.getElementById('timestamp').title = chrome.i18n.getMessage('timestampDesc');
     document.getElementById('userID').innerText = chrome.i18n.getMessage('showUID');
     document.getElementById('userID').title = chrome.i18n.getMessage('showUIDDesc');
     document.getElementById('signatureMod').innerText = chrome.i18n.getMessage('signatureMod');
@@ -48,7 +40,6 @@ function localisation() {
     document.getElementById('square').innerText = chrome.i18n.getMessage('squareAvatars');
     document.getElementById('square').title = chrome.i18n.getMessage('squareAvatarsDesc');
     document.querySelector('.userCSS').innerText = chrome.i18n.getMessage('userCSS');
-    document.getElementById('css-toggle').innerText = chrome.i18n.getMessage('toggle');
     document.getElementById('css-save').innerText = chrome.i18n.getMessage('save');
     document.getElementById('css-backup').innerText = chrome.i18n.getMessage('backup');
     document.getElementById('userCSS').placeholder = chrome.i18n.getMessage('userCSSDesc');

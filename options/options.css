@@ -1,5 +1,5 @@
 body {
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 400;
     font-size: 14px;
     background-color: hsl(0, 0%, 99%);
@@ -229,21 +229,20 @@ strong, a {
     margin-bottom: 3px;
 }
 .toggleEdit div:first-of-type {
-    margin-bottom: 6px;
-    margin-left: 2px;
+    margin-top: 6px;
 }
-.toggleEdit input, .toggleEdit span {
+.toggleEdit input:not(#themeName), .toogleEdit label {
     vertical-align: middle;
 }
 input[type="text" i] {
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 600;
     font-size: 13px;
     color: hsl(0, 0%, 37%);
     background-color: transparent;
     letter-spacing: .5px;
     width: 166px;
-    height: 24px;
+    height: 27px;
     text-indent: 5px;
     border: 2px solid hsl(0, 0%, 70%);
 }
@@ -282,59 +281,87 @@ input[type="color"]::-webkit-color-swatch {
     stroke: var(--colorBg);
 }
 #vfm-standard.active .themebox-image {
-    border-color: #ef3939;
+    border-color: #c91106;
 }
 #vfm-standard.active .themebox-image::before {
-    border-bottom-color: #ef3939;
-    border-right-color: #ef3939;
+    border-bottom-color: #c91106;
+    border-right-color: #c91106;
 }
 #vfm-standard .themebox-image .themebox-o_mark {
-    fill: #ef3939;
+    fill: #c91106;
     stroke: #fff;
 }
-#vfm-darkGrey.active .themebox-image {
-    border-color: #ec2226;
+
+
+/* Schedule */
+
+.schedule, .userCSS {
+    display: inline-block;
 }
-#vfm-darkGrey.active .themebox-image::before {
-    border-bottom-color: #ec2226;
-    border-right-color: #ec2226;
+.switch {
+    margin-left: 12px;
+    margin-top: 3px;
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 17px;
 }
-#vfm-darkGrey .themebox-image .themebox-o_mark {
-    fill: #ec2226;
-    stroke: #fff;
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
-#vfm-lightGrey.active .themebox-image {
-    border-color: #ec2226;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00247d;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
-#vfm-lightGrey.active .themebox-image::before {
-    border-bottom-color: #ec2226;
-    border-right-color: #ec2226;
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: hsl(0, 0%, 99%);
+    transition: .4s;
 }
-#vfm-lightGrey .themebox-image .themebox-o_mark {
-    fill: #ec2226;
-    stroke: #fff;
+input:checked + .slider {
+    background-color: #d01126;
 }
-#vfm-mod.active .themebox-image {
-    border-color: #d01126;
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
 }
-#vfm-mod.active .themebox-image::before {
-    border-bottom-color: #d01126;
-    border-right-color: #d01126;
+input:checked + .slider:before {
+    transform: translateX(13px);
 }
-#vfm-mod .themebox-image .themebox-o_mark {
-    fill: #d01126;
-    stroke: #ebf5f7;
+.slider.round {
+    border-radius: 17px;
 }
-#vfm-sprucey.active .themebox-image {
-    border-color: #337ab7;
+.slider.round:before {
+    border-radius: 50%;
 }
-#vfm-sprucey.active .themebox-image::before {
-    border-bottom-color: #337ab7;
-    border-right-color: #337ab7;
+.listSchedule {
+    margin-top: 6px;
 }
-#vfm-sprucey .themebox-image .themebox-o_mark {
-    fill: #337ab7;
-    stroke: #f1f1f1;
+.listSchedule div {
+    margin-bottom: 3px;
+}
+.listSchedule div select:focus {
+    outline: none;
+}
+.listSchedule div select:not(last-of-type) {
+    margin-right: 3px;
+}
+option {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
 
@@ -365,7 +392,7 @@ input[type="color"]::-webkit-color-swatch {
     margin-bottom: 4px;
 }
 #userCSS {
-    font-family: Menlo, Consolas, Monaco, monospace;
+    font-family: monospace;
     font-size: 12px;
     color: hsl(0, 0%, 18%);
     background-color: white;
@@ -383,11 +410,11 @@ input[type="color"]::-webkit-color-swatch {
 
 /* Buttons */
 
-button {
+button, select {
     background: hsl(0, 0%, 37%);
     color: hsl(0, 0%, 99%);
     border:  2px solid hsl(0, 0%, 37%);
-    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
@@ -395,7 +422,7 @@ button {
     border-radius: 3px;
     cursor: pointer;
 }
-button:hover:not(:disabled) {
+button:hover:not(:disabled), select:hover {
     background: hsl(0, 0%, 18%);
     border-color: hsl(0, 0%, 18%);
 }
@@ -409,13 +436,13 @@ button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
 button:focus {
     outline: none;
 }
-button.deactivated {
-    background: hsl(0, 0%, 99%);
-    color: hsl(0, 0%, 37%);
-    border-color: hsl(0, 0%, 70%);
-}
-button.deactivated:hover {
-    background: hsl(0, 0%, 37%);
-    color: hsl(0, 0%, 99%);
-    border-color: hsl(0, 0%, 37%);
-}
+/* button.deactivated { */
+/*     background: hsl(0, 0%, 99%); */
+/*     color: hsl(0, 0%, 37%); */
+/*     border-color: hsl(0, 0%, 70%); */
+/* } */
+/* button.deactivated:hover { */
+/*     background: hsl(0, 0%, 37%); */
+/*     color: hsl(0, 0%, 99%); */
+/*     border-color: hsl(0, 0%, 37%); */
+/* } */

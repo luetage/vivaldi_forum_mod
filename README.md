@@ -9,7 +9,7 @@ Open source extension. Dedicated to improving your experience browsing Vivaldi F
 ## Features
 
 * Theme machine
-* Community themes
+* Scheduled theming
 * User CSS
 * Modifications
 * Fixes
@@ -23,28 +23,30 @@ Vivaldi Forum mod is a community project driven by the ideas and needs of its us
 
 ### Themes
 
-Did you create a beautiful theme with help of the Theme Machine? Great! Please share it by using the **Share** button on the options page, which will copy the theme code to your clipboard. Afterwards simply paste the theme code in a reply to the [feedback topic](https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod) on Vivaldi Forum.  Did you introduce additional changes with User CSS? – Copy the code and paste it alongside your theme.
+Have you created a beautiful theme with help of the Theme Machine? Great! Please share it by using the **Export** button on the options page, which will copy the theme code to your clipboard. Afterwards simply paste the theme code in a reply to the [feedback topic](https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod) on Vivaldi Forum.  Did you introduce additional changes with User CSS? – Copy the code and paste it alongside your theme.
 
-You can also create a standalone community theme:
+Create your own theme:
 
 * Download or clone the repository.
 * On Vivaldi's extensions page enable developer mode, click **Load unpacked** and select the Vivaldi Forum mod directory.
 * Select **Standard** theme in options, open `standard.css` (located in `vivaldi_forum_mod/themes`) in a text editor and start designing your new theme.
-* Submit the code for review. Contact through Vivaldi Forum directly, either through the feedback topic, or by sending a [message](https://forum.vivaldi.net/user/luetage).
 
 ### Translations
 
 Vivaldi Forum mod 2.0 introduces translations. Following languages are currently being worked on:
 
+* Czech
 * French
 * German
 * Italian
+* Russian
 * Spanish
+* Vietnamese
 
 You can help out by improving these translations, or by introducing a new translation. Here's a quick **how to**:
 
 * Please make sure the language you want to translate to is [supported](https://developer.chrome.com/webstore/i18n?csw=1#localeTable).
-* Clone or download the [testing branch](https://github.com/luetage/vivaldi_forum_mod/tree/testing).
+* Clone or download the [repository](https://github.com/luetage/vivaldi_forum_mod/).
 * On Vivaldi's extensions page enable developer mode, click **Load unpacked** and select the Vivaldi Forum mod directory.
 * In Vivaldi browser settings, go to **Startup** and select your desired target language. Restart the browser.
 * In Vivaldi Forum settings pick your target language, hit **Save** and reload the tab.

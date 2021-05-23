@@ -2,268 +2,199 @@
 <html>
 
 <head>
-    <title>Vivaldi Forum mod</title>
-    <link rel="shortcut icon" type="image/png" href="/icons/icon16.png">
-    <link rel="stylesheet" href="options.css" />
+  <title>Vivaldi Forum mod</title>
+  <link rel="shortcut icon" type="image/png" href="/icons/icon16.png">
+  <link rel="stylesheet" href="options.css" />
 </head>
 
 <body>
 
-    <header>
-        <a href="https://github.com/luetage/vivaldi_forum_mod" target="_blank" rel="noreferrer noopener"><img id="logo" src="/icons/icon24.png" alt="github"/></a>
-        <button id="themes-btn" class="view"></button> | <button id="modifications-btn"></button> | <button id="info-btn"></button> | <form method="get" action="https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod" target="_blank" rel="noreferrer noopener"><button id="feedback-btn" type="submit"></button></form> | <button id="reset-btn"></button>
-        <div>
-                <span id="status"></span>
-        </div>
-    </header>
-
-    <div id="content">
-        <div class="row">
-            <div id="themes">
-                <div class="column-left">
-                    <div id="themeMachine">
-                        <h2 class="themeMachine"></h2>
-                        <div class="editTheme">
-                            <span>
-                                <div class="btn-comp">
-                                    <button id="addTheme"></button>
-                                    <button id="removeTheme"></button>
-                                </div>
-                                <button class="theme-edit"></button>
-                                <div class="btn-comp">
-                                    <button id="moveLeft">
-                                        <svg width="18" height="18" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 448v896q0 26-19 45t-45 19-45-19l-448-448q-19-19-19-45t19-45l448-448q19-19 45-19t45 19 19 45z" fill="hsl(0, 0%, 99%)"/></svg>
-                                    </button>
-                                    <button id="moveRight"></button>
-                                </div>
-                            </span>
-                            <div class="toggleEdit">
-                                <span>
-                                    <input type="text" maxlength="25" spellcheck="false" id='themeName'>
-                                    <button class="theme-save"></button>
-                                    <button class="theme-import"></button>
-                                    <button class="theme-export"></button>
-                                </span>
-                                <div><input type="color" id="colorBg">
-                                <span class="background"></span></div>
-                                <div><input type="color" id="colorFg">
-                                <span class="foreground"></span></div>
-                                <div><input type="color" id="colorHi">
-                                <span class="highlight"></span></div>
-                                <div><input type="color" id="colorBtn">
-                                <span class="button"></span></div>
-                                <div><input type="color" id="colorDrop">
-                                <span class="dropdown"></span></div>
-                                <div><input type="color" id="colorLi">
-                                <span class="link"></span></div>
-                                <div><input type="color" id="colorLi2">
-                                <span class="link2"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column-right">
-                    <div id="communityThemes">
-                        <h2 class="communityThemes"></h2>
-                        <button id="vfm-standard" class="themebox">
-                            <div class="themebox-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                    <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
-                                    <rect fill="#1546a3" x="0" y="14" width="110" height="12"></rect>
-                                    <rect fill="#fff" x="85" y="26" width="25" height="50"></rect>
-                                    <rect fill="#00caa7" x="6" y="32" width="15" height="5"></rect>
-                                    <rect fill="#ef3939" x="23" y="32" width="15" height="5"></rect>
-                                    <circle fill="#333" cx="40" cy="60" r="5"></circle>
-                                    <circle fill="#006bda" cx="55" cy="60" r="5"></circle>
-                                    <circle fill="#23bcb1" cx="70" cy="60" r="5"></circle>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                            </div>
-                            <div class="themebox-title" title=".vfm-standard">Standard</div>
-                        </button>
-                        <button id="vfm-darkGrey" class="themebox">
-                            <div class="themebox-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                    <rect fill="#202122" x="0" y="0" width="110" height="76"></rect>
-                                    <rect fill="#191a1a" x="0" y="0" width="110" height="14"></rect>
-                                    <rect fill="#1e1f1f" x="0" y="14" width="110" height="12"></rect>
-                                    <rect fill="#141415" x="85" y="26" width="25" height="50"></rect>
-                                    <rect fill="#1679c5" x="6" y="32" width="15" height="5"></rect>
-                                    <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
-                                    <circle fill="#7e858b" cx="40" cy="60" r="5"></circle>
-                                    <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
-                                    <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                            </div>
-                            <div class="themebox-title" title=".vfm-darkgrey">DarkGrey</div>
-                        </button>
-                        <button id="vfm-lightGrey" class="themebox">
-                            <div class="themebox-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                    <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
-                                    <rect fill="#202122" x="0" y="0" width="110" height="14"></rect>
-                                    <rect fill="#28292a" x="0" y="14" width="110" height="12"></rect>
-                                    <rect fill="#f4f4f6" x="85" y="26" width="25" height="50"></rect>
-                                    <rect fill="#6aabf6" x="6" y="32" width="15" height="5"></rect>
-                                    <rect fill="#ec2226" x="23" y="32" width="15" height="5"></rect>
-                                    <circle fill="#333" cx="40" cy="60" r="5"></circle>
-                                    <circle fill="#20aca3" cx="55" cy="60" r="5"></circle>
-                                    <circle fill="#20aca3" cx="70" cy="60" r="5"></circle>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                            </div>
-                            <div class="themebox-title" title=".vfm-lightgrey">LightGrey</div>
-                        </button>
-                        <button id="vfm-mod" class="themebox">
-                            <div class="themebox-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                    <rect fill="#ebf5f7" x="0" y="0" width="110" height="76"></rect>
-                                    <rect fill="#bfc8d5" x="0" y="0" width="110" height="14"></rect>
-                                    <rect fill="#00247d" x="0" y="14" width="110" height="12"></rect>
-                                    <rect fill="#bfc8d5" x="85" y="26" width="25" height="50"></rect>
-                                    <rect fill="#8c8c8c" x="6" y="32" width="15" height="5"></rect>
-                                    <rect fill="#d01126" x="23" y="32" width="15" height="5"></rect>
-                                    <circle fill="#2a363b" cx="40" cy="60" r="5"></circle>
-                                    <circle fill="#005ec1" cx="55" cy="60" r="5"></circle>
-                                    <circle fill="#00977d" cx="70" cy="60" r="5"></circle>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                            </div>
-                            <div class="themebox-title" title=".vfm-mod">Mod</div>
-                        </button>
-                        <button id="vfm-sprucey" class="themebox">
-                            <div class="themebox-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
-                                    <rect fill="#2e3539" x="0" y="0" width="110" height="76"></rect>
-                                    <rect fill="#3f494e" x="0" y="0" width="110" height="14"></rect>
-                                    <rect fill="#2e3539" x="0" y="14" width="110" height="12"></rect>
-                                    <rect fill="#373f44" x="85" y="26" width="25" height="50"></rect>
-                                    <rect fill="#b05158" x="6" y="32" width="15" height="5"></rect>
-                                    <rect fill="#337ab7" x="23" y="32" width="15" height="5"></rect>
-                                    <circle fill="#ddd" cx="40" cy="60" r="5"></circle>
-                                    <circle fill="#f1f1f1" cx="55" cy="60" r="5"></circle>
-                                    <circle fill="#24948c" cx="70" cy="60" r="5"></circle>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
-                            </div>
-                            <div class="themebox-title" title=".vfm-sprucey">Sprucey Bonus Dark</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div id="modifications">
-                <div class="column-left">
-                    <div id="editCSS">
-                        <h2 class="userCSS"></h2>
-                        <span>
-                            <button id="css-toggle"></button>
-                            <button id="css-save"></button>
-                            <button id="css-backup"></button>
-                        </span><br>
-                        <textarea id="userCSS" spellcheck="false"></textarea>
-                    </div>
-                </div>
-                <div class="column-right">
-                    <div id="selectMods">
-                        <h2 class="selectModifications"></h2>
-                        <p><span id="advancedFormatting"></span></p>
-                        <p><span id="headerScroll"></span></p>
-                        <p><span id="bookmarks"></span></p>
-                        <p><span id="compact"></span></p>
-                        <p><span id="notificationIcons"></span></p>
-                        <p><span id="tooltips"></span></p>
-                        <p><span id="unread"></span></p>
-                        <p><span id="timestamp"></span></p>
-                        <p><span id="userID"></span></p>
-                        <p><span id="signatureMod"></span></p>
-                        <p><span id="square"></span></p>
-                    </div>
-                </div>
-            </div>
-            <div id="info">
-                <div class="column-left">
-                    <h2 class="changelog"></h2>
-                    <div class="scroll-column">
-                        <p><strong>3.0</strong> Unlimited custom themes, automatic import of theme previews, seamless theme changes and scheduled theming.</p>
-                        <p><strong>2.4</strong> Theme preview for Vivaldi Forum mod themes and Vivaldi Browser themes in topics. Vietnamese translation.</p>
-                        <p><strong>2.3</strong> Fix for pagination coloring on all themes, small settings fixes.</p>
-                        <p><strong>2.0</strong> New options page. New system for importing/exporting themes. Translations for French, German, Italian and Spanish.</p>
-                        <p><strong>1.84</strong> New logos by Rexfahrer, all themes updated, User CSS toggle reenabled.</p>
-                        <p><strong>1.66</strong> Theme Mod and Sprucey Bonus Dark updated, account, group and content margin fixes for all screen sizes.</p>
-                        <p><strong>1.65</strong> Modification and custom theme fixes after big Vivaldi Forum update. Only custom themes working.</p>
-                        <p><strong>1.64</strong> Mobile view fixes.</p>
-                        <p><strong>1.62</strong> Option to dismiss community notifications</p>
-                        <p><strong>1.61</strong> Custom theme improvements, bug fixes.</p>
-                        <p><strong>1.60</strong> Advanced formatting improvements + account margin fix.</p>
-                        <p><strong>1.59</strong> Advanced formatting instead of emote picker.</p>
-                        <p><strong>1.58</strong> Improve emote picker usability</p>
-                        <p><strong>1.57</strong> Add emote picker mod by LonM</p>
-                        <p><strong>1.56</strong> Mobile menu fix, custom theme impprovements.</p>
-                        <p><strong>1.55</strong> Update to Theme Light-Grey, Theme Gray-Pink removed.</p>
-                        <p><strong>1.53</strong> Dark and light code markdown display, community info mod removed (Vivaldi removed the info), custom theme fixes.</p>
-                        <p><strong>1.54</strong> Update to Dark-Grey, general theme fixes.</p>
-                        <p><strong>1.52</strong> Extension runs in the background now, which should save resources. More consisten tags for custom themes (japanese/english).</p>
-                        <p><strong>1.50-1.51</strong> Some small fixes here and there.</p>
-                        <p><strong>1.49</strong> Content adjustment for compact header mod, better visibility for special feature request tags in custom themes.</p>
-                        <p><strong>1.48</strong> Fixes an error related to automated colors in custom themes.</p>
-                        <p><strong>1.47</strong> Additional exceptions for copy all code button (blockquote, non formatted).</p>
-                        <p><strong>1.46</strong> Link to the unofficial Vivaldi Discord chat and the official Vivaldi store added to footer. Copy all code button is consistent on all themes now. Fix for vertical code scrolling (removed space and up/down movement of the hljs part).</p>
-                        <p><strong>1.45</strong> New default mod Copy all code button. Adds a button to each code block, which copies all code within the block. Written by LonM.</p>
-                        <p><strong>1.44</strong> Silent update -- background fixes.</p>
-                        <p><strong>1.43</strong> Last edit timestamp update, it displays local time instead of UTC now. History forward/backward fix for window.onload functions.</p>
-                        <p><strong>1.42</strong> window.onload consolidation, latest version didn't work in certain conditions.</p>
-                        <p><strong>1.41</strong> New mod Bookmarks in navigation (see Info), code improvements and cleanup.</p>
-                        <p><strong>1.40</strong> Backup functionality for User CSS, options page design cleanup.</p>
-                        <p><strong>1.39</strong> User CSS storage is local now (5MB instead of 8KB), Reset button to clear storage and options.</p>
-                        <p><strong>1.38</strong> Disabled spellcheck and added limit breach warning and error message for User CSS.</p>
-                        <p><strong>1.37</strong> New User CSS input and storage. Improvements to avatar dropdown menu. Status offline/invisible changes for the custom theme.</p>
-                        <p><strong>1.35-1.36</strong> New Forum Profile link in avatar dropdown menu. Fixing an issue Default custom theme changed to Solarized Light.</p>
-                        <p><strong>1.34</strong> Feature request box and default button spacing, redesign of default buttons and backgrounds for the custom theme.</p>
-                        <p><strong>1.33</strong> A fix for custom notification icon alignment, changed new tag styling for the custom theme.</p>
-                        <p><strong>1.32</strong> Fixing a bug for the bookmarking feature, additional font icons for code improvements.</p>
-                        <p><strong>1.31</strong> Reintroduction of tooltips mod.</p>
-                        <p><strong>1.29-1.30</strong> Further custom theme updates.</p>
-                        <p><strong>1.28</strong> Blockquote fix for search, automatic line breaks for code and emoji license view =)</p>
-                        <p><strong>1.25-1.27</strong> Major bugfixes and styling for Sprucey Bonus Dark.</p>
-                        <p><strong>1.1 - 1.24</strong> Improvements and bugfixes for the custom theme option.</p>
-                        <p><strong>1.0</strong> Custom Theme option/interface and Compact Header mod</p>
-                        <p><strong>0.66</strong> Reduced number of font sizes used in posts, simpler threaded replies header.</p>
-                        <p><strong>0.64</strong> Some site-wide inconsistencies fixed, improvements to GrayPink and Mod themes.</p>
-                        <p><strong>0.62</strong> Improvements to GrayPink. Missing "mentioned" notification icon added.</p>
-                        <p><strong>0.60</strong> Theme Mod + bugfixes.</p>
-                        <p><strong>0.54</strong> Silent update. Improvements and fixes for all themes.</p>
-                        <p><strong>0.52</strong> New logo animation and new theme (DarkGrey by sjudenim). Updates for LightGrey and Sprucey, fixed scroll bug.</p>
-                        <p><strong>0.44</strong> Feedback link added.</p>
-                        <p><strong>0.42</strong> Release on Chrome web store.</p>
-                        <p><strong>0.34</strong> Improved options page. Changelog, Credits and Info.</p>
-                        <p><strong>0.27</strong> Theme Sprucey Bonus Dark, Square avatars.</p>
-                        <p><strong>0.24</strong> Theme LightGrey. More space for expanded chat input.</p>
-                    </div>
-                </div>
-                <div class="column-right">
-                    <h2 class="credits"></h2>
-                    <div class="scroll-column">
-                        <p><strong><a href="https://forum.vivaldi.net/user/burbuja" target="_blank" rel="noreferrer noopener">burbuja</a></strong> Spanish translation</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/greenenemy" target="_blank" rel="noreferrer noopener">greenenemy</a></strong> Voting indicators</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/hadden89" target="_blank" rel="noreferrer noopener">Hadden89</a></strong> Italian translation</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/hlehyaric" target="_blank" rel="noreferrer noopener">hlehyaric</a></strong> French translation</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/isildur" target="_blank" rel="noreferrer noopener">Isildur</a></strong> Font icons &#183; Square avatars &#183; Last edit timestamp</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/lonm" target="_blank" rel="noreferrer noopener">LonM</a></strong> Copy all code button &#183; Advanced formatting</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/pafflick" target="_blank" rel="noreferrer noopener">pafflick</a></strong> Custom notification icons</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/rexfahrer" target="_blank" rel="noreferrer noopener">Rexfahrer</a></strong> Vivaldi logos with transparency</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/sjudenim" target="_blank" rel="noreferrer noopener">sjudenim</a></strong> DarkGrey &#183; LightGrey</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/tam710562" target="_blank" rel="noreferrer noopener">tam710562</a></strong> Theme preview &#183; Vietnamese translation</p>
-                        <p><strong><a href="https://forum.vivaldi.net/user/wiiija" target="_blank" rel="noreferrer noopener">wiiija</a></strong> Sprucey Bonus Dark</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header>
+    <a href="https://github.com/luetage/vivaldi_forum_mod" target="_blank" rel="noreferrer noopener"><img id="logo" src="/icons/icon24.png" alt="github"/></a>
+    <button id="themes-btn" class="view"></button> | <button id="modifications-btn"></button> | <button id="info-btn"></button> | <form method="get" action="https://forum.vivaldi.net/topic/19728/vivaldi-forum-mod" target="_blank" rel="noreferrer noopener"><button id="feedback-btn" type="submit"></button></form> | <button id="reset-btn"></button>
+    <div>
+        <span id="status"></span>
     </div>
+  </header>
 
-    <script src="theme-machine.js"></script>
-    <script src="options.js"></script>
-    <script src="localisation.js"></script>
+  <div id="content">
+    <div class="row">
+      <div id="themes">
+        <div class="column-left">
+          <div id="themeMachine">
+            <h2 class="themeMachine"></h2>
+              <button id="vfm-standard" class="themebox">
+                <div class="themebox-image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76">
+                    <rect fill="#fff" x="0" y="0" width="110" height="76"></rect>
+                    <rect fill="#3b57bb" x="0" y="14" width="110" height="12"></rect>
+                    <rect fill="#fff" x="85" y="26" width="25" height="50"></rect>
+                    <rect fill="#4c70f0" x="6" y="32" width="15" height="5"></rect>
+                    <rect fill="#c91106" x="23" y="32" width="15" height="5"></rect>
+                    <circle fill="#000000" cx="47.5" cy="60" r="5"></circle>
+                    <circle fill="#4c70f0" cx="62.5" cy="60" r="5"></circle>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg>
+                </div>
+                <div class="themebox-title" title=".vfm-standard">Standard</div>
+              </button>
+            <div class="editTheme">
+              <button id="addTheme"><b>+</b></button>
+              <button id="removeTheme"><b>&minus;</b></button>
+              <button class="theme-edit"></button>
+              <button id="moveLeft">&#x25c2;</button>
+              <button id="moveRight">&#x25b8;</button>
+              <div class="toggleEdit">
+                <input type="text" maxlength="25" spellcheck="false" id='themeName'>
+                <button class="theme-save"></button>
+                <button class="theme-import"></button>
+                <button class="theme-export"></button>
+                <div><input type="color" id="colorBg">
+                <label class="background"></label></div>
+                <div><input type="color" id="colorFg">
+                <label class="foreground"></label></div>
+                <div><input type="color" id="colorHi">
+                <label class="highlight"></label></div>
+                <div><input type="color" id="colorAc">
+                <label class="accent"></label></div>
+                <div><input type="color" id="colorLi">
+                <label class="link"></label></div>
+                <div><input type="color" id="colorCo">
+                <label class="code"></label></div>
+                <div><input type="color" id="colorDd">
+                <label class="dropdown"></label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column-right">
+          <div id="schedule">
+            <h2 class="schedule"></h2>
+              <label class="switch">
+                <input id="schedule-toggle" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            <div class="editSchedule">
+              <button id="addSchedule"><b>+</b></button>
+              <button id="removeSchedule"><b>&minus;</b></button>
+              <div class="listSchedule"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modifications">
+        <div class="column-left">
+          <div id="editCSS">
+            <h2 class="userCSS"></h2>
+              <label class="switch">
+                <input id="css-toggle" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            <div>
+              <button id="css-save"></button>
+              <button id="css-backup"></button>
+            </div>
+            <textarea id="userCSS" spellcheck="false"></textarea>
+          </div>
+        </div>
+        <div class="column-right">
+          <div id="selectMods">
+            <h2 class="selectModifications"></h2>
+            <p><span id="advancedFormatting"></span></p>
+            <p><span id="headerScroll"></span></p>
+            <p><span id="bookmarks"></span></p>
+            <p><span id="notificationIcons"></span></p>
+            <p><span id="userID"></span></p>
+            <p><span id="signatureMod"></span></p>
+            <p><span id="square"></span></p>
+          </div>
+        </div>
+      </div>
+      <div id="info">
+        <div class="column-left">
+          <h2 class="changelog"></h2>
+          <div class="scroll-column">
+            <p><strong>3.0</strong> Unlimited custom themes, automatic import of theme previews, seamless theme changes and scheduled theming.</p>
+            <p><strong>2.4</strong> Theme preview for Vivaldi Forum mod themes and Vivaldi Browser themes in topics. Vietnamese translation.</p>
+            <p><strong>2.3</strong> Fix for pagination coloring on all themes, small settings fixes.</p>
+            <p><strong>2.0</strong> New options page. New system for importing/exporting themes. Translations for French, German, Italian and Spanish.</p>
+            <p><strong>1.84</strong> New logos by Rexfahrer, all themes updated, User CSS toggle reenabled.</p>
+            <p><strong>1.66</strong> Theme Mod and Sprucey Bonus Dark updated, account, group and content margin fixes for all screen sizes.</p>
+            <p><strong>1.65</strong> Modification and custom theme fixes after big Vivaldi Forum update. Only custom themes working.</p>
+            <p><strong>1.64</strong> Mobile view fixes.</p>
+            <p><strong>1.62</strong> Option to dismiss community notifications</p>
+            <p><strong>1.61</strong> Custom theme improvements, bug fixes.</p>
+            <p><strong>1.60</strong> Advanced formatting improvements + account margin fix.</p>
+            <p><strong>1.59</strong> Advanced formatting instead of emote picker.</p>
+            <p><strong>1.58</strong> Improve emote picker usability</p>
+            <p><strong>1.57</strong> Add emote picker mod by LonM</p>
+            <p><strong>1.56</strong> Mobile menu fix, custom theme impprovements.</p>
+            <p><strong>1.55</strong> Update to Theme Light-Grey, Theme Gray-Pink removed.</p>
+            <p><strong>1.53</strong> Dark and light code markdown display, community info mod removed (Vivaldi removed the info), custom theme fixes.</p>
+            <p><strong>1.54</strong> Update to Dark-Grey, general theme fixes.</p>
+            <p><strong>1.52</strong> Extension runs in the background now, which should save resources. More consisten tags for custom themes (japanese/english).</p>
+            <p><strong>1.50-1.51</strong> Some small fixes here and there.</p>
+            <p><strong>1.49</strong> Content adjustment for compact header mod, better visibility for special feature request tags in custom themes.</p>
+            <p><strong>1.48</strong> Fixes an error related to automated colors in custom themes.</p>
+            <p><strong>1.47</strong> Additional exceptions for copy all code button (blockquote, non formatted).</p>
+            <p><strong>1.46</strong> Link to the unofficial Vivaldi Discord chat and the official Vivaldi store added to footer. Copy all code button is consistent on all themes now. Fix for vertical code scrolling (removed space and up/down movement of the hljs part).</p>
+            <p><strong>1.45</strong> New default mod Copy all code button. Adds a button to each code block, which copies all code within the block. Written by LonM.</p>
+            <p><strong>1.44</strong> Silent update -- background fixes.</p>
+            <p><strong>1.43</strong> Last edit timestamp update, it displays local time instead of UTC now. History forward/backward fix for window.onload functions.</p>
+            <p><strong>1.42</strong> window.onload consolidation, latest version didn't work in certain conditions.</p>
+            <p><strong>1.41</strong> New mod Bookmarks in navigation (see Info), code improvements and cleanup.</p>
+            <p><strong>1.40</strong> Backup functionality for User CSS, options page design cleanup.</p>
+            <p><strong>1.39</strong> User CSS storage is local now (5MB instead of 8KB), Reset button to clear storage and options.</p>
+            <p><strong>1.38</strong> Disabled spellcheck and added limit breach warning and error message for User CSS.</p>
+            <p><strong>1.37</strong> New User CSS input and storage. Improvements to avatar dropdown menu. Status offline/invisible changes for the custom theme.</p>
+            <p><strong>1.35-1.36</strong> New Forum Profile link in avatar dropdown menu. Fixing an issue Default custom theme changed to Solarized Light.</p>
+            <p><strong>1.34</strong> Feature request box and default button spacing, redesign of default buttons and backgrounds for the custom theme.</p>
+            <p><strong>1.33</strong> A fix for custom notification icon alignment, changed new tag styling for the custom theme.</p>
+            <p><strong>1.32</strong> Fixing a bug for the bookmarking feature, additional font icons for code improvements.</p>
+            <p><strong>1.31</strong> Reintroduction of tooltips mod.</p>
+            <p><strong>1.29-1.30</strong> Further custom theme updates.</p>
+            <p><strong>1.28</strong> Blockquote fix for search, automatic line breaks for code and emoji license view =)</p>
+            <p><strong>1.25-1.27</strong> Major bugfixes and styling for Sprucey Bonus Dark.</p>
+            <p><strong>1.1 - 1.24</strong> Improvements and bugfixes for the custom theme option.</p>
+            <p><strong>1.0</strong> Custom Theme option/interface and Compact Header mod</p>
+            <p><strong>0.66</strong> Reduced number of font sizes used in posts, simpler threaded replies header.</p>
+            <p><strong>0.64</strong> Some site-wide inconsistencies fixed, improvements to GrayPink and Mod themes.</p>
+            <p><strong>0.62</strong> Improvements to GrayPink. Missing "mentioned" notification icon added.</p>
+            <p><strong>0.60</strong> Theme Mod + bugfixes.</p>
+            <p><strong>0.54</strong> Silent update. Improvements and fixes for all themes.</p>
+            <p><strong>0.52</strong> New logo animation and new theme (DarkGrey by sjudenim). Updates for LightGrey and Sprucey, fixed scroll bug.</p>
+            <p><strong>0.44</strong> Feedback link added.</p>
+            <p><strong>0.42</strong> Release on Chrome web store.</p>
+            <p><strong>0.34</strong> Improved options page. Changelog, Credits and Info.</p>
+            <p><strong>0.27</strong> Theme Sprucey Bonus Dark, Square avatars.</p>
+            <p><strong>0.24</strong> Theme LightGrey. More space for expanded chat input.</p>
+          </div>
+        </div>
+        <div class="column-right">
+          <h2 class="credits"></h2>
+          <div class="scroll-column">
+            <p><strong><a href="https://forum.vivaldi.net/user/burbuja" target="_blank" rel="noreferrer noopener">burbuja</a></strong> Spanish translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/greenenemy" target="_blank" rel="noreferrer noopener">greenenemy</a></strong> Voting indicators</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/hadden89" target="_blank" rel="noreferrer noopener">Hadden89</a></strong> Italian translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/hlehyaric" target="_blank" rel="noreferrer noopener">hlehyaric</a></strong> French translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/isildur" target="_blank" rel="noreferrer noopener">Isildur</a></strong> Font icons &#183; Square avatars &#183; Last edit timestamp</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/lonm" target="_blank" rel="noreferrer noopener">LonM</a></strong> Copy all code button &#183; Advanced formatting</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/pafflick" target="_blank" rel="noreferrer noopener">pafflick</a></strong> Custom notification icons</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/potmeklecbohdan" target="_blank" rel="noreferrer noopener">potmeklecbohdan</a></strong> Czech translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/rexfahrer" target="_blank" rel="noreferrer noopener">Rexfahrer</a></strong> Vivaldi logos with transparency</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/semenov-sherin" target="_blank" rel="noreferrer noopener">Semenov-Sherin</a></strong> Russian translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/sjudenim" target="_blank" rel="noreferrer noopener">sjudenim</a></strong> DarkGrey &#183; LightGrey</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/tam710562" target="_blank" rel="noreferrer noopener">tam710562</a></strong> Theme preview &#183; Vietnamese translation</p>
+            <p><strong><a href="https://forum.vivaldi.net/user/wiiija" target="_blank" rel="noreferrer noopener">wiiija</a></strong> Sprucey Bonus Dark</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="theme-machine.js"></script>
+  <script src="options.js"></script>
+  <script src="localisation.js"></script>
 </body>
 
 </html>

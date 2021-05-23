@@ -8,7 +8,7 @@
         "description": "Signature toggle for forum posts"
     },
     "copyCode": {
-        "message": "Code_kopieren",
+        "message": "Code kopieren",
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
@@ -18,14 +18,6 @@
     "optionsLink": {
         "message": "Forum mod",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
-    },
-    "editCommunity": {
-        "message": "Community Profil",
-        "description": "Link to community settings in user dropdown menu"
-    },
-    "editForum": {
-        "message": "Forum Profil",
-        "description": "Link to forum settings in user dropdown menu"
     },
     "dismiss": {
         "message": "Ausblenden",
@@ -87,9 +79,9 @@
         "message": "Feedback",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Community Themen",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Zeitplan",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Themen Maschine",
@@ -107,21 +99,21 @@
         "message": "Hervorhebungen",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Tasten",
-        "description": "Options: Theme machine edit button"
-    },
-    "dropdown": {
-        "message": "Dropdown",
-        "description": "Options: Theme machine edit dropdown"
+    "accent": {
+        "message": "Akzent",
+        "description": "Options: Theme machine edit accent"
     },
     "link": {
         "message": "Link",
         "description": "Options: Theme machine edit link"
     },
-    "link2": {
-        "message": "Link 2",
-        "description": "Options: Theme machine edit link2"
+    "code": {
+        "message": "Code",
+        "description": "Options: Theme machine edit code"
+    },
+    "dropdown": {
+        "message": "Dropdown",
+        "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
         "message": "Modifikationen Auswählen",
@@ -151,14 +143,6 @@
         "message": "Zeigt einen Link zu den Lesezeichen in der Navigationsleiste an.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
-    "compactHeader": {
-        "message": "Kompakter Header",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Setzt den Header auf die ursprüngliche Höhe und entfernt überflüssige Links.",
-        "description": "Options: Description of compact header mod"
-    },
     "customNotification": {
         "message": "Symbole für Benachrichtigungen",
         "description": "Options: Title of custom notification icons mod"
@@ -166,30 +150,6 @@
     "customNotificationDesc": {
         "message": "Zeigt Symbole in der Dropdown-Liste des Headers an, um Benachrichtigungen besser voneinander zu unterscheiden.",
         "description": "Options: Description of custom notification icons mod"
-    },
-    "hideTooltips": {
-        "message": "Tooltips deaktivieren",
-        "description": "Options: Title of hide tooltips mod"
-    },
-    "hideTooltipsDesc": {
-        "message": "Deaktiviert Tooltips im Header.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Anzeige ungelesener Beiträge deaktivieren",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Verbirgt die Anzahl ungelesener Beiträge in der Navigationsleiste.",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Zeitstempel der letzten Bearbeitung",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Zeigt den Zeitpunkt der letzten Bearbeitung am Ende eines Beitrags in Ortszeit an.",
-        "description": "Options: Description of last edit timestamp mod"
     },
     "showUID": {
         "message": "User ID anzeigen",
@@ -220,7 +180,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Nur CSS Code eingeben! Klicke auf SCHALTEN um zu aktivieren/deaktivieren, SPEICHERN um zu speichern. BACKUP auf Datei. Wähle STANDARD in THEMEN um ein selbstständiges Thema zu laden.",
+        "message": "Nur CSS Code eingeben! Aktivieren/deaktivieren mit Toggle. SPEICHERN um zu speichern. BACKUP auf Datei. Wähle Standard in Themen um ein selbstständiges Thema zu laden.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -238,10 +198,6 @@
     "edit": {
         "message": "Ändern",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
-    },
-    "toggle": {
-        "message": "Schalten",
-        "description": "Options: Switch on or off"
     },
     "backup": {
         "message": "Backup",
@@ -264,55 +220,63 @@
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
     "confirmReset": {
-        "message": "Erweiterung zurücksetzen? Klicke erneut um zu bestätigen.",
+        "message": "Erweiterung zurücksetzen? Klicke erneut um zu bestätigen",
         "description": "Options: Status message to confirm reset"
     },
     "cancelReset": {
-        "message": "Vorgang abgebrochen.",
+        "message": "Vorgang abgebrochen",
         "description": "Options: Status message when reset is cancelled"
     },
     "cancelImport": {
-        "message": "Vorgang abgebrochen.",
+        "message": "Vorgang abgebrochen",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
-        "message": "Einstellungen zurückgesetzt, Speicher bereinigt.",
+        "message": "Einstellungen zurückgesetzt, Speicher bereinigt",
         "description": "Options: Status message after reset"
     },
+    "activateSchedule": {
+        "message": "Zeitplan aktiviert",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Zeitplan deaktiviert",
+        "description": "Options: Status message for Schedule deactivation"
+    },
     "activateUserCSS": {
-        "message": "User CSS aktiviert.",
+        "message": "User CSS aktiviert",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
-        "message": "User CSS deaktiviert.",
+        "message": "User CSS deaktiviert",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "User CSS gespeichert.",
+        "message": "User CSS gespeichert",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
-        "message": "Thema gespeichert und aktiviert.",
+        "message": "Thema gespeichert und aktiviert",
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Thema in die Zwischenablage kopiert.",
+        "message": "Thema in die Zwischenablage kopiert",
         "description": "Options: Status message for theme sharing"
     },
     "importTheme": {
-        "message": "Thema importiert. Klicke SPEICHERN um das Thema zu speichern.",
+        "message": "Thema importiert. Klicke SPEICHERN um das Thema zu speichern",
         "description": "Options: Status message for theme import"
     },
     "importThemeDesc": {
-        "message": "Themencode einfügen oder per Drag&Drop in das Importfeld ziehen.",
+        "message": "Themencode einfügen oder per Drag&Drop in das Importfeld ziehen",
         "description": "Options: Status message describing theme import"
     },
     "statusThemes": {
-        "message": "Wähle ein Thema aus, oder gestalte ein Neues.",
+        "message": "Wähle ein Thema aus, oder gestalte ein Neues und erstelle einen Zeitplan",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Positioniere den Mauszeiger über einer Modifikation für eine Beschreibung.",
+        "message": "Wähle Modifikationen aus und schreib benutzerdefiniertes CSS",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {

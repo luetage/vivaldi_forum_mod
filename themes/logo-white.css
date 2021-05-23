@@ -1,8 +1,0 @@
-/* Logo for dark themes */
-
-#vivaldilogo {
-    background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-white.png') no-repeat;
-}
-#vivaldilogo img {
-    display: none !important;
-}

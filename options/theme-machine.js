@@ -13,7 +13,7 @@ function _restoreThemes() {
             const name = theme.themeName;
             btn.id = name;
             btn.classList.add('themebox');
-            btn.innerHTML = '<div class="themebox-image"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="#121212" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDrop)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorBtn)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="40" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="55" cy="60" r="5"></circle><circle fill="var(--colorLi2)" cx="70" cy="60" r="5"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg></div><div class="themebox-title"></div>';
+            btn.innerHTML = '<div class="themebox-image"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="var(--colorAc)" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDd)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorCo)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="47.5" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="62.5" cy="60" r="5"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg></div><div class="themebox-title"></div>';
             document.getElementById('themeMachine').insertBefore(btn, document.querySelector('.editTheme'));
             const ses = document.querySelector('#' + name + ' .themebox-image');
             for (const [key, value] of Object.entries(theme)) {
@@ -41,10 +41,10 @@ function _restoreThemes() {
             _colorBg.value = vt[index].colorBg;
             _colorFg.value = vt[index].colorFg;
             _colorHi.value = vt[index].colorHi;
-            _colorBtn.value = vt[index].colorBtn;
-            _colorDrop.value = vt[index].colorDrop;
+            _colorCo.value = vt[index].colorCo;
+            _colorDd.value = vt[index].colorDd;
             _colorLi.value = vt[index].colorLi;
-            _colorLi2.value = vt[index].colorLi2;
+            _colorAc.value = vt[index].colorAc;
         }
         else {
             addTheme.disabled = true;
@@ -93,10 +93,10 @@ function _selectTheme(event) {
                 _colorBg.value = vt[index].colorBg;
                 _colorFg.value = vt[index].colorFg;
                 _colorHi.value = vt[index].colorHi;
-                _colorBtn.value = vt[index].colorBtn;
-                _colorDrop.value = vt[index].colorDrop;
+                _colorCo.value = vt[index].colorCo;
+                _colorDd.value = vt[index].colorDd;
                 _colorLi.value = vt[index].colorLi;
-                _colorLi2.value = vt[index].colorLi2;
+                _colorAc.value = vt[index].colorAc;
                 chrome.storage.sync.set({'VFM_CURRENT_THEME': vct}, function() {
                     addTheme.disabled = false;
                     removeTheme.disabled = false;
@@ -111,7 +111,7 @@ function _selectTheme(event) {
 };
 
 
-/* Add Theme */
+// Add Theme
 
 function _addTheme() {
     chrome.storage.sync.get({
@@ -121,12 +121,12 @@ function _addTheme() {
         var vt = get.VFM_THEMES;
         var vct = get.VFM_CURRENT_THEME;
         const epoch = 'vfm_' + Date.now();
-        vt.push({'themeName': epoch, 'colorBg': vct.colors.colorBg, 'colorFg': vct.colors.colorFg, 'colorHi': vct.colors.colorHi, 'colorBtn': vct.colors.colorBtn, 'colorDrop': vct.colors.colorDrop, 'colorLi': vct.colors.colorLi, 'colorLi2': vct.colors.colorLi2});
+        vt.push({'themeName': epoch, 'colorBg': vct.colors.colorBg, 'colorFg': vct.colors.colorFg, 'colorHi': vct.colors.colorHi, 'colorCo': vct.colors.colorCo, 'colorDd': vct.colors.colorDd, 'colorLi': vct.colors.colorLi, 'colorAc': vct.colors.colorAc});
         chrome.storage.sync.set({'VFM_THEMES': vt}, function() {
             const btn = document.createElement('button');
             btn.id = epoch;
             btn.classList.add('themebox');
-            btn.innerHTML = '<div class="themebox-image"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="#121212" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDrop)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorBtn)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="40" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="55" cy="60" r="5"></circle><circle fill="var(--colorLi2)" cx="70" cy="60" r="5"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg></div><div class="themebox-title"></div>';
+            btn.innerHTML = '<div class="themebox-image"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="76" viewBox="0 0 110 76"><rect fill="var(--colorBg)" x="0" y="0" width="110" height="76"></rect><rect fill="var(--colorAc)" x="0" y="14" width="110" height="12"></rect><rect fill="var(--colorDd)" x="85" y="26" width="25" height="50"></rect><rect fill="var(--colorCo)" x="6" y="32" width="15" height="5"></rect><rect fill="var(--colorHi)" x="23" y="32" width="15" height="5"></rect><circle fill="var(--colorFg)" cx="47.5" cy="60" r="5"></circle><circle fill="var(--colorLi)" cx="62.5" cy="60" r="5"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="themebox-o_mark" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"></circle></svg></div><div class="themebox-title"></div>';
             document.getElementById('themeMachine').insertBefore(btn, document.querySelector('.editTheme'));
             const newTheme = document.getElementById(epoch);
             newTheme.addEventListener('click', _selectTheme);
@@ -142,22 +142,30 @@ function _addTheme() {
             newTheme.click();
             toggleEdit.style.display = 'block';
             _themeName.focus();
-        });
-    });
-};
+            _restoreSchedule();
+        })
+    })
+}
 
 
-/* Remove Theme */
+// Remove Theme
 
 function _removeTheme() {
     chrome.storage.sync.get({
         'VFM_THEMES': '',
-        'VFM_CURRENT_THEME': ''
+        'VFM_CURRENT_THEME': '',
+        'VFM_SCHEDULE': ''
     }, function(get) {
-        var vt = get.VFM_THEMES;
-        var vct = get.VFM_CURRENT_THEME;
+        let vt = get.VFM_THEMES;
+        let vct = get.VFM_CURRENT_THEME;
+        let sc = get.VFM_SCHEDULE;
         if (vt.length > 1) {
-            var index = vt.findIndex(x => x.themeName === vct.selected);
+            sc.schedule.forEach(item => {
+                if (item.theme === vct.selected) {
+                    item.theme = 'vfm-standard';
+                }
+            })
+            const index = vt.findIndex(x => x.themeName === vct.selected);
             if (index > 0) {
                 var newSelect = vt[index-1].themeName;
             }
@@ -169,10 +177,13 @@ function _removeTheme() {
             remove.removeEventListener('click', _selectTheme);
             remove.parentNode.removeChild(remove);
             vt.splice(index, 1);
-            chrome.storage.sync.set({'VFM_THEMES': vt});
+            chrome.storage.sync.set({
+                'VFM_THEMES': vt,
+                'VFM_SCHEDULE': sc
+            }, () => _restoreSchedule());
         }
-    });
-};
+    })
+}
 
 
 /* Move Theme */
@@ -223,10 +234,12 @@ function _saveTheme() {
     _cancelImport();
     chrome.storage.sync.get({
         'VFM_THEMES': '',
-        'VFM_CURRENT_THEME': ''
+        'VFM_CURRENT_THEME': '',
+        'VFM_SCHEDULE': ''
     }, function(get) {
-        var vt = get.VFM_THEMES;
-        var vct = get.VFM_CURRENT_THEME;
+        let vt = get.VFM_THEMES;
+        let vct = get.VFM_CURRENT_THEME;
+        let sc = get.VFM_SCHEDULE;
         var dupe = false;
         const active = document.querySelector('.active')
         const update = active.getAttribute('id');
@@ -253,10 +266,10 @@ function _saveTheme() {
         vt[index].colorBg = _colorBg.value;
         vt[index].colorFg = _colorFg.value;
         vt[index].colorHi = _colorHi.value;
-        vt[index].colorBtn = _colorBtn.value;
-        vt[index].colorDrop = _colorDrop.value;
+        vt[index].colorCo = _colorCo.value;
+        vt[index].colorDd = _colorDd.value;
         vt[index].colorLi = _colorLi.value;
-        vt[index].colorLi2 = _colorLi2.value;
+        vt[index].colorAc = _colorAc.value;
         active.id = trueName;
         const ses = document.querySelector('.active .themebox-image');
         for (const [key, value] of Object.entries(vt[index])) {
@@ -267,12 +280,19 @@ function _saveTheme() {
         const themeBox = document.querySelector('.active .themebox-title');
         themeBox.title = '.' + trueName;
         themeBox.innerText = displayName;
+        sc.schedule.forEach(item => {
+            if (item.theme === vct.selected) {
+                item.theme = trueName;
+            }
+        })
         vct.selected = trueName;
         chrome.storage.sync.set({
             'VFM_THEMES': vt,
-            'VFM_CURRENT_THEME': vct
+            'VFM_CURRENT_THEME': vct,
+            'VFM_SCHEDULE': sc
         }, function() {
             sendToBackground();
+            _restoreSchedule();
             status.style.opacity = '0';
             status.innerText = chrome.i18n.getMessage('saveTheme');
             _fade();
@@ -284,7 +304,7 @@ function _saveTheme() {
 /* Export Theme */
 
 function _exportTheme() {
-    const share = {'themeName': _themeName.value, 'colorBg': _colorBg.value, 'colorFg': _colorFg.value, 'colorHi': _colorHi.value, 'colorBtn': _colorBtn.value, 'colorDrop': _colorDrop.value, 'colorLi': _colorLi.value, 'colorLi2': colorLi2.value};
+    const share = {'themeName': _themeName.value, 'colorBg': _colorBg.value, 'colorFg': _colorFg.value, 'colorHi': _colorHi.value, 'colorAc': _colorAc.value, 'colorLi': _colorLi.value, 'colorCo': _colorCo.value, 'colorDd': _colorDd.value};
     const themeCode = JSON.stringify(share);
     navigator.clipboard.writeText(themeCode);
     status.style.opacity = '0';
@@ -306,10 +326,10 @@ function _cancelImport(){
             _colorBg.value = _safeBg;
             _colorFg.value = _safeFg;
             _colorHi.value = _safeHi;
-            _colorBtn.value = _safeBtn;
-            _colorDrop.value = _safeDrop;
+            _colorCo.value = _safeCo;
+            _colorDd.value = _safeDd;
             _colorLi.value = _safeLi;
-            _colorLi2.value = _safeLi2;
+            _colorAc.value = _safeAc;
         }
         _themeName.placeholder = '';
         _themeName.setAttribute('maxlength','25');
@@ -325,13 +345,13 @@ function _imp() {
     event.stopPropagation();
     event.preventDefault();
     if (eventType === 'paste') {
-        var clipboardData = event.clipboardData || window.clipboardData;
+        const clipboardData = event.clipboardData || window.clipboardData;
         var themeCode = clipboardData.getData('text');
     }
     else {
         var themeCode = event.dataTransfer.getData('text');
     }
-    var shared = JSON.parse(themeCode);
+    const shared = JSON.parse(themeCode);
     _themeName.value = shared.themeName;
     if (_themeName.value === 'undefined') {
         _themeName.value = Date.now();
@@ -339,10 +359,10 @@ function _imp() {
     _colorBg.value = shared.colorBg;
     _colorFg.value = shared.colorFg;
     _colorHi.value = shared.colorHi;
-    _colorBtn.value = shared.colorBtn;
-    _colorDrop.value = shared.colorDrop;
+    _colorCo.value = shared.colorCo;
+    _colorDd.value = shared.colorDd;
     _colorLi.value = shared.colorLi;
-    _colorLi2.value = shared.colorLi2;
+    _colorAc.value = shared.colorAc;
     _themeName.classList.remove('import');
     _themeName.placeholder = '';
     saveBtn.disabled = false;
@@ -363,10 +383,10 @@ function _importTheme() {
         _safeBg = _colorBg.value;
         _safeFg = _colorFg.value;
         _safeHi = _colorHi.value;
-        _safeBtn = _colorBtn.value;
-        _safeDrop = _colorDrop.value;
+        _safeCo = _colorCo.value;
+        _safeDd = _colorDd.value;
         _safeLi = _colorLi.value;
-        _safeLi2 = _colorLi2.value;
+        _safeAc = _colorAc.value;
         _themeName.value = '';
         _themeName.placeholder = chrome.i18n.getMessage('import');
         status.style.opacity = '0';
@@ -426,7 +446,6 @@ function sendToBackground() {
     chrome.runtime.sendMessage({message: 'trigger theme'});
 };
 
-
 const addTheme = document.getElementById('addTheme');
 const removeTheme = document.getElementById('removeTheme');
 const editBtn = document.querySelector('.theme-edit');
@@ -440,10 +459,10 @@ const _themeName = document.getElementById('themeName');
 const _colorBg = document.getElementById('colorBg');
 const _colorFg = document.getElementById('colorFg');
 const _colorHi = document.getElementById('colorHi');
-const _colorBtn = document.getElementById('colorBtn');
-const _colorDrop = document.getElementById('colorDrop');
+const _colorAc = document.getElementById('colorAc');
 const _colorLi = document.getElementById('colorLi');
-const _colorLi2 = document.getElementById('colorLi2');
+const _colorCo = document.getElementById('colorCo');
+const _colorDd = document.getElementById('colorDd');
 const status = document.getElementById('status');
 
 addTheme.addEventListener('click', _addTheme);
@@ -462,7 +481,12 @@ importBtn.addEventListener('click', _importTheme);
 exportBtn.addEventListener('click', _exportTheme);
 
 chrome.runtime.onMessage.addListener(function(request) {
-    if (request.message === 'reload options') {
-        window.location.reload(false);
+    if (request.message === 'options update theme') {
+        const active = document.querySelector('#themeMachine .themebox.active').classList.remove('active');
+        const ct = document.querySelectorAll('#themeMachine button[id^="vfm_"]');
+        for (let i = 0; i < ct.length; i++) {
+            ct[i].parentNode.removeChild(ct[i]);
+        }
+        _restoreThemes();
     }
 });

@@ -1,9 +1,4 @@
-/** Default fixes, improvements and modifications for all themes **/
-
-/* centers profile avatars (avatar width with 4px borders at 136px) */
-.account .cover .avatar-wrapper {
-    margin-left: -68px !important;
-}
+/* Default fixes, improvements and modifications for all themes */
 
 /* Font icons */
 .fa-angle-down::before {
@@ -12,43 +7,31 @@
 .fa-angle-up::before {
     content: "\f0d8" !important;
 }
-#vivaldimenu a .sub-arrow {
-    position: relative !important;
-}
-#vivaldimenu a .sub-arrow::after {
-    position: absolute;
-    top: -11px;
-    left: 16px;
-    content: "\f107";
-    font-family: FontAwesome;
-    font-size: 13px;
-    opacity: 0.66;
-}
-
-/* Remove underline from first post tags */
-.tags.pull-left a {
-    text-decoration: none !important;
-}
 
 /* Advanced search panel cursor */
 #advanced-search .panel-default>.panel-heading:hover {
     cursor: pointer;
 }
 
+/* Get rid of the margin between user name and content */
+.topic .content {
+    clear: unset !important;
+    margin-top: -40px !important;
+}
+@media (max-width: 991px) {
+    .topic .content {
+        margin-top: -10px !important;
+    }
+}
+
 /* Threaded replies cleanup */
-a.threaded-replies.no-select .avatars, a.threaded-replies.no-select span.replies-last.hidden-xs {
+a.threaded-replies.no-select span.replies-last.hidden-xs {
     display: none;
 }
 
 /* Reduces the number of font sizes used in posts */
-body {
-    font-size: 14px !important;
-}
-.topic .threaded-replies, small.pull-left, .topic span.timeago {
-    font-size: 12px !important;
-}
-.topic [component="post/parent"] {
-    font-size: 10px !important;
+.topic .threaded-replies, small.pull-left, .topic span.timeago, .post-signature, blockquote {
+    font-size: 13px !important;
 }
 
 /* Correct cursor over vote count span (clickable) */
@@ -76,43 +59,9 @@ body {
     max-height: 350px;
 }
 
-/* Button spacing (modal/search/composer/main/toolbar) */
-.btn-primary.composer-submit, .modal-footer .btn+.btn, .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group, .btn-toolbar .dropdown.pull-right {
-    margin-left: 4px !important;
-}
-button[type^="submit"].btn-primary, .btn-default#save-preferences, .composer .title-container .category-list-container [component=category-selector] {
-    margin-right: 4px !important;
-}
-
 /* Disabled user-select for logged-in menu (prevents accidental highlighting of dropdown text when dropdown isn't expanded) */
 #logged-in-menu.nav.navbar-nav.navbar-right {
     user-select: none;
-}
-
-/* Min-height for resizeable text input */
-.account textarea.form-control {
-    resize: vertical;
-    min-height: 42px;
-}
-
-/* mobile view fixes */
-.slideout-menu a:hover, .slideout-menu a:focus {
-    color: #fff;
-}
-.slideout-menu .status.offline {
-    color: #fff;
-    opacity: 0.66;
-}
-.topic .pagination-block {
-    background-color: #1d1f20 !important;
-}
-.topic .pagination-block .progress-bar {
-    background-color: #101010 !important;
-}
-
-/* remove top border from chats list to fix avatar offset */
-.chats-list>li {
-    border-top: none !important;
 }
 
 /* Auto-hide header transition */
@@ -129,21 +78,20 @@ a[component="header/profilelink"] i, .user-status i {
 .copy-all-code-button {
     position: absolute;
     right: 25px;
+    font-weight: bold;
     opacity: 0;
-    background-color: rgba(125, 125, 125, 0.66);
     padding: 4px;
     border: none;
     border-radius: 2px;
     outline: none;
-    color: #fff;
 }
-.markdown-highlight .hljs:hover + .copy-all-code-button {
+.markdown-highlight code[data-theme-preview-checked="true"] + .copy-all-code-button {
+    display: none;
+}
+.markdown-highlight:hover .copy-all-code-button, .copy-all-code-button:hover {
     opacity: 1;
 }
-.copy-all-code-button:hover {
-    opacity: 1;
-    color: #f4ff9d;
-}
+
 
 /*
 Option to dismiss community notifications
@@ -151,18 +99,6 @@ The notification is being shown by default.js, if not dismissed previously.
 */
 .shadow-box3 {
     display: none !important;
-}
-section.footer-notification {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-}
-
-/* transparent logo for very small media widths */
-@media (max-width: 420px) {
-    #vivaldiheader #vivaldilogo {
-        background: url('chrome-extension://__MSG_@@extension_id__/themes/img/logo-mobile.svg') !important;
-        background-size: contain;
-    }
 }
 
 /* theme preview mod */

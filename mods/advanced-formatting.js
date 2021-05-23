@@ -15,7 +15,7 @@ const EMOTES = {
     bye:"1539692998605-bye.gif",
     cat:"1539693028753-cat.gif",
     cheers:"1539698180973-cheers.gif",
-    chef:"1539692893638-chef.gif",
+    chef:"https://forum.vivaldi.net/assets/uploads/files/1620378615905-1162cfde-2319-4b5f-8ebe-4cc9d50ce99f-image.png",
     coffee:"1539685551254-coffee.gif",
     confused:"1539685266409-confused.gif",
     cool:"1539693137735-cool.gif",
@@ -386,7 +386,8 @@ function makeEmoteButton(emoteName, emoteUrl){
     const emoteButton = document.createElement("img");
     emoteButton.alt = emoteName;
     emoteButton.title = emoteName;
-    emoteButton.src = STATIC_URL + emoteUrl;
+    if (emoteName === "chef") emoteButton.src = emoteUrl;
+    else emoteButton.src = STATIC_URL + emoteUrl;
     emoteButton.addEventListener("click", emotePicked);
     emoteButton.addEventListener("dragstart", emoteDragStart);
     return emoteButton;
