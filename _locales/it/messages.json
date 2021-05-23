@@ -8,7 +8,7 @@
         "description": "Signature toggle for forum posts"
     },
     "copyCode": {
-        "message": "copia_codice",
+        "message": "copia codice",
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
@@ -17,15 +17,7 @@
     },
     "optionsLink": {
         "message": "Opzioni mod",
-        "description": "Link to options page in user dropdown menu."
-    },
-    "editCommunity": {
-        "message": "Profilo comunità",
-        "description": "Link to community settings in user dropdown menu."
-    },
-    "editForum": {
-        "message": "Profilo forum",
-        "description": "Link to forum settings in user dropdown menu"
+        "description": "Link to options page in user dropdown menu"
     },
     "dismiss": {
         "message": "Nascondi",
@@ -33,7 +25,7 @@
     },
     "emoticons": {
         "message": "Emote",
-        "description": "Title of formatting item for emote picker."
+        "description": "Title of formatting item for emote picker"
     },
     "header": {
         "message": "Titolo",
@@ -49,7 +41,7 @@
     },
     "code": {
         "message": "Riga di codice",
-        "description": "Title of formatting item inline code"
+        "description": "Title of formatting item fixed width font"
     },
     "table": {
         "message": "Tabella",
@@ -61,11 +53,11 @@
     },
     "spoiler": {
         "message": "Spoiler",
-        "description": "Title of formatting item spoiler."
+        "description": "Title of formatting item spoiler"
     },
     "customToolbarTitle": {
         "message": "Barra personalizzata",
-        "description": "Title of custom toolbar editor."
+        "description": "Title of custom toolbar editor"
     },
     "dragText": {
         "message": "Clicca e trascina per spostare",
@@ -87,9 +79,9 @@
         "message": "Feedback",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Temi comunità",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Pianificazione",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Macchina dei temi",
@@ -107,21 +99,21 @@
         "message": "Evidenziato",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Pulsanti",
-        "description": "Options: Theme machine edit button"
+    "accent": {
+        "message": "Accento",
+        "description": "Options: Theme machine edit accent"
+    },
+    "link": {
+        "message": "Collegamento",
+        "description": "Options: Theme machine edit link"
+    },
+    "code": {
+        "message": "Codice",
+        "description": "Options: Theme machine edit code"
     },
     "dropdown": {
         "message": "Menù a discesa",
         "description": "Options: Theme machine edit dropdown"
-    },
-    "link": {
-        "message": "Link",
-        "description": "Options: Theme machine edit link"
-    },
-    "link2": {
-        "message": "Link 2",
-        "description": "Options: Theme machine edit link2"
     },
     "selectModifications": {
         "message": "Seleziona mod",
@@ -132,15 +124,15 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Aggiunge un selettore emote, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare gli elementi della barra durante la modifica dei post sul forum.",
+        "message": "Aggiunge un selettore emote, nuovi pulsanti per la formattazione del testo e consente di spostare e riordinare gli elementi della barra durante la modifica dei post sul forum",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
         "message": "Nascondi l'header di Vivaldi su scorrimento",
-        "description": "Options: Title of auto-hide header on scroll mod."
+        "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
-        "message": "Nasconde l'header quando scorri in basso, lo mostra nuovamente quando scorri in alto.",
+        "message": "Nasconde l'header quando scorri in basso, lo mostra nuovamente quando scorri in alto",
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
@@ -148,55 +140,23 @@
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
-        "message": "Mostra un link alla pagina dei segnalibri nella barra di navigazione principale per un rapido accesso.",
+        "message": "Mostra un link alla pagina dei segnalibri nella barra di navigazione principale per un rapido accesso",
         "description": "Options: Description of bookmarks in navigation mod"
-    },
-    "compactHeader": {
-        "message": "Header compatto",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Porta l'header alla sua altezza originale e nascondi i link ridondanti.",
-        "description": "Options: Description of compact header mod."
     },
     "customNotification": {
         "message": "Icone notifiche personalizzate",
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Mostra ulteriori icone nel menu delle notifiche per distinguerle meglio.",
+        "message": "Mostra ulteriori icone nel menu delle notifiche per distinguerle meglio",
         "description": "Options: Description of custom notification icons mod"
     },
-    "hideTooltips": {
-        "message": "Nascondi tooltip",
-        "description": "Options: Title of hide tooltips mod."
-    },
-    "hideTooltipsDesc": {
-        "message": "Nascondi i tooltip dall'header e dalla barra di navigazione.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Nascondi indicatore notifiche non lette",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Nasconde l'indicatore delle notifiche non lette nella barra di navigazione.",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Orario ultima modifica",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Mostra l'orario (ora locale) dell'ultima modifica in fondo ai post.",
-        "description": "Options: Description of last edit timestamp mod"
-    },
-    "showUID": {
+        "showUID": {
         "message": "Mostra ID degli utenti",
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
-        "message": "Mostra ID degli utenti passando col mouse sul nome utente in cima a un post o su un avatar nel loro profilo.",
+        "message": "Mostra ID degli utenti passando col mouse sul nome utente in cima a un post o su un avatar nel loro profilo",
         "description": "Options: Description of show user IDs mod"
     },
     "signatureMod": {
@@ -204,7 +164,7 @@
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Nasconde tutte le firme e le sostituisce con un pulsante che, quando cliccato, mostra la firma del post interessato.",
+        "message": "Nasconde tutte le firme e le sostituisce con un pulsante che, quando cliccato, mostra la firma del post interessato",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
@@ -239,10 +199,6 @@
         "message": "Modifica",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-    "toggle": {
-        "message": "Aziona",
-        "description": "Options: Switch on or off"
-    },
     "backup": {
         "message": "Backup",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
@@ -255,64 +211,72 @@
         "message": "Annulla",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
-    "cancelImport": {
-        "message": "Importazione annullata.",
-        "description": "Options: Status message after cancelled import"
-    },
     "export": {
         "message": "Esporta",
         "description": "Options: Text to show on a button that performs some sort of export operation"
     },
     "reset": {
         "message": "Reset",
-        "description": "Options: Text to show on a button that performs some sort of reset operation."
+        "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
     "confirmReset": {
-        "message": "Resettare l'estensione? Clicca nuovamente per confermare.",
+        "message": "Resettare l'estensione? Clicca nuovamente per confermare",
         "description": "Options: Status message to confirm reset"
     },
     "cancelReset": {
-        "message": "Reset annullato.",
-        "description": "Options: Status message when reset is cancelled"
+        "message": "Reset annullato",
+        "description": "Options: Status message after cancelled reset"
+    },
+    "cancelImport": {
+        "message": "Importazione annullata",
+        "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
-        "message": "Opzioni resettate, archiviazione ripulita.",
+        "message": "Opzioni resettate, archiviazione ripulita",
         "description": "Options: Status message after reset"
     },
+    "activateSchedule": {
+        "message": "Pianificazione attivata",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Pianificazione disattivata",
+        "description": "Options: Status message for Schedule deactivation"
+    },
     "activateUserCSS": {
-        "message": "CSS utente attivato.",
+        "message": "CSS utente attivato",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
-        "message": "CSS utente disattivato.",
+        "message": "CSS utente disattivato",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "CSS utente salvato in archiviazione.",
+        "message": "CSS utente salvato in archiviazione",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
-        "message": "Tema salvato e attivato!",
+        "message": "Tema salvato e attivato",
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Codice tema copiato negli appunti.",
+        "message": "Codice tema copiato negli appunti",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Incolla o trascina il codice tema nel campo importa.",
+        "message": "Incolla o trascina il codice tema nel campo importa",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {
-        "message": "Tema importato! Clicca SALVA per memorizzare il tema.",
-        "description": "Options: Status message for theme import"
+        "message": "Tema importato. Clicca SALVA per memorizzare il tema",
+        "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
-        "message": "Seleziona un tema o creane uno tuo.",
+        "message": "Seleziona, crea e pianifica temi",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Passa col mouse su una mod per leggerne la descrizione.",
+        "message": "Scegli le mod e scrivi codice CSS personalizzato",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
