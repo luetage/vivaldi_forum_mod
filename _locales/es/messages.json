@@ -19,14 +19,6 @@
         "message": "Modo del foro",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
-    "editCommunity": {
-        "message": "Perfil de la comunidad",
-        "description": "Link to community settings in user dropdown menu"
-    },
-    "editForum": {
-        "message": "Perfil del foro",
-        "description": "Link to forum settings in user dropdown menu"
-    },
     "dismiss": {
         "message": "Ocultar",
         "description": "Dismisses community notifications"
@@ -87,9 +79,9 @@
         "message": "Compartir opinión",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Temas de la cominidad",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Schedule",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Máquina de temas",
@@ -107,21 +99,21 @@
         "message": "Resalto",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Botón",
-        "description": "Options: Theme machine edit button"
-    },
-    "dropdown": {
-        "message": "Opciones desplegables",
-        "description": "Options: Theme machine edit dropdown"
+    "accent": {
+        "message": "Accent",
+        "description": "Options: Theme machine edit accent"
     },
     "link": {
         "message": "Enlace",
         "description": "Options: Theme machine edit link"
     },
-    "link2": {
-        "message": "Enlace 2",
+    "code": {
+        "message": "Code",
         "description": "Options: Theme machine edit link2"
+    },
+    "dropdown": {
+        "message": "Opciones desplegables",
+        "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
         "message": "Selecciona modificaciones",
@@ -151,14 +143,6 @@
         "message": "Muestra el enlace hacia la página de marcadores en la barra de navegación para un acceso fácil.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
-    "compactHeader": {
-        "message": "Encabezamiento compactado",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Pone el encabezamiento al nivel original y suprime enlaces redundantes.",
-        "description": "Options: Description of compact header mod"
-    },
     "customNotification": {
         "message": "Símbolos de notificaciones",
         "description": "Options: Title of custom notification icons mod"
@@ -167,30 +151,6 @@
         "message": "Muestra símbolos en el menú desplegable para  distinguir un tipo de notificación del otro fácilmente.",
         "description": "Options: Description of custom notification icons mod"
     },
-    "hideTooltips": {
-        "message": "Ocultar descripción emergente",
-        "description": "Options: Title of hide tooltips mod"
-    },
-    "hideTooltipsDesc": {
-        "message": "Ocultar la descripción emergente en el encabezamiento y en la barra de navegación.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Ocultar no leídos",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Oculta el número de mensajes no leídos en la barra de navegación.",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Hora de la última editación",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Muestra la hora local de la última editación al final del comentario.",
-        "description": "Options: Description of last edit timestamp mod"
-    },
     "showUID": {
         "message": "Mostrar la ID del usuario",
         "description": "Options: Title of show user IDs mod"
@@ -198,6 +158,14 @@
     "showUIDDesc": {
         "message": "Muestra las UIDs, cuando el ratón se halla sobre el nombre del usuario de un comentario o sobre su imagen en el perfil.",
         "description": "Options: Description of show user IDs mod"
+    },
+    "systemEmoji": {
+        "message": "Use System Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
         "message": "Modo de firma",
@@ -239,10 +207,6 @@
         "message": "Editar",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-	"toggle": {
-        "message": "Alternar",
-        "description": "Options: Switch on or off"
-    },
     "backup": {
         "message": "Copia de seguridad",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
@@ -275,9 +239,17 @@
         "message": "Import cancelled.",
         "description": "Options: Status message after cancelled import"
     },
-	"optionsReset": {
+    "optionsReset": {
         "message": "Opciones reseteadas, almacenamiento limpiado.",
         "description": "Options: Status message after reset"
+    },
+    "activateSchedule": {
+        "message": "Schedule activated",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Schedule deactivated",
+        "description": "Options: Status message for Schedule deactivation"
     },
 	"activateUserCSS": {
         "message": "CSS del usuario activado.",

@@ -19,14 +19,6 @@
         "message": "Forum mod",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
-    "editCommunity": {
-        "message": "Hồ sơ cộng đồng",
-        "description": "Link to community settings in user dropdown menu"
-    },
-    "editForum": {
-        "message": "Hồ sơ diễn đàn",
-        "description": "Link to forum settings in user dropdown menu"
-    },
     "dismiss": {
         "message": "Bỏ qua",
         "description": "Dismisses community notifications"
@@ -87,9 +79,9 @@
         "message": "Phản hồi",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Chủ đề cộng đồng",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Schedule",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Máy chủ đề",
@@ -107,21 +99,21 @@
         "message": "Nổi bật",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Nút",
-        "description": "Options: Theme machine edit button"
-    },
-    "dropdown": {
-        "message": "Thả xuống",
-        "description": "Options: Theme machine edit dropdown"
+    "accent": {
+        "message": "Accent",
+        "description": "Options: Theme machine edit accent"
     },
     "link": {
         "message": "Liên kết",
         "description": "Options: Theme machine edit link"
     },
-    "link2": {
-        "message": "Liên kết 2",
-        "description": "Options: Theme machine edit link2"
+    "code": {
+        "message": "Code",
+        "description": "Options: Theme machine edit code"
+    },
+    "dropdown": {
+        "message": "Thả xuống",
+        "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
         "message": "Chọn chỉnh sửa",
@@ -151,14 +143,6 @@
         "message": "Hiển thị một liên kết đến trang dấu trang trong điều hướng chính, để dễ dàng truy cập.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
-    "compactHeader": {
-        "message": "Phần đầu trang nhỏ gọn",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Đặt phần đầu trang về chiều cao ban đầu của nó và loại bỏ các liên kết dư thừa.",
-        "description": "Options: Description of compact header mod"
-    },
     "customNotification": {
         "message": "Biểu tượng thông báo tùy chỉnh",
         "description": "Options: Title of custom notification icons mod"
@@ -167,30 +151,6 @@
         "message": "Hiển thị các phông chữ biểu tượng trong danh sách thông báo thả xuống của đầu trang, để nhanh chóng phân biệt một loại thông báo này với loại thông báo khác.",
         "description": "Options: Description of custom notification icons mod"
     },
-    "hideTooltips": {
-        "message": "Ẩn chú giải công cụ",
-        "description": "Options: Title of hide tooltips mod"
-    },
-    "hideTooltipsDesc": {
-        "message": "Ẩn các chú giải công cụ menu đăng nhập.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Ẩn đếm chưa đọc",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Ẩn biểu tượng đếm chưa đọc trong thanh điều hướng.",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Dấu thời gian chỉnh sửa lần cuối",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Hiển thị thời gian chỉnh sửa cuối cùng theo giờ địa phương ở dưới cùng của bài viết đã chỉnh sửa.",
-        "description": "Options: Description of last edit timestamp mod"
-    },
     "showUID": {
         "message": "Hiển thị ID người dùng",
         "description": "Options: Title of show user IDs mod"
@@ -198,6 +158,14 @@
     "showUIDDesc": {
         "message": "Hiển thị UID khi di chuột tên người dùng ở đầu bài và khi di chuột vào hình đại diện của người dùng trên hồ sơ của họ.",
         "description": "Options: Description of show user IDs mod"
+    },
+    "systemEmoji": {
+        "message": "Use System Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
         "message": "Chữ ký mod",
@@ -239,10 +207,6 @@
         "message": "Sửa",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-    "toggle": {
-        "message": "Công tắc",
-        "description": "Options: Switch on or off"
-    },
     "backup": {
         "message": "Sao lưu",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
@@ -278,6 +242,14 @@
     "optionsReset": {
         "message": "Các tùy chọn đặt lại, lưu trữ đã xóa.",
         "description": "Options: Status message after reset"
+    },
+    "activateSchedule": {
+        "message": "Schedule activated",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Schedule deactivated",
+        "description": "Options: Status message for Schedule deactivation"
     },
     "activateUserCSS": {
         "message": "CSS người dùng đã kích hoạt.",
