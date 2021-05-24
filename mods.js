@@ -85,11 +85,14 @@ chrome.storage.sync.get ({
         loadFile('mods/signature-mod.css');
         _smod();
     }
+    if (mods.systemEmoji === true) checkMoji();
     let startmods = mutations => {
         mutations.forEach(mutation => {
             if (mutation.attributeName === 'class') {
                 add_copy_code();
+                checkMoji();
                 if (mods.signatureMod === true) _smod();
+                if (mods.systemEmoji === true) checkMoji();
             }
         })
     }

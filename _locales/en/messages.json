@@ -120,7 +120,7 @@
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
-        "message": "Advanced formatting",
+        "message": "Advanced Formatting",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
@@ -128,7 +128,7 @@
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Auto-hide header on scroll",
+        "message": "Auto-Hide Header on Scroll",
         "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
@@ -136,7 +136,7 @@
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Bookmarks in navigation",
+        "message": "Bookmarks in Navigation",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
@@ -144,14 +144,14 @@
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "customNotification": {
-        "message": "Custom notification icons",
+        "message": "Custom Notification Icons",
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
         "message": "Displays font icons in the header's notification dropdown to quickly distinguish one type of notification from another.",
         "description": "Options: Description of custom notification icons mod"
     },
-        "showUID": {
+    "showUID": {
         "message": "Show User IDs",
         "description": "Options: Title of show user IDs mod"
     },
@@ -159,8 +159,16 @@
         "message": "Shows UIDs when hovering the username at top of a post and when hovering a user's avatar on their profile.",
         "description": "Options: Description of show user IDs mod"
     },
+    "systemEmoji": {
+        "message": "Use System Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "description": "Options: Description of use system emoji mod"
+    },
     "signatureMod": {
-        "message": "Signature mod",
+        "message": "Signature Mod",
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
@@ -168,7 +176,7 @@
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Square avatars",
+        "message": "Square Avatars",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {

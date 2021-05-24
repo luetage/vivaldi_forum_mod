@@ -159,6 +159,14 @@
         "message": "Zeigt UIDs an, wenn man den Mauszeiger über dem Nutzernamen eines Beitrags, oder über dem Nutzerbild auf einem Profil, positioniert.",
         "description": "Options: Description of show user IDs mod"
     },
+    "systemEmoji": {
+        "message": "Systemeigene Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Verwende Betriebssystem Emoji anstelle von Vivaldi Forum Emoji.",
+        "description": "Options: Description of use system emoji mod"
+    },
     "signatureMod": {
         "message": "Signatur Mod",
         "description": "Options: Title of signature mod"
