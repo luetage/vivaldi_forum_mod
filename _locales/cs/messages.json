@@ -1,322 +1,294 @@
 {
-   "bookmarks": {
-       "message": "Záložky",
-       "description": "Link to bookmarks page from navigation bar"
-   },
-   "signature": {
-       "message": "Podpis",
-       "description": "Signature toggle for forum posts"
-   },
-   "copyCode": {
-       "message": "kopírovat_kód",
-       "description": "Copy all code button for code markdown"
-   },
-   "lastModified": {
-       "message": "Naposled upraveno",
-       "description": "Text before last edit timestamp in forum posts"
-   },
-   "optionsLink": {
-       "message": "Nastavení rozšíření",
-       "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
-   },
-   "editCommunity": {
-       "message": "Profil v komunitě",
-       "description": "Link to community settings in user dropdown menu"
-   },
-   "editForum": {
-       "message": "Profil na fóru",
-       "description": "Link to forum settings in user dropdown menu"
-   },
-   "dismiss": {
-       "message": "Zavřít",
-       "description": "Dismisses community notifications"
-   },
-   "emoticons": {
-       "message": "Další emoji",
-       "description": "Title of formatting item for emote picker"
-   },
-   "header": {
-       "message": "Nadpis",
-       "description": "Title of formatting item header 1"
-   },
-   "horizontal_line": {
-       "message": "Vodorovná čára",
-       "description": "Title of formatting item horizontal rule"
-   },
-   "block_quote": {
-       "message": "Citace",
-       "description": "Title of formatting item quote"
-   },
-   "inline-code": {
-       "message": "Zdrojový kód",
-       "description": "Title of formatting item fixed width font"
-   },
-   "table": {
-       "message": "Tabulka",
-       "description": "Title of formatting item table"
-   },
-   "number_list": {
-       "message": "Číslovaný seznam",
-       "description": "Title of formatting item numbered list"
-   },
-   "spoiler": {
-       "message": "Skrytý text",
-       "description": "Title of formatting item spoiler"
-   },
-   "customToolbarTitle": {
-       "message": "Upravit tlačítka",
-       "description": "Title of custom toolbar editor"
-   },
-   "dragText": {
-       "message": "Pro přesunutí této nabídky klepněte na její záhlaví a přetáhněte ji",
-       "description": "Hover text when on a draggable area"
-   },
-   "themes": {
-       "message": "Barevná schémata",
-       "description": "Options: Title of themes section"
-   },
-   "modifications": {
-       "message": "Úpravy",
-       "description": "Options: Title of modifications section"
-   },
-   "info": {
-       "message": "Info",
-       "description": "Options: Title of info section"
-   },
-   "feedback": {
-       "message": "Zpětná vazba",
-       "description": "Options: Feedback link in navigation"
-   },
-   "communityThemes": {
-       "message": "Barevná schémata komunity",
-       "description": "Options: Community themes headline"
-   },
-   "themeMachine": {
-       "message": "Vlastní barevná schémata",
-       "description": "Options: Theme machine headline"
-   },
-   "background": {
-       "message": "Pozadí",
-       "description": "Options: Theme machine edit background"
-   },
-   "foreground": {
-       "message": "Popředí",
-       "description": "Options: Theme machine edit foreground"
-   },
-   "highlight": {
-       "message": "Zvýraznění",
-       "description": "Options: Theme machine edit highlight"
-   },
-   "button": {
-       "message": "Tlačítko",
-       "description": "Options: Theme machine edit button"
-   },
-   "dropdown": {
-       "message": "Rozbalovací nabídka",
-       "description": "Options: Theme machine edit dropdown"
-   },
-   "link": {
-       "message": "Odkaz",
-       "description": "Options: Theme machine edit link"
-   },
-   "link2": {
-       "message": "Odkaz 2",
-       "description": "Options: Theme machine edit link2"
-   },
-   "selectModifications": {
-       "message": "Vyberte úpravy",
-       "description": "Options: Modifications headline"
-   },
-   "advancedFormatting": {
-       "message": "Rozšířené formátování",
-       "description": "Options: Title of advanced formatting mod"
-   },
-   "advancedFormattingDesc": {
-       "message": "Přidá další emoji a formátovací tlačítka. Umožňuje přetáhnout, odstranit či přidat formátovací tlačítka pro psaní příspěvků na fóru.",
-       "description": "Options: Description of the advanced formatting mod"
-   },
-   "hideHeader": {
-       "message": "Automaticky schovávat hlavičku",
-       "description": "Options: Title of auto-hide header on scroll mod"
-   },
-   "hideHeaderDesc": {
-       "message": "Při posunutí stránku dolů schová hlavičku. Při posunutí stránky nahoru ukáže hlavičku.",
-       "description": "Options: Description of auto-hide header on scroll mod"
-   },
-   "navbookmarks": {
-       "message": "Záložky v navigaci",
-       "description": "Options: Title of bookmarks in navigation mod"
-   },
-   "navbookmarksDesc": {
-       "message": "Pro zrychlení přístupu zobrazí v navigaci odkaz na vaše záložky ve fóru.",
-       "description": "Options: Description of bookmarks in navigation mod"
-   },
-   "compactHeader": {
-       "message": "Kompaktní hlavička",
-       "description": "Options: Title of compact header mod"
-   },
-   "compactHeaderDesc": {
-       "message": "Nastaví hlavičce původní velikost a odstraní přebytečné odkazy.",
-       "description": "Options: Description of compact header mod"
-   },
-   "customNotification": {
-       "message": "Ikony upozornění",
-       "description": "Options: Title of custom notification icons mod"
-   },
-   "customNotificationDesc": {
-       "message": "Pro lepší rozeznání přidá k upozorněním ikony.",
-       "description": "Options: Description of custom notification icons mod"
-   },
-   "hideTooltips": {
-       "message": "Schovat popisky",
-       "description": "Options: Title of hide tooltips mod"
-   },
-   "hideTooltipsDesc": {
-       "message": "Schová popisky v uživatelském panelu.",
-       "description": "Options: Description of hide tooltips mod"
-   },
-   "hideUnread": {
-       "message": "Schovat počet nepřečtených témat",
-       "description": "Options: Title of hide unread count mod"
-   },
-   "hideUnreadDesc": {
-       "message": "Schová počet nepřečtených témat v navigaci.",
-       "description": "Options: Description of unread count mod"
-   },
-   "timestamp": {
-       "message": "Čas poslední úpravy",
-       "description": "Options: Title of last edit timestamp mod"
-   },
-   "timestampDesc": {
-       "message": "Zobrazí čas poslední úpravy příspěvku.",
-       "description": "Options: Description of last edit timestamp mod"
-   },
-   "showUID": {
-       "message": "Zobrazit ID uživatelů",
-       "description": "Options: Title of show user IDs mod"
-   },
-   "showUIDDesc": {
-       "message": "Když myší najedete na jméno uživatele na začátku příspěvku či profilu, zobrazí jeho ID.",
-       "description": "Options: Description of show user IDs mod"
-   },
-   "signatureMod": {
-       "message": "Schovat podpisy",
-       "description": "Options: Title of signature mod"
-   },
-   "signatureModDesc": {
-       "message": "Schová všechny podpisy. Zobrazit je můžete tlačítkem na jejich původním místě.",
-       "description": "Options: Description of signature mod"
-   },
-   "squareAvatars": {
-       "message": "Čtvercové profilové fotky",
-       "description": "Options: Title of square avatars mod"
-   },
-   "squareAvatarsDesc": {
-       "message": "Čtvercové profilové fotky!",
-       "description": "Options: Description of square avatars mod"
-   },
-   "userCSS": {
-       "message": "Uživatelské CSS",
-       "description": "Options: User CSS headline"
-   },
-   "userCSSDesc": {
-       "message": "Vkládejte pouze CSS kód! Klikněte na AKTIVOVAT pro aktivaci či deaktivaci, ULOŽIT pro uložení do paměti. ZÁLOHOVAT do souboru. Pokud chcete používat vlastní barevné schéma, nezapomeňte v nastavení barevných schémat vybrat STANDARD.",
-       "description": "Options: User CSS placeholder/description"
-   },
-   "changelog": {
-       "message": "Seznam změn",
-       "description": "Options: Changelog headline"
-   },
-   "credits": {
-       "message": "Poděkování",
-       "description": "Options: Credits headline"
-   },
-   "save": {
-       "message": "Uložit",
-       "description": "Options: Text to show on a button that performs some sort of save operation"
-   },
-   "edit": {
-       "message": "Upravit",
-       "description": "Options: Text to show on a button that performs some sort of edit operation"
-   },
-   "toggle": {
-       "message": "Aktivovat",
-       "description": "Options: Switch on or off"
-   },
-   "backup": {
-       "message": "Zálohovat",
-       "description": "Options: Text to show on a button that performs some sort of backup operation"
-   },
-   "import": {
-       "message": "Vložit kód",
-       "description": "Options: Text to show on a button that performs some sort of import operation"
-   },
-   "cancel": {
-       "message": "Zrušit",
-       "description": "Options: Text to show on a button that performs some sort of cancel operation"
-   },
-   "export": {
-       "message": "Kopírovat kód",
-       "description": "Options: Text to show on a button that performs some sort of export operation."
-   },
-   "reset": {
-       "message": "Obnovit nastavení",
-       "description": "Options: Text to show on a button that performs some sort of reset operation"
-   },
-   "confirmReset": {
-       "message": "Obnovit nastavení rozšíření? Pro potvrzení klikněte ještě jednou.",
-       "description": "Options: Status message to confirm reset"
-   },
-   "cancelReset": {
-       "message": "Obnovení nastavení zrušeno.",
-       "description": "Options: Status message after cancelled reset"
-   },
-   "cancelImport": {
-       "message": "Import zrušen.",
-       "description": "Options: Status message after cancelled import"
-   },
-   "optionsReset": {
-       "message": "Nastavení obnoveno, paměť vyprázdněna.",
-       "description": "Options: Status message after reset"
-   },
-   "activateUserCSS": {
-       "message": "Uživatelské CSS aktivováno.",
-       "description": "Options: Status message for User CSS activation"
-   },
-   "deactivateUserCSS": {
-       "message": "Uživatelské CSS deaktivováno.",
-       "description": "Options: Status message for User CSS deactivation"
-   },
-   "saveUserCSS": {
-       "message": "Uživatelské CSS uloženo do paměti.",
-       "description": "Options: Status message for saving User CSS to storage"
-   },
-   "saveTheme": {
-       "message": "Barevné schéma uloženo a aktivováno.",
-       "description": "Options: Status message for theme activation"
-   },
-   "exportTheme": {
-       "message": "Kód schémata zkopírován do schránky.",
-       "description": "Options: Status message for exporting theme"
-   },
-   "importThemeDesc": {
-       "message": "Vložte nebo přetáhněte kód schémata do pole pro import.",
-       "description": "Options: Status message describing theme import"
-   },
-   "importTheme": {
-       "message": "Schéma importováno. Nezapomeňte jej uložit.",
-       "description": "Options: Status message confirming theme import"
-   },
-   "statusThemes": {
-       "message": "Vyberte si barevné schéma či vytvořte své vlastní.",
-       "description": "Options: Status message themes"
-   },
-   "statusModifications": {
-       "message": "Pro zobrazení popisu najeďte myší na název úpravy.",
-       "description": "Options: Status message modifications"
-   },
-   "statusInfo": {
-       "message": "Vřelé díky všem uživatelům a přispěvatelům!",
-       "description": "Options: Status message info"
-   }
+    "bookmarks": {
+        "message": "Záložky",
+        "description": "Link to bookmarks page from navigation bar"
+    },
+    "signature": {
+        "message": "Podpis",
+        "description": "Signature toggle for forum posts"
+    },
+    "copyCode": {
+        "message": "kopírovat kód",
+        "description": "Copy all code button for code markdown"
+    },
+    "lastModified": {
+        "message": "Naposled upraveno",
+        "description": "Text before last edit timestamp in forum posts"
+    },
+    "optionsLink": {
+        "message": "Nastavení rozšíření",
+        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+    },
+    "dismiss": {
+        "message": "Zavřít",
+        "description": "Dismisses community notifications"
+    },
+    "emoticons": {
+        "message": "Další emoji",
+        "description": "Title of formatting item for emote picker"
+    },
+    "header": {
+        "message": "Nadpis",
+        "description": "Title of formatting item header 1"
+    },
+    "horizontal_line": {
+        "message": "Vodorovná čára",
+        "description": "Title of formatting item horizontal rule"
+    },
+    "block_quote": {
+        "message": "Citace",
+        "description": "Title of formatting item quote"
+    },
+    "inline_code": {
+        "message": "Zdrojový kód (na stejném řádku)",
+        "description": "Title of formatting item fixed width font"
+    },
+    "table": {
+        "message": "Tabulka",
+        "description": "Title of formatting item table"
+    },
+    "number_list": {
+        "message": "Číslovaný seznam",
+        "description": "Title of formatting item numbered list"
+    },
+    "spoiler": {
+        "message": "Skrytý text",
+        "description": "Title of formatting item spoiler"
+    },
+    "customToolbarTitle": {
+        "message": "Upravit tlačítka",
+        "description": "Title of custom toolbar editor"
+    },
+    "dragText": {
+        "message": "Pro přesunutí této nabídky klepněte na její záhlaví a přetáhněte ji",
+        "description": "Hover text when on a draggable area"
+    },
+    "themes": {
+        "message": "Motivy",
+        "description": "Options: Title of themes section"
+    },
+    "modifications": {
+        "message": "Úpravy",
+        "description": "Options: Title of modifications section"
+    },
+    "info": {
+        "message": "Info",
+        "description": "Options: Title of info section"
+    },
+    "feedback": {
+        "message": "Zpětná vazba",
+        "description": "Options: Feedback link in navigation"
+    },
+    "schedule": {
+        "message": "Plánované změny motivu",
+        "description": "Options: Schedule headline"
+    },
+    "themeMachine": {
+        "message": "Motivy",
+        "description": "Options: Theme machine headline"
+    },
+    "background": {
+        "message": "Pozadí",
+        "description": "Options: Theme machine edit background"
+    },
+    "foreground": {
+        "message": "Písmo",
+        "description": "Options: Theme machine edit foreground"
+    },
+    "highlight": {
+        "message": "Zvýraznění",
+        "description": "Options: Theme machine edit highlight"
+    },
+    "accent": {
+        "message": "Důraz",
+        "description": "Options: Theme machine edit accent"
+    },
+    "link": {
+        "message": "Odkaz",
+        "description": "Options: Theme machine edit link"
+    },
+    "code": {
+        "message": "Kód",
+        "description": "Options: Theme machine edit code"
+    },
+    "dropdown": {
+        "message": "Rozbalovací nabídka",
+        "description": "Options: Theme machine edit dropdown"
+    },
+    "selectModifications": {
+        "message": "Vyberte úpravy",
+        "description": "Options: Modifications headline"
+    },
+    "advancedFormatting": {
+        "message": "Rozšířené formátování",
+        "description": "Options: Title of advanced formatting mod"
+    },
+    "advancedFormattingDesc": {
+        "message": "Přidá další emoji a formátovací tlačítka. Umožňuje přetáhnout, odstranit či přidat formátovací tlačítka pro psaní příspěvků na fóru.",
+        "description": "Options: Description of the advanced formatting mod"
+    },
+    "hideHeader": {
+        "message": "Automaticky schovávat hlavičku",
+        "description": "Options: Title of auto-hide header on scroll mod"
+    },
+    "hideHeaderDesc": {
+        "message": "Při posunutí stránku dolů schová hlavičku. Při posunutí stránky nahoru ukáže hlavičku.",
+        "description": "Options: Description of auto-hide header on scroll mod"
+    },
+    "navbookmarks": {
+        "message": "Záložky v navigaci",
+        "description": "Options: Title of bookmarks in navigation mod"
+    },
+    "navbookmarksDesc": {
+        "message": "Pro zrychlení přístupu zobrazí v navigaci odkaz na vaše záložky ve fóru.",
+        "description": "Options: Description of bookmarks in navigation mod"
+    },
+    "customNotification": {
+        "message": "Ikony upozornění",
+        "description": "Options: Title of custom notification icons mod"
+    },
+    "customNotificationDesc": {
+        "message": "Pro lepší rozeznání přidá k upozorněním ikony.",
+        "description": "Options: Description of custom notification icons mod"
+    },
+    "showUID": {
+        "message": "Zobrazit ID uživatelů",
+        "description": "Options: Title of show user IDs mod"
+    },
+    "showUIDDesc": {
+        "message": "Když myší najedete na jméno uživatele na začátku příspěvku či profilu, zobrazí jeho ID.",
+        "description": "Options: Description of show user IDs mod"
+    },
+    "systemEmoji": {
+        "message": "Systémová emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Nahradí emoji tak, aby používala systémový font.",
+        "description": "Options: Description of use system emoji mod"
+    },
+    "signatureMod": {
+        "message": "Schovat podpisy",
+        "description": "Options: Title of signature mod"
+    },
+    "signatureModDesc": {
+        "message": "Schová všechny podpisy. Zobrazit je můžete tlačítkem na jejich původním místě.",
+        "description": "Options: Description of signature mod"
+    },
+    "squareAvatars": {
+        "message": "Čtvercové profilové fotky",
+        "description": "Options: Title of square avatars mod"
+    },
+    "squareAvatarsDesc": {
+        "message": "Čtvercové profilové fotky!",
+        "description": "Options: Description of square avatars mod"
+    },
+    "userCSS": {
+        "message": "Uživatelské CSS",
+        "description": "Options: User CSS headline"
+    },
+    "userCSSDesc": {
+        "message": "Vkládejte pouze CSS kód! Přepínačem jej povolte či zakažte. Po provedení změn klikněte na ULOŽIT. Můžete také ZÁLOHOVAT do souboru. Pokud chcete používat vlastní motiv vzhledu, doporučujeme v nastavení motivů vybrat Standard.",
+        "description": "Options: User CSS placeholder/description"
+    },
+    "changelog": {
+        "message": "Historie změn",
+        "description": "Options: Changelog headline"
+    },
+    "credits": {
+        "message": "Poděkování",
+        "description": "Options: Credits headline"
+    },
+    "save": {
+        "message": "Uložit",
+        "description": "Options: Text to show on a button that performs some sort of save operation"
+    },
+    "edit": {
+        "message": "Upravit",
+        "description": "Options: Text to show on a button that performs some sort of edit operation"
+    },
+    "backup": {
+        "message": "Zálohovat",
+        "description": "Options: Text to show on a button that performs some sort of backup operation"
+    },
+    "import": {
+        "message": "Vložit kód",
+        "description": "Options: Text to show on a button that performs some sort of import operation"
+    },
+    "cancel": {
+        "message": "Zrušit",
+        "description": "Options: Text to show on a button that performs some sort of cancel operation"
+    },
+    "export": {
+        "message": "Kopírovat kód",
+        "description": "Options: Text to show on a button that performs some sort of export operation."
+    },
+    "reset": {
+        "message": "Vymazat nastavení",
+        "description": "Options: Text to show on a button that performs some sort of reset operation"
+    },
+    "confirmReset": {
+        "message": "Vymazat nastavení rozšíření? Pro potvrzení klikněte ještě jednou",
+        "description": "Options: Status message to confirm reset"
+    },
+    "cancelReset": {
+        "message": "Nastavení nebude vymazáno",
+        "description": "Options: Status message after cancelled reset"
+    },
+    "cancelImport": {
+        "message": "Import zrušen",
+        "description": "Options: Status message after cancelled import"
+    },
+    "optionsReset": {
+        "message": "Nastavení a paměť vymazány",
+        "description": "Options: Status message after reset"
+    },
+    "activateSchedule": {
+        "message": "Plánovaná změna spuštěna",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Plánovaná změna zrušena",
+        "description": "Options: Status message for Schedule deactivation"
+    },
+    "activateUserCSS": {
+        "message": "Uživatelské CSS povoleno",
+        "description": "Options: Status message for User CSS activation"
+    },
+    "deactivateUserCSS": {
+        "message": "Uživatelské CSS zakázáno",
+        "description": "Options: Status message for User CSS deactivation"
+    },
+    "saveUserCSS": {
+        "message": "Uživatelské CSS uloženo do paměti",
+        "description": "Options: Status message for saving User CSS to storage"
+    },
+    "saveTheme": {
+        "message": "Barevný motiv uložen a použit",
+        "description": "Options: Status message for theme activation"
+    },
+    "exportTheme": {
+        "message": "Kód motivu zkopírován do schránky",
+        "description": "Options: Status message for exporting theme"
+    },
+    "importThemeDesc": {
+        "message": "Vložte nebo přetáhněte kód motivu do pole pro import",
+        "description": "Options: Status message describing theme import"
+    },
+    "importTheme": {
+        "message": "Motiv importován. Nezapomeňte jej uložit",
+        "description": "Options: Status message confirming theme import"
+    },
+    "statusThemes": {
+        "message": "Vyberte či vytvořte barevné motivy a naplánujte jejich změny",
+        "description": "Options: Status message themes"
+    },
+    "statusModifications": {
+        "message": "Pro zobrazení popisu najeďte myší na název úpravy",
+        "description": "Options: Status message modifications"
+    },
+    "statusInfo": {
+        "message": "Vřelé díky všem přispěvatelům a uživatelům!",
+        "description": "Options: Status message info"
+    }
 }
