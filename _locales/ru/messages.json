@@ -19,14 +19,6 @@
         "message": "Модификации",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
-    "editCommunity": {
-        "message": "Настройки профиля",
-        "description": "Link to community settings in user dropdown menu"
-    },
-    "editForum": {
-        "message": "Редактировать профиль",
-        "description": "Link to forum settings in user dropdown menu"
-    },
     "dismiss": {
         "message": "Отключить",
         "description": "Dismisses community notifications"
@@ -87,9 +79,9 @@
         "message": "Обратная связь",
         "description": "Options: Feedback link in navigation"
     },
-    "communityThemes": {
-        "message": "Темы от сообщества",
-        "description": "Options: Community themes headline"
+    "schedule": {
+        "message": "Расписание",
+        "description": "Options: Schedule headline"
     },
     "themeMachine": {
         "message": "Выбор темы",
@@ -107,21 +99,21 @@
         "message": "Highlight",
         "description": "Options: Theme machine edit highlight"
     },
-    "button": {
-        "message": "Button",
-        "description": "Options: Theme machine edit button"
-    },
-    "dropdown": {
-        "message": "Dropdown",
-        "description": "Options: Theme machine edit dropdown"
+    "accent": {
+        "message": "Accent",
+        "description": "Options: Theme machine edit accent"
     },
     "link": {
         "message": "Link",
         "description": "Options: Theme machine edit link"
     },
-    "link2": {
-        "message": "Link 2",
-        "description": "Options: Theme machine edit link2"
+    "code": {
+        "message": "Code",
+        "description": "Options: Theme machine edit code"
+    },
+    "dropdown": {
+        "message": "Dropdown",
+        "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
         "message": "Выбор модификаций",
@@ -151,14 +143,6 @@
         "message": "Отображает ссылку на страницу закладок прямо на панели навигации.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
-    "compactHeader": {
-        "message": "Компактная шапка сайта",
-        "description": "Options: Title of compact header mod"
-    },
-    "compactHeaderDesc": {
-        "message": "Уменьшает высоту шапки сайта и удаляет некоторые лишние ссылки.",
-        "description": "Options: Description of compact header mod"
-    },
     "customNotification": {
         "message": "Настраиваемые иконки уведомлений",
         "description": "Options: Title of custom notification icons mod"
@@ -166,30 +150,6 @@
     "customNotificationDesc": {
         "message": "Добавляет иконки в заголовок уведомлений, чтобы вы могли легко отличить один тип уведомлений от другого.",
         "description": "Options: Description of custom notification icons mod"
-    },
-    "hideTooltips": {
-        "message": "Скрыть подсказки",
-        "description": "Options: Title of hide tooltips mod"
-    },
-    "hideTooltipsDesc": {
-        "message": "Скрывает подсказки меню входа.",
-        "description": "Options: Description of hide tooltips mod"
-    },
-    "hideUnread": {
-        "message": "Скрыть счётчик непрочитанных сообщений",
-        "description": "Options: Title of hide unread count mod"
-    },
-    "hideUnreadDesc": {
-        "message": "Скрывает счётчик непрочитанных сообщений с панели навигации",
-        "description": "Options: Description of unread count mod"
-    },
-    "timestamp": {
-        "message": "Отметка о последнем редактировании",
-        "description": "Options: Title of last edit timestamp mod"
-    },
-    "timestampDesc": {
-        "message": "Отображает время последнего редактирования под всеми отредактированными сообщениями.",
-        "description": "Options: Description of last edit timestamp mod"
     },
     "showUID": {
         "message": "Показывать ID пользователей",
@@ -239,10 +199,6 @@
         "message": "Редактировать",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
-    "toggle": {
-        "message": "Применить",
-        "description": "Options: Switch on or off"
-    },
     "backup": {
         "message": "Копия",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
@@ -278,6 +234,14 @@
     "optionsReset": {
         "message": "Настройки сброшены, хранилище данных очищено.",
         "description": "Options: Status message after reset"
+    },
+    "activateSchedule": {
+        "message": "Расписание ВКЛ.",
+        "description": "Options: Status message for Schedule activation"
+    },
+    "deactivateSchedule": {
+        "message": "Расписание ВЫКЛ.",
+        "description": "Options: Status message for Schedule deactivation"
     },
     "activateUserCSS": {
         "message": "Пользовательские CSS активированы.",

@@ -260,7 +260,7 @@
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Code du thème copié dans le presse-papiers .",
+        "message": "Code du thème copié dans le presse-papiers.",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
