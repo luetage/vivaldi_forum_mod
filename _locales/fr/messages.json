@@ -124,7 +124,7 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Ajoute des émoticônes et des boutons de formatage. Permet par glissé/déposé de réordonner, de retirer et d'ajouter des boutons à la barre de formatage lors de l'édition/composition des messages sur le forum.",
+        "message": "Ajoute des émoticônes et des boutons de formatage. Permet, par glissé/déposé de réordonner, de retirer et d'ajouter des boutons à la barre de formatage lors de l'édition/composition des messages sur le forum.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
@@ -160,11 +160,11 @@
         "description": "Options: Description of show user IDs mod"
     },
     "systemEmoji": {
-        "message": "Use System Emoji",
+        "message": "Utiliser les émoticônes du Système",
         "description": "Options: Title of use system emoji mod"
     },
     "systemEmojiDesc": {
-        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "message": "Utilisez les émoticônes du système d'exploitation à la place de celles du Forum Vivaldi.",
         "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
@@ -284,7 +284,7 @@
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Activer/Désactiver les modifications et éditeur de CSS personalisés",
+        "message": "Activer/Désactiver les modifications et éditeur de CSS personnalisés",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
