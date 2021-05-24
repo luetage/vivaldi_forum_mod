@@ -159,6 +159,14 @@
         "message": "Affiche l'ID au survol du nom de l'utilisateur dans l'en-tête d'un message et au survol de l'avatar dans le profil.",
         "description": "Options: Description of show user IDs mod"
     },
+    "systemEmoji": {
+        "message": "Use System Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "description": "Options: Description of use system emoji mod"
+    },
     "signatureMod": {
         "message": "Mod Signature",
         "description": "Options: Title of signature mod"

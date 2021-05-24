@@ -159,6 +159,14 @@
         "message": "Показывает ID пользователя при наведении курсора на его ник в заголовке комментария или аватарку на странице профиля.",
         "description": "Options: Description of show user IDs mod"
     },
+    "systemEmoji": {
+        "message": "Use System Emoji",
+        "description": "Options: Title of use system emoji mod"
+    },
+    "systemEmojiDesc": {
+        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "description": "Options: Description of use system emoji mod"
+    },
     "signatureMod": {
         "message": "Скрыть подписи",
         "description": "Options: Title of signature mod"
