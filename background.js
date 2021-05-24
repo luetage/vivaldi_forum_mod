@@ -23,7 +23,8 @@ function defaultSetup() {
             'notificationIcons': false,
             'userID': false,
             'signatureMod': false,
-            'square': false
+            'square': false,
+            'systemEmoji': false
         },
         'VFM_USER_CSS': false,
         'VFM_SCHEDULE': {
