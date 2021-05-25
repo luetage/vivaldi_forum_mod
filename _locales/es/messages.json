@@ -8,15 +8,15 @@
         "description": "Signature toggle for forum posts"
     },
     "copyCode": {
-        "message": "copiar_código",
+        "message": "copiar código",
         "description": "Copy all code button for code markdown"
     },
     "lastModified": {
-        "message": "Modificados últimamente",
+        "message": "Última Modificación",
         "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
-        "message": "Modo del foro",
+        "message": "Modificación del Foro",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
     "dismiss": {
@@ -24,7 +24,7 @@
         "description": "Dismisses community notifications"
     },
     "emoticons": {
-        "message": "Seleccionador de emoticones",
+        "message": "Selector de Emoticonos",
         "description": "Title of formatting item for emote picker"
     },
     "header": {
@@ -40,23 +40,23 @@
         "description": "Title of formatting item quote"
     },
     "inline_code": {
-        "message": "Línea de código",
-        "description": "Title of formatting item inline code"
+        "message": "Línea de Código",
+        "description": "Title of formatting item fixed width font"
     },
     "table": {
         "message": "Tabla",
         "description": "Title of formatting item table"
     },
     "number_list": {
-        "message": "Lista enumerada",
+        "message": "Lista Numerada",
         "description": "Title of formatting item numbered list"
     },
     "spoiler": {
-        "message": "Spoiler",
+        "message": "Contenido oculto",
         "description": "Title of formatting item spoiler"
     },
     "customToolbarTitle": {
-        "message": "Modificar barra de herramientas",
+        "message": "Modificar Barra de Herramientas",
         "description": "Title of custom toolbar editor"
     },
     "dragText": {
@@ -80,11 +80,11 @@
         "description": "Options: Feedback link in navigation"
     },
     "schedule": {
-        "message": "Schedule",
+        "message": "Programación",
         "description": "Options: Schedule headline"
     },
     "themeMachine": {
-        "message": "Máquina de temas",
+        "message": "Máquina de Temas",
         "description": "Options: Theme machine headline"
     },
     "background": {
@@ -96,11 +96,11 @@
         "description": "Options: Theme machine edit foreground"
     },
     "highlight": {
-        "message": "Resalto",
+        "message": "Resaltado",
         "description": "Options: Theme machine edit highlight"
     },
     "accent": {
-        "message": "Accent",
+        "message": "Acentuado",
         "description": "Options: Theme machine edit accent"
     },
     "link": {
@@ -108,79 +108,79 @@
         "description": "Options: Theme machine edit link"
     },
     "code": {
-        "message": "Code",
-        "description": "Options: Theme machine edit link2"
+        "message": "Código",
+        "description": "Options: Theme machine edit code"
     },
     "dropdown": {
-        "message": "Opciones desplegables",
+        "message": "Menú desplegable",
         "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
-        "message": "Selecciona modificaciones",
+        "message": "Seleccionar Modificaciones",
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
-        "message": "Formateo avanzado",
+        "message": "Formato avanzado",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Añade seleccionador de emoticones y otros botones de formateo a la barra de herramientas para la editación de mensajes en el foro.",
+        "message": "Añade selector de emoticonos y otros botones de Formato a la Barra de Herramientas para la edición de mensajes en el Foro.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Ocultar el encabezamiento mientras se desplaza la página",
+        "message": "Auto ocultar encabezado mientras se desplaza la página",
         "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
-        "message": "Desplazamiento hacia abajo oculta y hacia arriba vuelve a mostrar el encabezamiento.",
+        "message": "Oculta el encabezado al desplazar hacia abajo, lo muestra al desplazar hacia arriba.",
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Marcadores en la navegación",
+        "message": "Marcadores en la Navegación",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
-        "message": "Muestra el enlace hacia la página de marcadores en la barra de navegación para un acceso fácil.",
+        "message": "Muestra un enlace hacia la página de Marcadores en la Barra de Navegación para un fácil acceso.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "customNotification": {
-        "message": "Símbolos de notificaciones",
+        "message": "Símbolos de notificación personalizados",
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Muestra símbolos en el menú desplegable para  distinguir un tipo de notificación del otro fácilmente.",
+        "message": "Muestra símbolos de fuente en el menú desplegable para distinguir fácilmente un tipo de notificación de otra.",
         "description": "Options: Description of custom notification icons mod"
     },
     "showUID": {
-        "message": "Mostrar la ID del usuario",
+        "message": "Mostrar la ID de Usuario",
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
-        "message": "Muestra las UIDs, cuando el ratón se halla sobre el nombre del usuario de un comentario o sobre su imagen en el perfil.",
+        "message": "Muestra las UIDs, cuando el ratón se halla sobre el nombre de usuario en un comentario o sobre su imagen en el perfil.",
         "description": "Options: Description of show user IDs mod"
     },
     "systemEmoji": {
-        "message": "Use System Emoji",
+        "message": "Usar Emojis de Sistema",
         "description": "Options: Title of use system emoji mod"
     },
     "systemEmojiDesc": {
-        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "message": "Usar Emojis de la Fuente provista por el Sistema Operativo en lugar del Emoji del Foro de Vivaldi.",
         "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
-        "message": "Modo de firma",
+        "message": "Modificación de firma",
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
-        "message": "Oculta todas las firmas y en vez de ellas muestra un botón. Cuando se pincha, la firma vuelve a aparecer.",
+        "message": "Oculta todas las firmas y en su lugar muestra un botón. Cuando se pincha, la firma seleccionada se vuelve a mostrar.",
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Imágenes de usuarios cuadrados",
+        "message": "Imágenes de usuario cuadradas",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {
-        "message": "Imágenes de usuarios cuadrados en todos lados.",
+        "message": "Imágenes de usuario cuadradas en todas partes!",
         "description": "Options: Description of square avatars mod"
     },
     "userCSS": {
@@ -188,7 +188,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "¡Ingresa sólo el código CSS! Pincha en GUARDAR para activarlo. COPIA DE SEGURIDAD en un archivo. Selecciona ESTÁNDAR en TEMAS para usar tu propio tema.",
+        "message": "Introduce sólo el código CSS! Pincha el selector para Activar/Desactivar. GUARDAR para salvar en almacén. COPIA DE SEGURIDAD para salvar en un archivo. Selecciona STANDARD en TEMAS para usar tu propio tema.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -196,7 +196,7 @@
         "description": "Options: Changelog headline"
     },
     "credits": {
-        "message": "Contribuidores",
+        "message": "Contribuciones",
         "description": "Options: Credits headline"
     },
     "save": {
@@ -208,7 +208,7 @@
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
     "backup": {
-        "message": "Copia de seguridad",
+        "message": "Copia de Seguridad",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
     "import": {
@@ -216,79 +216,79 @@
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "cancel": {
-        "message": "Cancel",
+        "message": "Cancelar",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "export": {
         "message": "Exportar",
-        "description": "Options: Text to show on a button that performs some sort of export operation"
+        "description": "Options: Text to show on a button that performs some sort of export operation."
     },
     "reset": {
         "message": "Resetear",
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
-	 "confirmReset": {
-        "message": "¿Resetear la extensión? Vuelve a pinchar para confirmar.",
+    "confirmReset": {
+        "message": "Resetear la extensión? Vuelve a pinchar para confirmar",
         "description": "Options: Status message to confirm reset"
     },
-	"cancelReset": {
-        "message": "Reseteo cancelado.",
-        "description": "Options: Status message when reset is cancelled"
+    "cancelReset": {
+        "message": "Reseteo cancelado",
+        "description": "Options: Status message after cancelled reset"
     },
     "cancelImport": {
-        "message": "Import cancelled.",
+        "message": "Importación cancelada",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
-        "message": "Opciones reseteadas, almacenamiento limpiado.",
+        "message": "Opciones reseteadas, almacenamiento limpiado",
         "description": "Options: Status message after reset"
     },
     "activateSchedule": {
-        "message": "Schedule activated",
+        "message": "Programación activada",
         "description": "Options: Status message for Schedule activation"
     },
     "deactivateSchedule": {
-        "message": "Schedule deactivated",
+        "message": "Programación desactivada",
         "description": "Options: Status message for Schedule deactivation"
     },
-	"activateUserCSS": {
-        "message": "CSS del usuario activado.",
+    "activateUserCSS": {
+        "message": "CSS del usuario activado",
         "description": "Options: Status message for User CSS activation"
     },
-	"deactivateUserCSS": {
-        "message": "CSS del usuario desactivado.",
+    "deactivateUserCSS": {
+        "message": "CSS del usuario desactivado",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "CSS del usuario guardado.",
+        "message": "CSS del usuario guardado en almacén",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
-        "message": "¡Tema guardado y activado!",
+        "message": "Tema guardado y activado",
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Theme code copied to clipboard.",
+        "message": "Código del Tema copiado al portapapeles",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Paste or drag and drop theme code into import field.",
+        "message": "Pegar o Arrastrar y Soltar código del Tema en el campo de Importación",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {
-        "message": "¡Tema importado! Pincha GUARDAR para guardar el tema.",
-        "description": "Options: Status message for theme import"
+        "message": "Tema importado. Pincha GUARDAR para guardar el tema",
+        "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
-        "message": "Selecciona un tema o diseña tu propio.",
+        "message": "Selecciona, Crea y Programa temas",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Pon el puntero del ratón sobre una modificación para ver la descripción.",
+        "message": "Selecciona Modificaciones y escribe CSS personalizados",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
-        "message": "¡Muchísimas gracias a todos los usuarios y contribuidores!",
+        "message": "Muchísimas gracias a todos los contribuidores y usuarios!",
         "description": "Options: Status message info"
     }
 }
