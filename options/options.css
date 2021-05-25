@@ -55,7 +55,7 @@ header div {
     height: 27px;
     color: hsl(0, 0%, 99%);
     font-weight: 600;
-    background: hsl(0, 0%, 18%);
+    background: #00247d;
     position: fixed;
     left: 0;
     right: 0;
