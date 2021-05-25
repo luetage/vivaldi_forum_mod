@@ -160,11 +160,11 @@
         "description": "Options: Description of show user IDs mod"
     },
     "systemEmoji": {
-        "message": "Use System Emoji",
+        "message": "Utilizza emoji di sistema",
         "description": "Options: Title of use system emoji mod"
     },
     "systemEmojiDesc": {
-        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "message": "Utilizza le emoji di sistema anziché usare quelle del forum di Vivaldi",
         "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
