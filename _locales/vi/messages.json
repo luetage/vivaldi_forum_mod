@@ -80,7 +80,7 @@
         "description": "Options: Feedback link in navigation"
     },
     "schedule": {
-        "message": "Schedule",
+        "message": "Lịch trình",
         "description": "Options: Schedule headline"
     },
     "themeMachine": {
@@ -100,7 +100,7 @@
         "description": "Options: Theme machine edit highlight"
     },
     "accent": {
-        "message": "Accent",
+        "message": "Màu nhấn",
         "description": "Options: Theme machine edit accent"
     },
     "link": {
@@ -108,7 +108,7 @@
         "description": "Options: Theme machine edit link"
     },
     "code": {
-        "message": "Code",
+        "message": "Mã",
         "description": "Options: Theme machine edit code"
     },
     "dropdown": {
@@ -124,7 +124,7 @@
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "Thêm một bộ chọn biểu tượng cảm xúc và các nút định dạng bổ sung. Cho phép bạn kéo để sắp xếp lại, xóa khỏi và thêm vào thanh công cụ định dạng, khi chỉnh sửa bài đăng trên diễn đàn của bạn.",
+        "message": "Thêm một bộ chọn biểu tượng cảm xúc và các nút định dạng bổ sung. Cho phép bạn kéo để sắp xếp lại, xóa khỏi và thêm vào thanh công cụ định dạng khi chỉnh sửa bài đăng trên diễn đàn của bạn.",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
@@ -136,11 +136,11 @@
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Dấu trang trong điều hướng",
+        "message": "Dấu trang trong thanh điều hướng",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
-        "message": "Hiển thị một liên kết đến trang dấu trang trong điều hướng chính, để dễ dàng truy cập.",
+        "message": "Hiển thị một liên kết đến trang dấu trang trong thanh điều hướng chính để dễ dàng truy cập.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "customNotification": {
@@ -148,23 +148,23 @@
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
-        "message": "Hiển thị các phông chữ biểu tượng trong danh sách thông báo thả xuống của đầu trang, để nhanh chóng phân biệt một loại thông báo này với loại thông báo khác.",
+        "message": "Hiển thị các phông chữ biểu tượng trong danh sách thông báo thả xuống của đầu trang để nhanh chóng phân biệt một loại thông báo này với loại thông báo khác.",
         "description": "Options: Description of custom notification icons mod"
     },
     "showUID": {
-        "message": "Hiển thị ID người dùng",
+        "message": "Hiển thị các ID người dùng",
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
-        "message": "Hiển thị UID khi di chuột tên người dùng ở đầu bài và khi di chuột vào hình đại diện của người dùng trên hồ sơ của họ.",
+        "message": "Hiển thị các ID người dùng khi di chuột vào tên người dùng ở đầu bài đăng và khi di chuột vào hình đại diện của người dùng trên hồ sơ của họ.",
         "description": "Options: Description of show user IDs mod"
     },
     "systemEmoji": {
-        "message": "Use System Emoji",
+        "message": "Sử dụng biểu tượng cảm xúc hệ thống",
         "description": "Options: Title of use system emoji mod"
     },
     "systemEmojiDesc": {
-        "message": "Use emoji font provided by the operating system instead of Vivaldi Forum emoji.",
+        "message": "Sử dụng phông chữ biểu tượng cảm xúc do hệ điều hành cung cấp thay vì biểu tượng cảm xúc của diễn đàn Vivaldi.",
         "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
@@ -188,7 +188,7 @@
         "description": "Options: User CSS headline"
     },
     "userCSSDesc": {
-        "message": "Chỉ nhập mã CSS! Nhấp vào CÔNG TẮC để kích hoạt/ngừng kích hoạt, LƯU để lưu vào bộ nhớ. SAO LƯU để tập tin. Chọn TIÊU CHUẨN trong CHỦ ĐỀ, nếu bạn muốn chạy chủ đề của riêng mình.",
+        "message": "Chỉ nhập mã CSS! Nhấp vào công tắc để kích hoạt/ngừng kích hoạt. LƯU để lưu vào bộ nhớ. SAO LƯU để tập tin. Chọn tiêu chuẩn trong chủ đề, nếu bạn muốn chạy chủ đề của riêng mình.",
         "description": "Options: User CSS placeholder/description"
     },
     "changelog": {
@@ -228,67 +228,67 @@
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
     "confirmReset": {
-        "message": "Đặt lại phần mở rộng? Nhấn một lần nữa để xác nhận.",
+        "message": "Đặt lại phần mở rộng? Nhấn một lần nữa để xác nhận",
         "description": "Options: Status message to confirm reset"
     },
     "cancelReset": {
-        "message": "Đặt lại đã hủy.",
+        "message": "Đặt lại đã hủy",
         "description": "Options: Status message after cancelled reset"
     },
     "cancelImport": {
-        "message": "Nhập đã hủy.",
+        "message": "Nhập đã hủy",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
-        "message": "Các tùy chọn đặt lại, lưu trữ đã xóa.",
+        "message": "Các tùy chọn đặt lại, lưu trữ đã xóa",
         "description": "Options: Status message after reset"
     },
     "activateSchedule": {
-        "message": "Schedule activated",
+        "message": "Lịch trình đã kích hoạt",
         "description": "Options: Status message for Schedule activation"
     },
     "deactivateSchedule": {
-        "message": "Schedule deactivated",
+        "message": "Lịch trình đã ngừng kích hoạt",
         "description": "Options: Status message for Schedule deactivation"
     },
     "activateUserCSS": {
-        "message": "CSS người dùng đã kích hoạt.",
+        "message": "CSS người dùng đã kích hoạt",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
-        "message": "CSS người dùng đã ngừng kích hoạt.",
+        "message": "CSS người dùng đã ngừng kích hoạt",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "CSS người dùng được lưu vào bộ lưu trữ.",
+        "message": "CSS người dùng được lưu vào bộ lưu trữ",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
-        "message": "Chủ đề đã lưu và kích hoạt.",
+        "message": "Chủ đề đã lưu và kích hoạt",
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Mã chủ đề đã sao chép vào bộ nhớ tạm.",
+        "message": "Mã chủ đề đã sao chép vào bộ nhớ tạm",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Dán hoặc kéo và thả mã chủ đề vào trường nhập.",
+        "message": "Dán hoặc kéo và thả mã chủ đề vào trường nhập",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {
-        "message": "Chủ đề đã nhập. Nhấp vào LƯU để lưu chủ đề.",
+        "message": "Chủ đề đã nhập. Nhấp vào LƯU để lưu chủ đề",
         "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
-        "message": "Chọn một chủ đề, hoặc tạo chủ đề của riêng bạn.",
+        "message": "Chọn, tạo và lập lịch trình chủ đề",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Di chuột đến một chỉnh sửa để đọc mô tả của nó.",
+        "message": "Bật tắt các chỉnh sửa và viết CSS tùy chỉnh",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
-        "message": "Xin chân thành cảm ơn tất cả người dùng và cộng tác viên!",
+        "message": "Xin chân thành cảm ơn tất cả những cộng tác viên và những người dùng!",
         "description": "Options: Status message info"
     }
 }
