@@ -175,7 +175,7 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
     const end = textarea.selectionEnd;
 
     if (startAtBeginningOfLine) {
-      let newStart = start.lastIndexOf(`\n`, start);
+      let newStart = textarea.value.lastIndexOf(`\n`, start);
       if (newStart === -1) {
         start = 0;
       } else {
