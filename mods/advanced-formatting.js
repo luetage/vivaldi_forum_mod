@@ -192,11 +192,6 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
           changedText += "\n";
         }
       });
-      // remove extraneous last newline char
-      console.log(JSON.stringify(changedText));
-      changedText.replace(/\n$/, "");
-      console.log(JSON.stringify(changedText));
-
     } else {
       changedText = beforeSelection + textarea.value.substring(start, end) + afterSelection;
     }
