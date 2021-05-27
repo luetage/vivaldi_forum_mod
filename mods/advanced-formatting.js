@@ -63,21 +63,20 @@ let DRAG_START_POS = {x:0, y:0};
 */
 let SIMULATED_FORMAT_BUTTON;
 /* Definitions for new formatters
-* [keystring (as per fa-icons), start tag, end tag] */
+* [keystring (as per fa-icons), start tag, end tag, title, tag every selected line, initial tag] */
 const FORMATTERS = [
-    ["header", "# ", "", chrome.i18n.getMessage("header")],
+    ["header", "# ", "", chrome.i18n.getMessage("header"), true],
     ["window-minimize", "", `
 ***
 `, chrome.i18n.getMessage("horizontal_line")],
-    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote")],
-    ["file-code-o", "`", "`", chrome.i18n.getMessage("inline_code")],
+    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote"), true],
+    ["file-code-o", "`", "`", chrome.i18n.getMessage("inline_code"), true],
     ["th-large", `a | a
 ---|---
 x | x
 y | y
 `, "", chrome.i18n.getMessage("table")],
-    ["shield", `> Spoiler
->> `, "", chrome.i18n.getMessage("spoiler")],
+    ["shield", ">> ", "", chrome.i18n.getMessage("spoiler"), true, "> Spoiler"],
     ["list-ol", "1. ", "", chrome.i18n.getMessage("number_list")]
 ];
 /* default values - don't change these */
@@ -167,11 +166,31 @@ function get_random(length=4){
  * @param beforeSelection the string to put at the start of selection
  * @param afterSelection the string to put at the end of selection
  */
-function writeToTextarea(beforeSelection, afterSelection){
+function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine, initialTag){
     const textarea = document.querySelector("textarea");
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
-    let replacement = textarea.value.substring(0, start) + beforeSelection + textarea.value.substring(start, end) + afterSelection + textarea.value.substring(end);
+    let changedText = "";
+    if (tagEverySelectedLine) {
+      const selectedText = textarea.value.substring(start, end);
+      if (initialTag) {
+        changedText += initialTag + "\n";
+      }
+      selectedText.split("\n").forEach((line, idx, array) => {
+        changedText += beforeSelection + line + afterSelection;
+        if (idx !== array.length - 1) {
+          changedText += "\n";
+        }
+      });
+      // remove extraneous last newline char
+      console.log(JSON.stringify(changedText));
+      changedText.replace(/\n$/, "");
+      console.log(JSON.stringify(changedText));
+
+    } else {
+      changedText = beforeSelection + textarea.value.substring(start, end) + afterSelection;
+    }
+    let replacement = textarea.value.substring(0, start) + changedText + textarea.value.substring(end);
     textarea.value = replacement;
     forceUpdatePreview(start + beforeSelection.length);
 }
@@ -433,10 +452,10 @@ function addEmotePickerButton(){
  * @param {string} title for button tooltip
  * @returns {DOM} list item
  */
-function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title){
+function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title, tagEverySelectedLine = false, initialTag = null){
     const li = document.createElement("li");
     li.innerHTML = `<i class='fa fa-${buttonDisplayClass}'></i>`;
-    li.addEventListener("click", () => {writeToTextarea(openTag, endTag);});
+    li.addEventListener("click", () => {writeToTextarea(openTag, endTag, tagEverySelectedLine, initialTag);});
     li.title = title;
     li.setAttribute("tabindex", "-1");
     li.setAttribute("data-format", buttonDisplayClass);
@@ -464,7 +483,7 @@ function createJQueryClickSimulatorButton(){
 function addSpecialFormattingButtons(){
     const composerFormatters = document.querySelector(".composer .formatting-group");
     FORMATTERS.forEach(button => {
-        const madeButton = createSpecialFormattingbutton(button[0], button[1], button[2], button[3]);
+        const madeButton = createSpecialFormattingbutton(...button);
         composerFormatters.appendChild(madeButton);
     });
     SIMULATED_FORMAT_BUTTON = createJQueryClickSimulatorButton();
