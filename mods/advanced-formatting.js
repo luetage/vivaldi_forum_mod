@@ -63,20 +63,20 @@ let DRAG_START_POS = {x:0, y:0};
 */
 let SIMULATED_FORMAT_BUTTON;
 /* Definitions for new formatters
-* [keystring (as per fa-icons), start tag, end tag, title, tag every selected line, initial tag] */
+* [keystring (as per fa-icons), start tag, end tag, title, tag every selected line boolean, start at beginning of line boolean, initial tag] */
 const FORMATTERS = [
-    ["header", "# ", "", chrome.i18n.getMessage("header"), true],
+    ["header", "# ", "", chrome.i18n.getMessage("header"), true, true],
     ["window-minimize", "", `
 ***
 `, chrome.i18n.getMessage("horizontal_line")],
-    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote"), true],
+    ["quote-right", "> ", "", chrome.i18n.getMessage("block_quote"), true, true],
     ["file-code-o", "`", "`", chrome.i18n.getMessage("inline_code"), true],
     ["th-large", `a | a
 ---|---
 x | x
 y | y
 `, "", chrome.i18n.getMessage("table")],
-    ["shield", ">> ", "", chrome.i18n.getMessage("spoiler"), true, "> Spoiler"],
+    ["shield", ">> ", "", chrome.i18n.getMessage("spoiler"), true, true, "> Spoiler"],
     ["list-ol", "1. ", "", chrome.i18n.getMessage("number_list")]
 ];
 /* default values - don't change these */
@@ -166,10 +166,20 @@ function get_random(length=4){
  * @param beforeSelection the string to put at the start of selection
  * @param afterSelection the string to put at the end of selection
  */
-function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine, initialTag){
+function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine = false, startAtBeginningOfLine = false, initialTag = null){
     const textarea = document.querySelector("textarea");
-    const start = textarea.selectionStart;
+    let start = textarea.selectionStart;
     const end = textarea.selectionEnd;
+
+    if (startAtBeginningOfLine) {
+      let newStart = start.lastIndexOf(`\n`, start);
+      if (newStart === -1) {
+        start = 0;
+      } else {
+        start = newStart + 1;
+      }
+    }
+
     let changedText = "";
     if (tagEverySelectedLine) {
       const selectedText = textarea.value.substring(start, end);
@@ -452,10 +462,10 @@ function addEmotePickerButton(){
  * @param {string} title for button tooltip
  * @returns {DOM} list item
  */
-function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title, tagEverySelectedLine = false, initialTag = null){
+function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title, tagEverySelectedLine = false, startAtBeginningOfLine = false, initialTag = null){
     const li = document.createElement("li");
     li.innerHTML = `<i class='fa fa-${buttonDisplayClass}'></i>`;
-    li.addEventListener("click", () => {writeToTextarea(openTag, endTag, tagEverySelectedLine, initialTag);});
+    li.addEventListener("click", () => {writeToTextarea(openTag, endTag, tagEverySelectedLine, startAtBeginningOfLine, initialTag);});
     li.title = title;
     li.setAttribute("tabindex", "-1");
     li.setAttribute("data-format", buttonDisplayClass);
