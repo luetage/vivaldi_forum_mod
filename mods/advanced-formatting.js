@@ -175,12 +175,16 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
     const end = textarea.selectionEnd;
 
     if (startAtBeginningOfLine) {
-      let newStart = textarea.value.lastIndexOf(`\n`, start);
-      if (newStart === -1) {
-        start = 0;
-      } else {
-        start = newStart + 1;
-      }
+      let offset = 0;
+      do {
+        let newStart = textarea.value.lastIndexOf(`\n`, start - offset);
+        if (newStart === -1) {
+          start = 0;
+        } else {
+          start = newStart + 1;
+        }
+        offset++;
+      } while (start > end);
     }
 
     let changedText = "";
