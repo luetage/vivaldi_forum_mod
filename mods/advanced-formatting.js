@@ -163,8 +163,11 @@ function get_random(length=4){
 
 /**
  * Add a before and after string to the selected part of the text area
- * @param beforeSelection the string to put at the start of selection
- * @param afterSelection the string to put at the end of selection
+ * @param {string} beforeSelection the string to put at the start of selection
+ * @param {string} afterSelection the string to put at the end of selection
+ * @param {boolean} tagEverySelectedLine for if beforeSelection and afterSelection are applied to each line of the selection
+ * @param {boolean} startAtBeginningOfLine for if beforeSelection is only applied to the start of a line regardless of selection
+ * @param {string} initialTag the string to put before start of selection
  */
 function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine = false, startAtBeginningOfLine = false, initialTag = null){
     const textarea = document.querySelector("textarea");
@@ -455,6 +458,9 @@ function addEmotePickerButton(){
  * @param {string} openTag that appears before selection
  * @param {string} endTag that appears after selection
  * @param {string} title for button tooltip
+ * @param {boolean} tagEverySelectedLine should tags be applied to every selected line
+ * @param {boolean} startAtBeginningOfLine should open tags default to begining of line regardless of selection
+ * @param {string} initialTag that appears before selected lines
  * @returns {DOM} list item
  */
 function createSpecialFormattingbutton(buttonDisplayClass, openTag, endTag, title, tagEverySelectedLine = false, startAtBeginningOfLine = false, initialTag = null){
