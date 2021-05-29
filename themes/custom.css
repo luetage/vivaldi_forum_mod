@@ -408,7 +408,7 @@ a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/wil
     background-color: var(--colorBgM) !important;
 }
 .notifications-list li.unread:nth-child(odd), .notifications-list li.unread:nth-child(even) {
-    border-left: 5px solid var(--colorLi) !important;
+    border-left: 5px solid var(--colorHi) !important;
 }
 #content li[data-nid^="new_post"]::before, #content li[data-nid^="upvote"]::before, #content li[data-nid^="follow"]::before, #content li[data-nid^="move"]::before, #content li[data-nid^="chat"]::before, #content li[data-nid^="tid"]::before {
     color: unset !important;
