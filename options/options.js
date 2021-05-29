@@ -390,6 +390,15 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === 'options apply theme') {
         _loadTheme();
     }
+    if (request.message === 'options update theme') {
+        const active = document.querySelector('#themeMachine .themebox.active').classList.remove('active');
+        const ct = document.querySelectorAll('#themeMachine button[id^="vfm_"]');
+        for (let i = 0; i < ct.length; i++) {
+            ct[i].parentNode.removeChild(ct[i]);
+        }
+        _restoreThemes();
+        _restoreSchedule();
+    }
 });
 
 _loadTheme();

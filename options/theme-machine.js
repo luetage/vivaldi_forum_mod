@@ -479,15 +479,3 @@ moveRight.addEventListener('click', function() {
 saveBtn.addEventListener('click', _saveTheme);
 importBtn.addEventListener('click', _importTheme);
 exportBtn.addEventListener('click', _exportTheme);
-
-chrome.runtime.onMessage.addListener(function(request) {
-    if (request.message === 'options update theme') {
-        const active = document.querySelector('#themeMachine .themebox.active').classList.remove('active');
-        const ct = document.querySelectorAll('#themeMachine button[id^="vfm_"]');
-        for (let i = 0; i < ct.length; i++) {
-            ct[i].parentNode.removeChild(ct[i]);
-        }
-        _restoreThemes();
-        _restoreSchedule();
-    }
-});
