@@ -1,8 +1,31 @@
+:root {
+    /* For page load */
+    --colorBg: hsl(0, 0%, 0%);
+}
+
+body.vfm-standard {
+    --colorBg: hsl(0, 0%, 99%);
+    --colorBgC: white;
+    --colorBgD: hsl(0, 0%, 70%);
+    --colorBgH: hsl(0, 0%, 70%);
+    --colorFg: hsl(0, 0%, 37%);
+    --colorHi: #d01126;
+    --colorLi: #d01126;
+    --colorCo: hsl(0, 0%, 37%);
+    --colorCo2: hsl(0, 0%, 18%);
+    --colorAc: #00247d;
+    --colorAcFg: hsl(0, 0%, 99%);
+    --color-headerHi: #d01126;
+}
+body:not(.vfm-standard) {
+    --color-headerHi: var(--colorLi);
+}
+
 body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 400;
     font-size: 14px;
-    background-color: hsl(0, 0%, 99%);
+    background-color: var(--colorBg);
     cursor: default;
     margin: 0;
     user-select: none;
@@ -14,8 +37,8 @@ body {
 header {
     height: 67px;
     white-space: nowrap;
-    color: hsl(0, 0%, 37%);
-    background-color: hsl(0, 0%, 99%);
+    color: var(--colorFg);
+    background-color: var(--colorBg);
     cursor: default;
     position: fixed;
     top: 0;
@@ -32,7 +55,7 @@ header {
     margin-left: 70px;
 }
 #themes-btn, #modifications-btn, #info-btn, #feedback-btn, #reset-btn {
-    color: hsl(0, 0%, 37%);
+    color: var(--colorFg);
     cursor: default;
     background: none;
     background-image: none !important;
@@ -46,16 +69,16 @@ header {
     cursor: pointer;
 }
 #themes-btn:hover, #modifications-btn:hover, #info-btn:hover, #feedback-btn:hover, #reset-btn:hover, .view {
-    color: #d01126 !important;
+    color: var(--color-headerHi) !important;
 }
 form {
     display: inline;
 }
 header div {
     height: 27px;
-    color: hsl(0, 0%, 99%);
+    color: var(--colorAcFg);
     font-weight: 600;
-    background: #00247d;
+    background: var(--colorAc);
     position: fixed;
     left: 0;
     right: 0;
@@ -69,7 +92,7 @@ header div {
 #content {
     position: absolute;
     width: 100%;
-    color: hsl(0, 0%, 37%);
+    color: var(--colorFg);
     top: calc(67px + 8vh);
     left: 0;
     right: 0;
@@ -146,10 +169,13 @@ h2 {
     margin-top: 0;
     text-align: left;
     font-size: 1.3rem;
-    color: #00247d;
+    color: var(--colorFg);
+}
+body.vfm-standard h2 {
+    color: var(--colorAc);
 }
 strong, a {
-    color: #d01126;
+    color: var(--colorLi);
 }
 #modifications, #info {
     display: none;
@@ -168,14 +194,14 @@ strong, a {
     text-align: center;
     background-color: transparent;
 }
-.themebox:hover{
+.themebox:hover {
     background: transparent !important;
 }
 .themebox .themebox-image {
     position: relative;
     overflow: hidden;
-    border: 2px solid hsl(0, 0%, 70%);
-    outline: 1px solid hsl(0, 0%, 70%);
+    border: 2px solid var(--colorBgD);
+    outline: 1px solid var(--colorBgD);
     font-size: 0;
 }
 .active .themebox-image::before {
@@ -218,7 +244,7 @@ strong, a {
     font-size: 13px;
     margin-top: 7px;
     letter-spacing: .5px;
-    color: hsl(0, 0%, 37%);
+    color: var(--colorFg);
 }
 .toggleEdit {
     opacity: 0;
@@ -238,22 +264,22 @@ input[type="text" i] {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 600;
     font-size: 13px;
-    color: hsl(0, 0%, 37%);
+    color: var(--colorFg);
     background-color: transparent;
     letter-spacing: .5px;
     width: 166px;
     height: 27px;
     text-indent: 5px;
-    border: 2px solid hsl(0, 0%, 70%);
+    border: 2px solid var(--colorBgH);
 }
 .import::-webkit-input-placeholder {
     text-align: center;
     opacity: 1;
-    color: #00247d;
- }
- .import:focus {
-     outline-color: #d01126;
- }
+    color: var(--colorCo);
+}
+.import:focus {
+    outline-color: var(--colorHi);
+}
 input[type="color"] {
     -webkit-appearance: none;
     cursor: pointer;
@@ -261,12 +287,13 @@ input[type="color"] {
     outline: none;
 	width: 38px;
 	height: 24px;
+    padding: 0;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
-    border: 1px solid hsl(0, 0%, 70%);
+    border: 1px solid var(--colorBgH);
 }
 /* themebox border colors */
 .active .themebox-image {
@@ -319,9 +346,12 @@ input[type="color"]::-webkit-color-swatch {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #00247d;
+    background-color: var(--colorBgH);
     -webkit-transition: .4s;
     transition: .4s;
+}
+body.vfm-standard .slider {
+    background-color: var(--colorAc);
 }
 .slider:before {
     position: absolute;
@@ -330,17 +360,21 @@ input[type="color"]::-webkit-color-swatch {
     width: 13px;
     left: 2px;
     bottom: 2px;
-    background-color: hsl(0, 0%, 99%);
+    background-color: var(--colorFg);
     transition: .4s;
 }
+body.vfm-standard .slider:before {
+    background-color: var(--colorBg) !important;
+}
 input:checked + .slider {
-    background-color: #d01126;
+    background-color: var(--colorHi);
 }
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--colorHi);
 }
 input:checked + .slider:before {
     transform: translateX(13px);
+    background-color: var(--colorBg);
 }
 .slider.round {
     border-radius: 17px;
@@ -383,7 +417,7 @@ option {
     opacity: 0;
 }
 .selected {
-    color: #d01126;
+    color: var(--colorHi);
 }
 #selectMods span.selected::before {
     opacity: 1;
@@ -394,26 +428,27 @@ option {
 #userCSS {
     font-family: monospace;
     font-size: 12px;
-    color: hsl(0, 0%, 18%);
-    background-color: white;
+    color: var(--colorFg);
+    background-color: var(--colorBg);
     padding: 5px;
-    border: 2px solid hsl(0, 0%, 70%);
+    border: 2px solid var(--colorBgH);
     width: 100%;
     height: 49vh;
     resize: vertical;
     min-height: 100px;
 }
 #userCSS:disabled {
-    background-color: hsl(0, 0%, 99%);
+    background-color: var(--colorBgC);
+    opacity: .65;
 }
 
 
 /* Buttons */
 
 button, select {
-    background: hsl(0, 0%, 37%);
-    color: hsl(0, 0%, 99%);
-    border:  2px solid hsl(0, 0%, 37%);
+    background: var(--colorCo);
+    color: var(--colorBg);
+    border:  2px solid var(--colorCo);
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 600;
     font-size: 13px;
@@ -423,12 +458,16 @@ button, select {
     cursor: pointer;
 }
 button:hover:not(:disabled), select:hover {
-    background: hsl(0, 0%, 18%);
-    border-color: hsl(0, 0%, 18%);
+    background: var(--colorCo2);
+    border-color: var(--colorCo2);
 }
 button:disabled {
     cursor: default;
-    color: hsl(0, 0%, 70%);
+    opacity: .65;
+}
+body.vfm-standard button:disabled {
+    opacity: 1;
+    color: var(--colorBgH);
 }
 button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
     cursor: pointer;
@@ -437,12 +476,12 @@ button:focus {
     outline: none;
 }
 /* button.deactivated { */
-/*     background: hsl(0, 0%, 99%); */
-/*     color: hsl(0, 0%, 37%); */
-/*     border-color: hsl(0, 0%, 70%); */
+/*     background: var(--colorBg); */
+/*     color: var(--colorFg); */
+/*     border-color: var(--colorBgH); */
 /* } */
 /* button.deactivated:hover { */
-/*     background: hsl(0, 0%, 37%); */
-/*     color: hsl(0, 0%, 99%); */
-/*     border-color: hsl(0, 0%, 37%); */
+/*     background: var(--colorFg); */
+/*     color: var(--colorBg); */
+/*     border-color: var(--colorFg); */
 /* } */
