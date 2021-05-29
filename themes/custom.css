@@ -35,7 +35,7 @@ body {
 }
 #quick-search-container {
     background-color: var(--colorBg);
-    border: 1px solid var(--colorBgH);
+    border-color: var(--colorBgH);
 }
 .quick-search-container, .quick-search-results li a {
     color: var(--colorFg) !important;
@@ -200,18 +200,18 @@ html .topic .unanswered {
     color: #ff7518;
 }
 .answered {
-    border: 1px solid #4caf50;
+    border-color: #4caf50;
     color: #4caf50;
 }
 .unanswered {
-    border: 1px solid #ff7518;
+    border-color: 1px solid #ff7518;
     color: #ff7518;
 }
 .posts [component=post][data-index="-1"].isSolved {
-    border-left: 8px solid var(--colorCo);
-    border-top: 1px solid var(--colorCo);
-    border-right: 1px solid var(--colorCo) !important;
-    border-bottom: 1px solid var(--colorCo) !important;
+    border-left-color: var(--colorCo);
+    border-top-color: var(--colorCo);
+    border-right-color: var(--colorCo) !important;
+    border-bottom-color: var(--colorCo) !important;
 }
 .posts [component=post][data-index="-1"].isSolved:after {
     color: var(--colorCo) !important;
@@ -350,12 +350,12 @@ blockquote, .topic [component="post/parent"], .votes a {
     background-color: var(--colorBgM);
 }
 blockquote, .topic [component="post/replies"] {
-    border-left: 5px solid var(--colorBgH) !important;
+    border-left-color: var(--colorBgH) !important;
 }
 .topic .posts .content .toggle {
     background-color: var(--colorBgH);
     color: var(--colorFg);
-    border: 1px solid var(--colorBgH);
+    border-color: var(--colorBgH);
 }
 .categories>li:hover, .category>ul>li:hover {
     background-color: var(--colorBgD);
@@ -367,13 +367,10 @@ blockquote, .topic [component="post/replies"] {
     border-right-color: var(--colorLi);
 }
 .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-    border: 1px solid var(--colorBgH) !important;
+    border-color: var(--colorBgH) !important;
 }
 .table>thead>tr>th {
     border-color: var(--colorBgM);
-}
-table {
-    border-collapse: separate; 
 }
 .well, #inputAboutMe, #inputSignature {
     background-color: var(--colorBgL);
@@ -435,7 +432,7 @@ a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/wil
     background-color: var(--colorBgL);
 }
 .table-striped>tbody>tr:nth-of-type(even):hover {
-    background-color: var(--colorBg);
+    background-color: transparent;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top-color: var(--colorBgM);
@@ -577,7 +574,7 @@ pre code {
 }
 /* logged out menu */
 a.btn-register, a.btn-login {
-    border: 1px solid transparent;
+    border-color: transparent;
     color: var(--colorFg);
 }
 a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus {
@@ -692,8 +689,8 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     border-top: 1px solid transparent;
 }
 .chats-list>li {
-    border-right: 1px solid transparent;
-    border-left: 1px solid transparent;
+    border-right-color: solid transparent;
+    border-left-color: solid transparent;
 }
 .chats-list>li, .chats-list>li.unread {
     border-bottom: 1px solid var(--colorBgM);
@@ -730,7 +727,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
     background-color: var(--colorBgL);
     color: var(--colorFg2);
-    border: 1px solid var(--colorBgM) !important;
+    border-color: var(--colorBgM) !important;
     border-bottom: 1px solid var(--colorBgM) !important;
 }
 .chat-modal .chat-content li.chat-message .message-body-wrapper:hover .message-body, .expanded-chat .chat-content li.chat-message .message-body-wrapper:hover .message-body {
@@ -808,7 +805,7 @@ div.preview.well a:hover, div.preview.well a:focus {
 
 /* Forms */
 .form-control {
-    border: 1px solid var(--colorBgH);
+    border-color: var(--colorBgH);
 }
 .form-control::-webkit-input-placeholder, input::-webkit-input-placeholder {
     color: var(--colorFg2);
@@ -825,7 +822,7 @@ div.preview.well a:hover, div.preview.well a:focus {
 .bootstrap-tagsinput, .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: var(--colorBg);
     color: var(--colorFg);
-    border: 1px solid var(--colorBgH);
+    border-color: var(--colorBgH);
 }
 [component="chat/search/list"] li {
     background-color: var(--colorBgL);
@@ -957,7 +954,7 @@ span.votes .upvoted .fa-chevron-up::before {
 
 /* Emoji Picker */
 .emoji-dialog {
-    border: 1px solid var(--colorBgM);
+    border-color: var(--colorBgM);
 }
 .emoji-dialog .top-bar {
     background-color: var(--colorBgM);
@@ -965,7 +962,7 @@ span.votes .upvoted .fa-chevron-up::before {
 .emoji-tabs .emoji-dialog-search-container button.close {
     background-color: var(--colorCo);
     color: var(--colorBg);
-    border: 1px solid var(--colorCo2);
+    border-color: var(--colorCo2);
     text-shadow: none;
 }
 .emoji-tabs .emoji-dialog-search-container button.close:hover {
@@ -975,7 +972,7 @@ span.votes .upvoted .fa-chevron-up::before {
     background-color: var(--colorBg);
 }
 .nav-tabs>li>a:hover {
-    border: 1px solid var(--colorBgL);
+    border-color: var(--colorBgL);
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     background-color: var(--colorBgM);
