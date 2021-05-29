@@ -324,6 +324,15 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                 chrome.storage.local.set({tabIDs: tabIDs});
             }
             sendResponse({message: 'akn'});
+            chrome.storage.sync.get({'VFM_SCHEDULE': ''}, get => {
+                if (get.VFM_SCHEDULE.activated === true) {
+                    chrome.alarms.get('themeChange', alarm => {
+                        setTimeout(() => {
+                            if (Date.now() > alarm.scheduledTime) setSchedule();
+                        }, 3000)
+                    })
+                }
+            })
         })
     }
     if (request.message === 'trigger theme') activateTheme();
