@@ -217,9 +217,9 @@ html .topic .unanswered {
     color: var(--colorCo) !important;
 }
 .topic .posts .timeline-event .timeline-badge {
-    color: var(--colorCo);
+    color: var(--colorHi);
     background-color: var(--colorBg);
-    border-color: var(--colorCo);
+    border-color: var(--colorHi);
 }
 .posts-list .posts-list-item .topic-title, a, .breadcrumb a {
     color: var(--colorFg);
@@ -878,8 +878,8 @@ button.main.green, button.main.red {
 
 /* Unread avatar check */
 .category>ul>li .avatar .select .fa-check, .category>ul>li.selected .avatar .select .fa-check, .category>ul>li.selected .avatar .select:hover .fa-check {
-    background-color: var(--colorCo);
-    border-color: var(--colorCo) !important;
+    background-color: var(--colorHi);
+    border-color: var(--colorHi) !important;
     color: var(--colorBg) !important;
 }
 
