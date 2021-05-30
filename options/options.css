@@ -4,23 +4,21 @@
 }
 
 body.vfm-standard {
-    --colorBg: hsl(0, 0%, 99%);
-    --colorBgC: white;
-    --colorBgL: hsl(0, 0%, 80%);
-    --colorBgM: hsl(0, 0%, 70%);
-    --colorFg: hsl(0, 0%, 37%);
-    --colorHi: #d01126;
-    --colorLi: #d01126;
-    --colorCo: hsl(0, 0%, 37%);
-    --colorCo2: hsl(0, 0%, 18%);
-    --colorAc: #00247d;
-    --colorAcFg: hsl(0, 0%, 99%);
-    --color-headerHi: #d01126;
+    --colorBg: #fff;
+    --colorBgC: #e6e6e6;
+    --colorBgL: #e6e6e6;
+    --colorBgM: #e6e6e6;
+    --colorFg: #212121;
+    --colorFg2: #6c757d;
+    --colorHi: #c91106;
+    --colorLi: #4c70f0;
+    --colorCo: #4c70f0;
+    --colorCo2: #3b57bb;
+    --colorAc: #3b57bb;
+    --colorAcFg: #fff;
+    --colorDd: #fff;
+    --colorDdFg: #212121;
 }
-body:not(.vfm-standard) {
-    --color-headerHi: var(--colorLi);
-}
-
 body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: 400;
@@ -37,7 +35,7 @@ body {
 header {
     height: 67px;
     white-space: nowrap;
-    color: var(--colorFg);
+    color: var(--colorBgM);
     background-color: var(--colorBg);
     cursor: default;
     position: fixed;
@@ -69,7 +67,7 @@ header {
     cursor: pointer;
 }
 #themes-btn:hover, #modifications-btn:hover, #info-btn:hover, #feedback-btn:hover, #reset-btn:hover, .view {
-    color: var(--color-headerHi) !important;
+    color: var(--colorLi) !important;
 }
 form {
     display: inline;
@@ -170,9 +168,6 @@ h2 {
     text-align: left;
     font-size: 1.3rem;
     color: var(--colorLi);
-}
-body.vfm-standard h2 {
-    color: var(--colorAc);
 }
 strong {
     color: var(--colorCo)
@@ -278,10 +273,7 @@ input[type="text" i] {
 .import::-webkit-input-placeholder {
     text-align: center;
     opacity: 1;
-    color: var(--colorCo);
-}
-.import:focus {
-    outline-color: var(--colorHi);
+    color: var(--colorHi);
 }
 input[type="color"] {
     -webkit-appearance: none;
@@ -312,14 +304,14 @@ input[type="color"]::-webkit-color-swatch {
     stroke: var(--colorBg);
 }
 #vfm-standard.active .themebox-image {
-    border-color: #c91106;
+    border-color: var(--colorHi);
 }
 #vfm-standard.active .themebox-image::before {
-    border-bottom-color: #c91106;
-    border-right-color: #c91106;
+    border-bottom-color: var(--colorHi);
+    border-right-color: var(--colorHi);
 }
 #vfm-standard .themebox-image .themebox-o_mark {
-    fill: #c91106;
+    fill: var(--colorHi);
     stroke: #fff;
 }
 
@@ -363,9 +355,6 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--colorFg);
     transition: .4s;
 }
-body.vfm-standard .slider:before {
-    background-color: var(--colorBg) !important;
-}
 input:checked + .slider {
     background-color: var(--colorHi);
 }
@@ -396,6 +385,24 @@ input:checked + .slider:before {
 }
 option {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    background: var(--colorDd);
+    color: var(--colorDdFg);
+    border-color: red !important;
+}
+select {
+    background: var(--colorBgM);
+    color: var(--colorFg);
+    border:  2px solid var(--colorBgM);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 4px 11px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+select:hover, select:focus {
+    color: var(--colorCo);
 }
 
 
@@ -446,7 +453,7 @@ textarea::-webkit-input-placeholder {
 
 /* Buttons */
 
-button, select {
+button {
     background: var(--colorCo);
     color: var(--colorBg);
     border:  2px solid var(--colorCo);
@@ -458,11 +465,6 @@ button, select {
     border-radius: 3px;
     cursor: pointer;
 }
-select {
-    background: var(--colorBgM);
-    color: var(--colorFg);
-    border-color: var(--colorBgM);
-}
 button:hover:not(:disabled) {
     background: var(--colorCo2);
     border-color: var(--colorCo2);
@@ -470,10 +472,6 @@ button:hover:not(:disabled) {
 button:disabled {
     cursor: default;
     opacity: .65;
-}
-body.vfm-standard button:disabled {
-    opacity: 1;
-    color: var(--colorBgM);
 }
 button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
     cursor: pointer;

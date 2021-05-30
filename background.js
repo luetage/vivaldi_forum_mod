@@ -120,8 +120,8 @@ function activateTheme() {
             if (lumBg > 0.5) co.colorLi2 = shade(co.colorLi, 0.25);
             else co.colorLi2 = shade(co.colorLi, -0.12);
             // code
-            if (lumBg > 0.5) co.colorCo2 = shade(co.colorCo, 0.1);
-            else co.colorCo2 = shade(co.colorCo, -0.05);
+            if (lumBg > 0.5) co.colorCo2 = shade(co.colorCo, 0.25);
+            else co.colorCo2 = shade(co.colorCo, -0.12);
             // dropdown
             const rgbDd = RGB(co.colorDd);
             const lumDd = lum(rgbDd[0], rgbDd[1], rgbDd[2]);
