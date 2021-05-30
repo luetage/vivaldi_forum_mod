@@ -244,6 +244,12 @@ a {
     letter-spacing: .5px;
     color: var(--colorFg);
 }
+#addTheme, #moveLeft, .theme-save, .theme-import, #addSchedule, #css-save {
+    margin-right: 2px;
+}
+.theme-edit {
+    margin: 0 6px;
+}
 .toggleEdit {
     opacity: 0;
     margin-top: 8px;
