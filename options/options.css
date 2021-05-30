@@ -363,6 +363,9 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--colorFg);
     transition: .4s;
 }
+body.vfm-standard .slider:before {
+    background-color: var(--colorBg) !important;
+}
 input:checked + .slider {
     background-color: var(--colorHi);
 }
@@ -424,7 +427,7 @@ option {
     font-family: monospace;
     font-size: 12px;
     color: var(--colorFg);
-    background-color: var(--colorBg);
+    background-color: var(--colorBgC);
     padding: 5px;
     border: 2px solid var(--colorBgM);
     width: 100%;
@@ -433,8 +436,11 @@ option {
     min-height: 100px;
 }
 #userCSS:disabled {
-    background-color: var(--colorBgC);
+    background-color: var(--colorBgL);
     opacity: .65;
+}
+textarea::-webkit-input-placeholder {
+    color: var(--colorFg2) !important;
 }
 
 
@@ -456,9 +462,6 @@ select {
     background: var(--colorBgM);
     color: var(--colorFg);
     border-color: var(--colorBgM);
-}
-select::after {
-    color: red !important;
 }
 button:hover:not(:disabled) {
     background: var(--colorCo2);
