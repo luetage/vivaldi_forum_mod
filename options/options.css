@@ -351,11 +351,7 @@ input[type="color"]::-webkit-color-swatch {
     right: 0;
     bottom: 0;
     background-color: var(--colorBgM);
-    -webkit-transition: .4s;
     transition: .4s;
-}
-body.vfm-standard .slider {
-    background-color: var(--colorAc);
 }
 .slider:before {
     position: absolute;
@@ -366,9 +362,6 @@ body.vfm-standard .slider {
     bottom: 2px;
     background-color: var(--colorFg);
     transition: .4s;
-}
-body.vfm-standard .slider:before {
-    background-color: var(--colorBg) !important;
 }
 input:checked + .slider {
     background-color: var(--colorHi);
