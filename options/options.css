@@ -6,7 +6,7 @@
 body.vfm-standard {
     --colorBg: hsl(0, 0%, 99%);
     --colorBgC: white;
-    --colorBgL: hsl(0, 0%, 70%);
+    --colorBgL: hsl(0, 0%, 80%);
     --colorBgM: hsl(0, 0%, 70%);
     --colorFg: hsl(0, 0%, 37%);
     --colorHi: #d01126;
