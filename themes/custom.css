@@ -106,7 +106,7 @@ li .notif-dropdown-link a:hover {
     border-top-color: var(--colorDdH);
 }
 .header .chat-list>li:not(:last-child) {
-    border-bottom: 1px solid var(--colorDdL);
+    border-bottom-color: var(--colorDdL);
 }
 .dropdown-menu .divider {
     background-color: var(--colorDdM);
@@ -204,7 +204,7 @@ html .topic .unanswered {
     color: #4caf50;
 }
 .unanswered {
-    border-color: 1px solid #ff7518;
+    border-color: #ff7518;
     color: #ff7518;
 }
 .posts [component=post][data-index="-1"].isSolved {
@@ -686,14 +686,14 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     background-color: var(--colorBgM);
 }
 .chats-list {
-    border-top: 1px solid transparent;
+    border-top-color: transparent;
 }
 .chats-list>li {
-    border-right-color: solid transparent;
-    border-left-color: solid transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
 }
 .chats-list>li, .chats-list>li.unread {
-    border-bottom: 1px solid var(--colorBgM);
+    border-bottom-color: var(--colorBgM);
 }
 .chat-modal .chat-content li.chat-message .chat-timestamp, .expanded-chat .chat-content li.chat-message .chat-timestamp {
     color: var(--colorFg2);
@@ -712,7 +712,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     text-shadow: none;
 }
 .chat-modal [component="chat/nav-wrapper"] .chat-search, .chats-full [component="chat/nav-wrapper"] .chat-search {
-    border-bottom: 1px solid var(--colorCo);
+    border-bottom-color: var(--colorCo);
 }
 .chat-search .form-control::-webkit-input-placeholder {
     color: var(--colorBg);
@@ -722,13 +722,13 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     border-color: var(--colorBgH);
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"], .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] {
-    border-top: 1px solid var(--colorBgL) !important;
+    border-top-color: var(--colorBgL) !important;
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
     background-color: var(--colorBgL);
     color: var(--colorFg2);
     border-color: var(--colorBgM) !important;
-    border-bottom: 1px solid var(--colorBgM) !important;
+    border-bottom-color: var(--colorBgM) !important;
 }
 .chat-modal .chat-content li.chat-message .message-body-wrapper:hover .message-body, .expanded-chat .chat-content li.chat-message .message-body-wrapper:hover .message-body {
     background: var(--colorBgL);
@@ -738,7 +738,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     opacity: 0.66;
 }
 .chat-modal .chat-content li.system-message::after, .chat-modal .chat-content li.system-message::before, .expanded-chat .chat-content li.system-message::after, .expanded-chat .chat-content li.system-message::before {
-    border-top: 1px solid var(--colorBgH);
+    border-top-color: var(--colorBgH);
 }
 ul[component="chat/search/list"].dropdown-menu {
     background-color: var(--colorBgL);
@@ -797,7 +797,7 @@ div.preview.well a:hover, div.preview.well a:focus {
     color: var(--colorLi2);
 }
 .composer.resizable {
-    border-top: 1px solid var(--colorBgM);
+    border-top-color: var(--colorBgM);
 }
 .composer .title-container {
     border-color: var(--colorBgM);
