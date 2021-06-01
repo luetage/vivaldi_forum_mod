@@ -1,3 +1,5 @@
+/* JP localization ver.0.2 */
+
 {
     "bookmarks": {
         "message": "Bookmarks",
@@ -16,7 +18,7 @@
         "description": "Text before last edit timestamp in forum posts"
     },
     "optionsLink": {
-        "message": "modオプション",
+        "message": "VFmオプション",
         "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
     },
     "dismiss": {
@@ -64,71 +66,71 @@
         "description": "Hover text when on a draggable area"
     },
     "themes": {
-        "message": "Themes",
+        "message": "テーマ",
         "description": "Options: Title of themes section"
     },
     "modifications": {
-        "message": "Modifications",
+        "message": "カスタマイズ",
         "description": "Options: Title of modifications section"
     },
     "info": {
-        "message": "Info",
+        "message": "VFmについて",
         "description": "Options: Title of info section"
     },
     "feedback": {
-        "message": "Feedback",
+        "message": "フィードバック",
         "description": "Options: Feedback link in navigation"
     },
     "schedule": {
-        "message": "Schedule",
+        "message": "スケジュール",
         "description": "Options: Schedule headline"
     },
     "themeMachine": {
-        "message": "Theme Machine",
+        "message": "テーマの選択",
         "description": "Options: Theme machine headline"
     },
     "background": {
-        "message": "Background",
+        "message": "背景",
         "description": "Options: Theme machine edit background"
     },
     "foreground": {
-        "message": "Foreground",
+        "message": "テキスト",
         "description": "Options: Theme machine edit foreground"
     },
     "highlight": {
-        "message": "Highlight",
+        "message": "ハイライト",
         "description": "Options: Theme machine edit highlight"
     },
     "accent": {
-        "message": "Accent",
+        "message": "アクセント",
         "description": "Options: Theme machine edit accent"
     },
     "link": {
-        "message": "Link",
+        "message": "リンク",
         "description": "Options: Theme machine edit link"
     },
     "code": {
-        "message": "Code",
+        "message": "コード",
         "description": "Options: Theme machine edit code"
     },
     "dropdown": {
-        "message": "Dropdown",
+        "message": "ドロップダウン",
         "description": "Options: Theme machine edit dropdown"
     },
     "selectModifications": {
-        "message": "Select Modifications",
+        "message": "カスタマイズの選択",
         "description": "Options: Modifications headline"
     },
     "advancedFormatting": {
-        "message": "Advanced Formatting",
+        "message": "筆箱",
         "description": "Options: Title of advanced formatting mod"
     },
     "advancedFormattingDesc": {
-        "message": "エモートピッカーとボタンを追加。レス編集時にドラッグでボタンの追加・削除・順番変更ができます。",
+        "message": "レス欄にカスタムツールバーと便利なボタンを表示。ドラッグでボタンの追加・削除・順番変更もできます。",
         "description": "Options: Description of the advanced formatting mod"
     },
     "hideHeader": {
-        "message": "Auto-Hide Header on Scroll",
+        "message": "スクロールでヘッダを閉じる",
         "description": "Options: Title of auto-hide header on scroll mod"
     },
     "hideHeaderDesc": {
@@ -136,7 +138,7 @@
         "description": "Options: Description of auto-hide header on scroll mod"
     },
     "navbookmarks": {
-        "message": "Bookmarks in Navigation",
+        "message": "オプションへのリンク",
         "description": "Options: Title of bookmarks in navigation mod"
     },
     "navbookmarksDesc": {
@@ -144,7 +146,7 @@
         "description" : "Options: Description of bookmarks in navigation mod"
     },
     "customNotification": {
-        "message": "Custom Notification Icons",
+        "message": "カスタム通知アイコン",
         "description": "Options: Title of custom notification icons mod"
     },
     "customNotificationDesc": {
@@ -152,7 +154,7 @@
         "description": "Options: Description of custom notification icons mod"
     },
     "showUID": {
-        "message": "Show User IDs",
+        "message": "ユーザーＩＤの表示",
         "description": "Options: Title of show user IDs mod"
     },
     "showUIDDesc": {
@@ -160,7 +162,7 @@
         "description": "Options: Description of show user IDs mod"
     },
     "systemEmoji": {
-        "message": "Use System Emoji",
+        "message": "システムの絵文字を使用",
         "description": "Options: Title of use system emoji mod"
     },
     "systemEmojiDesc": {
@@ -168,7 +170,7 @@
         "description": "Options: Description of use system emoji mod"
     },
     "signatureMod": {
-        "message": "Signature Mod",
+        "message": "署名",
         "description": "Options: Title of signature mod"
     },
     "signatureModDesc": {
@@ -176,7 +178,7 @@
         "description": "Options: Description of signature mod"
     },
     "squareAvatars": {
-        "message": "Square Avatars",
+        "message": "スクウェア・アバター",
         "description": "Options: Title of square avatars mod"
     },
     "squareAvatarsDesc": {
@@ -200,95 +202,95 @@
         "description": "Options: Credits headline"
     },
     "save": {
-        "message": "Save",
+        "message": "保存",
         "description": "Options: Text to show on a button that performs some sort of save operation"
     },
     "edit": {
-        "message": "Edit",
+        "message": "編集",
         "description": "Options: Text to show on a button that performs some sort of edit operation"
     },
     "backup": {
-        "message": "Backup",
+        "message": "バックアップ",
         "description": "Options: Text to show on a button that performs some sort of backup operation"
     },
     "import": {
-        "message": "Import",
+        "message": "インポート",
         "description": "Options: Text to show on a button that performs some sort of import operation"
     },
     "cancel": {
-        "message": "Cancel",
+        "message": "キャンセル",
         "description": "Options: Text to show on a button that performs some sort of cancel operation"
     },
     "export": {
-        "message": "Export",
+        "message": "エクスポート",
         "description": "Options: Text to show on a button that performs some sort of export operation."
     },
     "reset": {
-        "message": "Reset",
+        "message": "リセット",
         "description": "Options: Text to show on a button that performs some sort of reset operation"
     },
     "confirmReset": {
-        "message": "Reset the extension? Click again to confirm",
+        "message": "本当にリセットしますか？よろしければもう一度クリックして完了して下さい",
         "description": "Options: Status message to confirm reset"
     },
     "cancelReset": {
-        "message": "Reset cancelled",
+        "message": "リセットをキャンセルしました",
         "description": "Options: Status message after cancelled reset"
     },
     "cancelImport": {
-        "message": "Import cancelled",
+        "message": "インポートをキャンセルしました",
         "description": "Options: Status message after cancelled import"
     },
     "optionsReset": {
-        "message": "Options reset, storage cleared",
+        "message": "設定はリセットされ、ストレージは消去されました",
         "description": "Options: Status message after reset"
     },
     "activateSchedule": {
-        "message": "Schedule activated",
+        "message": "スケジュールを有効にしました",
         "description": "Options: Status message for Schedule activation"
     },
     "deactivateSchedule": {
-        "message": "Schedule deactivated",
+        "message": "スケジュールを無効にしました",
         "description": "Options: Status message for Schedule deactivation"
     },
     "activateUserCSS": {
-        "message": "User CSS activated",
+        "message": "CSSを有効にしました",
         "description": "Options: Status message for User CSS activation"
     },
     "deactivateUserCSS": {
-        "message": "User CSS deactivated",
+        "message": "CSSを無効にしました",
         "description": "Options: Status message for User CSS deactivation"
     },
     "saveUserCSS": {
-        "message": "User CSS saved to storage",
+        "message": "CSSをストレージに保存しました",
         "description": "Options: Status message for saving User CSS to storage"
     },
     "saveTheme": {
-        "message": "Theme saved and activated",
+        "message": "テーマを保存しアクティブにしました",
         "description": "Options: Status message for theme activation"
     },
     "exportTheme": {
-        "message": "Theme code copied to clipboard",
+        "message": "テーマのコードを保存して下さい",
         "description": "Options: Status message for exporting theme"
     },
     "importThemeDesc": {
-        "message": "Paste or drag and drop theme code into import field",
+        "message": "テーマのコードを貼り付けてください",
         "description": "Options: Status message describing theme import"
     },
     "importTheme": {
-        "message": "Theme imported. Click SAVE to save the theme",
+        "message": "保存をクリックするとテーマがインポートされます",
         "description": "Options: Status message confirming theme import"
     },
     "statusThemes": {
-        "message": "Select, create and schedule themes",
+        "message": "テーマ・スケジュールの設定",
         "description": "Options: Status message themes"
     },
     "statusModifications": {
-        "message": "Toggle modifications and write custom CSS",
+        "message": "CSSの作成 / カスタマイズの選択",
         "description": "Options: Status message modifications"
     },
     "statusInfo": {
-        "message": "A big thank you to all contributors and users!",
+        "message": "ご協力いただいた方々とユーザーの皆様に感謝！",
         "description": "Options: Status message info"
     }
 }

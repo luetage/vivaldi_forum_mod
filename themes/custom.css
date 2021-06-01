@@ -51,9 +51,6 @@ body {
     color: var(--colorBg);
     border-color: var(--colorHi);
 }
-#logged-in-menu.nav.navbar-nav.navbar-right {
-    font-size: 15px;
-}
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: var(--colorBgL);
 }
@@ -626,31 +623,30 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .alert.alert-warning, .alert.alert-success, .alert.alert-info, .alert.alert-danger {
     background-color: var(--colorBgL);
     border-color: var(--colorBgL);
-    color: var(--colorFg);
 }
 .alert.alert-danger {
-    border-left: 5px solid #ef3939 !important;
-}
-.alert.alert-warning {
-    border-left: 5px solid #ff7518 !important;
-}
-.alert.alert-success {
-    border-left: 5px solid #4caf50 !important;
-}
-.alert.alert-info {
-    border-left: 5px solid var(--colorFg) !important;
-}
-.text-danger {
-    color: #ef3939;
-}
-.text-warning {
-    color: #ff7518;
-}
-.groups.details .text-warning {
     color: var(--colorHi);
 }
+.alert.alert-warning {
+    color: var(--colorCo);
+}
+.alert.alert-success {
+    color: var(--colorCo);
+}
+.alert.alert-info {
+    color: var(--colorFg);
+}
+.text-danger {
+    color: var(--colorHi);
+}
+.text-warning {
+    color: var(--colorCo);
+}
+.groups.details .text-warning {
+    color: var(--colorCo);
+}
 .text-success {
-    color: #4caf50;
+    color: var(--colorCo);
 }
 
 /* Dialogs */
