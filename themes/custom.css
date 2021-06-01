@@ -770,8 +770,8 @@ ul[component="chat/search/list"].dropdown-menu {
 }
 .composer .write {
     color: var(--colorFg);
-    background-color: var(--colorBgL);
-    border-color: var(--colorBgH);
+    background-color: var(--colorBgD);
+    border-color: var(--colorBgM);
     outline: none !important;
 }
 .composer textarea::-webkit-input-placeholder {
@@ -784,7 +784,7 @@ ul[component="chat/search/list"].dropdown-menu {
 }
 .composer .preview {
     background-color: var(--colorBg);
-    border-color: var(--colorBgH);
+    border-color: var(--colorBgM);
 }
 div.preview.well a {
     color: var(--colorLi);
@@ -793,7 +793,7 @@ div.preview.well a:hover, div.preview.well a:focus {
     color: var(--colorLi2);
 }
 .composer.resizable {
-    border-top-color: var(--colorBgM);
+    border-top: 1px solid var(--colorBgL);
 }
 .composer .title-container {
     border-color: var(--colorBgM);
