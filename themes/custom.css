@@ -727,7 +727,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     border-bottom-color: var(--colorBgM) !important;
 }
 .chat-modal .chat-content li.chat-message .message-body-wrapper:hover .message-body, .expanded-chat .chat-content li.chat-message .message-body-wrapper:hover .message-body {
-    background: var(--colorBgL);
+    background: var(--colorBgD);
 }
 .chat-modal .chat-content li.system-message, .expanded-chat .chat-content li.system-message {
     color: var(--colorFg2);
