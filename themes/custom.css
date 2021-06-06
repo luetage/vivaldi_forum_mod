@@ -296,6 +296,9 @@ hr {
 .topic .posts>[component=post], .topic .timeline-event {
     border-bottom-color: var(--colorBgL) !important;
 }
+.topic .timeline-event+:not(.timeline-event):before, .topic .timeline-event:before {
+    border-bottom-color: var(--colorBg);
+  }
 small.pull-right a {
     color: var(--colorLi) !important;
 }
