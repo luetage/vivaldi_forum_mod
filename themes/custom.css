@@ -205,13 +205,13 @@ html .topic .unanswered {
     color: #ff7518;
 }
 .posts [component=post][data-index="-1"].isSolved {
-    border-left-color: var(--colorCo);
-    border-top-color: var(--colorCo);
-    border-right-color: var(--colorCo) !important;
-    border-bottom-color: var(--colorCo) !important;
+    border-left-color: var(--colorHi);
+    border-top-color: var(--colorHi);
+    border-right-color: var(--colorHi) !important;
+    border-bottom-color: var(--colorHi) !important;
 }
 .posts [component=post][data-index="-1"].isSolved:after {
-    color: var(--colorCo) !important;
+    color: var(--colorHi) !important;
 }
 .topic .posts .timeline-event .timeline-badge {
     color: var(--colorHi);
