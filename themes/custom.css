@@ -191,18 +191,18 @@ li .notif-dropdown-link a:hover {
     color: var(--colorLi);
 }
 html .topic .answered {
-    color: #4caf50;
+    color: var(--colorHi);
 }
 html .topic .unanswered {
-    color: #ff7518;
+    color: var(--colorCo);
 }
 .answered {
-    border-color: #4caf50;
-    color: #4caf50;
+    border-color: var(--colorHi);
+    color: var(--colorHi);
 }
 .unanswered {
-    border-color: #ff7518;
-    color: #ff7518;
+    border-color: var(--colorCo);
+    color: var(--colorCo);
 }
 .posts [component=post][data-index="-1"].isSolved {
     border-left-color: var(--colorHi);

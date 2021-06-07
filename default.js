@@ -90,10 +90,10 @@ function add_copy_code() {
 }
 
 
-// Unofficial Discord and Vivaldi Store link in footer
+// Unofficial Discord and Contribute link in footer
 
 function discord() {
-    document.querySelector('.footerlinks').innerHTML += ' | <a href="https://store.vivaldi.com" target="_blank" rel="noreferrer noopener">Store</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
+    document.querySelector('.footerlinks').innerHTML += ' | <a href="https://vivaldi.com/contribute/" target="_blank" rel="noreferrer noopener">Contribute</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
 }
 
 
