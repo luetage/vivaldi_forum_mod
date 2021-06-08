@@ -180,6 +180,9 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
         let newStart = textarea.value.lastIndexOf(`\n`, start - offset);
         if (newStart === -1) {
           start = 0;
+        } else if (newStart === 0) {
+          start = 0;
+          break;
         } else {
           start = newStart + 1;
         }
