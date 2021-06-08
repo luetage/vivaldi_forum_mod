@@ -9,7 +9,7 @@ function loadFile(filename, id) {
     }
     style.setAttribute('rel', 'stylesheet');
     style.setAttribute('type', 'text/css');
-    style.setAttribute('href', chrome.extension.getURL(filename));
+    style.setAttribute('href', chrome.runtime.getURL(filename));
     if (check) {
         head.insertBefore(style, check);
     }
@@ -99,6 +99,7 @@ function updateUserCSS() {
     loadUserCSS();
 };
 
+navigator.serviceWorker.register('/background.js');
 loadTheme();
 loadUserCSS();
 chrome.runtime.sendMessage({message: 'whoami'}, function() {
@@ -118,3 +119,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({message: 'akn'});
     }
 });
+
