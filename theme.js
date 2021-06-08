@@ -99,16 +99,16 @@ function updateUserCSS() {
     loadUserCSS();
 };
 
-navigator.serviceWorker.register('/background.js');
-loadTheme();
-loadUserCSS();
-chrome.runtime.sendMessage({message: 'whoami'}, function() {
-    if (chrome.runtime.lastError) {
-        setTimeout(function() {
-            chrome.runtime.sendMessage({message: 'whoami'});
-        }, 3000);
-    }
-});
+// navigator.serviceWorker.register('/background.js');
+// loadTheme();
+// loadUserCSS();
+// chrome.runtime.sendMessage({message: 'whoami'}, function() {
+//     if (chrome.runtime.lastError) {
+//         setTimeout(function() {
+//             chrome.runtime.sendMessage({message: 'whoami'});
+//         }, 3000);
+//     }
+// });
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === 'update theme') {
         updateTheme();
