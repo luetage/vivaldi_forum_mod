@@ -197,9 +197,13 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
         changedText += initialTag + "\n";
       }
       selectedText.split("\n").forEach((line, idx, array) => {
-        changedText += beforeSelection + line + afterSelection;
-        if (idx !== array.length - 1) {
-          changedText += "\n";
+        const lastLine = idx === array.length - 1;
+        if (lastLine) {
+          if (line !== "" || start === end) {
+            changedText += beforeSelection + line + afterSelection;
+          }
+        } else {
+          changedText += beforeSelection + line + afterSelection + "\n";
         }
       });
     } else {
