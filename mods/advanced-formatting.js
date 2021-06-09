@@ -180,6 +180,9 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
         let newStart = textarea.value.lastIndexOf(`\n`, start - offset);
         if (newStart === -1) {
           start = 0;
+        } else if (newStart === 0) {
+          start = 0;
+          break;
         } else {
           start = newStart + 1;
         }
@@ -194,9 +197,13 @@ function writeToTextarea(beforeSelection, afterSelection, tagEverySelectedLine =
         changedText += initialTag + "\n";
       }
       selectedText.split("\n").forEach((line, idx, array) => {
-        changedText += beforeSelection + line + afterSelection;
-        if (idx !== array.length - 1) {
-          changedText += "\n";
+        const lastLine = idx === array.length - 1;
+        if (lastLine) {
+          if (line !== "" || start === end) {
+            changedText += beforeSelection + line + afterSelection;
+          }
+        } else {
+          changedText += beforeSelection + line + afterSelection + "\n";
         }
       });
     } else {
