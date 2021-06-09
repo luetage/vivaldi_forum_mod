@@ -71,6 +71,7 @@ chrome.storage.sync.get ({
     if (mods.notificationIcons === true) loadFile('mods/notification-icons.css');
     if (mods.userID === true) loadFile('mods/userID.css');
     if (mods.square === true) loadFile('mods/square-avatars.css');
+    if (mods.signatureMod === true) loadFile('mods/signature-mod.css');
     if (mods.advancedFormatting === true) loadFile('mods/advanced-formatting.css');
     if (mods.bookmarks === true) _bookmarks();
     if (mods.headerScroll === true) {
