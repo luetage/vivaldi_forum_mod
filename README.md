@@ -39,6 +39,7 @@ Vivaldi Forum mod 2.0 introduces translations. Following languages are currently
 * French
 * German
 * Italian
+* Japanese
 * Russian
 * Spanish
 * Vietnamese

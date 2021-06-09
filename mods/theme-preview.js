@@ -219,18 +219,3 @@ function themePreview(content) {
     });
 }
 
-var observeDOM = (function () {
-    return function (obj, callback) {
-        var obs = new MutationObserver(function (mutations) {
-            if (mutations[0].addedNodes.length || mutations[0].removedNodes.length) {
-                callback(obj);
-            }
-        });
-        obs.observe(obj, {
-            childList: true,
-            subtree: true
-        });
-    };
-})();
-
-observeDOM(document.getElementById('content'), themePreview);

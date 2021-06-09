@@ -646,7 +646,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
     color: var(--colorCo);
 }
 .groups.details .text-warning {
-    color: var(--colorCo);
+    color: var(--colorHi);
 }
 .text-success {
     color: var(--colorCo);
