@@ -52,7 +52,7 @@
     }
     ],
     "background": {
-        "service_worker":  "background.js"
+        "service_worker":  "serviceworker.js"
     },
     "default_locale": "en"
 
