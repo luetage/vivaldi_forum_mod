@@ -4,13 +4,12 @@ function undoMoji(img){
     var emojidom = document.createElement("span");
     emojidom.className = "vm-emoji";
     emojidom.title = img.title;
-    var mu;
-    if (img.alt.length > 2) {
-        let parts = img.alt.match(/.{1,2}/g);
-        mu = parts.join('\u200d');
+    let count = Array.from(img.alt.split(/[\ufe00-\ufe0f]/).join(""));
+    if (count.length > 1) {
+        emojidom.innerText = count.join("\u200d");
+        console.log(count);
     }
-    else mu = img.alt;
-    emojidom.innerText = mu;
+    else emojidom.innerText = img.alt;
     img.insertAdjacentElement("beforebegin", emojidom);
     var post = img.parentElement;
     post.removeChild(img);
