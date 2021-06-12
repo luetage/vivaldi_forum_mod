@@ -1,25 +1,3 @@
-// Use system emoji
-
-function undoMoji(img){
-    var emojidom = document.createElement("span");
-    emojidom.className = "vm-emoji";
-    emojidom.title = img.title;
-    let count = Array.from(img.alt.split(/[\ufe00-\ufe0f]/).join(""));
-    if (count.length > 1) {
-        emojidom.innerText = count.join("\u200d");
-        console.log(count);
-    }
-    else emojidom.innerText = img.alt;
-    img.insertAdjacentElement("beforebegin", emojidom);
-    var post = img.parentElement;
-    post.removeChild(img);
-}
-
-function checkMoji() {
-    Array.from(document.querySelectorAll("img.emoji")).forEach(undoMoji);
-}
-
-
 // Logo
 
 function logo() {
