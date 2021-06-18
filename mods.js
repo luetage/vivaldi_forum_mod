@@ -5,9 +5,9 @@ function undoMoji(img){
     var emojidom = document.createElement("span");
     emojidom.className = "vm-emoji";
     emojidom.title = img.title;
-    let count = Array.from(img.alt.match(emoji));
-    if (count.length > 1) {
-        emojidom.innerText = count.join("\u200d");
+    let e = img.alt.match(emoji);
+    if (Symbol.iterator in Object(e)) {
+      emojidom.innerText = Array.from(e).join("\u200d");
     }
     else emojidom.innerText = img.alt;
     img.insertAdjacentElement("beforebegin", emojidom);
@@ -16,7 +16,7 @@ function undoMoji(img){
 }
 
 function checkMoji() {
-    Array.from(document.querySelectorAll("img.emoji")).forEach(undoMoji);
+    Array.from(document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji)")).forEach(undoMoji);
 }
 
 
