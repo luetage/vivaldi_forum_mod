@@ -16,7 +16,7 @@ function undoMoji(img){
 }
 
 function checkMoji() {
-    Array.from(document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji)")).forEach(undoMoji);
+    Array.from(document.querySelectorAll("img.emoji:not(#emoji-dialog.open img.emoji)")).forEach(undoMoji);
 }
 
 
