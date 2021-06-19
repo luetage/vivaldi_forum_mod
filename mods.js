@@ -11,12 +11,12 @@ function undoMoji(img){
     }
     else emojidom.innerText = img.alt;
     img.insertAdjacentElement("beforebegin", emojidom);
-    var post = img.parentElement;
+    var post = img.parentElement;e
     post.removeChild(img);
 }
 
 function checkMoji() {
-    Array.from(document.querySelectorAll("img.emoji:not(#emoji-dialog.open img.emoji)")).forEach(undoMoji);
+    Array.from(document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji)")).forEach(undoMoji);
 }
 
 
