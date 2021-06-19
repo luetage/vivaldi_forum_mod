@@ -14,7 +14,7 @@ function defaultSetup() {
             {'themeName': 'vfm_PaperColor_Dark', 'colorBg': '#1c1c1c','colorFg': '#d0d0d0', 'colorHi': '#afd700', 'colorAc': '#5f8787', 'colorLi': '#00afaf', 'colorCo': '#ff5faf', 'colorDd': '#5f8787'},
             {'themeName': 'vfm_PaperColor_Light', 'colorBg': '#eeeeee','colorFg': '#444444', 'colorHi': '#d75f00', 'colorAc': '#005f87', 'colorLi': '#005faf', 'colorCo': '#d70087', 'colorDd': '#005f87'},
             {'themeName': 'vfm_Rigel', 'colorBg': '#002635','colorFg': '#e6e6dc', 'colorHi': '#00cccc', 'colorAc': '#1c8db2', 'colorLi': '#1c8db2', 'colorCo': '#7eb2dd', 'colorDd': '#517f8d'},
-            {'themeName': 'vfm_Fireball', 'colorBg': '#4a525a','colorFg': '#dddddd', 'colorHi': '#a8ffd2', 'colorAc': '#bcc7d2', 'colorLi': '#ffa9c0', 'colorCo': '#1fd6ff', 'colorDd': '#ffa9c0'},
+            {'themeName': 'vfm_Fireball', 'colorBg': '#4a525a','colorFg': '#dddddd', 'colorHi': '#a8ffd2', 'colorAc': '#bcc7d2', 'colorLi': '#ffa9c0', 'colorCo': '#1fd6ff', 'colorDd': '#bcc7d2'},
         ],
         'VFM_MODS': {
             'advancedFormatting': false,
