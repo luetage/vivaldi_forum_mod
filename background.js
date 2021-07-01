@@ -24,7 +24,8 @@ function defaultSetup() {
             'userID': false,
             'signatureMod': false,
             'square': false,
-            'systemEmoji': false
+            'systemEmoji': false,
+            'lessHistory': false
         },
         'VFM_USER_CSS': false,
         'VFM_SCHEDULE': {

@@ -183,6 +183,14 @@
         "message": "Square avatars everywhere!",
         "description": "Options: Description of square avatars mod"
     },
+    "lessHistory": {
+      "message": "Have Less History (no scroll-based entries)",
+      "description": "Options: Title of less history mod"
+    },
+    "lessHistoryDesc": {
+      "message": "Stop the forum from creating additional history entries when you scroll",
+      "description": "Options: Description of less history mod"
+    },
     "userCSS": {
         "message": "User CSS",
         "description": "Options: User CSS headline"

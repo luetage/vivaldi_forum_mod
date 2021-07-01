@@ -1,4 +1,19 @@
 // Modifications
+
+// Prevent forum from creating history entries every scroll
+let currentURL = "";
+function lessHistory () {
+  let script = document.createElement("script");
+  script.innerHTML = `
+    function newReplaceState (stateObj, title, url) {
+      currentURL = url;
+    }
+    history.replaceState = newReplaceState;
+    window.history.replaceState = newReplaceState;
+    console.log("less history mod activated!");
+`;
+  document.body.appendChild(script);
+}
 // Use system emoji
 
 function undoMoji(img){
@@ -93,6 +108,7 @@ chrome.storage.sync.get ({
     if (mods.square === true) loadFile('mods/square-avatars.css');
     if (mods.signatureMod === true) loadFile('mods/signature-mod.css');
     if (mods.advancedFormatting === true) loadFile('mods/advanced-formatting.css');
+    if (mods.lessHistory === true) lessHistory();
     if (mods.bookmarks === true) _bookmarks();
     if (mods.headerScroll === true) {
         _top = 64;
