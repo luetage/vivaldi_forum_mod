@@ -1,7 +1,7 @@
 // Modifications
 
 // Prevent forum from creating history entries every scroll
-let currentURL = "";
+let currentURL = location.href;
 function lessHistory () {
   let script = document.createElement("script");
   script.innerHTML = `
@@ -10,6 +10,16 @@ function lessHistory () {
     }
     history.replaceState = newReplaceState;
     window.history.replaceState = newReplaceState;
+
+    function newPushState (state, title, url) {
+      currentURL = url;
+      history.pushState(state, title, url);
+    }
+
+    history.replaceState = newReplaceState;
+    window.history.replaceState = newReplaceState;
+    history.pushState = newPushState;
+    window.history.pushState =
     console.log("less history mod activated!");
 `;
   document.body.appendChild(script);
