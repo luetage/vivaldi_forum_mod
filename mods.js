@@ -11,7 +11,7 @@ function undoMoji(img){
     }
     else emojidom.innerText = img.alt;
     img.insertAdjacentElement("beforebegin", emojidom);
-    var post = img.parentElement;e
+    var post = img.parentElement;
     post.removeChild(img);
 }
 
