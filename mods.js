@@ -10,16 +10,15 @@ function lessHistory () {
     }
     history.replaceState = newReplaceState;
     window.history.replaceState = newReplaceState;
+    (function(proxied) {
+      history.push = function(state, title, url) {
+        currentURL = url;
+        console.log(url);
+        return proxied.apply(this, arguments);
+      };
+    })(history.push);
 
-    function newPushState (state, title, url) {
-      currentURL = url;
-      history.pushState(state, title, url);
-    }
 
-    history.replaceState = newReplaceState;
-    window.history.replaceState = newReplaceState;
-    history.pushState = newPushState;
-    window.history.pushState =
     console.log("less history mod activated!");
 `;
   document.body.appendChild(script);
@@ -118,7 +117,7 @@ chrome.storage.sync.get ({
     if (mods.square === true) loadFile('mods/square-avatars.css');
     if (mods.signatureMod === true) loadFile('mods/signature-mod.css');
     if (mods.advancedFormatting === true) loadFile('mods/advanced-formatting.css');
-    if (mods.lessHistory === true) lessHistory();
+    if (mods.lessHistory === true) { lessHistory() } else { currentURL = null };
     if (mods.bookmarks === true) _bookmarks();
     if (mods.headerScroll === true) {
         _top = 64;
