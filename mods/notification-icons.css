@@ -11,11 +11,12 @@
     width: 20px;
     padding-top: 2px;
     padding-left: 1px;
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     font-size: 14px;
 }
 .notification-list li[data-nid^="new_post"]::before, .notifications-list li[data-nid^="new_post"]::before {
-    content: "\f040";
+    content: "\f303";
 }
 .notification-list li[data-nid^="edit_post"]::before, .notifications-list li[data-nid^="edit_post"]::before {
     content: "\f044";
@@ -34,5 +35,5 @@
 }
 /* mentioned (no specific data-nid yet it seems) */
 .notification-list li[data-nid^="tid"]::before, .notifications-list li[data-nid^="tid"]::before {
-    content: "\f27a";
+    content: "\f4ad";
 }

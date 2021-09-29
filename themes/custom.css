@@ -942,13 +942,12 @@ span.votes a {
     vertical-align: unset;
 }
 span.votes .fa-chevron-up::before {
-    content: "\f087" !important;
+    content: "\f164" !important;
     color: var(--colorFg);
     font-size: 16px;
 }
 span.votes .upvoted .fa-chevron-up::before {
     color: var(--colorHi);
-    font-weight: bold;
 }
 
 /* Emoji Picker */
