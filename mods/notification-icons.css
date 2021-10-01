@@ -19,7 +19,7 @@
     content: "\f303";
 }
 .notification-list li[data-nid^="edit_post"]::before, .notifications-list li[data-nid^="edit_post"]::before {
-    content: "\f044";
+    content: "\f14b";
 }
 .notification-list li[data-nid^="upvote"]::before, .notifications-list li[data-nid^="upvote"]::before {
     content: "\f164";
