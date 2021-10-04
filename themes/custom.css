@@ -945,6 +945,7 @@ span.votes .fa-chevron-up::before {
     content: "\f164" !important;
     color: var(--colorFg);
     font-size: 16px;
+    font-weight: 400;
 }
 span.votes .upvoted .fa-chevron-up::before {
     color: var(--colorHi);
