@@ -7,6 +7,9 @@
 .fa-angle-up::before {
     content: "\f0d8" !important;
 }
+.fa-2x {
+    font-size: 1.5em !important;
+}
 
 /* Advanced search panel cursor */
 #advanced-search .panel-default>.panel-heading:hover {

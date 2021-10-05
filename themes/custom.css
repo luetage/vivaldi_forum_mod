@@ -166,9 +166,6 @@ li .notif-dropdown-link a:hover {
     color: var(--colorFg);
     z-index: 1002;
 }
-.fa-2x {
-    font-size: 1.5em;
-}
 
 .pagination-block ul.dropdown-menu.dropdown-menu-right a {
     color: var(--colorFg) !important;
@@ -327,7 +324,7 @@ small.pull-right a {
 }
 .topic .posts .timeline-event .timeline-text {
     color: var(--colorFg2);
-    opacity: 0.66;
+    opacity: 0.33;
 }
 div[widget-area=header] a {
     color: var(--colorLi);
