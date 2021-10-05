@@ -166,6 +166,9 @@ li .notif-dropdown-link a:hover {
     color: var(--colorFg);
     z-index: 1002;
 }
+.fa-2x {
+    font-size: 1.5em;
+}
 
 .pagination-block ul.dropdown-menu.dropdown-menu-right a {
     color: var(--colorFg) !important;
