@@ -296,9 +296,12 @@ hr {
 .topic .posts>[component=post], .topic .timeline-event {
     border-bottom-color: var(--colorBgL) !important;
 }
+.necro-post .timeline-event {
+    color: var(--colorBgL);
+}
 .topic .timeline-event+:not(.timeline-event):before, .topic .timeline-event:before {
     border-bottom-color: var(--colorBg);
-  }
+}
 small.pull-right a {
     color: var(--colorLi) !important;
 }
@@ -321,10 +324,6 @@ small.pull-right a {
 }
 .human-readable-number {
     color: var(--colorFg) !important;
-}
-.topic .posts .timeline-event .timeline-text {
-    color: var(--colorFg2);
-    opacity: 0.33;
 }
 div[widget-area=header] a {
     color: var(--colorLi);
