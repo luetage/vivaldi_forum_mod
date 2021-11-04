@@ -378,6 +378,10 @@ blockquote, .topic [component="post/replies"] {
 .help-block {
     color: var(--colorFg2);
 }
+.selection-tooltip-container {
+    background-color: var(--colorBgL);
+    border-color: var(--colorBgM);
+}
 /* tags */
 .category>ul>li .tag-list .tag {
     background-color: var(--colorBgL);
@@ -693,11 +697,8 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chats-list>li, .chats-list>li.unread {
     border-bottom-color: var(--colorBgM);
 }
-
-element.style {
-}
 .chats-list>li .avatar-placeholder {
-  background-color: var(--colorBgD);
+    background-color: var(--colorBgD);
 }
 .chat-modal .chat-content li.chat-message .chat-timestamp, .expanded-chat .chat-content li.chat-message .chat-timestamp {
     color: var(--colorFg2);
