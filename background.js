@@ -7,7 +7,7 @@ function defaultSetup() {
             'colors': {'colorBg': '', 'colorFg': '', 'colorAc': '', 'colorHi': '', 'colorLi': '', 'colorCo': '', 'colorDd': '', 'colorBgD': '', 'colorBgC': '', 'colorBgL': '', 'colorBgM': '', 'colorBgH': '', 'colorFg2': '', 'colorAcFg': '', 'colorLi2': '', 'colorCo2': '', 'colorDdFg': '', 'colorDdL': '', 'colorDdM': '', 'colorDdH': ''},
         },
         'VFM_THEMES': [
-            {'themeName': 'vfm_Dracula', 'colorBg': '#282a36','colorFg': '#f8f8f2', 'colorHi': '#50fa7b', 'colorAc': '#44475a', 'colorLi': '#ff79c6', 'colorCo': '#bd93f9', 'colorDd': '#6272a4'},
+            {'themeName': 'vfm_Dracula', 'colorBg': '#282a36','colorFg': '#f8f8f2', 'colorHi': '#50fa7b', 'colorAc': '#44475a', 'colorLi': '#ff79c6', 'colorCo': '#9580ff', 'colorDd': '#6272a4'},
             {'themeName': 'vfm_Solarized_Light', 'colorBg': '#fdf6e3','colorFg': '#586e75', 'colorHi': '#af8700', 'colorAc': '#eee8d5', 'colorLi': '#268bd2', 'colorCo': '#2aa198', 'colorDd': '#657b83'},
             {'themeName': 'vfm_Scream', 'colorBg': '#fff7fd','colorFg': '#472b15', 'colorHi': '#007681', 'colorAc': '#2f1d0e', 'colorLi': '#ff8a80', 'colorCo': '#897eff', 'colorDd': '#efe6ee'},
             {'themeName': 'vfm_Tokyo_Night', 'colorBg': '#1a1b26','colorFg': '#a9b1d6', 'colorHi': '#ff9e64', 'colorAc': '#414868', 'colorLi': '#f7768e', 'colorCo': '#7aa2f7', 'colorDd': '#24283b'},
