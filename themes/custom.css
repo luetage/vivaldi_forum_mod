@@ -210,6 +210,10 @@ html .topic .unanswered {
     border-right-color: var(--colorHi) !important;
     border-bottom-color: var(--colorHi) !important;
 }
+.posts [component=post][data-index="-1"].isSolved:before {
+    color: var(--colorBg);
+    background-color: var(--colorHi);
+}
 .posts [component=post][data-index="-1"].isSolved:after {
     color: var(--colorHi) !important;
 }

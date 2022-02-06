@@ -100,14 +100,6 @@ a[component="header/profilelink"] i, .user-status i {
     opacity: 1;
 }
 
-/*
-Option to dismiss community notifications
-The notification is being shown by default.js, if not dismissed previously.
-*/
-.shadow-box3 {
-    display: none !important;
-}
-
 /* theme preview mod */
 .theme-preview .themebox {
     display: inline-block;
