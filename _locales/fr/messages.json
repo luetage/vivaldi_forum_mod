@@ -148,7 +148,7 @@
         "description": "Options: Title of compact posts mod"
     },
     "compactPostsDesc": {
-        "message": "Removes margin between user name and content. Can break layout.",
+        "message": "Removes margin between user name and content. May break layout.",
         "description": "Options: Description of compact posts mod"
     },
     "customNotification": {
