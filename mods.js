@@ -88,6 +88,7 @@ chrome.storage.sync.get ({
 }, get => {
     const mods = get.VFM_MODS;
     console.log(mods);
+    if (mods.compactPosts === true) loadFile('mods/compact-posts.css');
     if (mods.notificationIcons === true) loadFile('mods/notification-icons.css');
     if (mods.userID === true) loadFile('mods/userID.css');
     if (mods.square === true) loadFile('mods/square-avatars.css');

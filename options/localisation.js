@@ -31,6 +31,8 @@ function localisation() {
     document.getElementById('headerScroll').title = chrome.i18n.getMessage('hideHeaderDesc');
     document.getElementById('bookmarks').innerText = chrome.i18n.getMessage('navBookmarks');
     document.getElementById('bookmarks').title = chrome.i18n.getMessage('navBookmarksDesc');
+    document.getElementById('compactPosts').innerText = chrome.i18n.getMessage('compactPosts');
+    document.getElementById('compactPosts').title = chrome.i18n.getMessage('compactPostsDesc');
     document.getElementById('notificationIcons').innerText = chrome.i18n.getMessage('customNotification');
     document.getElementById('notificationIcons').title = chrome.i18n.getMessage('customNotificationDesc');
     document.getElementById('systemEmoji').innerText = chrome.i18n.getMessage('systemEmoji');

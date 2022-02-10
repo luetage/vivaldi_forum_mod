@@ -143,6 +143,14 @@
         "message": "Mostra un link alla pagina dei segnalibri nella barra di navigazione principale per un rapido accesso",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Compact Posts",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Removes margin between user name and content. Can break layout.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Icone notifiche personalizzate",
         "description": "Options: Title of custom notification icons mod"

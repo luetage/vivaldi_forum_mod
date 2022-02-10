@@ -20,6 +20,7 @@ function defaultSetup() {
             'advancedFormatting': false,
             'headerScroll': false,
             'bookmarks': false,
+            'compactPosts': false,
             'notificationIcons': false,
             'userID': false,
             'signatureMod': false,

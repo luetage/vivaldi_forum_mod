@@ -90,101 +90,51 @@ function discord() {
 
 // Option to dismiss community notifications
 
-// function dismiss() {
-//   chrome.storage.sync.get({ VFM_NOTIF: "" }, (get) => {
-//     const check = get.VFM_NOTIF;
-//     check.notifOld = notifNew;
-//     check.notifState = "off";
-//     chrome.storage.sync.set({ VFM_NOTIF: check }, () => {
-//       let remove = document.getElementById("vfmNotification");
-//       remove.parentNode.removeChild(remove);
-//     });
-//   });
-// }
-
-// function showNotification() {
-//   const style = document.createElement("style");
-//   style.id = "vfmNotification";
-//   style.innerHTML = ".shadow-box3 {display: block !important}";
-//   document.getElementsByTagName("head")[0].appendChild(style);
-//   const content = document.querySelector(".shadow-box3 .notification");
-//   const dis = document.createElement("a");
-//   dis.style.cursor = "pointer";
-//   dis.innerHTML = `&emsp;[ ${chrome.i18n.getMessage("dismiss")} ]`;
-//   content.appendChild(dis);
-//   dis.addEventListener("click", dismiss);
-// }
-
-// function notificationCheck() {
-//   notif = document.querySelector(".shadow-box3");
-//   console.log("happy");
-//   if (notif) {
-//     notifNew = document.querySelector(".shadow-box3 .notification").textContent;
-//     chrome.storage.sync.get(
-//       {
-//         VFM_NOTIF: {
-//           notifState: "on",
-//           notifOld: "",
-//         },
-//       },
-//       (get) => {
-//         const check = get.VFM_NOTIF;
-//         if (check.notifState === "on") showNotification();
-//         else if (check.notifState === "off" && check.notifOld !== notifNew) {
-//           check.notifState = "on";
-//           chrome.storage.sync.set({ VFM_NOTIF: check });
-//           showNotification();
-//         } else console.log("Community Notification: " + notifNew);
-//       }
-//     );
-//   }
-// }
-
-function hideNotification(notif) {
-  const style = document.createElement("style");
-  style.id = "vfm-notif";
-  style.innerHTML = ".shadow-box3 {display: none !important}";
-  document.getElementsByTagName("head")[0].appendChild(style);
-  console.log(`Community Notification: ${notif.textContent}`);
-}
-
-function dismiss(notif) {
+function dismiss() {
   chrome.storage.sync.get({ VFM_NOTIF: "" }, (get) => {
     const check = get.VFM_NOTIF;
     check.notifOld = notifNew;
     check.notifState = "off";
     chrome.storage.sync.set({ VFM_NOTIF: check }, () => {
-      hideNotification(notif);
+      let remove = document.getElementById("vfm-notif");
+      remove.parentNode.removeChild(remove);
     });
   });
 }
 
-function showOption(notif) {
+function showNotification() {
+  const style = document.createElement("style");
+  style.id = "vfm-notif";
+  style.innerHTML = ".shadow-box3 {display: block !important}";
+  document.getElementsByTagName("head")[0].appendChild(style);
+  const content = document.querySelector(".shadow-box3 .notification");
   const dis = document.createElement("a");
   dis.style.cursor = "pointer";
   dis.innerHTML = `&emsp;[ ${chrome.i18n.getMessage("dismiss")} ]`;
-  notif.appendChild(dis);
-  dis.addEventListener("click", dismiss(notif));
+  content.appendChild(dis);
+  dis.addEventListener("click", dismiss);
 }
 
 function notificationCheck() {
-  notif = document.querySelector(".shadow-box3 .notification");
+  notif = document.querySelector(".shadow-box3");
+  console.log("happy");
   if (notif) {
+    notifNew = document.querySelector(".shadow-box3 .notification").textContent;
     chrome.storage.sync.get(
-      { VFM_NOTIF: { notifState: "on", notifOld: "" } },
+      {
+        VFM_NOTIF: {
+          notifState: "on",
+          notifOld: "",
+        },
+      },
       (get) => {
         const check = get.VFM_NOTIF;
-        if (check.notifState === "on") {
-          showOption(notif);
-        } else if (
-          check.notifState === "off" &&
-          check.notifOld !== notif.textContent
-        ) {
+        if (check.notifState === "on") showNotification();
+        else if (check.notifState === "off" && check.notifOld !== notifNew) {
           check.notifState = "on";
-          chrome.storage.sync.set({ VFM_NOTIF: check }, () => {
-            showOption(notif);
-          });
-        } else hideNotification(notif);
+          chrome.storage.sync.set({ VFM_NOTIF: check });
+          showNotification();
+        } else console.log("Community Notification: " + notifNew);
       }
     );
   }

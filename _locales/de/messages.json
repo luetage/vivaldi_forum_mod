@@ -143,6 +143,14 @@
         "message": "Zeigt einen Link zu den Lesezeichen in der Navigationsleiste an.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Kompakte Beiträge",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Entfernt Abstand zwischen Nutzernamen und Inhalt eines Beitrags. Kann Fehler im Layout verursachen. w",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Symbole für Benachrichtigungen",
         "description": "Options: Title of custom notification icons mod"
