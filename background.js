@@ -188,6 +188,39 @@ function importFromForum() {
 }
 
 
+/* Change or create theme */
+
+function changeOrCreateTheme() {
+    let code = arguments[0].theme;
+    chrome.storage.sync.get({
+        'VFM_THEMES': '',
+        'VFM_CURRENT_THEME': ''
+    }, function(get) {
+        let vt = get.VFM_THEMES;
+        let vct = get.VFM_CURRENT_THEME;
+        let nameCheck = /^[a-zA-Z0-9- ]*$/.test(code.themeName);
+        let index = -1;
+        if (nameCheck === true && code.themeName.length < 26) {
+            code.themeName = 'vfm_' + code.themeName.replace(/ /g,'_').trim();
+            index = vt.findIndex(x => x.themeName.toLowerCase() === code.themeName.toLowerCase());
+        }
+        else {
+            code.themeName = 'vfm_' + Date.now();
+        }
+        vct.selected = code.themeName;
+        if (index !== -1) vt[index] = code;
+        else vt.push(code);
+        chrome.storage.sync.set({
+            'VFM_THEMES': vt,
+            'VFM_CURRENT_THEME': vct
+        }, function() {
+            activateTheme();
+            chrome.runtime.sendMessage({message: 'options update theme'});
+        })
+    })
+}
+
+
 /* Update Tabs */
 
 function sendToTabs(reason) {
@@ -345,6 +378,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         defaultSetup();
         sendResponse({message: 'akn'});
     }
+})
+chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+    if (request.message === 'external edit theme' && request.theme) changeOrCreateTheme.apply(this, arguments);
 })
 chrome.alarms.onAlarm.addListener(function(alarm) {
     if (alarm.name === 'themeChange') {
