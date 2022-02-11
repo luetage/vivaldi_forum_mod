@@ -144,11 +144,11 @@
         "description": "Options: Description of bookmarks in navigation mod"
     },
     "compactPosts": {
-        "message": "Compact Posts",
+        "message": "Messages compacts",
         "description": "Options: Title of compact posts mod"
     },
     "compactPostsDesc": {
-        "message": "Removes margin between user name and content. May break layout.",
+        "message": "Supprime la marge entre le nom d'utilisateur et le corps du message. Peut rompre la mise en page.",
         "description": "Options: Description of compact posts mod"
     },
     "customNotification": {
