@@ -86,8 +86,8 @@ function add_copy_code() {
 function toolaction(e) {
   if (e.path[0].classList.contains("vfm-link")) {
     const data = e.path[5].attributes[3].value;
-    const create = `https://forum.vivaldi.net/post/${data}`;
-    navigator.clipboard.writeText(create);
+    const copy = `https://forum.vivaldi.net/post/${data}`;
+    navigator.clipboard.writeText(copy);
   } else {
     e.path[4].children[0].style.display = "block";
   }
@@ -95,32 +95,36 @@ function toolaction(e) {
 }
 
 function tools(s) {
-  const tools = document.querySelectorAll(".post-tools");
-  const transLink = chrome.i18n.getMessage("link");
-  const transSign = chrome.i18n.getMessage("signature");
-  tools.forEach((tool) => {
-    if (!tool.classList.contains("vfm-tools")) {
-      const link = document.createElement("a");
-      link.innerHTML = transLink;
-      link.classList.add("no-select", "vfm-link");
-      tool.appendChild(link);
-      link.addEventListener("click", toolaction);
-      if (s === "on") {
-        const signature = tool.parentNode.parentNode.previousElementSibling;
-        if (
-          signature !== null &&
-          signature.classList.contains("post-signature")
-        ) {
-          const sign = document.createElement("a");
-          sign.innerHTML = transSign;
-          sign.classList.add("no-select", "vfm-sign");
-          tool.appendChild(sign);
-          sign.addEventListener("click", toolaction);
+  const topic = document.querySelector(".topic");
+  if (topic) {
+    const tools = Array.from(topic.getElementsByClassName("post-tools"));
+    const transLink = chrome.i18n.getMessage("link");
+    const transSign = chrome.i18n.getMessage("signature");
+    tools.forEach((tool) => {
+      const del = tool.parentNode.parentNode.parentNode.parentNode;
+      if (
+        !tool.classList.contains("vfm-tools") &&
+        !del.classList.contains("deleted")
+      ) {
+        const link = document.createElement("a");
+        link.innerHTML = transLink;
+        link.classList.add("no-select", "vfm-link");
+        tool.appendChild(link);
+        link.addEventListener("click", toolaction);
+        if (s === "on") {
+          const sig = tool.parentNode.parentNode.previousElementSibling;
+          if (sig !== null && sig.classList.contains("post-signature")) {
+            const sign = document.createElement("a");
+            sign.innerHTML = transSign;
+            sign.classList.add("no-select", "vfm-sign");
+            tool.appendChild(sign);
+            sign.addEventListener("click", toolaction);
+          }
         }
+        tool.classList.add("vfm-tools");
       }
-      tool.classList.add("vfm-tools");
-    }
-  });
+    });
+  }
 }
 
 // Unofficial Discord and Contribute link in footer
