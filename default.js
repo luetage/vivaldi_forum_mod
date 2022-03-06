@@ -81,6 +81,48 @@ function add_copy_code() {
   }, 2000);
 }
 
+// Link and signature button for post tools
+
+function toolaction(e) {
+  if (e.path[0].classList.contains("vfm-link")) {
+    const data = e.path[5].attributes[3].value;
+    const create = `https://forum.vivaldi.net/post/${data}`;
+    navigator.clipboard.writeText(create);
+  } else {
+    e.path[4].children[0].style.display = "block";
+  }
+  e.path[0].style = "text-decoration: none; cursor: default;";
+}
+
+function tools(s) {
+  const tools = document.querySelectorAll(".post-tools");
+  const transLink = chrome.i18n.getMessage("link");
+  const transSign = chrome.i18n.getMessage("signature");
+  tools.forEach((tool) => {
+    if (!tool.classList.contains("vfm-tools")) {
+      const link = document.createElement("a");
+      link.innerHTML = transLink;
+      link.classList.add("no-select", "vfm-link");
+      tool.appendChild(link);
+      link.addEventListener("click", toolaction);
+      if (s === "on") {
+        const signature = tool.parentNode.parentNode.previousElementSibling;
+        if (
+          signature !== null &&
+          signature.classList.contains("post-signature")
+        ) {
+          const sign = document.createElement("a");
+          sign.innerHTML = transSign;
+          sign.classList.add("no-select", "vfm-sign");
+          tool.appendChild(sign);
+          sign.addEventListener("click", toolaction);
+        }
+      }
+      tool.classList.add("vfm-tools");
+    }
+  });
+}
+
 // Unofficial Discord and Contribute link in footer
 
 function discord() {
@@ -117,7 +159,6 @@ function showNotification() {
 
 function notificationCheck() {
   notif = document.querySelector(".shadow-box3");
-  console.log("happy");
   if (notif) {
     notifNew = document.querySelector(".shadow-box3 .notification").textContent;
     chrome.storage.sync.get(
