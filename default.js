@@ -83,15 +83,16 @@ function add_copy_code() {
 
 // Link and signature button for post tools
 
-function toolaction(e) {
-  if (e.path[0].classList.contains("vfm-link")) {
-    const data = e.path[5].attributes[3].value;
-    const copy = `https://forum.vivaldi.net/post/${data}`;
+function toolaction(e, o) {
+  if (e.target.classList.contains("vfm-link")) {
+    const pid = o.getAttribute("data-pid");
+    const copy = `https://forum.vivaldi.net/post/${pid}`;
     navigator.clipboard.writeText(copy);
   } else {
-    e.path[4].children[0].style.display = "block";
+    o.style.display = "block";
   }
-  e.path[0].style = "text-decoration: none; cursor: default;";
+  e.target.style.textDecoration = "none";
+  e.target.style.cursor = "default";
 }
 
 function tools(s) {
@@ -101,16 +102,17 @@ function tools(s) {
     const transLink = chrome.i18n.getMessage("link");
     const transSign = chrome.i18n.getMessage("signature");
     tools.forEach((tool) => {
-      const del = tool.parentNode.parentNode.parentNode.parentNode;
+      const post = tool.parentNode.parentNode.parentNode.parentNode;
       if (
         !tool.classList.contains("vfm-tools") &&
-        !del.classList.contains("deleted")
+        !post.classList.contains("deleted")
       ) {
         const link = document.createElement("a");
         link.innerHTML = transLink;
         link.classList.add("no-select", "vfm-link");
         tool.appendChild(link);
-        link.addEventListener("click", toolaction);
+        const hlp1 = (event) => toolaction(event, post);
+        link.addEventListener("click", hlp1);
         if (s === "on") {
           const sig = tool.parentNode.parentNode.previousElementSibling;
           if (sig !== null && sig.classList.contains("post-signature")) {
@@ -118,7 +120,8 @@ function tools(s) {
             sign.innerHTML = transSign;
             sign.classList.add("no-select", "vfm-sign");
             tool.appendChild(sign);
-            sign.addEventListener("click", toolaction);
+            const hlp2 = (event) => toolaction(event, sig);
+            sign.addEventListener("click", hlp2);
           }
         }
         tool.classList.add("vfm-tools");
