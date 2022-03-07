@@ -88,11 +88,13 @@ function toolaction(e, o) {
     const pid = o.getAttribute("data-pid");
     const copy = `https://forum.vivaldi.net/post/${pid}`;
     navigator.clipboard.writeText(copy);
+    e.target.classList.add("vfm-highlight");
+    setTimeout(() => e.target.classList.remove("vfm-highlight"), 3333);
   } else {
     o.style.display = "block";
+    e.target.style.textDecoration = "none";
+    e.target.style.cursor = "default";
   }
-  e.target.style.textDecoration = "none";
-  e.target.style.cursor = "default";
 }
 
 function tools(s) {

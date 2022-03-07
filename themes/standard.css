@@ -39,6 +39,11 @@ li[data-nid^="new_post"]::before, li[data-nid^="edit_post"]::before, li[data-nid
     color: #f4ff9d;
 }
 
+/* Highlight post-tools link button on click */
+small.pull-right a.vfm-highlight {
+    color: #c91106 !important;
+}
+
 /* Theme preview */
 .themebox-title {
     color: #333;

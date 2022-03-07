@@ -1023,6 +1023,11 @@ span.votes .upvoted .fa-chevron-up::before {
     color: var(--colorFg);
 }
 
+/* Highlight post-tools link button on click */
+small.pull-right a.vfm-highlight {
+    color: var(--colorHi) !important;
+}
+
 /* Notification icons */
 li[data-nid^="new_post"]::before, li[data-nid^="edit_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before, #menu .notification-list li .mark-read, .header .notification-list li .mark-read {
     color: var(--colorDdFg) !important;
