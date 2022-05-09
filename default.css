@@ -107,3 +107,8 @@ a[component="header/profilelink"] i, .user-status i {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* community notifications */
+.shadow-box3 {
+    display: none !important;
+}

@@ -167,25 +167,27 @@ function showNotification() {
 }
 
 function notificationCheck() {
-  notif = document.querySelector(".shadow-box3");
-  if (notif) {
-    notifNew = document.querySelector(".shadow-box3 .notification").textContent;
-    chrome.storage.sync.get(
-      {
-        VFM_NOTIF: {
-          notifState: "on",
-          notifOld: "",
+  setTimeout(() => {
+    notif = document.querySelector(".shadow-box3");
+    if (notif) {
+      notifNew = document.querySelector(".shadow-box3 .notification").textContent;
+      chrome.storage.sync.get(
+        {
+          VFM_NOTIF: {
+            notifState: "on",
+            notifOld: "",
+          },
         },
-      },
-      (get) => {
-        const check = get.VFM_NOTIF;
-        if (check.notifState === "on") showNotification();
-        else if (check.notifState === "off" && check.notifOld !== notifNew) {
-          check.notifState = "on";
-          chrome.storage.sync.set({ VFM_NOTIF: check });
-          showNotification();
-        } else console.log("Community Notification: " + notifNew);
-      }
-    );
-  }
+        (get) => {
+          const check = get.VFM_NOTIF;
+          if (check.notifState === "on") showNotification();
+          else if (check.notifState === "off" && check.notifOld !== notifNew) {
+            check.notifState = "on";
+            chrome.storage.sync.set({ VFM_NOTIF: check });
+            showNotification();
+          } else console.log("Community Notification: " + notifNew);
+        }
+      );
+    }
+  }, 2000);
 }
