@@ -681,9 +681,6 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message[data-break=true], .expanded-chat .chat-content li.chat-message[data-break=true] {
      border-top-color: var(--colorBgM);
 }
-.chats-full {
-    margin-top: 10px;
-}
 .chats-full .chats-list>li.unread {
     background-color: unset;
     color: var(--colorCo);
@@ -711,27 +708,22 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message .chat-user a, .expanded-chat .chat-content li.chat-message .chat-user a {
     color: var(--colorFg);
 }
-.chat-modal [component="chat/header"], .chats-full [component="chat/header"], .chat-modal [component="chat/nav-wrapper"] .chat-search input, .chats-full [component="chat/nav-wrapper"] .chat-search input {
-    background-color: var(--colorCo);
-    color: var(--colorBg);
-    text-shadow: none;
+.chat-modal [component="chat/header"], .chats-full [component="chat/header"] {
+    border-bottom-color: var(--colorBgH);
 }
 .chat-modal [component="chat/header"] .members a, .chats-full [component="chat/header"] .members a, .chat-modal [component="chat/header"] .close, .chats-full [component="chat/header"] .close {
-    color: var(--colorBg);
+    color: var(--colorFg);
     text-shadow: none;
 }
-.chat-modal [component="chat/nav-wrapper"] .chat-search, .chats-full [component="chat/nav-wrapper"] .chat-search {
-    border-bottom-color: var(--colorCo);
-}
 .chat-search .form-control::-webkit-input-placeholder {
-    color: var(--colorBg);
+    color: var(--colorFg2);
     opacity: 0.66;
 }
 .chat-modal [component="chat/composer"] [component="chat/input"], .chats-full [component="chat/composer"] [component="chat/input"] {
     border-color: var(--colorBgH);
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"], .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] {
-    border-top-color: var(--colorBgL) !important;
+    border-color: var(--colorBgL) !important;
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
     background-color: var(--colorBgL);
