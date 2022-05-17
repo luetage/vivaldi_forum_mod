@@ -93,7 +93,7 @@ blockquote {
 }
 
 /* Auto-hide header transition */
-#header-menu,
+#vivaldi-header,
 #submenu {
   transition: top 0.857s !important;
 }

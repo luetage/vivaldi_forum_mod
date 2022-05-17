@@ -68,7 +68,7 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
     _top = 64;
     __top = "top: -64px !important";
     _scp = 0;
-    _vivaldiHeader = document.getElementById("header-menu");
+    _vivaldiHeader = document.getElementById("vivaldi-header");
     _subMenu = document.getElementById("submenu");
     window.addEventListener("scroll", autoScroll);
   }
