@@ -6,11 +6,12 @@ body {
 }
 
 /* Header */
+#submenu.nav-up,
+#submenu.nav-down {
+    top: 64px !important;
+}
 #vivaldi-header {
     background-color: var(--colorBg);
-}
-#vlogo img {
-    display: none !important;
 }
 #vlogo {
     fill: var(--colorLi);

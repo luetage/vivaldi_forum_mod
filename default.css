@@ -1,109 +1,144 @@
 /* Default fixes, improvements and modifications for all themes */
 
+/* Header */
+a#vlogo {
+  height: 32px;
+  width: 32px;
+  margin-top: 0px;
+}
+#vlogo img {
+  display: none !important;
+}
+#vivaldinav {
+  left: 52px !important;
+}
+#communitysubmenu {
+  display: none !important;
+}
+#vivaldi-header.nav-up,
+#vivaldi-header.nav-down {
+  top: 0px !important;
+  height: 64px !important;
+}
+#vivaldi-header.nav-up #vivaldilogin,
+#vivaldi-header.nav-down #vivaldilogin {
+  top: -7px !important;
+  height: 64px !important;
+}
+
 /* Font icons */
 .fa-angle-down::before {
-    content: "\f0d7" !important;
+  content: "\f0d7" !important;
 }
 .fa-angle-up::before {
-    content: "\f0d8" !important;
+  content: "\f0d8" !important;
 }
 .fa-2x {
-    font-size: 1.5em !important;
+  font-size: 1.5em !important;
 }
 
 /* Advanced search panel cursor */
-#advanced-search .panel-default>.panel-heading:hover {
-    cursor: pointer;
+#advanced-search .panel-default > .panel-heading:hover {
+  cursor: pointer;
 }
 
 /* Threaded replies cleanup */
 a.threaded-replies.no-select span.replies-last.hidden-xs {
-    display: none;
+  display: none;
 }
 
 /* Reduces the number of font sizes used in posts */
-.topic .threaded-replies, small.pull-left, .topic span.timeago, .post-signature, blockquote {
-    font-size: 13px !important;
+.topic .threaded-replies,
+small.pull-left,
+.topic span.timeago,
+.post-signature,
+blockquote {
+  font-size: 13px !important;
 }
 
 /* Correct cursor over vote count span (clickable) */
 .pull-right .votes span {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Blockquote search fontsize/margin fix */
 .search blockquote {
-    font-size: 100%;
-    margin: 8px 0;
-    padding: 0 10px;
+  font-size: 100%;
+  margin: 8px 0;
+  padding: 0 10px;
 }
 
 /* Line breaks for code in topics (no horizontal scroll) */
 .topic .posts .content pre code {
-    white-space: pre-wrap !important;
+  white-space: pre-wrap !important;
 }
 
 /* Code vertical scrollbar from markdown to hljs */
 .topic .posts .content pre {
-    max-height: unset !important;
+  max-height: unset !important;
 }
 .markdown-highlight .hljs {
-    max-height: 350px;
+  max-height: 350px;
 }
 
 /* Disabled user-select for logged-in menu (prevents accidental highlighting of dropdown text when dropdown isn't expanded) */
 #logged-in-menu.nav.navbar-nav.navbar-right {
-    user-select: none;
+  user-select: none;
 }
 
 /* Auto-hide header transition */
-#header-menu, #submenu {
-    transition: top 0.857s !important;
+#header-menu,
+#submenu {
+  transition: top 0.857s !important;
 }
 
 /* Position status circles in user menu */
-a[component="header/profilelink"] i, .user-status i {
-    vertical-align: unset !important;
+a[component="header/profilelink"] i,
+.user-status i {
+  vertical-align: unset !important;
 }
 
 /* Alert margin on Unread page */
 #new-topics-alert {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Copy all code button */
 .copy-all-code-button {
-    position: absolute;
-    right: 25px;
-    font-weight: bold;
-    opacity: 0;
-    padding: 4px;
-    border: none;
-    border-radius: 2px;
-    outline: none;
+  position: absolute;
+  right: 25px;
+  font-weight: bold;
+  opacity: 0;
+  padding: 4px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
 }
-.markdown-highlight code[data-theme-preview-checked="true"] + .copy-all-code-button {
-    display: none;
+.markdown-highlight
+  code[data-theme-preview-checked="true"]
+  + .copy-all-code-button {
+  display: none;
 }
-.markdown-highlight:hover .copy-all-code-button, .copy-all-code-button:hover {
-    opacity: 1;
+.markdown-highlight:hover .copy-all-code-button,
+.copy-all-code-button:hover {
+  opacity: 1;
 }
 
 /* theme preview mod */
 .theme-preview .themebox {
-    display: inline-block;
-    margin: 15px 15px 5px 0;
-    vertical-align: top;
-    width: 110px
+  display: inline-block;
+  margin: 15px 15px 5px 0;
+  vertical-align: top;
+  width: 110px;
 }
 .theme-preview .themebox .themebox-image svg {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 .theme-preview .themebox .themebox-title {
-    text-align: center;
-    font-weight: 700;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  text-align: center;
+  font-weight: 700;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
