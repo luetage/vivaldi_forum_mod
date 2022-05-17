@@ -12,7 +12,7 @@ body {
 #vivaldilogo img {
     display: none !important;
 }
-#vivaldilogo {
+#vlogo {
     fill: var(--colorLi);
 }
 .navbar-default .btn-link {
