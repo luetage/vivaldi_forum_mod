@@ -29,7 +29,7 @@ body {
 #vivaldimenu a.current, #vivaldimenu a:hover {
     color: var(--colorLi);
 }
-#search-button {
+#search-form #search-button {
     color: var(--colorFg);
     background-color: var(--colorBg);
 }
