@@ -25,6 +25,12 @@ a#vlogo {
   top: -7px !important;
   height: 64px !important;
 }
+main#panel {
+  margin-top: -70px !important;
+}
+.topic .topic-header {
+  position: unset !important;
+}
 
 /* Font icons */
 .fa-angle-down::before {
