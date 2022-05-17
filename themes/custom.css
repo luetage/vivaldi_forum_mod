@@ -9,7 +9,7 @@ body {
 #vivaldi-header {
     background-color: var(--colorBg);
 }
-#vivaldilogo img {
+#vlogo img {
     display: none !important;
 }
 #vlogo {
