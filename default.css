@@ -104,6 +104,12 @@ a[component="header/profilelink"] i,
   vertical-align: unset !important;
 }
 
+/* Composer z-index fix for emoji-dialog */
+composer,
+.modal {
+  z-index: 9999 !important;
+}
+
 /* Alert margin on Unread page */
 #new-topics-alert {
   margin-top: 0 !important;
