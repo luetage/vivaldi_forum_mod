@@ -91,7 +91,7 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
   });
 });
 
-logo();
+header();
 userMenu();
 discord();
 
