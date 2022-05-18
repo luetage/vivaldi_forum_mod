@@ -95,7 +95,7 @@ blockquote {
 /* Auto-hide header transition */
 #vivaldi-header,
 #submenu {
-  transition: top 0.857s !important;
+  transition: top 0.3s ease-out !important;
 }
 
 /* Position status circles in user menu */
