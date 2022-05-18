@@ -15,7 +15,7 @@ function header() {
   document.getElementById("vivaldimenu").innerHTML = `
     <li> <a href="https://vivaldi.com/blog/">News</a></li>
     <li> <a href="https://vivaldi.net/">Community</a></li>
-    <li> <a href="https://vivaldi.net/" class="current">Forum</a></li>
+    <li> <a href="https://forum.vivaldi.net" class="current">Forum</a></li>
     <li> <a href="https://help.vivaldi.com">Help</a></li>
     <li> <a href="https://themes.vivaldi.net">Themes</a></li>
     <li> <a href="https://webmail.vivaldi.net">Webmail</a></li>
