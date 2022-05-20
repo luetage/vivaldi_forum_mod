@@ -1,28 +1,23 @@
 {
-
-    "manifest_version": 3,
-    "name": "Vivaldi Forum mod",
-    "short_name": "VF mod",
-    "version": "3.2",
-    "author": "luetage",
-    "description": "Modular extension. Themes, fixes and modifications.",
-    "homepage_url": "https://github.com/luetage/vivaldi_forum_mod",
-    "icons": {
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-    },
-    "permissions": [
-        "storage",
-        "downloads",
-        "alarms"
-    ],
-    "options_ui": {
-        "page": "options/options.html",
-        "open_in_tab": true
-    },
-    "web_accessible_resources": [
+  "manifest_version": 3,
+  "name": "Vivaldi Forum mod",
+  "short_name": "VF mod",
+  "version": "4.0",
+  "author": "luetage",
+  "description": "Modular extension. Themes, fixes and modifications.",
+  "homepage_url": "https://github.com/luetage/vivaldi_forum_mod",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "downloads", "alarms"],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
     {
-        "resources": [
+      "resources": [
         "themes/standard.css",
         "themes/custom.css",
         "mods/notification-icons.css",
@@ -31,12 +26,16 @@
         "mods/square-avatars.css",
         "mods/advanced-formatting.css",
         "icons/icon16.png"
-        ],
-        "matches": [ "https://forum.vivaldi.net/*" ],
-        "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ]
+      ],
+      "matches": ["https://forum.vivaldi.net/*"],
+      "exclude_matches": [
+        "https://forum.vivaldi.net/assets/*",
+        "https://forum.vivaldi.net/uploads/*",
+        "https://forum.vivaldi.net/plugins/*"
+      ]
     }
-    ],
-    "content_scripts": [
+  ],
+  "content_scripts": [
     {
       "matches": ["https://forum.vivaldi.net/*"],
       "exclude_matches": [
@@ -63,10 +62,9 @@
       "css": ["default.css"],
       "run_at": "document_end"
     }
-    ],
-    "background": {
-        "service_worker":  "serviceworker.js"
-    },
-    "default_locale": "en"
-
+  ],
+  "background": {
+    "service_worker": "serviceworker.js"
+  },
+  "default_locale": "en"
 }
