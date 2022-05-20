@@ -143,6 +143,14 @@
         "message": "Displays a link to the bookmarks page in the main navigation for easy access.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Compact Posts",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Removes margin between user name and content. May break layout.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Custom Notification Icons",
         "description": "Options: Title of custom notification icons mod"

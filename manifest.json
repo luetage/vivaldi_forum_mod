@@ -38,17 +38,30 @@
     ],
     "content_scripts": [
     {
-        "matches": [ "https://forum.vivaldi.net/*" ],
-        "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
-        "js": [ "theme.js" ],
-        "run_at": "document_start"
+      "matches": ["https://forum.vivaldi.net/*"],
+      "exclude_matches": [
+        "https://forum.vivaldi.net/assets/*",
+        "https://forum.vivaldi.net/uploads/*",
+        "https://forum.vivaldi.net/plugins/*"
+      ],
+      "js": ["theme.js"],
+      "run_at": "document_start"
     },
     {
-        "matches": [ "https://forum.vivaldi.net/*" ],
-        "exclude_matches": [ "https://forum.vivaldi.net/assets/*", "https://forum.vivaldi.net/uploads/*", "https://forum.vivaldi.net/plugins/*" ],
-        "js": [ "mods/advanced-formatting.js", "mods/theme-preview.js", "default.js", "mods.js" ],
-        "css": [ "default.css" ],
-        "run_at": "document_end"
+      "matches": ["https://forum.vivaldi.net/*"],
+      "exclude_matches": [
+        "https://forum.vivaldi.net/assets/*",
+        "https://forum.vivaldi.net/uploads/*",
+        "https://forum.vivaldi.net/plugins/*"
+      ],
+      "js": [
+        "mods/advanced-formatting.js",
+        "mods/theme-preview.js",
+        "default.js",
+        "mods.js"
+      ],
+      "css": ["default.css"],
+      "run_at": "document_end"
     }
     ],
     "background": {

@@ -143,6 +143,14 @@
         "message": "Hiển thị một liên kết đến trang dấu trang trong thanh điều hướng chính để dễ dàng truy cập.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Bài viết nhỏ gọn",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Loại bỏ lề giữa tên người dùng và nội dung. Có thể làm vỡ bố cục.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Biểu tượng thông báo tùy chỉnh",
         "description": "Options: Title of custom notification icons mod"

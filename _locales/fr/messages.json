@@ -143,6 +143,14 @@
         "message": "Affiche un lien vers les marque-pages dans la barre de navigation.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Messages compacts",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Supprime la marge entre le nom d'utilisateur et le corps du message. Peut rompre la mise en page.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Icônes de notifications",
         "description": "Options: Title of custom notification icons mod"

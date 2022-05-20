@@ -143,6 +143,14 @@
         "message": "Отображает ссылку на страницу закладок прямо на панели навигации.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Компактные публикации",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Удаляет отступы между именем пользователя и публикацией. Может сломать разметку сайта.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Настраиваемые иконки уведомлений",
         "description": "Options: Title of custom notification icons mod"

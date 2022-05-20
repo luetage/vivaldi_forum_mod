@@ -143,6 +143,14 @@
         "message": "Pro zrychlení přístupu zobrazí v navigaci odkaz na vaše záložky ve fóru.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Kompaktní příspěvky",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Odstraní mezeru mezi jménem autora a textem. Může způsobit špatné rozmístění některých prvků na stránce.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Ikony upozornění",
         "description": "Options: Title of custom notification icons mod"

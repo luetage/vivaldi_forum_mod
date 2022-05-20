@@ -1,45 +1,63 @@
 /* Theme Standard */
 /* Additional code to ensure compatibility with Forum mod features. */
 
-/* Logo */
-#vivaldilogo {
-    fill: #4c70f0;
+/* Header */
+#vlogo {
+  fill: #4c70f0;
+}
+#submenu.nav-up,
+#submenu.nav-down {
+  top: 64px !important;
 }
 
 /* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-    background: white;
-    border-color: #f1f1f1;
+  background: white;
+  border-color: #f1f1f1;
 }
 .vivaldi-mod-modal-box-control-bar {
-    background: #f1f1f1;
-    color: black;
+  background: #f1f1f1;
+  color: black;
 }
-.dropmarker, .dropmarker:after {
-    background: black;
+.dropmarker,
+.dropmarker:after {
+  background: black;
 }
 .dropmarker:before {
-    border-color: black;
+  border-color: black;
 }
 #toolbar-custom ul li:hover {
-    background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 /* Notification icons color */
-li[data-nid^="new_post"]::before, li[data-nid^="edit_post"]::before, li[data-nid^="upvote"]::before, li[data-nid^="follow"]::before, li[data-nid^="move"]::before, li[data-nid^="chat"]::before, li[data-nid^="tid"]::before, #menu .notification-list li .mark-read, .header .notification-list li .mark-read {
-    color: 777;
+li[data-nid^="new_post"]::before,
+li[data-nid^="edit_post"]::before,
+li[data-nid^="upvote"]::before,
+li[data-nid^="follow"]::before,
+li[data-nid^="move"]::before,
+li[data-nid^="chat"]::before,
+li[data-nid^="tid"]::before,
+#menu .notification-list li .mark-read,
+.header .notification-list li .mark-read {
+  color: #777;
 }
 
 /* Copy all code button */
 .copy-all-code-button {
-    background-color: rgba(125, 125, 125, 0.66);
-    color: #fff;
+  background-color: rgba(125, 125, 125, 0.66);
+  color: #fff;
 }
 .copy-all-code-button:hover {
-    color: #f4ff9d;
+  color: #f4ff9d;
+}
+
+/* Highlight post-tools link button on click */
+small.pull-right a.vfm-highlight {
+  color: #c91106 !important;
 }
 
 /* Theme preview */
 .themebox-title {
-    color: #333;
+  color: #333;
 }

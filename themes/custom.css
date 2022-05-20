@@ -6,13 +6,14 @@ body {
 }
 
 /* Header */
+#submenu.nav-up,
+#submenu.nav-down {
+    top: 64px !important;
+}
 #vivaldi-header {
     background-color: var(--colorBg);
 }
-#vivaldilogo img {
-    display: none !important;
-}
-#vivaldilogo {
+#vlogo {
     fill: var(--colorLi);
 }
 .navbar-default .btn-link {
@@ -29,7 +30,7 @@ body {
 #vivaldimenu a.current, #vivaldimenu a:hover {
     color: var(--colorLi);
 }
-#search-button {
+#search-form #search-button {
     color: var(--colorFg);
     background-color: var(--colorBg);
 }
@@ -210,6 +211,10 @@ html .topic .unanswered {
     border-right-color: var(--colorHi) !important;
     border-bottom-color: var(--colorHi) !important;
 }
+.posts [component=post][data-index="-1"].isSolved:before {
+    color: var(--colorBg);
+    background-color: var(--colorHi);
+}
 .posts [component=post][data-index="-1"].isSolved:after {
     color: var(--colorHi) !important;
 }
@@ -296,9 +301,12 @@ hr {
 .topic .posts>[component=post], .topic .timeline-event {
     border-bottom-color: var(--colorBgL) !important;
 }
+.necro-post .timeline-event {
+    color: var(--colorBgL);
+}
 .topic .timeline-event+:not(.timeline-event):before, .topic .timeline-event:before {
     border-bottom-color: var(--colorBg);
-  }
+}
 small.pull-right a {
     color: var(--colorLi) !important;
 }
@@ -321,10 +329,6 @@ small.pull-right a {
 }
 .human-readable-number {
     color: var(--colorFg) !important;
-}
-.topic .posts .timeline-event .timeline-text {
-    color: var(--colorFg2);
-    opacity: 0.66;
 }
 div[widget-area=header] a {
     color: var(--colorLi);
@@ -379,6 +383,10 @@ blockquote, .topic [component="post/replies"] {
 .help-block {
     color: var(--colorFg2);
 }
+.selection-tooltip-container {
+    background-color: var(--colorBgL);
+    border-color: var(--colorBgM);
+}
 /* tags */
 .category>ul>li .tag-list .tag {
     background-color: var(--colorBgL);
@@ -389,12 +397,12 @@ blockquote, .topic [component="post/replies"] {
     color: var(--colorFg2);
     opacity: 0.8;
 }
-a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/will not do"] .tag, a[href="/tags/done"] .tag, a[href="/tags/in progress"] .tag, a[href="/tags/resolved"] .tag, a[href="/tags/bug"] .tag, a[href="/tags/feature request"] .tag, a[href="/tags/new feature"] .tag, a[href="/tags/cannot reproduce"] .tag, a[href="/tags/fixed"] .tag, a[href="/tags/accessibility"] .tag, a[href="/tags/a11y"] .tag, a[href="/tags/nice to have"] .tag, a[href="/tags/в работе"] .tag, a[href="/tags/дубликат"] .tag, a[href="/tags/реализовано"] .tag, a[href="/tags/готово"] .tag, a[href="/tags/resolvido"] .tag, a[href="/tags/解決済み（不具合）"] .tag, a[href="/tags/未解決"] .tag, a[href="/tags/再現済み"] .tag, a[href="/tags/解決済み（質問）"] .tag, a[href="/tags/記載者要確認"] .tag, a[href="/tags/対応予定"] .tag, a[href="/tags/対応済み"] .tag, a[href="/tags/未再現"] .tag, a[href="/tags/開発側未確認"] .tag, a[href="/tags/解決済み（要望）"] .tag, a[href="/tags/対応対象外"] .tag, a[href="/tags/便利情報"] .tag, a[href="/tags/対応対象外"] .tag, a[href="/tags/確認予定"] .tag, a[href="/tags/risolto"] .tag, a[href="/tags/частично решено"] .tag {
+a[href="/tags/duplicate"] .tag, a[href="/tags/pipeline"] .tag, a[href="/tags/will not do"] .tag, a[href="/tags/done"] .tag, a[href="/tags/in progress"] .tag, a[href="/tags/resolved"] .tag, a[href="/tags/bug"] .tag, a[href="/tags/feature request"] .tag, a[href="/tags/new feature"] .tag, a[href="/tags/cannot reproduce"] .tag, a[href="/tags/fixed"] .tag, a[href="/tags/accessibility"] .tag, a[href="/tags/a11y"] .tag, a[href="/tags/nice to have"] .tag, a[href="/tags/в работе"] .tag, a[href="/tags/дубликат"] .tag, a[href="/tags/реализовано"] .tag, a[href="/tags/готово"] .tag, a[href="/tags/resolvido"] .tag, a[href="/tags/解決済み（不具合）"] .tag, a[href="/tags/未解決"] .tag, a[href="/tags/再現済み"] .tag, a[href="/tags/解決済み（質問）"] .tag, a[href="/tags/記載者要確認"] .tag, a[href="/tags/対応予定"] .tag, a[href="/tags/対応済み"] .tag, a[href="/tags/未再現"] .tag, a[href="/tags/開発側未確認"] .tag, a[href="/tags/解決済み（要望）"] .tag, a[href="/tags/対応対象外"] .tag, a[href="/tags/便利情報"] .tag, a[href="/tags/対応対象外"] .tag, a[href="/tags/確認予定"] .tag, a[href="/tags/risolto"] .tag, a[href="/tags/частично решено"] .tag, a[href="/tags/resolu"] .tag {
     background-color: var(--colorFg2) !important;
     opacity: 0.8;
     color: var(--colorBg) !important;
 }
-.tag-item[data-tag="duplicate"], .tag-item[data-tag="pipeline"], .tag-item[data-tag="will not do"], .tag-item[data-tag="done"], .tag-item[data-tag="in progress"], .tag-item[data-tag="resolved"], .tag-item[data-tag="bug"], .tag-item[data-tag="feature request"], .tag-item[data-tag="new feature"], .tag-item[data-tag="cannot reproduce"], .tag-item[data-tag="fixed"], .tag-item[data-tag="accessibility"], .tag-item[data-tag="a11y"], .tag-item[data-tag="nice to have"], .tag-item[data-tag="в работе"], .tag-item[data-tag="дубликат"], .tag-item[data-tag="реализовано"], .tag-item[data-tag="готово"], .tag-item[data-tag="resolvido"], .tag-item[data-tag="解決済み（不具合）"], .tag-item[data-tag="未解決"], .tag-item[data-tag="再現済み"],.tag-item[data-tag="解決済み（質問）"], .tag-item[data-tag="記載者要確認"], .tag-item[data-tag="対応予定"], .tag-item[data-tag="対応済み"], .tag-item[data-tag="未再現"], .tag-item[data-tag="開発側未確認"], .tag-item[data-tag="解決済み（要望）"], .tag-item[data-tag="対応対象外"], .tag-item[data-tag="便利情報"], .tag-item[data-tag="便利情報"], .tag-item[data-tag="確認予定"], .tag-item[data-tag="risolto"], .tag-item[data-tag="частично решено"] {
+.tag-item[data-tag="duplicate"], .tag-item[data-tag="pipeline"], .tag-item[data-tag="will not do"], .tag-item[data-tag="done"], .tag-item[data-tag="in progress"], .tag-item[data-tag="resolved"], .tag-item[data-tag="bug"], .tag-item[data-tag="feature request"], .tag-item[data-tag="new feature"], .tag-item[data-tag="cannot reproduce"], .tag-item[data-tag="fixed"], .tag-item[data-tag="accessibility"], .tag-item[data-tag="a11y"], .tag-item[data-tag="nice to have"], .tag-item[data-tag="в работе"], .tag-item[data-tag="дубликат"], .tag-item[data-tag="реализовано"], .tag-item[data-tag="готово"], .tag-item[data-tag="resolvido"], .tag-item[data-tag="解決済み（不具合）"], .tag-item[data-tag="未解決"], .tag-item[data-tag="再現済み"],.tag-item[data-tag="解決済み（質問）"], .tag-item[data-tag="記載者要確認"], .tag-item[data-tag="対応予定"], .tag-item[data-tag="対応済み"], .tag-item[data-tag="未再現"], .tag-item[data-tag="開発側未確認"], .tag-item[data-tag="解決済み（要望）"], .tag-item[data-tag="対応対象外"], .tag-item[data-tag="便利情報"], .tag-item[data-tag="便利情報"], .tag-item[data-tag="確認予定"], .tag-item[data-tag="risolto"], .tag-item[data-tag="частично решено"], .tag-item[data-tag="resolu"] {
     background-color: var(--colorFg2) !important;
     opacity: 0.8;
     color: var(--colorBg) !important;
@@ -645,7 +653,7 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .text-warning {
     color: var(--colorCo);
 }
-.groups.details .text-warning {
+.fa-star.text-warning {
     color: var(--colorHi);
 }
 .text-success {
@@ -674,9 +682,6 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message[data-break=true], .expanded-chat .chat-content li.chat-message[data-break=true] {
      border-top-color: var(--colorBgM);
 }
-.chats-full {
-    margin-top: 10px;
-}
 .chats-full .chats-list>li.unread {
     background-color: unset;
     color: var(--colorCo);
@@ -694,6 +699,9 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chats-list>li, .chats-list>li.unread {
     border-bottom-color: var(--colorBgM);
 }
+.chats-list>li .avatar-placeholder {
+    background-color: var(--colorBgD);
+}
 .chat-modal .chat-content li.chat-message .chat-timestamp, .expanded-chat .chat-content li.chat-message .chat-timestamp {
     color: var(--colorFg2);
     opacity: 0.8;
@@ -701,27 +709,22 @@ a.btn-register:hover, a.btn-login:hover, a.btn-register:focus, a.btn-login:focus
 .chat-modal .chat-content li.chat-message .chat-user a, .expanded-chat .chat-content li.chat-message .chat-user a {
     color: var(--colorFg);
 }
-.chat-modal [component="chat/header"], .chats-full [component="chat/header"], .chat-modal [component="chat/nav-wrapper"] .chat-search input, .chats-full [component="chat/nav-wrapper"] .chat-search input {
-    background-color: var(--colorCo);
-    color: var(--colorBg);
-    text-shadow: none;
+.chat-modal [component="chat/header"], .chats-full [component="chat/header"] {
+    border-bottom-color: var(--colorBgH);
 }
 .chat-modal [component="chat/header"] .members a, .chats-full [component="chat/header"] .members a, .chat-modal [component="chat/header"] .close, .chats-full [component="chat/header"] .close {
-    color: var(--colorBg);
+    color: var(--colorFg);
     text-shadow: none;
 }
-.chat-modal [component="chat/nav-wrapper"] .chat-search, .chats-full [component="chat/nav-wrapper"] .chat-search {
-    border-bottom-color: var(--colorCo);
-}
 .chat-search .form-control::-webkit-input-placeholder {
-    color: var(--colorBg);
+    color: var(--colorFg2);
     opacity: 0.66;
 }
 .chat-modal [component="chat/composer"] [component="chat/input"], .chats-full [component="chat/composer"] [component="chat/input"] {
     border-color: var(--colorBgH);
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"], .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] {
-    border-top-color: var(--colorBgL) !important;
+    border-color: var(--colorBgL) !important;
 }
 .chat-modal [component="chat/nav-wrapper"] [component="chat/search/list"] li, .chats-full [component="chat/nav-wrapper"] [component="chat/search/list"] li {
     background-color: var(--colorBgL);
@@ -942,13 +945,13 @@ span.votes a {
     vertical-align: unset;
 }
 span.votes .fa-chevron-up::before {
-    content: "\f087" !important;
+    content: "\f164" !important;
     color: var(--colorFg);
     font-size: 16px;
+    font-weight: 400;
 }
 span.votes .upvoted .fa-chevron-up::before {
     color: var(--colorHi);
-    font-weight: bold;
 }
 
 /* Emoji Picker */
@@ -1011,6 +1014,11 @@ span.votes .upvoted .fa-chevron-up::before {
 /* Theme preview */
 .themebox-title {
     color: var(--colorFg);
+}
+
+/* Highlight post-tools link button on click */
+small.pull-right a.vfm-highlight {
+    color: var(--colorHi) !important;
 }
 
 /* Notification icons */

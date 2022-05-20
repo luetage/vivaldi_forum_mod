@@ -143,6 +143,14 @@
         "message": "Muestra un enlace hacia la página de Marcadores en la Barra de Navegación para un fácil acceso.",
         "description": "Options: Description of bookmarks in navigation mod"
     },
+    "compactPosts": {
+        "message": "Mensajes compactos",
+        "description": "Options: Title of compact posts mod"
+    },
+    "compactPostsDesc": {
+        "message": "Elimina el márgen entre el nombre de usuario y el contenído. Puede romper el diseño de página.",
+        "description": "Options: Description of compact posts mod"
+    },
     "customNotification": {
         "message": "Símbolos de notificación personalizados",
         "description": "Options: Title of custom notification icons mod"
