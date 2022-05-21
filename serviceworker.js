@@ -265,7 +265,7 @@ function activateTheme() {
   );
 }
 
-/* Import from theme preview */
+// Import from theme preview
 
 function importFromForum() {
   let code = arguments[0].theme;
@@ -305,7 +305,7 @@ function importFromForum() {
   );
 }
 
-/* Update Tabs */
+// Update Tabs
 
 function sendToTabs(reason) {
   chrome.storage.local.get({ tabIDs: [] }, function (get) {
