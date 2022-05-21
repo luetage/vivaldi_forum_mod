@@ -1,90 +1,90 @@
 /* Style modal boxes */
 .vivaldi-mod-modal-box {
-    position: fixed;
-    z-index: 9999999999;
-    width: 250px;
-    padding: 5px;
-    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
-    grid-row-gap: 5px;
-    border-width: 5px;
-    border-style: solid;
-    border-radius: 4px;
-    box-shadow: 0 6px 12px rgba(0,0,0,.2);
+  position: fixed;
+  z-index: 9999999999;
+  width: 250px;
+  padding: 5px;
+  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+  grid-row-gap: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .vivaldi-mod-modal-box-control-bar {
-    grid-column: 1 / 5;
-    place-self: stretch;
-    cursor: move;
-    border-radius: 4px 0px 0px 4px;
-    text-align: center;
+  grid-column: 1 / 5;
+  place-self: stretch;
+  cursor: move;
+  border-radius: 4px 0px 0px 4px;
+  text-align: center;
 }
 
 .vivaldi-mod-modal-box-close {
-    border: none;
-    border-radius:0px 4px 4px 0px;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
 }
 
 /* Style emote picker */
 #emote-picker img {
-    cursor: pointer;
-    place-self: center;
+  cursor: pointer;
+  place-self: center;
 }
 
 #emote-picker-button:focus:not(:hover) {
-    background: transparent;
+  background: transparent;
 }
 
 /* Style dropzone indicator */
 .dropmarker {
-    display: block;
-    width: 5px;
-    height: 35px;
-    position: fixed;
-    z-index: 9999999999;
-    pointer-events: none;
+  display: block;
+  width: 5px;
+  height: 35px;
+  position: fixed;
+  z-index: 9999999999;
+  pointer-events: none;
 }
 
 .dropmarker:before {
-    content:'';
-    width: 8px;
-    height: 8px;
-    display: block;
-    position: absolute;
-    border-style: solid;
-    border-width: 0px 3px 3px 0px;
-    left: -2.5px;
-    top: -13px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  display: block;
+  position: absolute;
+  border-style: solid;
+  border-width: 0px 3px 3px 0px;
+  left: -2.5px;
+  top: -13px;
 }
 
 .dropmarker:after {
-    content:  '';
-    width: 2px;
-    height: 12px;
-    display: block;
-    position: absolute;
-    transform: rotate(-45deg);;
-    left: -1px;
-    top: -17px;
+  content: "";
+  width: 2px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: -1px;
+  top: -17px;
 }
 
 /* style hidden items modal */
 
 #toolbar-custom ul {
-    grid-column: 1 / 6;
-    place-self: stretch;
-    display: grid;
-    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
-    grid-row-gap: 5px;
-    list-style: none;
-    padding-left: 0px;
+  grid-column: 1 / 6;
+  place-self: stretch;
+  display: grid;
+  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+  grid-row-gap: 5px;
+  list-style: none;
+  padding-left: 0px;
 }
 
 #toolbar-custom ul li {
-    place-self: stretch;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
+  place-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
 }
