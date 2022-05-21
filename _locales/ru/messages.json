@@ -1,302 +1,302 @@
 {
-    "bookmarks": {
-        "message": "Закладки",
-        "description": "Link to bookmarks page from navigation bar"
-    },
-    "signature": {
-        "message": "Подписи",
-        "description": "Signature toggle for forum posts"
-    },
-    "copyCode": {
-        "message": "Копировать код",
-        "description": "Copy all code button for code markdown"
-    },
-    "lastModified": {
-        "message": "Последнее редактирование",
-        "description": "Text before last edit timestamp in forum posts"
-    },
-    "optionsLink": {
-        "message": "Модификации",
-        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
-    },
-    "dismiss": {
-        "message": "Отключить",
-        "description": "Dismisses community notifications"
-    },
-    "emoticons": {
-        "message": "Смайлики",
-        "description": "Title of formatting item for emote picker"
-    },
-    "header": {
-        "message": "Заголовок",
-        "description": "Title of formatting item header 1"
-    },
-    "horizontal_line": {
-        "message": "Горизонтальная линия",
-        "description": "Title of formatting item horizontal rule"
-    },
-    "block_quote": {
-        "message": "Цитата",
-        "description": "Title of formatting item quote"
-    },
-    "inline_code": {
-        "message": "Выделить код",
-        "description": "Title of formatting item fixed width font"
-    },
-    "table": {
-        "message": "Таблица",
-        "description": "Title of formatting item table"
-    },
-    "number_list": {
-        "message": "Пронумерованный",
-        "description": "Title of formatting item numbered list"
-    },
-    "spoiler": {
-        "message": "Спойлер",
-        "description": "Title of formatting item spoiler"
-    },
-    "customToolbarTitle": {
-        "message": "Настройки панели инструментов",
-        "description": "Title of custom toolbar editor"
-    },
-    "dragText": {
-        "message": "Нажмите и удерживайте, чтобы перетащить",
-        "description": "Hover text when on a draggable area"
-    },
-    "themes": {
-        "message": "Темы",
-        "description": "Options: Title of themes section"
-    },
-    "modifications": {
-        "message": "Модификации",
-        "description": "Options: Title of modifications section"
-    },
-    "info": {
-        "message": "Информация",
-        "description": "Options: Title of info section"
-    },
-    "feedback": {
-        "message": "Обратная связь",
-        "description": "Options: Feedback link in navigation"
-    },
-    "schedule": {
-        "message": "Расписание",
-        "description": "Options: Schedule headline"
-    },
-    "themeMachine": {
-        "message": "Выбор темы",
-        "description": "Options: Theme machine headline"
-    },
-    "background": {
-        "message": "Background",
-        "description": "Options: Theme machine edit background"
-    },
-    "foreground": {
-        "message": "Foreground",
-        "description": "Options: Theme machine edit foreground"
-    },
-    "highlight": {
-        "message": "Highlight",
-        "description": "Options: Theme machine edit highlight"
-    },
-    "accent": {
-        "message": "Accent",
-        "description": "Options: Theme machine edit accent"
-    },
-    "link": {
-        "message": "Link",
-        "description": "Options: Theme machine edit link"
-    },
-    "code": {
-        "message": "Code",
-        "description": "Options: Theme machine edit code"
-    },
-    "dropdown": {
-        "message": "Dropdown",
-        "description": "Options: Theme machine edit dropdown"
-    },
-    "selectModifications": {
-        "message": "Выбор модификаций",
-        "description": "Options: Modifications headline"
-    },
-    "advancedFormatting": {
-        "message": "Расширенное форматирование",
-        "description": "Options: Title of advanced formatting mod"
-    },
-    "advancedFormattingDesc": {
-        "message": "Добавляет дополнительные кнопки форматирования и смайлики. Позволяет перетаскивать, удалять и добавлять новые кнопки форматирования текста на форуме.",
-        "description": "Options: Description of the advanced formatting mod"
-    },
-    "hideHeader": {
-        "message": "Автоматически скрывать шапку сайта при прокрутке",
-        "description": "Options: Title of auto-hide header on scroll mod"
-    },
-    "hideHeaderDesc": {
-        "message": "Скрывает шапку сайта при прокрутке страницы вниз, показывает её при прокрутке вверх.",
-        "description": "Options: Description of auto-hide header on scroll mod"
-    },
-    "navbookmarks": {
-        "message": "Закладки на панели навигации",
-        "description": "Options: Title of bookmarks in navigation mod"
-    },
-    "navbookmarksDesc": {
-        "message": "Отображает ссылку на страницу закладок прямо на панели навигации.",
-        "description": "Options: Description of bookmarks in navigation mod"
-    },
-    "compactPosts": {
-        "message": "Компактные публикации",
-        "description": "Options: Title of compact posts mod"
-    },
-    "compactPostsDesc": {
-        "message": "Удаляет отступы между именем пользователя и публикацией. Может сломать разметку сайта.",
-        "description": "Options: Description of compact posts mod"
-    },
-    "customNotification": {
-        "message": "Настраиваемые иконки уведомлений",
-        "description": "Options: Title of custom notification icons mod"
-    },
-    "customNotificationDesc": {
-        "message": "Добавляет иконки в заголовок уведомлений, чтобы вы могли легко отличить один тип уведомлений от другого.",
-        "description": "Options: Description of custom notification icons mod"
-    },
-    "showUID": {
-        "message": "Показывать ID пользователей",
-        "description": "Options: Title of show user IDs mod"
-    },
-    "showUIDDesc": {
-        "message": "Показывает ID пользователя при наведении курсора на его ник в заголовке комментария или аватарку на странице профиля.",
-        "description": "Options: Description of show user IDs mod"
-    },
-    "systemEmoji": {
-        "message": "Использовать системные эмодзи",
-        "description": "Options: Title of use system emoji mod"
-    },
-    "systemEmojiDesc": {
-        "message": "Использовать эмодзи операционной системы вместо эмодзи форума Vivaldi.",
-        "description": "Options: Description of use system emoji mod"
-    },
-    "signatureMod": {
-        "message": "Скрыть подписи",
-        "description": "Options: Title of signature mod"
-    },
-    "signatureModDesc": {
-        "message": "Скрывает подписи к сообщениям и заменяет их отдельной кнопкой.",
-        "description": "Options: Description of signature mod"
-    },
-    "squareAvatars": {
-        "message": "Квадратные аватарки",
-        "description": "Options: Title of square avatars mod"
-    },
-    "squareAvatarsDesc": {
-        "message": "Только квадратны, только хардкор!",
-        "description": "Options: Description of square avatars mod"
-    },
-    "userCSS": {
-        "message": "Пользовательские CSS",
-        "description": "Options: User CSS headline"
-    },
-    "userCSSDesc": {
-        "message": "Вводите только CSS-код! Нажмите ПРИМЕНИТЬ, чтобы активировать/деактивировать код, СОХРАНИТЬ, чтобы сохранить изменения, и КОПИЯ, чтобы создать резервную копию. Если хотите создать собственную тему, сперва выберите СТАНДАРТНУЮ тему в настройках.",
-        "description": "Options: User CSS placeholder/description"
-    },
-    "changelog": {
-        "message": "Список изменений",
-        "description": "Options: Changelog headline"
-    },
-    "credits": {
-        "message": "Участники",
-        "description": "Options: Credits headline"
-    },
-    "save": {
-        "message": "Сохранить",
-        "description": "Options: Text to show on a button that performs some sort of save operation"
-    },
-    "edit": {
-        "message": "Редактировать",
-        "description": "Options: Text to show on a button that performs some sort of edit operation"
-    },
-    "backup": {
-        "message": "Копия",
-        "description": "Options: Text to show on a button that performs some sort of backup operation"
-    },
-    "import": {
-        "message": "Импорт",
-        "description": "Options: Text to show on a button that performs some sort of import operation"
-    },
-    "cancel": {
-        "message": "Отмена",
-        "description": "Options: Text to show on a button that performs some sort of cancel operation"
-    },
-    "export": {
-        "message": "Экспорт",
-        "description": "Options: Text to show on a button that performs some sort of export operation."
-    },
-    "reset": {
-        "message": "Сброс",
-        "description": "Options: Text to show on a button that performs some sort of reset operation"
-    },
-    "confirmReset": {
-        "message": "Сбросить настройки расширения? Нажмите ещё раз, чтобы подтвердить решение.",
-        "description": "Options: Status message to confirm reset"
-    },
-    "cancelReset": {
-        "message": "Сброс настроек отменён.",
-        "description": "Options: Status message after cancelled reset"
-    },
-    "cancelImport": {
-        "message": "Импорт отменён.",
-        "description": "Options: Status message after cancelled import"
-    },
-    "optionsReset": {
-        "message": "Настройки сброшены, хранилище данных очищено.",
-        "description": "Options: Status message after reset"
-    },
-    "activateSchedule": {
-        "message": "Расписание ВКЛ.",
-        "description": "Options: Status message for Schedule activation"
-    },
-    "deactivateSchedule": {
-        "message": "Расписание ВЫКЛ.",
-        "description": "Options: Status message for Schedule deactivation"
-    },
-    "activateUserCSS": {
-        "message": "Пользовательские CSS активированы.",
-        "description": "Options: Status message for User CSS activation"
-    },
-    "deactivateUserCSS": {
-        "message": "Пользовательские CSS деактивированы.",
-        "description": "Options: Status message for User CSS deactivation"
-    },
-    "saveUserCSS": {
-        "message": "Пользовательские CSS сохранены.",
-        "description": "Options: Status message for saving User CSS to storage"
-    },
-    "saveTheme": {
-        "message": "Тема сохранена и активирована.",
-        "description": "Options: Status message for theme activation"
-    },
-    "exportTheme": {
-        "message": "Код темы скопирован в буфер обмена.",
-        "description": "Options: Status message for exporting theme"
-    },
-    "importThemeDesc": {
-        "message": "Вставьте или перетащите код темы в поле импорта.",
-        "description": "Options: Status message describing theme import"
-    },
-    "importTheme": {
-        "message": "Тема импортирована. Нажмите СОХРАНИТЬ, чтобы её сохранить.",
-        "description": "Options: Status message confirming theme import"
-    },
-    "statusThemes": {
-        "message": "Выберите тему или создайте собственную.",
-        "description": "Options: Status message themes"
-    },
-    "statusModifications": {
-        "message": "Наведите курсор на модификацию, чтобы прочитать её описание",
-        "description": "Options: Status message modifications"
-    },
-    "statusInfo": {
-        "message": "Огромное спасибо всем нашим пользователям и участникам!",
-        "description": "Options: Status message info"
-    }
+  "bookmarks": {
+    "message": "Закладки",
+    "description": "Link to bookmarks page from navigation bar"
+  },
+  "signature": {
+    "message": "Подписи",
+    "description": "Signature toggle for forum posts"
+  },
+  "copyCode": {
+    "message": "Копировать код",
+    "description": "Copy all code button for code markdown"
+  },
+  "lastModified": {
+    "message": "Последнее редактирование",
+    "description": "Text before last edit timestamp in forum posts"
+  },
+  "optionsLink": {
+    "message": "Модификации",
+    "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+  },
+  "dismiss": {
+    "message": "Отключить",
+    "description": "Dismisses community notifications"
+  },
+  "emoticons": {
+    "message": "Смайлики",
+    "description": "Title of formatting item for emote picker"
+  },
+  "header": {
+    "message": "Заголовок",
+    "description": "Title of formatting item header 1"
+  },
+  "horizontal_line": {
+    "message": "Горизонтальная линия",
+    "description": "Title of formatting item horizontal rule"
+  },
+  "block_quote": {
+    "message": "Цитата",
+    "description": "Title of formatting item quote"
+  },
+  "inline_code": {
+    "message": "Выделить код",
+    "description": "Title of formatting item fixed width font"
+  },
+  "table": {
+    "message": "Таблица",
+    "description": "Title of formatting item table"
+  },
+  "number_list": {
+    "message": "Пронумерованный",
+    "description": "Title of formatting item numbered list"
+  },
+  "spoiler": {
+    "message": "Спойлер",
+    "description": "Title of formatting item spoiler"
+  },
+  "customToolbarTitle": {
+    "message": "Настройки панели инструментов",
+    "description": "Title of custom toolbar editor"
+  },
+  "dragText": {
+    "message": "Нажмите и удерживайте, чтобы перетащить",
+    "description": "Hover text when on a draggable area"
+  },
+  "themes": {
+    "message": "Темы",
+    "description": "Options: Title of themes section"
+  },
+  "modifications": {
+    "message": "Модификации",
+    "description": "Options: Title of modifications section"
+  },
+  "info": {
+    "message": "Информация",
+    "description": "Options: Title of info section"
+  },
+  "feedback": {
+    "message": "Обратная связь",
+    "description": "Options: Feedback link in navigation"
+  },
+  "schedule": {
+    "message": "Расписание",
+    "description": "Options: Schedule headline"
+  },
+  "themeMachine": {
+    "message": "Выбор темы",
+    "description": "Options: Theme machine headline"
+  },
+  "background": {
+    "message": "Background",
+    "description": "Options: Theme machine edit background"
+  },
+  "foreground": {
+    "message": "Foreground",
+    "description": "Options: Theme machine edit foreground"
+  },
+  "highlight": {
+    "message": "Highlight",
+    "description": "Options: Theme machine edit highlight"
+  },
+  "accent": {
+    "message": "Accent",
+    "description": "Options: Theme machine edit accent"
+  },
+  "link": {
+    "message": "Link",
+    "description": "Options: Theme machine edit link"
+  },
+  "code": {
+    "message": "Code",
+    "description": "Options: Theme machine edit code"
+  },
+  "dropdown": {
+    "message": "Dropdown",
+    "description": "Options: Theme machine edit dropdown"
+  },
+  "selectModifications": {
+    "message": "Выбор модификаций",
+    "description": "Options: Modifications headline"
+  },
+  "advancedFormatting": {
+    "message": "Расширенное форматирование",
+    "description": "Options: Title of advanced formatting mod"
+  },
+  "advancedFormattingDesc": {
+    "message": "Добавляет дополнительные кнопки форматирования и смайлики. Позволяет перетаскивать, удалять и добавлять новые кнопки форматирования текста на форуме.",
+    "description": "Options: Description of the advanced formatting mod"
+  },
+  "hideHeader": {
+    "message": "Автоматически скрывать шапку сайта при прокрутке",
+    "description": "Options: Title of auto-hide header on scroll mod"
+  },
+  "hideHeaderDesc": {
+    "message": "Скрывает шапку сайта при прокрутке страницы вниз, показывает её при прокрутке вверх.",
+    "description": "Options: Description of auto-hide header on scroll mod"
+  },
+  "navbookmarks": {
+    "message": "Закладки на панели навигации",
+    "description": "Options: Title of bookmarks in navigation mod"
+  },
+  "navbookmarksDesc": {
+    "message": "Отображает ссылку на страницу закладок прямо на панели навигации.",
+    "description": "Options: Description of bookmarks in navigation mod"
+  },
+  "compactPosts": {
+    "message": "Компактные публикации",
+    "description": "Options: Title of compact posts mod"
+  },
+  "compactPostsDesc": {
+    "message": "Удаляет отступы между именем пользователя и публикацией. Может сломать разметку сайта.",
+    "description": "Options: Description of compact posts mod"
+  },
+  "customNotification": {
+    "message": "Настраиваемые иконки уведомлений",
+    "description": "Options: Title of custom notification icons mod"
+  },
+  "customNotificationDesc": {
+    "message": "Добавляет иконки в заголовок уведомлений, чтобы вы могли легко отличить один тип уведомлений от другого.",
+    "description": "Options: Description of custom notification icons mod"
+  },
+  "showUID": {
+    "message": "Показывать ID пользователей",
+    "description": "Options: Title of show user IDs mod"
+  },
+  "showUIDDesc": {
+    "message": "Показывает ID пользователя при наведении курсора на его ник в заголовке комментария или аватарку на странице профиля.",
+    "description": "Options: Description of show user IDs mod"
+  },
+  "systemEmoji": {
+    "message": "Использовать системные эмодзи",
+    "description": "Options: Title of use system emoji mod"
+  },
+  "systemEmojiDesc": {
+    "message": "Использовать эмодзи операционной системы вместо эмодзи форума Vivaldi.",
+    "description": "Options: Description of use system emoji mod"
+  },
+  "signatureMod": {
+    "message": "Скрыть подписи",
+    "description": "Options: Title of signature mod"
+  },
+  "signatureModDesc": {
+    "message": "Скрывает подписи к сообщениям и заменяет их отдельной кнопкой.",
+    "description": "Options: Description of signature mod"
+  },
+  "squareAvatars": {
+    "message": "Квадратные аватарки",
+    "description": "Options: Title of square avatars mod"
+  },
+  "squareAvatarsDesc": {
+    "message": "Только квадратны, только хардкор!",
+    "description": "Options: Description of square avatars mod"
+  },
+  "userCSS": {
+    "message": "Пользовательские CSS",
+    "description": "Options: User CSS headline"
+  },
+  "userCSSDesc": {
+    "message": "Вводите только CSS-код! Нажмите ПРИМЕНИТЬ, чтобы активировать/деактивировать код, СОХРАНИТЬ, чтобы сохранить изменения, и КОПИЯ, чтобы создать резервную копию. Если хотите создать собственную тему, сперва выберите СТАНДАРТНУЮ тему в настройках.",
+    "description": "Options: User CSS placeholder/description"
+  },
+  "changelog": {
+    "message": "Список изменений",
+    "description": "Options: Changelog headline"
+  },
+  "credits": {
+    "message": "Участники",
+    "description": "Options: Credits headline"
+  },
+  "save": {
+    "message": "Сохранить",
+    "description": "Options: Text to show on a button that performs some sort of save operation"
+  },
+  "edit": {
+    "message": "Редактировать",
+    "description": "Options: Text to show on a button that performs some sort of edit operation"
+  },
+  "backup": {
+    "message": "Копия",
+    "description": "Options: Text to show on a button that performs some sort of backup operation"
+  },
+  "import": {
+    "message": "Импорт",
+    "description": "Options: Text to show on a button that performs some sort of import operation"
+  },
+  "cancel": {
+    "message": "Отмена",
+    "description": "Options: Text to show on a button that performs some sort of cancel operation"
+  },
+  "export": {
+    "message": "Экспорт",
+    "description": "Options: Text to show on a button that performs some sort of export operation."
+  },
+  "reset": {
+    "message": "Сброс",
+    "description": "Options: Text to show on a button that performs some sort of reset operation"
+  },
+  "confirmReset": {
+    "message": "Сбросить настройки расширения? Нажмите ещё раз, чтобы подтвердить решение.",
+    "description": "Options: Status message to confirm reset"
+  },
+  "cancelReset": {
+    "message": "Сброс настроек отменён.",
+    "description": "Options: Status message after cancelled reset"
+  },
+  "cancelImport": {
+    "message": "Импорт отменён.",
+    "description": "Options: Status message after cancelled import"
+  },
+  "optionsReset": {
+    "message": "Настройки сброшены, хранилище данных очищено.",
+    "description": "Options: Status message after reset"
+  },
+  "activateSchedule": {
+    "message": "Расписание ВКЛ.",
+    "description": "Options: Status message for Schedule activation"
+  },
+  "deactivateSchedule": {
+    "message": "Расписание ВЫКЛ.",
+    "description": "Options: Status message for Schedule deactivation"
+  },
+  "activateUserCSS": {
+    "message": "Пользовательские CSS активированы.",
+    "description": "Options: Status message for User CSS activation"
+  },
+  "deactivateUserCSS": {
+    "message": "Пользовательские CSS деактивированы.",
+    "description": "Options: Status message for User CSS deactivation"
+  },
+  "saveUserCSS": {
+    "message": "Пользовательские CSS сохранены.",
+    "description": "Options: Status message for saving User CSS to storage"
+  },
+  "saveTheme": {
+    "message": "Тема сохранена и активирована.",
+    "description": "Options: Status message for theme activation"
+  },
+  "exportTheme": {
+    "message": "Код темы скопирован в буфер обмена.",
+    "description": "Options: Status message for exporting theme"
+  },
+  "importThemeDesc": {
+    "message": "Вставьте или перетащите код темы в поле импорта.",
+    "description": "Options: Status message describing theme import"
+  },
+  "importTheme": {
+    "message": "Тема импортирована. Нажмите СОХРАНИТЬ, чтобы её сохранить.",
+    "description": "Options: Status message confirming theme import"
+  },
+  "statusThemes": {
+    "message": "Выберите тему или создайте собственную.",
+    "description": "Options: Status message themes"
+  },
+  "statusModifications": {
+    "message": "Наведите курсор на модификацию, чтобы прочитать её описание",
+    "description": "Options: Status message modifications"
+  },
+  "statusInfo": {
+    "message": "Огромное спасибо всем нашим пользователям и участникам!",
+    "description": "Options: Status message info"
+  }
 }

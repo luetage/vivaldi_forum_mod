@@ -1,302 +1,302 @@
 {
-    "bookmarks": {
-        "message": "Dấu trang",
-        "description": "Link to bookmarks page from navigation bar"
-    },
-    "signature": {
-        "message": "Chữ ký",
-        "description": "Signature toggle for forum posts"
-    },
-    "copyCode": {
-        "message": "Sao chép mã",
-        "description": "Copy all code button for code markdown"
-    },
-    "lastModified": {
-        "message": "Chỉnh sửa lần cuối",
-        "description": "Text before last edit timestamp in forum posts"
-    },
-    "optionsLink": {
-        "message": "Forum mod",
-        "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
-    },
-    "dismiss": {
-        "message": "Bỏ qua",
-        "description": "Dismisses community notifications"
-    },
-    "emoticons": {
-        "message": "Bộ chọn biểu tượng cảm xúc",
-        "description": "Title of formatting item for emote picker"
-    },
-    "header": {
-        "message": "Tiêu đề",
-        "description": "Title of formatting item header 1"
-    },
-    "horizontal_line": {
-        "message": "Đường ngang",
-        "description": "Title of formatting item horizontal rule"
-    },
-    "block_quote": {
-        "message": "Trích dẫn",
-        "description": "Title of formatting item quote"
-    },
-    "inline_code": {
-        "message": "Mã nội tuyến",
-        "description": "Title of formatting item fixed width font"
-    },
-    "table": {
-        "message": "Bảng",
-        "description": "Title of formatting item table"
-    },
-    "number_list": {
-        "message": "Danh sách đánh số",
-        "description": "Title of formatting item numbered list"
-    },
-    "spoiler": {
-        "message": "Spoiler",
-        "description": "Title of formatting item spoiler"
-    },
-    "customToolbarTitle": {
-        "message": "Chỉnh sửa thanh công cụ tùy chỉnh",
-        "description": "Title of custom toolbar editor"
-    },
-    "dragText": {
-        "message": "Nhấp và kéo để di chuyển",
-        "description": "Hover text when on a draggable area"
-    },
-    "themes": {
-        "message": "Chủ đề",
-        "description": "Options: Title of themes section"
-    },
-    "modifications": {
-        "message": "Chỉnh sửa",
-        "description": "Options: Title of modifications section"
-    },
-    "info": {
-        "message": "Thông tin",
-        "description": "Options: Title of info section"
-    },
-    "feedback": {
-        "message": "Phản hồi",
-        "description": "Options: Feedback link in navigation"
-    },
-    "schedule": {
-        "message": "Lịch trình",
-        "description": "Options: Schedule headline"
-    },
-    "themeMachine": {
-        "message": "Máy chủ đề",
-        "description": "Options: Theme machine headline"
-    },
-    "background": {
-        "message": "Mặt nền",
-        "description": "Options: Theme machine edit background"
-    },
-    "foreground": {
-        "message": "Mặt nổi",
-        "description": "Options: Theme machine edit foreground"
-    },
-    "highlight": {
-        "message": "Nổi bật",
-        "description": "Options: Theme machine edit highlight"
-    },
-    "accent": {
-        "message": "Màu nhấn",
-        "description": "Options: Theme machine edit accent"
-    },
-    "link": {
-        "message": "Liên kết",
-        "description": "Options: Theme machine edit link"
-    },
-    "code": {
-        "message": "Mã",
-        "description": "Options: Theme machine edit code"
-    },
-    "dropdown": {
-        "message": "Thả xuống",
-        "description": "Options: Theme machine edit dropdown"
-    },
-    "selectModifications": {
-        "message": "Chọn chỉnh sửa",
-        "description": "Options: Modifications headline"
-    },
-    "advancedFormatting": {
-        "message": "Định dạng nâng cao",
-        "description": "Options: Title of advanced formatting mod"
-    },
-    "advancedFormattingDesc": {
-        "message": "Thêm một bộ chọn biểu tượng cảm xúc và các nút định dạng bổ sung. Cho phép bạn kéo để sắp xếp lại, xóa khỏi và thêm vào thanh công cụ định dạng khi chỉnh sửa bài đăng trên diễn đàn của bạn.",
-        "description": "Options: Description of the advanced formatting mod"
-    },
-    "hideHeader": {
-        "message": "Tự động ẩn tiêu đề khi cuộn",
-        "description": "Options: Title of auto-hide header on scroll mod"
-    },
-    "hideHeaderDesc": {
-        "message": "Ẩn tiêu đề khi bạn cuộn xuống, hiển thị nó khi bạn cuộn lên.",
-        "description": "Options: Description of auto-hide header on scroll mod"
-    },
-    "navbookmarks": {
-        "message": "Dấu trang trong thanh điều hướng",
-        "description": "Options: Title of bookmarks in navigation mod"
-    },
-    "navbookmarksDesc": {
-        "message": "Hiển thị một liên kết đến trang dấu trang trong thanh điều hướng chính để dễ dàng truy cập.",
-        "description": "Options: Description of bookmarks in navigation mod"
-    },
-    "compactPosts": {
-        "message": "Bài viết nhỏ gọn",
-        "description": "Options: Title of compact posts mod"
-    },
-    "compactPostsDesc": {
-        "message": "Loại bỏ lề giữa tên người dùng và nội dung. Có thể làm vỡ bố cục.",
-        "description": "Options: Description of compact posts mod"
-    },
-    "customNotification": {
-        "message": "Biểu tượng thông báo tùy chỉnh",
-        "description": "Options: Title of custom notification icons mod"
-    },
-    "customNotificationDesc": {
-        "message": "Hiển thị các phông chữ biểu tượng trong danh sách thông báo thả xuống của đầu trang để nhanh chóng phân biệt một loại thông báo này với loại thông báo khác.",
-        "description": "Options: Description of custom notification icons mod"
-    },
-    "showUID": {
-        "message": "Hiển thị các ID người dùng",
-        "description": "Options: Title of show user IDs mod"
-    },
-    "showUIDDesc": {
-        "message": "Hiển thị các ID người dùng khi di chuột vào tên người dùng ở đầu bài đăng và khi di chuột vào hình đại diện của người dùng trên hồ sơ của họ.",
-        "description": "Options: Description of show user IDs mod"
-    },
-    "systemEmoji": {
-        "message": "Sử dụng biểu tượng cảm xúc hệ thống",
-        "description": "Options: Title of use system emoji mod"
-    },
-    "systemEmojiDesc": {
-        "message": "Sử dụng phông chữ biểu tượng cảm xúc do hệ điều hành cung cấp thay vì biểu tượng cảm xúc của diễn đàn Vivaldi.",
-        "description": "Options: Description of use system emoji mod"
-    },
-    "signatureMod": {
-        "message": "Chữ ký mod",
-        "description": "Options: Title of signature mod"
-    },
-    "signatureModDesc": {
-        "message": "Ẩn tất cả chữ ký và thay thế mỗi chữ ký bằng một nút. Khi nhấp vào, chữ ký của từng bài đăng sẽ được hiển thị.",
-        "description": "Options: Description of signature mod"
-    },
-    "squareAvatars": {
-        "message": "Hình đại diện vuông",
-        "description": "Options: Title of square avatars mod"
-    },
-    "squareAvatarsDesc": {
-        "message": "Hình đại diện vuông ở khắp mọi nơi!",
-        "description": "Options: Description of square avatars mod"
-    },
-    "userCSS": {
-        "message": "CSS người dùng",
-        "description": "Options: User CSS headline"
-    },
-    "userCSSDesc": {
-        "message": "Chỉ nhập mã CSS! Nhấp vào công tắc để kích hoạt/ngừng kích hoạt. LƯU để lưu vào bộ nhớ. SAO LƯU để tập tin. Chọn tiêu chuẩn trong chủ đề, nếu bạn muốn chạy chủ đề của riêng mình.",
-        "description": "Options: User CSS placeholder/description"
-    },
-    "changelog": {
-        "message": "Ghi chú thay đổi",
-        "description": "Options: Changelog headline"
-    },
-    "credits": {
-        "message": "Tín dụng",
-        "description": "Options: Credits headline"
-    },
-    "save": {
-        "message": "Lưu",
-        "description": "Options: Text to show on a button that performs some sort of save operation"
-    },
-    "edit": {
-        "message": "Sửa",
-        "description": "Options: Text to show on a button that performs some sort of edit operation"
-    },
-    "backup": {
-        "message": "Sao lưu",
-        "description": "Options: Text to show on a button that performs some sort of backup operation"
-    },
-    "import": {
-        "message": "Nhập",
-        "description": "Options: Text to show on a button that performs some sort of import operation"
-    },
-    "cancel": {
-        "message": "Hủy bỏ",
-        "description": "Options: Text to show on a button that performs some sort of cancel operation"
-    },
-    "export": {
-        "message": "Xuất",
-        "description": "Options: Text to show on a button that performs some sort of export operation."
-    },
-    "reset": {
-        "message": "Đặt lại",
-        "description": "Options: Text to show on a button that performs some sort of reset operation"
-    },
-    "confirmReset": {
-        "message": "Đặt lại phần mở rộng? Nhấn một lần nữa để xác nhận",
-        "description": "Options: Status message to confirm reset"
-    },
-    "cancelReset": {
-        "message": "Đặt lại đã hủy",
-        "description": "Options: Status message after cancelled reset"
-    },
-    "cancelImport": {
-        "message": "Nhập đã hủy",
-        "description": "Options: Status message after cancelled import"
-    },
-    "optionsReset": {
-        "message": "Các tùy chọn đặt lại, lưu trữ đã xóa",
-        "description": "Options: Status message after reset"
-    },
-    "activateSchedule": {
-        "message": "Lịch trình đã kích hoạt",
-        "description": "Options: Status message for Schedule activation"
-    },
-    "deactivateSchedule": {
-        "message": "Lịch trình đã ngừng kích hoạt",
-        "description": "Options: Status message for Schedule deactivation"
-    },
-    "activateUserCSS": {
-        "message": "CSS người dùng đã kích hoạt",
-        "description": "Options: Status message for User CSS activation"
-    },
-    "deactivateUserCSS": {
-        "message": "CSS người dùng đã ngừng kích hoạt",
-        "description": "Options: Status message for User CSS deactivation"
-    },
-    "saveUserCSS": {
-        "message": "CSS người dùng được lưu vào bộ lưu trữ",
-        "description": "Options: Status message for saving User CSS to storage"
-    },
-    "saveTheme": {
-        "message": "Chủ đề đã lưu và kích hoạt",
-        "description": "Options: Status message for theme activation"
-    },
-    "exportTheme": {
-        "message": "Mã chủ đề đã sao chép vào bộ nhớ tạm",
-        "description": "Options: Status message for exporting theme"
-    },
-    "importThemeDesc": {
-        "message": "Dán hoặc kéo và thả mã chủ đề vào trường nhập",
-        "description": "Options: Status message describing theme import"
-    },
-    "importTheme": {
-        "message": "Chủ đề đã nhập. Nhấp vào LƯU để lưu chủ đề",
-        "description": "Options: Status message confirming theme import"
-    },
-    "statusThemes": {
-        "message": "Chọn, tạo và lập lịch trình chủ đề",
-        "description": "Options: Status message themes"
-    },
-    "statusModifications": {
-        "message": "Bật tắt các chỉnh sửa và viết CSS tùy chỉnh",
-        "description": "Options: Status message modifications"
-    },
-    "statusInfo": {
-        "message": "Xin chân thành cảm ơn tất cả những cộng tác viên và những người dùng!",
-        "description": "Options: Status message info"
-    }
+  "bookmarks": {
+    "message": "Dấu trang",
+    "description": "Link to bookmarks page from navigation bar"
+  },
+  "signature": {
+    "message": "Chữ ký",
+    "description": "Signature toggle for forum posts"
+  },
+  "copyCode": {
+    "message": "Sao chép mã",
+    "description": "Copy all code button for code markdown"
+  },
+  "lastModified": {
+    "message": "Chỉnh sửa lần cuối",
+    "description": "Text before last edit timestamp in forum posts"
+  },
+  "optionsLink": {
+    "message": "Forum mod",
+    "description": "Link to options page in user dropdown menu. Probably no translation needed? Decide depending on language"
+  },
+  "dismiss": {
+    "message": "Bỏ qua",
+    "description": "Dismisses community notifications"
+  },
+  "emoticons": {
+    "message": "Bộ chọn biểu tượng cảm xúc",
+    "description": "Title of formatting item for emote picker"
+  },
+  "header": {
+    "message": "Tiêu đề",
+    "description": "Title of formatting item header 1"
+  },
+  "horizontal_line": {
+    "message": "Đường ngang",
+    "description": "Title of formatting item horizontal rule"
+  },
+  "block_quote": {
+    "message": "Trích dẫn",
+    "description": "Title of formatting item quote"
+  },
+  "inline_code": {
+    "message": "Mã nội tuyến",
+    "description": "Title of formatting item fixed width font"
+  },
+  "table": {
+    "message": "Bảng",
+    "description": "Title of formatting item table"
+  },
+  "number_list": {
+    "message": "Danh sách đánh số",
+    "description": "Title of formatting item numbered list"
+  },
+  "spoiler": {
+    "message": "Spoiler",
+    "description": "Title of formatting item spoiler"
+  },
+  "customToolbarTitle": {
+    "message": "Chỉnh sửa thanh công cụ tùy chỉnh",
+    "description": "Title of custom toolbar editor"
+  },
+  "dragText": {
+    "message": "Nhấp và kéo để di chuyển",
+    "description": "Hover text when on a draggable area"
+  },
+  "themes": {
+    "message": "Chủ đề",
+    "description": "Options: Title of themes section"
+  },
+  "modifications": {
+    "message": "Chỉnh sửa",
+    "description": "Options: Title of modifications section"
+  },
+  "info": {
+    "message": "Thông tin",
+    "description": "Options: Title of info section"
+  },
+  "feedback": {
+    "message": "Phản hồi",
+    "description": "Options: Feedback link in navigation"
+  },
+  "schedule": {
+    "message": "Lịch trình",
+    "description": "Options: Schedule headline"
+  },
+  "themeMachine": {
+    "message": "Máy chủ đề",
+    "description": "Options: Theme machine headline"
+  },
+  "background": {
+    "message": "Mặt nền",
+    "description": "Options: Theme machine edit background"
+  },
+  "foreground": {
+    "message": "Mặt nổi",
+    "description": "Options: Theme machine edit foreground"
+  },
+  "highlight": {
+    "message": "Nổi bật",
+    "description": "Options: Theme machine edit highlight"
+  },
+  "accent": {
+    "message": "Màu nhấn",
+    "description": "Options: Theme machine edit accent"
+  },
+  "link": {
+    "message": "Liên kết",
+    "description": "Options: Theme machine edit link"
+  },
+  "code": {
+    "message": "Mã",
+    "description": "Options: Theme machine edit code"
+  },
+  "dropdown": {
+    "message": "Thả xuống",
+    "description": "Options: Theme machine edit dropdown"
+  },
+  "selectModifications": {
+    "message": "Chọn chỉnh sửa",
+    "description": "Options: Modifications headline"
+  },
+  "advancedFormatting": {
+    "message": "Định dạng nâng cao",
+    "description": "Options: Title of advanced formatting mod"
+  },
+  "advancedFormattingDesc": {
+    "message": "Thêm một bộ chọn biểu tượng cảm xúc và các nút định dạng bổ sung. Cho phép bạn kéo để sắp xếp lại, xóa khỏi và thêm vào thanh công cụ định dạng khi chỉnh sửa bài đăng trên diễn đàn của bạn.",
+    "description": "Options: Description of the advanced formatting mod"
+  },
+  "hideHeader": {
+    "message": "Tự động ẩn tiêu đề khi cuộn",
+    "description": "Options: Title of auto-hide header on scroll mod"
+  },
+  "hideHeaderDesc": {
+    "message": "Ẩn tiêu đề khi bạn cuộn xuống, hiển thị nó khi bạn cuộn lên.",
+    "description": "Options: Description of auto-hide header on scroll mod"
+  },
+  "navbookmarks": {
+    "message": "Dấu trang trong thanh điều hướng",
+    "description": "Options: Title of bookmarks in navigation mod"
+  },
+  "navbookmarksDesc": {
+    "message": "Hiển thị một liên kết đến trang dấu trang trong thanh điều hướng chính để dễ dàng truy cập.",
+    "description": "Options: Description of bookmarks in navigation mod"
+  },
+  "compactPosts": {
+    "message": "Bài viết nhỏ gọn",
+    "description": "Options: Title of compact posts mod"
+  },
+  "compactPostsDesc": {
+    "message": "Loại bỏ lề giữa tên người dùng và nội dung. Có thể làm vỡ bố cục.",
+    "description": "Options: Description of compact posts mod"
+  },
+  "customNotification": {
+    "message": "Biểu tượng thông báo tùy chỉnh",
+    "description": "Options: Title of custom notification icons mod"
+  },
+  "customNotificationDesc": {
+    "message": "Hiển thị các phông chữ biểu tượng trong danh sách thông báo thả xuống của đầu trang để nhanh chóng phân biệt một loại thông báo này với loại thông báo khác.",
+    "description": "Options: Description of custom notification icons mod"
+  },
+  "showUID": {
+    "message": "Hiển thị các ID người dùng",
+    "description": "Options: Title of show user IDs mod"
+  },
+  "showUIDDesc": {
+    "message": "Hiển thị các ID người dùng khi di chuột vào tên người dùng ở đầu bài đăng và khi di chuột vào hình đại diện của người dùng trên hồ sơ của họ.",
+    "description": "Options: Description of show user IDs mod"
+  },
+  "systemEmoji": {
+    "message": "Sử dụng biểu tượng cảm xúc hệ thống",
+    "description": "Options: Title of use system emoji mod"
+  },
+  "systemEmojiDesc": {
+    "message": "Sử dụng phông chữ biểu tượng cảm xúc do hệ điều hành cung cấp thay vì biểu tượng cảm xúc của diễn đàn Vivaldi.",
+    "description": "Options: Description of use system emoji mod"
+  },
+  "signatureMod": {
+    "message": "Chữ ký mod",
+    "description": "Options: Title of signature mod"
+  },
+  "signatureModDesc": {
+    "message": "Ẩn tất cả chữ ký và thay thế mỗi chữ ký bằng một nút. Khi nhấp vào, chữ ký của từng bài đăng sẽ được hiển thị.",
+    "description": "Options: Description of signature mod"
+  },
+  "squareAvatars": {
+    "message": "Hình đại diện vuông",
+    "description": "Options: Title of square avatars mod"
+  },
+  "squareAvatarsDesc": {
+    "message": "Hình đại diện vuông ở khắp mọi nơi!",
+    "description": "Options: Description of square avatars mod"
+  },
+  "userCSS": {
+    "message": "CSS người dùng",
+    "description": "Options: User CSS headline"
+  },
+  "userCSSDesc": {
+    "message": "Chỉ nhập mã CSS! Nhấp vào công tắc để kích hoạt/ngừng kích hoạt. LƯU để lưu vào bộ nhớ. SAO LƯU để tập tin. Chọn tiêu chuẩn trong chủ đề, nếu bạn muốn chạy chủ đề của riêng mình.",
+    "description": "Options: User CSS placeholder/description"
+  },
+  "changelog": {
+    "message": "Ghi chú thay đổi",
+    "description": "Options: Changelog headline"
+  },
+  "credits": {
+    "message": "Tín dụng",
+    "description": "Options: Credits headline"
+  },
+  "save": {
+    "message": "Lưu",
+    "description": "Options: Text to show on a button that performs some sort of save operation"
+  },
+  "edit": {
+    "message": "Sửa",
+    "description": "Options: Text to show on a button that performs some sort of edit operation"
+  },
+  "backup": {
+    "message": "Sao lưu",
+    "description": "Options: Text to show on a button that performs some sort of backup operation"
+  },
+  "import": {
+    "message": "Nhập",
+    "description": "Options: Text to show on a button that performs some sort of import operation"
+  },
+  "cancel": {
+    "message": "Hủy bỏ",
+    "description": "Options: Text to show on a button that performs some sort of cancel operation"
+  },
+  "export": {
+    "message": "Xuất",
+    "description": "Options: Text to show on a button that performs some sort of export operation."
+  },
+  "reset": {
+    "message": "Đặt lại",
+    "description": "Options: Text to show on a button that performs some sort of reset operation"
+  },
+  "confirmReset": {
+    "message": "Đặt lại phần mở rộng? Nhấn một lần nữa để xác nhận",
+    "description": "Options: Status message to confirm reset"
+  },
+  "cancelReset": {
+    "message": "Đặt lại đã hủy",
+    "description": "Options: Status message after cancelled reset"
+  },
+  "cancelImport": {
+    "message": "Nhập đã hủy",
+    "description": "Options: Status message after cancelled import"
+  },
+  "optionsReset": {
+    "message": "Các tùy chọn đặt lại, lưu trữ đã xóa",
+    "description": "Options: Status message after reset"
+  },
+  "activateSchedule": {
+    "message": "Lịch trình đã kích hoạt",
+    "description": "Options: Status message for Schedule activation"
+  },
+  "deactivateSchedule": {
+    "message": "Lịch trình đã ngừng kích hoạt",
+    "description": "Options: Status message for Schedule deactivation"
+  },
+  "activateUserCSS": {
+    "message": "CSS người dùng đã kích hoạt",
+    "description": "Options: Status message for User CSS activation"
+  },
+  "deactivateUserCSS": {
+    "message": "CSS người dùng đã ngừng kích hoạt",
+    "description": "Options: Status message for User CSS deactivation"
+  },
+  "saveUserCSS": {
+    "message": "CSS người dùng được lưu vào bộ lưu trữ",
+    "description": "Options: Status message for saving User CSS to storage"
+  },
+  "saveTheme": {
+    "message": "Chủ đề đã lưu và kích hoạt",
+    "description": "Options: Status message for theme activation"
+  },
+  "exportTheme": {
+    "message": "Mã chủ đề đã sao chép vào bộ nhớ tạm",
+    "description": "Options: Status message for exporting theme"
+  },
+  "importThemeDesc": {
+    "message": "Dán hoặc kéo và thả mã chủ đề vào trường nhập",
+    "description": "Options: Status message describing theme import"
+  },
+  "importTheme": {
+    "message": "Chủ đề đã nhập. Nhấp vào LƯU để lưu chủ đề",
+    "description": "Options: Status message confirming theme import"
+  },
+  "statusThemes": {
+    "message": "Chọn, tạo và lập lịch trình chủ đề",
+    "description": "Options: Status message themes"
+  },
+  "statusModifications": {
+    "message": "Bật tắt các chỉnh sửa và viết CSS tùy chỉnh",
+    "description": "Options: Status message modifications"
+  },
+  "statusInfo": {
+    "message": "Xin chân thành cảm ơn tất cả những cộng tác viên và những người dùng!",
+    "description": "Options: Status message info"
+  }
 }

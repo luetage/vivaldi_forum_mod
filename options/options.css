@@ -1,486 +1,496 @@
 :root {
-    /* For page load */
-    --colorBg: hsl(0, 0%, 0%);
+  /* For page load */
+  --colorBg: hsl(0, 0%, 0%);
 }
 
 body.vfm-standard {
-    --colorBg: #fff;
-    --colorBgC: #e6e6e6;
-    --colorBgL: #e6e6e6;
-    --colorBgM: #e6e6e6;
-    --colorFg: #212121;
-    --colorFg2: #6c757d;
-    --colorHi: #c91106;
-    --colorLi: #4c70f0;
-    --colorCo: #4c70f0;
-    --colorCo2: #3b57bb;
-    --colorAc: #3b57bb;
-    --colorAcFg: #fff;
-    --colorDd: #fff;
-    --colorDdFg: #212121;
+  --colorBg: #fff;
+  --colorBgC: #e6e6e6;
+  --colorBgL: #e6e6e6;
+  --colorBgM: #e6e6e6;
+  --colorFg: #212121;
+  --colorFg2: #6c757d;
+  --colorHi: #c91106;
+  --colorLi: #4c70f0;
+  --colorCo: #4c70f0;
+  --colorCo2: #3b57bb;
+  --colorAc: #3b57bb;
+  --colorAcFg: #fff;
+  --colorDd: #fff;
+  --colorDdFg: #212121;
 }
 body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    background-color: var(--colorBg);
-    cursor: default;
-    margin: 0;
-    user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: var(--colorBg);
+  cursor: default;
+  margin: 0;
+  user-select: none;
 }
-
 
 /* Header */
-
 header {
-    height: 67px;
-    white-space: nowrap;
-    color: var(--colorBgM);
-    background-color: var(--colorBg);
-    cursor: default;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 10;
+  height: 67px;
+  white-space: nowrap;
+  color: var(--colorBgM);
+  background-color: var(--colorBg);
+  cursor: default;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
 }
 #logo {
-    position: fixed;
-    top: 8px;
-    left: 40px;
+  position: fixed;
+  top: 8px;
+  left: 40px;
 }
 #themes-btn {
-    margin-left: 70px;
+  margin-left: 70px;
 }
-#themes-btn, #modifications-btn, #info-btn, #feedback-btn, #reset-btn {
-    color: var(--colorFg);
-    cursor: default;
-    background: none;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    height: 40px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 0 8px;
-    cursor: pointer;
+#themes-btn,
+#modifications-btn,
+#info-btn,
+#feedback-btn,
+#reset-btn {
+  color: var(--colorFg);
+  cursor: default;
+  background: none;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 8px;
+  cursor: pointer;
 }
-#themes-btn:hover, #modifications-btn:hover, #info-btn:hover, #feedback-btn:hover, #reset-btn:hover, .view {
-    color: var(--colorLi) !important;
+#themes-btn:hover,
+#modifications-btn:hover,
+#info-btn:hover,
+#feedback-btn:hover,
+#reset-btn:hover,
+.view {
+  color: var(--colorLi) !important;
 }
 form {
-    display: inline;
+  display: inline;
 }
 header div {
-    height: 27px;
-    color: var(--colorAcFg);
-    font-weight: 600;
-    background: var(--colorAc);
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 5px 0;
+  height: 27px;
+  color: var(--colorAcFg);
+  font-weight: 600;
+  background: var(--colorAc);
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 5px 0;
 }
-
 
 /* Content */
-
 #content {
-    position: absolute;
-    width: 100%;
-    color: var(--colorFg);
-    top: calc(67px + 8vh);
-    left: 0;
-    right: 0;
-    padding-bottom: 55px;
-    margin: auto;
-    text-align: left;
+  position: absolute;
+  width: 100%;
+  color: var(--colorFg);
+  top: calc(67px + 8vh);
+  left: 0;
+  right: 0;
+  padding-bottom: 55px;
+  margin: auto;
+  text-align: left;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Create columns */
-
 .column-left {
-    float: left;
-    width: 50%;
-    padding: 0 20px 0 40px;
-    margin-bottom: 30px;
+  float: left;
+  width: 50%;
+  padding: 0 20px 0 40px;
+  margin-bottom: 30px;
 }
 .column-right {
-    float: right;
-    width: 50%;
-    padding: 0 20px 0 40px;
+  float: right;
+  width: 50%;
+  padding: 0 20px 0 40px;
 }
 .scroll-column {
-    width: 100%;
-    max-height: 49vh;
-    padding-right: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 100%;
+  max-height: 49vh;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .scroll-column:hover {
-    width: 100%;
-    overflow-y: overlay;
+  width: 100%;
+  overflow-y: overlay;
 }
 .scroll-column p:first-of-type {
-    margin-top: 0px;
+  margin-top: 0px;
 }
-
 
 /* Clears floats after the columns */
-
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
-
 
 /* Stacks columns on top of each other for smaller displays */
-
 @media screen and (max-width: 1000px) {
-    .column-right, .right, .column-left, .left {
-        width: 100%;
-    }
-    #content {
-        top: 97px;
-    }
+  .column-right,
+  .right,
+  .column-left,
+  .left {
+    width: 100%;
+  }
+  #content {
+    top: 97px;
+  }
 }
 .float {
-    white-space: nowrap;
-    overflow: auto;
-    margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: auto;
+  margin-bottom: 15px;
 }
 .left {
-    float: left;
+  float: left;
 }
 .right {
-    float: right;
-    left: -100px
+  float: right;
+  left: -100px;
 }
 
 h2 {
-    margin-top: 0;
-    text-align: left;
-    font-size: 1.3rem;
-    color: var(--colorLi);
+  margin-top: 0;
+  text-align: left;
+  font-size: 1.3rem;
+  color: var(--colorLi);
 }
 strong {
-    color: var(--colorCo)
+  color: var(--colorCo);
 }
 a {
-    color: var(--colorLi);
+  color: var(--colorLi);
 }
-#modifications, #info {
-    display: none;
+#modifications,
+#info {
+  display: none;
 }
-
 
 /* Themes page */
-
 .themebox {
-    width: 113px;
-    padding: 0;
-    border: 0;
-    margin: 0 14px 14px 0;
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    background-color: transparent;
+  width: 113px;
+  padding: 0;
+  border: 0;
+  margin: 0 14px 14px 0;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-color: transparent;
 }
 .themebox:hover {
-    background: transparent !important;
+  background: transparent !important;
 }
 .themebox .themebox-image {
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--colorBgL);
-    outline: 1px solid var(--colorBgL);
-    font-size: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--colorBgL);
+  outline: 1px solid var(--colorBgL);
+  font-size: 0;
 }
 .active .themebox-image::before {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 .themebox-image::before {
-    content: "";
-    position: absolute;
-    transform: scale(0);
-    opacity: 0;
-    transition: 0.4s;
-    transform-origin: 100% 100%;
-    top: auto;
-    left: auto;
-    right: 0;
-    bottom: 0;
-    background-color: transparent;
-    border: 20px solid transparent;
+  content: "";
+  position: absolute;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.4s;
+  transform-origin: 100% 100%;
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 20px solid transparent;
 }
 .active .themebox-image .themebox-o_mark {
-    opacity: 1;
-    transform: none;
+  opacity: 1;
+  transform: none;
 }
 .themebox-image .themebox-o_mark {
-    transform: scale(1.5) translateX(2px) translateY(2px);
-    opacity: 0;
-    transition: 0.4s;
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    bottom: 3px;
-    right: 3px;
-    stroke-width: 2px;
+  transform: scale(1.5) translateX(2px) translateY(2px);
+  opacity: 0;
+  transition: 0.4s;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  bottom: 3px;
+  right: 3px;
+  stroke-width: 2px;
 }
 .themebox .themebox-title {
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 13px;
-    margin-top: 7px;
-    letter-spacing: .5px;
-    color: var(--colorFg);
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  margin-top: 7px;
+  letter-spacing: 0.5px;
+  color: var(--colorFg);
 }
-#addTheme, #moveLeft, .theme-save, .theme-import, #addSchedule, #css-save {
-    margin-right: 2px;
+#addTheme,
+#moveLeft,
+.theme-save,
+.theme-import,
+#addSchedule,
+#css-save {
+  margin-right: 2px;
 }
 .theme-edit {
-    margin: 0 6px;
+  margin: 0 6px;
 }
 .toggleEdit {
-    opacity: 0;
-    margin-top: 8px;
+  opacity: 0;
+  margin-top: 8px;
 }
 .toggleEdit div {
-    height: 24px;
-    margin-bottom: 3px;
+  height: 24px;
+  margin-bottom: 3px;
 }
 .toggleEdit div:first-of-type {
-    margin-top: 6px;
+  margin-top: 6px;
 }
-.toggleEdit input:not(#themeName), .toogleEdit label {
-    vertical-align: middle;
+.toggleEdit input:not(#themeName),
+.toogleEdit label {
+  vertical-align: middle;
 }
 input[type="text" i] {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--colorFg);
-    background-color: transparent;
-    letter-spacing: .5px;
-    width: 166px;
-    height: 27px;
-    text-indent: 5px;
-    border: 2px solid var(--colorBgM);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--colorFg);
+  background-color: transparent;
+  letter-spacing: 0.5px;
+  width: 166px;
+  height: 27px;
+  text-indent: 5px;
+  border: 2px solid var(--colorBgM);
 }
 .import::-webkit-input-placeholder {
-    text-align: center;
-    opacity: 1;
-    color: var(--colorHi);
+  text-align: center;
+  opacity: 1;
+  color: var(--colorHi);
 }
 input[type="color"] {
-    -webkit-appearance: none;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    width: 38px;
-    height: 24px;
-    padding: 0;
-    margin-right: 4px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 38px;
+  height: 24px;
+  padding: 0;
+  margin-right: 4px;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
+  padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
-    border: 1px solid var(--colorBgM);
+  border: 1px solid var(--colorBgM);
 }
 /* themebox border colors */
 .active .themebox-image {
-    border-color: var(--colorHi);
+  border-color: var(--colorHi);
 }
 .active .themebox-image::before {
-    border-bottom-color: var(--colorHi);
-    border-right-color: var(--colorHi);
+  border-bottom-color: var(--colorHi);
+  border-right-color: var(--colorHi);
 }
 .themebox-image .themebox-o_mark {
-    fill: var(--colorHi);
-    stroke: var(--colorBg);
+  fill: var(--colorHi);
+  stroke: var(--colorBg);
 }
 #vfm-standard.active .themebox-image {
-    border-color: var(--colorHi);
+  border-color: var(--colorHi);
 }
 #vfm-standard.active .themebox-image::before {
-    border-bottom-color: var(--colorHi);
-    border-right-color: var(--colorHi);
+  border-bottom-color: var(--colorHi);
+  border-right-color: var(--colorHi);
 }
 #vfm-standard .themebox-image .themebox-o_mark {
-    fill: var(--colorHi);
-    stroke: #fff;
+  fill: var(--colorHi);
+  stroke: #fff;
 }
-
 
 /* Schedule */
-
-.schedule, .userCSS {
-    display: inline-block;
+.schedule,
+.userCSS {
+  display: inline-block;
 }
 .switch {
-    margin-left: 12px;
-    margin-top: 3px;
-    position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px;
-    height: 17px;
+  margin-left: 12px;
+  margin-top: 3px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 17px;
 }
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--colorBgM);
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--colorBgM);
+  transition: 0.4s;
 }
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    background-color: var(--colorFg);
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--colorFg);
+  transition: 0.4s;
 }
 input:checked + .slider {
-    background-color: var(--colorHi);
+  background-color: var(--colorHi);
 }
 input:focus + .slider {
-    box-shadow: 0 0 1px var(--colorHi);
+  box-shadow: 0 0 1px var(--colorHi);
 }
 input:checked + .slider:before {
-    transform: translateX(13px);
-    background-color: var(--colorBg);
+  transform: translateX(13px);
+  background-color: var(--colorBg);
 }
 .slider.round {
-    border-radius: 17px;
+  border-radius: 17px;
 }
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .listSchedule {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 .listSchedule div {
-    margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 .listSchedule div select:focus {
-    outline: none;
+  outline: none;
 }
 .listSchedule div select:not(last-of-type) {
-    margin-right: 3px;
+  margin-right: 3px;
 }
 option {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    background: var(--colorDd);
-    color: var(--colorDdFg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: var(--colorDd);
+  color: var(--colorDdFg);
 }
 select {
-    background: var(--colorBgM);
-    color: var(--colorFg);
-    border:  2px solid var(--colorBgM);
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    padding: 4px 11px;
-    border-radius: 3px;
-    cursor: pointer;
+  background: var(--colorBgM);
+  color: var(--colorFg);
+  border: 2px solid var(--colorBgM);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 4px 11px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 select:hover {
-    color: var(--colorCo);
+  color: var(--colorCo);
 }
-
 
 /* Modifications page */
-
 #selectMods span {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 2px 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 0;
 }
 #selectMods span::before {
-    content: "\25ef";
-    color: var(--colorFg);
-    float: left;
-    margin-top: -2px;
-    padding-right: 8px;
-    opacity: 0;
+  content: "\25ef";
+  color: var(--colorFg);
+  float: left;
+  margin-top: -2px;
+  padding-right: 8px;
+  opacity: 0;
 }
 .selected {
-    color: var(--colorHi);
+  color: var(--colorHi);
 }
 #selectMods span.selected::before {
-    opacity: 1;
+  opacity: 1;
 }
 #editCSS button {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 #userCSS {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--colorFg);
-    background-color: var(--colorBgC);
-    padding: 5px;
-    border: 2px solid var(--colorBgM);
-    width: 100%;
-    height: 49vh;
-    resize: vertical;
-    min-height: 100px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--colorFg);
+  background-color: var(--colorBgC);
+  padding: 5px;
+  border: 2px solid var(--colorBgM);
+  width: 100%;
+  height: 49vh;
+  resize: vertical;
+  min-height: 100px;
 }
 #userCSS:disabled {
-    background-color: var(--colorBgL);
-    opacity: .65;
+  background-color: var(--colorBgL);
+  opacity: 0.65;
 }
 textarea::-webkit-input-placeholder {
-    color: var(--colorFg2) !important;
+  color: var(--colorFg2) !important;
 }
-
 
 /* Buttons */
-
 button {
-    background: var(--colorCo);
-    color: var(--colorBg);
-    border:  2px solid var(--colorCo);
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    padding: 4px 11px;
-    border-radius: 3px;
-    cursor: pointer;
+  background: var(--colorCo);
+  color: var(--colorBg);
+  border: 2px solid var(--colorCo);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 4px 11px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 button:hover:not(:disabled) {
-    background: var(--colorCo2);
-    border-color: var(--colorCo2);
+  background: var(--colorCo2);
+  border-color: var(--colorCo2);
 }
 button:disabled {
-    cursor: default;
-    opacity: .65;
+  cursor: default;
+  opacity: 0.65;
 }
-button, #selectMods > p > span, .editTheme input:not(:first-of-type) {
-    cursor: pointer;
+button,
+#selectMods > p > span,
+.editTheme input:not(:first-of-type) {
+  cursor: pointer;
 }
 button:focus {
-    outline: none;
+  outline: none;
 }

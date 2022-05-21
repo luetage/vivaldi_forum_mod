@@ -1,4 +1,4 @@
-/* Load stylesheets */
+// Load stylesheets
 
 function loadFile(filename, id) {
   let head = document.getElementsByTagName("head")[0];
@@ -17,7 +17,7 @@ function loadFile(filename, id) {
   }
 }
 
-/* Wait function */
+// Wait function
 
 function _async() {
   return new Promise((resolve) => {
@@ -31,7 +31,7 @@ async function _wait() {
   return true;
 }
 
-/* Load Theme */
+// Load Theme
 
 function loadTheme() {
   chrome.storage.sync.get({ VFM_CURRENT_THEME: "" }, function (get) {
@@ -54,7 +54,7 @@ function loadTheme() {
   });
 }
 
-/* Load User CSS */
+// Load User CSS
 
 function loadUserCSS() {
   chrome.storage.sync.get({ VFM_USER_CSS: "" }, function (get) {
@@ -72,7 +72,7 @@ function loadUserCSS() {
   });
 }
 
-/* Update Tab */
+// Update Tab
 
 function updateTheme() {
   let theme = document.getElementById("vfmTheme");

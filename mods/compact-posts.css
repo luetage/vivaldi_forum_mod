@@ -1,10 +1,11 @@
 /* Get rid of the margin between user name and content */
+
 .topic .content {
-    clear: unset !important;
-    margin-top: -40px !important;
+  clear: unset !important;
+  margin-top: -40px !important;
 }
 @media (max-width: 991px) {
-    .topic .content {
-        margin-top: -10px !important;
-    }
+  .topic .content {
+    margin-top: -10px !important;
+  }
 }

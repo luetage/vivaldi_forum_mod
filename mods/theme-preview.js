@@ -1,3 +1,5 @@
+// Theme Preview
+
 function tryParseJSON(jsonString) {
     try {
         var o = JSON.parse(jsonString);
@@ -105,4 +107,3 @@ function themePreview(content) {
         }
     });
 }
-
