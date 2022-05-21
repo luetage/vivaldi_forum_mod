@@ -18,13 +18,14 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "themes/standard.css",
         "themes/custom.css",
+        "themes/standard.css",
+        "mods/advanced-formatting.css",
+        "mods/compact-posts.css",
         "mods/notification-icons.css",
-        "mods/userID.css",
         "mods/signature-mod.css",
         "mods/square-avatars.css",
-        "mods/advanced-formatting.css",
+        "mods/userID.css",
         "icons/icon16.png"
       ],
       "matches": ["https://forum.vivaldi.net/*"],
