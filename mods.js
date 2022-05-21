@@ -71,6 +71,7 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
     _vivaldiHeader = document.getElementById("vivaldi-header");
     _subMenu = document.getElementById("submenu");
     window.addEventListener("scroll", autoScroll);
+    loadFile("mods/header-scroll.css");
   }
   let startmods = (mutations) => {
     mutations.forEach((mutation) => {
