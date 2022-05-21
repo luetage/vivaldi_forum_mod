@@ -22,6 +22,7 @@
         "themes/standard.css",
         "mods/advanced-formatting.css",
         "mods/compact-posts.css",
+        "mods/header-scroll.css",
         "mods/notification-icons.css",
         "mods/signature-mod.css",
         "mods/square-avatars.css",

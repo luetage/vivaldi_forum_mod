@@ -96,7 +96,7 @@ function updateUserCSS() {
   loadUserCSS();
 }
 
-navigator.serviceWorker.register("/background.js");
+navigator.serviceWorker.register("/serviceworker.js");
 loadTheme();
 loadUserCSS();
 chrome.runtime.sendMessage({ message: "whoami" }, function () {

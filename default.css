@@ -92,12 +92,6 @@ blockquote {
   user-select: none;
 }
 
-/* Auto-hide header transition */
-#vivaldi-header,
-#submenu {
-  transition: top 0.3s ease-out !important;
-}
-
 /* Position status circles in user menu */
 a[component="header/profilelink"] i,
 .user-status i {
