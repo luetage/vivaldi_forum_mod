@@ -742,7 +742,7 @@ function createToolbarCustomModal() {
   const list = document.createElement("ul");
   box.appendChild(list);
   addJqueryClickSimulator(box);
-  document.body.appendChild(box);
+  document.querySelector(".composer").appendChild(box);
 }
 
 /**
