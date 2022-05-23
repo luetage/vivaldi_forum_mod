@@ -49,7 +49,7 @@ function _bookmarks() {
   link.innerHTML = `<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px"> ${chrome.i18n.getMessage(
     "bookmarks"
   )} </span>`;
-  nav.insertBefore(li, nav.childNodes[16]);
+  nav.insertBefore(li, nav.lastChild);
   li.appendChild(link);
 }
 
