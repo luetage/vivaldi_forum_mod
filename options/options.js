@@ -3,6 +3,7 @@
 function _restore() {
   _restoreThemes();
   _restoreSchedule();
+  _loadTheme();
   chrome.storage.sync.get(
     {
       VFM_MODS: "",
@@ -34,8 +35,8 @@ function _restore() {
         toggleSchedule.setAttribute("checked", true);
       else toggleSchedule.removeAttribute("checked");
       if (changeMessage === false) {
-        status.style.opacity = "0";
-        status.innerText = chrome.i18n.getMessage("statusThemes");
+        _status.style.opacity = "0";
+        _status.innerText = chrome.i18n.getMessage("statusThemes");
         _fade();
       }
     }
@@ -114,8 +115,8 @@ function _toggleUserCSS() {
     }
     chrome.storage.sync.set({ VFM_USER_CSS: css }, function () {
       chrome.runtime.sendMessage({ message: "trigger usercss" });
-      status.style.opacity = "0";
-      status.innerText = text;
+      _status.style.opacity = "0";
+      _status.innerText = text;
       _fade();
     });
   });
@@ -131,8 +132,8 @@ function _saveUserCSS() {
     },
     function () {
       chrome.runtime.sendMessage({ message: "trigger usercss" });
-      status.style.opacity = "0";
-      status.innerText = chrome.i18n.getMessage("saveUserCSS");
+      _status.style.opacity = "0";
+      _status.innerText = chrome.i18n.getMessage("saveUserCSS");
       _fade();
     }
   );
@@ -168,8 +169,8 @@ function _toggleSchedule() {
     }
     chrome.storage.sync.set({ VFM_SCHEDULE: schedule }, function () {
       chrome.runtime.sendMessage({ message: systemMessage });
-      status.style.opacity = "0";
-      status.innerText = text;
+      _status.style.opacity = "0";
+      _status.innerText = text;
       _fade();
     });
   });
@@ -280,13 +281,13 @@ function _addremoveSchedule(choice) {
 function _resetOptions() {
   if (!resetBtn.classList.contains("confirm")) {
     resetBtn.classList.add("confirm");
-    status.style.opacity = "0";
-    status.innerText = chrome.i18n.getMessage("confirmReset");
+    _status.style.opacity = "0";
+    _status.innerText = chrome.i18n.getMessage("confirmReset");
     _fade();
     setTimeout(function () {
-      if (status.innerText === chrome.i18n.getMessage("confirmReset")) {
-        status.style.opacity = "0";
-        status.innerText = chrome.i18n.getMessage("cancelReset");
+      if (_status.innerText === chrome.i18n.getMessage("confirmReset")) {
+        _status.style.opacity = "0";
+        _status.innerText = chrome.i18n.getMessage("cancelReset");
         _fade();
       }
       resetBtn.removeAttribute("class");
@@ -310,8 +311,8 @@ function _resetOptions() {
           _restore();
           _showThemes();
           changeMessage = true;
-          status.style.opacity = "0";
-          status.innerText = chrome.i18n.getMessage("optionsReset");
+          _status.style.opacity = "0";
+          _status.innerText = chrome.i18n.getMessage("optionsReset");
           _fade();
         });
       });
@@ -327,8 +328,8 @@ function _showThemes() {
   navThemes.style.display = "block";
   navModifications.style.display = "none";
   navInfo.style.display = "none";
-  status.style.opacity = "0";
-  status.innerText = chrome.i18n.getMessage("statusThemes");
+  _status.style.opacity = "0";
+  _status.innerText = chrome.i18n.getMessage("statusThemes");
   _fade();
 }
 function _showModifications() {
@@ -337,8 +338,8 @@ function _showModifications() {
   navThemes.style.display = "none";
   navModifications.style.display = "block";
   navInfo.style.display = "none";
-  status.style.opacity = "0";
-  status.innerText = chrome.i18n.getMessage("statusModifications");
+  _status.style.opacity = "0";
+  _status.innerText = chrome.i18n.getMessage("statusModifications");
   _fade();
 }
 function _showInfo() {
@@ -347,8 +348,8 @@ function _showInfo() {
   navThemes.style.display = "none";
   navModifications.style.display = "none";
   navInfo.style.display = "block";
-  status.style.opacity = "0";
-  status.innerText = chrome.i18n.getMessage("statusInfo");
+  _status.style.opacity = "0";
+  _status.innerText = chrome.i18n.getMessage("statusInfo");
   _fade();
 }
 

@@ -337,8 +337,8 @@ function _saveTheme() {
         function () {
           sendToBackground();
           _restoreSchedule();
-          status.style.opacity = "0";
-          status.innerText = chrome.i18n.getMessage("saveTheme");
+          _status.style.opacity = "0";
+          _status.innerText = chrome.i18n.getMessage("saveTheme");
           _fade();
         }
       );
@@ -361,8 +361,8 @@ function _exportTheme() {
   };
   const themeCode = JSON.stringify(share);
   navigator.clipboard.writeText(themeCode);
-  status.style.opacity = "0";
-  status.innerText = chrome.i18n.getMessage("exportTheme");
+  _status.style.opacity = "0";
+  _status.innerText = chrome.i18n.getMessage("exportTheme");
   _fade();
 }
 
@@ -388,8 +388,8 @@ function _cancelImport() {
     _themeName.setAttribute("maxlength", "25");
     saveBtn.disabled = false;
     exportBtn.disabled = false;
-    status.style.opacity = "0";
-    status.innerText = chrome.i18n.getMessage("cancelImport");
+    _status.style.opacity = "0";
+    _status.innerText = chrome.i18n.getMessage("cancelImport");
     _fade();
   }
 }
@@ -420,8 +420,8 @@ function _imp() {
   saveBtn.disabled = false;
   exportBtn.disabled = true;
   importBtn.disabled = false;
-  status.style.opacity = "0";
-  status.innerText = chrome.i18n.getMessage("importTheme");
+  _status.style.opacity = "0";
+  _status.innerText = chrome.i18n.getMessage("importTheme");
   _fade();
 }
 
@@ -441,8 +441,8 @@ function _importTheme() {
     _safeAc = _colorAc.value;
     _themeName.value = "";
     _themeName.placeholder = chrome.i18n.getMessage("import");
-    status.style.opacity = "0";
-    status.innerText = chrome.i18n.getMessage("importThemeDesc");
+    _status.style.opacity = "0";
+    _status.innerText = chrome.i18n.getMessage("importThemeDesc");
     _fade();
     if (toggleEdit.style.display === "none") {
       toggleEdit.style.display = "block";
@@ -481,8 +481,8 @@ function _fade() {
     if (op >= 1) {
       clearInterval(timer);
     }
-    status.style.opacity = op;
-    status.style.filter = "alpha(opacity=" + op * 100 + ")";
+    _status.style.opacity = op;
+    _status.style.filter = "alpha(opacity=" + op * 100 + ")";
     op += op * 0.1;
   }, 20);
 }
@@ -510,7 +510,7 @@ const _colorAc = document.getElementById("colorAc");
 const _colorLi = document.getElementById("colorLi");
 const _colorCo = document.getElementById("colorCo");
 const _colorDd = document.getElementById("colorDd");
-const status = document.getElementById("status");
+const _status = document.getElementById("status");
 
 addTheme.addEventListener("click", _addTheme);
 removeTheme.addEventListener("click", _removeTheme);
