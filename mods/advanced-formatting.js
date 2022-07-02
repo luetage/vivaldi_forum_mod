@@ -471,7 +471,7 @@ function createEmotePicker() {
       box.appendChild(makeEmoteButton(emoteName, emoteUrl));
     }
   }
-  document.body.appendChild(box);
+  document.querySelector(".composer").appendChild(box);
 }
 
 /**
