@@ -19,7 +19,6 @@
     {
       "resources": [
         "themes/custom.css",
-        "themes/standard.css",
         "mods/advanced-formatting.css",
         "mods/compact-posts.css",
         "mods/header-scroll.css",

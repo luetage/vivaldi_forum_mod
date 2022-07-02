@@ -36,17 +36,13 @@ async function _wait() {
 function loadTheme() {
   chrome.storage.sync.get({ VFM_CURRENT_THEME: "" }, function (get) {
     let theme = get.VFM_CURRENT_THEME.selected;
-    if (theme.startsWith("vfm_")) {
-      _wait().then(() => {
-        let colors = get.VFM_CURRENT_THEME.colors;
-        for (const [key, value] of Object.entries(colors)) {
-          document.body.style.setProperty("--" + key, value);
-        }
-      });
-      loadFile("themes/custom.css", "vfmTheme");
-    } else {
-      loadFile("themes/standard.css", "vfmTheme");
-    }
+    _wait().then(() => {
+      let colors = get.VFM_CURRENT_THEME.colors;
+      for (const [key, value] of Object.entries(colors)) {
+        document.body.style.setProperty("--" + key, value);
+      }
+    });
+    loadFile("themes/custom.css", "vfmTheme");
     // introduce theme name as class in body
     _wait().then(() => {
       document.body.classList.add(theme);
