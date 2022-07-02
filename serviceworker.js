@@ -4,7 +4,7 @@ function defaultSetup() {
   chrome.storage.sync.set(
     {
       VFM_CURRENT_THEME: {
-        selected: "vfm-standard",
+        selected: "vfm_Standard",
         colors: {
           colorBg: "",
           colorFg: "",
@@ -29,6 +29,16 @@ function defaultSetup() {
         },
       },
       VFM_THEMES: [
+        {
+          themeName: "vfm_Standard",
+          colorBg: "#ffffff",
+          colorFg: "#000000",
+          colorHi: "#c91106",
+          colorAc: "#3b57bb",
+          colorLi: "#4c70f0",
+          colorCo: "#4c70f0",
+          colorDd: "#ffffff",
+        },
         {
           themeName: "vfm_Dracula",
           colorBg: "#282a36",
@@ -131,6 +141,7 @@ function defaultSetup() {
       },
     },
     function () {
+      activateTheme();
       chrome.runtime.openOptionsPage();
     }
   );
@@ -191,76 +202,71 @@ function activateTheme() {
     (get) => {
       const vt = get.VFM_THEMES;
       const vct = get.VFM_CURRENT_THEME;
-      if (vct.selected.startsWith("vfm_")) {
-        let co = vct.colors;
-        const index = vt.findIndex((x) => x.themeName === vct.selected);
-        co.colorBg = vt[index].colorBg;
-        co.colorFg = vt[index].colorFg;
-        co.colorHi = vt[index].colorHi;
-        co.colorCo = vt[index].colorCo;
-        co.colorDd = vt[index].colorDd;
-        co.colorLi = vt[index].colorLi;
-        co.colorAc = vt[index].colorAc;
-        // background
-        const rgbBg = RGB(co.colorBg);
-        const lumBg = lum(rgbBg[0], rgbBg[1], rgbBg[2]);
-        if (lumBg <= 0.5) {
-          if (lumBg < 0.01) co.colorBgC = shade(co.colorBg, 0.1);
-          else co.colorBgC = shade(co.colorBg, -0.2);
-          co.colorBgD = shade(co.colorBg, 0.05);
-          co.colorBgL = shade(co.colorBg, 0.1);
-          co.colorBgM = shade(co.colorBg, 0.2);
-          co.colorBgH = shade(co.colorBg, 0.4);
-        } else {
-          co.colorBgC = shade(co.colorBg, -0.05);
-          co.colorBgD = shade(co.colorBg, -0.025);
-          co.colorBgL = shade(co.colorBg, -0.05);
-          co.colorBgM = shade(co.colorBg, -0.1);
-          co.colorBgH = shade(co.colorBg, -0.2);
-        }
-        // foreground
-        const rgbFg = RGB(co.colorFg);
-        const lumFg = lum(rgbFg[0], rgbFg[1], rgbFg[2]);
-        if (lumBg > 0.5) co.colorFg2 = shade(co.colorFg, 0.25);
-        else co.colorFg2 = shade(co.colorFg, -0.12);
-        // accent
-        const rgbAc = RGB(co.colorAc);
-        const lumAc = lum(rgbAc[0], rgbAc[1], rgbAc[2]);
-        const conAc1 = contrast(lumAc, lumBg);
-        const conAc2 = contrast(lumAc, lumFg);
-        if (conAc1 >= conAc2) co.colorAcFg = co.colorBg;
-        else co.colorAcFg = co.colorFg;
-        // link
-        if (lumBg > 0.5) co.colorLi2 = shade(co.colorLi, 0.25);
-        else co.colorLi2 = shade(co.colorLi, -0.12);
-        // code
-        if (lumBg > 0.5) co.colorCo2 = shade(co.colorCo, 0.25);
-        else co.colorCo2 = shade(co.colorCo, -0.12);
-        // dropdown
-        const rgbDd = RGB(co.colorDd);
-        const lumDd = lum(rgbDd[0], rgbDd[1], rgbDd[2]);
-        const conDd1 = contrast(lumDd, lumBg);
-        const conDd2 = contrast(lumDd, lumFg);
-        if (conDd1 >= conDd2) co.colorDdFg = co.colorBg;
-        else co.colorDdFg = co.colorFg;
-        if (lumDd <= 0.5) {
-          co.colorDdL = shade(co.colorDd, 0.1);
-          co.colorDdM = shade(co.colorDd, 0.2);
-          co.colorDdH = shade(co.colorDd, 0.4);
-        } else {
-          co.colorDdL = shade(co.colorDd, -0.05);
-          co.colorDdM = shade(co.colorDd, -0.1);
-          co.colorDdH = shade(co.colorDd, -0.2);
-        }
-        // store custom theme
-        chrome.storage.sync.set({ VFM_CURRENT_THEME: vct }, () => {
-          sendToTabs("update theme");
-          chrome.runtime.sendMessage({ message: "options apply theme" });
-        });
+      let co = vct.colors;
+      const index = vt.findIndex((x) => x.themeName === vct.selected);
+      co.colorBg = vt[index].colorBg;
+      co.colorFg = vt[index].colorFg;
+      co.colorHi = vt[index].colorHi;
+      co.colorCo = vt[index].colorCo;
+      co.colorDd = vt[index].colorDd;
+      co.colorLi = vt[index].colorLi;
+      co.colorAc = vt[index].colorAc;
+      // background
+      const rgbBg = RGB(co.colorBg);
+      const lumBg = lum(rgbBg[0], rgbBg[1], rgbBg[2]);
+      if (lumBg <= 0.5) {
+        if (lumBg < 0.01) co.colorBgC = shade(co.colorBg, 0.1);
+        else co.colorBgC = shade(co.colorBg, -0.2);
+        co.colorBgD = shade(co.colorBg, 0.05);
+        co.colorBgL = shade(co.colorBg, 0.1);
+        co.colorBgM = shade(co.colorBg, 0.2);
+        co.colorBgH = shade(co.colorBg, 0.4);
       } else {
+        co.colorBgC = shade(co.colorBg, -0.05);
+        co.colorBgD = shade(co.colorBg, -0.025);
+        co.colorBgL = shade(co.colorBg, -0.05);
+        co.colorBgM = shade(co.colorBg, -0.1);
+        co.colorBgH = shade(co.colorBg, -0.2);
+      }
+      // foreground
+      const rgbFg = RGB(co.colorFg);
+      const lumFg = lum(rgbFg[0], rgbFg[1], rgbFg[2]);
+      if (lumBg > 0.5) co.colorFg2 = shade(co.colorFg, 0.25);
+      else co.colorFg2 = shade(co.colorFg, -0.12);
+      // accent
+      const rgbAc = RGB(co.colorAc);
+      const lumAc = lum(rgbAc[0], rgbAc[1], rgbAc[2]);
+      const conAc1 = contrast(lumAc, lumBg);
+      const conAc2 = contrast(lumAc, lumFg);
+      if (conAc1 >= conAc2) co.colorAcFg = co.colorBg;
+      else co.colorAcFg = co.colorFg;
+      // link
+      if (lumBg > 0.5) co.colorLi2 = shade(co.colorLi, 0.25);
+      else co.colorLi2 = shade(co.colorLi, -0.12);
+      // code
+      if (lumBg > 0.5) co.colorCo2 = shade(co.colorCo, 0.25);
+      else co.colorCo2 = shade(co.colorCo, -0.12);
+      // dropdown
+      const rgbDd = RGB(co.colorDd);
+      const lumDd = lum(rgbDd[0], rgbDd[1], rgbDd[2]);
+      const conDd1 = contrast(lumDd, lumBg);
+      const conDd2 = contrast(lumDd, lumFg);
+      if (conDd1 >= conDd2) co.colorDdFg = co.colorBg;
+      else co.colorDdFg = co.colorFg;
+      if (lumDd <= 0.5) {
+        co.colorDdL = shade(co.colorDd, 0.1);
+        co.colorDdM = shade(co.colorDd, 0.2);
+        co.colorDdH = shade(co.colorDd, 0.4);
+      } else {
+        co.colorDdL = shade(co.colorDd, -0.05);
+        co.colorDdM = shade(co.colorDd, -0.1);
+        co.colorDdH = shade(co.colorDd, -0.2);
+      }
+      // store custom theme
+      chrome.storage.sync.set({ VFM_CURRENT_THEME: vct }, () => {
         sendToTabs("update theme");
         chrome.runtime.sendMessage({ message: "options apply theme" });
-      }
+      });
     }
   );
 }

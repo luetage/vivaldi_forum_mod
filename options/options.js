@@ -48,15 +48,9 @@ function _restore() {
 function _loadTheme() {
   chrome.storage.sync.get({ VFM_CURRENT_THEME: "" }, function (get) {
     let theme = get.VFM_CURRENT_THEME.selected;
-    if (theme.startsWith("vfm_")) {
-      document.body.classList.remove("vfm-standard");
-      let colors = get.VFM_CURRENT_THEME.colors;
-      for (const [key, value] of Object.entries(colors)) {
-        document.body.style.setProperty("--" + key, value);
-      }
-    } else {
-      document.body.removeAttribute("style");
-      document.body.classList.add("vfm-standard");
+    let colors = get.VFM_CURRENT_THEME.colors;
+    for (const [key, value] of Object.entries(colors)) {
+      document.body.style.setProperty("--" + key, value);
     }
   });
 }
@@ -192,7 +186,7 @@ function _restoreSchedule() {
       Object.keys(entries).forEach((entry) => {
         const scheduleEntry = document.createElement("div");
         scheduleEntry.id = `schedule-${entry}`;
-        scheduleEntry.innerHTML = `<select class="sc-hours"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select><select class="sc-minutes"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select><select class="sc-themes"><option value="vfm-standard">Standard</option></select>`;
+        scheduleEntry.innerHTML = `<select class="sc-hours"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select><select class="sc-minutes"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select><select class="sc-themes"></select>`;
         listSchedule.appendChild(scheduleEntry);
         const hours = entries[entry].time.substring(0, 2);
         const minutes = entries[entry].time.substring(3, 5);
@@ -262,13 +256,8 @@ function _editSchedule(el) {
 function _addremoveSchedule(choice) {
   chrome.storage.sync.get({ VFM_SCHEDULE: "" }, function (get) {
     let schedule = get.VFM_SCHEDULE;
-    if (choice === 1) {
-      const as = { theme: "vfm-standard", time: "00:00" };
-      schedule.schedule.unshift(as);
-    } else {
-      if (schedule.schedule.length > 2) schedule.schedule.shift();
-      else return;
-    }
+    if (schedule.schedule.length > 2) schedule.schedule.shift();
+    else return;
     chrome.storage.sync.set({ VFM_SCHEDULE: schedule }, function () {
       _restoreSchedule();
       chrome.runtime.sendMessage({ message: "trigger schedule" });

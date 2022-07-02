@@ -3,7 +3,7 @@
 function _restoreThemes() {
   chrome.storage.sync.get(
     {
-      VFM_CURRENT_THEME: { selected: "vfm-standard" },
+      VFM_CURRENT_THEME: { selected: "vfm_Standard" },
       VFM_THEMES: [],
     },
     function (get) {
@@ -36,28 +36,25 @@ function _restoreThemes() {
       toggleEdit.style.opacity = 1;
       const select = vct.selected;
       document.getElementById(select).classList.add("active");
-      if (select.startsWith("vfm_")) {
-        addTheme.disabled = false;
-        removeTheme.disabled = false;
-        editBtn.disabled = false;
-        moveLeft.disabled = false;
-        moveRight.disabled = false;
-        var index = vt.findIndex((x) => x.themeName === select);
-        _themeName.value = vt[index].themeName.substring(4).replace(/_/g, " ");
-        _colorBg.value = vt[index].colorBg;
-        _colorFg.value = vt[index].colorFg;
-        _colorHi.value = vt[index].colorHi;
-        _colorCo.value = vt[index].colorCo;
-        _colorDd.value = vt[index].colorDd;
-        _colorLi.value = vt[index].colorLi;
-        _colorAc.value = vt[index].colorAc;
-      } else {
-        addTheme.disabled = true;
+      addTheme.disabled = false;
+      if (select === "vfm_Standard") {
         removeTheme.disabled = true;
         editBtn.disabled = true;
-        moveLeft.disabled = true;
-        moveRight.disabled = true;
+      } else {
+        removeTheme.disabled = false;
+        editBtn.disabled = false;
       }
+      moveLeft.disabled = false;
+      moveRight.disabled = false;
+      var index = vt.findIndex((x) => x.themeName === select);
+      _themeName.value = vt[index].themeName.substring(4).replace(/_/g, " ");
+      _colorBg.value = vt[index].colorBg;
+      _colorFg.value = vt[index].colorFg;
+      _colorHi.value = vt[index].colorHi;
+      _colorCo.value = vt[index].colorCo;
+      _colorDd.value = vt[index].colorDd;
+      _colorLi.value = vt[index].colorLi;
+      _colorAc.value = vt[index].colorAc;
       document.querySelectorAll("button.themebox").forEach(function (item) {
         item.addEventListener("click", _selectTheme);
       });
@@ -83,37 +80,31 @@ function _selectTheme(event) {
       function (get) {
         var vct = get.VFM_CURRENT_THEME;
         vct.selected = name;
-        if (!name.startsWith("vfm_")) {
-          chrome.storage.sync.set({ VFM_CURRENT_THEME: vct });
-          toggleEdit.style.display = "none";
-          addTheme.disabled = true;
-          removeTheme.disabled = true;
-          editBtn.disabled = true;
-          moveLeft.disabled = true;
-          moveRight.disabled = true;
-          sendToBackground();
-        } else {
-          var vt = get.VFM_THEMES;
-          var index = vt.findIndex((x) => x.themeName === name);
-          _themeName.value = vt[index].themeName
-            .substring(4)
-            .replace(/_/g, " ");
-          _colorBg.value = vt[index].colorBg;
-          _colorFg.value = vt[index].colorFg;
-          _colorHi.value = vt[index].colorHi;
-          _colorCo.value = vt[index].colorCo;
-          _colorDd.value = vt[index].colorDd;
-          _colorLi.value = vt[index].colorLi;
-          _colorAc.value = vt[index].colorAc;
-          chrome.storage.sync.set({ VFM_CURRENT_THEME: vct }, function () {
-            addTheme.disabled = false;
+        var vt = get.VFM_THEMES;
+        var index = vt.findIndex((x) => x.themeName === name);
+        _themeName.value = vt[index].themeName
+          .substring(4)
+          .replace(/_/g, " ");
+        _colorBg.value = vt[index].colorBg;
+        _colorFg.value = vt[index].colorFg;
+        _colorHi.value = vt[index].colorHi;
+        _colorCo.value = vt[index].colorCo;
+        _colorDd.value = vt[index].colorDd;
+        _colorLi.value = vt[index].colorLi;
+        _colorAc.value = vt[index].colorAc;
+        chrome.storage.sync.set({ VFM_CURRENT_THEME: vct }, function () {
+          addTheme.disabled = false;
+          if (name === "vfm_Standard") {
+            removeTheme.disabled = true;
+            editBtn.disabled = true;
+          } else {
             removeTheme.disabled = false;
             editBtn.disabled = false;
-            moveLeft.disabled = false;
-            moveRight.disabled = false;
-            sendToBackground();
-          });
-        }
+          }
+          moveLeft.disabled = false;
+          moveRight.disabled = false;
+          sendToBackground();
+        });
       }
     );
   }
@@ -188,7 +179,7 @@ function _removeTheme() {
       if (vt.length > 1) {
         sc.schedule.forEach((item) => {
           if (item.theme === vct.selected) {
-            item.theme = "vfm-standard";
+            item.theme = "vfm_Standard";
           }
         });
         const index = vt.findIndex((x) => x.themeName === vct.selected);
