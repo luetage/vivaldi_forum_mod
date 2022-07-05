@@ -5,10 +5,7 @@ function undoMoji(img) {
   var emojidom = document.createElement("span");
   emojidom.className = "vm-emoji";
   emojidom.title = img.title;
-  let e = img.alt.match(emoji);
-  if (Symbol.iterator in Object(e)) {
-    emojidom.innerText = Array.from(e).join("\u200d");
-  } else emojidom.innerText = img.alt;
+  emojidom.innerText = img.alt;
   img.insertAdjacentElement("beforebegin", emojidom);
   var post = img.parentElement;
   post.removeChild(img);
