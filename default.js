@@ -78,9 +78,9 @@ function add_copy_code() {
       codeblocks.forEach((codeblock) => {
         if (
           codeblock.classList.contains("copy") === false &&
-          codeblock.parentNode.tagName !== "BLOCKQUOTE" &&
           codeblock.firstChild.classList.contains("hljs") === true
         ) {
+          codeblock.style.position = "relative";
           codeblock.classList.add("copy");
           codeblock.insertBefore(make_copy_button(), codeblock.lastChild);
         }
