@@ -806,7 +806,7 @@ function createOrGetDropListMarker() {
   }
   const newMarker = document.createElement("div");
   newMarker.className = "dropmarker";
-  document.body.append(newMarker);
+  document.querySelector(".composer").append(newMarker);
   return newMarker;
 }
 
