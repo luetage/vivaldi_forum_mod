@@ -2,10 +2,34 @@
 // Use system emoji
 
 function undoMoji(img) {
+  const rawEmojiSequence = Array.from(img.alt)
   var emojidom = document.createElement("span");
   emojidom.className = "vm-emoji";
   emojidom.title = img.title;
-  emojidom.innerText = img.alt;
+  // adds in joiner character \u200D to correctly stich together emoji sequences
+  // the location of joiner is dependent on number of emoji in the sequence
+  let text = ""
+  const len = rawEmojiSequence.length;
+  switch (len) {
+    case 2:
+      // skin tones break if joined with \u200D, but plain emoji need to be joined
+      if (/light_skin|medium-light_skin|medium_skin|medium-dark_skin|dark_skin/.test(img.title)) {
+        text = rawEmojiSequence.reduce((prev, curr) => prev + curr);
+      } else {
+        text = rawEmojiSequence[0]+"\u200D"+rawEmojiSequence[1];
+      }
+      break;
+    case 3:
+      text = rawEmojiSequence[0]+rawEmojiSequence[1]+"\u200D"+rawEmojiSequence[2];
+      break;
+    case 4:
+      text = rawEmojiSequence[0]+rawEmojiSequence[1]+"\u200D"+rawEmojiSequence[2]+rawEmojiSequence[3];
+      break;
+    default:
+      text = rawEmojiSequence.reduce((prev, curr) => prev + curr);
+      break;
+  }
+  emojidom.innerText = text;
   img.insertAdjacentElement("beforebegin", emojidom);
   var post = img.parentElement;
   post.removeChild(img);
