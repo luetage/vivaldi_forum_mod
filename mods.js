@@ -12,9 +12,28 @@ function undoMoji(img) {
 }
 
 function checkMoji() {
-  Array.from(
+  let allEmoji = Array.from(
     document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji)")
-  ).forEach(undoMoji);
+  )
+  // emoji indicating sex are always separated into independant img from the base emoji in a sequence
+  // this adds the sex indicator emoji to the previous img's alt text and adjusts the title to match
+  let last = null;
+  allEmoji = allEmoji.reduce((prev, curr) => {
+    let next = last ? last.nextSibling ? last.nextSibling : {textContent: "false"} : {textContent: "false"};
+    if (last == null || next.textContent !== "\u200d") {
+      prev.push(curr);
+    } else {
+      let previousEmoji = prev[prev.length - 1]
+      let sex = curr.title.includes("female") ? "woman" : "man";
+      previousEmoji.alt = previousEmoji.alt + curr.alt
+      previousEmoji.title = previousEmoji.title.replace("person", sex)
+      const post = curr.parentElement;
+      post.removeChild(curr);
+    }
+    last = curr;
+    return prev;
+  }, [])
+  allEmoji.forEach(undoMoji);
 }
 
 // Auto-hide header on scroll
