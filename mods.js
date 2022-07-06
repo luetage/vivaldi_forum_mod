@@ -44,11 +44,14 @@ function checkMoji() {
   let last = null;
   allEmoji = allEmoji.reduce((prev, curr) => {
     let next = last ? last.nextSibling ? last.nextSibling : {textContent: "false"} : {textContent: "false"};
+    // when an emoji isn't part of a sequence, it doesn't need to be altered
     if (last == null || next.textContent !== "\u200d") {
       prev.push(curr);
     } else {
+      // if an emoji is determined to be the 2nd or greater emoji of a sequence, it needs to be added
+      // back to the 1st emoji of the sequence
       let previousEmoji = prev[prev.length - 1]
-      let sex = curr.title.includes("female") ? "woman" : "man";
+      const sex = curr.title.includes("female") ? "woman" : "man";
       previousEmoji.alt = previousEmoji.alt + curr.alt
       previousEmoji.title = previousEmoji.title.replace("person", sex)
       const post = curr.parentElement;
