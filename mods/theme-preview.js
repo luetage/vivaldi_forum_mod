@@ -111,7 +111,7 @@ function createThemeForumPreview(theme, code) {
 
 function themePreview(content) {
   var codes = content.querySelectorAll(
-    'p:not([data-theme-preview-checked="true"]), code:not([data-theme-preview-checked="true"])'
+    'code:not([data-theme-preview-checked="true"])'
   );
   var theme;
   codes.forEach(function (code) {
