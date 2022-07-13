@@ -6,11 +6,12 @@ body {
 }
 
 /* Header */
-/* #submenu.nav-up, */
-#submenu,
-#submenu.isfixed{
-  top: 64px !important;
-  position: fixed;
+@media (min-width: 960px) {
+  #submenu,
+  #submenu.isfixed {
+    top: 64px !important;
+    position: fixed;
+  }
 }
 #menucontent {
   background-color: var(--colorBg);

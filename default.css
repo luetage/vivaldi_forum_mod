@@ -15,21 +15,13 @@ a#vlogo {
 #communitysubmenu {
   display: none !important;
 }
-#vivaldi-header.nav-up,
-#vivaldi-header.nav-down {
-  top: 0px !important;
-  height: 64px !important;
-}
-#vivaldi-header.nav-up #vivaldilogin,
-#vivaldi-header.nav-down #vivaldilogin {
-  top: -7px !important;
-  height: 64px !important;
-}
-main#panel {
-  margin-top: -70px !important;
-}
-.topic .topic-header {
-  position: unset !important;
+@media (min-width: 960px) {
+  main#panel {
+    margin-top: -70px !important;
+  }
+  .topic .topic-header {
+    position: unset !important;
+  }
 }
 
 /* Font icons */
