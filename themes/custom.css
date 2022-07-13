@@ -10,7 +10,7 @@ body {
 #submenu.nav-down {
   top: 64px !important;
 }
-#vivaldi-header {
+#menucontent {
   background-color: var(--colorBg);
 }
 #vlogo {
