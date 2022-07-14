@@ -2,10 +2,7 @@
 .header .notification-list li[data-nid] {
   margin-left: -20px;
 }
-.header .notification-list li:not([data-nid]) {
-  margin-left: 0px;
-}
-.header .notification-list li::before {
+.header .notification-list li[data-nid]::before {
   display: inline-block;
   position: relative;
   text-align: right;
