@@ -95,10 +95,6 @@ a#vlogo {
 .navbar-default .navbar-toggle .icon-bar {
   background-color: var(--colorFg);
 }
-button#mobile-menu.navbar-toggle:hover,
-button#mobile-menu.navbar-toggle:focus {
-  background-color: var(--colorBgM) !important;
-}
 /* progress */
 #nprogress .spinner-icon {
   border-top-color: var(--colorHi);
@@ -1284,6 +1280,15 @@ a[href="/groups/translators"] .label.group-label {
 .composer .mobile-navbar {
   background-color: var(--colorCo);
   color: var(--colorBg);
+}
+button#mobile-menu.navbar-toggle:hover,
+button#mobile-menu.navbar-toggle:focus {
+  background-color: var(--colorBgL) !important;
+}
+@media (max-width: 959px) {
+  #menucontent {
+    border-bottom-color: var(--colorBgL);
+  }
 }
 @media (max-width: 767px) {
   .categories > li,
