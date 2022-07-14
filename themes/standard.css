@@ -70,7 +70,8 @@ small.pull-right a.vfm-highlight {
 }
 
 /* Notification icons */
-notification-list li::before,
+#menu .notification-list li::before,
+.header .notification-list li::before,
 #menu .notification-list li .mark-read,
 .header .notification-list li .mark-read {
   color: #777 !important;
