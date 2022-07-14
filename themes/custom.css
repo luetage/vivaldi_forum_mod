@@ -5,12 +5,37 @@ body {
   color: var(--colorFg) !important;
 }
 
-/* Header */
-#submenu.nav-up,
-#submenu.nav-down {
-  top: 64px !important;
+/* Standard settings for header */
+a#vlogo {
+  height: 32px;
+  width: 32px;
+  margin-top: 0px;
 }
-#vivaldi-header {
+#vlogo img {
+  display: none;
+}
+#vivaldinav {
+  left: 55px;
+}
+#communitysubmenu {
+  display: none;
+}
+@media (min-width: 960px) {
+  #submenu,
+  #submenu.isfixed {
+    top: 64px !important;
+    position: fixed;
+  }
+  main#panel {
+    margin-top: -70px;
+  }
+  .topic .topic-header {
+    position: unset;
+  }
+}
+
+/* Header */
+#menucontent {
   background-color: var(--colorBg);
 }
 #vlogo {
@@ -69,10 +94,6 @@ body {
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: var(--colorFg);
-}
-button#mobile-menu.navbar-toggle:hover,
-button#mobile-menu.navbar-toggle:focus {
-  background-color: var(--colorBgM) !important;
 }
 /* progress */
 #nprogress .spinner-icon {
@@ -146,6 +167,11 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
+  background-color: var(--colorDdL);
+}
+.header .notification-list li:hover,
+.slideout-menu .notification-list li:hover,
+.header .notif-dropdown-link a:hover {
   background-color: var(--colorDdL);
 }
 .dropdown-menu > li > a {
@@ -630,14 +656,6 @@ a[href="/tags/resolu"] .tag {
 .notifications-list li.unread:nth-child(odd),
 .notifications-list li.unread:nth-child(even) {
   border-left: 5px solid var(--colorHi) !important;
-}
-#content li[data-nid^="new_post"]::before,
-#content li[data-nid^="upvote"]::before,
-#content li[data-nid^="follow"]::before,
-#content li[data-nid^="move"]::before,
-#content li[data-nid^="chat"]::before,
-#content li[data-nid^="tid"]::before {
-  color: unset !important;
 }
 
 /* Panels */
@@ -1260,6 +1278,15 @@ a[href="/groups/translators"] .label.group-label {
   background-color: var(--colorCo);
   color: var(--colorBg);
 }
+button#mobile-menu.navbar-toggle:hover,
+button#mobile-menu.navbar-toggle:focus {
+  background-color: var(--colorBgL) !important;
+}
+@media (max-width: 959px) {
+  #menucontent {
+    border-bottom-color: var(--colorBgL);
+  }
+}
 @media (max-width: 767px) {
   .categories > li,
   .category > ul > li {
@@ -1371,13 +1398,8 @@ small.pull-right a.vfm-highlight {
 }
 
 /* Notification icons */
-li[data-nid^="new_post"]::before,
-li[data-nid^="edit_post"]::before,
-li[data-nid^="upvote"]::before,
-li[data-nid^="follow"]::before,
-li[data-nid^="move"]::before,
-li[data-nid^="chat"]::before,
-li[data-nid^="tid"]::before,
+#menu .notification-list li::before,
+.header .notification-list li::before,
 #menu .notification-list li .mark-read,
 .header .notification-list li .mark-read {
   color: var(--colorDdFg) !important;

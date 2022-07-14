@@ -1,13 +1,38 @@
 /* Theme Standard */
 /* Additional code to ensure compatibility with Forum mod features. */
 
+/* Standard settings for header */
+a#vlogo {
+  height: 32px;
+  width: 32px;
+  margin-top: 0px;
+}
+#vlogo img {
+  display: none;
+}
+#vivaldinav {
+  left: 55px;
+}
+#communitysubmenu {
+  display: none;
+}
+@media (min-width: 960px) {
+  #submenu,
+  #submenu.isfixed {
+    top: 64px !important;
+    position: fixed;
+  }
+  main#panel {
+    margin-top: -70px;
+  }
+  .topic .topic-header {
+    position: unset;
+  }
+}
+
 /* Header */
 #vlogo {
   fill: #4c70f0;
-}
-#submenu.nav-up,
-#submenu.nav-down {
-  top: 64px !important;
 }
 
 /* Advanced formatting mod */
@@ -30,19 +55,6 @@
   background-color: #e6e6e6;
 }
 
-/* Notification icons color */
-li[data-nid^="new_post"]::before,
-li[data-nid^="edit_post"]::before,
-li[data-nid^="upvote"]::before,
-li[data-nid^="follow"]::before,
-li[data-nid^="move"]::before,
-li[data-nid^="chat"]::before,
-li[data-nid^="tid"]::before,
-#menu .notification-list li .mark-read,
-.header .notification-list li .mark-read {
-  color: #777;
-}
-
 /* Copy all code button */
 .copy-all-code-button {
   background-color: rgba(125, 125, 125, 0.66);
@@ -55,6 +67,14 @@ li[data-nid^="tid"]::before,
 /* Highlight post-tools link button on click */
 small.pull-right a.vfm-highlight {
   color: #c91106 !important;
+}
+
+/* Notification icons */
+#menu .notification-list li::before,
+.header .notification-list li::before,
+#menu .notification-list li .mark-read,
+.header .notification-list li .mark-read {
+  color: #777 !important;
 }
 
 /* Theme preview */
