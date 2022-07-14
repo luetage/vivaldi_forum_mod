@@ -5,14 +5,36 @@ body {
   color: var(--colorFg) !important;
 }
 
-/* Header */
+/* Standard settings for header */
+a#vlogo {
+  height: 32px;
+  width: 32px;
+  margin-top: 0px;
+}
+#vlogo img {
+  display: none;
+}
+#vivaldinav {
+  left: 55px;
+}
+#communitysubmenu {
+  display: none;
+}
 @media (min-width: 960px) {
   #submenu,
   #submenu.isfixed {
     top: 64px !important;
     position: fixed;
   }
+  main#panel {
+    margin-top: -70px;
+  }
+  .topic .topic-header {
+    position: unset;
+  }
 }
+
+/* Header */
 #menucontent {
   background-color: var(--colorBg);
 }
