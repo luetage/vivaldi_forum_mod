@@ -1,9 +1,11 @@
 /* Custom notification icons */
-
-.notification-list li {
+.header .notification-list li[data-nid] {
   margin-left: -20px;
 }
-.notification-list li::before {
+.header .notification-list li:not([data-nid]) {
+  margin-left: 0px;
+}
+.header .notification-list li::before {
   display: inline-block;
   position: relative;
   text-align: right;
@@ -12,7 +14,7 @@
   font-family: "Font Awesome 5 Free";
   font-size: 14px;
 }
-.notification-list li.unread::before {
+.header .notification-list li.unread::before {
   font-weight: 900;
 }
 .header .notification-list li .mark-read {
@@ -20,25 +22,25 @@
 }
 
 /* Set icons */
-.notification-list li[data-nid^="new_post"]::before {
+.header .notification-list li[data-nid^="new_post"]::before {
   content: "\f1d8";
 }
-.notification-list li[data-nid^="edit_post"]::before {
+.header .notification-list li[data-nid^="edit_post"]::before {
   content: "\f044";
 }
-.notification-list li[data-nid^="upvote"]::before {
+.header .notification-list li[data-nid^="upvote"]::before {
   content: "\f164";
 }
-.notification-list li[data-nid^="follow"]::before {
+.header .notification-list li[data-nid^="follow"]::before {
   content: "\f06e";
 }
-.notification-list li[data-nid^="move"]::before {
+.header .notification-list li[data-nid^="move"]::before {
   content: "\f35a";
 }
-.notification-list li[data-nid^="chat"]::before {
+.header .notification-list li[data-nid^="chat"]::before {
   content: "\f0e0";
 }
 /* mentions/new topics (no specific data-nid) */
-.notification-list li[data-nid^="tid"]::before {
+.header .notification-list li[data-nid^="tid"]::before {
   content: "\f4ad";
 }

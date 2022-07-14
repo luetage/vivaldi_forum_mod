@@ -130,8 +130,7 @@ a#vlogo {
 .header .chat-list > li:hover {
   background-color: var(--colorDdL);
 }
-.notification-list li.unread,
-.notifications-list li.unread,
+.header .notification-list li.unread,
 .chat-list.chats-list li.unread {
   background-color: var(--colorDdM) !important;
 }
