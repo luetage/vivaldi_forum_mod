@@ -28,6 +28,9 @@ a#vlogo {
   .topic .topic-header {
     position: unset;
   }
+  .chats-full {
+    padding-top: 20px;
+  }
 }
 
 /* Header */
