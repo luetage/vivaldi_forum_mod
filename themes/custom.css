@@ -67,6 +67,9 @@ a#vlogo {
   color: var(--colorFg);
   background-color: var(--colorBg);
 }
+#vivaldinav #search-form #search-fields input.form-control:not(:focus) {
+  border-color: var(--colorBgM)
+}
 #quick-search-container {
   background-color: var(--colorBg);
   border-color: var(--colorBgH);
