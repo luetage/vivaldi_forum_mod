@@ -67,6 +67,9 @@ a#vlogo {
   color: var(--colorFg);
   background-color: var(--colorBg);
 }
+#vivaldinav #search-form #search-fields input.form-control:not(:focus) {
+  border-color: var(--colorBgM)
+}
 #quick-search-container {
   background-color: var(--colorBg);
   border-color: var(--colorBgH);
@@ -331,7 +334,7 @@ a:focus,
 }
 .categories > li [component="topic/header"] > i[component="topic/pinned"],
 .category > ul > li [component="topic/header"] > i[component="topic/pinned"] {
-  color: var(--colorFg);
+  color: var(--colorHi);
 }
 ul.nav.nav-pills a:hover,
 ul.nav.nav-pills a:focus {
