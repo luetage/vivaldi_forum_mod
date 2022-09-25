@@ -351,6 +351,10 @@ ul.nav.nav-pills a:focus {
   color: var(--colorLi);
   background-color: var(--colorBgM);
 }
+.user-guest .category>ul>li:not(.unread) h2 a {
+  color: var(--colorFg);
+  opacity: 1;
+}
 .category > ul > li:not(.unread) h2 a {
   color: var(--colorFg);
   opacity: 0.66;
