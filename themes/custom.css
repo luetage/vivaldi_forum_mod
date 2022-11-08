@@ -68,7 +68,7 @@ a#vlogo {
   background-color: var(--colorBg);
 }
 #vivaldinav #search-form #search-fields input.form-control:not(:focus) {
-  border-color: var(--colorBgM)
+  border-color: var(--colorBgM);
 }
 #quick-search-container {
   background-color: var(--colorBg);
@@ -185,6 +185,15 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .badge {
   background-color: var(--colorDdM);
   color: var(--colorDdFg);
+}
+.textcomplete-dropdown,
+.textcomplete-dropdown .textcomplete-footer,
+.textcomplete-dropdown .textcomplete-item {
+  border-color: var(--colorDdM);
+}
+.textcomplete-dropdown .textcomplete-item.active,
+.textcomplete-dropdown .textcomplete-item:hover {
+  background-color: var(--colorDdL);
 }
 
 /* Pagination */
@@ -351,7 +360,7 @@ ul.nav.nav-pills a:focus {
   color: var(--colorLi);
   background-color: var(--colorBgM);
 }
-.user-guest .category>ul>li:not(.unread) h2 a {
+.user-guest .category > ul > li:not(.unread) h2 a {
   color: var(--colorFg);
   opacity: 1;
 }
