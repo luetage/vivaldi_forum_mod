@@ -190,6 +190,7 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .textcomplete-dropdown .textcomplete-footer,
 .textcomplete-dropdown .textcomplete-item {
   border-color: var(--colorDdM);
+  color: var(--colorDdFg);
 }
 .textcomplete-dropdown .textcomplete-item.active,
 .textcomplete-dropdown .textcomplete-item:hover {
