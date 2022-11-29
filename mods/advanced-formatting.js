@@ -14,6 +14,8 @@ const EMOTES = {
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/006/original/29eb3b75f1953a3a.png",
   tony_normal:
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/008/original/4fcb4e1cc5d31aed.png",
+  tony_santa:
+    "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
   tony_side:
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/005/original/37f8e551c5bbdaad.png",
   tony_sigh:
