@@ -26,6 +26,7 @@ const EMOTES = {
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/011/original/c2adb167853b3f28.png",
   tony_wee:
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/012/original/e2537b10ccf7b452.png",
+  tony_santa: "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
   alien: "1539692482285-alien.gif",
   angel: "1539692493644-angel.gif",
   awww: "1539692536730-awww.gif",
