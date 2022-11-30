@@ -479,10 +479,7 @@ function makeEmoteButton(emoteName, emoteUrl) {
   const emoteButton = document.createElement("img");
   emoteButton.alt = emoteName;
   emoteButton.title = emoteName;
-  if (
-    emoteName === "chef" ||
-    emoteName.startsWith("tony")
-  )
+  if (emoteName === "chef" || emoteName.startsWith("tony"))
     emoteButton.src = emoteUrl;
   else emoteButton.src = STATIC_URL + emoteUrl;
   emoteButton.addEventListener("click", emotePicked);
