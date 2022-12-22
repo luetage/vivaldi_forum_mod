@@ -28,6 +28,12 @@ const EMOTES = {
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/011/original/c2adb167853b3f28.png",
   tony_wee:
     "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/012/original/e2537b10ccf7b452.png",
+  vivaldi_blue:
+    "https://forum.vivaldi.net/assets/uploads/files/1671744402026-vivaldi_blue.png",
+  vivaldi_grey:
+    "https://forum.vivaldi.net/assets/uploads/files/1671744402090-vivaldi_grey.png",
+  vivaldi_red:
+    "https://forum.vivaldi.net/assets/uploads/files/1671744402145-vivaldi_red.png",
   alien: "1539692482285-alien.gif",
   angel: "1539692493644-angel.gif",
   awww: "1539692536730-awww.gif",
@@ -479,7 +485,7 @@ function makeEmoteButton(emoteName, emoteUrl) {
   const emoteButton = document.createElement("img");
   emoteButton.alt = emoteName;
   emoteButton.title = emoteName;
-  if (emoteName === "chef" || emoteName.startsWith("tony"))
+  if (emoteName === "chef" || emoteName.startsWith("tony") || emoteName.startsWith("vivaldi"))
     emoteButton.src = emoteUrl;
   else emoteButton.src = STATIC_URL + emoteUrl;
   emoteButton.addEventListener("click", emotePicked);
