@@ -19,6 +19,7 @@
     {
       "resources": [
         "themes/custom.css",
+        "themes/snow.mp4",
         "themes/standard.css",
         "mods/advanced-formatting.css",
         "mods/compact-posts.css",

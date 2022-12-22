@@ -31,6 +31,29 @@ async function _wait() {
   return true;
 }
 
+// Easter Egg
+
+function loadEasterEgg() {
+  const video = document.createElement("video");
+  const videoSource = document.createElement("source");
+  video.setAttribute("autoplay", "");
+  video.setAttribute("muted", "");
+  video.setAttribute("loop", "");
+  video.setAttribute("style", `
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  `);
+  videoSource.setAttribute("src", `${chrome.runtime.getURL("themes/snow.mp4")}`);
+  video.appendChild(videoSource);
+  document.body.prepend(video);
+}
+
 // Load Theme
 
 function loadTheme() {
@@ -41,6 +64,9 @@ function loadTheme() {
         let colors = get.VFM_CURRENT_THEME.colors;
         for (const [key, value] of Object.entries(colors)) {
           document.body.style.setProperty("--" + key, value);
+        }
+        if (theme.startsWith("vfm_letitsnow")) {
+          loadEasterEgg();
         }
       });
       loadFile("themes/custom.css", "vfmTheme");
