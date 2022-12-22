@@ -228,7 +228,7 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
   color: var(--colorBg) !important;
 }
 .topic .pagination-block {
-  background-color: var(--colorBgL);
+  background-color: var(--colorBgL) !important;
 }
 .pagination-block .progress-bar {
   background-color: var(--colorCo) !important;
@@ -1118,8 +1118,9 @@ ul[component="chat/search/list"].dropdown-menu {
   color: var(--colorBg);
 }
 .composer,
-.form-control {
-  background-color: var(--colorBg);
+.form-control,
+#search-form .form-control {
+  background-color: var(--colorBg) !important;
   color: var(--colorFg);
 }
 .composer .formatting-bar .formatting-group li,
