@@ -50,7 +50,7 @@ function loadEasterEgg() {
     mix-blend-mode: screen;
     pointer-events: none;
   `);
-  videoSource.setAttribute("src", `${chrome.runtime.getURL("themes/snow.mp4")}`);
+  videoSource.setAttribute("src", chrome.runtime.getURL("themes/snow.mp4"));
   videoSource.setAttribute("type", "video/mp4");
   video.appendChild(videoSource);
   document.body.prepend(video);
