@@ -36,6 +36,7 @@ async function _wait() {
 function loadEasterEgg() {
   const video = document.createElement("video");
   const videoSource = document.createElement("source");
+  video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
   video.setAttribute("loop", "");
@@ -50,6 +51,7 @@ function loadEasterEgg() {
     pointer-events: none;
   `);
   videoSource.setAttribute("src", `${chrome.runtime.getURL("themes/snow.mp4")}`);
+  videoSource.setAttribute("type", "video/mp4");
   video.appendChild(videoSource);
   document.body.prepend(video);
 }
