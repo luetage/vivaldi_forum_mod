@@ -33,27 +33,38 @@ async function _wait() {
 
 // Easter Egg
 
+// https://stackoverflow.com/a/45736131/12275656
+function genRand(min, max, decimalPlaces) {
+  const rand = Math.random() * (max - min) + min;
+  const power = Math.pow(10, decimalPlaces);
+  return Math.floor(rand * power) / power;
+}
+
+function genSnowFlake() {
+  const size = genRand(4, 8, 0);
+  const flake = `
+    <div class="flake" style="
+      width: ${size}px;
+      height: ${size}px;
+      left: ${genRand(0, 100, 0)}%;
+      top: ${genRand(-400, -20, 0)}px;
+      animation-delay: ${genRand(1, 12, 1)}s, ${genRand(1, 12, 1)}s;
+      filter: blur(${genRand(0.8, 3, 1)}px);
+    "></div>
+  `;
+  return flake;
+}
+
 function loadEasterEgg() {
-  const video = document.createElement("video");
-  const videoSource = document.createElement("source");
-  video.setAttribute("playsinline", "");
-  video.setAttribute("autoplay", "");
-  video.setAttribute("muted", "");
-  video.setAttribute("loop", "");
-  video.setAttribute("style", `
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    mix-blend-mode: screen;
-    pointer-events: none;
-  `);
-  videoSource.setAttribute("src", chrome.runtime.getURL("themes/snow.mp4"));
-  videoSource.setAttribute("type", "video/mp4");
-  video.appendChild(videoSource);
-  document.body.prepend(video);
+  const numFlakes = 80;
+  const snow = document.createElement("div");
+  snow.setAttribute("class", "snow");
+  let flakes = "";
+  for (let i = 0; i < numFlakes; i++) {
+    flakes += genSnowFlake();
+  }
+  snow.innerHTML = flakes;
+  document.body.prepend(snow);
 }
 
 // Load Theme
