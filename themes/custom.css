@@ -333,7 +333,8 @@ a,
 .posts-list .posts-list-item .topic-title:hover,
 a:hover,
 a:focus,
-.breadcrumb a:hover {
+.breadcrumb a:hover,
+.category>ul>li h2 a:hover, .category>ul>li:not(.unread) h2 a:hover {
   color: var(--colorLi);
 }
 .post-header small.pull-right a {
@@ -1120,7 +1121,7 @@ ul[component="chat/search/list"].dropdown-menu {
 .composer,
 .form-control,
 #search-form .form-control {
-  background-color: var(--colorBg) !important;
+  background-color: var(--colorBg);
   color: var(--colorFg);
 }
 .composer .formatting-bar .formatting-group li,
