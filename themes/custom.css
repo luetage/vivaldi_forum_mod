@@ -334,7 +334,8 @@ a,
 a:hover,
 a:focus,
 .breadcrumb a:hover,
-.category>ul>li h2 a:hover, .category>ul>li:not(.unread) h2 a:hover {
+.category > ul > li h2 a:hover,
+.category > ul > li:not(.unread) h2 a:hover {
   color: var(--colorLi);
 }
 .post-header small.pull-right a {
@@ -1352,12 +1353,16 @@ span.votes .upvoted .fa-chevron-up::before {
   border-color: var(--colorBgM);
 }
 .emoji-dialog .top-bar {
-  background-color: var(--colorBgM);
+  background-color: var(--colorBgM) !important;
+}
+.emoji-tabs .emoji-dialog-search {
+  color: var(--colorFg);
+  background-color: var(--colorBg);
 }
 .emoji-tabs .emoji-dialog-search-container button.close {
   background-color: var(--colorCo);
   color: var(--colorBg);
-  border-color: var(--colorCo2);
+  border-color: var(--colorCo2) !important;
   text-shadow: none;
 }
 .emoji-tabs .emoji-dialog-search-container button.close:hover {
