@@ -78,7 +78,8 @@ function loadTheme() {
         for (const [key, value] of Object.entries(colors)) {
           document.body.style.setProperty("--" + key, value);
         }
-        if (theme.startsWith("vfm_letitsnow")) {
+        const strippedTheme = theme.split('_').join('').toLowerCase();
+        if (strippedTheme.includes("letitsnow")) {
           loadEasterEgg();
         }
       });
