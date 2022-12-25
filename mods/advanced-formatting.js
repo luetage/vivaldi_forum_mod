@@ -2,7 +2,6 @@
 
 /* ==========Globals=============*/
 const EMOTES = {
-  tony_santa: "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
   alien: "1539692482285-alien.gif",
   angel: "1539692493644-angel.gif",
   awww: "1539692536730-awww.gif",
@@ -46,6 +45,7 @@ const EMOTES = {
   spock: "1539685852804-spock.gif",
   thumbsdown: "1539693743513-thumbsdown.gif",
   thumbsup: "1539693760607-thumbsup.gif",
+  tony_santa: "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
   troll: "1539685894751-troll.gif",
   waiting: "1539685920932-waiting.gif",
   weeping: "1539685954572-weeping.gif",
