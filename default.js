@@ -185,7 +185,7 @@ function loadEasterEgg() {
 
 function checkInput(e, el) {
   if (e.key === "Enter") {
-    const input = el.value.replace(/\s+/g, '').toLowerCase();
+    const input = el.value.replace(/\s+/g, "").toLowerCase();
     console.log(input);
     if (input.includes("letitsnow")) {
       loadEasterEgg();
