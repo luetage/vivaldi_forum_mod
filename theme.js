@@ -46,7 +46,7 @@ function genSnowFlake() {
     <div class="flake" style="
       width: ${size}px;
       height: ${size}px;
-      left: ${genRand(0, 100, 0)}%;
+      left: ${genRand(-10, 110, 0)}%;
       top: ${genRand(0, 100, 0)}px;
       animation-delay: ${genRand(-12, -1, 1)}s, ${genRand(-12, -1, 1)}s;
       filter: blur(${genRand(0.8, 3, 1)}px);
@@ -56,7 +56,7 @@ function genSnowFlake() {
 }
 
 function loadEasterEgg() {
-  const numFlakes = 80;
+  const numFlakes = 90;
   const snow = document.createElement("div");
   snow.setAttribute("class", "snow");
   let flakes = "";
