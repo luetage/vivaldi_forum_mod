@@ -2,38 +2,7 @@
 
 /* ==========Globals=============*/
 const EMOTES = {
-  tony_astonished:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/001/original/ac932b94a3596f51.png",
-  tony_grinning:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/002/original/7f82ec9365598210.png",
-  tony_happy:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/003/original/ad080dcb691599ec.png",
-  tony_laughing:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/004/original/e071ac45888984e9.png",
-  tony_neutral:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/006/original/29eb3b75f1953a3a.png",
-  tony_normal:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/008/original/4fcb4e1cc5d31aed.png",
-  tony_santa:
-    "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
-  tony_side:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/005/original/37f8e551c5bbdaad.png",
-  tony_sigh:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/007/original/a7915d1d727b709b.png",
-  tony_smiling:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/009/original/bc74506db9adfef0.png",
-  tony_smirking:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/010/original/906806ea4df92168.png",
-  tony_unhappy:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/011/original/c2adb167853b3f28.png",
-  tony_wee:
-    "https://social-cdn.vivaldi.net/system/custom_emojis/images/000/000/012/original/e2537b10ccf7b452.png",
-  vivaldi_blue:
-    "https://forum.vivaldi.net/assets/uploads/files/1671744402026-vivaldi_blue.png",
-  vivaldi_grey:
-    "https://forum.vivaldi.net/assets/uploads/files/1671744402090-vivaldi_grey.png",
-  vivaldi_red:
-    "https://forum.vivaldi.net/assets/uploads/files/1671744402145-vivaldi_red.png",
+  tony_santa: "https://forum.vivaldi.net/assets/uploads/files/1669755604427-tony-santa.png",
   alien: "1539692482285-alien.gif",
   angel: "1539692493644-angel.gif",
   awww: "1539692536730-awww.gif",
@@ -485,7 +454,7 @@ function makeEmoteButton(emoteName, emoteUrl) {
   const emoteButton = document.createElement("img");
   emoteButton.alt = emoteName;
   emoteButton.title = emoteName;
-  if (emoteName === "chef" || emoteName.startsWith("tony") || emoteName.startsWith("vivaldi"))
+  if (emoteName === "chef" || emoteName.startsWith("tony"))
     emoteButton.src = emoteUrl;
   else emoteButton.src = STATIC_URL + emoteUrl;
   emoteButton.addEventListener("click", emotePicked);
