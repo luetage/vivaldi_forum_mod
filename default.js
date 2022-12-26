@@ -171,8 +171,9 @@ function genSnowFlake() {
   return flake;
 }
 
-function loadEasterEgg() {
-  const numFlakes = 90;
+function loadEasterEgg(numFlakes) {
+  const del = document.querySelector(".snow");
+  if (del) del.parentNode.removeChild(del);
   const snow = document.createElement("div");
   snow.setAttribute("class", "snow");
   let flakes = "";
@@ -186,9 +187,15 @@ function loadEasterEgg() {
 function checkInput(e, el) {
   if (e.key === "Enter") {
     const input = el.value.replace(/\s+/g, "").toLowerCase();
-    console.log(input);
     if (input.includes("letitsnow")) {
-      loadEasterEgg();
+      let num;
+      try {
+        num = parseInt(input.match(/\d/g).join(""));
+      } catch (e) {
+        num = 90;
+      }
+      if (num > 0 && num < 1000) loadEasterEgg(num);
+      else loadEasterEgg(90);
     }
   }
 }
