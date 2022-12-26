@@ -258,15 +258,8 @@ function activateTheme() {
           chrome.runtime.sendMessage({ message: "options apply theme" });
         });
       } else {
-        // clear out colors when using standard theme
-        let co = vct.colors;
-        for (color in co) {
-          co[color] = ""
-        }
-        chrome.storage.sync.set({ VFM_CURRENT_THEME: vct }, () => {
-          sendToTabs("update theme");
-          chrome.runtime.sendMessage({ message: "options apply theme" });
-        });
+        sendToTabs("update theme");
+        chrome.runtime.sendMessage({ message: "options apply theme" });
       }
     }
   );
