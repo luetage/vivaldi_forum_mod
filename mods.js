@@ -50,7 +50,9 @@ function undoMoji(img) {
 
 function checkMoji() {
   let allEmoji = Array.from(
-    document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji):not(.emoji-vivaldi)")
+    document.querySelectorAll(
+      "img.emoji:not(#emoji-dialog img.emoji):not(.emoji-vivaldi)"
+    )
   );
   // emoji indicating sex are always separated into an independent img from the
   // base emoji in a sequence. this adds the sex indicator emoji to the previous
