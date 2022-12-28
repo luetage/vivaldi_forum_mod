@@ -7,8 +7,8 @@ a#vlogo {
   width: 32px;
   margin-top: 0px;
 }
-#vlogo img {
-  display: none !important;
+.skin-dark #vlogo {
+  background: unset;
 }
 #vivaldinav {
   left: 55px;
