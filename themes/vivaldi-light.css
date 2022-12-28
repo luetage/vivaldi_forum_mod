@@ -8,7 +8,7 @@ a#vlogo {
   margin-top: 0px;
 }
 #vlogo img {
-  display: none;
+  display: none !important;
 }
 #vivaldinav {
   left: 55px;
@@ -40,31 +40,31 @@ a#vlogo {
 
 /* Advanced formatting mod */
 .vivaldi-mod-modal-box {
-  background: white;
-  border-color: #f1f1f1;
+  background: #fff;
+  border-color: #e6e6e6;
 }
 .vivaldi-mod-modal-box-control-bar {
-  background: #f1f1f1;
-  color: black;
+  background: #e6e6e6;
+  color: #212121;
 }
 .dropmarker,
 .dropmarker:after {
-  background: black;
+  background: #4c70f0;
 }
 .dropmarker:before {
-  border-color: black;
+  border-color: #4c70f0;
 }
 #toolbar-custom ul li:hover {
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
 }
 
 /* Copy all code button */
 .copy-all-code-button {
-  background-color: rgba(125, 125, 125, 0.66);
+  background-color: #4c70f0;
   color: #fff;
 }
 .copy-all-code-button:hover {
-  color: #f4ff9d;
+  color: #7994f4;
 }
 
 /* Highlight post-tools link button on click */
@@ -77,10 +77,10 @@ small.pull-right a.vfm-highlight {
 .header .notification-list li::before,
 #menu .notification-list li .mark-read,
 .header .notification-list li .mark-read {
-  color: #777 !important;
+  color: #212121 !important;
 }
 
 /* Theme preview */
 .themebox-title {
-  color: #333;
+  color: #212121;
 }
