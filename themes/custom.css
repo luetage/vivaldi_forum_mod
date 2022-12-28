@@ -237,9 +237,6 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .topic .pagination-block .pagination-text,
 .wrapper.dropup i {
   color: var(--colorFg2);
-  /* color: #000; */
-  /* filter: invert(1); */
-  /* mix-blend-mode: difference; */
 }
 .topic .pagination-block .dropdown-toggle:focus {
   text-decoration: none !important;
