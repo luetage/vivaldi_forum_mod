@@ -3,7 +3,7 @@
 function _restoreThemes() {
   chrome.storage.sync.get(
     {
-      VFM_CURRENT_THEME: { selected: "vfm-standard" },
+      VFM_CURRENT_THEME: { selected: "vfm-vivaldi_light" },
       VFM_THEMES: [],
     },
     function (get) {
@@ -188,7 +188,7 @@ function _removeTheme() {
       if (vt.length > 1) {
         sc.schedule.forEach((item) => {
           if (item.theme === vct.selected) {
-            item.theme = "vfm-standard";
+            item.theme = "vfm-vivaldi_light";
           }
         });
         const index = vt.findIndex((x) => x.themeName === vct.selected);

@@ -3,21 +3,37 @@
   --colorBg: hsl(0, 0%, 0%);
 }
 
-body.vfm-standard {
+body.vfm-vivaldi_light {
   --colorBg: #fff;
-  --colorBgC: #e6e6e6;
-  --colorBgL: #e6e6e6;
+  --colorBgC: #f2f2f2;
+  --colorBgL: #f2f2f2;
   --colorBgM: #e6e6e6;
   --colorFg: #212121;
-  --colorFg2: #6c757d;
+  --colorFg2: #595959;
   --colorHi: #c91106;
   --colorLi: #4c70f0;
   --colorCo: #4c70f0;
-  --colorCo2: #3b57bb;
+  --colorCo2: #7994f4;
   --colorAc: #3b57bb;
   --colorAcFg: #fff;
   --colorDd: #fff;
   --colorDdFg: #212121;
+}
+body.vfm-vivaldi_dark {
+  --colorBg: #141414;
+  --colorBgC: #2c2c2c;
+  --colorBgL: #2c2c2c;
+  --colorBgM: #434343;
+  --colorFg: #fff;
+  --colorFg2: #e0e0e0;
+  --colorHi: #c91106;
+  --colorLi: #4c70f0;
+  --colorCo: #4c70f0;
+  --colorCo2: #4363d3;
+  --colorAc: #2a3f87;
+  --colorAcFg: #fff;
+  --colorDd: #303030;
+  --colorDdFg: #fff;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -318,17 +334,6 @@ input[type="color"]::-webkit-color-swatch {
 .themebox-image .themebox-o_mark {
   fill: var(--colorHi);
   stroke: var(--colorBg);
-}
-#vfm-standard.active .themebox-image {
-  border-color: var(--colorHi);
-}
-#vfm-standard.active .themebox-image::before {
-  border-bottom-color: var(--colorHi);
-  border-right-color: var(--colorHi);
-}
-#vfm-standard .themebox-image .themebox-o_mark {
-  fill: var(--colorHi);
-  stroke: #fff;
 }
 
 /* Schedule */

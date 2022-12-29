@@ -19,7 +19,8 @@
     {
       "resources": [
         "themes/custom.css",
-        "themes/standard.css",
+        "themes/vivaldi-light.css",
+        "themes/vivaldi-dark.css",
         "mods/advanced-formatting.css",
         "mods/compact-posts.css",
         "mods/header-scroll.css",
