@@ -3,7 +3,7 @@
 function _restoreThemes() {
   chrome.storage.sync.get(
     {
-      VFM_CURRENT_THEME: { selected: "vfm-standard" },
+      VFM_CURRENT_THEME: { selected: "vfm-vivaldi_light" },
       VFM_THEMES: [],
     },
     function (get) {
@@ -52,7 +52,7 @@ function _restoreThemes() {
         _colorLi.value = vt[index].colorLi;
         _colorAc.value = vt[index].colorAc;
       } else {
-        addTheme.disabled = false;
+        addTheme.disabled = true;
         removeTheme.disabled = true;
         editBtn.disabled = true;
         moveLeft.disabled = true;
@@ -86,7 +86,7 @@ function _selectTheme(event) {
         if (!name.startsWith("vfm_")) {
           chrome.storage.sync.set({ VFM_CURRENT_THEME: vct });
           toggleEdit.style.display = "none";
-          addTheme.disabled = false;
+          addTheme.disabled = true;
           removeTheme.disabled = true;
           editBtn.disabled = true;
           moveLeft.disabled = true;
@@ -133,13 +133,13 @@ function _addTheme() {
       const epoch = "vfm_" + Date.now();
       vt.push({
         themeName: epoch,
-        colorBg: vct.colors.colorBg || "#ffffff",
-        colorFg: vct.colors.colorFg || "#000000",
-        colorHi: vct.colors.colorHi || "#c91106",
-        colorCo: vct.colors.colorCo || "#4c70f0",
-        colorDd: vct.colors.colorDd || "#ffffff",
-        colorLi: vct.colors.colorLi || "#4c70f0",
-        colorAc: vct.colors.colorAc || "#3b57bb",
+        colorBg: vct.colors.colorBg,
+        colorFg: vct.colors.colorFg,
+        colorHi: vct.colors.colorHi,
+        colorCo: vct.colors.colorCo,
+        colorDd: vct.colors.colorDd,
+        colorLi: vct.colors.colorLi,
+        colorAc: vct.colors.colorAc,
       });
       chrome.storage.sync.set({ VFM_THEMES: vt }, function () {
         const btn = document.createElement("button");
@@ -188,7 +188,7 @@ function _removeTheme() {
       if (vt.length > 1) {
         sc.schedule.forEach((item) => {
           if (item.theme === vct.selected) {
-            item.theme = "vfm-standard";
+            item.theme = "vfm-vivaldi_light";
           }
         });
         const index = vt.findIndex((x) => x.themeName === vct.selected);

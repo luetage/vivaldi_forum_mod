@@ -45,7 +45,11 @@ function loadTheme() {
       });
       loadFile("themes/custom.css", "vfmTheme");
     } else {
-      loadFile("themes/standard.css", "vfmTheme");
+      if (theme === "vfm-vivaldi_light") {
+        loadFile("themes/vivaldi-light.css", "vfmTheme");
+      } else {
+        loadFile("themes/vivaldi-dark.css", "vfmTheme");
+      }
     }
     // introduce theme name as class in body
     _wait().then(() => {

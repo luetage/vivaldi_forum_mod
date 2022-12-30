@@ -50,10 +50,12 @@ function undoMoji(img) {
 
 function checkMoji() {
   let allEmoji = Array.from(
-    document.querySelectorAll("img.emoji:not(#emoji-dialog img.emoji)")
+    document.querySelectorAll(
+      "img.emoji:not(#emoji-dialog img.emoji):not(.emoji-vivaldi)"
+    )
   );
-  // emoji indicating sex are always separated into independant img from the
-  // base emoji in a sequence this adds the sex indicator emoji to the previous
+  // emoji indicating sex are always separated into an independent img from the
+  // base emoji in a sequence. this adds the sex indicator emoji to the previous
   // img's alt text and adjusts the title to match
   let last = null;
   allEmoji = allEmoji.reduce((prev, curr) => {
@@ -156,3 +158,4 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
 header();
 userMenu();
 discord();
+easterEgg();

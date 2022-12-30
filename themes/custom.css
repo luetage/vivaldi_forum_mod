@@ -228,7 +228,7 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
   color: var(--colorBg) !important;
 }
 .topic .pagination-block {
-  background-color: var(--colorBgL);
+  background-color: var(--colorBgL) !important;
 }
 .pagination-block .progress-bar {
   background-color: var(--colorCo) !important;
@@ -237,9 +237,6 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .topic .pagination-block .pagination-text,
 .wrapper.dropup i {
   color: var(--colorFg2);
-  /* color: #000; */
-  /* filter: invert(1); */
-  /* mix-blend-mode: difference; */
 }
 .topic .pagination-block .dropdown-toggle:focus {
   text-decoration: none !important;
@@ -333,7 +330,9 @@ a,
 .posts-list .posts-list-item .topic-title:hover,
 a:hover,
 a:focus,
-.breadcrumb a:hover {
+.breadcrumb a:hover,
+.category > ul > li h2 a:hover,
+.category > ul > li:not(.unread) h2 a:hover {
   color: var(--colorLi);
 }
 .post-header small.pull-right a {
@@ -581,86 +580,6 @@ blockquote,
   background-color: var(--colorBgL);
   color: var(--colorFg2);
   opacity: 0.8;
-}
-a[href="/tags/duplicate"] .tag,
-a[href="/tags/pipeline"] .tag,
-a[href="/tags/will not do"] .tag,
-a[href="/tags/done"] .tag,
-a[href="/tags/in progress"] .tag,
-a[href="/tags/resolved"] .tag,
-a[href="/tags/bug"] .tag,
-a[href="/tags/feature request"] .tag,
-a[href="/tags/new feature"] .tag,
-a[href="/tags/cannot reproduce"] .tag,
-a[href="/tags/fixed"] .tag,
-a[href="/tags/accessibility"] .tag,
-a[href="/tags/a11y"] .tag,
-a[href="/tags/nice to have"] .tag,
-a[href="/tags/в работе"] .tag,
-a[href="/tags/дубликат"] .tag,
-a[href="/tags/реализовано"] .tag,
-a[href="/tags/готово"] .tag,
-a[href="/tags/resolvido"] .tag,
-a[href="/tags/解決済み（不具合）"] .tag,
-a[href="/tags/未解決"] .tag,
-a[href="/tags/再現済み"] .tag,
-a[href="/tags/解決済み（質問）"] .tag,
-a[href="/tags/記載者要確認"] .tag,
-a[href="/tags/対応予定"] .tag,
-a[href="/tags/対応済み"] .tag,
-a[href="/tags/未再現"] .tag,
-a[href="/tags/開発側未確認"] .tag,
-a[href="/tags/解決済み（要望）"] .tag,
-a[href="/tags/対応対象外"] .tag,
-a[href="/tags/便利情報"] .tag,
-a[href="/tags/対応対象外"] .tag,
-a[href="/tags/確認予定"] .tag,
-a[href="/tags/risolto"] .tag,
-a[href="/tags/частично решено"] .tag,
-a[href="/tags/resolu"] .tag {
-  background-color: var(--colorFg2) !important;
-  opacity: 0.8;
-  color: var(--colorBg) !important;
-}
-.tag-item[data-tag="duplicate"],
-.tag-item[data-tag="pipeline"],
-.tag-item[data-tag="will not do"],
-.tag-item[data-tag="done"],
-.tag-item[data-tag="in progress"],
-.tag-item[data-tag="resolved"],
-.tag-item[data-tag="bug"],
-.tag-item[data-tag="feature request"],
-.tag-item[data-tag="new feature"],
-.tag-item[data-tag="cannot reproduce"],
-.tag-item[data-tag="fixed"],
-.tag-item[data-tag="accessibility"],
-.tag-item[data-tag="a11y"],
-.tag-item[data-tag="nice to have"],
-.tag-item[data-tag="в работе"],
-.tag-item[data-tag="дубликат"],
-.tag-item[data-tag="реализовано"],
-.tag-item[data-tag="готово"],
-.tag-item[data-tag="resolvido"],
-.tag-item[data-tag="解決済み（不具合）"],
-.tag-item[data-tag="未解決"],
-.tag-item[data-tag="再現済み"],
-.tag-item[data-tag="解決済み（質問）"],
-.tag-item[data-tag="記載者要確認"],
-.tag-item[data-tag="対応予定"],
-.tag-item[data-tag="対応済み"],
-.tag-item[data-tag="未再現"],
-.tag-item[data-tag="開発側未確認"],
-.tag-item[data-tag="解決済み（要望）"],
-.tag-item[data-tag="対応対象外"],
-.tag-item[data-tag="便利情報"],
-.tag-item[data-tag="便利情報"],
-.tag-item[data-tag="確認予定"],
-.tag-item[data-tag="risolto"],
-.tag-item[data-tag="частично решено"],
-.tag-item[data-tag="resolu"] {
-  background-color: var(--colorFg2) !important;
-  opacity: 0.8;
-  color: var(--colorBg) !important;
 }
 
 /* Notifications */
@@ -1118,7 +1037,8 @@ ul[component="chat/search/list"].dropdown-menu {
   color: var(--colorBg);
 }
 .composer,
-.form-control {
+.form-control,
+#search-form .form-control {
   background-color: var(--colorBg);
   color: var(--colorFg);
 }
@@ -1350,12 +1270,16 @@ span.votes .upvoted .fa-chevron-up::before {
   border-color: var(--colorBgM);
 }
 .emoji-dialog .top-bar {
-  background-color: var(--colorBgM);
+  background-color: var(--colorBgM) !important;
+}
+.emoji-tabs .emoji-dialog-search {
+  color: var(--colorFg);
+  background-color: var(--colorBg);
 }
 .emoji-tabs .emoji-dialog-search-container button.close {
   background-color: var(--colorCo);
   color: var(--colorBg);
-  border-color: var(--colorCo2);
+  border-color: var(--colorCo2) !important;
   text-shadow: none;
 }
 .emoji-tabs .emoji-dialog-search-container button.close:hover {
@@ -1427,4 +1351,42 @@ small.pull-right a.vfm-highlight {
 /* You may never leave */
 #deleteAccountButton {
   display: none;
+}
+
+/* Easter egg - Based off of https://codepen.io/aybukeceylan/pen/MWYEoXZ */
+.snow {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.snow .flake {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: snow-fall, snow-shake;
+  animation-duration: 12s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+@keyframes snow-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snow-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

@@ -7,9 +7,6 @@
 .fa-angle-up::before {
   content: "\f0d8" !important;
 }
-.fa-2x {
-  font-size: 1.5em !important;
-}
 #search-form .fa.fa-gears::before {
   content: "\f00e" !important;
 }
