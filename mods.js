@@ -158,3 +158,4 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
 header();
 userMenu();
 discord();
+easterEgg();

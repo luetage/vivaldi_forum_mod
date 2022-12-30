@@ -1352,3 +1352,41 @@ small.pull-right a.vfm-highlight {
 #deleteAccountButton {
   display: none;
 }
+
+/* Easter egg - Based off of https://codepen.io/aybukeceylan/pen/MWYEoXZ */
+.snow {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.snow .flake {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: snow-fall, snow-shake;
+  animation-duration: 12s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+@keyframes snow-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snow-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
