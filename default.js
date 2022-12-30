@@ -164,7 +164,7 @@ function genSnowFlake() {
       height: ${size}px;
       left: ${genRand(-10, 110, 0)}%;
       top: ${genRand(0, 100, 0)}px;
-      animation-delay: ${genRand(-12, -1, 1)}s, ${genRand(-12, -1, 1)}s;
+      animation-delay: ${genRand(-12, 0, 1)}s, ${genRand(-4, 0, 1)}s;
       filter: blur(${genRand(0.8, 3, 1)}px);
     "></div>
   `;
