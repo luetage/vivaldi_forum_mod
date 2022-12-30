@@ -146,3 +146,62 @@ function discord() {
   document.querySelector(".footerlinks").innerHTML +=
     ' | <a href="https://vivaldi.com/contribute/" target="_blank" rel="noreferrer noopener">Contribute</a> | <a href="https://discord.gg/cs6bTDU" target="_blank" rel="noreferrer noopener">Discord</a>';
 }
+
+// Easter egg
+
+// https://stackoverflow.com/a/45736131/12275656
+function genRand(min, max, decimalPlaces) {
+  const rand = Math.random() * (max - min) + min;
+  const power = Math.pow(10, decimalPlaces);
+  return Math.floor(rand * power) / power;
+}
+
+function genSnowFlake() {
+  const size = genRand(4, 8, 0);
+  const flake = `
+    <div class="flake" style="
+      width: ${size}px;
+      height: ${size}px;
+      left: ${genRand(-10, 110, 0)}%;
+      top: ${genRand(0, 100, 0)}px;
+      animation-delay: ${genRand(-12, -1, 1)}s, ${genRand(-12, -1, 1)}s;
+      filter: blur(${genRand(0.8, 3, 1)}px);
+    "></div>
+  `;
+  return flake;
+}
+
+function loadEasterEgg(numFlakes) {
+  const del = document.querySelector(".snow");
+  if (del) del.parentNode.removeChild(del);
+  const snow = document.createElement("div");
+  snow.setAttribute("class", "snow");
+  let flakes = "";
+  for (let i = 0; i < numFlakes; i++) {
+    flakes += genSnowFlake();
+  }
+  snow.innerHTML = flakes;
+  document.body.prepend(snow);
+}
+
+function checkInput(e, el) {
+  if (e.key === "Enter") {
+    const input = el.value.replace(/\s+/g, "").toLowerCase();
+    if (input.includes("letitsnow")) {
+      let num;
+      try {
+        num = parseInt(input.match(/\d/g).join(""));
+      } catch (e) {
+        num = 90;
+      }
+      if (num > 0 && num < 1000) loadEasterEgg(num);
+      else loadEasterEgg(90);
+    }
+  }
+}
+
+function easterEgg() {
+  const input = document.querySelector("#search-form .form-control");
+  const bunny = (event) => checkInput(event, input);
+  input.addEventListener("keydown", bunny);
+}

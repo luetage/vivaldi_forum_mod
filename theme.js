@@ -31,42 +31,6 @@ async function _wait() {
   return true;
 }
 
-// Easter Egg
-
-// https://stackoverflow.com/a/45736131/12275656
-function genRand(min, max, decimalPlaces) {
-  const rand = Math.random() * (max - min) + min;
-  const power = Math.pow(10, decimalPlaces);
-  return Math.floor(rand * power) / power;
-}
-
-function genSnowFlake() {
-  const size = genRand(4, 8, 0);
-  const flake = `
-    <div class="flake" style="
-      width: ${size}px;
-      height: ${size}px;
-      left: ${genRand(-10, 110, 0)}%;
-      top: ${genRand(0, 100, 0)}px;
-      animation-delay: ${genRand(-12, -1, 1)}s, ${genRand(-12, -1, 1)}s;
-      filter: blur(${genRand(0.8, 3, 1)}px);
-    "></div>
-  `;
-  return flake;
-}
-
-function loadEasterEgg() {
-  const numFlakes = 90;
-  const snow = document.createElement("div");
-  snow.setAttribute("class", "snow");
-  let flakes = "";
-  for (let i = 0; i < numFlakes; i++) {
-    flakes += genSnowFlake();
-  }
-  snow.innerHTML = flakes;
-  document.body.prepend(snow);
-}
-
 // Load Theme
 
 function loadTheme() {
@@ -77,10 +41,6 @@ function loadTheme() {
         let colors = get.VFM_CURRENT_THEME.colors;
         for (const [key, value] of Object.entries(colors)) {
           document.body.style.setProperty("--" + key, value);
-        }
-        const strippedTheme = theme.split('_').join('').toLowerCase();
-        if (strippedTheme.includes("letitsnow")) {
-          loadEasterEgg();
         }
       });
       loadFile("themes/custom.css", "vfmTheme");
