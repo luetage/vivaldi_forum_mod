@@ -647,6 +647,7 @@ code {
 }
 pre {
   background-color: var(--colorBgL);
+  color: var(--colorFg);
   border: none;
 }
 pre code {
