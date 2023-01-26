@@ -1151,8 +1151,16 @@ button.main.red {
   background-color: var(--colorBgL);
   z-index: 1001;
 }
-.fab.btn-morph.plus > span > span,
-.btn-morph {
+.persona-fab.btn-morph.plus {
+  background-color: var(--colorCo);
+}
+.persona-fab.btn-morph.plus > span > span {
+  background-color: var(--colorBgL);
+}
+.persona-fab.btn-morph {
+  background-color: var(--colorCo);
+}
+.persona-fab.btn-morph.heart > span > span {
   background-color: var(--colorBgL);
 }
 .usercard-info small {
@@ -1167,6 +1175,13 @@ button.main.red {
 .topic .timeline-event .timeline-badge {
   box-shadow: 0 0 0 0.5rem var(--colorBg);
 }
+.avatar-wrapper .btn-morph {
+  background-color: var(--colorCo);
+}
+.avatar-wrapper .btn-morph > span > span {
+  background-color: var(--colorBg);
+}
+
 
 /* Unread avatar check */
 .category > ul > li .avatar .select .fa-check,
