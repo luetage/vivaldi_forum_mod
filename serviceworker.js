@@ -85,7 +85,7 @@ function defaultSetup() {
           colorFg: "#a6accd",
           colorHi: "#ff869a",
           colorAc: "#3b4084",
-          colorLi: "#82b1ff",
+          colorLi: "#939ede",
           colorCo: "#c3e88d",
           colorDd: "#3e4452",
         },
