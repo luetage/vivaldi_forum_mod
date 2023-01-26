@@ -4,7 +4,7 @@ function defaultSetup() {
   chrome.storage.sync.set(
     {
       VFM_CURRENT_THEME: {
-        selected: "vfm-vivaldi-light",
+        selected: "vfm-vivaldi_light",
         colors: {
           colorBg: "",
           colorFg: "",
