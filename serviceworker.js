@@ -30,6 +30,16 @@ function defaultSetup() {
       },
       VFM_THEMES: [
         {
+          themeName: "vfm_Ayu",
+          colorBg: "#fafafa",
+          colorFg: "#5c6773",
+          colorHi: "#36a3d9",
+          colorAc: "#d9d8d7",
+          colorLi: "#f29718",
+          colorCo: "#86b300",
+          colorDd: "#f0eee4",
+        },
+        {
           themeName: "vfm_Dracula",
           colorBg: "#282a36",
           colorFg: "#f8f8f2",
@@ -85,9 +95,9 @@ function defaultSetup() {
           colorFg: "#a6accd",
           colorHi: "#ff869a",
           colorAc: "#3b4084",
-          colorLi: "#939ede",
+          colorLi: "#82b1ff",
           colorCo: "#c3e88d",
-          colorDd: "#3e4452",
+          colorDd: "#333747",
         },
         {
           themeName: "vfm_PaperColor_Light",
