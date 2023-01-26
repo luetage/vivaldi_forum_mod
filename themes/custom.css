@@ -1158,10 +1158,10 @@ button.main.red {
   background-color: var(--colorBgL);
 }
 .persona-fab.btn-morph {
-  background-color: var(--colorCo);
+  background-color: var(--colorBgL)
 }
 .persona-fab.btn-morph.heart > span > span {
-  background-color: var(--colorBgL);
+  background-color: #ef3939;
 }
 .usercard-info small {
   color: var(--colorFg2);
@@ -1180,6 +1180,12 @@ button.main.red {
 }
 .avatar-wrapper .btn-morph > span > span {
   background-color: var(--colorBg);
+}
+.avatar-wrapper .btn-morph.heart {
+  background-color: var(--colorBgL);
+}
+.avatar-wrapper .btn-morph.heart > span > span {
+  background-color: #ef3939;
 }
 
 
