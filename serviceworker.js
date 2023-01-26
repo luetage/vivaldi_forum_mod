@@ -30,7 +30,7 @@ function defaultSetup() {
       },
       VFM_THEMES: [
         {
-          themeName: "Dracula",
+          themeName: "vfm_Dracula",
           colorBg: "#282a36",
           colorFg: "#f8f8f2",
           colorHi: "#50fa7b",
@@ -40,7 +40,7 @@ function defaultSetup() {
           colorDd: "#6272a4",
         },
         {
-          themeName: "Everforest_Light",
+          themeName: "vfm_Everforest_Light",
           colorBg: "#efebd4",
           colorFg: "#5c6a72",
           colorHi: "#f57d26",
@@ -50,7 +50,7 @@ function defaultSetup() {
           colorDd: "#bdc3af",
         },
         {
-          themeName: "Everforest_Dark",
+          themeName: "vfm_Everforest_Dark",
           colorBg: "#232a2e",
           colorFg: "#d3c6aa",
           colorHi: "#e69875",
@@ -60,7 +60,7 @@ function defaultSetup() {
           colorDd: "#56635f",
         },
         {
-          themeName: "Iceberg",
+          themeName: "vfm_Iceberg",
           colorBg: "#e8e9ec",
           colorFg: "#33374c",
           colorHi: "#6869ec",
@@ -70,7 +70,7 @@ function defaultSetup() {
           colorDd: "#cad0de",
         },
         {
-          themeName: "Kanagawa",
+          themeName: "vfm_Kanagawa",
           colorBg: "#1f1f28",
           colorFg: "#dcd7ba",
           colorHi: "#6a9589",
@@ -80,7 +80,7 @@ function defaultSetup() {
           colorDd: "#223249",
         },
         {
-          themeName: "Palenight",
+          themeName: "vfm_Palenight",
           colorBg: "#292d3e",
           colorFg: "#a6accd",
           colorHi: "#ff869a",
@@ -90,7 +90,7 @@ function defaultSetup() {
           colorDd: "#3e4452",
         },
         {
-          themeName: "PaperColor_Light",
+          themeName: "vfm_PaperColor_Light",
           colorBg: "#eeeeee",
           colorFg: "#444444",
           colorHi: "#d75f00",
@@ -100,7 +100,7 @@ function defaultSetup() {
           colorDd: "#005f87",
         },
         {
-          themeName: "PaperColor_Dark",
+          themeName: "vfm_PaperColor_Dark",
           colorBg: "#1c1c1c",
           colorFg: "#d0d0d0",
           colorHi: "#afd700",
@@ -110,7 +110,7 @@ function defaultSetup() {
           colorDd: "#5f8787",
         },
         {
-          themeName: "Rigel",
+          themeName: "vfm_Rigel",
           colorBg: "#002635",
           colorFg: "#e6e6dc",
           colorHi: "#00cccc",
@@ -120,7 +120,7 @@ function defaultSetup() {
           colorDd: "#517f8d",
         },
         {
-          themeName: "Solarized_Light",
+          themeName: "vfm_Solarized_Light",
           colorBg: "#fdf6e3",
           colorFg: "#586e75",
           colorHi: "#af8700",
@@ -130,7 +130,7 @@ function defaultSetup() {
           colorDd: "#eee8d5",
         },
         {
-          themeName: "Solarized_Dark",
+          themeName: "vfm_Solarized_Dark",
           colorBg: "#002b36",
           colorFg: "#93a1a1",
           colorHi: "#af8700",
@@ -140,7 +140,7 @@ function defaultSetup() {
           colorDd: "#073642",
         },
         {
-          themeName: "Tokyo_Night",
+          themeName: "vfm_Tokyo_Night",
           colorBg: "#1a1b26",
           colorFg: "#a9b1d6",
           colorHi: "#ff9e64",
@@ -150,7 +150,7 @@ function defaultSetup() {
           colorDd: "#1f2335",
         },
         {
-          themeName: "Zenburn",
+          themeName: "vfm_Zenburn",
           colorBg: "#3f3f3f",
           colorFg: "#dcdccc",
           colorHi: "#8faf9f",
