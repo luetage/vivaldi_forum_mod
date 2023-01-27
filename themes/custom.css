@@ -1155,7 +1155,7 @@ button.main.red {
   background-color: var(--colorCo);
 }
 .persona-fab.btn-morph.plus > span > span {
-  background-color: var(--colorBgL);
+  background-color: var(--colorBg);
 }
 .persona-fab.btn-morph {
   background-color: var(--colorBgL)
