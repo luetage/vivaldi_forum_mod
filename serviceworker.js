@@ -436,10 +436,9 @@ function setSchedule() {
 }
 
 // Advanced Formatting
-// In case item orders change from one instance to next
-// Put them all in order
-// And re-number any not hidden starting from 1
-// If this update has support for new buttons, mark them as disabled
+// In case item orders change from one instance to next, put them all in order
+// and re-number any not hidden starting from 1. If this update has support for
+// new buttons, mark them as disabled
 
 function normaliseFormattingToolbarOrders() {
   chrome.storage.sync.get(
