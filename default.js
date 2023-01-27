@@ -20,6 +20,8 @@ function header() {
     <li> <a href="https://themes.vivaldi.net">Themes</a></li>
     <li> <a href="https://webmail.vivaldi.net">Webmail</a></li>
   `;
+  const links = document.querySelectorAll("#submenu li > a");
+  links.forEach((link) => link.title = "");
 }
 
 // Get the username
