@@ -24,12 +24,10 @@ function _restore() {
         toggleBtn.setAttribute("checked", true);
         textarea.disabled = false;
         save2Btn.disabled = false;
-        backupBtn.disabled = false;
       } else {
         toggleBtn.removeAttribute("checked");
         textarea.disabled = true;
         save2Btn.disabled = true;
-        backupBtn.disabled = true;
       }
       if (restore.VFM_SCHEDULE.activated === true)
         toggleSchedule.setAttribute("checked", true);
@@ -104,7 +102,6 @@ function _toggleUserCSS() {
     if (css === true) {
       css = false;
       save2Btn.disabled = true;
-      backupBtn.disabled = true;
       textarea.disabled = true;
       toggleBtn.removeAttribute("checked");
       var text = chrome.i18n.getMessage("deactivateUserCSS");
@@ -112,7 +109,6 @@ function _toggleUserCSS() {
       css = true;
       toggleBtn.setAttribute("checked", true);
       save2Btn.disabled = false;
-      backupBtn.disabled = false;
       textarea.disabled = false;
       var text = chrome.i18n.getMessage("activateUserCSS");
     }
@@ -140,18 +136,6 @@ function _saveUserCSS() {
       _fade();
     }
   );
-}
-
-// Backup User CSS
-
-function _backupUserCSS() {
-  let userCSS = document.getElementById("userCSS").value;
-  const url = "data:text/css;base64," + btoa(userCSS);
-  chrome.downloads.download({
-    url: url,
-    saveAs: true,
-    filename: "backup.css",
-  });
 }
 
 // Toggle Schedule
@@ -376,7 +360,6 @@ const selectMods = document.querySelectorAll("#selectMods > p > span");
 const textarea = document.querySelector("textarea");
 const toggleBtn = document.getElementById("css-toggle");
 const save2Btn = document.getElementById("css-save");
-const backupBtn = document.getElementById("css-backup");
 const resetBtn = document.getElementById("reset-btn");
 const toggleSchedule = document.getElementById("schedule-toggle");
 const listSchedule = document.querySelector(".listSchedule");
@@ -400,7 +383,6 @@ addSchedule.addEventListener("click", function () {
 removeSchedule.addEventListener("click", function () {
   _addremoveSchedule(0);
 });
-backupBtn.addEventListener("click", _backupUserCSS);
 resetBtn.addEventListener("click", _resetOptions);
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {

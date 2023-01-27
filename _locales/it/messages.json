@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Inserire solo codice CSS! Premi AZIONA per attivare o disattivare, SALVA per meorizzare in archiviazione. BACKUP per salvare come file. Seleziona STANDARD nei TEMI se vuoi usare un tuo tema.",
+    "message": "Inserire solo codice CSS! Premi AZIONA per attivare o disattivare, SALVA per meorizzare in archiviazione. Seleziona STANDARD nei TEMI se vuoi usare un tuo tema.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "Modifica",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "Backup",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "Importa",
