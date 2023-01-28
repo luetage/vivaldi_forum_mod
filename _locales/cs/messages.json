@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Vkládejte pouze CSS kód! Přepínačem jej povolte či zakažte. Po provedení změn klikněte na ULOŽIT. Můžete také ZÁLOHOVAT do souboru. Pokud chcete používat vlastní motiv vzhledu, doporučujeme v nastavení motivů vybrat Standard.",
+    "message": "Vkládejte pouze CSS kód! Přepínačem jej povolte či zakažte. Po provedení změn klikněte na ULOŽIT. Pokud chcete používat vlastní motiv vzhledu, doporučujeme v nastavení motivů vybrat Standard.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {

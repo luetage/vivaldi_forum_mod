@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Вводите только CSS-код! Нажмите ПРИМЕНИТЬ, чтобы активировать/деактивировать код, СОХРАНИТЬ, чтобы сохранить изменения, и КОПИЯ, чтобы создать резервную копию. Если хотите создать собственную тему, сперва выберите СТАНДАРТНУЮ тему в настройках.",
+    "message": "Вводите только CSS-код! Нажмите ПРИМЕНИТЬ, чтобы активировать/деактивировать код, СОХРАНИТЬ, чтобы сохранить изменения. Если хотите создать собственную тему, сперва выберите СТАНДАРТНУЮ тему в настройках.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "Редактировать",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "Копия",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "Импорт",

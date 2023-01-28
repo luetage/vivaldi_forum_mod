@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Code CSS uniquement! Cliquer ACTIVER/DESACTIVER pour activer/désactiver, ENREGISTRER pour enregistrer. SAUVEGARDER dans un fichier. Choisissez STANDARD dans les THEMES, si vous voulez utiliser votre propre thème.",
+    "message": "Code CSS uniquement! Cliquer ACTIVER/DESACTIVER pour activer/désactiver, ENREGISTRER pour enregistrer. Choisissez STANDARD dans les THEMES, si vous voulez utiliser votre propre thème.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "Modifier",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "Sauvegarder",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "Importer",

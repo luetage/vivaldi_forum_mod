@@ -64,7 +64,7 @@ a#vlogo {
   color: #fff;
 }
 .copy-all-code-button:hover {
-  color: #7994f4;
+  background-color: #7994f4;
 }
 
 /* Highlight post-tools link button on click */

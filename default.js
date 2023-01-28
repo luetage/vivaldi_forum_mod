@@ -20,6 +20,8 @@ function header() {
     <li> <a href="https://themes.vivaldi.net">Themes</a></li>
     <li> <a href="https://webmail.vivaldi.net">Webmail</a></li>
   `;
+  const links = document.querySelectorAll("#submenu li > a");
+  links.forEach((link) => link.title = "");
 }
 
 // Get the username
@@ -159,7 +161,7 @@ function genRand(min, max, decimalPlaces) {
 function genSnowFlake() {
   const size = genRand(4, 8, 0);
   const flake = `
-    <div class="flake" style="
+    <div class="vfm-flake" style="
       width: ${size}px;
       height: ${size}px;
       left: ${genRand(-10, 110, 0)}%;
@@ -172,10 +174,10 @@ function genSnowFlake() {
 }
 
 function loadEasterEgg(numFlakes) {
-  const del = document.querySelector(".snow");
+  const del = document.querySelector(".vfm-snow");
   if (del) del.parentNode.removeChild(del);
   const snow = document.createElement("div");
-  snow.setAttribute("class", "snow");
+  snow.setAttribute("class", "vfm-snow");
   let flakes = "";
   for (let i = 0; i < numFlakes; i++) {
     flakes += genSnowFlake();

@@ -647,6 +647,7 @@ code {
 }
 pre {
   background-color: var(--colorBgL);
+  color: var(--colorFg);
   border: none;
 }
 pre code {
@@ -1150,9 +1151,17 @@ button.main.red {
   background-color: var(--colorBgL);
   z-index: 1001;
 }
-.fab.btn-morph.plus > span > span,
-.btn-morph {
-  background-color: var(--colorBgL);
+.persona-fab.btn-morph.plus {
+  background-color: var(--colorCo);
+}
+.persona-fab.btn-morph.plus > span > span {
+  background-color: var(--colorBg);
+}
+.persona-fab.btn-morph {
+  background-color: var(--colorBgL)
+}
+.persona-fab.btn-morph.heart > span > span {
+  background-color: #ef3939;
 }
 .usercard-info small {
   color: var(--colorFg2);
@@ -1166,6 +1175,19 @@ button.main.red {
 .topic .timeline-event .timeline-badge {
   box-shadow: 0 0 0 0.5rem var(--colorBg);
 }
+.avatar-wrapper .btn-morph {
+  background-color: var(--colorCo);
+}
+.avatar-wrapper .btn-morph > span > span {
+  background-color: var(--colorBg);
+}
+.avatar-wrapper .btn-morph.heart {
+  background-color: var(--colorBgL);
+}
+.avatar-wrapper .btn-morph.heart > span > span {
+  background-color: #ef3939;
+}
+
 
 /* Unread avatar check */
 .category > ul > li .avatar .select .fa-check,
@@ -1351,42 +1373,4 @@ small.pull-right a.vfm-highlight {
 /* You may never leave */
 #deleteAccountButton {
   display: none;
-}
-
-/* Easter egg - Based off of https://codepen.io/aybukeceylan/pen/MWYEoXZ */
-.snow {
-  position: fixed;
-  top: 0;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.snow .flake {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  animation-name: snow-fall, snow-shake;
-  animation-duration: 12s, 4s;
-  animation-timing-function: linear, ease-in-out;
-  animation-iteration-count: infinite, infinite;
-}
-@keyframes snow-fall {
-  0% {
-    top: -10%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-@keyframes snow-shake {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(60px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
 }
