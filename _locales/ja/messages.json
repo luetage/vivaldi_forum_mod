@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Input CSS code only! Click the toggle to activate/deactivate. SAVE to save to storage. BACKUP to file. Select Standard in Themes, if you want to run your own theme.",
+    "message": "Input CSS code only! Click the toggle to activate/deactivate. SAVE to save to storage. Select Standard in Themes, if you want to run your own theme.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "編集",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "バックアップ",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "インポート",

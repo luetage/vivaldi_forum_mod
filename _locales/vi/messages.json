@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Chỉ nhập mã CSS! Nhấp vào công tắc để kích hoạt/ngừng kích hoạt. LƯU để lưu vào bộ nhớ. SAO LƯU để tập tin. Chọn tiêu chuẩn trong chủ đề, nếu bạn muốn chạy chủ đề của riêng mình.",
+    "message": "Chỉ nhập mã CSS! Nhấp vào công tắc để kích hoạt/ngừng kích hoạt. LƯU để lưu vào bộ nhớ. Chọn tiêu chuẩn trong chủ đề, nếu bạn muốn chạy chủ đề của riêng mình.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "Sửa",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "Sao lưu",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "Nhập",

@@ -196,7 +196,7 @@
     "description": "Options: User CSS headline"
   },
   "userCSSDesc": {
-    "message": "Nur CSS Code eingeben! Aktivieren/deaktivieren mit Toggle. SPEICHERN um zu speichern. BACKUP auf Datei. Wähle Standard in Themen um ein selbstständiges Thema zu laden.",
+    "message": "Nur CSS Code eingeben! Aktivieren/deaktivieren mit Toggle. SPEICHERN um zu speichern. Wähle Standard in Themen um ein selbstständiges Thema zu laden.",
     "description": "Options: User CSS placeholder/description"
   },
   "changelog": {
@@ -214,10 +214,6 @@
   "edit": {
     "message": "Ändern",
     "description": "Options: Text to show on a button that performs some sort of edit operation"
-  },
-  "backup": {
-    "message": "Backup",
-    "description": "Options: Text to show on a button that performs some sort of backup operation"
   },
   "import": {
     "message": "Importieren",
