@@ -433,13 +433,14 @@ a.permalink:hover,
 .posts-list .posts-list-item .post-info .post-author span.timeago,
 .stats small,
 .breadcrumb .fa,
+.topic .topic-info a.hidden-xs .fa,
 .tag-item,
 .account .profile .account-stats .stat-label,
 .account .profile .profile-meta span {
   color: var(--colorFg2);
   opacity: 0.8;
 }
-.breadcrumb .fa:hover {
+.breadcrumb .fa:hover, .topic .topic-info a.hidden-xs .fa:hover {
   color: var(--colorLi);
   opacity: 1;
 }
