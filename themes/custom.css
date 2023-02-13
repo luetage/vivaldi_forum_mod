@@ -1073,10 +1073,12 @@ ul[component="chat/search/list"].dropdown-menu {
 }
 div.preview.well a {
   color: var(--colorLi);
+  text-decoration: none;
 }
 div.preview.well a:hover,
 div.preview.well a:focus {
-  color: var(--colorLi2);
+  color: var(--colorLi);
+  text-decoration: underline;
 }
 .composer.resizable {
   border-top: 1px solid var(--colorBgL);

@@ -20,7 +20,6 @@ function defaultSetup() {
           colorBgH: "",
           colorFg2: "",
           colorAcFg: "",
-          colorLi2: "",
           colorCo2: "",
           colorDdFg: "",
           colorDdL: "",
@@ -310,9 +309,6 @@ function activateTheme() {
         const conAc2 = contrast(lumAc, lumFg);
         if (conAc1 >= conAc2) co.colorAcFg = co.colorBg;
         else co.colorAcFg = co.colorFg;
-        // link
-        if (lumBg > 0.5) co.colorLi2 = shade(co.colorLi, 0.25);
-        else co.colorLi2 = shade(co.colorLi, -0.12);
         // code
         if (lumBg > 0.5) co.colorCo2 = shade(co.colorCo, 0.25);
         else co.colorCo2 = shade(co.colorCo, -0.12);
