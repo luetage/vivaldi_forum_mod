@@ -486,6 +486,7 @@ function addEmotePickerButton() {
   const emotePickerButton = document.createElement("li");
   emotePickerButton.setAttribute("tabindex", "-1");
   emotePickerButton.setAttribute("data-format", "heart-o");
+  emotePickerButton.setAttribute("class", "btn btn-sm btn-link text-reset position-relative");
   emotePickerButton.title = chrome.i18n.getMessage("emoticons");
   emotePickerButton.innerHTML = "<i class='fa fa-heart-o'></i>";
   emotePickerButton.addEventListener("click", (event) => {
@@ -532,6 +533,7 @@ function createSpecialFormattingbutton(
   li.title = title;
   li.setAttribute("tabindex", "-1");
   li.setAttribute("data-format", buttonDisplayClass);
+  li.setAttribute("class", "btn btn-sm btn-link text-reset position-relative");
   li.id = "additional-format-" + buttonDisplayClass;
   return li;
 }
@@ -785,7 +787,7 @@ function setOrderAndHideAccordingToRemembered() {
 function makeModalWithHiddenButtonsOpener() {
   const button = document.createElement("li");
   button.style.order = 0;
-  button.className = "hiddenButtons";
+  button.className = "hiddenButtons btn btn-sm btn-link text-reset position-relative";
   button.innerHTML = "<i class='fa fa-wrench'></i>";
   button.title = chrome.i18n.getMessage("customToolbarTitle");
   button.addEventListener("click", (event) => {
