@@ -89,7 +89,7 @@ y | y
     chrome.i18n.getMessage("table"),
   ],
   [
-    "shield",
+    "shield-halved",
     ">> ",
     "",
     chrome.i18n.getMessage("spoiler"),
@@ -118,7 +118,7 @@ const DEFAULT_FORMATTING_BAR_CUSTOM_ORDER = {
   "file-code-o": -1,
   "th-large": -1,
   "list-ol": -1,
-  shield: -1,
+  "shield-halved": -1,
 };
 /** Keep track of order of icon */
 let FORMATTING_BAR_CUSTOM_ORDER = {
@@ -139,7 +139,7 @@ let FORMATTING_BAR_CUSTOM_ORDER = {
   "file-code-o": -1,
   "th-large": -1,
   "list-ol": -1,
-  shield: -1,
+  "shield-halved": -1,
 };
 /** Keep references to the buttons
  * never delete and re-create, always move */
@@ -161,7 +161,7 @@ let FORMATTING_BUTTONS = {
   "file-code-o": undefined,
   "th-large": undefined,
   "list-ol": undefined,
-  shield: undefined,
+  "shield-halved": undefined,
 };
 const EMOTE_MODAL = "emote-picker";
 const TOOLBAR_MODAL = "toolbar-custom";
@@ -625,8 +625,8 @@ function getReferencesToButtons() {
     "list-ol": document.querySelector(
       ".composer .formatting-group li[data-format='list-ol']"
     ),
-    shield: document.querySelector(
-      ".composer .formatting-group li[data-format='shield']"
+    "shield-halved": document.querySelector(
+      ".composer .formatting-group li[data-format='shield-halved']"
     ),
   };
 }
