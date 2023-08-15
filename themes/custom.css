@@ -1361,7 +1361,7 @@ span.votes .upvoted .fa-chevron-up::before {
 }
 
 /* Highlight post-tools link button on click */
-small.pull-right a.vfm-highlight {
+small a.vfm-highlight {
   color: var(--colorHi) !important;
 }
 
