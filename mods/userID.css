@@ -1,7 +1,7 @@
 /* Displays user IDs on profiles and posts */
 
 /* forum */
-.clearfix.post-header small.pull-left strong a:hover::after {
+.clearfix.post-header small strong a:hover::after {
   content: "  [UID " attr(data-uid) "]";
 }
 
@@ -20,4 +20,9 @@
 }
 .account .cover .avatar-wrapper:hover::after {
   opacity: 0.8;
+}
+
+/* Give room for UID */
+.account .profile {
+  padding-top: 15px;
 }
