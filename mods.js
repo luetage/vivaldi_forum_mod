@@ -149,7 +149,7 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
       }
     });
   };
-  new MutationObserver(startmods).observe(document.getElementById("body"), {
+  new MutationObserver(startmods).observe(document.getElementsByTagName("body")[0], {
     childList: true,
     subtree: true,
   });
