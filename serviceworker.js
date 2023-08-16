@@ -483,7 +483,7 @@ function normaliseFormattingToolbarOrders() {
         "file-code-o",
         "th-large",
         "list-ol",
-        "shield",
+        "shield-halved",
       ];
       const normalisedOrder = {};
       let outOfOrder = Object.entries(settings.VFM_FORMAT);
