@@ -102,10 +102,11 @@ function autoScroll() {
 // Bookmarks in navigation
 
 function _bookmarks() {
-  const nav = document.querySelector("#submenu ul");
+  const nav = document.querySelector("#main-nav");
   const li = document.createElement("li");
   const link = document.createElement("a");
-  link.classList.add("navigation-link");
+  li.setAttribute("class", "nav-item");
+  link.setAttribute("class", "nav-link navigation-link vivaldi-nav-link");
   link.href = "/user/" + username() + "/bookmarks";
   link.setAttribute("title", "");
   link.innerHTML = `<i class="fa fa-fw fa-bookmark"></i><span class="visible-xs-inline showmenutext" style="margin-left: 2px"> ${chrome.i18n.getMessage(
