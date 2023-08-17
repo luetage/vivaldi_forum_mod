@@ -132,7 +132,7 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
     __top = "top: -64px !important";
     _scp = 0;
     _vivaldiHeader = document.getElementById("vivaldi-header");
-    _subMenu = document.getElementById("submenu");
+    _subMenu = document.getElementById("header-menu");
     window.addEventListener("scroll", autoScroll);
     loadFile("mods/header-scroll.css");
   }

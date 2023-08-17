@@ -1,6 +1,6 @@
 /* Auto-hide header transition */
 
 #vivaldi-header,
-#submenu {
+#header-menu {
   transition: top 0.4s ease-out !important;
 }
