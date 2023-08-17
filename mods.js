@@ -128,8 +128,8 @@ chrome.storage.sync.get({ VFM_MODS: "" }, (get) => {
     loadFile("mods/advanced-formatting.css");
   if (mods.bookmarks === true) _bookmarks();
   if (mods.headerScroll === true) {
-    _top = 64;
-    __top = "top: -64px !important";
+    _top = 65;
+    __top = "top: -65px !important";
     _scp = 0;
     _vivaldiHeader = document.getElementById("vivaldi-header");
     _subMenu = document.getElementById("header-menu");
