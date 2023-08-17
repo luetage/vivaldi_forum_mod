@@ -6,6 +6,9 @@ body {
 }
 
 /* Standard settings for header */
+#vivaldi-header {
+  position: fixed;
+}
 a#vlogo {
   height: 32px;
   width: 32px;
@@ -20,17 +23,15 @@ a#vlogo {
 #communitysubmenu {
   display: none;
 }
+.topic-list-header.sticky-top {
+  top: unset;
+  z-index: unset;
+}
 @media (min-width: 960px) {
   .navbar-vivaldi,
   .navbar-vivaldi.isfixed {
     top: 64px !important;
     position: fixed;
-  }
-  main#panel {
-    margin-top: -70px;
-  }
-  .topic .topic-header {
-    position: unset;
   }
   .chats-full {
     padding-top: 20px;
