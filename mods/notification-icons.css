@@ -1,7 +1,7 @@
 /* Custom notification icons */
 .header .notification-list li::before {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
-  font-weight: var(--fa-style,900);
+  font-weight: var(--fa-style, 900);
   order: 1;
 }
 
