@@ -11,18 +11,18 @@ a#vlogo {
   width: 32px;
   margin-top: 0px;
 }
-#vlogo img {
-  display: none;
+#vlogo {
+  background: unset !important;
 }
 #vivaldinav {
-  left: 55px;
+  left: 45px;
 }
 #communitysubmenu {
   display: none;
 }
 @media (min-width: 960px) {
-  #submenu,
-  #submenu.isfixed {
+  .navbar-vivaldi,
+  .navbar-vivaldi.isfixed {
     top: 64px !important;
     position: fixed;
   }
@@ -113,15 +113,15 @@ a#vlogo {
   box-shadow: 0 0 10px var(--colorHi), 0 0 5px var(--colorHi);
 }
 /* menuwrapper */
-#submenu {
+.navbar-vivaldi {
   background-color: var(--colorAc);
 }
-#submenu li > a {
+.navbar-vivaldi li > a {
   color: var(--colorAcFg);
 }
-#submenu a:focus,
-#submenu a:hover,
-#submenu li.active > a {
+.navbar-vivaldi a:focus,
+.navbar-vivaldi a:hover,
+.navbar-vivaldi li.active > a {
   color: var(--colorAc);
   background-color: var(--colorAcFg);
 }
