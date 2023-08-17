@@ -4,6 +4,14 @@
   font-weight: var(--fa-style, 900);
 }
 
+/* Hide original read/unread icons */
+.header .notification-list li .mark-read .read,
+.slideout-menu .notification-list li .mark-read .read,
+.header .notification-list li.unread .mark-read .unread,
+.slideout-menu .notification-list li.unread .mark-read .unread {
+  display: none;
+}
+
 .header .notification-list li[data-nid^="new_post"] .mark-read::after {
   content: "\f1d8";
 }
