@@ -2,27 +2,28 @@
 .header .notification-list li::before {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style,900);
+  order: 1;
 }
 
-.header .notification-list li[data-nid^="new_post"] .mark-read::after {
+.header .notification-list li[data-nid^="new_post"]::before {
   content: "\f1d8";
 }
-.header .notification-list li[data-nid^="edit_post"] .mark-read::after {
+.header .notification-list li[data-nid^="edit_post"]::before {
   content: "\f044";
 }
-.header .notification-list li[data-nid^="upvote"] .mark-read::after {
+.header .notification-list li[data-nid^="upvote"]::before {
   content: "\f164";
 }
-.header .notification-list li[data-nid^="follow"] .mark-read::after {
+.header .notification-list li[data-nid^="follow"]::before {
   content: "\f06e";
 }
-.header .notification-list li[data-nid^="move"] .mark-read::after {
+.header .notification-list li[data-nid^="move"]::before {
   content: "\f35a";
 }
-.header .notification-list li[data-nid^="chat"] .mark-read::after {
+.header .notification-list li[data-nid^="chat"]::before {
   content: "\f0e0";
 }
 /* mentions/new topics (no specific data-nid) */
-.header .notification-list li[data-nid^="tid"] .mark-read::after {
+.header .notification-list li[data-nid^="tid"]::before {
   content: "\f4ad";
 }
