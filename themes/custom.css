@@ -61,7 +61,7 @@ a#vlogo {
 }
 #vivaldimenu a.current,
 #vivaldimenu a:hover {
-  color: var(--colorLi);
+  color: var(--colorLi) !important;
 }
 #search-form #search-button {
   color: var(--colorFg);
