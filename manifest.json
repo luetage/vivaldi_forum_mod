@@ -30,7 +30,7 @@
         "mods/userID.css",
         "icons/icon16.png"
       ],
-      "matches": ["https://forum.vivaldi.net/*",
+      "matches": ["https://forum.vivaldi.net/*"],
       "exclude_matches": [
         "https://forum.vivaldi.net/assets/*",
         "https://forum.vivaldi.net/uploads/*",
@@ -40,7 +40,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://forum.vivaldi.net/*",
+      "matches": ["https://forum.vivaldi.net/*"],
       "exclude_matches": [
         "https://forum.vivaldi.net/assets/*",
         "https://forum.vivaldi.net/uploads/*",
@@ -50,7 +50,7 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["https://forum.vivaldi.net/*", "https://forum.testvivaldi.tech/*"],
+      "matches": ["https://forum.vivaldi.net/*"],
       "exclude_matches": [
         "https://forum.vivaldi.net/assets/*",
         "https://forum.vivaldi.net/uploads/*",
