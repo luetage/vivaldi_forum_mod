@@ -157,6 +157,9 @@ a[component="header/profilelink"] i,
 .header .notification-list li > a:first-of-type {
   order: 0;
 }
+.notifications .avatar {
+  margin: unset !important;
+}
 .header .notification-list li > a:last-of-type {
   order: 2;
 }
