@@ -1,4 +1,8 @@
 /* Custom notification icons */
+.header .notification-list li .mark-read::after {
+  font-family: var(--fa-style-family, "Font Awesome 6 Free");
+  font-weight: var(--fa-style, 900);
+}
 
 .header .notification-list li[data-nid^="new_post"] .mark-read::after {
   content: "\f1d8";
