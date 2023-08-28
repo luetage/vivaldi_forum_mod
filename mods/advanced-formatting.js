@@ -196,7 +196,7 @@ function writeToTextarea(
   startAtBeginningOfLine = false,
   initialTag = null
 ) {
-  const textarea = document.querySelector("textarea");
+  const textarea = document.querySelector(":not(.quickreply-message) > textarea");
   let start = textarea.selectionStart;
   const end = textarea.selectionEnd;
 
