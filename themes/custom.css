@@ -288,8 +288,9 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
   color: var(--colorFg);
 }
 .topic .posts > li .post-footer a:hover,
-.topic .posts > li .post-header a:hover {
-  color: var(--colorLi);
+.float-end.small a,
+small.float-end a {
+  color: var(--colorLi) !important;
 }
 html .topic .answered {
   color: var(--colorHi);
@@ -327,6 +328,17 @@ html .topic .unanswered {
 a,
 .breadcrumb a {
   color: var(--colorFg);
+}
+.category-children a,
+.lastpost a,
+.title a {
+  color: var(--colorFg);
+}
+.category-item a {
+  color: var(--colorFg);
+}
+.category-item a:hover {
+  color: var(--colorLi);
 }
 .posts-list .posts-list-item .topic-title:hover,
 a:hover,
@@ -441,7 +453,8 @@ a.permalink:hover,
   color: var(--colorFg2);
   opacity: 0.8;
 }
-.breadcrumb .fa:hover, .topic .topic-info a.hidden-xs .fa:hover {
+.breadcrumb .fa:hover,
+.topic .topic-info a.hidden-xs .fa:hover {
   color: var(--colorLi);
   opacity: 1;
 }
@@ -490,7 +503,7 @@ small.pull-right a {
   color: var(--colorHi);
 }
 .text-muted {
-  color: var(--colorFg2);
+  color: var(--colorFg2) !important;
   opacity: 0.66;
 }
 .stats.text-muted {
@@ -1162,7 +1175,7 @@ button.main.red {
   background-color: var(--colorBg);
 }
 .persona-fab.btn-morph {
-  background-color: var(--colorBgL)
+  background-color: var(--colorBgL);
 }
 .persona-fab.btn-morph.heart > span > span {
   background-color: #ef3939;
@@ -1191,7 +1204,6 @@ button.main.red {
 .avatar-wrapper .btn-morph.heart > span > span {
   background-color: #ef3939;
 }
-
 
 /* Unread avatar check */
 .category > ul > li .avatar .select .fa-check,
