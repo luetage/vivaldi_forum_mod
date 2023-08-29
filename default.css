@@ -148,12 +148,3 @@ a[component="header/profilelink"] i,
     transform: translateX(0px);
   }
 }
-
-/* Make notifications more compact */
-.header .notification-list li {
-  display: flex !important;
-  align-items: center;
-}
-.notifications .avatar {
-  margin: unset !important;
-}
