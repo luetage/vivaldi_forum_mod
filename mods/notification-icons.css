@@ -1,6 +1,9 @@
 /* Custom notification icons */
 .header .notification-list li .mark-read::after {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
+  font-weight: var(--fa-style, 400);
+}
+.header .notification-list li.unread .mark-read::after {
   font-weight: var(--fa-style, 900);
 }
 
