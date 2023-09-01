@@ -117,14 +117,15 @@ a#vlogo {
 .navbar-vivaldi {
   background-color: var(--colorAc);
 }
-.navbar-vivaldi li > a {
-  color: var(--colorAcFg);
+.vivaldi-nav-link {
+  color: var(--colorAcFg) !important;
 }
 .navbar-vivaldi a:focus,
 .navbar-vivaldi a:hover,
-.navbar-vivaldi li.active > a {
-  color: var(--colorAc);
-  background-color: var(--colorAcFg);
+.navbar-vivaldi li.active > a,
+.vivaldi-nav-link.active {
+  color: var(--colorAc) !important;
+  background: var(--colorAcFg) !important;
 }
 
 /* Dropdowns */
@@ -287,6 +288,8 @@ ul.dropdown-menu.dropdown-menu-right a:focus {
 .topic .posts > li .post-header a {
   color: var(--colorFg);
 }
+.topic .posts > li .post-header a:hover,
+.topic .posts > li .post-signature a:hover,
 .topic .posts > li .post-footer a:hover,
 .float-end.small a,
 small.float-end a {
