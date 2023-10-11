@@ -1105,6 +1105,11 @@ div.preview.well a:focus {
 }
 
 /* Forms */
+.bootstrap-tagsinput:focus, .form-control:focus {
+  background-color: var(--colorBg);
+  color: var(--colorFg);
+  border-color: var(--colorBgH);
+}
 .form-control {
   border-color: var(--colorBgH);
 }
